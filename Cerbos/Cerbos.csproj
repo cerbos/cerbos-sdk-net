@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Grpc.Net.Client" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Grpc.Net.Client" Version="2.45.0" />
+  </ItemGroup>
+</Project>
