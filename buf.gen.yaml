@@ -1,0 +1,4 @@
+version: v1
+plugins:
+  - remote: buf.build/protocolbuffers/plugins/csharp:v3.20.1-1
+    out: src/Cerbos/Api/V1
