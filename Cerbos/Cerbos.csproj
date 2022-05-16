@@ -8,6 +8,6 @@
     <None Remove="Grpc.Net.Client" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Grpc.Net.Client" Version="2.45.0" />
+    <PackageReference Include="Grpc.Net.Client" Version="2.46.0" />
   </ItemGroup>
 </Project>
