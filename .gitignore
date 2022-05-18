@@ -17,6 +17,7 @@ bld/
 !**/packages/build/
 *.nuget.props
 *.nuget.targets
+*.user
 
 # Editor files
 .vscode

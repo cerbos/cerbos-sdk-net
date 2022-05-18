@@ -1,0 +1,5 @@
+---
+version: v1
+name: buf.build/cerbos/net-sdk
+deps:
+  - "buf.build/cerbos/cerbos-api"
