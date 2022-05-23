@@ -6,4 +6,4 @@ plugins:
     opt:
       - base_namespace=
       - file_extension=.g.cs
-    out: ./src
+    out: ./src/Sdk

@@ -16,7 +16,7 @@ Task("Build")
     .IsDependentOn("Generate")
     .Does(() =>
 {
-    var projectPath = "./src";
+    var projectPath = "./src/Sdk";
 
     DotNetRestore(projectPath);
 
