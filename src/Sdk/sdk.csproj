@@ -5,14 +5,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Google.Api.CommonProtos" Version="2.5.0" />
+        <PackageReference Include="Google.Protobuf" Version="3.21.1" />
         <PackageReference Include="Grpc" Version="2.46.3" />
-    </ItemGroup>
-
-    <ItemGroup>
-        <Folder Include="Cerbos" />
-        <Folder Include="Google" />
-        <Folder Include="Grpc" />
-        <Folder Include="Validate" />
     </ItemGroup>
 </Project>
