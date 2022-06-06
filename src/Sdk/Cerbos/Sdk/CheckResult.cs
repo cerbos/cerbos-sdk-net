@@ -11,9 +11,9 @@ namespace Cerbos.Sdk
         public CheckResult(MapField<string, Effect> effects)
         {
             var effectsDictionary = new Dictionary<string, Effect>();
-            foreach (var (k, v) in effects)
+            foreach (var effect in effects)
             {
-                effectsDictionary.Add(k, v);
+                effectsDictionary.Add(effect.Key, effect.Value);
             }
             _effects = effectsDictionary;
         }
@@ -29,9 +29,9 @@ namespace Cerbos.Sdk
         public Dictionary<string, bool> GetAll()
         {
             var all = new Dictionary<string, bool>();
-            foreach(var (k, v) in _effects)
+            foreach(var effect in _effects)
             {
-                all[k] = v.Equals(Effect.Allow);
+                all[effect.Key] = effect.Value.Equals(Effect.Allow);
             }
             return all;
         }

@@ -1,0 +1,20 @@
+---
+server:
+  httpListenAddr: ":3592"
+  grpcListenAddr: ":3593"
+
+auxData:
+  jwt:
+    keySets:
+      - id: default
+        local:
+          file: /config/verify_key.jwk
+
+engine:
+  defaultPolicyVersion: "default"
+
+storage:
+  driver: "disk"
+  disk:
+    directory: /policies
+    watchForChanges: true

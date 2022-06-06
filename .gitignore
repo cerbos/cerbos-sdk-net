@@ -18,6 +18,9 @@ bld/
 *.nuget.props
 *.nuget.targets
 *.user
+*.log
+
+tools/
 
 # Editor files
 .vscode

@@ -1,9 +1,19 @@
-string target = Argument("target", "Build");
+#tool nuget:?package=NUnit.ConsoleRunner&version=3.15.0
+
+string target = Argument("target", "UnitTests");
 
 Task("Fetch")
     .Does(() =>
 {
     StartProcess("./fetch_protos.sh");
+});
+
+Task("Clean")
+    .ContinueOnError()
+    .Does(() =>
+{
+    CleanDirectories("./src/**/bin");
+    CleanDirectories("./src/**/obj");
 });
 
 Task("Generate")
@@ -13,18 +23,23 @@ Task("Generate")
 });
 
 Task("Build")
+    .IsDependentOn("Clean")
     .IsDependentOn("Generate")
     .Does(() =>
 {
-    var projectPath = "./src/Sdk";
+    var paths = new string[] { "./src/Sdk", "./src/Sdk.UnitTests" }; 
 
-    DotNetRestore(projectPath);
-
-    var buildSettings = new DotNetCorePackSettings();
-    var versionNumber = AppVeyor.Environment.Build.Number;
-    buildSettings.VersionSuffix = string.Format("beta{0:0000}", versionNumber);
+    foreach (var path in paths) {
+        DotNetRestore(path);
+        DotNetBuild(path, new DotNetBuildSettings { Configuration = "Release" });
+    }
+});
     
-    DotNetPack(projectPath, buildSettings);
+Task("UnitTests")
+    .IsDependentOn("Build")
+    .Does(() => 
+{
+    NUnit3("src/Sdk.UnitTests/bin/Release/net6.0/Cerbos.Sdk.UnitTests.dll", new NUnit3Settings { NoResults = true });
 });
 
 RunTarget(target);

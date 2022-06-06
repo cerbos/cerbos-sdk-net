@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sdk", "src\Sdk\sdk.csproj", "{D4151C1D-1C67-437B-A381-2C5ECF0FBFF8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdk", "src\Sdk\Sdk.csproj", "{D4151C1D-1C67-437B-A381-2C5ECF0FBFF8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdk.UnitTests", "src\Sdk.UnitTests\Sdk.UnitTests.csproj", "{E328BAB7-F24B-45AC-B2B3-CA9BD715A6EB}"
 EndProject

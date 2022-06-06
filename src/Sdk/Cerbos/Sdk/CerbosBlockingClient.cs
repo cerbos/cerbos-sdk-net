@@ -6,6 +6,7 @@ using Cerbos.Api.V1.Response;
 using Cerbos.Api.V1.Svc;
 using Cerbos.Sdk.Builders;
 using Grpc.Core;
+using AuxData = Cerbos.Sdk.Builders.AuxData;
 
 namespace Cerbos.Sdk
 {
@@ -14,6 +15,17 @@ namespace Cerbos.Sdk
         private readonly CerbosService.CerbosServiceClient _csc;
         private readonly CerbosAdminService.CerbosAdminServiceClient _casc;
         private readonly CerbosPlaygroundService.CerbosPlaygroundServiceClient _cpsc;
+        private readonly AuxData _auxData;
+        
+        public CerbosBlockingClient(CerbosService.CerbosServiceClient csc, CerbosAdminService.CerbosAdminServiceClient casc,
+            CerbosPlaygroundService.CerbosPlaygroundServiceClient cpsc, AuxData auxData)
+        {
+            _csc = csc;
+            _casc = casc;
+            _cpsc = cpsc;
+            _auxData = auxData;
+        }
+        
         public CerbosBlockingClient(CerbosService.CerbosServiceClient csc, CerbosAdminService.CerbosAdminServiceClient casc,
             CerbosPlaygroundService.CerbosPlaygroundServiceClient cpsc)
         {
@@ -22,6 +34,10 @@ namespace Cerbos.Sdk
             _cpsc = cpsc;
         }
 
+        public CerbosBlockingClient With(AuxData auxData) {
+            return new CerbosBlockingClient(_csc, _casc, _cpsc, auxData);
+        }
+        
         public CheckResult Check(Principal principal, Resource resource, IEnumerable<string> actions)
         {
             return Check(RequestId.Generate(), principal, resource, actions);
@@ -30,7 +46,7 @@ namespace Cerbos.Sdk
         public CheckResult Check(string requestId, Principal principal, Resource resource, IEnumerable<string> actions)
         {
             var request = new CheckResourceBatchRequest() {
-                AuxData = null,
+                AuxData = _auxData?.ToAuxData() ,
                 Principal = principal.ToPrincipal(),
                 Resources =
                 {
