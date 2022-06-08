@@ -59,8 +59,8 @@ namespace Cerbos.Sdk.UnitTests
                         .WithAttribute("owner", AttributeValue.StringValue("john")),
                     new []{"view:public", "approve"}
                 );
-            Assert.AreEqual(true, have.IsAllowed("view:public"));
-            Assert.AreEqual(false, have.IsAllowed("approve"));
+            Assert.That(have.IsAllowed("view:public"), Is.True);
+            Assert.That(have.IsAllowed("approve"), Is.True);
         }
     }
 }
