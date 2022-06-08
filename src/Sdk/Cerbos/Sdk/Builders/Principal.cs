@@ -6,7 +6,7 @@ namespace Cerbos.Sdk.Builders
     {
         private Cerbos.Api.V1.Engine.Principal P { get; }
             
-        private Principal(string id, string []roles) {
+        private Principal(string id, IEnumerable<string> roles) {
             P = new Cerbos.Api.V1.Engine.Principal
             {
                 Id = id,
@@ -14,7 +14,7 @@ namespace Cerbos.Sdk.Builders
             };
         }
 
-        public static Principal NewInstance(string id, string []roles) {
+        public static Principal NewInstance(string id, IEnumerable<string> roles) {
             return new Principal(id, roles);
         }
 
@@ -23,7 +23,7 @@ namespace Cerbos.Sdk.Builders
             return this;
         }
 
-        public Principal WithRoles(string []roles)
+        public Principal WithRoles(IEnumerable<string> roles)
         {
             P.Roles.Add(roles);
             return this;

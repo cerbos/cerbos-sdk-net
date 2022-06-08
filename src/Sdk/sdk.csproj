@@ -1,18 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFramework>netstandard2.1</TargetFramework>
-        <RootNamespace>cerbos-sdk-net</RootNamespace>
+        <TargetFrameworks>netstandard2.0;netstandard2.1;net5.0;net6.0</TargetFrameworks>
+        <AssemblyName>Cerbos.Sdk</AssemblyName>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Google.Api.CommonProtos" Version="2.5.0" />
+        <PackageReference Include="Google.Protobuf" Version="3.21.1" />
         <PackageReference Include="Grpc" Version="2.46.3" />
-    </ItemGroup>
-
-    <ItemGroup>
-        <Folder Include="Cerbos" />
-        <Folder Include="Google" />
-        <Folder Include="Grpc" />
-        <Folder Include="Validate" />
     </ItemGroup>
 </Project>
