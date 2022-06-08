@@ -20,10 +20,11 @@ namespace Cerbos.Sdk
             }
             _effects = effectsDictionary;
         }
+
         public CheckResult(Dictionary<string, Effect> effects) {
             _effects = effects;
         }
-        
+
         public bool IsAllowed(string action)
         {
             return _effects[action].Equals(Effect.Allow);
