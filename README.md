@@ -23,7 +23,7 @@ var client = new CerbosClientBuilder("localhost:3593").WithPlaintext().BuildBloc
 ### Check a single principal and resource
 
 ```csharp
-CheckResult result = client.Check(
+CheckResult result = client.CheckResources(
                             Principal.NewInstance("john", new []{"employee"})
                             .WithPolicyVersion("20210210")
                             .WithAttribute("department", AttributeValue.StringValue("marketing"))

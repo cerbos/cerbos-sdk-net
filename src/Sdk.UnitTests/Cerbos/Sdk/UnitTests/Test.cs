@@ -44,10 +44,10 @@ namespace Cerbos.Sdk.UnitTests
         }
 
         [Test]
-        public void CheckWithoutJWT()
+        public void CheckWithoutJwt()
         {
             var have =
-                _client.Check(
+                _client.CheckResources(
                     Principal.NewInstance("john", new []{"employee"})
                     .WithPolicyVersion("20210210")
                     .WithAttribute("department", AttributeValue.StringValue("marketing"))

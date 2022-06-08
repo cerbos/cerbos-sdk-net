@@ -58,11 +58,7 @@ namespace Cerbos.Sdk.Builders
                 channel = new Channel(_target, secureChanel);
             }
 
-            var csc = new CerbosService.CerbosServiceClient(channel);
-            var casc = new CerbosAdminService.CerbosAdminServiceClient(channel);
-            var cpsc = new CerbosPlaygroundService.CerbosPlaygroundServiceClient(channel);
-
-            return new CerbosBlockingClient(csc, casc, cpsc);
+            return new CerbosBlockingClient(new CerbosService.CerbosServiceClient(channel));
         }
     }
 }

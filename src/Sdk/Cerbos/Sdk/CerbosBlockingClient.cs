@@ -3,81 +3,100 @@
 
 using System;
 using System.Collections.Generic;
-using Cerbos.Api.V1.Effect;
 using Cerbos.Api.V1.Request;
 using Cerbos.Api.V1.Response;
 using Cerbos.Api.V1.Svc;
 using Cerbos.Sdk.Builders;
-using Grpc.Core;
-using AuxData = Cerbos.Sdk.Builders.AuxData;
 
 namespace Cerbos.Sdk
 {
     public class CerbosBlockingClient
     {
         private readonly CerbosService.CerbosServiceClient _csc;
-        private readonly CerbosAdminService.CerbosAdminServiceClient _casc;
-        private readonly CerbosPlaygroundService.CerbosPlaygroundServiceClient _cpsc;
-        private readonly AuxData _auxData;
-        
-        public CerbosBlockingClient(CerbosService.CerbosServiceClient csc, CerbosAdminService.CerbosAdminServiceClient casc,
-            CerbosPlaygroundService.CerbosPlaygroundServiceClient cpsc, AuxData auxData)
+        private readonly Builders.AuxData _auxData;
+
+        public CerbosBlockingClient(CerbosService.CerbosServiceClient csc)
         {
             _csc = csc;
-            _casc = casc;
-            _cpsc = cpsc;
+        }
+
+        public CerbosBlockingClient(CerbosService.CerbosServiceClient csc, Builders.AuxData auxData)
+        {
+            _csc = csc;
             _auxData = auxData;
         }
-        
-        public CerbosBlockingClient(CerbosService.CerbosServiceClient csc, CerbosAdminService.CerbosAdminServiceClient casc,
-            CerbosPlaygroundService.CerbosPlaygroundServiceClient cpsc)
+
+        public CerbosBlockingClient With(Builders.AuxData auxData)
         {
-            _csc = csc;
-            _casc = casc;
-            _cpsc = cpsc;
+            return new CerbosBlockingClient(_csc, auxData);
         }
 
-        public CerbosBlockingClient With(AuxData auxData) {
-            return new CerbosBlockingClient(_csc, _casc, _cpsc, auxData);
-        }
-        
-        public CheckResult Check(Principal principal, Resource resource, IEnumerable<string> actions)
+        private CheckResourcesResult CheckResources(CheckResourcesRequest request)
         {
-            return Check(RequestId.Generate(), principal, resource, actions);
-        }
-
-        public CheckResult Check(string requestId, Principal principal, Resource resource, IEnumerable<string> actions)
-        {
-            var request = new CheckResourceBatchRequest() {
-                AuxData = _auxData?.ToAuxData() ,
-                Principal = principal.ToPrincipal(),
-                Resources =
-                {
-                    new CheckResourceBatchRequest.Types.BatchEntry
-                    {
-                        Resource = resource.ToResource(),
-                        Actions = { actions }
-                    }
-                },
-                RequestId = requestId,
-            };
-
-            CheckResourceBatchResponse response;
+            CheckResourcesResponse response;
             try
             {
-                response = _csc.CheckResourceBatch(request, Metadata.Empty);
+                request.AuxData = _auxData?.ToAuxData();
+                response = _csc.CheckResources(request);
             }
             catch (Exception e)
             {
-                throw new Exception($"Failed to check: ${e}");
+                throw new Exception($"Failed to check resources: ${e}");
             }
 
-            foreach (var result in response.Results)
+            return new CheckResourcesResult(response);
+        }
+        
+        public CheckResourcesResult CheckResources(string requestId, Principal principal,
+            IEnumerable<CheckResourcesRequest.Types.ResourceEntry> resourceEntries)
+        {
+            var request = new CheckResourcesRequest
             {
-                return new CheckResult(result.Actions);
-            }
+                RequestId = requestId,
+                IncludeMeta = false,
+                Principal = principal.ToPrincipal(),
+            };
+            request.Resources.Add(resourceEntries);
+            
+            return CheckResources(request);;
+        }
+        
+        public CheckResult CheckResources(string requestId, Principal principal,
+            CheckResourcesRequest.Types.ResourceEntry resourceEntry)
+        {
+            var result = CheckResources(new CheckResourcesRequest
+            {
+                RequestId = requestId,
+                IncludeMeta = false,
+                Principal = principal.ToPrincipal(),
+                Resources = { resourceEntry }
+            });
 
-            return new CheckResult(new Dictionary<string, Effect>());
+            return result.Find(resourceEntry.Resource.Id);
+        }
+
+        public CheckResult CheckResources(Principal principal, CheckResourcesRequest.Types.ResourceEntry resourceEntry)
+        {
+            return CheckResources(RequestId.Generate(), principal, resourceEntry);
+        }
+
+        public CheckResult CheckResources(string requestId, Principal principal, Resource resource,
+            IEnumerable<string> actions)
+        {
+            return CheckResources(requestId, principal, new CheckResourcesRequest.Types.ResourceEntry
+            {
+                Resource = resource.ToResource(),
+                Actions = { actions }
+            });
+        }
+
+        public CheckResult CheckResources(Principal principal, Resource resource, IEnumerable<string> actions)
+        {
+            return CheckResources(RequestId.Generate(), principal, new CheckResourcesRequest.Types.ResourceEntry
+            {
+                Resource = resource.ToResource(),
+                Actions = { actions }
+            });
         }
     }
 }
