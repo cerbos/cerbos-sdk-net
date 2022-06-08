@@ -1,3 +1,6 @@
+// Copyright 2021-2022 Zenauth Ltd.
+// SPDX-License-Identifier: Apache-2.0
+
 using Cerbos.Sdk.Builders;
 using DotNet.Testcontainers.Containers.Builders;
 using DotNet.Testcontainers.Containers.Modules;
