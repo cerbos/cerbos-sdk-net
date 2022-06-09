@@ -1,5 +1,4 @@
 using Cerbos.Sdk.Builders;
-using Google.Protobuf.WellKnownTypes;
 using NUnit.Framework;
 
 namespace Cerbos.Sdk.UnitTests.Builders;
