@@ -1,10 +1,13 @@
 // Copyright 2021-2022 Zenauth Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
+using System.Threading;
+using System.Threading.Tasks;
 using Cerbos.Sdk.Builders;
 using DotNet.Testcontainers.Containers.Builders;
 using DotNet.Testcontainers.Containers.Modules;
 using NUnit.Framework;
+using AuxData = Cerbos.Sdk.Builders.AuxData;
 
 namespace Cerbos.Sdk.UnitTests
 {
@@ -88,6 +91,56 @@ namespace Cerbos.Sdk.UnitTests
                         "defer"
                     );
             Assert.That(have.IsAllowed("defer"), Is.True);
+        }
+        
+        [Test]
+        public void CheckMultiple()
+        {
+            var have =
+                _client
+                    .With(AuxData.WithJwt(_jwt))
+                    .CheckResources(
+                        Principal.NewInstance("john", "employee")
+                            .WithPolicyVersion("20210210")
+                            .WithAttribute("department", AttributeValue.StringValue("marketing"))
+                            .WithAttribute("geography", AttributeValue.StringValue("GB")),
+                        
+                        ResourceAction.NewInstance("leave_request", "XX125")
+                            .WithPolicyVersion("20210210")
+                            .WithAttribute("department", AttributeValue.StringValue("marketing"))
+                            .WithAttribute("geography", AttributeValue.StringValue("GB"))
+                            .WithAttribute("owner", AttributeValue.StringValue("john"))
+                            .WithActions("view:public", "approve", "defer"),
+                        
+                        ResourceAction.NewInstance("leave_request", "XX225")
+                            .WithPolicyVersion("20210210")
+                            .WithAttribute("department", AttributeValue.StringValue("marketing"))
+                            .WithAttribute("geography", AttributeValue.StringValue("GB"))
+                            .WithAttribute("owner", AttributeValue.StringValue("martha"))
+                            .WithActions("view:public", "approve"),
+                        
+                        ResourceAction.NewInstance("leave_request", "XX325")
+                            .WithPolicyVersion("20210210")
+                            .WithAttribute("department", AttributeValue.StringValue("marketing"))
+                            .WithAttribute("geography", AttributeValue.StringValue("US"))
+                            .WithAttribute("owner", AttributeValue.StringValue("peggy"))
+                            .WithActions("view:public", "approve")
+                    );
+
+            var resourcexx125 = have.Find("XX125");
+            Assert.That(resourcexx125.IsAllowed("view:public"), Is.True);
+            Assert.That(resourcexx125.IsAllowed("defer"), Is.True);
+            Assert.That(resourcexx125.IsAllowed("approve"), Is.False);
+            
+            var resourcexx225 = have.Find("XX225");
+            Assert.That(resourcexx225.IsAllowed("view:public"), Is.True);
+            Assert.That(resourcexx225.IsAllowed("defer"), Is.False);
+            Assert.That(resourcexx225.IsAllowed("approve"), Is.False);
+            
+            var resourcexx325 = have.Find("XX325");
+            Assert.That(resourcexx325.IsAllowed("view:public"), Is.True);
+            Assert.That(resourcexx325.IsAllowed("defer"), Is.False);
+            Assert.That(resourcexx325.IsAllowed("approve"), Is.False);
         }
     }
 }
