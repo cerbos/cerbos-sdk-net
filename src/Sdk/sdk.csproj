@@ -1,7 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
+        <Version>0.0.1-alpha</Version>
         <TargetFrameworks>netstandard2.0;netstandard2.1;net5.0;net6.0</TargetFrameworks>
         <AssemblyName>Cerbos.Sdk</AssemblyName>
+        <PackageId>Cerbos.Sdk</PackageId>
+        <Authors>Cerbos</Authors>
+        <Company>Cerbos</Company>
+        <PackageDescription>.NET SDK for interacting with the Cerbos PDP</PackageDescription>
+        <RepositoryUrl>https://github.com/cerbos/cerbos-sdk-net</RepositoryUrl>
     </PropertyGroup>
 
     <ItemGroup>
