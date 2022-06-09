@@ -47,21 +47,47 @@ namespace Cerbos.Sdk.UnitTests
         public void CheckWithoutJwt()
         {
             var have =
-                _client.CheckResources(
-                    Principal.NewInstance("john", new []{"employee"})
-                    .WithPolicyVersion("20210210")
-                    .WithAttribute("department", AttributeValue.StringValue("marketing"))
-                    .WithAttribute("geography", AttributeValue.StringValue("GB")),
-                    Resource.NewInstance("leave_request", "xx125")
+                _client
+                    .CheckResources(
+                        Principal.NewInstance("john","employee")
                         .WithPolicyVersion("20210210")
                         .WithAttribute("department", AttributeValue.StringValue("marketing"))
-                        .WithAttribute("geography", AttributeValue.StringValue("GB"))
-                        .WithAttribute("owner", AttributeValue.StringValue("john")),
-        "view:public", 
-                    "approve"
-                );
+                        .WithAttribute("geography", AttributeValue.StringValue("GB")),
+                        
+                        Resource.NewInstance("leave_request", "xx125")
+                            .WithPolicyVersion("20210210")
+                            .WithAttribute("department", AttributeValue.StringValue("marketing"))
+                            .WithAttribute("geography", AttributeValue.StringValue("GB"))
+                            .WithAttribute("owner", AttributeValue.StringValue("john")),
+                        
+            "view:public", "approve"
+                    );
+            
             Assert.That(have.IsAllowed("view:public"), Is.True);
             Assert.That(have.IsAllowed("approve"), Is.True);
+        }
+        
+        [Test]
+        public void CheckWithJwt()
+        {
+            var have =
+                _client
+                    .With(AuxData.WithJwt(_jwt))
+                    .CheckResources(
+                        Principal.NewInstance("john", "employee")
+                            .WithPolicyVersion("20210210")
+                            .WithAttribute("department", AttributeValue.StringValue("marketing"))
+                            .WithAttribute("geography", AttributeValue.StringValue("GB")),
+                        
+                        Resource.NewInstance("leave_request", "xx125")
+                            .WithPolicyVersion("20210210")
+                            .WithAttribute("department", AttributeValue.StringValue("marketing"))
+                            .WithAttribute("geography", AttributeValue.StringValue("GB"))
+                            .WithAttribute("owner", AttributeValue.StringValue("john")),
+                        
+                        "defer"
+                    );
+            Assert.That(have.IsAllowed("defer"), Is.True);
         }
     }
 }

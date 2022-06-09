@@ -23,8 +23,9 @@ var client = new CerbosClientBuilder("localhost:3593").WithPlaintext().BuildBloc
 ### Check a single principal and resource
 
 ```csharp
-CheckResult result = client.CheckResources(
-                            Principal.NewInstance("john", new []{"employee"})
+CheckResult result = client
+                        .CheckResources(
+                            Principal.NewInstance("john", "employee")
                             .WithPolicyVersion("20210210")
                             .WithAttribute("department", AttributeValue.StringValue("marketing"))
                             .WithAttribute("geography", AttributeValue.StringValue("GB")),
@@ -35,9 +36,8 @@ CheckResult result = client.CheckResources(
                                 .WithAttribute("geography", AttributeValue.StringValue("GB"))
                                 .WithAttribute("owner", AttributeValue.StringValue("john")),
                             
-                            "view:public", 
-                            "approve"
-                    );
+                            "view:public", "approve"
+                        );
 
 if(result.IsAllowed("approve")){ // returns true if `approve` action is allowed
     // ...
