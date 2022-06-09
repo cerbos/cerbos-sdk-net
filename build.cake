@@ -34,12 +34,21 @@ Task("Build")
         DotNetBuild(path, new DotNetBuildSettings { Configuration = "Release" });
     }
 });
-    
+
 Task("UnitTests")
     .IsDependentOn("Build")
     .Does(() => 
 {
     NUnit3("src/Sdk.UnitTests/bin/Release/net6.0/Cerbos.Sdk.UnitTests.dll", new NUnit3Settings { NoResults = true });
+});
+
+Task("Pack")
+    .IsDependentOn("Clean")
+    .Does(() =>
+{
+    var path = "./src/Sdk";
+    DotNetRestore(path);
+    DotNetPack(path);
 });
 
 RunTarget(target);
