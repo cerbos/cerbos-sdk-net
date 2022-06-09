@@ -81,7 +81,7 @@ namespace Cerbos.Sdk
         }
 
         public CheckResult CheckResources(string requestId, Principal principal, Resource resource,
-            IEnumerable<string> actions)
+            params string[] actions)
         {
             return CheckResources(requestId, principal, new CheckResourcesRequest.Types.ResourceEntry
             {
@@ -90,7 +90,7 @@ namespace Cerbos.Sdk
             });
         }
 
-        public CheckResult CheckResources(Principal principal, Resource resource, IEnumerable<string> actions)
+        public CheckResult CheckResources(Principal principal, Resource resource, params string[] actions)
         {
             return CheckResources(RequestId.Generate(), principal, new CheckResourcesRequest.Types.ResourceEntry
             {

@@ -28,12 +28,16 @@ CheckResult result = client.CheckResources(
                             .WithPolicyVersion("20210210")
                             .WithAttribute("department", AttributeValue.StringValue("marketing"))
                             .WithAttribute("geography", AttributeValue.StringValue("GB")),
+                            
                             Resource.NewInstance("leave_request", "xx125")
                                 .WithPolicyVersion("20210210")
                                 .WithAttribute("department", AttributeValue.StringValue("marketing"))
                                 .WithAttribute("geography", AttributeValue.StringValue("GB"))
                                 .WithAttribute("owner", AttributeValue.StringValue("john")),
-                            new []{"view:public", "approve"});
+                            
+                            "view:public", 
+                            "approve"
+                    );
 
 if(result.IsAllowed("approve")){ // returns true if `approve` action is allowed
     // ...

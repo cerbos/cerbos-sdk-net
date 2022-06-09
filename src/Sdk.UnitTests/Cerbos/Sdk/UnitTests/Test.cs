@@ -57,7 +57,8 @@ namespace Cerbos.Sdk.UnitTests
                         .WithAttribute("department", AttributeValue.StringValue("marketing"))
                         .WithAttribute("geography", AttributeValue.StringValue("GB"))
                         .WithAttribute("owner", AttributeValue.StringValue("john")),
-                    new []{"view:public", "approve"}
+        "view:public", 
+                    "approve"
                 );
             Assert.That(have.IsAllowed("view:public"), Is.True);
             Assert.That(have.IsAllowed("approve"), Is.True);
