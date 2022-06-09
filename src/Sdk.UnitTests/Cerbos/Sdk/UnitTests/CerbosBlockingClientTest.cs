@@ -1,8 +1,6 @@
 // Copyright 2021-2022 Zenauth Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
-using System.Threading;
-using System.Threading.Tasks;
 using Cerbos.Sdk.Builders;
 using DotNet.Testcontainers.Containers.Builders;
 using DotNet.Testcontainers.Containers.Modules;
@@ -11,7 +9,7 @@ using AuxData = Cerbos.Sdk.Builders.AuxData;
 
 namespace Cerbos.Sdk.UnitTests
 {
-    public class Tests
+    public class CerbosBlockingClientTest
     {
         private const int HttpPort = 3592;
         private const int GrpcPort = 3593;
@@ -67,7 +65,7 @@ namespace Cerbos.Sdk.UnitTests
                     );
             
             Assert.That(have.IsAllowed("view:public"), Is.True);
-            Assert.That(have.IsAllowed("approve"), Is.True);
+            Assert.That(have.IsAllowed("approve"), Is.False);
         }
         
         [Test]
@@ -134,12 +132,10 @@ namespace Cerbos.Sdk.UnitTests
             
             var resourcexx225 = have.Find("XX225");
             Assert.That(resourcexx225.IsAllowed("view:public"), Is.True);
-            Assert.That(resourcexx225.IsAllowed("defer"), Is.False);
             Assert.That(resourcexx225.IsAllowed("approve"), Is.False);
             
             var resourcexx325 = have.Find("XX325");
             Assert.That(resourcexx325.IsAllowed("view:public"), Is.True);
-            Assert.That(resourcexx325.IsAllowed("defer"), Is.False);
             Assert.That(resourcexx325.IsAllowed("approve"), Is.False);
         }
     }
