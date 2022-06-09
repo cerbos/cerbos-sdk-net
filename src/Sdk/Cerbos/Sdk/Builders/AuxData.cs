@@ -9,20 +9,17 @@ namespace Cerbos.Sdk.Builders
 
         private AuxData() {
             A = new Cerbos.Api.V1.Request.AuxData();
+            A.Jwt = new Api.V1.Request.AuxData.Types.JWT();
         }
-        
-        public static AuxData NewInstance() {
-            return new AuxData();
-        }
-        
+
         public static AuxData WithJwt(string token) {
-            AuxData auxData = NewInstance();
+            AuxData auxData = new AuxData();
             auxData.A.Jwt.Token = token;
             return auxData;
         }
         
         public static AuxData WithJwt(string token, string keySetId) {
-            AuxData auxData = NewInstance();
+            AuxData auxData = new AuxData();
             auxData.A.Jwt.Token = token;
             auxData.A.Jwt.KeySetId = keySetId;
             return auxData;
