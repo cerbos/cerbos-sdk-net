@@ -15,6 +15,8 @@ namespace Cerbos.Sdk.UnitTests
         private const int GrpcPort = 3593;
         private const string Image = "ghcr.io/cerbos/cerbos";
         private const string Tag = "latest";
+        private const string PathToPolicies = "./../../../res/policies";
+        private const string PathToConfig = "./../../../res/config";
         private TestcontainersContainer Container;
         
         private CerbosBlockingClient _client;
@@ -28,8 +30,8 @@ namespace Cerbos.Sdk.UnitTests
                 .WithImage($"{Image}:{Tag}")
                 .WithPortBinding(HttpPort)
                 .WithPortBinding(GrpcPort)
-                .WithMount("./res/policies", "/policies")
-                .WithMount("./res/config", "/config")
+                .WithMount(PathToPolicies, "/policies")
+                .WithMount(PathToConfig, "/config")
                 .WithCommand("server", "--config=/config/config.yaml")
                 .Build();
 

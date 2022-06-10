@@ -1,6 +1,4 @@
-#tool nuget:?package=NUnit.ConsoleRunner&version=3.15.0
-
-string target = Argument("target", "UnitTests");
+string target = Argument("target", "Build");
 
 Task("Fetch")
     .Does(() =>
@@ -27,19 +25,18 @@ Task("Build")
     .IsDependentOn("Generate")
     .Does(() =>
 {
-    var paths = new string[] { "./src/Sdk", "./src/Sdk.UnitTests" }; 
-
-    foreach (var path in paths) {
-        DotNetRestore(path);
-        DotNetBuild(path, new DotNetBuildSettings { Configuration = "Release" });
-    }
+    var path = "./src/Sdk";
+    DotNetRestore("./src/Sdk");
+    DotNetBuild(path, new DotNetBuildSettings { Configuration = "Release" });
 });
 
 Task("UnitTests")
-    .IsDependentOn("Build")
     .Does(() => 
 {
-    NUnit3("src/Sdk.UnitTests/bin/Release/net6.0/Cerbos.Sdk.UnitTests.dll", new NUnit3Settings { NoResults = true });
+    var path = "./src/Sdk.UnitTests"; 
+    DotNetRestore(path);
+    DotNetBuild(path, new DotNetBuildSettings { Configuration = "Release" });
+    DotNetTest(path + "/Sdk.UnitTests.csproj", new DotNetTestSettings { Configuration = "Release" });
 });
 
 Task("Pack")

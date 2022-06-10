@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main
+      - 'v*'
+
+jobs:
+  build-and-check-changes:
+    name: Build and check uncommitted changes
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Buf
+        uses: bufbuild/buf-setup-action@v1.5.0
+          
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run the build script
+        uses: cake-build/cake-action@v1
+        with:
+          cake-bootstrap: true
+          target: Build
+
+      - name: Check repo status
+        run: |-
+          REPO_STATUS="$(git status --porcelain)"
+          if [[ ! -z $REPO_STATUS ]]; then
+            echo "::error::Uncommitted changes detected"
+            echo "$REPO_STATUS"
+            exit 1
+          fi
+
+  tests:
+    name: Run unit tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Buf
+        uses: bufbuild/buf-setup-action@v1.5.0
+          
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run the test script
+        uses: cake-build/cake-action@v1
+        with:
+          cake-bootstrap: true
+          target: UnitTests
