@@ -18,8 +18,4 @@
     <ItemGroup>
       <ProjectReference Include="..\Sdk\sdk.csproj" />
     </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="res" />
-    </ItemGroup>
 </Project>
