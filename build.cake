@@ -48,7 +48,7 @@ Task("Pack")
 {
     var path = "./src/Sdk";
     DotNetRestore(path);
-    DotNetPack(path);
+    DotNetPack(path, new DotNetPackSettings() { Configuration = "Release" });
 });
 
 RunTarget(target);

@@ -19,6 +19,7 @@ bld/
 *.nuget.targets
 *.user
 *.log
+nuget.config
 
 tools/
 
