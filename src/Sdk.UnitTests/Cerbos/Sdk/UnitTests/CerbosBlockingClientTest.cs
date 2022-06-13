@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0
 
 using Cerbos.Sdk.Builders;
-using DotNet.Testcontainers.Containers.Builders;
-using DotNet.Testcontainers.Containers.Modules;
+using DotNet.Testcontainers.Builders;
+using DotNet.Testcontainers.Containers;
 using NUnit.Framework;
 using AuxData = Cerbos.Sdk.Builders.AuxData;
 
@@ -30,8 +30,8 @@ namespace Cerbos.Sdk.UnitTests
                 .WithImage($"{Image}:{Tag}")
                 .WithPortBinding(HttpPort)
                 .WithPortBinding(GrpcPort)
-                .WithMount(PathToPolicies, "/policies")
-                .WithMount(PathToConfig, "/config")
+                .WithBindMount(Path.GetFullPath(PathToPolicies), "/policies")
+                .WithBindMount(Path.GetFullPath(PathToConfig), "/config")
                 .WithCommand("server", "--config=/config/config.yaml")
                 .Build();
 
