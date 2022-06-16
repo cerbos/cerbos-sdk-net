@@ -7,6 +7,13 @@ using Google.Protobuf.Collections;
 
 namespace Cerbos.Sdk
 {
+    /// <summary>
+    /// CheckResult provides an interface to see whether some actions are allowed on a resource.
+    /// </summary>
+    /// <remarks>
+    /// <see cref="Cerbos.Sdk.CheckResult"/> only covers the results where only a single resource with one or more actions exists.
+    /// Please see <see cref="Cerbos.Sdk.CheckResourcesResult"/> for multiple resources and one or more actions.
+    /// </remarks>
     public class CheckResult
     {
         private readonly Dictionary<string, Effect> _effects;
@@ -25,6 +32,9 @@ namespace Cerbos.Sdk
             _effects = effects;
         }
 
+        /// <summary>
+        /// IsAllowed returns whether the given <paramref name="action"/> is allowed or denied.
+        /// </summary>
         public bool IsAllowed(string action)
         {
             return _effects[action].Equals(Effect.Allow);
