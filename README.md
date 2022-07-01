@@ -9,7 +9,7 @@ Find out more about Cerbos at https://cerbos.dev and read the documentation at h
 Installation
 -------------
 
-- Add `Cerbos.Sdk` NuGet package as dependency to the project. See [here](https://github.com/orgs/cerbos/packages?repo_name=cerbos-sdk-net) for the published packages.
+- Add `Cerbos.Sdk` NuGet package as dependency to the project. See [here](https://www.nuget.org/packages/Cerbos.Sdk) for the published packages.
 
 Examples
 --------
