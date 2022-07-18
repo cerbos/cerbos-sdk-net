@@ -78,21 +78,19 @@ namespace Cerbos.Api.V1.Telemetry {
             "OgI4ARoeCgZTY2hlbWESFAoFY291bnQYASABKA1SBWNvdW50IoABCgpTZXJ2",
             "ZXJTdG9wEhgKB3ZlcnNpb24YASABKAlSB3ZlcnNpb24SMQoGdXB0aW1lGAIg",
             "ASgLMhkuZ29vZ2xlLnByb3RvYnVmLkR1cmF0aW9uUgZ1cHRpbWUSJQoOcmVx",
-            "dWVzdHNfdG90YWwYAyABKARSDXJlcXVlc3RzVG90YWwi7QMKBUV2ZW50EksK",
+            "dWVzdHNfdG90YWwYAyABKARSDXJlcXVlc3RzVG90YWwi/gIKBUV2ZW50EksK",
             "DGFwaV9hY3Rpdml0eRgBIAEoCzImLmNlcmJvcy50ZWxlbWV0cnkudjEuRXZl",
-            "bnQuQXBpQWN0aXZpdHlIAFILYXBpQWN0aXZpdHkajgMKC0FwaUFjdGl2aXR5",
-            "EhgKB3ZlcnNpb24YASABKAlSB3ZlcnNpb24SMQoGdXB0aW1lGAIgASgLMhku",
-            "Z29vZ2xlLnByb3RvYnVmLkR1cmF0aW9uUgZ1cHRpbWUSWgoMbWV0aG9kX2Nh",
-            "bGxzGAMgAygLMjcuY2VyYm9zLnRlbGVtZXRyeS52MS5FdmVudC5BcGlBY3Rp",
-            "dml0eS5NZXRob2RDYWxsc0VudHJ5UgttZXRob2RDYWxscxJXCgt1c2VyX2Fn",
-            "ZW50cxgEIAMoCzI2LmNlcmJvcy50ZWxlbWV0cnkudjEuRXZlbnQuQXBpQWN0",
-            "aXZpdHkuVXNlckFnZW50c0VudHJ5Ugp1c2VyQWdlbnRzGj4KEE1ldGhvZENh",
-            "bGxzRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSFAoFdmFsdWUYAiABKARSBXZh",
-            "bHVlOgI4ARo9Cg9Vc2VyQWdlbnRzRW50cnkSEAoDa2V5GAEgASgJUgNrZXkS",
-            "FAoFdmFsdWUYAiABKARSBXZhbHVlOgI4AUIGCgRkYXRhQnsKG2Rldi5jZXJi",
-            "b3MuYXBpLnYxLnRlbGVtZXRyeVpCZ2l0aHViLmNvbS9jZXJib3MvY2VyYm9z",
-            "L2FwaS9nZW5wYi9jZXJib3MvdGVsZW1ldHJ5L3YxO3RlbGVtZXRyeXYxqgIX",
-            "Q2VyYm9zLkFwaS5WMS5UZWxlbWV0cnliBnByb3RvMw=="));
+            "bnQuQXBpQWN0aXZpdHlIAFILYXBpQWN0aXZpdHkaMwoJQ291bnRTdGF0EhAK",
+            "A2tleRgBIAEoCVIDa2V5EhQKBWNvdW50GAIgASgEUgVjb3VudBrqAQoLQXBp",
+            "QWN0aXZpdHkSGAoHdmVyc2lvbhgBIAEoCVIHdmVyc2lvbhIxCgZ1cHRpbWUY",
+            "AiABKAsyGS5nb29nbGUucHJvdG9idWYuRHVyYXRpb25SBnVwdGltZRJHCgxt",
+            "ZXRob2RfY2FsbHMYAyADKAsyJC5jZXJib3MudGVsZW1ldHJ5LnYxLkV2ZW50",
+            "LkNvdW50U3RhdFILbWV0aG9kQ2FsbHMSRQoLdXNlcl9hZ2VudHMYBCADKAsy",
+            "JC5jZXJib3MudGVsZW1ldHJ5LnYxLkV2ZW50LkNvdW50U3RhdFIKdXNlckFn",
+            "ZW50c0IGCgRkYXRhQnsKG2Rldi5jZXJib3MuYXBpLnYxLnRlbGVtZXRyeVpC",
+            "Z2l0aHViLmNvbS9jZXJib3MvY2VyYm9zL2FwaS9nZW5wYi9jZXJib3MvdGVs",
+            "ZW1ldHJ5L3YxO3RlbGVtZXRyeXYxqgIXQ2VyYm9zLkFwaS5WMS5UZWxlbWV0",
+            "cnliBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -107,7 +105,8 @@ namespace Cerbos.Api.V1.Telemetry {
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Telemetry.ServerLaunch.Types.Stats), global::Cerbos.Api.V1.Telemetry.ServerLaunch.Types.Stats.Parser, new[]{ "Policy", "Schema" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Telemetry.ServerLaunch.Types.Stats.Types.Policy), global::Cerbos.Api.V1.Telemetry.ServerLaunch.Types.Stats.Types.Policy.Parser, new[]{ "Count", "AvgRuleCount", "AvgConditionCount" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Telemetry.ServerLaunch.Types.Stats.Types.Schema), global::Cerbos.Api.V1.Telemetry.ServerLaunch.Types.Stats.Types.Schema.Parser, new[]{ "Count" }, null, null, null, null)})}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Telemetry.ServerStop), global::Cerbos.Api.V1.Telemetry.ServerStop.Parser, new[]{ "Version", "Uptime", "RequestsTotal" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Telemetry.Event), global::Cerbos.Api.V1.Telemetry.Event.Parser, new[]{ "ApiActivity" }, new[]{ "Data" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Telemetry.Event.Types.ApiActivity), global::Cerbos.Api.V1.Telemetry.Event.Types.ApiActivity.Parser, new[]{ "Version", "Uptime", "MethodCalls", "UserAgents" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })})
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Telemetry.Event), global::Cerbos.Api.V1.Telemetry.Event.Parser, new[]{ "ApiActivity" }, new[]{ "Data" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Telemetry.Event.Types.CountStat), global::Cerbos.Api.V1.Telemetry.Event.Types.CountStat.Parser, new[]{ "Key", "Count" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Telemetry.Event.Types.ApiActivity), global::Cerbos.Api.V1.Telemetry.Event.Types.ApiActivity.Parser, new[]{ "Version", "Uptime", "MethodCalls", "UserAgents" }, null, null, null, null)})
           }));
     }
     #endregion
@@ -4300,6 +4299,232 @@ namespace Cerbos.Api.V1.Telemetry {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
+      public sealed partial class CountStat : pb::IMessage<CountStat>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
+        private static readonly pb::MessageParser<CountStat> _parser = new pb::MessageParser<CountStat>(() => new CountStat());
+        private pb::UnknownFieldSet _unknownFields;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pb::MessageParser<CountStat> Parser { get { return _parser; } }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pbr::MessageDescriptor Descriptor {
+          get { return global::Cerbos.Api.V1.Telemetry.Event.Descriptor.NestedTypes[0]; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        pbr::MessageDescriptor pb::IMessage.Descriptor {
+          get { return Descriptor; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public CountStat() {
+          OnConstruction();
+        }
+
+        partial void OnConstruction();
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public CountStat(CountStat other) : this() {
+          key_ = other.key_;
+          count_ = other.count_;
+          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public CountStat Clone() {
+          return new CountStat(this);
+        }
+
+        /// <summary>Field number for the "key" field.</summary>
+        public const int KeyFieldNumber = 1;
+        private string key_ = "";
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public string Key {
+          get { return key_; }
+          set {
+            key_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        /// <summary>Field number for the "count" field.</summary>
+        public const int CountFieldNumber = 2;
+        private ulong count_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public ulong Count {
+          get { return count_; }
+          set {
+            count_ = value;
+          }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override bool Equals(object other) {
+          return Equals(other as CountStat);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool Equals(CountStat other) {
+          if (ReferenceEquals(other, null)) {
+            return false;
+          }
+          if (ReferenceEquals(other, this)) {
+            return true;
+          }
+          if (Key != other.Key) return false;
+          if (Count != other.Count) return false;
+          return Equals(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override int GetHashCode() {
+          int hash = 1;
+          if (Key.Length != 0) hash ^= Key.GetHashCode();
+          if (Count != 0UL) hash ^= Count.GetHashCode();
+          if (_unknownFields != null) {
+            hash ^= _unknownFields.GetHashCode();
+          }
+          return hash;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override string ToString() {
+          return pb::JsonFormatter.ToDiagnosticString(this);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
+          if (Key.Length != 0) {
+            output.WriteRawTag(10);
+            output.WriteString(Key);
+          }
+          if (Count != 0UL) {
+            output.WriteRawTag(16);
+            output.WriteUInt64(Count);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(output);
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (Key.Length != 0) {
+            output.WriteRawTag(10);
+            output.WriteString(Key);
+          }
+          if (Count != 0UL) {
+            output.WriteRawTag(16);
+            output.WriteUInt64(Count);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public int CalculateSize() {
+          int size = 0;
+          if (Key.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(Key);
+          }
+          if (Count != 0UL) {
+            size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Count);
+          }
+          if (_unknownFields != null) {
+            size += _unknownFields.CalculateSize();
+          }
+          return size;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(CountStat other) {
+          if (other == null) {
+            return;
+          }
+          if (other.Key.Length != 0) {
+            Key = other.Key;
+          }
+          if (other.Count != 0UL) {
+            Count = other.Count;
+          }
+          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+                break;
+              case 10: {
+                Key = input.ReadString();
+                break;
+              }
+              case 16: {
+                Count = input.ReadUInt64();
+                break;
+              }
+            }
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 10: {
+                Key = input.ReadString();
+                break;
+              }
+              case 16: {
+                Count = input.ReadUInt64();
+                break;
+              }
+            }
+          }
+        }
+        #endif
+
+      }
+
       public sealed partial class ApiActivity : pb::IMessage<ApiActivity>
       #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           , pb::IBufferMessage
@@ -4314,7 +4539,7 @@ namespace Cerbos.Api.V1.Telemetry {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Cerbos.Api.V1.Telemetry.Event.Descriptor.NestedTypes[0]; }
+          get { return global::Cerbos.Api.V1.Telemetry.Event.Descriptor.NestedTypes[1]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4373,23 +4598,23 @@ namespace Cerbos.Api.V1.Telemetry {
 
         /// <summary>Field number for the "method_calls" field.</summary>
         public const int MethodCallsFieldNumber = 3;
-        private static readonly pbc::MapField<string, ulong>.Codec _map_methodCalls_codec
-            = new pbc::MapField<string, ulong>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForUInt64(16, 0UL), 26);
-        private readonly pbc::MapField<string, ulong> methodCalls_ = new pbc::MapField<string, ulong>();
+        private static readonly pb::FieldCodec<global::Cerbos.Api.V1.Telemetry.Event.Types.CountStat> _repeated_methodCalls_codec
+            = pb::FieldCodec.ForMessage(26, global::Cerbos.Api.V1.Telemetry.Event.Types.CountStat.Parser);
+        private readonly pbc::RepeatedField<global::Cerbos.Api.V1.Telemetry.Event.Types.CountStat> methodCalls_ = new pbc::RepeatedField<global::Cerbos.Api.V1.Telemetry.Event.Types.CountStat>();
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public pbc::MapField<string, ulong> MethodCalls {
+        public pbc::RepeatedField<global::Cerbos.Api.V1.Telemetry.Event.Types.CountStat> MethodCalls {
           get { return methodCalls_; }
         }
 
         /// <summary>Field number for the "user_agents" field.</summary>
         public const int UserAgentsFieldNumber = 4;
-        private static readonly pbc::MapField<string, ulong>.Codec _map_userAgents_codec
-            = new pbc::MapField<string, ulong>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForUInt64(16, 0UL), 34);
-        private readonly pbc::MapField<string, ulong> userAgents_ = new pbc::MapField<string, ulong>();
+        private static readonly pb::FieldCodec<global::Cerbos.Api.V1.Telemetry.Event.Types.CountStat> _repeated_userAgents_codec
+            = pb::FieldCodec.ForMessage(34, global::Cerbos.Api.V1.Telemetry.Event.Types.CountStat.Parser);
+        private readonly pbc::RepeatedField<global::Cerbos.Api.V1.Telemetry.Event.Types.CountStat> userAgents_ = new pbc::RepeatedField<global::Cerbos.Api.V1.Telemetry.Event.Types.CountStat>();
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public pbc::MapField<string, ulong> UserAgents {
+        public pbc::RepeatedField<global::Cerbos.Api.V1.Telemetry.Event.Types.CountStat> UserAgents {
           get { return userAgents_; }
         }
 
@@ -4410,8 +4635,8 @@ namespace Cerbos.Api.V1.Telemetry {
           }
           if (Version != other.Version) return false;
           if (!object.Equals(Uptime, other.Uptime)) return false;
-          if (!MethodCalls.Equals(other.MethodCalls)) return false;
-          if (!UserAgents.Equals(other.UserAgents)) return false;
+          if(!methodCalls_.Equals(other.methodCalls_)) return false;
+          if(!userAgents_.Equals(other.userAgents_)) return false;
           return Equals(_unknownFields, other._unknownFields);
         }
 
@@ -4421,8 +4646,8 @@ namespace Cerbos.Api.V1.Telemetry {
           int hash = 1;
           if (Version.Length != 0) hash ^= Version.GetHashCode();
           if (uptime_ != null) hash ^= Uptime.GetHashCode();
-          hash ^= MethodCalls.GetHashCode();
-          hash ^= UserAgents.GetHashCode();
+          hash ^= methodCalls_.GetHashCode();
+          hash ^= userAgents_.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -4449,8 +4674,8 @@ namespace Cerbos.Api.V1.Telemetry {
             output.WriteRawTag(18);
             output.WriteMessage(Uptime);
           }
-          methodCalls_.WriteTo(output, _map_methodCalls_codec);
-          userAgents_.WriteTo(output, _map_userAgents_codec);
+          methodCalls_.WriteTo(output, _repeated_methodCalls_codec);
+          userAgents_.WriteTo(output, _repeated_userAgents_codec);
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
@@ -4469,8 +4694,8 @@ namespace Cerbos.Api.V1.Telemetry {
             output.WriteRawTag(18);
             output.WriteMessage(Uptime);
           }
-          methodCalls_.WriteTo(ref output, _map_methodCalls_codec);
-          userAgents_.WriteTo(ref output, _map_userAgents_codec);
+          methodCalls_.WriteTo(ref output, _repeated_methodCalls_codec);
+          userAgents_.WriteTo(ref output, _repeated_userAgents_codec);
           if (_unknownFields != null) {
             _unknownFields.WriteTo(ref output);
           }
@@ -4487,8 +4712,8 @@ namespace Cerbos.Api.V1.Telemetry {
           if (uptime_ != null) {
             size += 1 + pb::CodedOutputStream.ComputeMessageSize(Uptime);
           }
-          size += methodCalls_.CalculateSize(_map_methodCalls_codec);
-          size += userAgents_.CalculateSize(_map_userAgents_codec);
+          size += methodCalls_.CalculateSize(_repeated_methodCalls_codec);
+          size += userAgents_.CalculateSize(_repeated_userAgents_codec);
           if (_unknownFields != null) {
             size += _unknownFields.CalculateSize();
           }
@@ -4539,11 +4764,11 @@ namespace Cerbos.Api.V1.Telemetry {
                 break;
               }
               case 26: {
-                methodCalls_.AddEntriesFrom(input, _map_methodCalls_codec);
+                methodCalls_.AddEntriesFrom(input, _repeated_methodCalls_codec);
                 break;
               }
               case 34: {
-                userAgents_.AddEntriesFrom(input, _map_userAgents_codec);
+                userAgents_.AddEntriesFrom(input, _repeated_userAgents_codec);
                 break;
               }
             }
@@ -4573,11 +4798,11 @@ namespace Cerbos.Api.V1.Telemetry {
                 break;
               }
               case 26: {
-                methodCalls_.AddEntriesFrom(ref input, _map_methodCalls_codec);
+                methodCalls_.AddEntriesFrom(ref input, _repeated_methodCalls_codec);
                 break;
               }
               case 34: {
-                userAgents_.AddEntriesFrom(ref input, _map_userAgents_codec);
+                userAgents_.AddEntriesFrom(ref input, _repeated_userAgents_codec);
                 break;
               }
             }
