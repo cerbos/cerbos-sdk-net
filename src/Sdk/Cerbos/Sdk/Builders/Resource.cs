@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 using System.Collections.Generic;
+using Cerbos.Api.V1.Engine;
 
 namespace Cerbos.Sdk.Builders
 {
@@ -45,6 +46,24 @@ namespace Cerbos.Sdk.Builders
 
         public Cerbos.Api.V1.Engine.Resource ToResource() {
             return R;
+        }
+
+        public PlanResourcesInput.Types.Resource ToPlanResource()
+        {
+            var resource = ToResource();
+            var planResource = new PlanResourcesInput.Types.Resource
+            {
+                Kind = resource.Kind,
+                PolicyVersion = resource.PolicyVersion,
+                Scope = resource.Scope,
+            };
+
+            foreach (var kvp in resource.Attr)
+            {
+                planResource.Attr.Add(kvp.Key, kvp.Value);
+            }
+            
+            return planResource;
         }
     }
 }
