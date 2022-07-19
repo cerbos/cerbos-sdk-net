@@ -1,3 +1,6 @@
+[![NuGeT](https://img.shields.io/nuget/v/Cerbos.Sdk?style=plastic)](https://www.nuget.org/packages/Cerbos.Sdk)
+[![NuGeT Downloads](https://img.shields.io/nuget/dt/Cerbos.Sdk?style=plastic)](https://www.nuget.org/packages/Cerbos.Sdk)
+
 Cerbos .NET SDK
 ===============
 
