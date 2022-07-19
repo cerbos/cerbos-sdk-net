@@ -92,3 +92,30 @@ if(resultXX325.IsAllowed("view:public")){ // returns true if `view:public` actio
     // ...
 }
 ```
+
+### Plan Resources API
+
+```csharp
+PlanResourcesResult result = client.
+    .PlanResources(
+        Principal.NewInstance("maggie","manager")
+        .WithAttribute("department", AttributeValue.StringValue("marketing"))
+        .WithAttribute("geography", AttributeValue.StringValue("GB"))
+        .WithAttribute("team", AttributeValue.StringValue("design")),
+        
+        Resource.NewInstance("leave_request")
+        .WithPolicyVersion("20210210"),
+        
+        "approve"
+    );
+
+if(result.IsAlwaysAllowed()) {
+    // ...
+}
+else if (result.IsAlwaysDenied()) {
+    // ...
+}
+else {
+    // ...
+}
+```
