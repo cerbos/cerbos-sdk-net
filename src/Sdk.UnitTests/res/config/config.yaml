@@ -13,6 +13,9 @@ auxData:
 engine:
   defaultPolicyVersion: "default"
 
+schema:
+  enforcement: reject
+
 storage:
   driver: "disk"
   disk:
