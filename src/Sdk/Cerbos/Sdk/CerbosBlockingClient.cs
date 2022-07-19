@@ -129,5 +129,43 @@ namespace Cerbos.Sdk
         {
             return CheckResources(RequestId.Generate(), principal, resource, actions);
         }
+        
+        /// <summary>
+        /// Obtain a query plan for performing the given action on the given resource kind.
+        /// </summary>
+        public PlanResourcesResult PlanResources(PlanResourcesRequest request)
+        {
+            PlanResourcesResponse response;
+            try
+            {
+                request.AuxData = _auxData?.ToAuxData();
+                response = _csc.PlanResources(request);
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Failed to plan resources: ${e}");
+            }
+
+            return new PlanResourcesResult(response);
+        }
+        
+        public PlanResourcesResult PlanResources(string requestId, Principal principal, Resource resource, string action)
+        {
+            var request = new PlanResourcesRequest
+            {
+                RequestId = requestId,
+                Action = action,
+                IncludeMeta = false,
+                Principal = principal.ToPrincipal(),
+                Resource = resource.ToPlanResource(),
+            };
+            
+            return PlanResources(request);
+        }
+        
+        public PlanResourcesResult PlanResources(Principal principal, Resource resource, string action)
+        {
+            return PlanResources(RequestId.Generate(), principal, resource, action);
+        }
     }
 }

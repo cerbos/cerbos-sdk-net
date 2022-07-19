@@ -1,11 +1,14 @@
 // Copyright 2021-2022 Zenauth Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
+using Cerbos.Api.V1.Engine;
 using Cerbos.Sdk.Builders;
 using DotNet.Testcontainers.Builders;
 using DotNet.Testcontainers.Containers;
 using NUnit.Framework;
 using AuxData = Cerbos.Sdk.Builders.AuxData;
+using Principal = Cerbos.Sdk.Builders.Principal;
+using Resource = Cerbos.Sdk.Builders.Resource;
 
 namespace Cerbos.Sdk.UnitTests
 {
@@ -139,6 +142,74 @@ namespace Cerbos.Sdk.UnitTests
             var resourcexx325 = have.Find("XX325");
             Assert.That(resourcexx325.IsAllowed("view:public"), Is.True);
             Assert.That(resourcexx325.IsAllowed("approve"), Is.False);
+        }
+
+        [Test]
+        public void PlanResources()
+        {
+            PlanResourcesResult have = _client.PlanResources
+            (
+                Principal.NewInstance("maggie", "manager")
+                    .WithPolicyVersion("20210210")
+                    .WithAttribute("department", AttributeValue.StringValue("marketing"))
+                    .WithAttribute("geography", AttributeValue.StringValue("GB"))
+                    .WithAttribute("managed_geographies", AttributeValue.StringValue("GB"))
+                    .WithAttribute("team", AttributeValue.StringValue("design")),
+                
+                Resource.NewInstance("leave_request")
+                    .WithPolicyVersion("20210210"), 
+                
+                "approve"
+            );
+            
+            Assert.That(have.GetAction(), Is.EqualTo("approve"));
+            Assert.That(have.GetPolicyVersion(), Is.EqualTo("20210210"));
+            Assert.That(have.GetResourceKind(), Is.EqualTo("leave_request"));
+            Assert.That(have.HasValidationErrors(), Is.False);
+            Assert.That(have.IsAlwaysAllowed(), Is.False);
+            Assert.That(have.IsAlwaysDenied(), Is.False);
+            Assert.That(have.IsConditional(), Is.True);
+
+            PlanResourcesFilter.Types.Expression.Types.Operand cond = have.GetCondition();
+            PlanResourcesFilter.Types.Expression expr = cond.Expression;
+            
+            Assert.NotNull(expr);
+            Assert.That(expr.Operator, Is.EqualTo("and"));
+
+            PlanResourcesFilter.Types.Expression argExpr = expr.Operands[0].Expression;
+            Assert.NotNull(argExpr);
+            Assert.That(argExpr.Operator, Is.EqualTo("eq"));
+        }
+        
+        [Test]
+        public void PlanResourcesValidation()
+        {
+            PlanResourcesResult have = _client.PlanResources
+            (
+                Principal.NewInstance("maggie", "manager")
+                    .WithPolicyVersion("20210210")
+                    .WithAttribute("department", AttributeValue.StringValue("accounting"))
+                    .WithAttribute("geography", AttributeValue.StringValue("GB"))
+                    .WithAttribute("managed_geographies", AttributeValue.StringValue("GB"))
+                    .WithAttribute("team", AttributeValue.StringValue("design")),
+                
+                Resource.NewInstance("leave_request")
+                    .WithPolicyVersion("20210210")
+                    .WithAttribute("department", AttributeValue.StringValue("accounting")), 
+                
+                "approve"
+            );
+            
+            Assert.That(have.GetAction(), Is.EqualTo("approve"));
+            Assert.That(have.GetPolicyVersion(), Is.EqualTo("20210210"));
+            Assert.That(have.GetResourceKind(), Is.EqualTo("leave_request"));
+            
+            Assert.That(have.HasValidationErrors(), Is.True);
+            Assert.That(have.GetValidationErrors().Count(), Is.EqualTo(2));
+            
+            Assert.That(have.IsAlwaysDenied(), Is.True);
+            Assert.That(have.IsAlwaysAllowed(), Is.False);
+            Assert.That(have.IsConditional(), Is.False);
         }
     }
 }
