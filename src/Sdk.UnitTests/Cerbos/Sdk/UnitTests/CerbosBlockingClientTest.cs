@@ -57,13 +57,17 @@ namespace Cerbos.Sdk.UnitTests
                     .CheckResources(
                         Principal.NewInstance("john","employee")
                         .WithPolicyVersion("20210210")
+                        .WithAttribute("team", AttributeValue.StringValue("design"))
                         .WithAttribute("department", AttributeValue.StringValue("marketing"))
-                        .WithAttribute("geography", AttributeValue.StringValue("GB")),
+                        .WithAttribute("geography", AttributeValue.StringValue("GB"))
+                        .WithAttribute("reader", AttributeValue.BoolValue(false)),
                         
-                        Resource.NewInstance("leave_request", "xx125")
+                        Resource.NewInstance("leave_request", "XX125")
                             .WithPolicyVersion("20210210")
+                            .WithAttribute("id", AttributeValue.StringValue("XX125"))
                             .WithAttribute("department", AttributeValue.StringValue("marketing"))
                             .WithAttribute("geography", AttributeValue.StringValue("GB"))
+                            .WithAttribute("team", AttributeValue.StringValue("design"))
                             .WithAttribute("owner", AttributeValue.StringValue("john")),
                         
             "view:public", "approve"
@@ -82,11 +86,15 @@ namespace Cerbos.Sdk.UnitTests
                     .CheckResources(
                         Principal.NewInstance("john", "employee")
                             .WithPolicyVersion("20210210")
+                            .WithAttribute("team", AttributeValue.StringValue("design"))
                             .WithAttribute("department", AttributeValue.StringValue("marketing"))
-                            .WithAttribute("geography", AttributeValue.StringValue("GB")),
+                            .WithAttribute("geography", AttributeValue.StringValue("GB"))
+                            .WithAttribute("reader", AttributeValue.BoolValue(false)),
                         
-                        Resource.NewInstance("leave_request", "xx125")
+                        Resource.NewInstance("leave_request", "XX125")
                             .WithPolicyVersion("20210210")
+                            .WithAttribute("id", AttributeValue.StringValue("XX125"))
+                            .WithAttribute("team", AttributeValue.StringValue("design"))
                             .WithAttribute("department", AttributeValue.StringValue("marketing"))
                             .WithAttribute("geography", AttributeValue.StringValue("GB"))
                             .WithAttribute("owner", AttributeValue.StringValue("john")),
@@ -105,27 +113,35 @@ namespace Cerbos.Sdk.UnitTests
                     .CheckResources(
                         Principal.NewInstance("john", "employee")
                             .WithPolicyVersion("20210210")
+                            .WithAttribute("team", AttributeValue.StringValue("design"))
                             .WithAttribute("department", AttributeValue.StringValue("marketing"))
-                            .WithAttribute("geography", AttributeValue.StringValue("GB")),
+                            .WithAttribute("geography", AttributeValue.StringValue("GB"))
+                            .WithAttribute("reader", AttributeValue.BoolValue(false)),
                         
                         ResourceAction.NewInstance("leave_request", "XX125")
                             .WithPolicyVersion("20210210")
+                            .WithAttribute("id", AttributeValue.StringValue("XX125"))
                             .WithAttribute("department", AttributeValue.StringValue("marketing"))
                             .WithAttribute("geography", AttributeValue.StringValue("GB"))
+                            .WithAttribute("team", AttributeValue.StringValue("design"))
                             .WithAttribute("owner", AttributeValue.StringValue("john"))
                             .WithActions("view:public", "approve", "defer"),
                         
                         ResourceAction.NewInstance("leave_request", "XX225")
                             .WithPolicyVersion("20210210")
+                            .WithAttribute("id", AttributeValue.StringValue("XX225"))
                             .WithAttribute("department", AttributeValue.StringValue("marketing"))
                             .WithAttribute("geography", AttributeValue.StringValue("GB"))
+                            .WithAttribute("team", AttributeValue.StringValue("design"))
                             .WithAttribute("owner", AttributeValue.StringValue("martha"))
                             .WithActions("view:public", "approve"),
                         
                         ResourceAction.NewInstance("leave_request", "XX325")
                             .WithPolicyVersion("20210210")
+                            .WithAttribute("id", AttributeValue.StringValue("XX325"))
                             .WithAttribute("department", AttributeValue.StringValue("marketing"))
                             .WithAttribute("geography", AttributeValue.StringValue("US"))
+                            .WithAttribute("team", AttributeValue.StringValue("design"))
                             .WithAttribute("owner", AttributeValue.StringValue("peggy"))
                             .WithActions("view:public", "approve")
                     );
@@ -138,7 +154,7 @@ namespace Cerbos.Sdk.UnitTests
             var resourcexx225 = have.Find("XX225");
             Assert.That(resourcexx225.IsAllowed("view:public"), Is.True);
             Assert.That(resourcexx225.IsAllowed("approve"), Is.False);
-            
+
             var resourcexx325 = have.Find("XX325");
             Assert.That(resourcexx325.IsAllowed("view:public"), Is.True);
             Assert.That(resourcexx325.IsAllowed("approve"), Is.False);
@@ -154,7 +170,8 @@ namespace Cerbos.Sdk.UnitTests
                     .WithAttribute("department", AttributeValue.StringValue("marketing"))
                     .WithAttribute("geography", AttributeValue.StringValue("GB"))
                     .WithAttribute("managed_geographies", AttributeValue.StringValue("GB"))
-                    .WithAttribute("team", AttributeValue.StringValue("design")),
+                    .WithAttribute("team", AttributeValue.StringValue("design"))
+                    .WithAttribute("reader", AttributeValue.BoolValue(false)),
                 
                 Resource.NewInstance("leave_request")
                     .WithPolicyVersion("20210210"), 
@@ -178,7 +195,11 @@ namespace Cerbos.Sdk.UnitTests
 
             PlanResourcesFilter.Types.Expression argExpr = expr.Operands[0].Expression;
             Assert.NotNull(argExpr);
-            Assert.That(argExpr.Operator, Is.EqualTo("eq"));
+            Assert.That(argExpr.Operator, Is.EqualTo("and"));
+            
+            PlanResourcesFilter.Types.Expression argExpr1 = expr.Operands[1].Expression;
+            Assert.NotNull(argExpr1);
+            Assert.That(argExpr1.Operator, Is.EqualTo("eq"));
         }
         
         [Test]
@@ -191,7 +212,8 @@ namespace Cerbos.Sdk.UnitTests
                     .WithAttribute("department", AttributeValue.StringValue("accounting"))
                     .WithAttribute("geography", AttributeValue.StringValue("GB"))
                     .WithAttribute("managed_geographies", AttributeValue.StringValue("GB"))
-                    .WithAttribute("team", AttributeValue.StringValue("design")),
+                    .WithAttribute("team", AttributeValue.StringValue("design"))
+                    .WithAttribute("reader", AttributeValue.BoolValue(false)),
                 
                 Resource.NewInstance("leave_request")
                     .WithPolicyVersion("20210210")
@@ -204,12 +226,11 @@ namespace Cerbos.Sdk.UnitTests
             Assert.That(have.GetPolicyVersion(), Is.EqualTo("20210210"));
             Assert.That(have.GetResourceKind(), Is.EqualTo("leave_request"));
             
-            Assert.That(have.HasValidationErrors(), Is.True);
-            Assert.That(have.GetValidationErrors().Count(), Is.EqualTo(2));
+            Assert.That(have.HasValidationErrors(), Is.False);
             
-            Assert.That(have.IsAlwaysDenied(), Is.True);
+            Assert.That(have.IsAlwaysDenied(), Is.False);
             Assert.That(have.IsAlwaysAllowed(), Is.False);
-            Assert.That(have.IsConditional(), Is.False);
+            Assert.That(have.IsConditional(), Is.True);
         }
     }
 }
