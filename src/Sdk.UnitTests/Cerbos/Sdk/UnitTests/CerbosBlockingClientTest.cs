@@ -195,7 +195,7 @@ namespace Cerbos.Sdk.UnitTests
 
             PlanResourcesFilter.Types.Expression argExpr = expr.Operands[0].Expression;
             Assert.NotNull(argExpr);
-            Assert.That(argExpr.Operator, Is.EqualTo("and"));
+            Assert.That(argExpr.Operator, Is.EqualTo("eq"));
             
             PlanResourcesFilter.Types.Expression argExpr1 = expr.Operands[1].Expression;
             Assert.NotNull(argExpr1);
@@ -226,11 +226,12 @@ namespace Cerbos.Sdk.UnitTests
             Assert.That(have.GetPolicyVersion(), Is.EqualTo("20210210"));
             Assert.That(have.GetResourceKind(), Is.EqualTo("leave_request"));
             
-            Assert.That(have.HasValidationErrors(), Is.False);
+            Assert.That(have.HasValidationErrors(), Is.True);
+            Assert.That(have.GetValidationErrors().Count(), Is.EqualTo(2));
             
-            Assert.That(have.IsAlwaysDenied(), Is.False);
+            Assert.That(have.IsAlwaysDenied(), Is.True);
             Assert.That(have.IsAlwaysAllowed(), Is.False);
-            Assert.That(have.IsConditional(), Is.True);
+            Assert.That(have.IsConditional(), Is.False);
         }
     }
 }
