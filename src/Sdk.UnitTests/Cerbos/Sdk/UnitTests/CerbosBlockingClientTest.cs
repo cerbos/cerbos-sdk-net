@@ -163,7 +163,7 @@ namespace Cerbos.Sdk.UnitTests
         [Test]
         public void PlanResources()
         {
-            PlanResourcesResult have = _client.PlanResources
+            PlanResourcesResult have = _client.With(AuxData.WithJwt(_jwt)).PlanResources
             (
                 Principal.NewInstance("maggie", "manager")
                     .WithPolicyVersion("20210210")
@@ -205,7 +205,7 @@ namespace Cerbos.Sdk.UnitTests
         [Test]
         public void PlanResourcesValidation()
         {
-            PlanResourcesResult have = _client.PlanResources
+            PlanResourcesResult have = _client.With(AuxData.WithJwt(_jwt)).PlanResources
             (
                 Principal.NewInstance("maggie", "manager")
                     .WithPolicyVersion("20210210")
