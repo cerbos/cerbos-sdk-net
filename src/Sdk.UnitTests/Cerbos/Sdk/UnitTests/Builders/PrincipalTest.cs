@@ -12,6 +12,12 @@ public class PrincipalTest
     private readonly AttributeValue _stringAttr = AttributeValue.StringValue("GB"); 
     private readonly AttributeValue _nullAttr = AttributeValue.NullValue(); 
     private readonly AttributeValue _doubleAttr = AttributeValue.DoubleValue(1.32);
+    private readonly AttributeValue _listAttr = AttributeValue.ListValue(new AttributeValue[2]{AttributeValue.BoolValue(true), AttributeValue.StringValue("GB")});
+    private readonly AttributeValue _mapAttr = AttributeValue.MapValue(new Dictionary<string, AttributeValue>()
+    {
+        {"boolAttr", AttributeValue.BoolValue(true)},
+        {"stringAttr", AttributeValue.StringValue("GB")}
+    });
     private readonly string[] _roles = new[] { "employee", "manager", "admin" };
     
     [Test]
@@ -26,6 +32,8 @@ public class PrincipalTest
                     {"stringAttr", _stringAttr},
                     {"nullAttr", _nullAttr},
                     {"doubleAttr", _doubleAttr},
+                    {"listAttr", _listAttr},
+                    {"mapAttr", _mapAttr}
                 }
             )
             .WithRoles(_roles[2])
@@ -38,7 +46,8 @@ public class PrincipalTest
         Assert.That(principal.Attr["stringAttr"], Is.EqualTo(_stringAttr.ToValue()));
         Assert.That(principal.Attr["boolAttr"], Is.EqualTo(_boolAttr.ToValue()));
         Assert.That(principal.Attr["nullAttr"], Is.EqualTo(_nullAttr.ToValue()));
-        Assert.That(principal.Attr["doubleAttr"], Is.EqualTo(_doubleAttr.ToValue()));
+        Assert.That(principal.Attr["listAttr"], Is.EqualTo(_listAttr.ToValue()));
+        Assert.That(principal.Attr["mapAttr"], Is.EqualTo(_mapAttr.ToValue()));
 
         Assert.That(principal.Roles.Count, Is.EqualTo(_roles.Length));
         Assert.That(principal.Roles[0], Is.EqualTo(_roles[0]));

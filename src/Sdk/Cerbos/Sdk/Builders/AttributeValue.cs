@@ -1,6 +1,8 @@
 // Copyright 2021-2022 Zenauth Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
+using System.Collections.Generic;
+using Google.Protobuf.Collections;
 using Google.Protobuf.WellKnownTypes;
 
 namespace Cerbos.Sdk.Builders
@@ -31,6 +33,29 @@ namespace Cerbos.Sdk.Builders
         public static AttributeValue StringValue(string value)
         {
             return new AttributeValue(Value.ForString(value));
+        }
+
+        public static AttributeValue ListValue(params AttributeValue[] values)
+        {
+            Value[] v = new Value[values.Length];
+            for (var i = 0; i < values.Length; i++)
+            {
+                v[i] = values[i].V;
+            }
+
+            return new AttributeValue(Value.ForList(v));
+        }
+
+        public static AttributeValue MapValue(Dictionary<string, AttributeValue> dict)
+        {
+            var s = new Struct();
+            var fields = new MapField<string, Value>();
+            foreach (KeyValuePair<string, AttributeValue> kvp in dict)
+            {
+                s.Fields.Add(kvp.Key, kvp.Value.V);
+            }
+
+            return new AttributeValue(Value.ForStruct(s));
         }
 
         public Value ToValue() {
