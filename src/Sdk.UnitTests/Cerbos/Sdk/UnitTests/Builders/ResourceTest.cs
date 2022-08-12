@@ -13,6 +13,12 @@ public class ResourceTest
     private readonly AttributeValue _stringAttr = AttributeValue.StringValue("GB"); 
     private readonly AttributeValue _nullAttr = AttributeValue.NullValue(); 
     private readonly AttributeValue _doubleAttr = AttributeValue.DoubleValue(1.32);
+    private readonly AttributeValue _listAttr = AttributeValue.ListValue(new AttributeValue[2]{AttributeValue.BoolValue(true), AttributeValue.StringValue("GB")});
+    private readonly AttributeValue _mapAttr = AttributeValue.MapValue(new Dictionary<string, AttributeValue>()
+    {
+        {"boolAttr", AttributeValue.BoolValue(true)},
+        {"stringAttr", AttributeValue.StringValue("GB")}
+    });
     
     [Test]
     public void Test()
@@ -26,6 +32,8 @@ public class ResourceTest
                     {"stringAttr", _stringAttr},
                     {"nullAttr", _nullAttr},
                     {"doubleAttr", _doubleAttr},
+                    {"listAttr", _listAttr},
+                    {"mapAttr", _mapAttr}
                 }
             )
             .ToResource();
@@ -39,5 +47,7 @@ public class ResourceTest
         Assert.That(resource.Attr["boolAttr"], Is.EqualTo(_boolAttr.ToValue()));
         Assert.That(resource.Attr["nullAttr"], Is.EqualTo(_nullAttr.ToValue()));
         Assert.That(resource.Attr["doubleAttr"], Is.EqualTo(_doubleAttr.ToValue()));
+        Assert.That(resource.Attr["listAttr"], Is.EqualTo(_listAttr.ToValue()));
+        Assert.That(resource.Attr["mapAttr"], Is.EqualTo(_mapAttr.ToValue()));
     }
 }
