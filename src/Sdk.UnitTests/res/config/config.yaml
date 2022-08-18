@@ -2,6 +2,7 @@
 server:
   httpListenAddr: ":3592"
   grpcListenAddr: ":3593"
+  logRequestPayloads: true
 
 auxData:
   jwt:
@@ -21,3 +22,6 @@ storage:
   disk:
     directory: /policies
     watchForChanges: true
+
+telemetry:
+  disabled: true
