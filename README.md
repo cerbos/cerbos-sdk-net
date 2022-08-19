@@ -20,7 +20,7 @@ Examples
 ### Creating a client without TLS
 
 ```csharp
-var client = new CerbosClientBuilder("localhost:3593").WithPlaintext().BuildBlockingClient();
+var client = new CerbosClientBuilder("http://localhost:3593").WithPlaintext().BuildBlockingClient();
 ```
 
 ### Check a single principal and resource
