@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 using Cerbos.Api.V1.Engine;
+using Cerbos.Api.V1.Response;
 using Cerbos.Sdk.Builders;
 using DotNet.Testcontainers.Builders;
 using DotNet.Testcontainers.Containers;
@@ -26,6 +27,10 @@ namespace Cerbos.Sdk.UnitTests
         private readonly string _jwt =
             "eyJhbGciOiJFUzM4NCIsImtpZCI6IjE5TGZaYXRFZGc4M1lOYzVyMjNndU1KcXJuND0iLCJ0eXAiOiJKV1QifQ.eyJhdWQiOlsiY2VyYm9zLWp3dC10ZXN0cyJdLCJjdXN0b21BcnJheSI6WyJBIiwiQiIsIkMiXSwiY3VzdG9tSW50Ijo0MiwiY3VzdG9tTWFwIjp7IkEiOiJBQSIsIkIiOiJCQiIsIkMiOiJDQyJ9LCJjdXN0b21TdHJpbmciOiJmb29iYXIiLCJleHAiOjE5NTAyNzc5MjYsImlzcyI6ImNlcmJvcy10ZXN0LXN1aXRlIn0._nCHIsuFI3wczeuUv_xjSwaVnIQUdYA9sGf_jVsrsDWloLs3iPWDaA1bXpuIUJVsi8-G6qqdrPI0cOBxEocg1NCm8fyD9T_3hsZV0fYWon_Je6Kl93a3JIW3S6kbvjsL";
         
+        private CerbosBlockingClient _clientPlayground;
+        private const string PlaygroundHost = "https://demo-pdp.cerbos.cloud";
+        private const string PlaygroundInstanceId = "XhkOi82fFKk3YW60e2c806Yvm0trKEje"; // See: https://play.cerbos.dev/p/XhkOi82fFKk3YW60e2c806Yvm0trKEje
+        
         [SetUp]
         public void Setup()
         {
@@ -40,7 +45,8 @@ namespace Cerbos.Sdk.UnitTests
 
             Task.Run(async () => await Container.StartAsync()).Wait();
             Thread.Sleep(3000);
-            _client = new CerbosClientBuilder("127.0.0.1:3593").WithPlaintext().BuildBlockingClient();
+            _client = new CerbosClientBuilder("http://127.0.0.1:3593").WithPlaintext().BuildBlockingClient();
+            _clientPlayground = new CerbosClientBuilder(PlaygroundHost).WithPlaygroundInstance(PlaygroundInstanceId).BuildBlockingClient();
         }
 
         [TearDown]
@@ -232,6 +238,34 @@ namespace Cerbos.Sdk.UnitTests
             Assert.That(have.IsAlwaysDenied(), Is.True);
             Assert.That(have.IsAlwaysAllowed(), Is.False);
             Assert.That(have.IsConditional(), Is.False);
+        }
+
+        [Test]
+        public void Playground()
+        {
+            var principal = Principal.NewInstance("sajit", "ADMIN")
+                .WithAttributes(new Dictionary<string, AttributeValue>() {
+                    {"department", AttributeValue.StringValue("IT")},
+                });
+            
+            var resource = Resource.NewInstance("expense", "expense1")
+                .WithAttributes(new Dictionary<string, AttributeValue>() {
+                    {"ownerId", AttributeValue.StringValue("sally")},
+                    {"createdAt", AttributeValue.StringValue("2021-10-01T10:00:00.021-05:00")},
+                    {"vendor", AttributeValue.StringValue("Flux Water Gear")},
+                    {"region", AttributeValue.StringValue("EMEA")},
+                    {"amount", AttributeValue.DoubleValue(500)},
+                    {"status", AttributeValue.StringValue("OPEN")},
+                });
+            
+            CheckResult actual = _clientPlayground.CheckResources(
+                principal,
+                resource,
+                "approve", "delete"
+            );
+            
+            Assert.That(actual.IsAllowed("approve"), Is.True);
+            Assert.That(actual.IsAllowed("delete"), Is.True);
         }
     }
 }
