@@ -1,0 +1,31 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base",
+    "group:allNonMajor",
+    "schedule:weekly",
+    ":automergeDisabled",
+    ":combinePatchMinorReleases",
+    ":gitSignOff",
+    ":renovatePrefix",
+    ":semanticCommitTypeAll(chore)",
+    ":separateMultipleMajorReleases"
+  ],
+  "packageRules": [
+    {
+      "matchManagers": ["nuget"],
+      "groupName": ".NET deps",
+      "groupSlug": "net-deps"
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "groupName": "GitHub Actions deps",
+      "groupSlug": "gh-actions-deps"
+    }
+  ],
+  "labels": [
+    "chore",
+    "ci",
+    "bots"
+  ]
+}
