@@ -13,7 +13,9 @@ jobs:
     steps:
       - name: Setup Buf
         uses: bufbuild/buf-setup-action@v1.14.0
-          
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Checkout code
         uses: actions/checkout@v3
 
@@ -38,7 +40,9 @@ jobs:
     steps:
       - name: Setup Buf
         uses: bufbuild/buf-setup-action@v1.14.0
-          
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Checkout code
         uses: actions/checkout@v3
 
