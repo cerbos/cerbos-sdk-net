@@ -1,4 +1,4 @@
-// Copyright 2021-2022 Zenauth Ltd.
+// Copyright 2021-2023 Zenauth Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 syntax = "proto3";
@@ -7,6 +7,7 @@ package cerbos.policy.v1;
 
 import "cerbos/effect/v1/effect.proto";
 import "cerbos/engine/v1/engine.proto";
+import "google/protobuf/timestamp.proto";
 import "google/protobuf/wrappers.proto";
 import "validate/validate.proto";
 
@@ -32,7 +33,8 @@ message Metadata {
   string source_file = 1;
   map<string, string> annotations = 2;
   google.protobuf.UInt64Value hash = 3;
-  string store_identifer = 4;
+  string store_identifer = 4 [deprecated = true];
+  string store_identifier = 5;
 }
 
 message ResourcePolicy {
@@ -44,13 +46,11 @@ message ResourcePolicy {
   repeated string import_derived_roles = 3 [(validate.rules).repeated = {
     unique: true,
     items {
-      string {
-        pattern: "^[[:word:]\\-\\.]+$"
-      }
+      string {pattern: "^[[:word:]\\-\\.]+$"}
     }
   }];
   repeated ResourceRule rules = 4;
-  string scope = 5 [(validate.rules).string.pattern = "^([[:alpha:]][[:word:]\\-]+(\\.[[:alpha:]][[:word:]\\-]*)*)*$"];
+  string scope = 5 [(validate.rules).string.pattern = "^([[:alnum:]][[:word:]\\-]*(\\.[[:word:]\\-]*)*)*$"];
   Schemas schemas = 6;
 }
 
@@ -59,25 +59,19 @@ message ResourceRule {
     min_items: 1,
     unique: true,
     items {
-      string {
-        min_len: 1
-      }
+      string {min_len: 1}
     }
   }];
   repeated string derived_roles = 2 [(validate.rules).repeated = {
     unique: true,
     items {
-      string {
-        pattern: "^[[:word:]\\-\\.]+$"
-      }
+      string {pattern: "^[[:word:]\\-\\.]+$"}
     }
   }];
   repeated string roles = 3 [(validate.rules).repeated = {
     unique: true,
     items {
-      string {
-        pattern: "^([[:word:]\\-\\.]+|\\*)$"
-      }
+      string {pattern: "^([[:word:]\\-\\.]+|\\*)$"}
     }
   }];
   Condition condition = 4;
@@ -97,7 +91,7 @@ message PrincipalPolicy {
   }];
   string version = 2 [(validate.rules).string.pattern = "^[[:word:]]+$"];
   repeated PrincipalRule rules = 3;
-  string scope = 4 [(validate.rules).string.pattern = "^([[:alpha:]][[:word:]\\-]+(\\.[[:alpha:]][[:word:]\\-]*)*)*$"];
+  string scope = 4 [(validate.rules).string.pattern = "^([[:alnum:]][[:word:]\\-]*(\\.[[:word:]\\-]*)*)*$"];
 }
 
 message PrincipalRule {
@@ -113,10 +107,7 @@ message PrincipalRule {
     string name = 4 [(validate.rules).string.pattern = "^([[:alpha:]][[:word:]\\@\\.\\-]*)*$"];
   }
 
-  string resource = 1 [(validate.rules).string = {
-    pattern: "^[[:alpha:]][[:word:]\\@\\.\\-/]*(\\:[[:alpha:]][[:word:]\\@\\.\\-/]*)*$",
-    min_len: 1
-  }];
+  string resource = 1 [(validate.rules).string = {min_len: 1}];
   repeated Action actions = 2 [(validate.rules).repeated.min_items = 1];
 }
 
@@ -134,9 +125,7 @@ message RoleDef {
     unique: true,
     min_items: 1,
     items {
-      string {
-        pattern: "^([[:word:]\\-\\.]+|\\*)$"
-      }
+      string {pattern: "^([[:word:]\\-\\.]+|\\*)$"}
     }
   }];
   Condition condition = 3;
@@ -152,9 +141,7 @@ message Condition {
 
 message Match {
   message ExprList {
-    repeated Match of = 1 [(validate.rules).repeated = {
-      min_items: 1
-    }];
+    repeated Match of = 1 [(validate.rules).repeated = {min_items: 1}];
   }
 
   oneof op {
@@ -172,17 +159,13 @@ message Schemas {
       unique: true,
       min_items: 1,
       items {
-        string {
-          min_len: 1
-        }
+        string {min_len: 1}
       }
     }];
   }
 
   message Schema {
-    string ref = 1 [(validate.rules).string = {
-      min_len: 1
-    }];
+    string ref = 1 [(validate.rules).string = {min_len: 1}];
     IgnoreWhen ignore_when = 2;
   }
 
@@ -202,6 +185,10 @@ message TestFixture {
   }
 }
 
+message TestOptions {
+  google.protobuf.Timestamp now = 1;
+}
+
 message TestSuite {
   string name = 1 [(validate.rules).string.min_len = 1];
   string description = 2;
@@ -211,6 +198,7 @@ message TestSuite {
   map<string, cerbos.engine.v1.Principal> principals = 6;
   map<string, cerbos.engine.v1.Resource> resources = 7;
   map<string, cerbos.engine.v1.AuxData> aux_data = 8;
+  TestOptions options = 9;
 }
 
 message TestTable {
@@ -219,27 +207,21 @@ message TestTable {
       min_items: 1,
       unique: true,
       items: {
-        string: {
-          min_len: 1
-        }
+        string: {min_len: 1}
       }
     }];
     repeated string resources = 2 [(validate.rules).repeated = {
       min_items: 1,
       unique: true,
       items: {
-        string: {
-          min_len: 1
-        }
+        string: {min_len: 1}
       }
     }];
     repeated string actions = 3 [(validate.rules).repeated = {
       min_items: 1,
       unique: true,
       items: {
-        string: {
-          min_len: 1
-        }
+        string: {min_len: 1}
       }
     }];
     string aux_data = 4;
@@ -251,9 +233,7 @@ message TestTable {
     map<string, cerbos.effect.v1.Effect> actions = 3 [(validate.rules).map = {
       min_pairs: 1,
       keys: {
-        string: {
-          min_len: 1
-        }
+        string: {min_len: 1}
       }
     }];
   }
@@ -264,6 +244,7 @@ message TestTable {
   string skip_reason = 4;
   Input input = 5 [(validate.rules).message.required = true];
   repeated Expectation expected = 6 [(validate.rules).repeated.min_items = 1];
+  TestOptions options = 7;
 }
 
 message Test {
@@ -281,11 +262,10 @@ message Test {
   map<string, cerbos.effect.v1.Effect> expected = 6 [(validate.rules).map = {
     min_pairs: 1,
     keys: {
-      string: {
-        min_len: 1
-      }
+      string: {min_len: 1}
     }
   }];
+  TestOptions options = 7;
 }
 
 message TestResults {

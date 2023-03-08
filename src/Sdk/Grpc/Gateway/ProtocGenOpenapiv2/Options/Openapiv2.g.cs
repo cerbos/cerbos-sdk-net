@@ -110,7 +110,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
             "ZF9vbmx5GAMgASgIUghyZWFkT25seRJlCg1leHRlcm5hbF9kb2NzGAUgASgL",
             "MkAuZ3JwYy5nYXRld2F5LnByb3RvY19nZW5fb3BlbmFwaXYyLm9wdGlvbnMu",
             "RXh0ZXJuYWxEb2N1bWVudGF0aW9uUgxleHRlcm5hbERvY3MSGAoHZXhhbXBs",
-            "ZRgGIAEoCVIHZXhhbXBsZUoECAQQBSLfBwoKSlNPTlNjaGVtYRIQCgNyZWYY",
+            "ZRgGIAEoCVIHZXhhbXBsZUoECAQQBSLXCgoKSlNPTlNjaGVtYRIQCgNyZWYY",
             "AyABKAlSA3JlZhIUCgV0aXRsZRgFIAEoCVIFdGl0bGUSIAoLZGVzY3JpcHRp",
             "b24YBiABKAlSC2Rlc2NyaXB0aW9uEhgKB2RlZmF1bHQYByABKAlSB2RlZmF1",
             "bHQSGwoJcmVhZF9vbmx5GAggASgIUghyZWFkT25seRIYCgdleGFtcGxlGAkg",
@@ -128,55 +128,63 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
             "eRJfCgR0eXBlGCMgAygOMksuZ3JwYy5nYXRld2F5LnByb3RvY19nZW5fb3Bl",
             "bmFwaXYyLm9wdGlvbnMuSlNPTlNjaGVtYS5KU09OU2NoZW1hU2ltcGxlVHlw",
             "ZXNSBHR5cGUSFgoGZm9ybWF0GCQgASgJUgZmb3JtYXQSEgoEZW51bRguIAMo",
-            "CVIEZW51bSJ3ChVKU09OU2NoZW1hU2ltcGxlVHlwZXMSCwoHVU5LTk9XThAA",
-            "EgkKBUFSUkFZEAESCwoHQk9PTEVBThACEgsKB0lOVEVHRVIQAxIICgROVUxM",
-            "EAQSCgoGTlVNQkVSEAUSCgoGT0JKRUNUEAYSCgoGU1RSSU5HEAdKBAgBEAJK",
-            "BAgCEANKBAgEEAVKBAgSEBNKBAgTEBRKBAgXEBhKBAgbEBxKBAgcEB1KBAgd",
-            "EB5KBAgeECJKBAglECpKBAgqECtKBAgrEC4ilAEKA1RhZxIgCgtkZXNjcmlw",
-            "dGlvbhgCIAEoCVILZGVzY3JpcHRpb24SZQoNZXh0ZXJuYWxfZG9jcxgDIAEo",
-            "CzJALmdycGMuZ2F0ZXdheS5wcm90b2NfZ2VuX29wZW5hcGl2Mi5vcHRpb25z",
-            "LkV4dGVybmFsRG9jdW1lbnRhdGlvblIMZXh0ZXJuYWxEb2NzSgQIARACIvcB",
-            "ChNTZWN1cml0eURlZmluaXRpb25zEmgKCHNlY3VyaXR5GAEgAygLMkwuZ3Jw",
-            "Yy5nYXRld2F5LnByb3RvY19nZW5fb3BlbmFwaXYyLm9wdGlvbnMuU2VjdXJp",
-            "dHlEZWZpbml0aW9ucy5TZWN1cml0eUVudHJ5UghzZWN1cml0eRp2Cg1TZWN1",
-            "cml0eUVudHJ5EhAKA2tleRgBIAEoCVIDa2V5Ek8KBXZhbHVlGAIgASgLMjku",
-            "Z3JwYy5nYXRld2F5LnByb3RvY19nZW5fb3BlbmFwaXYyLm9wdGlvbnMuU2Vj",
-            "dXJpdHlTY2hlbWVSBXZhbHVlOgI4ASL/BgoOU2VjdXJpdHlTY2hlbWUSUgoE",
-            "dHlwZRgBIAEoDjI+LmdycGMuZ2F0ZXdheS5wcm90b2NfZ2VuX29wZW5hcGl2",
-            "Mi5vcHRpb25zLlNlY3VyaXR5U2NoZW1lLlR5cGVSBHR5cGUSIAoLZGVzY3Jp",
-            "cHRpb24YAiABKAlSC2Rlc2NyaXB0aW9uEhIKBG5hbWUYAyABKAlSBG5hbWUS",
-            "TAoCaW4YBCABKA4yPC5ncnBjLmdhdGV3YXkucHJvdG9jX2dlbl9vcGVuYXBp",
-            "djIub3B0aW9ucy5TZWN1cml0eVNjaGVtZS5JblICaW4SUgoEZmxvdxgFIAEo",
-            "DjI+LmdycGMuZ2F0ZXdheS5wcm90b2NfZ2VuX29wZW5hcGl2Mi5vcHRpb25z",
-            "LlNlY3VyaXR5U2NoZW1lLkZsb3dSBGZsb3cSKwoRYXV0aG9yaXphdGlvbl91",
-            "cmwYBiABKAlSEGF1dGhvcml6YXRpb25VcmwSGwoJdG9rZW5fdXJsGAcgASgJ",
-            "Ugh0b2tlblVybBJJCgZzY29wZXMYCCABKAsyMS5ncnBjLmdhdGV3YXkucHJv",
-            "dG9jX2dlbl9vcGVuYXBpdjIub3B0aW9ucy5TY29wZXNSBnNjb3BlcxJpCgpl",
-            "eHRlbnNpb25zGAkgAygLMkkuZ3JwYy5nYXRld2F5LnByb3RvY19nZW5fb3Bl",
-            "bmFwaXYyLm9wdGlvbnMuU2VjdXJpdHlTY2hlbWUuRXh0ZW5zaW9uc0VudHJ5",
-            "UgpleHRlbnNpb25zGlUKD0V4dGVuc2lvbnNFbnRyeRIQCgNrZXkYASABKAlS",
-            "A2tleRIsCgV2YWx1ZRgCIAEoCzIWLmdvb2dsZS5wcm90b2J1Zi5WYWx1ZVIF",
-            "dmFsdWU6AjgBIksKBFR5cGUSEAoMVFlQRV9JTlZBTElEEAASDgoKVFlQRV9C",
-            "QVNJQxABEhAKDFRZUEVfQVBJX0tFWRACEg8KC1RZUEVfT0FVVEgyEAMiMQoC",
-            "SW4SDgoKSU5fSU5WQUxJRBAAEgwKCElOX1FVRVJZEAESDQoJSU5fSEVBREVS",
-            "EAIiagoERmxvdxIQCgxGTE9XX0lOVkFMSUQQABIRCg1GTE9XX0lNUExJQ0lU",
-            "EAESEQoNRkxPV19QQVNTV09SRBACEhQKEEZMT1dfQVBQTElDQVRJT04QAxIU",
-            "ChBGTE9XX0FDQ0VTU19DT0RFEAQi9gIKE1NlY3VyaXR5UmVxdWlyZW1lbnQS",
-            "igEKFHNlY3VyaXR5X3JlcXVpcmVtZW50GAEgAygLMlcuZ3JwYy5nYXRld2F5",
-            "LnByb3RvY19nZW5fb3BlbmFwaXYyLm9wdGlvbnMuU2VjdXJpdHlSZXF1aXJl",
-            "bWVudC5TZWN1cml0eVJlcXVpcmVtZW50RW50cnlSE3NlY3VyaXR5UmVxdWly",
-            "ZW1lbnQaMAoYU2VjdXJpdHlSZXF1aXJlbWVudFZhbHVlEhQKBXNjb3BlGAEg",
-            "AygJUgVzY29wZRqfAQoYU2VjdXJpdHlSZXF1aXJlbWVudEVudHJ5EhAKA2tl",
-            "eRgBIAEoCVIDa2V5Em0KBXZhbHVlGAIgASgLMlcuZ3JwYy5nYXRld2F5LnBy",
-            "b3RvY19nZW5fb3BlbmFwaXYyLm9wdGlvbnMuU2VjdXJpdHlSZXF1aXJlbWVu",
-            "dC5TZWN1cml0eVJlcXVpcmVtZW50VmFsdWVSBXZhbHVlOgI4ASKWAQoGU2Nv",
-            "cGVzElIKBXNjb3BlGAEgAygLMjwuZ3JwYy5nYXRld2F5LnByb3RvY19nZW5f",
-            "b3BlbmFwaXYyLm9wdGlvbnMuU2NvcGVzLlNjb3BlRW50cnlSBXNjb3BlGjgK",
-            "ClNjb3BlRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSFAoFdmFsdWUYAiABKAlS",
-            "BXZhbHVlOgI4ASo7CgZTY2hlbWUSCwoHVU5LTk9XThAAEggKBEhUVFAQARIJ",
-            "CgVIVFRQUxACEgYKAldTEAMSBwoDV1NTEARCSFpGZ2l0aHViLmNvbS9ncnBj",
-            "LWVjb3N5c3RlbS9ncnBjLWdhdGV3YXkvdjIvcHJvdG9jLWdlbi1vcGVuYXBp",
-            "djIvb3B0aW9uc2IGcHJvdG8z"));
+            "CVIEZW51bRJ6ChNmaWVsZF9jb25maWd1cmF0aW9uGOkHIAEoCzJILmdycGMu",
+            "Z2F0ZXdheS5wcm90b2NfZ2VuX29wZW5hcGl2Mi5vcHRpb25zLkpTT05TY2hl",
+            "bWEuRmllbGRDb25maWd1cmF0aW9uUhJmaWVsZENvbmZpZ3VyYXRpb24SZQoK",
+            "ZXh0ZW5zaW9ucxgwIAMoCzJFLmdycGMuZ2F0ZXdheS5wcm90b2NfZ2VuX29w",
+            "ZW5hcGl2Mi5vcHRpb25zLkpTT05TY2hlbWEuRXh0ZW5zaW9uc0VudHJ5Ugpl",
+            "eHRlbnNpb25zGjwKEkZpZWxkQ29uZmlndXJhdGlvbhImCg9wYXRoX3BhcmFt",
+            "X25hbWUYLyABKAlSDXBhdGhQYXJhbU5hbWUaVQoPRXh0ZW5zaW9uc0VudHJ5",
+            "EhAKA2tleRgBIAEoCVIDa2V5EiwKBXZhbHVlGAIgASgLMhYuZ29vZ2xlLnBy",
+            "b3RvYnVmLlZhbHVlUgV2YWx1ZToCOAEidwoVSlNPTlNjaGVtYVNpbXBsZVR5",
+            "cGVzEgsKB1VOS05PV04QABIJCgVBUlJBWRABEgsKB0JPT0xFQU4QAhILCgdJ",
+            "TlRFR0VSEAMSCAoETlVMTBAEEgoKBk5VTUJFUhAFEgoKBk9CSkVDVBAGEgoK",
+            "BlNUUklORxAHSgQIARACSgQIAhADSgQIBBAFSgQIEhATSgQIExAUSgQIFxAY",
+            "SgQIGxAcSgQIHBAdSgQIHRAeSgQIHhAiSgQIJRAqSgQIKhArSgQIKxAuIpQB",
+            "CgNUYWcSIAoLZGVzY3JpcHRpb24YAiABKAlSC2Rlc2NyaXB0aW9uEmUKDWV4",
+            "dGVybmFsX2RvY3MYAyABKAsyQC5ncnBjLmdhdGV3YXkucHJvdG9jX2dlbl9v",
+            "cGVuYXBpdjIub3B0aW9ucy5FeHRlcm5hbERvY3VtZW50YXRpb25SDGV4dGVy",
+            "bmFsRG9jc0oECAEQAiL3AQoTU2VjdXJpdHlEZWZpbml0aW9ucxJoCghzZWN1",
+            "cml0eRgBIAMoCzJMLmdycGMuZ2F0ZXdheS5wcm90b2NfZ2VuX29wZW5hcGl2",
+            "Mi5vcHRpb25zLlNlY3VyaXR5RGVmaW5pdGlvbnMuU2VjdXJpdHlFbnRyeVII",
+            "c2VjdXJpdHkadgoNU2VjdXJpdHlFbnRyeRIQCgNrZXkYASABKAlSA2tleRJP",
+            "CgV2YWx1ZRgCIAEoCzI5LmdycGMuZ2F0ZXdheS5wcm90b2NfZ2VuX29wZW5h",
+            "cGl2Mi5vcHRpb25zLlNlY3VyaXR5U2NoZW1lUgV2YWx1ZToCOAEi/wYKDlNl",
+            "Y3VyaXR5U2NoZW1lElIKBHR5cGUYASABKA4yPi5ncnBjLmdhdGV3YXkucHJv",
+            "dG9jX2dlbl9vcGVuYXBpdjIub3B0aW9ucy5TZWN1cml0eVNjaGVtZS5UeXBl",
+            "UgR0eXBlEiAKC2Rlc2NyaXB0aW9uGAIgASgJUgtkZXNjcmlwdGlvbhISCgRu",
+            "YW1lGAMgASgJUgRuYW1lEkwKAmluGAQgASgOMjwuZ3JwYy5nYXRld2F5LnBy",
+            "b3RvY19nZW5fb3BlbmFwaXYyLm9wdGlvbnMuU2VjdXJpdHlTY2hlbWUuSW5S",
+            "AmluElIKBGZsb3cYBSABKA4yPi5ncnBjLmdhdGV3YXkucHJvdG9jX2dlbl9v",
+            "cGVuYXBpdjIub3B0aW9ucy5TZWN1cml0eVNjaGVtZS5GbG93UgRmbG93EisK",
+            "EWF1dGhvcml6YXRpb25fdXJsGAYgASgJUhBhdXRob3JpemF0aW9uVXJsEhsK",
+            "CXRva2VuX3VybBgHIAEoCVIIdG9rZW5VcmwSSQoGc2NvcGVzGAggASgLMjEu",
+            "Z3JwYy5nYXRld2F5LnByb3RvY19nZW5fb3BlbmFwaXYyLm9wdGlvbnMuU2Nv",
+            "cGVzUgZzY29wZXMSaQoKZXh0ZW5zaW9ucxgJIAMoCzJJLmdycGMuZ2F0ZXdh",
+            "eS5wcm90b2NfZ2VuX29wZW5hcGl2Mi5vcHRpb25zLlNlY3VyaXR5U2NoZW1l",
+            "LkV4dGVuc2lvbnNFbnRyeVIKZXh0ZW5zaW9ucxpVCg9FeHRlbnNpb25zRW50",
+            "cnkSEAoDa2V5GAEgASgJUgNrZXkSLAoFdmFsdWUYAiABKAsyFi5nb29nbGUu",
+            "cHJvdG9idWYuVmFsdWVSBXZhbHVlOgI4ASJLCgRUeXBlEhAKDFRZUEVfSU5W",
+            "QUxJRBAAEg4KClRZUEVfQkFTSUMQARIQCgxUWVBFX0FQSV9LRVkQAhIPCgtU",
+            "WVBFX09BVVRIMhADIjEKAkluEg4KCklOX0lOVkFMSUQQABIMCghJTl9RVUVS",
+            "WRABEg0KCUlOX0hFQURFUhACImoKBEZsb3cSEAoMRkxPV19JTlZBTElEEAAS",
+            "EQoNRkxPV19JTVBMSUNJVBABEhEKDUZMT1dfUEFTU1dPUkQQAhIUChBGTE9X",
+            "X0FQUExJQ0FUSU9OEAMSFAoQRkxPV19BQ0NFU1NfQ09ERRAEIvYCChNTZWN1",
+            "cml0eVJlcXVpcmVtZW50EooBChRzZWN1cml0eV9yZXF1aXJlbWVudBgBIAMo",
+            "CzJXLmdycGMuZ2F0ZXdheS5wcm90b2NfZ2VuX29wZW5hcGl2Mi5vcHRpb25z",
+            "LlNlY3VyaXR5UmVxdWlyZW1lbnQuU2VjdXJpdHlSZXF1aXJlbWVudEVudHJ5",
+            "UhNzZWN1cml0eVJlcXVpcmVtZW50GjAKGFNlY3VyaXR5UmVxdWlyZW1lbnRW",
+            "YWx1ZRIUCgVzY29wZRgBIAMoCVIFc2NvcGUanwEKGFNlY3VyaXR5UmVxdWly",
+            "ZW1lbnRFbnRyeRIQCgNrZXkYASABKAlSA2tleRJtCgV2YWx1ZRgCIAEoCzJX",
+            "LmdycGMuZ2F0ZXdheS5wcm90b2NfZ2VuX29wZW5hcGl2Mi5vcHRpb25zLlNl",
+            "Y3VyaXR5UmVxdWlyZW1lbnQuU2VjdXJpdHlSZXF1aXJlbWVudFZhbHVlUgV2",
+            "YWx1ZToCOAEilgEKBlNjb3BlcxJSCgVzY29wZRgBIAMoCzI8LmdycGMuZ2F0",
+            "ZXdheS5wcm90b2NfZ2VuX29wZW5hcGl2Mi5vcHRpb25zLlNjb3Blcy5TY29w",
+            "ZUVudHJ5UgVzY29wZRo4CgpTY29wZUVudHJ5EhAKA2tleRgBIAEoCVIDa2V5",
+            "EhQKBXZhbHVlGAIgASgJUgV2YWx1ZToCOAEqOwoGU2NoZW1lEgsKB1VOS05P",
+            "V04QABIICgRIVFRQEAESCQoFSFRUUFMQAhIGCgJXUxADEgcKA1dTUxAEQkha",
+            "RmdpdGh1Yi5jb20vZ3JwYy1lY29zeXN0ZW0vZ3JwYy1nYXRld2F5L3YyL3By",
+            "b3RvYy1nZW4tb3BlbmFwaXYyL29wdGlvbnNiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.StructReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Scheme), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -189,7 +197,8 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
             new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.License), global::Grpc.Gateway.ProtocGenOpenapiv2.Options.License.Parser, new[]{ "Name", "Url" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.ExternalDocumentation), global::Grpc.Gateway.ProtocGenOpenapiv2.Options.ExternalDocumentation.Parser, new[]{ "Description", "Url" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Schema), global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Schema.Parser, new[]{ "JsonSchema", "Discriminator", "ReadOnly", "ExternalDocs", "Example" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.JSONSchema), global::Grpc.Gateway.ProtocGenOpenapiv2.Options.JSONSchema.Parser, new[]{ "Ref", "Title", "Description", "Default", "ReadOnly", "Example", "MultipleOf", "Maximum", "ExclusiveMaximum", "Minimum", "ExclusiveMinimum", "MaxLength", "MinLength", "Pattern", "MaxItems", "MinItems", "UniqueItems", "MaxProperties", "MinProperties", "Required", "Array", "Type", "Format", "Enum" }, null, new[]{ typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.JSONSchema.Types.JSONSchemaSimpleTypes) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.JSONSchema), global::Grpc.Gateway.ProtocGenOpenapiv2.Options.JSONSchema.Parser, new[]{ "Ref", "Title", "Description", "Default", "ReadOnly", "Example", "MultipleOf", "Maximum", "ExclusiveMaximum", "Minimum", "ExclusiveMinimum", "MaxLength", "MinLength", "Pattern", "MaxItems", "MinItems", "UniqueItems", "MaxProperties", "MinProperties", "Required", "Array", "Type", "Format", "Enum", "FieldConfiguration", "Extensions" }, null, new[]{ typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.JSONSchema.Types.JSONSchemaSimpleTypes) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.JSONSchema.Types.FieldConfiguration), global::Grpc.Gateway.ProtocGenOpenapiv2.Options.JSONSchema.Types.FieldConfiguration.Parser, new[]{ "PathParamName" }, null, null, null, null),
+            null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Tag), global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Tag.Parser, new[]{ "Description", "ExternalDocs" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.SecurityDefinitions), global::Grpc.Gateway.ProtocGenOpenapiv2.Options.SecurityDefinitions.Parser, new[]{ "Security" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.SecurityScheme), global::Grpc.Gateway.ProtocGenOpenapiv2.Options.SecurityScheme.Parser, new[]{ "Type", "Description", "Name", "In", "Flow", "AuthorizationUrl", "TokenUrl", "Scopes", "Extensions" }, null, new[]{ typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.SecurityScheme.Types.Type), typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.SecurityScheme.Types.In), typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.SecurityScheme.Types.Flow) }, null, new pbr::GeneratedClrTypeInfo[] { null, }),
@@ -228,7 +237,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
   ///    info: {
   ///      title: "Echo API";
   ///      version: "1.0";
-  ///      description: ";
+  ///      description: "";
   ///      contact: {
   ///        name: "gRPC-Gateway project";
   ///        url: "https://github.com/grpc-ecosystem/grpc-gateway";
@@ -304,7 +313,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
     private string swagger_ = "";
     /// <summary>
     /// Specifies the OpenAPI Specification version being used. It can be
-    /// used by the OpenAPI UI and other clients to interpret the API listing. The 
+    /// used by the OpenAPI UI and other clients to interpret the API listing. The
     /// value MUST be "2.0".
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -320,7 +329,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
     public const int InfoFieldNumber = 2;
     private global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Info info_;
     /// <summary>
-    /// Provides metadata about the API. The metadata can be used by the 
+    /// Provides metadata about the API. The metadata can be used by the
     /// clients if needed.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -336,7 +345,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
     public const int HostFieldNumber = 3;
     private string host_ = "";
     /// <summary>
-    /// The host (name or ip) serving the API. This MUST be the host only and does 
+    /// The host (name or ip) serving the API. This MUST be the host only and does
     /// not include the scheme nor sub-paths. It MAY include a port. If the host is
     /// not included, the host serving the documentation is to be used (including
     /// the port). The host does not support path templating.
@@ -355,13 +364,13 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
     private string basePath_ = "";
     /// <summary>
     /// The base path on which the API is served, which is relative to the host. If
-    /// it is not included, the API is served directly under the host. The value 
+    /// it is not included, the API is served directly under the host. The value
     /// MUST start with a leading slash (/). The basePath does not support path
     /// templating.
-    /// Note that using `base_path` does not change the endpoint paths that are 
+    /// Note that using `base_path` does not change the endpoint paths that are
     /// generated in the resulting OpenAPI file. If you wish to use `base_path`
-    /// with relatively generated OpenAPI paths, the `base_path` prefix must be 
-    /// manually removed from your `google.api.http` paths and your code changed to 
+    /// with relatively generated OpenAPI paths, the `base_path` prefix must be
+    /// manually removed from your `google.api.http` paths and your code changed to
     /// serve the API from the `base_path`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -395,7 +404,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
         = pb::FieldCodec.ForString(50);
     private readonly pbc::RepeatedField<string> consumes_ = new pbc::RepeatedField<string>();
     /// <summary>
-    /// A list of MIME types the APIs can consume. This is global to all APIs but 
+    /// A list of MIME types the APIs can consume. This is global to all APIs but
     /// can be overridden on specific API calls. Value MUST be as described under
     /// Mime Types.
     /// </summary>
@@ -458,8 +467,8 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
     private readonly pbc::RepeatedField<global::Grpc.Gateway.ProtocGenOpenapiv2.Options.SecurityRequirement> security_ = new pbc::RepeatedField<global::Grpc.Gateway.ProtocGenOpenapiv2.Options.SecurityRequirement>();
     /// <summary>
     /// A declaration of which security schemes are applied for the API as a whole.
-    /// The list of values describes alternative security schemes that can be used 
-    /// (that is, there is a logical OR between the security requirements). 
+    /// The list of values describes alternative security schemes that can be used
+    /// (that is, there is a logical OR between the security requirements).
     /// Individual operations can override this definition.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2173,7 +2182,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
   ///    info: {
   ///      title: "Echo API";
   ///      version: "1.0";
-  ///      description: ";
+  ///      description: "";
   ///      contact: {
   ///        name: "gRPC-Gateway project";
   ///        url: "https://github.com/grpc-ecosystem/grpc-gateway";
@@ -3889,6 +3898,8 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
       type_ = other.type_.Clone();
       format_ = other.format_;
       enum_ = other.enum_.Clone();
+      fieldConfiguration_ = other.fieldConfiguration_ != null ? other.fieldConfiguration_.Clone() : null;
+      extensions_ = other.extensions_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -4005,8 +4016,8 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
     public const int MaximumFieldNumber = 11;
     private double maximum_;
     /// <summary>
-    /// Maximum represents an inclusive upper limit for a numeric instance. The 
-    /// value of MUST be a number, 
+    /// Maximum represents an inclusive upper limit for a numeric instance. The
+    /// value of MUST be a number,
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4033,8 +4044,8 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
     public const int MinimumFieldNumber = 13;
     private double minimum_;
     /// <summary>
-    /// minimum represents an inclusive lower limit for a numeric instance. The 
-    /// value of MUST be a number, 
+    /// minimum represents an inclusive lower limit for a numeric instance. The
+    /// value of MUST be a number,
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4218,6 +4229,32 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
       get { return enum_; }
     }
 
+    /// <summary>Field number for the "field_configuration" field.</summary>
+    public const int FieldConfigurationFieldNumber = 1001;
+    private global::Grpc.Gateway.ProtocGenOpenapiv2.Options.JSONSchema.Types.FieldConfiguration fieldConfiguration_;
+    /// <summary>
+    /// Additional field level properties used when generating the OpenAPI v2 file.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Grpc.Gateway.ProtocGenOpenapiv2.Options.JSONSchema.Types.FieldConfiguration FieldConfiguration {
+      get { return fieldConfiguration_; }
+      set {
+        fieldConfiguration_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "extensions" field.</summary>
+    public const int ExtensionsFieldNumber = 48;
+    private static readonly pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value>.Codec _map_extensions_codec
+        = new pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::Google.Protobuf.WellKnownTypes.Value.Parser), 386);
+    private readonly pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value> extensions_ = new pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value> Extensions {
+      get { return extensions_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -4257,6 +4294,8 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
       if(!type_.Equals(other.type_)) return false;
       if (Format != other.Format) return false;
       if(!enum_.Equals(other.enum_)) return false;
+      if (!object.Equals(FieldConfiguration, other.FieldConfiguration)) return false;
+      if (!Extensions.Equals(other.Extensions)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -4288,6 +4327,8 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
       hash ^= type_.GetHashCode();
       if (Format.Length != 0) hash ^= Format.GetHashCode();
       hash ^= enum_.GetHashCode();
+      if (fieldConfiguration_ != null) hash ^= FieldConfiguration.GetHashCode();
+      hash ^= Extensions.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -4390,6 +4431,11 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
         output.WriteString(Format);
       }
       enum_.WriteTo(output, _repeated_enum_codec);
+      extensions_.WriteTo(output, _map_extensions_codec);
+      if (fieldConfiguration_ != null) {
+        output.WriteRawTag(202, 62);
+        output.WriteMessage(FieldConfiguration);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -4484,6 +4530,11 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
         output.WriteString(Format);
       }
       enum_.WriteTo(ref output, _repeated_enum_codec);
+      extensions_.WriteTo(ref output, _map_extensions_codec);
+      if (fieldConfiguration_ != null) {
+        output.WriteRawTag(202, 62);
+        output.WriteMessage(FieldConfiguration);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -4558,6 +4609,10 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
         size += 2 + pb::CodedOutputStream.ComputeStringSize(Format);
       }
       size += enum_.CalculateSize(_repeated_enum_codec);
+      if (fieldConfiguration_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(FieldConfiguration);
+      }
+      size += extensions_.CalculateSize(_map_extensions_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -4634,6 +4689,13 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
         Format = other.Format;
       }
       enum_.Add(other.enum_);
+      if (other.fieldConfiguration_ != null) {
+        if (fieldConfiguration_ == null) {
+          FieldConfiguration = new global::Grpc.Gateway.ProtocGenOpenapiv2.Options.JSONSchema.Types.FieldConfiguration();
+        }
+        FieldConfiguration.MergeFrom(other.FieldConfiguration);
+      }
+      extensions_.Add(other.extensions_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -4744,6 +4806,17 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
           }
           case 370: {
             enum_.AddEntriesFrom(input, _repeated_enum_codec);
+            break;
+          }
+          case 386: {
+            extensions_.AddEntriesFrom(input, _map_extensions_codec);
+            break;
+          }
+          case 8010: {
+            if (fieldConfiguration_ == null) {
+              FieldConfiguration = new global::Grpc.Gateway.ProtocGenOpenapiv2.Options.JSONSchema.Types.FieldConfiguration();
+            }
+            input.ReadMessage(FieldConfiguration);
             break;
           }
         }
@@ -4858,6 +4931,17 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
             enum_.AddEntriesFrom(ref input, _repeated_enum_codec);
             break;
           }
+          case 386: {
+            extensions_.AddEntriesFrom(ref input, _map_extensions_codec);
+            break;
+          }
+          case 8010: {
+            if (fieldConfiguration_ == null) {
+              FieldConfiguration = new global::Grpc.Gateway.ProtocGenOpenapiv2.Options.JSONSchema.Types.FieldConfiguration();
+            }
+            input.ReadMessage(FieldConfiguration);
+            break;
+          }
         }
       }
     }
@@ -4877,6 +4961,205 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
         [pbr::OriginalName("NUMBER")] Number = 5,
         [pbr::OriginalName("OBJECT")] Object = 6,
         [pbr::OriginalName("STRING")] String = 7,
+      }
+
+      /// <summary>
+      /// 'FieldConfiguration' provides additional field level properties used when generating the OpenAPI v2 file.
+      /// These properties are not defined by OpenAPIv2, but they are used to control the generation.
+      /// </summary>
+      public sealed partial class FieldConfiguration : pb::IMessage<FieldConfiguration>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
+        private static readonly pb::MessageParser<FieldConfiguration> _parser = new pb::MessageParser<FieldConfiguration>(() => new FieldConfiguration());
+        private pb::UnknownFieldSet _unknownFields;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pb::MessageParser<FieldConfiguration> Parser { get { return _parser; } }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pbr::MessageDescriptor Descriptor {
+          get { return global::Grpc.Gateway.ProtocGenOpenapiv2.Options.JSONSchema.Descriptor.NestedTypes[0]; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        pbr::MessageDescriptor pb::IMessage.Descriptor {
+          get { return Descriptor; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public FieldConfiguration() {
+          OnConstruction();
+        }
+
+        partial void OnConstruction();
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public FieldConfiguration(FieldConfiguration other) : this() {
+          pathParamName_ = other.pathParamName_;
+          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public FieldConfiguration Clone() {
+          return new FieldConfiguration(this);
+        }
+
+        /// <summary>Field number for the "path_param_name" field.</summary>
+        public const int PathParamNameFieldNumber = 47;
+        private string pathParamName_ = "";
+        /// <summary>
+        /// Alternative parameter name when used as path parameter. If set, this will
+        /// be used as the complete parameter name when this field is used as a path
+        /// parameter. Use this to avoid having auto generated path parameter names
+        /// for overlapping paths.
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public string PathParamName {
+          get { return pathParamName_; }
+          set {
+            pathParamName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override bool Equals(object other) {
+          return Equals(other as FieldConfiguration);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool Equals(FieldConfiguration other) {
+          if (ReferenceEquals(other, null)) {
+            return false;
+          }
+          if (ReferenceEquals(other, this)) {
+            return true;
+          }
+          if (PathParamName != other.PathParamName) return false;
+          return Equals(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override int GetHashCode() {
+          int hash = 1;
+          if (PathParamName.Length != 0) hash ^= PathParamName.GetHashCode();
+          if (_unknownFields != null) {
+            hash ^= _unknownFields.GetHashCode();
+          }
+          return hash;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override string ToString() {
+          return pb::JsonFormatter.ToDiagnosticString(this);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
+          if (PathParamName.Length != 0) {
+            output.WriteRawTag(250, 2);
+            output.WriteString(PathParamName);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(output);
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (PathParamName.Length != 0) {
+            output.WriteRawTag(250, 2);
+            output.WriteString(PathParamName);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public int CalculateSize() {
+          int size = 0;
+          if (PathParamName.Length != 0) {
+            size += 2 + pb::CodedOutputStream.ComputeStringSize(PathParamName);
+          }
+          if (_unknownFields != null) {
+            size += _unknownFields.CalculateSize();
+          }
+          return size;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(FieldConfiguration other) {
+          if (other == null) {
+            return;
+          }
+          if (other.PathParamName.Length != 0) {
+            PathParamName = other.PathParamName;
+          }
+          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+                break;
+              case 378: {
+                PathParamName = input.ReadString();
+                break;
+              }
+            }
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 378: {
+                PathParamName = input.ReadString();
+                break;
+              }
+            }
+          }
+        }
+        #endif
+
       }
 
     }
@@ -4938,7 +5221,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
     public const int DescriptionFieldNumber = 2;
     private string description_ = "";
     /// <summary>
-    /// A short description for the tag. GFM syntax can be used for rich text 
+    /// A short description for the tag. GFM syntax can be used for rich text
     /// representation.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

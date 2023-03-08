@@ -4,16 +4,16 @@ deps:
   - remote: buf.build
     owner: cerbos
     repository: cerbos-api
-    commit: ca350d97e20f40ae90cb50953b1ba6b5
+    commit: 3929af72dd244d7486220a30f6e50fab
   - remote: buf.build
     owner: envoyproxy
     repository: protoc-gen-validate
-    commit: dc09a417d27241f7b069feae2cd74a0e
+    commit: 45685e052c7e406b9fbd441fc7a568a5
   - remote: buf.build
     owner: googleapis
     repository: googleapis
-    commit: 0039142542b74d11b0ae5a1e9fd4d523
+    commit: 62f35d8aed1149c291d606d958a7ce32
   - remote: buf.build
     owner: grpc-ecosystem
     repository: grpc-gateway
-    commit: ff83506eb9cc4cf8972f49ce87e6ed3e
+    commit: bc28b723cd774c32b6fbc77621518765

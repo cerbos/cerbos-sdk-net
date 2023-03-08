@@ -34,7 +34,7 @@ namespace Cerbos.Api.V1.Audit {
             "RW50cnlSCG1ldGFkYXRhEhYKBm1ldGhvZBgFIAEoCVIGbWV0aG9kEh8KC3N0",
             "YXR1c19jb2RlGAYgASgNUgpzdGF0dXNDb2RlGlgKDU1ldGFkYXRhRW50cnkS",
             "EAoDa2V5GAEgASgJUgNrZXkSMQoFdmFsdWUYAiABKAsyGy5jZXJib3MuYXVk",
-            "aXQudjEuTWV0YVZhbHVlc1IFdmFsdWU6AjgBIpEGChBEZWNpc2lvbkxvZ0Vu",
+            "aXQudjEuTWV0YVZhbHVlc1IFdmFsdWU6AjgBIrgHChBEZWNpc2lvbkxvZ0Vu",
             "dHJ5EhcKB2NhbGxfaWQYASABKAlSBmNhbGxJZBI4Cgl0aW1lc3RhbXAYAiAB",
             "KAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl0aW1lc3RhbXASKQoE",
             "cGVlchgDIAEoCzIVLmNlcmJvcy5hdWRpdC52MS5QZWVyUgRwZWVyEjQKBmlu",
@@ -44,27 +44,32 @@ namespace Cerbos.Api.V1.Audit {
             "a19yZXNvdXJjZXMYByABKAsyMC5jZXJib3MuYXVkaXQudjEuRGVjaXNpb25M",
             "b2dFbnRyeS5DaGVja1Jlc291cmNlc0gAUg5jaGVja1Jlc291cmNlcxJYCg5w",
             "bGFuX3Jlc291cmNlcxgIIAEoCzIvLmNlcmJvcy5hdWRpdC52MS5EZWNpc2lv",
-            "bkxvZ0VudHJ5LlBsYW5SZXNvdXJjZXNIAFINcGxhblJlc291cmNlcxqVAQoO",
-            "Q2hlY2tSZXNvdXJjZXMSNAoGaW5wdXRzGAEgAygLMhwuY2VyYm9zLmVuZ2lu",
-            "ZS52MS5DaGVja0lucHV0UgZpbnB1dHMSNwoHb3V0cHV0cxgCIAMoCzIdLmNl",
-            "cmJvcy5lbmdpbmUudjEuQ2hlY2tPdXRwdXRSB291dHB1dHMSFAoFZXJyb3IY",
-            "AyABKAlSBWVycm9yGqABCg1QbGFuUmVzb3VyY2VzEjoKBWlucHV0GAEgASgL",
-            "MiQuY2VyYm9zLmVuZ2luZS52MS5QbGFuUmVzb3VyY2VzSW5wdXRSBWlucHV0",
-            "Ej0KBm91dHB1dBgCIAEoCzIlLmNlcmJvcy5lbmdpbmUudjEuUGxhblJlc291",
-            "cmNlc091dHB1dFIGb3V0cHV0EhQKBWVycm9yGAMgASgJUgVlcnJvckIICgZt",
-            "ZXRob2QiJAoKTWV0YVZhbHVlcxIWCgZ2YWx1ZXMYASADKAlSBnZhbHVlcyKB",
-            "AQoEUGVlchIYCgdhZGRyZXNzGAEgASgJUgdhZGRyZXNzEhsKCWF1dGhfaW5m",
-            "bxgCIAEoCVIIYXV0aEluZm8SHQoKdXNlcl9hZ2VudBgDIAEoCVIJdXNlckFn",
-            "ZW50EiMKDWZvcndhcmRlZF9mb3IYBCABKAlSDGZvcndhcmRlZEZvckJrChdk",
-            "ZXYuY2VyYm9zLmFwaS52MS5hdWRpdFo6Z2l0aHViLmNvbS9jZXJib3MvY2Vy",
-            "Ym9zL2FwaS9nZW5wYi9jZXJib3MvYXVkaXQvdjE7YXVkaXR2MaoCE0NlcmJv",
-            "cy5BcGkuVjEuQXVkaXRiBnByb3RvMw=="));
+            "bkxvZ0VudHJ5LlBsYW5SZXNvdXJjZXNIAFINcGxhblJlc291cmNlcxJLCght",
+            "ZXRhZGF0YRgPIAMoCzIvLmNlcmJvcy5hdWRpdC52MS5EZWNpc2lvbkxvZ0Vu",
+            "dHJ5Lk1ldGFkYXRhRW50cnlSCG1ldGFkYXRhGpUBCg5DaGVja1Jlc291cmNl",
+            "cxI0CgZpbnB1dHMYASADKAsyHC5jZXJib3MuZW5naW5lLnYxLkNoZWNrSW5w",
+            "dXRSBmlucHV0cxI3CgdvdXRwdXRzGAIgAygLMh0uY2VyYm9zLmVuZ2luZS52",
+            "MS5DaGVja091dHB1dFIHb3V0cHV0cxIUCgVlcnJvchgDIAEoCVIFZXJyb3Ia",
+            "oAEKDVBsYW5SZXNvdXJjZXMSOgoFaW5wdXQYASABKAsyJC5jZXJib3MuZW5n",
+            "aW5lLnYxLlBsYW5SZXNvdXJjZXNJbnB1dFIFaW5wdXQSPQoGb3V0cHV0GAIg",
+            "ASgLMiUuY2VyYm9zLmVuZ2luZS52MS5QbGFuUmVzb3VyY2VzT3V0cHV0UgZv",
+            "dXRwdXQSFAoFZXJyb3IYAyABKAlSBWVycm9yGlgKDU1ldGFkYXRhRW50cnkS",
+            "EAoDa2V5GAEgASgJUgNrZXkSMQoFdmFsdWUYAiABKAsyGy5jZXJib3MuYXVk",
+            "aXQudjEuTWV0YVZhbHVlc1IFdmFsdWU6AjgBQggKBm1ldGhvZCIkCgpNZXRh",
+            "VmFsdWVzEhYKBnZhbHVlcxgBIAMoCVIGdmFsdWVzIoEBCgRQZWVyEhgKB2Fk",
+            "ZHJlc3MYASABKAlSB2FkZHJlc3MSGwoJYXV0aF9pbmZvGAIgASgJUghhdXRo",
+            "SW5mbxIdCgp1c2VyX2FnZW50GAMgASgJUgl1c2VyQWdlbnQSIwoNZm9yd2Fy",
+            "ZGVkX2ZvchgEIAEoCVIMZm9yd2FyZGVkRm9yQmsKF2Rldi5jZXJib3MuYXBp",
+            "LnYxLmF1ZGl0WjpnaXRodWIuY29tL2NlcmJvcy9jZXJib3MvYXBpL2dlbnBi",
+            "L2NlcmJvcy9hdWRpdC92MTthdWRpdHYxqgITQ2VyYm9zLkFwaS5WMS5BdWRp",
+            "dGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Cerbos.Api.V1.Engine.EngineReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Audit.AccessLogEntry), global::Cerbos.Api.V1.Audit.AccessLogEntry.Parser, new[]{ "CallId", "Timestamp", "Peer", "Metadata", "Method", "StatusCode" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Audit.DecisionLogEntry), global::Cerbos.Api.V1.Audit.DecisionLogEntry.Parser, new[]{ "CallId", "Timestamp", "Peer", "Inputs", "Outputs", "Error", "CheckResources", "PlanResources" }, new[]{ "Method" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Audit.DecisionLogEntry.Types.CheckResources), global::Cerbos.Api.V1.Audit.DecisionLogEntry.Types.CheckResources.Parser, new[]{ "Inputs", "Outputs", "Error" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Audit.DecisionLogEntry.Types.PlanResources), global::Cerbos.Api.V1.Audit.DecisionLogEntry.Types.PlanResources.Parser, new[]{ "Input", "Output", "Error" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Audit.DecisionLogEntry), global::Cerbos.Api.V1.Audit.DecisionLogEntry.Parser, new[]{ "CallId", "Timestamp", "Peer", "Inputs", "Outputs", "Error", "CheckResources", "PlanResources", "Metadata" }, new[]{ "Method" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Audit.DecisionLogEntry.Types.CheckResources), global::Cerbos.Api.V1.Audit.DecisionLogEntry.Types.CheckResources.Parser, new[]{ "Inputs", "Outputs", "Error" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Audit.DecisionLogEntry.Types.PlanResources), global::Cerbos.Api.V1.Audit.DecisionLogEntry.Types.PlanResources.Parser, new[]{ "Input", "Output", "Error" }, null, null, null, null),
+            null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Audit.MetaValues), global::Cerbos.Api.V1.Audit.MetaValues.Parser, new[]{ "Values" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Audit.Peer), global::Cerbos.Api.V1.Audit.Peer.Parser, new[]{ "Address", "AuthInfo", "UserAgent", "ForwardedFor" }, null, null, null, null)
           }));
@@ -494,6 +499,7 @@ namespace Cerbos.Api.V1.Audit {
       inputs_ = other.inputs_.Clone();
       outputs_ = other.outputs_.Clone();
       error_ = other.error_;
+      metadata_ = other.metadata_.Clone();
       switch (other.MethodCase) {
         case MethodOneofCase.CheckResources:
           CheckResources = other.CheckResources.Clone();
@@ -615,6 +621,17 @@ namespace Cerbos.Api.V1.Audit {
       }
     }
 
+    /// <summary>Field number for the "metadata" field.</summary>
+    public const int MetadataFieldNumber = 15;
+    private static readonly pbc::MapField<string, global::Cerbos.Api.V1.Audit.MetaValues>.Codec _map_metadata_codec
+        = new pbc::MapField<string, global::Cerbos.Api.V1.Audit.MetaValues>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::Cerbos.Api.V1.Audit.MetaValues.Parser), 122);
+    private readonly pbc::MapField<string, global::Cerbos.Api.V1.Audit.MetaValues> metadata_ = new pbc::MapField<string, global::Cerbos.Api.V1.Audit.MetaValues>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<string, global::Cerbos.Api.V1.Audit.MetaValues> Metadata {
+      get { return metadata_; }
+    }
+
     private object method_;
     /// <summary>Enum of possible cases for the "method" oneof.</summary>
     public enum MethodOneofCase {
@@ -659,6 +676,7 @@ namespace Cerbos.Api.V1.Audit {
       if (Error != other.Error) return false;
       if (!object.Equals(CheckResources, other.CheckResources)) return false;
       if (!object.Equals(PlanResources, other.PlanResources)) return false;
+      if (!Metadata.Equals(other.Metadata)) return false;
       if (MethodCase != other.MethodCase) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -675,6 +693,7 @@ namespace Cerbos.Api.V1.Audit {
       if (Error.Length != 0) hash ^= Error.GetHashCode();
       if (methodCase_ == MethodOneofCase.CheckResources) hash ^= CheckResources.GetHashCode();
       if (methodCase_ == MethodOneofCase.PlanResources) hash ^= PlanResources.GetHashCode();
+      hash ^= Metadata.GetHashCode();
       hash ^= (int) methodCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -720,6 +739,7 @@ namespace Cerbos.Api.V1.Audit {
         output.WriteRawTag(66);
         output.WriteMessage(PlanResources);
       }
+      metadata_.WriteTo(output, _map_metadata_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -756,6 +776,7 @@ namespace Cerbos.Api.V1.Audit {
         output.WriteRawTag(66);
         output.WriteMessage(PlanResources);
       }
+      metadata_.WriteTo(ref output, _map_metadata_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -786,6 +807,7 @@ namespace Cerbos.Api.V1.Audit {
       if (methodCase_ == MethodOneofCase.PlanResources) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(PlanResources);
       }
+      size += metadata_.CalculateSize(_map_metadata_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -818,6 +840,7 @@ namespace Cerbos.Api.V1.Audit {
       if (other.Error.Length != 0) {
         Error = other.Error;
       }
+      metadata_.Add(other.metadata_);
       switch (other.MethodCase) {
         case MethodOneofCase.CheckResources:
           if (CheckResources == null) {
@@ -896,6 +919,10 @@ namespace Cerbos.Api.V1.Audit {
             PlanResources = subBuilder;
             break;
           }
+          case 122: {
+            metadata_.AddEntriesFrom(input, _map_metadata_codec);
+            break;
+          }
         }
       }
     #endif
@@ -957,6 +984,10 @@ namespace Cerbos.Api.V1.Audit {
             }
             input.ReadMessage(subBuilder);
             PlanResources = subBuilder;
+            break;
+          }
+          case 122: {
+            metadata_.AddEntriesFrom(ref input, _map_metadata_codec);
             break;
           }
         }
