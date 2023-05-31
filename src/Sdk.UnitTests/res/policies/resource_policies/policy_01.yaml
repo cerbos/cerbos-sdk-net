@@ -57,6 +57,9 @@ resourcePolicy:
           expr: request.resource.attr.status == V.pending_approval
       derivedRoles:
         - direct_manager
+      output:
+        expr: |-
+          "approve:%s".format([request.principal.id])
       effect: EFFECT_ALLOW
 
     - actions: ["delete"]

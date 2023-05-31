@@ -17,7 +17,7 @@ namespace Cerbos.Sdk.UnitTests
         private const int HttpPort = 3592;
         private const int GrpcPort = 3593;
         private const string Image = "ghcr.io/cerbos/cerbos";
-        private const string Tag = "latest";
+        private const string Tag = "dev";
         private const string PathToPolicies = "./../../../res/policies";
         private const string PathToConfig = "./../../../res/config";
         private IContainer Container;
@@ -44,7 +44,7 @@ namespace Cerbos.Sdk.UnitTests
 
             Task.Run(async () => await Container.StartAsync()).Wait();
             Thread.Sleep(3000);
-            _client = new CerbosClientBuilder("http://127.0.0.1:3593").WithPlaintext().BuildBlockingClient();
+            _client = new CerbosClientBuilder("http://127.0.0.1:3593").WithPlaintext().BuildBlockingClient().WithMeta(true);
             _clientPlayground = new CerbosClientBuilder(PlaygroundHost).WithPlaygroundInstance(PlaygroundInstanceId).BuildBlockingClient();
         }
 
@@ -80,6 +80,20 @@ namespace Cerbos.Sdk.UnitTests
             
             Assert.That(have.IsAllowed("view:public"), Is.True);
             Assert.That(have.IsAllowed("approve"), Is.False);
+            
+            Assert.That(have.Meta, Is.Not.Null);
+            Assert.That(have.Outputs, Is.Not.Null);
+            Assert.That(have.Resource, Is.Not.Null);
+
+            Assert.That(have.Meta.Actions["approve"].MatchedPolicy, Is.EqualTo("resource.leave_request.v20210210"));
+            
+            Assert.That(have.Outputs[0].Src, Is.EqualTo("resource.leave_request.v20210210#rule-007"));
+            Assert.That(have.Outputs[0].Val.StringValue, Is.EqualTo("approve:john"));
+            
+            Assert.That(have.Resource.Id, Is.EqualTo("XX125"));
+            Assert.That(have.Resource.Kind, Is.EqualTo("leave_request"));
+            Assert.That(have.Resource.Scope, Is.EqualTo(""));
+            Assert.That(have.Resource.PolicyVersion, Is.EqualTo("20210210"));
         }
         
         [Test]
