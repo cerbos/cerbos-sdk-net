@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 using System;
+using System.ComponentModel.Design.Serialization;
 using Cerbos.Api.V1.Request;
 using Cerbos.Api.V1.Response;
 using Cerbos.Api.V1.Svc;
@@ -16,6 +17,7 @@ namespace Cerbos.Sdk
     {
         private readonly CerbosService.CerbosServiceClient _csc;
         private readonly Builders.AuxData _auxData;
+        private bool _includeMeta = false;
 
         public CerbosBlockingClient(CerbosService.CerbosServiceClient csc)
         {
@@ -35,6 +37,15 @@ namespace Cerbos.Sdk
         {
             return new CerbosBlockingClient(_csc, auxData);
         }
+        
+        /// <summary>
+        /// Set includeMeta field for the requests
+        /// </summary>
+        public CerbosBlockingClient WithMeta(bool include)
+        {
+            _includeMeta = include;
+            return this;
+        }
 
         /// <summary>
         /// Send a request consisting of a principal, resource(s) & action(s) to see if the principal is authorized to do the action(s) on the resource(s).
@@ -45,6 +56,7 @@ namespace Cerbos.Sdk
             try
             {
                 request.AuxData = _auxData?.ToAuxData();
+                request.IncludeMeta = _includeMeta;
                 response = _csc.CheckResources(request);
             }
             catch (Exception e)
@@ -65,7 +77,7 @@ namespace Cerbos.Sdk
             var request = new CheckResourcesRequest
             {
                 RequestId = requestId,
-                IncludeMeta = false,
+                IncludeMeta = _includeMeta,
                 Principal = principal.ToPrincipal(),
             };
 
@@ -96,7 +108,7 @@ namespace Cerbos.Sdk
             var result = CheckResources(new CheckResourcesRequest
             {
                 RequestId = requestId,
-                IncludeMeta = false,
+                IncludeMeta = _includeMeta,
                 Principal = principal.ToPrincipal(),
                 Resources = { resourceAction.ToResourceEntry() }
             });
@@ -139,6 +151,7 @@ namespace Cerbos.Sdk
             try
             {
                 request.AuxData = _auxData?.ToAuxData();
+                request.IncludeMeta = _includeMeta;
                 response = _csc.PlanResources(request);
             }
             catch (Exception e)
@@ -155,7 +168,7 @@ namespace Cerbos.Sdk
             {
                 RequestId = requestId,
                 Action = action,
-                IncludeMeta = false,
+                IncludeMeta = _includeMeta,
                 Principal = principal.ToPrincipal(),
                 Resource = resource.ToPlanResource(),
             };

@@ -355,7 +355,7 @@ namespace Cerbos.Api.V1.Audit {
         }
         Peer.MergeFrom(other.Peer);
       }
-      metadata_.Add(other.metadata_);
+      metadata_.MergeFrom(other.metadata_);
       if (other.Method.Length != 0) {
         Method = other.Method;
       }
@@ -840,7 +840,7 @@ namespace Cerbos.Api.V1.Audit {
       if (other.Error.Length != 0) {
         Error = other.Error;
       }
-      metadata_.Add(other.metadata_);
+      metadata_.MergeFrom(other.metadata_);
       switch (other.MethodCase) {
         case MethodOneofCase.CheckResources:
           if (CheckResources == null) {

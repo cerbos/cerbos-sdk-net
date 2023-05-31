@@ -16,9 +16,11 @@ namespace Cerbos.Sdk
     public class CheckResourcesResult
     {
         private readonly CheckResourcesResponse _response;
+        public string RequestId { get; }
 
         public CheckResourcesResult(CheckResourcesResponse resp) {
             _response = resp;
+            RequestId = _response.RequestId;
         }
         
         public List<CheckResult> Results()
@@ -26,7 +28,7 @@ namespace Cerbos.Sdk
             List<CheckResult> results = new List<CheckResult>();
             foreach (var result in _response.Results)
             {
-                results.Add(new CheckResult(result.Actions));
+                results.Add(new CheckResult(result));
             }
 
             return results;
@@ -44,7 +46,7 @@ namespace Cerbos.Sdk
             {
                 if (result.Resource.Id.Equals(resourceId))
                 {
-                    return new CheckResult(result.Actions);
+                    return new CheckResult(result);
                 }
             }
 

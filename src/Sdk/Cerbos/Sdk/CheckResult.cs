@@ -3,7 +3,8 @@
 
 using System.Collections.Generic;
 using Cerbos.Api.V1.Effect;
-using Google.Protobuf.Collections;
+using Cerbos.Api.V1.Engine;
+using Cerbos.Api.V1.Response;
 
 namespace Cerbos.Sdk
 {
@@ -17,15 +18,28 @@ namespace Cerbos.Sdk
     public class CheckResult
     {
         private readonly Dictionary<string, Effect> _effects;
+        public CheckResourcesResponse.Types.ResultEntry.Types.Resource Resource { get; }
+        public CheckResourcesResponse.Types.ResultEntry.Types.Meta Meta { get; }
+        public List<OutputEntry> Outputs { get; }
 
-        public CheckResult(MapField<string, Effect> effects)
+        public CheckResult(CheckResourcesResponse.Types.ResultEntry result)
         {
             var effectsDictionary = new Dictionary<string, Effect>();
-            foreach (var effect in effects)
+            foreach (var kvp in result.Actions)
             {
-                effectsDictionary.Add(effect.Key, effect.Value);
+                effectsDictionary.Add(kvp.Key, kvp.Value);
             }
             _effects = effectsDictionary;
+
+            Meta = result.Meta;
+            Resource = result.Resource;
+            
+            var outputList = new List<OutputEntry>();
+            foreach (var output in result.Outputs)
+            {
+                outputList.Add(output);
+            }
+            Outputs = outputList;
         }
 
         public CheckResult(Dictionary<string, Effect> effects) {

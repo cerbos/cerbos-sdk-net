@@ -1290,7 +1290,7 @@ namespace Cerbos.Api.V1.Request {
       if (other.PolicyVersion.Length != 0) {
         PolicyVersion = other.PolicyVersion;
       }
-      instances_.Add(other.instances_);
+      instances_.MergeFrom(other.instances_);
       if (other.Scope.Length != 0) {
         Scope = other.Scope;
       }
@@ -1495,7 +1495,7 @@ namespace Cerbos.Api.V1.Request {
       if (other == null) {
         return;
       }
-      attr_.Add(other.attr_);
+      attr_.MergeFrom(other.attr_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -4837,10 +4837,24 @@ namespace Cerbos.Api.V1.Request {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint Tail {
-      get { return filterCase_ == FilterOneofCase.Tail ? (uint) filter_ : 0; }
+      get { return HasTail ? (uint) filter_ : 0; }
       set {
         filter_ = value;
         filterCase_ = FilterOneofCase.Tail;
+      }
+    }
+    /// <summary>Gets whether the "tail" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasTail {
+      get { return filterCase_ == FilterOneofCase.Tail; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "tail" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearTail() {
+      if (HasTail) {
+        ClearFilter();
       }
     }
 
@@ -4873,10 +4887,24 @@ namespace Cerbos.Api.V1.Request {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Lookup {
-      get { return filterCase_ == FilterOneofCase.Lookup ? (string) filter_ : ""; }
+      get { return HasLookup ? (string) filter_ : ""; }
       set {
         filter_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         filterCase_ = FilterOneofCase.Lookup;
+      }
+    }
+    /// <summary>Gets whether the "lookup" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasLookup {
+      get { return filterCase_ == FilterOneofCase.Lookup; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "lookup" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearLookup() {
+      if (HasLookup) {
+        ClearFilter();
       }
     }
 
@@ -4932,10 +4960,10 @@ namespace Cerbos.Api.V1.Request {
     public override int GetHashCode() {
       int hash = 1;
       if (Kind != global::Cerbos.Api.V1.Request.ListAuditLogEntriesRequest.Types.Kind.Unspecified) hash ^= Kind.GetHashCode();
-      if (filterCase_ == FilterOneofCase.Tail) hash ^= Tail.GetHashCode();
+      if (HasTail) hash ^= Tail.GetHashCode();
       if (filterCase_ == FilterOneofCase.Between) hash ^= Between.GetHashCode();
       if (filterCase_ == FilterOneofCase.Since) hash ^= Since.GetHashCode();
-      if (filterCase_ == FilterOneofCase.Lookup) hash ^= Lookup.GetHashCode();
+      if (HasLookup) hash ^= Lookup.GetHashCode();
       hash ^= (int) filterCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -4959,7 +4987,7 @@ namespace Cerbos.Api.V1.Request {
         output.WriteRawTag(8);
         output.WriteEnum((int) Kind);
       }
-      if (filterCase_ == FilterOneofCase.Tail) {
+      if (HasTail) {
         output.WriteRawTag(16);
         output.WriteUInt32(Tail);
       }
@@ -4971,7 +4999,7 @@ namespace Cerbos.Api.V1.Request {
         output.WriteRawTag(34);
         output.WriteMessage(Since);
       }
-      if (filterCase_ == FilterOneofCase.Lookup) {
+      if (HasLookup) {
         output.WriteRawTag(42);
         output.WriteString(Lookup);
       }
@@ -4989,7 +5017,7 @@ namespace Cerbos.Api.V1.Request {
         output.WriteRawTag(8);
         output.WriteEnum((int) Kind);
       }
-      if (filterCase_ == FilterOneofCase.Tail) {
+      if (HasTail) {
         output.WriteRawTag(16);
         output.WriteUInt32(Tail);
       }
@@ -5001,7 +5029,7 @@ namespace Cerbos.Api.V1.Request {
         output.WriteRawTag(34);
         output.WriteMessage(Since);
       }
-      if (filterCase_ == FilterOneofCase.Lookup) {
+      if (HasLookup) {
         output.WriteRawTag(42);
         output.WriteString(Lookup);
       }
@@ -5018,7 +5046,7 @@ namespace Cerbos.Api.V1.Request {
       if (Kind != global::Cerbos.Api.V1.Request.ListAuditLogEntriesRequest.Types.Kind.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Kind);
       }
-      if (filterCase_ == FilterOneofCase.Tail) {
+      if (HasTail) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Tail);
       }
       if (filterCase_ == FilterOneofCase.Between) {
@@ -5027,7 +5055,7 @@ namespace Cerbos.Api.V1.Request {
       if (filterCase_ == FilterOneofCase.Since) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Since);
       }
-      if (filterCase_ == FilterOneofCase.Lookup) {
+      if (HasLookup) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Lookup);
       }
       if (_unknownFields != null) {
