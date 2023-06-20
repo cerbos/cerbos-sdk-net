@@ -217,65 +217,69 @@ namespace Cerbos.Api.V1.Response {
             "c3BvbnNlLnYxLlBsYXlncm91bmRUZXN0UmVzcG9uc2UuVGVzdFJlc3VsdHNI",
             "AFIHc3VjY2VzcxpGCgtUZXN0UmVzdWx0cxI3CgdyZXN1bHRzGAEgASgLMh0u",
             "Y2VyYm9zLnBvbGljeS52MS5UZXN0UmVzdWx0c1IHcmVzdWx0czofkkEcChoy",
-            "GFBsYXlncm91bmQgdGVzdCByZXNwb25zZUIJCgdvdXRjb21lIu8EChpQbGF5",
+            "GFBsYXlncm91bmQgdGVzdCByZXNwb25zZUIJCgdvdXRjb21lIrkGChpQbGF5",
             "Z3JvdW5kRXZhbHVhdGVSZXNwb25zZRIjCg1wbGF5Z3JvdW5kX2lkGAEgASgJ",
             "UgxwbGF5Z3JvdW5kSWQSQQoHZmFpbHVyZRgCIAEoCzIlLmNlcmJvcy5yZXNw",
             "b25zZS52MS5QbGF5Z3JvdW5kRmFpbHVyZUgAUgdmYWlsdXJlElkKB3N1Y2Nl",
             "c3MYAyABKAsyPS5jZXJib3MucmVzcG9uc2UudjEuUGxheWdyb3VuZEV2YWx1",
-            "YXRlUmVzcG9uc2UuRXZhbFJlc3VsdExpc3RIAFIHc3VjY2Vzcxr2AQoKRXZh",
+            "YXRlUmVzcG9uc2UuRXZhbFJlc3VsdExpc3RIAFIHc3VjY2Vzcxr+AQoKRXZh",
             "bFJlc3VsdBIWCgZhY3Rpb24YASABKAlSBmFjdGlvbhIwCgZlZmZlY3QYAiAB",
             "KA4yGC5jZXJib3MuZWZmZWN0LnYxLkVmZmVjdFIGZWZmZWN0EhYKBnBvbGlj",
-            "eRgDIAEoCVIGcG9saWN5EjYKF2VmZmVjdGl2ZV9kZXJpdmVkX3JvbGVzGAQg",
-            "AygJUhVlZmZlY3RpdmVEZXJpdmVkUm9sZXMSTgoRdmFsaWRhdGlvbl9lcnJv",
-            "cnMYBSADKAsyIS5jZXJib3Muc2NoZW1hLnYxLlZhbGlkYXRpb25FcnJvclIQ",
-            "dmFsaWRhdGlvbkVycm9ycxplCg5FdmFsUmVzdWx0TGlzdBJTCgdyZXN1bHRz",
-            "GAEgAygLMjkuY2VyYm9zLnJlc3BvbnNlLnYxLlBsYXlncm91bmRFdmFsdWF0",
-            "ZVJlc3BvbnNlLkV2YWxSZXN1bHRSB3Jlc3VsdHM6I5JBIAoeMhxQbGF5Z3Jv",
-            "dW5kIGV2YWx1YXRlIHJlc3BvbnNlQgkKB291dGNvbWUimwQKF1BsYXlncm91",
-            "bmRQcm94eVJlc3BvbnNlEiMKDXBsYXlncm91bmRfaWQYASABKAlSDHBsYXln",
-            "cm91bmRJZBJBCgdmYWlsdXJlGAIgASgLMiUuY2VyYm9zLnJlc3BvbnNlLnYx",
-            "LlBsYXlncm91bmRGYWlsdXJlSABSB2ZhaWx1cmUSXAoSY2hlY2tfcmVzb3Vy",
-            "Y2Vfc2V0GAMgASgLMiwuY2VyYm9zLnJlc3BvbnNlLnYxLkNoZWNrUmVzb3Vy",
-            "Y2VTZXRSZXNwb25zZUgAUhBjaGVja1Jlc291cmNlU2V0EmIKFGNoZWNrX3Jl",
-            "c291cmNlX2JhdGNoGAQgASgLMi4uY2VyYm9zLnJlc3BvbnNlLnYxLkNoZWNr",
-            "UmVzb3VyY2VCYXRjaFJlc3BvbnNlSABSEmNoZWNrUmVzb3VyY2VCYXRjaBJS",
-            "Cg5wbGFuX3Jlc291cmNlcxgFIAEoCzIpLmNlcmJvcy5yZXNwb25zZS52MS5Q",
-            "bGFuUmVzb3VyY2VzUmVzcG9uc2VIAFINcGxhblJlc291cmNlcxJVCg9jaGVj",
-            "a19yZXNvdXJjZXMYBiABKAsyKi5jZXJib3MucmVzcG9uc2UudjEuQ2hlY2tS",
-            "ZXNvdXJjZXNSZXNwb25zZUgAUg5jaGVja1Jlc291cmNlczogkkEdChsyGVBs",
-            "YXlncm91bmQgcHJveHkgcmVzcG9uc2VCCQoHb3V0Y29tZSJwChlBZGRPclVw",
-            "ZGF0ZVBvbGljeVJlc3BvbnNlEjAKB3N1Y2Nlc3MYASABKAsyFi5nb29nbGUu",
-            "cHJvdG9idWYuRW1wdHlSB3N1Y2Nlc3M6IZJBHgocMhpBZGQvdXBkYXRlIHBv",
-            "bGljeSByZXNwb25zZSLgAQobTGlzdEF1ZGl0TG9nRW50cmllc1Jlc3BvbnNl",
-            "EksKEGFjY2Vzc19sb2dfZW50cnkYASABKAsyHy5jZXJib3MuYXVkaXQudjEu",
-            "QWNjZXNzTG9nRW50cnlIAFIOYWNjZXNzTG9nRW50cnkSUQoSZGVjaXNpb25f",
-            "bG9nX2VudHJ5GAIgASgLMiEuY2VyYm9zLmF1ZGl0LnYxLkRlY2lzaW9uTG9n",
-            "RW50cnlIAFIQZGVjaXNpb25Mb2dFbnRyeToYkkEVChMyEUF1ZGl0IGxvZyBz",
-            "dHJlYW0uQgcKBWVudHJ5IoIBChJTZXJ2ZXJJbmZvUmVzcG9uc2USGAoHdmVy",
-            "c2lvbhgBIAEoCVIHdmVyc2lvbhIWCgZjb21taXQYAiABKAlSBmNvbW1pdBId",
-            "CgpidWlsZF9kYXRlGAMgASgJUglidWlsZERhdGU6G5JBGAoWMhRTZXJ2ZXIg",
-            "aW5mbyByZXNwb25zZSJqChRMaXN0UG9saWNpZXNSZXNwb25zZRIdCgpwb2xp",
-            "Y3lfaWRzGAEgAygJUglwb2xpY3lJZHM6M5JBMAouMixMaXN0IG9mIHBvbGlj",
-            "aWVzIHN0b3JlZCBpbiB0aGUgQ2VyYm9zIHNlcnZlciJlChFHZXRQb2xpY3lS",
-            "ZXNwb25zZRI0Cghwb2xpY2llcxgBIAMoCzIYLmNlcmJvcy5wb2xpY3kudjEu",
-            "UG9saWN5Ughwb2xpY2llczoakkEXChUyE0dldCBwb2xpY3kgcmVzcG9uc2Ui",
-            "ZAoVRGlzYWJsZVBvbGljeVJlc3BvbnNlEisKEWRpc2FibGVkX3BvbGljaWVz",
-            "GAEgASgNUhBkaXNhYmxlZFBvbGljaWVzOh6SQRsKGTIXRGlzYWJsZSBwb2xp",
-            "Y3kgcmVzcG9uc2UiYAoURW5hYmxlUG9saWN5UmVzcG9uc2USKQoQZW5hYmxl",
-            "ZF9wb2xpY2llcxgBIAEoDVIPZW5hYmxlZFBvbGljaWVzOh2SQRoKGDIWRW5h",
-            "YmxlIHBvbGljeSByZXNwb25zZSI+ChlBZGRPclVwZGF0ZVNjaGVtYVJlc3Bv",
-            "bnNlOiGSQR4KHDIaQWRkL3VwZGF0ZSBzY2hlbWEgcmVzcG9uc2UiVQoTTGlz",
-            "dFNjaGVtYXNSZXNwb25zZRIdCgpzY2hlbWFfaWRzGAEgAygJUglzY2hlbWFJ",
-            "ZHM6H5JBHAoaMhhMaXN0IHNjaGVtYSBpZHMgcmVzcG9uc2UiZgoRR2V0U2No",
-            "ZW1hUmVzcG9uc2USMgoHc2NoZW1hcxgBIAMoCzIYLmNlcmJvcy5zY2hlbWEu",
-            "djEuU2NoZW1hUgdzY2hlbWFzOh2SQRoKGDIWR2V0IHNjaGVtYShzKSByZXNw",
-            "b25zZSJhChREZWxldGVTY2hlbWFSZXNwb25zZRInCg9kZWxldGVkX3NjaGVt",
-            "YXMYASABKA1SDmRlbGV0ZWRTY2hlbWFzOiCSQR0KGzIZRGVsZXRlIHNjaGVt",
-            "YShzKSByZXNwb25zZSIzChNSZWxvYWRTdG9yZVJlc3BvbnNlOhySQRkKFzIV",
-            "UmVsb2FkIHN0b3JlIHJlc3BvbnNlQncKGmRldi5jZXJib3MuYXBpLnYxLnJl",
-            "c3BvbnNlWkBnaXRodWIuY29tL2NlcmJvcy9jZXJib3MvYXBpL2dlbnBiL2Nl",
-            "cmJvcy9yZXNwb25zZS92MTtyZXNwb25zZXYxqgIWQ2VyYm9zLkFwaS5WMS5S",
-            "ZXNwb25zZWIGcHJvdG8z"));
+            "eRgDIAEoCVIGcG9saWN5EjoKF2VmZmVjdGl2ZV9kZXJpdmVkX3JvbGVzGAQg",
+            "AygJQgIYAVIVZWZmZWN0aXZlRGVyaXZlZFJvbGVzElIKEXZhbGlkYXRpb25f",
+            "ZXJyb3JzGAUgAygLMiEuY2VyYm9zLnNjaGVtYS52MS5WYWxpZGF0aW9uRXJy",
+            "b3JCAhgBUhB2YWxpZGF0aW9uRXJyb3JzGqYCCg5FdmFsUmVzdWx0TGlzdBJT",
+            "CgdyZXN1bHRzGAEgAygLMjkuY2VyYm9zLnJlc3BvbnNlLnYxLlBsYXlncm91",
+            "bmRFdmFsdWF0ZVJlc3BvbnNlLkV2YWxSZXN1bHRSB3Jlc3VsdHMSNgoXZWZm",
+            "ZWN0aXZlX2Rlcml2ZWRfcm9sZXMYAiADKAlSFWVmZmVjdGl2ZURlcml2ZWRS",
+            "b2xlcxJOChF2YWxpZGF0aW9uX2Vycm9ycxgDIAMoCzIhLmNlcmJvcy5zY2hl",
+            "bWEudjEuVmFsaWRhdGlvbkVycm9yUhB2YWxpZGF0aW9uRXJyb3JzEjcKB291",
+            "dHB1dHMYBCADKAsyHS5jZXJib3MuZW5naW5lLnYxLk91dHB1dEVudHJ5Ugdv",
+            "dXRwdXRzOiOSQSAKHjIcUGxheWdyb3VuZCBldmFsdWF0ZSByZXNwb25zZUIJ",
+            "CgdvdXRjb21lIpsEChdQbGF5Z3JvdW5kUHJveHlSZXNwb25zZRIjCg1wbGF5",
+            "Z3JvdW5kX2lkGAEgASgJUgxwbGF5Z3JvdW5kSWQSQQoHZmFpbHVyZRgCIAEo",
+            "CzIlLmNlcmJvcy5yZXNwb25zZS52MS5QbGF5Z3JvdW5kRmFpbHVyZUgAUgdm",
+            "YWlsdXJlElwKEmNoZWNrX3Jlc291cmNlX3NldBgDIAEoCzIsLmNlcmJvcy5y",
+            "ZXNwb25zZS52MS5DaGVja1Jlc291cmNlU2V0UmVzcG9uc2VIAFIQY2hlY2tS",
+            "ZXNvdXJjZVNldBJiChRjaGVja19yZXNvdXJjZV9iYXRjaBgEIAEoCzIuLmNl",
+            "cmJvcy5yZXNwb25zZS52MS5DaGVja1Jlc291cmNlQmF0Y2hSZXNwb25zZUgA",
+            "UhJjaGVja1Jlc291cmNlQmF0Y2gSUgoOcGxhbl9yZXNvdXJjZXMYBSABKAsy",
+            "KS5jZXJib3MucmVzcG9uc2UudjEuUGxhblJlc291cmNlc1Jlc3BvbnNlSABS",
+            "DXBsYW5SZXNvdXJjZXMSVQoPY2hlY2tfcmVzb3VyY2VzGAYgASgLMiouY2Vy",
+            "Ym9zLnJlc3BvbnNlLnYxLkNoZWNrUmVzb3VyY2VzUmVzcG9uc2VIAFIOY2hl",
+            "Y2tSZXNvdXJjZXM6IJJBHQobMhlQbGF5Z3JvdW5kIHByb3h5IHJlc3BvbnNl",
+            "QgkKB291dGNvbWUicAoZQWRkT3JVcGRhdGVQb2xpY3lSZXNwb25zZRIwCgdz",
+            "dWNjZXNzGAEgASgLMhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5UgdzdWNjZXNz",
+            "OiGSQR4KHDIaQWRkL3VwZGF0ZSBwb2xpY3kgcmVzcG9uc2Ui4AEKG0xpc3RB",
+            "dWRpdExvZ0VudHJpZXNSZXNwb25zZRJLChBhY2Nlc3NfbG9nX2VudHJ5GAEg",
+            "ASgLMh8uY2VyYm9zLmF1ZGl0LnYxLkFjY2Vzc0xvZ0VudHJ5SABSDmFjY2Vz",
+            "c0xvZ0VudHJ5ElEKEmRlY2lzaW9uX2xvZ19lbnRyeRgCIAEoCzIhLmNlcmJv",
+            "cy5hdWRpdC52MS5EZWNpc2lvbkxvZ0VudHJ5SABSEGRlY2lzaW9uTG9nRW50",
+            "cnk6GJJBFQoTMhFBdWRpdCBsb2cgc3RyZWFtLkIHCgVlbnRyeSKCAQoSU2Vy",
+            "dmVySW5mb1Jlc3BvbnNlEhgKB3ZlcnNpb24YASABKAlSB3ZlcnNpb24SFgoG",
+            "Y29tbWl0GAIgASgJUgZjb21taXQSHQoKYnVpbGRfZGF0ZRgDIAEoCVIJYnVp",
+            "bGREYXRlOhuSQRgKFjIUU2VydmVyIGluZm8gcmVzcG9uc2UiagoUTGlzdFBv",
+            "bGljaWVzUmVzcG9uc2USHQoKcG9saWN5X2lkcxgBIAMoCVIJcG9saWN5SWRz",
+            "OjOSQTAKLjIsTGlzdCBvZiBwb2xpY2llcyBzdG9yZWQgaW4gdGhlIENlcmJv",
+            "cyBzZXJ2ZXIiZQoRR2V0UG9saWN5UmVzcG9uc2USNAoIcG9saWNpZXMYASAD",
+            "KAsyGC5jZXJib3MucG9saWN5LnYxLlBvbGljeVIIcG9saWNpZXM6GpJBFwoV",
+            "MhNHZXQgcG9saWN5IHJlc3BvbnNlImQKFURpc2FibGVQb2xpY3lSZXNwb25z",
+            "ZRIrChFkaXNhYmxlZF9wb2xpY2llcxgBIAEoDVIQZGlzYWJsZWRQb2xpY2ll",
+            "czoekkEbChkyF0Rpc2FibGUgcG9saWN5IHJlc3BvbnNlImAKFEVuYWJsZVBv",
+            "bGljeVJlc3BvbnNlEikKEGVuYWJsZWRfcG9saWNpZXMYASABKA1SD2VuYWJs",
+            "ZWRQb2xpY2llczodkkEaChgyFkVuYWJsZSBwb2xpY3kgcmVzcG9uc2UiPgoZ",
+            "QWRkT3JVcGRhdGVTY2hlbWFSZXNwb25zZTohkkEeChwyGkFkZC91cGRhdGUg",
+            "c2NoZW1hIHJlc3BvbnNlIlUKE0xpc3RTY2hlbWFzUmVzcG9uc2USHQoKc2No",
+            "ZW1hX2lkcxgBIAMoCVIJc2NoZW1hSWRzOh+SQRwKGjIYTGlzdCBzY2hlbWEg",
+            "aWRzIHJlc3BvbnNlImYKEUdldFNjaGVtYVJlc3BvbnNlEjIKB3NjaGVtYXMY",
+            "ASADKAsyGC5jZXJib3Muc2NoZW1hLnYxLlNjaGVtYVIHc2NoZW1hczodkkEa",
+            "ChgyFkdldCBzY2hlbWEocykgcmVzcG9uc2UiYQoURGVsZXRlU2NoZW1hUmVz",
+            "cG9uc2USJwoPZGVsZXRlZF9zY2hlbWFzGAEgASgNUg5kZWxldGVkU2NoZW1h",
+            "czogkkEdChsyGURlbGV0ZSBzY2hlbWEocykgcmVzcG9uc2UiMwoTUmVsb2Fk",
+            "U3RvcmVSZXNwb25zZTockkEZChcyFVJlbG9hZCBzdG9yZSByZXNwb25zZUJ3",
+            "ChpkZXYuY2VyYm9zLmFwaS52MS5yZXNwb25zZVpAZ2l0aHViLmNvbS9jZXJi",
+            "b3MvY2VyYm9zL2FwaS9nZW5wYi9jZXJib3MvcmVzcG9uc2UvdjE7cmVzcG9u",
+            "c2V2MaoCFkNlcmJvcy5BcGkuVjEuUmVzcG9uc2ViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Cerbos.Api.V1.Audit.AuditReflection.Descriptor, global::Cerbos.Api.V1.Effect.EffectReflection.Descriptor, global::Cerbos.Api.V1.Engine.EngineReflection.Descriptor, global::Cerbos.Api.V1.Policy.PolicyReflection.Descriptor, global::Cerbos.Api.V1.Schema.SchemaReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Grpc.Gateway.ProtocGenOpenapiv2.Options.AnnotationsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -294,7 +298,7 @@ namespace Cerbos.Api.V1.Response {
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Response.PlaygroundValidateResponse), global::Cerbos.Api.V1.Response.PlaygroundValidateResponse.Parser, new[]{ "PlaygroundId", "Failure", "Success" }, new[]{ "Outcome" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Response.PlaygroundTestResponse), global::Cerbos.Api.V1.Response.PlaygroundTestResponse.Parser, new[]{ "PlaygroundId", "Failure", "Success" }, new[]{ "Outcome" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Response.PlaygroundTestResponse.Types.TestResults), global::Cerbos.Api.V1.Response.PlaygroundTestResponse.Types.TestResults.Parser, new[]{ "Results" }, null, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Response.PlaygroundEvaluateResponse), global::Cerbos.Api.V1.Response.PlaygroundEvaluateResponse.Parser, new[]{ "PlaygroundId", "Failure", "Success" }, new[]{ "Outcome" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Response.PlaygroundEvaluateResponse.Types.EvalResult), global::Cerbos.Api.V1.Response.PlaygroundEvaluateResponse.Types.EvalResult.Parser, new[]{ "Action", "Effect", "Policy", "EffectiveDerivedRoles", "ValidationErrors" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Response.PlaygroundEvaluateResponse.Types.EvalResultList), global::Cerbos.Api.V1.Response.PlaygroundEvaluateResponse.Types.EvalResultList.Parser, new[]{ "Results" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Response.PlaygroundEvaluateResponse.Types.EvalResultList), global::Cerbos.Api.V1.Response.PlaygroundEvaluateResponse.Types.EvalResultList.Parser, new[]{ "Results", "EffectiveDerivedRoles", "ValidationErrors", "Outputs" }, null, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Response.PlaygroundProxyResponse), global::Cerbos.Api.V1.Response.PlaygroundProxyResponse.Parser, new[]{ "PlaygroundId", "Failure", "CheckResourceSet", "CheckResourceBatch", "PlanResources", "CheckResources" }, new[]{ "Outcome" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Response.AddOrUpdatePolicyResponse), global::Cerbos.Api.V1.Response.AddOrUpdatePolicyResponse.Parser, new[]{ "Success" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Response.ListAuditLogEntriesResponse), global::Cerbos.Api.V1.Response.ListAuditLogEntriesResponse.Parser, new[]{ "AccessLogEntry", "DecisionLogEntry" }, new[]{ "Entry" }, null, null, null),
@@ -5492,6 +5496,7 @@ namespace Cerbos.Api.V1.Response {
         private static readonly pb::FieldCodec<string> _repeated_effectiveDerivedRoles_codec
             = pb::FieldCodec.ForString(34);
         private readonly pbc::RepeatedField<string> effectiveDerivedRoles_ = new pbc::RepeatedField<string>();
+        [global::System.ObsoleteAttribute]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::RepeatedField<string> EffectiveDerivedRoles {
@@ -5503,6 +5508,7 @@ namespace Cerbos.Api.V1.Response {
         private static readonly pb::FieldCodec<global::Cerbos.Api.V1.Schema.ValidationError> _repeated_validationErrors_codec
             = pb::FieldCodec.ForMessage(42, global::Cerbos.Api.V1.Schema.ValidationError.Parser);
         private readonly pbc::RepeatedField<global::Cerbos.Api.V1.Schema.ValidationError> validationErrors_ = new pbc::RepeatedField<global::Cerbos.Api.V1.Schema.ValidationError>();
+        [global::System.ObsoleteAttribute]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::RepeatedField<global::Cerbos.Api.V1.Schema.ValidationError> ValidationErrors {
@@ -5753,6 +5759,9 @@ namespace Cerbos.Api.V1.Response {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public EvalResultList(EvalResultList other) : this() {
           results_ = other.results_.Clone();
+          effectiveDerivedRoles_ = other.effectiveDerivedRoles_.Clone();
+          validationErrors_ = other.validationErrors_.Clone();
+          outputs_ = other.outputs_.Clone();
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
@@ -5773,6 +5782,39 @@ namespace Cerbos.Api.V1.Response {
           get { return results_; }
         }
 
+        /// <summary>Field number for the "effective_derived_roles" field.</summary>
+        public const int EffectiveDerivedRolesFieldNumber = 2;
+        private static readonly pb::FieldCodec<string> _repeated_effectiveDerivedRoles_codec
+            = pb::FieldCodec.ForString(18);
+        private readonly pbc::RepeatedField<string> effectiveDerivedRoles_ = new pbc::RepeatedField<string>();
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public pbc::RepeatedField<string> EffectiveDerivedRoles {
+          get { return effectiveDerivedRoles_; }
+        }
+
+        /// <summary>Field number for the "validation_errors" field.</summary>
+        public const int ValidationErrorsFieldNumber = 3;
+        private static readonly pb::FieldCodec<global::Cerbos.Api.V1.Schema.ValidationError> _repeated_validationErrors_codec
+            = pb::FieldCodec.ForMessage(26, global::Cerbos.Api.V1.Schema.ValidationError.Parser);
+        private readonly pbc::RepeatedField<global::Cerbos.Api.V1.Schema.ValidationError> validationErrors_ = new pbc::RepeatedField<global::Cerbos.Api.V1.Schema.ValidationError>();
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public pbc::RepeatedField<global::Cerbos.Api.V1.Schema.ValidationError> ValidationErrors {
+          get { return validationErrors_; }
+        }
+
+        /// <summary>Field number for the "outputs" field.</summary>
+        public const int OutputsFieldNumber = 4;
+        private static readonly pb::FieldCodec<global::Cerbos.Api.V1.Engine.OutputEntry> _repeated_outputs_codec
+            = pb::FieldCodec.ForMessage(34, global::Cerbos.Api.V1.Engine.OutputEntry.Parser);
+        private readonly pbc::RepeatedField<global::Cerbos.Api.V1.Engine.OutputEntry> outputs_ = new pbc::RepeatedField<global::Cerbos.Api.V1.Engine.OutputEntry>();
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public pbc::RepeatedField<global::Cerbos.Api.V1.Engine.OutputEntry> Outputs {
+          get { return outputs_; }
+        }
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
@@ -5789,6 +5831,9 @@ namespace Cerbos.Api.V1.Response {
             return true;
           }
           if(!results_.Equals(other.results_)) return false;
+          if(!effectiveDerivedRoles_.Equals(other.effectiveDerivedRoles_)) return false;
+          if(!validationErrors_.Equals(other.validationErrors_)) return false;
+          if(!outputs_.Equals(other.outputs_)) return false;
           return Equals(_unknownFields, other._unknownFields);
         }
 
@@ -5797,6 +5842,9 @@ namespace Cerbos.Api.V1.Response {
         public override int GetHashCode() {
           int hash = 1;
           hash ^= results_.GetHashCode();
+          hash ^= effectiveDerivedRoles_.GetHashCode();
+          hash ^= validationErrors_.GetHashCode();
+          hash ^= outputs_.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -5816,6 +5864,9 @@ namespace Cerbos.Api.V1.Response {
           output.WriteRawMessage(this);
         #else
           results_.WriteTo(output, _repeated_results_codec);
+          effectiveDerivedRoles_.WriteTo(output, _repeated_effectiveDerivedRoles_codec);
+          validationErrors_.WriteTo(output, _repeated_validationErrors_codec);
+          outputs_.WriteTo(output, _repeated_outputs_codec);
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
@@ -5827,6 +5878,9 @@ namespace Cerbos.Api.V1.Response {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           results_.WriteTo(ref output, _repeated_results_codec);
+          effectiveDerivedRoles_.WriteTo(ref output, _repeated_effectiveDerivedRoles_codec);
+          validationErrors_.WriteTo(ref output, _repeated_validationErrors_codec);
+          outputs_.WriteTo(ref output, _repeated_outputs_codec);
           if (_unknownFields != null) {
             _unknownFields.WriteTo(ref output);
           }
@@ -5838,6 +5892,9 @@ namespace Cerbos.Api.V1.Response {
         public int CalculateSize() {
           int size = 0;
           size += results_.CalculateSize(_repeated_results_codec);
+          size += effectiveDerivedRoles_.CalculateSize(_repeated_effectiveDerivedRoles_codec);
+          size += validationErrors_.CalculateSize(_repeated_validationErrors_codec);
+          size += outputs_.CalculateSize(_repeated_outputs_codec);
           if (_unknownFields != null) {
             size += _unknownFields.CalculateSize();
           }
@@ -5851,6 +5908,9 @@ namespace Cerbos.Api.V1.Response {
             return;
           }
           results_.Add(other.results_);
+          effectiveDerivedRoles_.Add(other.effectiveDerivedRoles_);
+          validationErrors_.Add(other.validationErrors_);
+          outputs_.Add(other.outputs_);
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
         }
 
@@ -5870,6 +5930,18 @@ namespace Cerbos.Api.V1.Response {
                 results_.AddEntriesFrom(input, _repeated_results_codec);
                 break;
               }
+              case 18: {
+                effectiveDerivedRoles_.AddEntriesFrom(input, _repeated_effectiveDerivedRoles_codec);
+                break;
+              }
+              case 26: {
+                validationErrors_.AddEntriesFrom(input, _repeated_validationErrors_codec);
+                break;
+              }
+              case 34: {
+                outputs_.AddEntriesFrom(input, _repeated_outputs_codec);
+                break;
+              }
             }
           }
         #endif
@@ -5887,6 +5959,18 @@ namespace Cerbos.Api.V1.Response {
                 break;
               case 10: {
                 results_.AddEntriesFrom(ref input, _repeated_results_codec);
+                break;
+              }
+              case 18: {
+                effectiveDerivedRoles_.AddEntriesFrom(ref input, _repeated_effectiveDerivedRoles_codec);
+                break;
+              }
+              case 26: {
+                validationErrors_.AddEntriesFrom(ref input, _repeated_validationErrors_codec);
+                break;
+              }
+              case 34: {
+                outputs_.AddEntriesFrom(ref input, _repeated_outputs_codec);
                 break;
               }
             }
