@@ -49,6 +49,9 @@ resourcePolicy:
       derivedRoles:
         - any_employee
       effect: EFFECT_ALLOW
+      output:
+        expr: |-
+          "view:public:%s".format([request.principal.id])
       name: public-view
 
     - actions: ["approve"]
@@ -57,9 +60,6 @@ resourcePolicy:
           expr: request.resource.attr.status == V.pending_approval
       derivedRoles:
         - direct_manager
-      output:
-        expr: |-
-          "approve:%s".format([request.principal.id])
       effect: EFFECT_ALLOW
 
     - actions: ["delete"]

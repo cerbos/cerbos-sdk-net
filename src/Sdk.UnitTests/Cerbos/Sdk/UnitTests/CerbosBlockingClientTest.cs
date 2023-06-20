@@ -87,8 +87,8 @@ namespace Cerbos.Sdk.UnitTests
 
             Assert.That(have.Meta.Actions["approve"].MatchedPolicy, Is.EqualTo("resource.leave_request.v20210210"));
             
-            Assert.That(have.Outputs[0].Src, Is.EqualTo("resource.leave_request.v20210210#rule-007"));
-            Assert.That(have.Outputs[0].Val.StringValue, Is.EqualTo("approve:john"));
+            Assert.That(have.Outputs[0].Src, Is.EqualTo("resource.leave_request.v20210210#public-view"));
+            Assert.That(have.Outputs[0].Val.StringValue, Is.EqualTo("view:public:john"));
             
             Assert.That(have.Resource.Id, Is.EqualTo("XX125"));
             Assert.That(have.Resource.Kind, Is.EqualTo("leave_request"));
