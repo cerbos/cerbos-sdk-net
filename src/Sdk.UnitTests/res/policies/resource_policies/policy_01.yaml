@@ -49,6 +49,9 @@ resourcePolicy:
       derivedRoles:
         - any_employee
       effect: EFFECT_ALLOW
+      output:
+        expr: |-
+          "view:public:%s".format([request.principal.id])
       name: public-view
 
     - actions: ["approve"]

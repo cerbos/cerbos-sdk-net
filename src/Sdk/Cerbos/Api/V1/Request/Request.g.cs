@@ -213,40 +213,45 @@ namespace Cerbos.Api.V1.Request {
             "dHdlZW4gYSB0aW1lIHJhbmdlLiJACgRLaW5kEhQKEEtJTkRfVU5TUEVDSUZJ",
             "RUQQABIPCgtLSU5EX0FDQ0VTUxABEhEKDUtJTkRfREVDSVNJT04QAkINCgZm",
             "aWx0ZXISA/hCASIvChFTZXJ2ZXJJbmZvUmVxdWVzdDoakkEXChUyE1NlcnZl",
-            "ciBpbmZvIHJlcXVlc3QigQEKE0xpc3RQb2xpY2llc1JlcXVlc3QSTAoQaW5j",
+            "ciBpbmZvIHJlcXVlc3Qi9wIKE0xpc3RQb2xpY2llc1JlcXVlc3QSTAoQaW5j",
             "bHVkZV9kaXNhYmxlZBgBIAEoCEIhkkEbMhlJbmNsdWRlIGRpc2FibGVkIHBv",
-            "bGljaWVz4EEBUg9pbmNsdWRlRGlzYWJsZWQ6HJJBGQoXMhVMaXN0IHBvbGlj",
-            "aWVzIHJlcXVlc3QigwIKEEdldFBvbGljeVJlcXVlc3QS0wEKAmlkGAEgAygJ",
-            "QsIBkkGmATKHAUZvciBibG9iLCBkaXNrLCBnaXQgc3RvcmVzIHVzZSBmaWxl",
-            "IG5hbWUgKDxmaWxlbmFtZT4ueWFtbCkuIEZvciBteXNxbCwgcG9zdGdyZXMs",
-            "IHNxbGl0ZTMgdXNlIGlkICg8a2luZD4uPG5hbWU+Ljx2ZXJzaW9uPikgb2Yg",
+            "bGljaWVz4EEBUg9pbmNsdWRlRGlzYWJsZWQSTAoLbmFtZV9yZWdleHAYAiAB",
+            "KAlCK5JBJTIjRmlsdGVyIHBvbGljaWVzIGJ5IG5hbWUgd2l0aCByZWdleHDg",
+            "QQFSCm5hbWVSZWdleHASTwoMc2NvcGVfcmVnZXhwGAMgASgJQiySQSYyJEZp",
+            "bHRlciBwb2xpY2llcyBieSBzY29wZSB3aXRoIHJlZ2V4cOBBAVILc2NvcGVS",
+            "ZWdleHASVQoOdmVyc2lvbl9yZWdleHAYBCABKAlCLpJBKDImRmlsdGVyIHBv",
+            "bGljaWVzIGJ5IHZlcnNpb24gd2l0aCByZWdleHDgQQFSDXZlcnNpb25SZWdl",
+            "eHA6HJJBGQoXMhVMaXN0IHBvbGljaWVzIHJlcXVlc3QigwIKEEdldFBvbGlj",
+            "eVJlcXVlc3QS0wEKAmlkGAEgAygJQsIBkkGmATKHAUZvciBibG9iLCBkaXNr",
+            "LCBnaXQgc3RvcmVzIHVzZSBmaWxlIG5hbWUgKDxmaWxlbmFtZT4ueWFtbCku",
+            "IEZvciBteXNxbCwgcG9zdGdyZXMsIHNxbGl0ZTMgdXNlIGlkICg8a2luZD4u",
+            "PG5hbWU+Ljx2ZXJzaW9uPikgb2YgdGhlIHBvbGljeUoaInByaW5jaXBhbC5z",
+            "YXJhaC52ZGVmYXVsdCLgQQL6QhKSAQ8IARAZGAEiB3IFEAEYgApSAmlkOhmS",
+            "QRYKFDISR2V0IHBvbGljeSByZXF1ZXN0IqABChREaXNhYmxlUG9saWN5UmVx",
+            "dWVzdBJpCgJpZBgBIAMoCUJZkkE+MiBVbmlxdWUgaWRlbnRpZmllciBmb3Ig",
             "dGhlIHBvbGljeUoaInByaW5jaXBhbC5zYXJhaC52ZGVmYXVsdCLgQQL6QhKS",
-            "AQ8IARAZGAEiB3IFEAEYgApSAmlkOhmSQRYKFDISR2V0IHBvbGljeSByZXF1",
-            "ZXN0IqABChREaXNhYmxlUG9saWN5UmVxdWVzdBJpCgJpZBgBIAMoCUJZkkE+",
-            "MiBVbmlxdWUgaWRlbnRpZmllciBmb3IgdGhlIHBvbGljeUoaInByaW5jaXBh",
-            "bC5zYXJhaC52ZGVmYXVsdCLgQQL6QhKSAQ8IARAZGAEiB3IFEAEYgApSAmlk",
-            "Oh2SQRoKGDIWRGlzYWJsZSBwb2xpY3kgcmVxdWVzdCKeAQoTRW5hYmxlUG9s",
-            "aWN5UmVxdWVzdBJpCgJpZBgBIAMoCUJZkkE+MiBVbmlxdWUgaWRlbnRpZmll",
-            "ciBmb3IgdGhlIHBvbGljeUoaInByaW5jaXBhbC5zYXJhaC52ZGVmYXVsdCLg",
-            "QQL6QhKSAQ8IARAZGAEiB3IFEAEYgApSAmlkOhySQRkKFzIVRW5hYmxlIHBv",
-            "bGljeSByZXF1ZXN0IpoBChhBZGRPclVwZGF0ZVNjaGVtYVJlcXVlc3QSXAoH",
-            "c2NoZW1hcxgBIAMoCzIYLmNlcmJvcy5zY2hlbWEudjEuU2NoZW1hQiiSQRgy",
-            "EExpc3Qgb2Ygc2NoZW1hcy6gAQqoAQHgQQL6QgeSAQQIARAKUgdzY2hlbWFz",
-            "OiCSQR0KGzIZQWRkL3VwZGF0ZSBzY2hlbWEgcmVxdWVzdCI0ChJMaXN0U2No",
-            "ZW1hc1JlcXVlc3Q6HpJBGwoZMhdMaXN0IHNjaGVtYSBpZHMgcmVxdWVzdCKR",
-            "AQoQR2V0U2NoZW1hUmVxdWVzdBJfCgJpZBgBIAMoCUJPkkE0MiBVbmlxdWUg",
-            "aWRlbnRpZmllciBmb3IgdGhlIHNjaGVtYUoQInByaW5jaXBhbC5qc29uIuBB",
-            "AvpCEpIBDwgBEBkYASIHcgUQARj/AVICaWQ6HJJBGQoXMhVHZXQgc2NoZW1h",
-            "KHMpIHJlcXVlc3QilwEKE0RlbGV0ZVNjaGVtYVJlcXVlc3QSXwoCaWQYASAD",
-            "KAlCT5JBNDIgVW5pcXVlIGlkZW50aWZpZXIgZm9yIHRoZSBzY2hlbWFKECJw",
-            "cmluY2lwYWwuanNvbiLgQQL6QhKSAQ8IARAZGAEiB3IFEAEY/wFSAmlkOh+S",
-            "QRwKGjIYRGVsZXRlIHNjaGVtYShzKSByZXF1ZXN0InkKElJlbG9hZFN0b3Jl",
-            "UmVxdWVzdBJGCgR3YWl0GAEgASgIQjKSQSwyKldhaXQgdW50aWwgdGhlIHJl",
-            "bG9hZGluZyBwcm9jZXNzIGZpbmFsaXplc+BBAVIEd2FpdDobkkEYChYyFFJl",
-            "bG9hZCBzdG9yZSByZXF1ZXN0QnMKGWRldi5jZXJib3MuYXBpLnYxLnJlcXVl",
-            "c3RaPmdpdGh1Yi5jb20vY2VyYm9zL2NlcmJvcy9hcGkvZ2VucGIvY2VyYm9z",
-            "L3JlcXVlc3QvdjE7cmVxdWVzdHYxqgIVQ2VyYm9zLkFwaS5WMS5SZXF1ZXN0",
-            "YgZwcm90bzM="));
+            "AQ8IARAZGAEiB3IFEAEYgApSAmlkOh2SQRoKGDIWRGlzYWJsZSBwb2xpY3kg",
+            "cmVxdWVzdCKeAQoTRW5hYmxlUG9saWN5UmVxdWVzdBJpCgJpZBgBIAMoCUJZ",
+            "kkE+MiBVbmlxdWUgaWRlbnRpZmllciBmb3IgdGhlIHBvbGljeUoaInByaW5j",
+            "aXBhbC5zYXJhaC52ZGVmYXVsdCLgQQL6QhKSAQ8IARAZGAEiB3IFEAEYgApS",
+            "AmlkOhySQRkKFzIVRW5hYmxlIHBvbGljeSByZXF1ZXN0IpoBChhBZGRPclVw",
+            "ZGF0ZVNjaGVtYVJlcXVlc3QSXAoHc2NoZW1hcxgBIAMoCzIYLmNlcmJvcy5z",
+            "Y2hlbWEudjEuU2NoZW1hQiiSQRgyEExpc3Qgb2Ygc2NoZW1hcy6gAQqoAQHg",
+            "QQL6QgeSAQQIARAKUgdzY2hlbWFzOiCSQR0KGzIZQWRkL3VwZGF0ZSBzY2hl",
+            "bWEgcmVxdWVzdCI0ChJMaXN0U2NoZW1hc1JlcXVlc3Q6HpJBGwoZMhdMaXN0",
+            "IHNjaGVtYSBpZHMgcmVxdWVzdCKRAQoQR2V0U2NoZW1hUmVxdWVzdBJfCgJp",
+            "ZBgBIAMoCUJPkkE0MiBVbmlxdWUgaWRlbnRpZmllciBmb3IgdGhlIHNjaGVt",
+            "YUoQInByaW5jaXBhbC5qc29uIuBBAvpCEpIBDwgBEBkYASIHcgUQARj/AVIC",
+            "aWQ6HJJBGQoXMhVHZXQgc2NoZW1hKHMpIHJlcXVlc3QilwEKE0RlbGV0ZVNj",
+            "aGVtYVJlcXVlc3QSXwoCaWQYASADKAlCT5JBNDIgVW5pcXVlIGlkZW50aWZp",
+            "ZXIgZm9yIHRoZSBzY2hlbWFKECJwcmluY2lwYWwuanNvbiLgQQL6QhKSAQ8I",
+            "ARAZGAEiB3IFEAEY/wFSAmlkOh+SQRwKGjIYRGVsZXRlIHNjaGVtYShzKSBy",
+            "ZXF1ZXN0InkKElJlbG9hZFN0b3JlUmVxdWVzdBJGCgR3YWl0GAEgASgIQjKS",
+            "QSwyKldhaXQgdW50aWwgdGhlIHJlbG9hZGluZyBwcm9jZXNzIGZpbmFsaXpl",
+            "c+BBAVIEd2FpdDobkkEYChYyFFJlbG9hZCBzdG9yZSByZXF1ZXN0QnMKGWRl",
+            "di5jZXJib3MuYXBpLnYxLnJlcXVlc3RaPmdpdGh1Yi5jb20vY2VyYm9zL2Nl",
+            "cmJvcy9hcGkvZ2VucGIvY2VyYm9zL3JlcXVlc3QvdjE7cmVxdWVzdHYxqgIV",
+            "Q2VyYm9zLkFwaS5WMS5SZXF1ZXN0YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Cerbos.Api.V1.Engine.EngineReflection.Descriptor, global::Cerbos.Api.V1.Policy.PolicyReflection.Descriptor, global::Cerbos.Api.V1.Schema.SchemaReflection.Descriptor, global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.StructReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Grpc.Gateway.ProtocGenOpenapiv2.Options.AnnotationsReflection.Descriptor, global::Validate.ValidateReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -265,7 +270,7 @@ namespace Cerbos.Api.V1.Request {
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Request.AddOrUpdatePolicyRequest), global::Cerbos.Api.V1.Request.AddOrUpdatePolicyRequest.Parser, new[]{ "Policies" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Request.ListAuditLogEntriesRequest), global::Cerbos.Api.V1.Request.ListAuditLogEntriesRequest.Parser, new[]{ "Kind", "Tail", "Between", "Since", "Lookup" }, new[]{ "Filter" }, new[]{ typeof(global::Cerbos.Api.V1.Request.ListAuditLogEntriesRequest.Types.Kind) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Request.ListAuditLogEntriesRequest.Types.TimeRange), global::Cerbos.Api.V1.Request.ListAuditLogEntriesRequest.Types.TimeRange.Parser, new[]{ "Start", "End" }, null, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Request.ServerInfoRequest), global::Cerbos.Api.V1.Request.ServerInfoRequest.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Request.ListPoliciesRequest), global::Cerbos.Api.V1.Request.ListPoliciesRequest.Parser, new[]{ "IncludeDisabled" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Request.ListPoliciesRequest), global::Cerbos.Api.V1.Request.ListPoliciesRequest.Parser, new[]{ "IncludeDisabled", "NameRegexp", "ScopeRegexp", "VersionRegexp" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Request.GetPolicyRequest), global::Cerbos.Api.V1.Request.GetPolicyRequest.Parser, new[]{ "Id" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Request.DisablePolicyRequest), global::Cerbos.Api.V1.Request.DisablePolicyRequest.Parser, new[]{ "Id" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Request.EnablePolicyRequest), global::Cerbos.Api.V1.Request.EnablePolicyRequest.Parser, new[]{ "Id" }, null, null, null, null),
@@ -1290,7 +1295,7 @@ namespace Cerbos.Api.V1.Request {
       if (other.PolicyVersion.Length != 0) {
         PolicyVersion = other.PolicyVersion;
       }
-      instances_.Add(other.instances_);
+      instances_.MergeFrom(other.instances_);
       if (other.Scope.Length != 0) {
         Scope = other.Scope;
       }
@@ -1495,7 +1500,7 @@ namespace Cerbos.Api.V1.Request {
       if (other == null) {
         return;
       }
-      attr_.Add(other.attr_);
+      attr_.MergeFrom(other.attr_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -4837,10 +4842,24 @@ namespace Cerbos.Api.V1.Request {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint Tail {
-      get { return filterCase_ == FilterOneofCase.Tail ? (uint) filter_ : 0; }
+      get { return HasTail ? (uint) filter_ : 0; }
       set {
         filter_ = value;
         filterCase_ = FilterOneofCase.Tail;
+      }
+    }
+    /// <summary>Gets whether the "tail" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasTail {
+      get { return filterCase_ == FilterOneofCase.Tail; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "tail" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearTail() {
+      if (HasTail) {
+        ClearFilter();
       }
     }
 
@@ -4873,10 +4892,24 @@ namespace Cerbos.Api.V1.Request {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Lookup {
-      get { return filterCase_ == FilterOneofCase.Lookup ? (string) filter_ : ""; }
+      get { return HasLookup ? (string) filter_ : ""; }
       set {
         filter_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         filterCase_ = FilterOneofCase.Lookup;
+      }
+    }
+    /// <summary>Gets whether the "lookup" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasLookup {
+      get { return filterCase_ == FilterOneofCase.Lookup; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "lookup" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearLookup() {
+      if (HasLookup) {
+        ClearFilter();
       }
     }
 
@@ -4932,10 +4965,10 @@ namespace Cerbos.Api.V1.Request {
     public override int GetHashCode() {
       int hash = 1;
       if (Kind != global::Cerbos.Api.V1.Request.ListAuditLogEntriesRequest.Types.Kind.Unspecified) hash ^= Kind.GetHashCode();
-      if (filterCase_ == FilterOneofCase.Tail) hash ^= Tail.GetHashCode();
+      if (HasTail) hash ^= Tail.GetHashCode();
       if (filterCase_ == FilterOneofCase.Between) hash ^= Between.GetHashCode();
       if (filterCase_ == FilterOneofCase.Since) hash ^= Since.GetHashCode();
-      if (filterCase_ == FilterOneofCase.Lookup) hash ^= Lookup.GetHashCode();
+      if (HasLookup) hash ^= Lookup.GetHashCode();
       hash ^= (int) filterCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -4959,7 +4992,7 @@ namespace Cerbos.Api.V1.Request {
         output.WriteRawTag(8);
         output.WriteEnum((int) Kind);
       }
-      if (filterCase_ == FilterOneofCase.Tail) {
+      if (HasTail) {
         output.WriteRawTag(16);
         output.WriteUInt32(Tail);
       }
@@ -4971,7 +5004,7 @@ namespace Cerbos.Api.V1.Request {
         output.WriteRawTag(34);
         output.WriteMessage(Since);
       }
-      if (filterCase_ == FilterOneofCase.Lookup) {
+      if (HasLookup) {
         output.WriteRawTag(42);
         output.WriteString(Lookup);
       }
@@ -4989,7 +5022,7 @@ namespace Cerbos.Api.V1.Request {
         output.WriteRawTag(8);
         output.WriteEnum((int) Kind);
       }
-      if (filterCase_ == FilterOneofCase.Tail) {
+      if (HasTail) {
         output.WriteRawTag(16);
         output.WriteUInt32(Tail);
       }
@@ -5001,7 +5034,7 @@ namespace Cerbos.Api.V1.Request {
         output.WriteRawTag(34);
         output.WriteMessage(Since);
       }
-      if (filterCase_ == FilterOneofCase.Lookup) {
+      if (HasLookup) {
         output.WriteRawTag(42);
         output.WriteString(Lookup);
       }
@@ -5018,7 +5051,7 @@ namespace Cerbos.Api.V1.Request {
       if (Kind != global::Cerbos.Api.V1.Request.ListAuditLogEntriesRequest.Types.Kind.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Kind);
       }
-      if (filterCase_ == FilterOneofCase.Tail) {
+      if (HasTail) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Tail);
       }
       if (filterCase_ == FilterOneofCase.Between) {
@@ -5027,7 +5060,7 @@ namespace Cerbos.Api.V1.Request {
       if (filterCase_ == FilterOneofCase.Since) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Since);
       }
-      if (filterCase_ == FilterOneofCase.Lookup) {
+      if (HasLookup) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Lookup);
       }
       if (_unknownFields != null) {
@@ -5608,6 +5641,9 @@ namespace Cerbos.Api.V1.Request {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ListPoliciesRequest(ListPoliciesRequest other) : this() {
       includeDisabled_ = other.includeDisabled_;
+      nameRegexp_ = other.nameRegexp_;
+      scopeRegexp_ = other.scopeRegexp_;
+      versionRegexp_ = other.versionRegexp_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -5629,6 +5665,42 @@ namespace Cerbos.Api.V1.Request {
       }
     }
 
+    /// <summary>Field number for the "name_regexp" field.</summary>
+    public const int NameRegexpFieldNumber = 2;
+    private string nameRegexp_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string NameRegexp {
+      get { return nameRegexp_; }
+      set {
+        nameRegexp_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "scope_regexp" field.</summary>
+    public const int ScopeRegexpFieldNumber = 3;
+    private string scopeRegexp_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ScopeRegexp {
+      get { return scopeRegexp_; }
+      set {
+        scopeRegexp_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "version_regexp" field.</summary>
+    public const int VersionRegexpFieldNumber = 4;
+    private string versionRegexp_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string VersionRegexp {
+      get { return versionRegexp_; }
+      set {
+        versionRegexp_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -5645,6 +5717,9 @@ namespace Cerbos.Api.V1.Request {
         return true;
       }
       if (IncludeDisabled != other.IncludeDisabled) return false;
+      if (NameRegexp != other.NameRegexp) return false;
+      if (ScopeRegexp != other.ScopeRegexp) return false;
+      if (VersionRegexp != other.VersionRegexp) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -5653,6 +5728,9 @@ namespace Cerbos.Api.V1.Request {
     public override int GetHashCode() {
       int hash = 1;
       if (IncludeDisabled != false) hash ^= IncludeDisabled.GetHashCode();
+      if (NameRegexp.Length != 0) hash ^= NameRegexp.GetHashCode();
+      if (ScopeRegexp.Length != 0) hash ^= ScopeRegexp.GetHashCode();
+      if (VersionRegexp.Length != 0) hash ^= VersionRegexp.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -5675,6 +5753,18 @@ namespace Cerbos.Api.V1.Request {
         output.WriteRawTag(8);
         output.WriteBool(IncludeDisabled);
       }
+      if (NameRegexp.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(NameRegexp);
+      }
+      if (ScopeRegexp.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(ScopeRegexp);
+      }
+      if (VersionRegexp.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(VersionRegexp);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -5689,6 +5779,18 @@ namespace Cerbos.Api.V1.Request {
         output.WriteRawTag(8);
         output.WriteBool(IncludeDisabled);
       }
+      if (NameRegexp.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(NameRegexp);
+      }
+      if (ScopeRegexp.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(ScopeRegexp);
+      }
+      if (VersionRegexp.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(VersionRegexp);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -5701,6 +5803,15 @@ namespace Cerbos.Api.V1.Request {
       int size = 0;
       if (IncludeDisabled != false) {
         size += 1 + 1;
+      }
+      if (NameRegexp.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(NameRegexp);
+      }
+      if (ScopeRegexp.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ScopeRegexp);
+      }
+      if (VersionRegexp.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(VersionRegexp);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -5716,6 +5827,15 @@ namespace Cerbos.Api.V1.Request {
       }
       if (other.IncludeDisabled != false) {
         IncludeDisabled = other.IncludeDisabled;
+      }
+      if (other.NameRegexp.Length != 0) {
+        NameRegexp = other.NameRegexp;
+      }
+      if (other.ScopeRegexp.Length != 0) {
+        ScopeRegexp = other.ScopeRegexp;
+      }
+      if (other.VersionRegexp.Length != 0) {
+        VersionRegexp = other.VersionRegexp;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -5736,6 +5856,18 @@ namespace Cerbos.Api.V1.Request {
             IncludeDisabled = input.ReadBool();
             break;
           }
+          case 18: {
+            NameRegexp = input.ReadString();
+            break;
+          }
+          case 26: {
+            ScopeRegexp = input.ReadString();
+            break;
+          }
+          case 34: {
+            VersionRegexp = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -5753,6 +5885,18 @@ namespace Cerbos.Api.V1.Request {
             break;
           case 8: {
             IncludeDisabled = input.ReadBool();
+            break;
+          }
+          case 18: {
+            NameRegexp = input.ReadString();
+            break;
+          }
+          case 26: {
+            ScopeRegexp = input.ReadString();
+            break;
+          }
+          case 34: {
+            VersionRegexp = input.ReadString();
             break;
           }
         }

@@ -26,7 +26,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
           string.Concat(
             "Cixwcm90b2MtZ2VuLW9wZW5hcGl2Mi9vcHRpb25zL29wZW5hcGl2Mi5wcm90",
             "bxIpZ3JwYy5nYXRld2F5LnByb3RvY19nZW5fb3BlbmFwaXYyLm9wdGlvbnMa",
-            "HGdvb2dsZS9wcm90b2J1Zi9zdHJ1Y3QucHJvdG8i9QcKB1N3YWdnZXISGAoH",
+            "HGdvb2dsZS9wcm90b2J1Zi9zdHJ1Y3QucHJvdG8iswgKB1N3YWdnZXISGAoH",
             "c3dhZ2dlchgBIAEoCVIHc3dhZ2dlchJDCgRpbmZvGAIgASgLMi8uZ3JwYy5n",
             "YXRld2F5LnByb3RvY19nZW5fb3BlbmFwaXYyLm9wdGlvbnMuSW5mb1IEaW5m",
             "bxISCgRob3N0GAMgASgJUgRob3N0EhsKCWJhc2VfcGF0aBgEIAEoCVIIYmFz",
@@ -39,157 +39,176 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
             "cGMuZ2F0ZXdheS5wcm90b2NfZ2VuX29wZW5hcGl2Mi5vcHRpb25zLlNlY3Vy",
             "aXR5RGVmaW5pdGlvbnNSE3NlY3VyaXR5RGVmaW5pdGlvbnMSWgoIc2VjdXJp",
             "dHkYDCADKAsyPi5ncnBjLmdhdGV3YXkucHJvdG9jX2dlbl9vcGVuYXBpdjIu",
-            "b3B0aW9ucy5TZWN1cml0eVJlcXVpcmVtZW50UghzZWN1cml0eRJlCg1leHRl",
-            "cm5hbF9kb2NzGA4gASgLMkAuZ3JwYy5nYXRld2F5LnByb3RvY19nZW5fb3Bl",
-            "bmFwaXYyLm9wdGlvbnMuRXh0ZXJuYWxEb2N1bWVudGF0aW9uUgxleHRlcm5h",
-            "bERvY3MSYgoKZXh0ZW5zaW9ucxgPIAMoCzJCLmdycGMuZ2F0ZXdheS5wcm90",
-            "b2NfZ2VuX29wZW5hcGl2Mi5vcHRpb25zLlN3YWdnZXIuRXh0ZW5zaW9uc0Vu",
-            "dHJ5UgpleHRlbnNpb25zGnEKDlJlc3BvbnNlc0VudHJ5EhAKA2tleRgBIAEo",
-            "CVIDa2V5EkkKBXZhbHVlGAIgASgLMjMuZ3JwYy5nYXRld2F5LnByb3RvY19n",
-            "ZW5fb3BlbmFwaXYyLm9wdGlvbnMuUmVzcG9uc2VSBXZhbHVlOgI4ARpVCg9F",
-            "eHRlbnNpb25zRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSLAoFdmFsdWUYAiAB",
-            "KAsyFi5nb29nbGUucHJvdG9idWYuVmFsdWVSBXZhbHVlOgI4AUoECAgQCUoE",
-            "CAkQCkoECA0QDiL/BgoJT3BlcmF0aW9uEhIKBHRhZ3MYASADKAlSBHRhZ3MS",
-            "GAoHc3VtbWFyeRgCIAEoCVIHc3VtbWFyeRIgCgtkZXNjcmlwdGlvbhgDIAEo",
-            "CVILZGVzY3JpcHRpb24SZQoNZXh0ZXJuYWxfZG9jcxgEIAEoCzJALmdycGMu",
-            "Z2F0ZXdheS5wcm90b2NfZ2VuX29wZW5hcGl2Mi5vcHRpb25zLkV4dGVybmFs",
-            "RG9jdW1lbnRhdGlvblIMZXh0ZXJuYWxEb2NzEiEKDG9wZXJhdGlvbl9pZBgF",
-            "IAEoCVILb3BlcmF0aW9uSWQSGgoIY29uc3VtZXMYBiADKAlSCGNvbnN1bWVz",
-            "EhoKCHByb2R1Y2VzGAcgAygJUghwcm9kdWNlcxJhCglyZXNwb25zZXMYCSAD",
-            "KAsyQy5ncnBjLmdhdGV3YXkucHJvdG9jX2dlbl9vcGVuYXBpdjIub3B0aW9u",
-            "cy5PcGVyYXRpb24uUmVzcG9uc2VzRW50cnlSCXJlc3BvbnNlcxJLCgdzY2hl",
-            "bWVzGAogAygOMjEuZ3JwYy5nYXRld2F5LnByb3RvY19nZW5fb3BlbmFwaXYy",
-            "Lm9wdGlvbnMuU2NoZW1lUgdzY2hlbWVzEh4KCmRlcHJlY2F0ZWQYCyABKAhS",
-            "CmRlcHJlY2F0ZWQSWgoIc2VjdXJpdHkYDCADKAsyPi5ncnBjLmdhdGV3YXku",
-            "cHJvdG9jX2dlbl9vcGVuYXBpdjIub3B0aW9ucy5TZWN1cml0eVJlcXVpcmVt",
-            "ZW50UghzZWN1cml0eRJkCgpleHRlbnNpb25zGA0gAygLMkQuZ3JwYy5nYXRl",
-            "d2F5LnByb3RvY19nZW5fb3BlbmFwaXYyLm9wdGlvbnMuT3BlcmF0aW9uLkV4",
-            "dGVuc2lvbnNFbnRyeVIKZXh0ZW5zaW9ucxpxCg5SZXNwb25zZXNFbnRyeRIQ",
-            "CgNrZXkYASABKAlSA2tleRJJCgV2YWx1ZRgCIAEoCzIzLmdycGMuZ2F0ZXdh",
-            "eS5wcm90b2NfZ2VuX29wZW5hcGl2Mi5vcHRpb25zLlJlc3BvbnNlUgV2YWx1",
-            "ZToCOAEaVQoPRXh0ZW5zaW9uc0VudHJ5EhAKA2tleRgBIAEoCVIDa2V5EiwK",
-            "BXZhbHVlGAIgASgLMhYuZ29vZ2xlLnByb3RvYnVmLlZhbHVlUgV2YWx1ZToC",
-            "OAFKBAgIEAki2AEKBkhlYWRlchIgCgtkZXNjcmlwdGlvbhgBIAEoCVILZGVz",
-            "Y3JpcHRpb24SEgoEdHlwZRgCIAEoCVIEdHlwZRIWCgZmb3JtYXQYAyABKAlS",
-            "BmZvcm1hdBIYCgdkZWZhdWx0GAYgASgJUgdkZWZhdWx0EhgKB3BhdHRlcm4Y",
-            "DSABKAlSB3BhdHRlcm5KBAgEEAVKBAgFEAZKBAgHEAhKBAgIEAlKBAgJEApK",
-            "BAgKEAtKBAgLEAxKBAgMEA1KBAgOEA9KBAgPEBBKBAgQEBFKBAgREBJKBAgS",
-            "EBMimgUKCFJlc3BvbnNlEiAKC2Rlc2NyaXB0aW9uGAEgASgJUgtkZXNjcmlw",
-            "dGlvbhJJCgZzY2hlbWEYAiABKAsyMS5ncnBjLmdhdGV3YXkucHJvdG9jX2dl",
-            "bl9vcGVuYXBpdjIub3B0aW9ucy5TY2hlbWFSBnNjaGVtYRJaCgdoZWFkZXJz",
-            "GAMgAygLMkAuZ3JwYy5nYXRld2F5LnByb3RvY19nZW5fb3BlbmFwaXYyLm9w",
-            "dGlvbnMuUmVzcG9uc2UuSGVhZGVyc0VudHJ5UgdoZWFkZXJzEl0KCGV4YW1w",
-            "bGVzGAQgAygLMkEuZ3JwYy5nYXRld2F5LnByb3RvY19nZW5fb3BlbmFwaXYy",
-            "Lm9wdGlvbnMuUmVzcG9uc2UuRXhhbXBsZXNFbnRyeVIIZXhhbXBsZXMSYwoK",
-            "ZXh0ZW5zaW9ucxgFIAMoCzJDLmdycGMuZ2F0ZXdheS5wcm90b2NfZ2VuX29w",
-            "ZW5hcGl2Mi5vcHRpb25zLlJlc3BvbnNlLkV4dGVuc2lvbnNFbnRyeVIKZXh0",
-            "ZW5zaW9ucxptCgxIZWFkZXJzRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSRwoF",
-            "dmFsdWUYAiABKAsyMS5ncnBjLmdhdGV3YXkucHJvdG9jX2dlbl9vcGVuYXBp",
-            "djIub3B0aW9ucy5IZWFkZXJSBXZhbHVlOgI4ARo7Cg1FeGFtcGxlc0VudHJ5",
-            "EhAKA2tleRgBIAEoCVIDa2V5EhQKBXZhbHVlGAIgASgJUgV2YWx1ZToCOAEa",
-            "VQoPRXh0ZW5zaW9uc0VudHJ5EhAKA2tleRgBIAEoCVIDa2V5EiwKBXZhbHVl",
-            "GAIgASgLMhYuZ29vZ2xlLnByb3RvYnVmLlZhbHVlUgV2YWx1ZToCOAEi1gMK",
-            "BEluZm8SFAoFdGl0bGUYASABKAlSBXRpdGxlEiAKC2Rlc2NyaXB0aW9uGAIg",
-            "ASgJUgtkZXNjcmlwdGlvbhIoChB0ZXJtc19vZl9zZXJ2aWNlGAMgASgJUg50",
-            "ZXJtc09mU2VydmljZRJMCgdjb250YWN0GAQgASgLMjIuZ3JwYy5nYXRld2F5",
-            "LnByb3RvY19nZW5fb3BlbmFwaXYyLm9wdGlvbnMuQ29udGFjdFIHY29udGFj",
-            "dBJMCgdsaWNlbnNlGAUgASgLMjIuZ3JwYy5nYXRld2F5LnByb3RvY19nZW5f",
-            "b3BlbmFwaXYyLm9wdGlvbnMuTGljZW5zZVIHbGljZW5zZRIYCgd2ZXJzaW9u",
-            "GAYgASgJUgd2ZXJzaW9uEl8KCmV4dGVuc2lvbnMYByADKAsyPy5ncnBjLmdh",
-            "dGV3YXkucHJvdG9jX2dlbl9vcGVuYXBpdjIub3B0aW9ucy5JbmZvLkV4dGVu",
-            "c2lvbnNFbnRyeVIKZXh0ZW5zaW9ucxpVCg9FeHRlbnNpb25zRW50cnkSEAoD",
-            "a2V5GAEgASgJUgNrZXkSLAoFdmFsdWUYAiABKAsyFi5nb29nbGUucHJvdG9i",
-            "dWYuVmFsdWVSBXZhbHVlOgI4ASJFCgdDb250YWN0EhIKBG5hbWUYASABKAlS",
-            "BG5hbWUSEAoDdXJsGAIgASgJUgN1cmwSFAoFZW1haWwYAyABKAlSBWVtYWls",
-            "Ii8KB0xpY2Vuc2USEgoEbmFtZRgBIAEoCVIEbmFtZRIQCgN1cmwYAiABKAlS",
-            "A3VybCJLChVFeHRlcm5hbERvY3VtZW50YXRpb24SIAoLZGVzY3JpcHRpb24Y",
-            "ASABKAlSC2Rlc2NyaXB0aW9uEhAKA3VybBgCIAEoCVIDdXJsIqoCCgZTY2hl",
-            "bWESVgoLanNvbl9zY2hlbWEYASABKAsyNS5ncnBjLmdhdGV3YXkucHJvdG9j",
-            "X2dlbl9vcGVuYXBpdjIub3B0aW9ucy5KU09OU2NoZW1hUgpqc29uU2NoZW1h",
-            "EiQKDWRpc2NyaW1pbmF0b3IYAiABKAlSDWRpc2NyaW1pbmF0b3ISGwoJcmVh",
-            "ZF9vbmx5GAMgASgIUghyZWFkT25seRJlCg1leHRlcm5hbF9kb2NzGAUgASgL",
-            "MkAuZ3JwYy5nYXRld2F5LnByb3RvY19nZW5fb3BlbmFwaXYyLm9wdGlvbnMu",
-            "RXh0ZXJuYWxEb2N1bWVudGF0aW9uUgxleHRlcm5hbERvY3MSGAoHZXhhbXBs",
-            "ZRgGIAEoCVIHZXhhbXBsZUoECAQQBSLXCgoKSlNPTlNjaGVtYRIQCgNyZWYY",
-            "AyABKAlSA3JlZhIUCgV0aXRsZRgFIAEoCVIFdGl0bGUSIAoLZGVzY3JpcHRp",
-            "b24YBiABKAlSC2Rlc2NyaXB0aW9uEhgKB2RlZmF1bHQYByABKAlSB2RlZmF1",
-            "bHQSGwoJcmVhZF9vbmx5GAggASgIUghyZWFkT25seRIYCgdleGFtcGxlGAkg",
-            "ASgJUgdleGFtcGxlEh8KC211bHRpcGxlX29mGAogASgBUgptdWx0aXBsZU9m",
-            "EhgKB21heGltdW0YCyABKAFSB21heGltdW0SKwoRZXhjbHVzaXZlX21heGlt",
-            "dW0YDCABKAhSEGV4Y2x1c2l2ZU1heGltdW0SGAoHbWluaW11bRgNIAEoAVIH",
-            "bWluaW11bRIrChFleGNsdXNpdmVfbWluaW11bRgOIAEoCFIQZXhjbHVzaXZl",
-            "TWluaW11bRIdCgptYXhfbGVuZ3RoGA8gASgEUgltYXhMZW5ndGgSHQoKbWlu",
-            "X2xlbmd0aBgQIAEoBFIJbWluTGVuZ3RoEhgKB3BhdHRlcm4YESABKAlSB3Bh",
-            "dHRlcm4SGwoJbWF4X2l0ZW1zGBQgASgEUghtYXhJdGVtcxIbCgltaW5faXRl",
-            "bXMYFSABKARSCG1pbkl0ZW1zEiEKDHVuaXF1ZV9pdGVtcxgWIAEoCFILdW5p",
-            "cXVlSXRlbXMSJQoObWF4X3Byb3BlcnRpZXMYGCABKARSDW1heFByb3BlcnRp",
-            "ZXMSJQoObWluX3Byb3BlcnRpZXMYGSABKARSDW1pblByb3BlcnRpZXMSGgoI",
-            "cmVxdWlyZWQYGiADKAlSCHJlcXVpcmVkEhQKBWFycmF5GCIgAygJUgVhcnJh",
-            "eRJfCgR0eXBlGCMgAygOMksuZ3JwYy5nYXRld2F5LnByb3RvY19nZW5fb3Bl",
-            "bmFwaXYyLm9wdGlvbnMuSlNPTlNjaGVtYS5KU09OU2NoZW1hU2ltcGxlVHlw",
-            "ZXNSBHR5cGUSFgoGZm9ybWF0GCQgASgJUgZmb3JtYXQSEgoEZW51bRguIAMo",
-            "CVIEZW51bRJ6ChNmaWVsZF9jb25maWd1cmF0aW9uGOkHIAEoCzJILmdycGMu",
-            "Z2F0ZXdheS5wcm90b2NfZ2VuX29wZW5hcGl2Mi5vcHRpb25zLkpTT05TY2hl",
-            "bWEuRmllbGRDb25maWd1cmF0aW9uUhJmaWVsZENvbmZpZ3VyYXRpb24SZQoK",
-            "ZXh0ZW5zaW9ucxgwIAMoCzJFLmdycGMuZ2F0ZXdheS5wcm90b2NfZ2VuX29w",
-            "ZW5hcGl2Mi5vcHRpb25zLkpTT05TY2hlbWEuRXh0ZW5zaW9uc0VudHJ5Ugpl",
-            "eHRlbnNpb25zGjwKEkZpZWxkQ29uZmlndXJhdGlvbhImCg9wYXRoX3BhcmFt",
-            "X25hbWUYLyABKAlSDXBhdGhQYXJhbU5hbWUaVQoPRXh0ZW5zaW9uc0VudHJ5",
-            "EhAKA2tleRgBIAEoCVIDa2V5EiwKBXZhbHVlGAIgASgLMhYuZ29vZ2xlLnBy",
-            "b3RvYnVmLlZhbHVlUgV2YWx1ZToCOAEidwoVSlNPTlNjaGVtYVNpbXBsZVR5",
-            "cGVzEgsKB1VOS05PV04QABIJCgVBUlJBWRABEgsKB0JPT0xFQU4QAhILCgdJ",
-            "TlRFR0VSEAMSCAoETlVMTBAEEgoKBk5VTUJFUhAFEgoKBk9CSkVDVBAGEgoK",
-            "BlNUUklORxAHSgQIARACSgQIAhADSgQIBBAFSgQIEhATSgQIExAUSgQIFxAY",
-            "SgQIGxAcSgQIHBAdSgQIHRAeSgQIHhAiSgQIJRAqSgQIKhArSgQIKxAuIpQB",
-            "CgNUYWcSIAoLZGVzY3JpcHRpb24YAiABKAlSC2Rlc2NyaXB0aW9uEmUKDWV4",
-            "dGVybmFsX2RvY3MYAyABKAsyQC5ncnBjLmdhdGV3YXkucHJvdG9jX2dlbl9v",
-            "cGVuYXBpdjIub3B0aW9ucy5FeHRlcm5hbERvY3VtZW50YXRpb25SDGV4dGVy",
-            "bmFsRG9jc0oECAEQAiL3AQoTU2VjdXJpdHlEZWZpbml0aW9ucxJoCghzZWN1",
-            "cml0eRgBIAMoCzJMLmdycGMuZ2F0ZXdheS5wcm90b2NfZ2VuX29wZW5hcGl2",
-            "Mi5vcHRpb25zLlNlY3VyaXR5RGVmaW5pdGlvbnMuU2VjdXJpdHlFbnRyeVII",
-            "c2VjdXJpdHkadgoNU2VjdXJpdHlFbnRyeRIQCgNrZXkYASABKAlSA2tleRJP",
-            "CgV2YWx1ZRgCIAEoCzI5LmdycGMuZ2F0ZXdheS5wcm90b2NfZ2VuX29wZW5h",
-            "cGl2Mi5vcHRpb25zLlNlY3VyaXR5U2NoZW1lUgV2YWx1ZToCOAEi/wYKDlNl",
-            "Y3VyaXR5U2NoZW1lElIKBHR5cGUYASABKA4yPi5ncnBjLmdhdGV3YXkucHJv",
-            "dG9jX2dlbl9vcGVuYXBpdjIub3B0aW9ucy5TZWN1cml0eVNjaGVtZS5UeXBl",
-            "UgR0eXBlEiAKC2Rlc2NyaXB0aW9uGAIgASgJUgtkZXNjcmlwdGlvbhISCgRu",
-            "YW1lGAMgASgJUgRuYW1lEkwKAmluGAQgASgOMjwuZ3JwYy5nYXRld2F5LnBy",
-            "b3RvY19nZW5fb3BlbmFwaXYyLm9wdGlvbnMuU2VjdXJpdHlTY2hlbWUuSW5S",
-            "AmluElIKBGZsb3cYBSABKA4yPi5ncnBjLmdhdGV3YXkucHJvdG9jX2dlbl9v",
-            "cGVuYXBpdjIub3B0aW9ucy5TZWN1cml0eVNjaGVtZS5GbG93UgRmbG93EisK",
-            "EWF1dGhvcml6YXRpb25fdXJsGAYgASgJUhBhdXRob3JpemF0aW9uVXJsEhsK",
-            "CXRva2VuX3VybBgHIAEoCVIIdG9rZW5VcmwSSQoGc2NvcGVzGAggASgLMjEu",
-            "Z3JwYy5nYXRld2F5LnByb3RvY19nZW5fb3BlbmFwaXYyLm9wdGlvbnMuU2Nv",
-            "cGVzUgZzY29wZXMSaQoKZXh0ZW5zaW9ucxgJIAMoCzJJLmdycGMuZ2F0ZXdh",
-            "eS5wcm90b2NfZ2VuX29wZW5hcGl2Mi5vcHRpb25zLlNlY3VyaXR5U2NoZW1l",
-            "LkV4dGVuc2lvbnNFbnRyeVIKZXh0ZW5zaW9ucxpVCg9FeHRlbnNpb25zRW50",
-            "cnkSEAoDa2V5GAEgASgJUgNrZXkSLAoFdmFsdWUYAiABKAsyFi5nb29nbGUu",
-            "cHJvdG9idWYuVmFsdWVSBXZhbHVlOgI4ASJLCgRUeXBlEhAKDFRZUEVfSU5W",
-            "QUxJRBAAEg4KClRZUEVfQkFTSUMQARIQCgxUWVBFX0FQSV9LRVkQAhIPCgtU",
-            "WVBFX09BVVRIMhADIjEKAkluEg4KCklOX0lOVkFMSUQQABIMCghJTl9RVUVS",
-            "WRABEg0KCUlOX0hFQURFUhACImoKBEZsb3cSEAoMRkxPV19JTlZBTElEEAAS",
-            "EQoNRkxPV19JTVBMSUNJVBABEhEKDUZMT1dfUEFTU1dPUkQQAhIUChBGTE9X",
-            "X0FQUExJQ0FUSU9OEAMSFAoQRkxPV19BQ0NFU1NfQ09ERRAEIvYCChNTZWN1",
-            "cml0eVJlcXVpcmVtZW50EooBChRzZWN1cml0eV9yZXF1aXJlbWVudBgBIAMo",
-            "CzJXLmdycGMuZ2F0ZXdheS5wcm90b2NfZ2VuX29wZW5hcGl2Mi5vcHRpb25z",
-            "LlNlY3VyaXR5UmVxdWlyZW1lbnQuU2VjdXJpdHlSZXF1aXJlbWVudEVudHJ5",
-            "UhNzZWN1cml0eVJlcXVpcmVtZW50GjAKGFNlY3VyaXR5UmVxdWlyZW1lbnRW",
-            "YWx1ZRIUCgVzY29wZRgBIAMoCVIFc2NvcGUanwEKGFNlY3VyaXR5UmVxdWly",
-            "ZW1lbnRFbnRyeRIQCgNrZXkYASABKAlSA2tleRJtCgV2YWx1ZRgCIAEoCzJX",
-            "LmdycGMuZ2F0ZXdheS5wcm90b2NfZ2VuX29wZW5hcGl2Mi5vcHRpb25zLlNl",
-            "Y3VyaXR5UmVxdWlyZW1lbnQuU2VjdXJpdHlSZXF1aXJlbWVudFZhbHVlUgV2",
-            "YWx1ZToCOAEilgEKBlNjb3BlcxJSCgVzY29wZRgBIAMoCzI8LmdycGMuZ2F0",
-            "ZXdheS5wcm90b2NfZ2VuX29wZW5hcGl2Mi5vcHRpb25zLlNjb3Blcy5TY29w",
-            "ZUVudHJ5UgVzY29wZRo4CgpTY29wZUVudHJ5EhAKA2tleRgBIAEoCVIDa2V5",
-            "EhQKBXZhbHVlGAIgASgJUgV2YWx1ZToCOAEqOwoGU2NoZW1lEgsKB1VOS05P",
-            "V04QABIICgRIVFRQEAESCQoFSFRUUFMQAhIGCgJXUxADEgcKA1dTUxAEQkha",
-            "RmdpdGh1Yi5jb20vZ3JwYy1lY29zeXN0ZW0vZ3JwYy1nYXRld2F5L3YyL3By",
-            "b3RvYy1nZW4tb3BlbmFwaXYyL29wdGlvbnNiBnByb3RvMw=="));
+            "b3B0aW9ucy5TZWN1cml0eVJlcXVpcmVtZW50UghzZWN1cml0eRJCCgR0YWdz",
+            "GA0gAygLMi4uZ3JwYy5nYXRld2F5LnByb3RvY19nZW5fb3BlbmFwaXYyLm9w",
+            "dGlvbnMuVGFnUgR0YWdzEmUKDWV4dGVybmFsX2RvY3MYDiABKAsyQC5ncnBj",
+            "LmdhdGV3YXkucHJvdG9jX2dlbl9vcGVuYXBpdjIub3B0aW9ucy5FeHRlcm5h",
+            "bERvY3VtZW50YXRpb25SDGV4dGVybmFsRG9jcxJiCgpleHRlbnNpb25zGA8g",
+            "AygLMkIuZ3JwYy5nYXRld2F5LnByb3RvY19nZW5fb3BlbmFwaXYyLm9wdGlv",
+            "bnMuU3dhZ2dlci5FeHRlbnNpb25zRW50cnlSCmV4dGVuc2lvbnMacQoOUmVz",
+            "cG9uc2VzRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSSQoFdmFsdWUYAiABKAsy",
+            "My5ncnBjLmdhdGV3YXkucHJvdG9jX2dlbl9vcGVuYXBpdjIub3B0aW9ucy5S",
+            "ZXNwb25zZVIFdmFsdWU6AjgBGlUKD0V4dGVuc2lvbnNFbnRyeRIQCgNrZXkY",
+            "ASABKAlSA2tleRIsCgV2YWx1ZRgCIAEoCzIWLmdvb2dsZS5wcm90b2J1Zi5W",
+            "YWx1ZVIFdmFsdWU6AjgBSgQICBAJSgQICRAKItYHCglPcGVyYXRpb24SEgoE",
+            "dGFncxgBIAMoCVIEdGFncxIYCgdzdW1tYXJ5GAIgASgJUgdzdW1tYXJ5EiAK",
+            "C2Rlc2NyaXB0aW9uGAMgASgJUgtkZXNjcmlwdGlvbhJlCg1leHRlcm5hbF9k",
+            "b2NzGAQgASgLMkAuZ3JwYy5nYXRld2F5LnByb3RvY19nZW5fb3BlbmFwaXYy",
+            "Lm9wdGlvbnMuRXh0ZXJuYWxEb2N1bWVudGF0aW9uUgxleHRlcm5hbERvY3MS",
+            "IQoMb3BlcmF0aW9uX2lkGAUgASgJUgtvcGVyYXRpb25JZBIaCghjb25zdW1l",
+            "cxgGIAMoCVIIY29uc3VtZXMSGgoIcHJvZHVjZXMYByADKAlSCHByb2R1Y2Vz",
+            "EmEKCXJlc3BvbnNlcxgJIAMoCzJDLmdycGMuZ2F0ZXdheS5wcm90b2NfZ2Vu",
+            "X29wZW5hcGl2Mi5vcHRpb25zLk9wZXJhdGlvbi5SZXNwb25zZXNFbnRyeVIJ",
+            "cmVzcG9uc2VzEksKB3NjaGVtZXMYCiADKA4yMS5ncnBjLmdhdGV3YXkucHJv",
+            "dG9jX2dlbl9vcGVuYXBpdjIub3B0aW9ucy5TY2hlbWVSB3NjaGVtZXMSHgoK",
+            "ZGVwcmVjYXRlZBgLIAEoCFIKZGVwcmVjYXRlZBJaCghzZWN1cml0eRgMIAMo",
+            "CzI+LmdycGMuZ2F0ZXdheS5wcm90b2NfZ2VuX29wZW5hcGl2Mi5vcHRpb25z",
+            "LlNlY3VyaXR5UmVxdWlyZW1lbnRSCHNlY3VyaXR5EmQKCmV4dGVuc2lvbnMY",
+            "DSADKAsyRC5ncnBjLmdhdGV3YXkucHJvdG9jX2dlbl9vcGVuYXBpdjIub3B0",
+            "aW9ucy5PcGVyYXRpb24uRXh0ZW5zaW9uc0VudHJ5UgpleHRlbnNpb25zElUK",
+            "CnBhcmFtZXRlcnMYDiABKAsyNS5ncnBjLmdhdGV3YXkucHJvdG9jX2dlbl9v",
+            "cGVuYXBpdjIub3B0aW9ucy5QYXJhbWV0ZXJzUgpwYXJhbWV0ZXJzGnEKDlJl",
+            "c3BvbnNlc0VudHJ5EhAKA2tleRgBIAEoCVIDa2V5EkkKBXZhbHVlGAIgASgL",
+            "MjMuZ3JwYy5nYXRld2F5LnByb3RvY19nZW5fb3BlbmFwaXYyLm9wdGlvbnMu",
+            "UmVzcG9uc2VSBXZhbHVlOgI4ARpVCg9FeHRlbnNpb25zRW50cnkSEAoDa2V5",
+            "GAEgASgJUgNrZXkSLAoFdmFsdWUYAiABKAsyFi5nb29nbGUucHJvdG9idWYu",
+            "VmFsdWVSBXZhbHVlOgI4AUoECAgQCSJiCgpQYXJhbWV0ZXJzElQKB2hlYWRl",
+            "cnMYASADKAsyOi5ncnBjLmdhdGV3YXkucHJvdG9jX2dlbl9vcGVuYXBpdjIu",
+            "b3B0aW9ucy5IZWFkZXJQYXJhbWV0ZXJSB2hlYWRlcnMiowIKD0hlYWRlclBh",
+            "cmFtZXRlchISCgRuYW1lGAEgASgJUgRuYW1lEiAKC2Rlc2NyaXB0aW9uGAIg",
+            "ASgJUgtkZXNjcmlwdGlvbhJTCgR0eXBlGAMgASgOMj8uZ3JwYy5nYXRld2F5",
+            "LnByb3RvY19nZW5fb3BlbmFwaXYyLm9wdGlvbnMuSGVhZGVyUGFyYW1ldGVy",
+            "LlR5cGVSBHR5cGUSFgoGZm9ybWF0GAQgASgJUgZmb3JtYXQSGgoIcmVxdWly",
+            "ZWQYBSABKAhSCHJlcXVpcmVkIkUKBFR5cGUSCwoHVU5LTk9XThAAEgoKBlNU",
+            "UklORxABEgoKBk5VTUJFUhACEgsKB0lOVEVHRVIQAxILCgdCT09MRUFOEARK",
+            "BAgGEAdKBAgHEAgi2AEKBkhlYWRlchIgCgtkZXNjcmlwdGlvbhgBIAEoCVIL",
+            "ZGVzY3JpcHRpb24SEgoEdHlwZRgCIAEoCVIEdHlwZRIWCgZmb3JtYXQYAyAB",
+            "KAlSBmZvcm1hdBIYCgdkZWZhdWx0GAYgASgJUgdkZWZhdWx0EhgKB3BhdHRl",
+            "cm4YDSABKAlSB3BhdHRlcm5KBAgEEAVKBAgFEAZKBAgHEAhKBAgIEAlKBAgJ",
+            "EApKBAgKEAtKBAgLEAxKBAgMEA1KBAgOEA9KBAgPEBBKBAgQEBFKBAgREBJK",
+            "BAgSEBMimgUKCFJlc3BvbnNlEiAKC2Rlc2NyaXB0aW9uGAEgASgJUgtkZXNj",
+            "cmlwdGlvbhJJCgZzY2hlbWEYAiABKAsyMS5ncnBjLmdhdGV3YXkucHJvdG9j",
+            "X2dlbl9vcGVuYXBpdjIub3B0aW9ucy5TY2hlbWFSBnNjaGVtYRJaCgdoZWFk",
+            "ZXJzGAMgAygLMkAuZ3JwYy5nYXRld2F5LnByb3RvY19nZW5fb3BlbmFwaXYy",
+            "Lm9wdGlvbnMuUmVzcG9uc2UuSGVhZGVyc0VudHJ5UgdoZWFkZXJzEl0KCGV4",
+            "YW1wbGVzGAQgAygLMkEuZ3JwYy5nYXRld2F5LnByb3RvY19nZW5fb3BlbmFw",
+            "aXYyLm9wdGlvbnMuUmVzcG9uc2UuRXhhbXBsZXNFbnRyeVIIZXhhbXBsZXMS",
+            "YwoKZXh0ZW5zaW9ucxgFIAMoCzJDLmdycGMuZ2F0ZXdheS5wcm90b2NfZ2Vu",
+            "X29wZW5hcGl2Mi5vcHRpb25zLlJlc3BvbnNlLkV4dGVuc2lvbnNFbnRyeVIK",
+            "ZXh0ZW5zaW9ucxptCgxIZWFkZXJzRW50cnkSEAoDa2V5GAEgASgJUgNrZXkS",
+            "RwoFdmFsdWUYAiABKAsyMS5ncnBjLmdhdGV3YXkucHJvdG9jX2dlbl9vcGVu",
+            "YXBpdjIub3B0aW9ucy5IZWFkZXJSBXZhbHVlOgI4ARo7Cg1FeGFtcGxlc0Vu",
+            "dHJ5EhAKA2tleRgBIAEoCVIDa2V5EhQKBXZhbHVlGAIgASgJUgV2YWx1ZToC",
+            "OAEaVQoPRXh0ZW5zaW9uc0VudHJ5EhAKA2tleRgBIAEoCVIDa2V5EiwKBXZh",
+            "bHVlGAIgASgLMhYuZ29vZ2xlLnByb3RvYnVmLlZhbHVlUgV2YWx1ZToCOAEi",
+            "1gMKBEluZm8SFAoFdGl0bGUYASABKAlSBXRpdGxlEiAKC2Rlc2NyaXB0aW9u",
+            "GAIgASgJUgtkZXNjcmlwdGlvbhIoChB0ZXJtc19vZl9zZXJ2aWNlGAMgASgJ",
+            "Ug50ZXJtc09mU2VydmljZRJMCgdjb250YWN0GAQgASgLMjIuZ3JwYy5nYXRl",
+            "d2F5LnByb3RvY19nZW5fb3BlbmFwaXYyLm9wdGlvbnMuQ29udGFjdFIHY29u",
+            "dGFjdBJMCgdsaWNlbnNlGAUgASgLMjIuZ3JwYy5nYXRld2F5LnByb3RvY19n",
+            "ZW5fb3BlbmFwaXYyLm9wdGlvbnMuTGljZW5zZVIHbGljZW5zZRIYCgd2ZXJz",
+            "aW9uGAYgASgJUgd2ZXJzaW9uEl8KCmV4dGVuc2lvbnMYByADKAsyPy5ncnBj",
+            "LmdhdGV3YXkucHJvdG9jX2dlbl9vcGVuYXBpdjIub3B0aW9ucy5JbmZvLkV4",
+            "dGVuc2lvbnNFbnRyeVIKZXh0ZW5zaW9ucxpVCg9FeHRlbnNpb25zRW50cnkS",
+            "EAoDa2V5GAEgASgJUgNrZXkSLAoFdmFsdWUYAiABKAsyFi5nb29nbGUucHJv",
+            "dG9idWYuVmFsdWVSBXZhbHVlOgI4ASJFCgdDb250YWN0EhIKBG5hbWUYASAB",
+            "KAlSBG5hbWUSEAoDdXJsGAIgASgJUgN1cmwSFAoFZW1haWwYAyABKAlSBWVt",
+            "YWlsIi8KB0xpY2Vuc2USEgoEbmFtZRgBIAEoCVIEbmFtZRIQCgN1cmwYAiAB",
+            "KAlSA3VybCJLChVFeHRlcm5hbERvY3VtZW50YXRpb24SIAoLZGVzY3JpcHRp",
+            "b24YASABKAlSC2Rlc2NyaXB0aW9uEhAKA3VybBgCIAEoCVIDdXJsIqoCCgZT",
+            "Y2hlbWESVgoLanNvbl9zY2hlbWEYASABKAsyNS5ncnBjLmdhdGV3YXkucHJv",
+            "dG9jX2dlbl9vcGVuYXBpdjIub3B0aW9ucy5KU09OU2NoZW1hUgpqc29uU2No",
+            "ZW1hEiQKDWRpc2NyaW1pbmF0b3IYAiABKAlSDWRpc2NyaW1pbmF0b3ISGwoJ",
+            "cmVhZF9vbmx5GAMgASgIUghyZWFkT25seRJlCg1leHRlcm5hbF9kb2NzGAUg",
+            "ASgLMkAuZ3JwYy5nYXRld2F5LnByb3RvY19nZW5fb3BlbmFwaXYyLm9wdGlv",
+            "bnMuRXh0ZXJuYWxEb2N1bWVudGF0aW9uUgxleHRlcm5hbERvY3MSGAoHZXhh",
+            "bXBsZRgGIAEoCVIHZXhhbXBsZUoECAQQBSLXCgoKSlNPTlNjaGVtYRIQCgNy",
+            "ZWYYAyABKAlSA3JlZhIUCgV0aXRsZRgFIAEoCVIFdGl0bGUSIAoLZGVzY3Jp",
+            "cHRpb24YBiABKAlSC2Rlc2NyaXB0aW9uEhgKB2RlZmF1bHQYByABKAlSB2Rl",
+            "ZmF1bHQSGwoJcmVhZF9vbmx5GAggASgIUghyZWFkT25seRIYCgdleGFtcGxl",
+            "GAkgASgJUgdleGFtcGxlEh8KC211bHRpcGxlX29mGAogASgBUgptdWx0aXBs",
+            "ZU9mEhgKB21heGltdW0YCyABKAFSB21heGltdW0SKwoRZXhjbHVzaXZlX21h",
+            "eGltdW0YDCABKAhSEGV4Y2x1c2l2ZU1heGltdW0SGAoHbWluaW11bRgNIAEo",
+            "AVIHbWluaW11bRIrChFleGNsdXNpdmVfbWluaW11bRgOIAEoCFIQZXhjbHVz",
+            "aXZlTWluaW11bRIdCgptYXhfbGVuZ3RoGA8gASgEUgltYXhMZW5ndGgSHQoK",
+            "bWluX2xlbmd0aBgQIAEoBFIJbWluTGVuZ3RoEhgKB3BhdHRlcm4YESABKAlS",
+            "B3BhdHRlcm4SGwoJbWF4X2l0ZW1zGBQgASgEUghtYXhJdGVtcxIbCgltaW5f",
+            "aXRlbXMYFSABKARSCG1pbkl0ZW1zEiEKDHVuaXF1ZV9pdGVtcxgWIAEoCFIL",
+            "dW5pcXVlSXRlbXMSJQoObWF4X3Byb3BlcnRpZXMYGCABKARSDW1heFByb3Bl",
+            "cnRpZXMSJQoObWluX3Byb3BlcnRpZXMYGSABKARSDW1pblByb3BlcnRpZXMS",
+            "GgoIcmVxdWlyZWQYGiADKAlSCHJlcXVpcmVkEhQKBWFycmF5GCIgAygJUgVh",
+            "cnJheRJfCgR0eXBlGCMgAygOMksuZ3JwYy5nYXRld2F5LnByb3RvY19nZW5f",
+            "b3BlbmFwaXYyLm9wdGlvbnMuSlNPTlNjaGVtYS5KU09OU2NoZW1hU2ltcGxl",
+            "VHlwZXNSBHR5cGUSFgoGZm9ybWF0GCQgASgJUgZmb3JtYXQSEgoEZW51bRgu",
+            "IAMoCVIEZW51bRJ6ChNmaWVsZF9jb25maWd1cmF0aW9uGOkHIAEoCzJILmdy",
+            "cGMuZ2F0ZXdheS5wcm90b2NfZ2VuX29wZW5hcGl2Mi5vcHRpb25zLkpTT05T",
+            "Y2hlbWEuRmllbGRDb25maWd1cmF0aW9uUhJmaWVsZENvbmZpZ3VyYXRpb24S",
+            "ZQoKZXh0ZW5zaW9ucxgwIAMoCzJFLmdycGMuZ2F0ZXdheS5wcm90b2NfZ2Vu",
+            "X29wZW5hcGl2Mi5vcHRpb25zLkpTT05TY2hlbWEuRXh0ZW5zaW9uc0VudHJ5",
+            "UgpleHRlbnNpb25zGjwKEkZpZWxkQ29uZmlndXJhdGlvbhImCg9wYXRoX3Bh",
+            "cmFtX25hbWUYLyABKAlSDXBhdGhQYXJhbU5hbWUaVQoPRXh0ZW5zaW9uc0Vu",
+            "dHJ5EhAKA2tleRgBIAEoCVIDa2V5EiwKBXZhbHVlGAIgASgLMhYuZ29vZ2xl",
+            "LnByb3RvYnVmLlZhbHVlUgV2YWx1ZToCOAEidwoVSlNPTlNjaGVtYVNpbXBs",
+            "ZVR5cGVzEgsKB1VOS05PV04QABIJCgVBUlJBWRABEgsKB0JPT0xFQU4QAhIL",
+            "CgdJTlRFR0VSEAMSCAoETlVMTBAEEgoKBk5VTUJFUhAFEgoKBk9CSkVDVBAG",
+            "EgoKBlNUUklORxAHSgQIARACSgQIAhADSgQIBBAFSgQIEhATSgQIExAUSgQI",
+            "FxAYSgQIGxAcSgQIHBAdSgQIHRAeSgQIHhAiSgQIJRAqSgQIKhArSgQIKxAu",
+            "ItkCCgNUYWcSEgoEbmFtZRgBIAEoCVIEbmFtZRIgCgtkZXNjcmlwdGlvbhgC",
+            "IAEoCVILZGVzY3JpcHRpb24SZQoNZXh0ZXJuYWxfZG9jcxgDIAEoCzJALmdy",
+            "cGMuZ2F0ZXdheS5wcm90b2NfZ2VuX29wZW5hcGl2Mi5vcHRpb25zLkV4dGVy",
+            "bmFsRG9jdW1lbnRhdGlvblIMZXh0ZXJuYWxEb2NzEl4KCmV4dGVuc2lvbnMY",
+            "BCADKAsyPi5ncnBjLmdhdGV3YXkucHJvdG9jX2dlbl9vcGVuYXBpdjIub3B0",
+            "aW9ucy5UYWcuRXh0ZW5zaW9uc0VudHJ5UgpleHRlbnNpb25zGlUKD0V4dGVu",
+            "c2lvbnNFbnRyeRIQCgNrZXkYASABKAlSA2tleRIsCgV2YWx1ZRgCIAEoCzIW",
+            "Lmdvb2dsZS5wcm90b2J1Zi5WYWx1ZVIFdmFsdWU6AjgBIvcBChNTZWN1cml0",
+            "eURlZmluaXRpb25zEmgKCHNlY3VyaXR5GAEgAygLMkwuZ3JwYy5nYXRld2F5",
+            "LnByb3RvY19nZW5fb3BlbmFwaXYyLm9wdGlvbnMuU2VjdXJpdHlEZWZpbml0",
+            "aW9ucy5TZWN1cml0eUVudHJ5UghzZWN1cml0eRp2Cg1TZWN1cml0eUVudHJ5",
+            "EhAKA2tleRgBIAEoCVIDa2V5Ek8KBXZhbHVlGAIgASgLMjkuZ3JwYy5nYXRl",
+            "d2F5LnByb3RvY19nZW5fb3BlbmFwaXYyLm9wdGlvbnMuU2VjdXJpdHlTY2hl",
+            "bWVSBXZhbHVlOgI4ASL/BgoOU2VjdXJpdHlTY2hlbWUSUgoEdHlwZRgBIAEo",
+            "DjI+LmdycGMuZ2F0ZXdheS5wcm90b2NfZ2VuX29wZW5hcGl2Mi5vcHRpb25z",
+            "LlNlY3VyaXR5U2NoZW1lLlR5cGVSBHR5cGUSIAoLZGVzY3JpcHRpb24YAiAB",
+            "KAlSC2Rlc2NyaXB0aW9uEhIKBG5hbWUYAyABKAlSBG5hbWUSTAoCaW4YBCAB",
+            "KA4yPC5ncnBjLmdhdGV3YXkucHJvdG9jX2dlbl9vcGVuYXBpdjIub3B0aW9u",
+            "cy5TZWN1cml0eVNjaGVtZS5JblICaW4SUgoEZmxvdxgFIAEoDjI+LmdycGMu",
+            "Z2F0ZXdheS5wcm90b2NfZ2VuX29wZW5hcGl2Mi5vcHRpb25zLlNlY3VyaXR5",
+            "U2NoZW1lLkZsb3dSBGZsb3cSKwoRYXV0aG9yaXphdGlvbl91cmwYBiABKAlS",
+            "EGF1dGhvcml6YXRpb25VcmwSGwoJdG9rZW5fdXJsGAcgASgJUgh0b2tlblVy",
+            "bBJJCgZzY29wZXMYCCABKAsyMS5ncnBjLmdhdGV3YXkucHJvdG9jX2dlbl9v",
+            "cGVuYXBpdjIub3B0aW9ucy5TY29wZXNSBnNjb3BlcxJpCgpleHRlbnNpb25z",
+            "GAkgAygLMkkuZ3JwYy5nYXRld2F5LnByb3RvY19nZW5fb3BlbmFwaXYyLm9w",
+            "dGlvbnMuU2VjdXJpdHlTY2hlbWUuRXh0ZW5zaW9uc0VudHJ5UgpleHRlbnNp",
+            "b25zGlUKD0V4dGVuc2lvbnNFbnRyeRIQCgNrZXkYASABKAlSA2tleRIsCgV2",
+            "YWx1ZRgCIAEoCzIWLmdvb2dsZS5wcm90b2J1Zi5WYWx1ZVIFdmFsdWU6AjgB",
+            "IksKBFR5cGUSEAoMVFlQRV9JTlZBTElEEAASDgoKVFlQRV9CQVNJQxABEhAK",
+            "DFRZUEVfQVBJX0tFWRACEg8KC1RZUEVfT0FVVEgyEAMiMQoCSW4SDgoKSU5f",
+            "SU5WQUxJRBAAEgwKCElOX1FVRVJZEAESDQoJSU5fSEVBREVSEAIiagoERmxv",
+            "dxIQCgxGTE9XX0lOVkFMSUQQABIRCg1GTE9XX0lNUExJQ0lUEAESEQoNRkxP",
+            "V19QQVNTV09SRBACEhQKEEZMT1dfQVBQTElDQVRJT04QAxIUChBGTE9XX0FD",
+            "Q0VTU19DT0RFEAQi9gIKE1NlY3VyaXR5UmVxdWlyZW1lbnQSigEKFHNlY3Vy",
+            "aXR5X3JlcXVpcmVtZW50GAEgAygLMlcuZ3JwYy5nYXRld2F5LnByb3RvY19n",
+            "ZW5fb3BlbmFwaXYyLm9wdGlvbnMuU2VjdXJpdHlSZXF1aXJlbWVudC5TZWN1",
+            "cml0eVJlcXVpcmVtZW50RW50cnlSE3NlY3VyaXR5UmVxdWlyZW1lbnQaMAoY",
+            "U2VjdXJpdHlSZXF1aXJlbWVudFZhbHVlEhQKBXNjb3BlGAEgAygJUgVzY29w",
+            "ZRqfAQoYU2VjdXJpdHlSZXF1aXJlbWVudEVudHJ5EhAKA2tleRgBIAEoCVID",
+            "a2V5Em0KBXZhbHVlGAIgASgLMlcuZ3JwYy5nYXRld2F5LnByb3RvY19nZW5f",
+            "b3BlbmFwaXYyLm9wdGlvbnMuU2VjdXJpdHlSZXF1aXJlbWVudC5TZWN1cml0",
+            "eVJlcXVpcmVtZW50VmFsdWVSBXZhbHVlOgI4ASKWAQoGU2NvcGVzElIKBXNj",
+            "b3BlGAEgAygLMjwuZ3JwYy5nYXRld2F5LnByb3RvY19nZW5fb3BlbmFwaXYy",
+            "Lm9wdGlvbnMuU2NvcGVzLlNjb3BlRW50cnlSBXNjb3BlGjgKClNjb3BlRW50",
+            "cnkSEAoDa2V5GAEgASgJUgNrZXkSFAoFdmFsdWUYAiABKAlSBXZhbHVlOgI4",
+            "ASo7CgZTY2hlbWUSCwoHVU5LTk9XThAAEggKBEhUVFAQARIJCgVIVFRQUxAC",
+            "EgYKAldTEAMSBwoDV1NTEARCSFpGZ2l0aHViLmNvbS9ncnBjLWVjb3N5c3Rl",
+            "bS9ncnBjLWdhdGV3YXkvdjIvcHJvdG9jLWdlbi1vcGVuYXBpdjIvb3B0aW9u",
+            "c2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.StructReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Scheme), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Swagger), global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Swagger.Parser, new[]{ "Swagger_", "Info", "Host", "BasePath", "Schemes", "Consumes", "Produces", "Responses", "SecurityDefinitions", "Security", "ExternalDocs", "Extensions" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Operation), global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Operation.Parser, new[]{ "Tags", "Summary", "Description", "ExternalDocs", "OperationId", "Consumes", "Produces", "Responses", "Schemes", "Deprecated", "Security", "Extensions" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Swagger), global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Swagger.Parser, new[]{ "Swagger_", "Info", "Host", "BasePath", "Schemes", "Consumes", "Produces", "Responses", "SecurityDefinitions", "Security", "Tags", "ExternalDocs", "Extensions" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Operation), global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Operation.Parser, new[]{ "Tags", "Summary", "Description", "ExternalDocs", "OperationId", "Consumes", "Produces", "Responses", "Schemes", "Deprecated", "Security", "Extensions", "Parameters" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Parameters), global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Parameters.Parser, new[]{ "Headers" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.HeaderParameter), global::Grpc.Gateway.ProtocGenOpenapiv2.Options.HeaderParameter.Parser, new[]{ "Name", "Description", "Type", "Format", "Required" }, null, new[]{ typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.HeaderParameter.Types.Type) }, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Header), global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Header.Parser, new[]{ "Description", "Type", "Format", "Default", "Pattern" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Response), global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Response.Parser, new[]{ "Description", "Schema", "Headers", "Examples", "Extensions" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Info), global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Info.Parser, new[]{ "Title", "Description", "TermsOfService", "Contact", "License", "Version", "Extensions" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
@@ -199,7 +218,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
             new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Schema), global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Schema.Parser, new[]{ "JsonSchema", "Discriminator", "ReadOnly", "ExternalDocs", "Example" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.JSONSchema), global::Grpc.Gateway.ProtocGenOpenapiv2.Options.JSONSchema.Parser, new[]{ "Ref", "Title", "Description", "Default", "ReadOnly", "Example", "MultipleOf", "Maximum", "ExclusiveMaximum", "Minimum", "ExclusiveMinimum", "MaxLength", "MinLength", "Pattern", "MaxItems", "MinItems", "UniqueItems", "MaxProperties", "MinProperties", "Required", "Array", "Type", "Format", "Enum", "FieldConfiguration", "Extensions" }, null, new[]{ typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.JSONSchema.Types.JSONSchemaSimpleTypes) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.JSONSchema.Types.FieldConfiguration), global::Grpc.Gateway.ProtocGenOpenapiv2.Options.JSONSchema.Types.FieldConfiguration.Parser, new[]{ "PathParamName" }, null, null, null, null),
             null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Tag), global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Tag.Parser, new[]{ "Description", "ExternalDocs" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Tag), global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Tag.Parser, new[]{ "Name", "Description", "ExternalDocs", "Extensions" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.SecurityDefinitions), global::Grpc.Gateway.ProtocGenOpenapiv2.Options.SecurityDefinitions.Parser, new[]{ "Security" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.SecurityScheme), global::Grpc.Gateway.ProtocGenOpenapiv2.Options.SecurityScheme.Parser, new[]{ "Type", "Description", "Name", "In", "Flow", "AuthorizationUrl", "TokenUrl", "Scopes", "Extensions" }, null, new[]{ typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.SecurityScheme.Types.Type), typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.SecurityScheme.Types.In), typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.SecurityScheme.Types.Flow) }, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.SecurityRequirement), global::Grpc.Gateway.ProtocGenOpenapiv2.Options.SecurityRequirement.Parser, new[]{ "SecurityRequirement_" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.SecurityRequirement.Types.SecurityRequirementValue), global::Grpc.Gateway.ProtocGenOpenapiv2.Options.SecurityRequirement.Types.SecurityRequirementValue.Parser, new[]{ "Scope" }, null, null, null, null),
@@ -245,7 +264,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
   ///      };
   ///      license: {
   ///        name: "BSD 3-Clause License";
-  ///        url: "https://github.com/grpc-ecosystem/grpc-gateway/blob/master/LICENSE.txt";
+  ///        url: "https://github.com/grpc-ecosystem/grpc-gateway/blob/main/LICENSE.txt";
   ///      };
   ///    };
   ///    schemes: HTTPS;
@@ -297,6 +316,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
       responses_ = other.responses_.Clone();
       securityDefinitions_ = other.securityDefinitions_ != null ? other.securityDefinitions_.Clone() : null;
       security_ = other.security_.Clone();
+      tags_ = other.tags_.Clone();
       externalDocs_ = other.externalDocs_ != null ? other.externalDocs_.Clone() : null;
       extensions_ = other.extensions_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -477,6 +497,21 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
       get { return security_; }
     }
 
+    /// <summary>Field number for the "tags" field.</summary>
+    public const int TagsFieldNumber = 13;
+    private static readonly pb::FieldCodec<global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Tag> _repeated_tags_codec
+        = pb::FieldCodec.ForMessage(106, global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Tag.Parser);
+    private readonly pbc::RepeatedField<global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Tag> tags_ = new pbc::RepeatedField<global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Tag>();
+    /// <summary>
+    /// A list of tags for API documentation control. Tags can be used for logical
+    /// grouping of operations by resources or any other qualifier.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Tag> Tags {
+      get { return tags_; }
+    }
+
     /// <summary>Field number for the "external_docs" field.</summary>
     public const int ExternalDocsFieldNumber = 14;
     private global::Grpc.Gateway.ProtocGenOpenapiv2.Options.ExternalDocumentation externalDocs_;
@@ -497,6 +532,11 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
     private static readonly pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value>.Codec _map_extensions_codec
         = new pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::Google.Protobuf.WellKnownTypes.Value.Parser), 122);
     private readonly pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value> extensions_ = new pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value>();
+    /// <summary>
+    /// Custom properties that start with "x-" such as "x-foo" used to describe
+    /// extra functionality that is not covered by the standard OpenAPI Specification.
+    /// See: https://swagger.io/docs/specification/2-0/swagger-extensions/
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value> Extensions {
@@ -528,6 +568,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
       if (!Responses.Equals(other.Responses)) return false;
       if (!object.Equals(SecurityDefinitions, other.SecurityDefinitions)) return false;
       if(!security_.Equals(other.security_)) return false;
+      if(!tags_.Equals(other.tags_)) return false;
       if (!object.Equals(ExternalDocs, other.ExternalDocs)) return false;
       if (!Extensions.Equals(other.Extensions)) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -547,6 +588,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
       hash ^= Responses.GetHashCode();
       if (securityDefinitions_ != null) hash ^= SecurityDefinitions.GetHashCode();
       hash ^= security_.GetHashCode();
+      hash ^= tags_.GetHashCode();
       if (externalDocs_ != null) hash ^= ExternalDocs.GetHashCode();
       hash ^= Extensions.GetHashCode();
       if (_unknownFields != null) {
@@ -592,6 +634,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
         output.WriteMessage(SecurityDefinitions);
       }
       security_.WriteTo(output, _repeated_security_codec);
+      tags_.WriteTo(output, _repeated_tags_codec);
       if (externalDocs_ != null) {
         output.WriteRawTag(114);
         output.WriteMessage(ExternalDocs);
@@ -632,6 +675,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
         output.WriteMessage(SecurityDefinitions);
       }
       security_.WriteTo(ref output, _repeated_security_codec);
+      tags_.WriteTo(ref output, _repeated_tags_codec);
       if (externalDocs_ != null) {
         output.WriteRawTag(114);
         output.WriteMessage(ExternalDocs);
@@ -667,6 +711,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(SecurityDefinitions);
       }
       size += security_.CalculateSize(_repeated_security_codec);
+      size += tags_.CalculateSize(_repeated_tags_codec);
       if (externalDocs_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(ExternalDocs);
       }
@@ -701,7 +746,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
       schemes_.Add(other.schemes_);
       consumes_.Add(other.consumes_);
       produces_.Add(other.produces_);
-      responses_.Add(other.responses_);
+      responses_.MergeFrom(other.responses_);
       if (other.securityDefinitions_ != null) {
         if (securityDefinitions_ == null) {
           SecurityDefinitions = new global::Grpc.Gateway.ProtocGenOpenapiv2.Options.SecurityDefinitions();
@@ -709,13 +754,14 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
         SecurityDefinitions.MergeFrom(other.SecurityDefinitions);
       }
       security_.Add(other.security_);
+      tags_.Add(other.tags_);
       if (other.externalDocs_ != null) {
         if (externalDocs_ == null) {
           ExternalDocs = new global::Grpc.Gateway.ProtocGenOpenapiv2.Options.ExternalDocumentation();
         }
         ExternalDocs.MergeFrom(other.ExternalDocs);
       }
-      extensions_.Add(other.extensions_);
+      extensions_.MergeFrom(other.extensions_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -776,6 +822,10 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
           }
           case 98: {
             security_.AddEntriesFrom(input, _repeated_security_codec);
+            break;
+          }
+          case 106: {
+            tags_.AddEntriesFrom(input, _repeated_tags_codec);
             break;
           }
           case 114: {
@@ -849,6 +899,10 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
           }
           case 98: {
             security_.AddEntriesFrom(ref input, _repeated_security_codec);
+            break;
+          }
+          case 106: {
+            tags_.AddEntriesFrom(ref input, _repeated_tags_codec);
             break;
           }
           case 114: {
@@ -942,6 +996,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
       deprecated_ = other.deprecated_;
       security_ = other.security_.Clone();
       extensions_ = other.extensions_.Clone();
+      parameters_ = other.parameters_ != null ? other.parameters_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1133,10 +1188,32 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
     private static readonly pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value>.Codec _map_extensions_codec
         = new pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::Google.Protobuf.WellKnownTypes.Value.Parser), 106);
     private readonly pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value> extensions_ = new pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value>();
+    /// <summary>
+    /// Custom properties that start with "x-" such as "x-foo" used to describe
+    /// extra functionality that is not covered by the standard OpenAPI Specification.
+    /// See: https://swagger.io/docs/specification/2-0/swagger-extensions/
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value> Extensions {
       get { return extensions_; }
+    }
+
+    /// <summary>Field number for the "parameters" field.</summary>
+    public const int ParametersFieldNumber = 14;
+    private global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Parameters parameters_;
+    /// <summary>
+    /// Custom parameters such as HTTP request headers.
+    /// See: https://swagger.io/docs/specification/2-0/describing-parameters/
+    /// and https://swagger.io/specification/v2/#parameter-object.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Parameters Parameters {
+      get { return parameters_; }
+      set {
+        parameters_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1166,6 +1243,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
       if (Deprecated != other.Deprecated) return false;
       if(!security_.Equals(other.security_)) return false;
       if (!Extensions.Equals(other.Extensions)) return false;
+      if (!object.Equals(Parameters, other.Parameters)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1185,6 +1263,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
       if (Deprecated != false) hash ^= Deprecated.GetHashCode();
       hash ^= security_.GetHashCode();
       hash ^= Extensions.GetHashCode();
+      if (parameters_ != null) hash ^= Parameters.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1230,6 +1309,10 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
       }
       security_.WriteTo(output, _repeated_security_codec);
       extensions_.WriteTo(output, _map_extensions_codec);
+      if (parameters_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(Parameters);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1267,6 +1350,10 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
       }
       security_.WriteTo(ref output, _repeated_security_codec);
       extensions_.WriteTo(ref output, _map_extensions_codec);
+      if (parameters_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(Parameters);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1299,6 +1386,9 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
       }
       size += security_.CalculateSize(_repeated_security_codec);
       size += extensions_.CalculateSize(_map_extensions_codec);
+      if (parameters_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Parameters);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -1329,13 +1419,19 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
       }
       consumes_.Add(other.consumes_);
       produces_.Add(other.produces_);
-      responses_.Add(other.responses_);
+      responses_.MergeFrom(other.responses_);
       schemes_.Add(other.schemes_);
       if (other.Deprecated != false) {
         Deprecated = other.Deprecated;
       }
       security_.Add(other.security_);
-      extensions_.Add(other.extensions_);
+      extensions_.MergeFrom(other.extensions_);
+      if (other.parameters_ != null) {
+        if (parameters_ == null) {
+          Parameters = new global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Parameters();
+        }
+        Parameters.MergeFrom(other.Parameters);
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -1401,6 +1497,13 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
           }
           case 106: {
             extensions_.AddEntriesFrom(input, _map_extensions_codec);
+            break;
+          }
+          case 114: {
+            if (parameters_ == null) {
+              Parameters = new global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Parameters();
+            }
+            input.ReadMessage(Parameters);
             break;
           }
         }
@@ -1470,10 +1573,583 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
             extensions_.AddEntriesFrom(ref input, _map_extensions_codec);
             break;
           }
+          case 114: {
+            if (parameters_ == null) {
+              Parameters = new global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Parameters();
+            }
+            input.ReadMessage(Parameters);
+            break;
+          }
         }
       }
     }
     #endif
+
+  }
+
+  /// <summary>
+  /// `Parameters` is a representation of OpenAPI v2 specification's parameters object.
+  /// Note: This technically breaks compatibility with the OpenAPI 2 definition structure as we only
+  /// allow header parameters to be set here since we do not want users specifying custom non-header
+  /// parameters beyond those inferred from the Protobuf schema.
+  /// See: https://swagger.io/specification/v2/#parameter-object
+  /// </summary>
+  public sealed partial class Parameters : pb::IMessage<Parameters>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<Parameters> _parser = new pb::MessageParser<Parameters>(() => new Parameters());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<Parameters> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Openapiv2Reflection.Descriptor.MessageTypes[2]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public Parameters() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public Parameters(Parameters other) : this() {
+      headers_ = other.headers_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public Parameters Clone() {
+      return new Parameters(this);
+    }
+
+    /// <summary>Field number for the "headers" field.</summary>
+    public const int HeadersFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Grpc.Gateway.ProtocGenOpenapiv2.Options.HeaderParameter> _repeated_headers_codec
+        = pb::FieldCodec.ForMessage(10, global::Grpc.Gateway.ProtocGenOpenapiv2.Options.HeaderParameter.Parser);
+    private readonly pbc::RepeatedField<global::Grpc.Gateway.ProtocGenOpenapiv2.Options.HeaderParameter> headers_ = new pbc::RepeatedField<global::Grpc.Gateway.ProtocGenOpenapiv2.Options.HeaderParameter>();
+    /// <summary>
+    /// `Headers` is one or more HTTP header parameter.
+    /// See: https://swagger.io/docs/specification/2-0/describing-parameters/#header-parameters
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Grpc.Gateway.ProtocGenOpenapiv2.Options.HeaderParameter> Headers {
+      get { return headers_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as Parameters);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(Parameters other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!headers_.Equals(other.headers_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= headers_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      headers_.WriteTo(output, _repeated_headers_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      headers_.WriteTo(ref output, _repeated_headers_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += headers_.CalculateSize(_repeated_headers_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(Parameters other) {
+      if (other == null) {
+        return;
+      }
+      headers_.Add(other.headers_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            headers_.AddEntriesFrom(input, _repeated_headers_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            headers_.AddEntriesFrom(ref input, _repeated_headers_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// `HeaderParameter` a HTTP header parameter.
+  /// See: https://swagger.io/specification/v2/#parameter-object
+  /// </summary>
+  public sealed partial class HeaderParameter : pb::IMessage<HeaderParameter>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<HeaderParameter> _parser = new pb::MessageParser<HeaderParameter>(() => new HeaderParameter());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<HeaderParameter> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Openapiv2Reflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public HeaderParameter() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public HeaderParameter(HeaderParameter other) : this() {
+      name_ = other.name_;
+      description_ = other.description_;
+      type_ = other.type_;
+      format_ = other.format_;
+      required_ = other.required_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public HeaderParameter Clone() {
+      return new HeaderParameter(this);
+    }
+
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 1;
+    private string name_ = "";
+    /// <summary>
+    /// `Name` is the header name.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "description" field.</summary>
+    public const int DescriptionFieldNumber = 2;
+    private string description_ = "";
+    /// <summary>
+    /// `Description` is a short description of the header.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Description {
+      get { return description_; }
+      set {
+        description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "type" field.</summary>
+    public const int TypeFieldNumber = 3;
+    private global::Grpc.Gateway.ProtocGenOpenapiv2.Options.HeaderParameter.Types.Type type_ = global::Grpc.Gateway.ProtocGenOpenapiv2.Options.HeaderParameter.Types.Type.Unknown;
+    /// <summary>
+    /// `Type` is the type of the object. The value MUST be one of "string", "number", "integer", or "boolean". The "array" type is not supported.
+    /// See: https://swagger.io/specification/v2/#parameterType.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Grpc.Gateway.ProtocGenOpenapiv2.Options.HeaderParameter.Types.Type Type {
+      get { return type_; }
+      set {
+        type_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "format" field.</summary>
+    public const int FormatFieldNumber = 4;
+    private string format_ = "";
+    /// <summary>
+    /// `Format` The extending format for the previously mentioned type.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Format {
+      get { return format_; }
+      set {
+        format_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "required" field.</summary>
+    public const int RequiredFieldNumber = 5;
+    private bool required_;
+    /// <summary>
+    /// `Required` indicates if the header is optional
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Required {
+      get { return required_; }
+      set {
+        required_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as HeaderParameter);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(HeaderParameter other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Name != other.Name) return false;
+      if (Description != other.Description) return false;
+      if (Type != other.Type) return false;
+      if (Format != other.Format) return false;
+      if (Required != other.Required) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (Description.Length != 0) hash ^= Description.GetHashCode();
+      if (Type != global::Grpc.Gateway.ProtocGenOpenapiv2.Options.HeaderParameter.Types.Type.Unknown) hash ^= Type.GetHashCode();
+      if (Format.Length != 0) hash ^= Format.GetHashCode();
+      if (Required != false) hash ^= Required.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Name.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Name);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Description);
+      }
+      if (Type != global::Grpc.Gateway.ProtocGenOpenapiv2.Options.HeaderParameter.Types.Type.Unknown) {
+        output.WriteRawTag(24);
+        output.WriteEnum((int) Type);
+      }
+      if (Format.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Format);
+      }
+      if (Required != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(Required);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Name.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Name);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Description);
+      }
+      if (Type != global::Grpc.Gateway.ProtocGenOpenapiv2.Options.HeaderParameter.Types.Type.Unknown) {
+        output.WriteRawTag(24);
+        output.WriteEnum((int) Type);
+      }
+      if (Format.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Format);
+      }
+      if (Required != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(Required);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (Description.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
+      }
+      if (Type != global::Grpc.Gateway.ProtocGenOpenapiv2.Options.HeaderParameter.Types.Type.Unknown) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
+      }
+      if (Format.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Format);
+      }
+      if (Required != false) {
+        size += 1 + 1;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(HeaderParameter other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.Description.Length != 0) {
+        Description = other.Description;
+      }
+      if (other.Type != global::Grpc.Gateway.ProtocGenOpenapiv2.Options.HeaderParameter.Types.Type.Unknown) {
+        Type = other.Type;
+      }
+      if (other.Format.Length != 0) {
+        Format = other.Format;
+      }
+      if (other.Required != false) {
+        Required = other.Required;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Name = input.ReadString();
+            break;
+          }
+          case 18: {
+            Description = input.ReadString();
+            break;
+          }
+          case 24: {
+            Type = (global::Grpc.Gateway.ProtocGenOpenapiv2.Options.HeaderParameter.Types.Type) input.ReadEnum();
+            break;
+          }
+          case 34: {
+            Format = input.ReadString();
+            break;
+          }
+          case 40: {
+            Required = input.ReadBool();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Name = input.ReadString();
+            break;
+          }
+          case 18: {
+            Description = input.ReadString();
+            break;
+          }
+          case 24: {
+            Type = (global::Grpc.Gateway.ProtocGenOpenapiv2.Options.HeaderParameter.Types.Type) input.ReadEnum();
+            break;
+          }
+          case 34: {
+            Format = input.ReadString();
+            break;
+          }
+          case 40: {
+            Required = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+    #region Nested types
+    /// <summary>Container for nested types declared in the HeaderParameter message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static partial class Types {
+      /// <summary>
+      /// `Type` is a a supported HTTP header type.
+      /// See https://swagger.io/specification/v2/#parameterType.
+      /// </summary>
+      public enum Type {
+        [pbr::OriginalName("UNKNOWN")] Unknown = 0,
+        [pbr::OriginalName("STRING")] String = 1,
+        [pbr::OriginalName("NUMBER")] Number = 2,
+        [pbr::OriginalName("INTEGER")] Integer = 3,
+        [pbr::OriginalName("BOOLEAN")] Boolean = 4,
+      }
+
+    }
+    #endregion
 
   }
 
@@ -1496,7 +2172,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Openapiv2Reflection.Descriptor.MessageTypes[2]; }
+      get { return global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Openapiv2Reflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1855,7 +2531,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Openapiv2Reflection.Descriptor.MessageTypes[3]; }
+      get { return global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Openapiv2Reflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1957,6 +2633,11 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
     private static readonly pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value>.Codec _map_extensions_codec
         = new pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::Google.Protobuf.WellKnownTypes.Value.Parser), 42);
     private readonly pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value> extensions_ = new pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value>();
+    /// <summary>
+    /// Custom properties that start with "x-" such as "x-foo" used to describe
+    /// extra functionality that is not covered by the standard OpenAPI Specification.
+    /// See: https://swagger.io/docs/specification/2-0/swagger-extensions/
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value> Extensions {
@@ -2085,9 +2766,9 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
         }
         Schema.MergeFrom(other.Schema);
       }
-      headers_.Add(other.headers_);
-      examples_.Add(other.examples_);
-      extensions_.Add(other.extensions_);
+      headers_.MergeFrom(other.headers_);
+      examples_.MergeFrom(other.examples_);
+      extensions_.MergeFrom(other.extensions_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -2190,7 +2871,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
   ///      };
   ///      license: {
   ///        name: "BSD 3-Clause License";
-  ///        url: "https://github.com/grpc-ecosystem/grpc-gateway/blob/master/LICENSE.txt";
+  ///        url: "https://github.com/grpc-ecosystem/grpc-gateway/blob/main/LICENSE.txt";
   ///      };
   ///    };
   ///    ...
@@ -2210,7 +2891,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Openapiv2Reflection.Descriptor.MessageTypes[4]; }
+      get { return global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Openapiv2Reflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2343,6 +3024,11 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
     private static readonly pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value>.Codec _map_extensions_codec
         = new pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::Google.Protobuf.WellKnownTypes.Value.Parser), 58);
     private readonly pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value> extensions_ = new pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value>();
+    /// <summary>
+    /// Custom properties that start with "x-" such as "x-foo" used to describe
+    /// extra functionality that is not covered by the standard OpenAPI Specification.
+    /// See: https://swagger.io/docs/specification/2-0/swagger-extensions/
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value> Extensions {
@@ -2528,7 +3214,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
       if (other.Version.Length != 0) {
         Version = other.Version;
       }
-      extensions_.Add(other.extensions_);
+      extensions_.MergeFrom(other.extensions_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -2668,7 +3354,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Openapiv2Reflection.Descriptor.MessageTypes[5]; }
+      get { return global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Openapiv2Reflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2940,7 +3626,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
   ///      ...
   ///      license: {
   ///        name: "BSD 3-Clause License";
-  ///        url: "https://github.com/grpc-ecosystem/grpc-gateway/blob/master/LICENSE.txt";
+  ///        url: "https://github.com/grpc-ecosystem/grpc-gateway/blob/main/LICENSE.txt";
   ///      };
   ///      ...
   ///    };
@@ -2961,7 +3647,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Openapiv2Reflection.Descriptor.MessageTypes[6]; }
+      get { return global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Openapiv2Reflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3210,7 +3896,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Openapiv2Reflection.Descriptor.MessageTypes[7]; }
+      get { return global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Openapiv2Reflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3449,7 +4135,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Openapiv2Reflection.Descriptor.MessageTypes[8]; }
+      get { return global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Openapiv2Reflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3854,7 +4540,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Openapiv2Reflection.Descriptor.MessageTypes[9]; }
+      get { return global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Openapiv2Reflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4249,6 +4935,11 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
     private static readonly pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value>.Codec _map_extensions_codec
         = new pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::Google.Protobuf.WellKnownTypes.Value.Parser), 386);
     private readonly pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value> extensions_ = new pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value>();
+    /// <summary>
+    /// Custom properties that start with "x-" such as "x-foo" used to describe
+    /// extra functionality that is not covered by the standard OpenAPI Specification.
+    /// See: https://swagger.io/docs/specification/2-0/swagger-extensions/
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value> Extensions {
@@ -4695,7 +5386,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
         }
         FieldConfiguration.MergeFrom(other.FieldConfiguration);
       }
-      extensions_.Add(other.extensions_);
+      extensions_.MergeFrom(other.extensions_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -5186,7 +5877,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Openapiv2Reflection.Descriptor.MessageTypes[10]; }
+      get { return global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Openapiv2Reflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5206,8 +5897,10 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Tag(Tag other) : this() {
+      name_ = other.name_;
       description_ = other.description_;
       externalDocs_ = other.externalDocs_ != null ? other.externalDocs_.Clone() : null;
+      extensions_ = other.extensions_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -5215,6 +5908,23 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Tag Clone() {
       return new Tag(this);
+    }
+
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 1;
+    private string name_ = "";
+    /// <summary>
+    /// The name of the tag. Use it to allow override of the name of a
+    /// global Tag object, then use that name to reference the tag throughout the
+    /// OpenAPI file.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
     }
 
     /// <summary>Field number for the "description" field.</summary>
@@ -5248,6 +5958,22 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
       }
     }
 
+    /// <summary>Field number for the "extensions" field.</summary>
+    public const int ExtensionsFieldNumber = 4;
+    private static readonly pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value>.Codec _map_extensions_codec
+        = new pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::Google.Protobuf.WellKnownTypes.Value.Parser), 34);
+    private readonly pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value> extensions_ = new pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value>();
+    /// <summary>
+    /// Custom properties that start with "x-" such as "x-foo" used to describe
+    /// extra functionality that is not covered by the standard OpenAPI Specification.
+    /// See: https://swagger.io/docs/specification/2-0/swagger-extensions/
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value> Extensions {
+      get { return extensions_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -5263,8 +5989,10 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (Name != other.Name) return false;
       if (Description != other.Description) return false;
       if (!object.Equals(ExternalDocs, other.ExternalDocs)) return false;
+      if (!Extensions.Equals(other.Extensions)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -5272,8 +6000,10 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (externalDocs_ != null) hash ^= ExternalDocs.GetHashCode();
+      hash ^= Extensions.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -5292,6 +6022,10 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (Name.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Name);
+      }
       if (Description.Length != 0) {
         output.WriteRawTag(18);
         output.WriteString(Description);
@@ -5300,6 +6034,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
         output.WriteRawTag(26);
         output.WriteMessage(ExternalDocs);
       }
+      extensions_.WriteTo(output, _map_extensions_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -5310,6 +6045,10 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Name.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Name);
+      }
       if (Description.Length != 0) {
         output.WriteRawTag(18);
         output.WriteString(Description);
@@ -5318,6 +6057,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
         output.WriteRawTag(26);
         output.WriteMessage(ExternalDocs);
       }
+      extensions_.WriteTo(ref output, _map_extensions_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -5328,12 +6068,16 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
       if (Description.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
       }
       if (externalDocs_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(ExternalDocs);
       }
+      size += extensions_.CalculateSize(_map_extensions_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -5346,6 +6090,9 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
       if (other == null) {
         return;
       }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
       if (other.Description.Length != 0) {
         Description = other.Description;
       }
@@ -5355,6 +6102,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
         }
         ExternalDocs.MergeFrom(other.ExternalDocs);
       }
+      extensions_.MergeFrom(other.extensions_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -5370,6 +6118,10 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
+          case 10: {
+            Name = input.ReadString();
+            break;
+          }
           case 18: {
             Description = input.ReadString();
             break;
@@ -5379,6 +6131,10 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
               ExternalDocs = new global::Grpc.Gateway.ProtocGenOpenapiv2.Options.ExternalDocumentation();
             }
             input.ReadMessage(ExternalDocs);
+            break;
+          }
+          case 34: {
+            extensions_.AddEntriesFrom(input, _map_extensions_codec);
             break;
           }
         }
@@ -5396,6 +6152,10 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
+          case 10: {
+            Name = input.ReadString();
+            break;
+          }
           case 18: {
             Description = input.ReadString();
             break;
@@ -5405,6 +6165,10 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
               ExternalDocs = new global::Grpc.Gateway.ProtocGenOpenapiv2.Options.ExternalDocumentation();
             }
             input.ReadMessage(ExternalDocs);
+            break;
+          }
+          case 34: {
+            extensions_.AddEntriesFrom(ref input, _map_extensions_codec);
             break;
           }
         }
@@ -5438,7 +6202,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Openapiv2Reflection.Descriptor.MessageTypes[11]; }
+      get { return global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Openapiv2Reflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5560,7 +6324,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
       if (other == null) {
         return;
       }
-      security_.Add(other.security_);
+      security_.MergeFrom(other.security_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -5631,7 +6395,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Openapiv2Reflection.Descriptor.MessageTypes[12]; }
+      get { return global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Openapiv2Reflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5805,6 +6569,11 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
     private static readonly pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value>.Codec _map_extensions_codec
         = new pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::Google.Protobuf.WellKnownTypes.Value.Parser), 74);
     private readonly pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value> extensions_ = new pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value>();
+    /// <summary>
+    /// Custom properties that start with "x-" such as "x-foo" used to describe
+    /// extra functionality that is not covered by the standard OpenAPI Specification.
+    /// See: https://swagger.io/docs/specification/2-0/swagger-extensions/
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value> Extensions {
@@ -6019,7 +6788,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
         }
         Scopes.MergeFrom(other.Scopes);
       }
-      extensions_.Add(other.extensions_);
+      extensions_.MergeFrom(other.extensions_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -6202,7 +6971,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Openapiv2Reflection.Descriptor.MessageTypes[13]; }
+      get { return global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Openapiv2Reflection.Descriptor.MessageTypes[15]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6326,7 +7095,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
       if (other == null) {
         return;
       }
-      securityRequirement_.Add(other.securityRequirement_);
+      securityRequirement_.MergeFrom(other.securityRequirement_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -6584,7 +7353,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Openapiv2Reflection.Descriptor.MessageTypes[14]; }
+      get { return global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Openapiv2Reflection.Descriptor.MessageTypes[16]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6706,7 +7475,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
       if (other == null) {
         return;
       }
-      scope_.Add(other.scope_);
+      scope_.MergeFrom(other.scope_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

@@ -382,8 +382,8 @@ namespace Google.Api.Expr.V1Alpha1 {
       if (other == null) {
         return;
       }
-      referenceMap_.Add(other.referenceMap_);
-      typeMap_.Add(other.typeMap_);
+      referenceMap_.MergeFrom(other.referenceMap_);
+      typeMap_.MergeFrom(other.typeMap_);
       if (other.sourceInfo_ != null) {
         if (sourceInfo_ == null) {
           SourceInfo = new global::Google.Api.Expr.V1Alpha1.SourceInfo();
@@ -599,10 +599,24 @@ namespace Google.Api.Expr.V1Alpha1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.NullValue Null {
-      get { return typeKindCase_ == TypeKindOneofCase.Null ? (global::Google.Protobuf.WellKnownTypes.NullValue) typeKind_ : global::Google.Protobuf.WellKnownTypes.NullValue.NullValue; }
+      get { return HasNull ? (global::Google.Protobuf.WellKnownTypes.NullValue) typeKind_ : global::Google.Protobuf.WellKnownTypes.NullValue.NullValue; }
       set {
         typeKind_ = value;
         typeKindCase_ = TypeKindOneofCase.Null;
+      }
+    }
+    /// <summary>Gets whether the "null" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasNull {
+      get { return typeKindCase_ == TypeKindOneofCase.Null; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "null" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearNull() {
+      if (HasNull) {
+        ClearTypeKind();
       }
     }
 
@@ -614,10 +628,24 @@ namespace Google.Api.Expr.V1Alpha1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Api.Expr.V1Alpha1.Type.Types.PrimitiveType Primitive {
-      get { return typeKindCase_ == TypeKindOneofCase.Primitive ? (global::Google.Api.Expr.V1Alpha1.Type.Types.PrimitiveType) typeKind_ : global::Google.Api.Expr.V1Alpha1.Type.Types.PrimitiveType.Unspecified; }
+      get { return HasPrimitive ? (global::Google.Api.Expr.V1Alpha1.Type.Types.PrimitiveType) typeKind_ : global::Google.Api.Expr.V1Alpha1.Type.Types.PrimitiveType.Unspecified; }
       set {
         typeKind_ = value;
         typeKindCase_ = TypeKindOneofCase.Primitive;
+      }
+    }
+    /// <summary>Gets whether the "primitive" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasPrimitive {
+      get { return typeKindCase_ == TypeKindOneofCase.Primitive; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "primitive" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearPrimitive() {
+      if (HasPrimitive) {
+        ClearTypeKind();
       }
     }
 
@@ -629,10 +657,24 @@ namespace Google.Api.Expr.V1Alpha1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Api.Expr.V1Alpha1.Type.Types.PrimitiveType Wrapper {
-      get { return typeKindCase_ == TypeKindOneofCase.Wrapper ? (global::Google.Api.Expr.V1Alpha1.Type.Types.PrimitiveType) typeKind_ : global::Google.Api.Expr.V1Alpha1.Type.Types.PrimitiveType.Unspecified; }
+      get { return HasWrapper ? (global::Google.Api.Expr.V1Alpha1.Type.Types.PrimitiveType) typeKind_ : global::Google.Api.Expr.V1Alpha1.Type.Types.PrimitiveType.Unspecified; }
       set {
         typeKind_ = value;
         typeKindCase_ = TypeKindOneofCase.Wrapper;
+      }
+    }
+    /// <summary>Gets whether the "wrapper" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasWrapper {
+      get { return typeKindCase_ == TypeKindOneofCase.Wrapper; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "wrapper" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearWrapper() {
+      if (HasWrapper) {
+        ClearTypeKind();
       }
     }
 
@@ -644,10 +686,24 @@ namespace Google.Api.Expr.V1Alpha1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Api.Expr.V1Alpha1.Type.Types.WellKnownType WellKnown {
-      get { return typeKindCase_ == TypeKindOneofCase.WellKnown ? (global::Google.Api.Expr.V1Alpha1.Type.Types.WellKnownType) typeKind_ : global::Google.Api.Expr.V1Alpha1.Type.Types.WellKnownType.Unspecified; }
+      get { return HasWellKnown ? (global::Google.Api.Expr.V1Alpha1.Type.Types.WellKnownType) typeKind_ : global::Google.Api.Expr.V1Alpha1.Type.Types.WellKnownType.Unspecified; }
       set {
         typeKind_ = value;
         typeKindCase_ = TypeKindOneofCase.WellKnown;
+      }
+    }
+    /// <summary>Gets whether the "well_known" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasWellKnown {
+      get { return typeKindCase_ == TypeKindOneofCase.WellKnown; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "well_known" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearWellKnown() {
+      if (HasWellKnown) {
+        ClearTypeKind();
       }
     }
 
@@ -707,10 +763,24 @@ namespace Google.Api.Expr.V1Alpha1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string MessageType {
-      get { return typeKindCase_ == TypeKindOneofCase.MessageType ? (string) typeKind_ : ""; }
+      get { return HasMessageType ? (string) typeKind_ : ""; }
       set {
         typeKind_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         typeKindCase_ = TypeKindOneofCase.MessageType;
+      }
+    }
+    /// <summary>Gets whether the "message_type" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasMessageType {
+      get { return typeKindCase_ == TypeKindOneofCase.MessageType; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "message_type" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearMessageType() {
+      if (HasMessageType) {
+        ClearTypeKind();
       }
     }
 
@@ -726,10 +796,24 @@ namespace Google.Api.Expr.V1Alpha1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string TypeParam {
-      get { return typeKindCase_ == TypeKindOneofCase.TypeParam ? (string) typeKind_ : ""; }
+      get { return HasTypeParam ? (string) typeKind_ : ""; }
       set {
         typeKind_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         typeKindCase_ = TypeKindOneofCase.TypeParam;
+      }
+    }
+    /// <summary>Gets whether the "type_param" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasTypeParam {
+      get { return typeKindCase_ == TypeKindOneofCase.TypeParam; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "type_param" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearTypeParam() {
+      if (HasTypeParam) {
+        ClearTypeKind();
       }
     }
 
@@ -854,15 +938,15 @@ namespace Google.Api.Expr.V1Alpha1 {
     public override int GetHashCode() {
       int hash = 1;
       if (typeKindCase_ == TypeKindOneofCase.Dyn) hash ^= Dyn.GetHashCode();
-      if (typeKindCase_ == TypeKindOneofCase.Null) hash ^= Null.GetHashCode();
-      if (typeKindCase_ == TypeKindOneofCase.Primitive) hash ^= Primitive.GetHashCode();
-      if (typeKindCase_ == TypeKindOneofCase.Wrapper) hash ^= Wrapper.GetHashCode();
-      if (typeKindCase_ == TypeKindOneofCase.WellKnown) hash ^= WellKnown.GetHashCode();
+      if (HasNull) hash ^= Null.GetHashCode();
+      if (HasPrimitive) hash ^= Primitive.GetHashCode();
+      if (HasWrapper) hash ^= Wrapper.GetHashCode();
+      if (HasWellKnown) hash ^= WellKnown.GetHashCode();
       if (typeKindCase_ == TypeKindOneofCase.ListType) hash ^= ListType.GetHashCode();
       if (typeKindCase_ == TypeKindOneofCase.MapType) hash ^= MapType.GetHashCode();
       if (typeKindCase_ == TypeKindOneofCase.Function) hash ^= Function.GetHashCode();
-      if (typeKindCase_ == TypeKindOneofCase.MessageType) hash ^= MessageType.GetHashCode();
-      if (typeKindCase_ == TypeKindOneofCase.TypeParam) hash ^= TypeParam.GetHashCode();
+      if (HasMessageType) hash ^= MessageType.GetHashCode();
+      if (HasTypeParam) hash ^= TypeParam.GetHashCode();
       if (typeKindCase_ == TypeKindOneofCase.Type_) hash ^= Type_.GetHashCode();
       if (typeKindCase_ == TypeKindOneofCase.Error) hash ^= Error.GetHashCode();
       if (typeKindCase_ == TypeKindOneofCase.AbstractType) hash ^= AbstractType.GetHashCode();
@@ -889,19 +973,19 @@ namespace Google.Api.Expr.V1Alpha1 {
         output.WriteRawTag(10);
         output.WriteMessage(Dyn);
       }
-      if (typeKindCase_ == TypeKindOneofCase.Null) {
+      if (HasNull) {
         output.WriteRawTag(16);
         output.WriteEnum((int) Null);
       }
-      if (typeKindCase_ == TypeKindOneofCase.Primitive) {
+      if (HasPrimitive) {
         output.WriteRawTag(24);
         output.WriteEnum((int) Primitive);
       }
-      if (typeKindCase_ == TypeKindOneofCase.Wrapper) {
+      if (HasWrapper) {
         output.WriteRawTag(32);
         output.WriteEnum((int) Wrapper);
       }
-      if (typeKindCase_ == TypeKindOneofCase.WellKnown) {
+      if (HasWellKnown) {
         output.WriteRawTag(40);
         output.WriteEnum((int) WellKnown);
       }
@@ -917,11 +1001,11 @@ namespace Google.Api.Expr.V1Alpha1 {
         output.WriteRawTag(66);
         output.WriteMessage(Function);
       }
-      if (typeKindCase_ == TypeKindOneofCase.MessageType) {
+      if (HasMessageType) {
         output.WriteRawTag(74);
         output.WriteString(MessageType);
       }
-      if (typeKindCase_ == TypeKindOneofCase.TypeParam) {
+      if (HasTypeParam) {
         output.WriteRawTag(82);
         output.WriteString(TypeParam);
       }
@@ -951,19 +1035,19 @@ namespace Google.Api.Expr.V1Alpha1 {
         output.WriteRawTag(10);
         output.WriteMessage(Dyn);
       }
-      if (typeKindCase_ == TypeKindOneofCase.Null) {
+      if (HasNull) {
         output.WriteRawTag(16);
         output.WriteEnum((int) Null);
       }
-      if (typeKindCase_ == TypeKindOneofCase.Primitive) {
+      if (HasPrimitive) {
         output.WriteRawTag(24);
         output.WriteEnum((int) Primitive);
       }
-      if (typeKindCase_ == TypeKindOneofCase.Wrapper) {
+      if (HasWrapper) {
         output.WriteRawTag(32);
         output.WriteEnum((int) Wrapper);
       }
-      if (typeKindCase_ == TypeKindOneofCase.WellKnown) {
+      if (HasWellKnown) {
         output.WriteRawTag(40);
         output.WriteEnum((int) WellKnown);
       }
@@ -979,11 +1063,11 @@ namespace Google.Api.Expr.V1Alpha1 {
         output.WriteRawTag(66);
         output.WriteMessage(Function);
       }
-      if (typeKindCase_ == TypeKindOneofCase.MessageType) {
+      if (HasMessageType) {
         output.WriteRawTag(74);
         output.WriteString(MessageType);
       }
-      if (typeKindCase_ == TypeKindOneofCase.TypeParam) {
+      if (HasTypeParam) {
         output.WriteRawTag(82);
         output.WriteString(TypeParam);
       }
@@ -1012,16 +1096,16 @@ namespace Google.Api.Expr.V1Alpha1 {
       if (typeKindCase_ == TypeKindOneofCase.Dyn) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Dyn);
       }
-      if (typeKindCase_ == TypeKindOneofCase.Null) {
+      if (HasNull) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Null);
       }
-      if (typeKindCase_ == TypeKindOneofCase.Primitive) {
+      if (HasPrimitive) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Primitive);
       }
-      if (typeKindCase_ == TypeKindOneofCase.Wrapper) {
+      if (HasWrapper) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Wrapper);
       }
-      if (typeKindCase_ == TypeKindOneofCase.WellKnown) {
+      if (HasWellKnown) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) WellKnown);
       }
       if (typeKindCase_ == TypeKindOneofCase.ListType) {
@@ -1033,10 +1117,10 @@ namespace Google.Api.Expr.V1Alpha1 {
       if (typeKindCase_ == TypeKindOneofCase.Function) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Function);
       }
-      if (typeKindCase_ == TypeKindOneofCase.MessageType) {
+      if (HasMessageType) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(MessageType);
       }
-      if (typeKindCase_ == TypeKindOneofCase.TypeParam) {
+      if (HasTypeParam) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(TypeParam);
       }
       if (typeKindCase_ == TypeKindOneofCase.Type_) {
@@ -2398,9 +2482,11 @@ namespace Google.Api.Expr.V1Alpha1 {
     /// Declarations are organized in containers and this represents the full path
     /// to the declaration in its container, as in `google.api.expr.Decl`.
     ///
-    /// Declarations used as [FunctionDecl.Overload][google.api.expr.v1alpha1.Decl.FunctionDecl.Overload] parameters may or may not
-    /// have a name depending on whether the overload is function declaration or a
-    /// function definition containing a result [Expr][google.api.expr.v1alpha1.Expr].
+    /// Declarations used as
+    /// [FunctionDecl.Overload][google.api.expr.v1alpha1.Decl.FunctionDecl.Overload]
+    /// parameters may or may not have a name depending on whether the overload is
+    /// function declaration or a function definition containing a result
+    /// [Expr][google.api.expr.v1alpha1.Expr].
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3169,8 +3255,8 @@ namespace Google.Api.Expr.V1Alpha1 {
         public static partial class Types {
           /// <summary>
           /// An overload indicates a function's parameter types and return type, and
-          /// may optionally include a function body described in terms of [Expr][google.api.expr.v1alpha1.Expr]
-          /// values.
+          /// may optionally include a function body described in terms of
+          /// [Expr][google.api.expr.v1alpha1.Expr] values.
           ///
           /// Functions overloads are declared in either a function or method
           /// call-style. For methods, the `params[0]` is the expected type of the
@@ -3235,8 +3321,9 @@ namespace Google.Api.Expr.V1Alpha1 {
             /// Required. Globally unique overload name of the function which reflects
             /// the function name and argument types.
             ///
-            /// This will be used by a [Reference][google.api.expr.v1alpha1.Reference] to indicate the `overload_id` that
-            /// was resolved for the function `name`.
+            /// This will be used by a [Reference][google.api.expr.v1alpha1.Reference]
+            /// to indicate the `overload_id` that was resolved for the function
+            /// `name`.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
             [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3253,7 +3340,8 @@ namespace Google.Api.Expr.V1Alpha1 {
                 = pb::FieldCodec.ForMessage(18, global::Google.Api.Expr.V1Alpha1.Type.Parser);
             private readonly pbc::RepeatedField<global::Google.Api.Expr.V1Alpha1.Type> params_ = new pbc::RepeatedField<global::Google.Api.Expr.V1Alpha1.Type>();
             /// <summary>
-            /// List of function parameter [Type][google.api.expr.v1alpha1.Type] values.
+            /// List of function parameter [Type][google.api.expr.v1alpha1.Type]
+            /// values.
             ///
             /// Param types are disjoint after generic type parameters have been
             /// replaced with the type `DYN`. Since the `DYN` type is compatible with
@@ -3666,7 +3754,8 @@ namespace Google.Api.Expr.V1Alpha1 {
     /// presented candidates must happen at runtime because of dynamic types. The
     /// type checker attempts to narrow down this list as much as possible.
     ///
-    /// Empty if this is not a reference to a [Decl.FunctionDecl][google.api.expr.v1alpha1.Decl.FunctionDecl].
+    /// Empty if this is not a reference to a
+    /// [Decl.FunctionDecl][google.api.expr.v1alpha1.Decl.FunctionDecl].
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]

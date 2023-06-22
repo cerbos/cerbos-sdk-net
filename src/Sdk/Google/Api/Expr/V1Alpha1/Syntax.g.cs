@@ -30,7 +30,7 @@ namespace Google.Api.Expr.V1Alpha1 {
             "L3Byb3RvYnVmL3RpbWVzdGFtcC5wcm90byKHAQoKUGFyc2VkRXhwchIyCgRl",
             "eHByGAIgASgLMh4uZ29vZ2xlLmFwaS5leHByLnYxYWxwaGExLkV4cHJSBGV4",
             "cHISRQoLc291cmNlX2luZm8YAyABKAsyJC5nb29nbGUuYXBpLmV4cHIudjFh",
-            "bHBoYTEuU291cmNlSW5mb1IKc291cmNlSW5mbyLcDAoERXhwchIOCgJpZBgC",
+            "bHBoYTEuU291cmNlSW5mb1IKc291cmNlSW5mbyKuDQoERXhwchIOCgJpZBgC",
             "IAEoA1ICaWQSQwoKY29uc3RfZXhwchgDIAEoCzIiLmdvb2dsZS5hcGkuZXhw",
             "ci52MWFscGhhMS5Db25zdGFudEgAUgljb25zdEV4cHISRQoKaWRlbnRfZXhw",
             "chgEIAEoCzIkLmdvb2dsZS5hcGkuZXhwci52MWFscGhhMS5FeHByLklkZW50",
@@ -49,49 +49,51 @@ namespace Google.Api.Expr.V1Alpha1 {
             "KAhSCHRlc3RPbmx5Go4BCgRDYWxsEjYKBnRhcmdldBgBIAEoCzIeLmdvb2ds",
             "ZS5hcGkuZXhwci52MWFscGhhMS5FeHByUgZ0YXJnZXQSGgoIZnVuY3Rpb24Y",
             "AiABKAlSCGZ1bmN0aW9uEjIKBGFyZ3MYAyADKAsyHi5nb29nbGUuYXBpLmV4",
-            "cHIudjFhbHBoYTEuRXhwclIEYXJncxpICgpDcmVhdGVMaXN0EjoKCGVsZW1l",
+            "cHIudjFhbHBoYTEuRXhwclIEYXJncxpzCgpDcmVhdGVMaXN0EjoKCGVsZW1l",
             "bnRzGAEgAygLMh4uZ29vZ2xlLmFwaS5leHByLnYxYWxwaGExLkV4cHJSCGVs",
-            "ZW1lbnRzGrQCCgxDcmVhdGVTdHJ1Y3QSIQoMbWVzc2FnZV9uYW1lGAEgASgJ",
-            "UgttZXNzYWdlTmFtZRJLCgdlbnRyaWVzGAIgAygLMjEuZ29vZ2xlLmFwaS5l",
-            "eHByLnYxYWxwaGExLkV4cHIuQ3JlYXRlU3RydWN0LkVudHJ5UgdlbnRyaWVz",
-            "GrMBCgVFbnRyeRIOCgJpZBgBIAEoA1ICaWQSHQoJZmllbGRfa2V5GAIgASgJ",
-            "SABSCGZpZWxkS2V5EjkKB21hcF9rZXkYAyABKAsyHi5nb29nbGUuYXBpLmV4",
-            "cHIudjFhbHBoYTEuRXhwckgAUgZtYXBLZXkSNAoFdmFsdWUYBCABKAsyHi5n",
-            "b29nbGUuYXBpLmV4cHIudjFhbHBoYTEuRXhwclIFdmFsdWVCCgoIa2V5X2tp",
-            "bmQa/QIKDUNvbXByZWhlbnNpb24SGQoIaXRlcl92YXIYASABKAlSB2l0ZXJW",
-            "YXISPQoKaXRlcl9yYW5nZRgCIAEoCzIeLmdvb2dsZS5hcGkuZXhwci52MWFs",
-            "cGhhMS5FeHByUglpdGVyUmFuZ2USGQoIYWNjdV92YXIYAyABKAlSB2FjY3VW",
-            "YXISOwoJYWNjdV9pbml0GAQgASgLMh4uZ29vZ2xlLmFwaS5leHByLnYxYWxw",
-            "aGExLkV4cHJSCGFjY3VJbml0EkUKDmxvb3BfY29uZGl0aW9uGAUgASgLMh4u",
-            "Z29vZ2xlLmFwaS5leHByLnYxYWxwaGExLkV4cHJSDWxvb3BDb25kaXRpb24S",
-            "OwoJbG9vcF9zdGVwGAYgASgLMh4uZ29vZ2xlLmFwaS5leHByLnYxYWxwaGEx",
-            "LkV4cHJSCGxvb3BTdGVwEjYKBnJlc3VsdBgHIAEoCzIeLmdvb2dsZS5hcGku",
-            "ZXhwci52MWFscGhhMS5FeHByUgZyZXN1bHRCCwoJZXhwcl9raW5kIsEDCghD",
-            "b25zdGFudBI7CgpudWxsX3ZhbHVlGAEgASgOMhouZ29vZ2xlLnByb3RvYnVm",
-            "Lk51bGxWYWx1ZUgAUgludWxsVmFsdWUSHwoKYm9vbF92YWx1ZRgCIAEoCEgA",
-            "Uglib29sVmFsdWUSIQoLaW50NjRfdmFsdWUYAyABKANIAFIKaW50NjRWYWx1",
-            "ZRIjCgx1aW50NjRfdmFsdWUYBCABKARIAFILdWludDY0VmFsdWUSIwoMZG91",
-            "YmxlX3ZhbHVlGAUgASgBSABSC2RvdWJsZVZhbHVlEiMKDHN0cmluZ192YWx1",
-            "ZRgGIAEoCUgAUgtzdHJpbmdWYWx1ZRIhCgtieXRlc192YWx1ZRgHIAEoDEgA",
-            "UgpieXRlc1ZhbHVlEkYKDmR1cmF0aW9uX3ZhbHVlGAggASgLMhkuZ29vZ2xl",
-            "LnByb3RvYnVmLkR1cmF0aW9uQgIYAUgAUg1kdXJhdGlvblZhbHVlEkkKD3Rp",
-            "bWVzdGFtcF92YWx1ZRgJIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3Rh",
-            "bXBCAhgBSABSDnRpbWVzdGFtcFZhbHVlQg8KDWNvbnN0YW50X2tpbmQiuQMK",
-            "ClNvdXJjZUluZm8SJQoOc3ludGF4X3ZlcnNpb24YASABKAlSDXN5bnRheFZl",
-            "cnNpb24SGgoIbG9jYXRpb24YAiABKAlSCGxvY2F0aW9uEiEKDGxpbmVfb2Zm",
-            "c2V0cxgDIAMoBVILbGluZU9mZnNldHMSUQoJcG9zaXRpb25zGAQgAygLMjMu",
-            "Z29vZ2xlLmFwaS5leHByLnYxYWxwaGExLlNvdXJjZUluZm8uUG9zaXRpb25z",
-            "RW50cnlSCXBvc2l0aW9ucxJVCgttYWNyb19jYWxscxgFIAMoCzI0Lmdvb2ds",
-            "ZS5hcGkuZXhwci52MWFscGhhMS5Tb3VyY2VJbmZvLk1hY3JvQ2FsbHNFbnRy",
-            "eVIKbWFjcm9DYWxscxo8Cg5Qb3NpdGlvbnNFbnRyeRIQCgNrZXkYASABKANS",
-            "A2tleRIUCgV2YWx1ZRgCIAEoBVIFdmFsdWU6AjgBGl0KD01hY3JvQ2FsbHNF",
-            "bnRyeRIQCgNrZXkYASABKANSA2tleRI0CgV2YWx1ZRgCIAEoCzIeLmdvb2ds",
-            "ZS5hcGkuZXhwci52MWFscGhhMS5FeHByUgV2YWx1ZToCOAEicAoOU291cmNl",
-            "UG9zaXRpb24SGgoIbG9jYXRpb24YASABKAlSCGxvY2F0aW9uEhYKBm9mZnNl",
-            "dBgCIAEoBVIGb2Zmc2V0EhIKBGxpbmUYAyABKAVSBGxpbmUSFgoGY29sdW1u",
-            "GAQgASgFUgZjb2x1bW5CbgocY29tLmdvb2dsZS5hcGkuZXhwci52MWFscGhh",
-            "MUILU3ludGF4UHJvdG9QAVo8Z29vZ2xlLmdvbGFuZy5vcmcvZ2VucHJvdG8v",
-            "Z29vZ2xlYXBpcy9hcGkvZXhwci92MWFscGhhMTtleHBy+AEBYgZwcm90bzM="));
+            "ZW1lbnRzEikKEG9wdGlvbmFsX2luZGljZXMYAiADKAVSD29wdGlvbmFsSW5k",
+            "aWNlcxrbAgoMQ3JlYXRlU3RydWN0EiEKDG1lc3NhZ2VfbmFtZRgBIAEoCVIL",
+            "bWVzc2FnZU5hbWUSSwoHZW50cmllcxgCIAMoCzIxLmdvb2dsZS5hcGkuZXhw",
+            "ci52MWFscGhhMS5FeHByLkNyZWF0ZVN0cnVjdC5FbnRyeVIHZW50cmllcxra",
+            "AQoFRW50cnkSDgoCaWQYASABKANSAmlkEh0KCWZpZWxkX2tleRgCIAEoCUgA",
+            "UghmaWVsZEtleRI5CgdtYXBfa2V5GAMgASgLMh4uZ29vZ2xlLmFwaS5leHBy",
+            "LnYxYWxwaGExLkV4cHJIAFIGbWFwS2V5EjQKBXZhbHVlGAQgASgLMh4uZ29v",
+            "Z2xlLmFwaS5leHByLnYxYWxwaGExLkV4cHJSBXZhbHVlEiUKDm9wdGlvbmFs",
+            "X2VudHJ5GAUgASgIUg1vcHRpb25hbEVudHJ5QgoKCGtleV9raW5kGv0CCg1D",
+            "b21wcmVoZW5zaW9uEhkKCGl0ZXJfdmFyGAEgASgJUgdpdGVyVmFyEj0KCml0",
+            "ZXJfcmFuZ2UYAiABKAsyHi5nb29nbGUuYXBpLmV4cHIudjFhbHBoYTEuRXhw",
+            "clIJaXRlclJhbmdlEhkKCGFjY3VfdmFyGAMgASgJUgdhY2N1VmFyEjsKCWFj",
+            "Y3VfaW5pdBgEIAEoCzIeLmdvb2dsZS5hcGkuZXhwci52MWFscGhhMS5FeHBy",
+            "UghhY2N1SW5pdBJFCg5sb29wX2NvbmRpdGlvbhgFIAEoCzIeLmdvb2dsZS5h",
+            "cGkuZXhwci52MWFscGhhMS5FeHByUg1sb29wQ29uZGl0aW9uEjsKCWxvb3Bf",
+            "c3RlcBgGIAEoCzIeLmdvb2dsZS5hcGkuZXhwci52MWFscGhhMS5FeHByUghs",
+            "b29wU3RlcBI2CgZyZXN1bHQYByABKAsyHi5nb29nbGUuYXBpLmV4cHIudjFh",
+            "bHBoYTEuRXhwclIGcmVzdWx0QgsKCWV4cHJfa2luZCLBAwoIQ29uc3RhbnQS",
+            "OwoKbnVsbF92YWx1ZRgBIAEoDjIaLmdvb2dsZS5wcm90b2J1Zi5OdWxsVmFs",
+            "dWVIAFIJbnVsbFZhbHVlEh8KCmJvb2xfdmFsdWUYAiABKAhIAFIJYm9vbFZh",
+            "bHVlEiEKC2ludDY0X3ZhbHVlGAMgASgDSABSCmludDY0VmFsdWUSIwoMdWlu",
+            "dDY0X3ZhbHVlGAQgASgESABSC3VpbnQ2NFZhbHVlEiMKDGRvdWJsZV92YWx1",
+            "ZRgFIAEoAUgAUgtkb3VibGVWYWx1ZRIjCgxzdHJpbmdfdmFsdWUYBiABKAlI",
+            "AFILc3RyaW5nVmFsdWUSIQoLYnl0ZXNfdmFsdWUYByABKAxIAFIKYnl0ZXNW",
+            "YWx1ZRJGCg5kdXJhdGlvbl92YWx1ZRgIIAEoCzIZLmdvb2dsZS5wcm90b2J1",
+            "Zi5EdXJhdGlvbkICGAFIAFINZHVyYXRpb25WYWx1ZRJJCg90aW1lc3RhbXBf",
+            "dmFsdWUYCSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wQgIYAUgA",
+            "Ug50aW1lc3RhbXBWYWx1ZUIPCg1jb25zdGFudF9raW5kIrkDCgpTb3VyY2VJ",
+            "bmZvEiUKDnN5bnRheF92ZXJzaW9uGAEgASgJUg1zeW50YXhWZXJzaW9uEhoK",
+            "CGxvY2F0aW9uGAIgASgJUghsb2NhdGlvbhIhCgxsaW5lX29mZnNldHMYAyAD",
+            "KAVSC2xpbmVPZmZzZXRzElEKCXBvc2l0aW9ucxgEIAMoCzIzLmdvb2dsZS5h",
+            "cGkuZXhwci52MWFscGhhMS5Tb3VyY2VJbmZvLlBvc2l0aW9uc0VudHJ5Uglw",
+            "b3NpdGlvbnMSVQoLbWFjcm9fY2FsbHMYBSADKAsyNC5nb29nbGUuYXBpLmV4",
+            "cHIudjFhbHBoYTEuU291cmNlSW5mby5NYWNyb0NhbGxzRW50cnlSCm1hY3Jv",
+            "Q2FsbHMaPAoOUG9zaXRpb25zRW50cnkSEAoDa2V5GAEgASgDUgNrZXkSFAoF",
+            "dmFsdWUYAiABKAVSBXZhbHVlOgI4ARpdCg9NYWNyb0NhbGxzRW50cnkSEAoD",
+            "a2V5GAEgASgDUgNrZXkSNAoFdmFsdWUYAiABKAsyHi5nb29nbGUuYXBpLmV4",
+            "cHIudjFhbHBoYTEuRXhwclIFdmFsdWU6AjgBInAKDlNvdXJjZVBvc2l0aW9u",
+            "EhoKCGxvY2F0aW9uGAEgASgJUghsb2NhdGlvbhIWCgZvZmZzZXQYAiABKAVS",
+            "Bm9mZnNldBISCgRsaW5lGAMgASgFUgRsaW5lEhYKBmNvbHVtbhgEIAEoBVIG",
+            "Y29sdW1uQm4KHGNvbS5nb29nbGUuYXBpLmV4cHIudjFhbHBoYTFCC1N5bnRh",
+            "eFByb3RvUAFaPGdvb2dsZS5nb2xhbmcub3JnL2dlbnByb3RvL2dvb2dsZWFw",
+            "aXMvYXBpL2V4cHIvdjFhbHBoYTE7ZXhwcvgBAWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.StructReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -99,8 +101,8 @@ namespace Google.Api.Expr.V1Alpha1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Api.Expr.V1Alpha1.Expr), global::Google.Api.Expr.V1Alpha1.Expr.Parser, new[]{ "Id", "ConstExpr", "IdentExpr", "SelectExpr", "CallExpr", "ListExpr", "StructExpr", "ComprehensionExpr" }, new[]{ "ExprKind" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Api.Expr.V1Alpha1.Expr.Types.Ident), global::Google.Api.Expr.V1Alpha1.Expr.Types.Ident.Parser, new[]{ "Name" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Api.Expr.V1Alpha1.Expr.Types.Select), global::Google.Api.Expr.V1Alpha1.Expr.Types.Select.Parser, new[]{ "Operand", "Field", "TestOnly" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Api.Expr.V1Alpha1.Expr.Types.Call), global::Google.Api.Expr.V1Alpha1.Expr.Types.Call.Parser, new[]{ "Target", "Function", "Args" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Api.Expr.V1Alpha1.Expr.Types.CreateList), global::Google.Api.Expr.V1Alpha1.Expr.Types.CreateList.Parser, new[]{ "Elements" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Api.Expr.V1Alpha1.Expr.Types.CreateStruct), global::Google.Api.Expr.V1Alpha1.Expr.Types.CreateStruct.Parser, new[]{ "MessageName", "Entries" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Api.Expr.V1Alpha1.Expr.Types.CreateStruct.Types.Entry), global::Google.Api.Expr.V1Alpha1.Expr.Types.CreateStruct.Types.Entry.Parser, new[]{ "Id", "FieldKey", "MapKey", "Value" }, new[]{ "KeyKind" }, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Api.Expr.V1Alpha1.Expr.Types.CreateList), global::Google.Api.Expr.V1Alpha1.Expr.Types.CreateList.Parser, new[]{ "Elements", "OptionalIndices" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Api.Expr.V1Alpha1.Expr.Types.CreateStruct), global::Google.Api.Expr.V1Alpha1.Expr.Types.CreateStruct.Parser, new[]{ "MessageName", "Entries" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Api.Expr.V1Alpha1.Expr.Types.CreateStruct.Types.Entry), global::Google.Api.Expr.V1Alpha1.Expr.Types.CreateStruct.Types.Entry.Parser, new[]{ "Id", "FieldKey", "MapKey", "Value", "OptionalEntry" }, new[]{ "KeyKind" }, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Api.Expr.V1Alpha1.Expr.Types.Comprehension), global::Google.Api.Expr.V1Alpha1.Expr.Types.Comprehension.Parser, new[]{ "IterVar", "IterRange", "AccuVar", "AccuInit", "LoopCondition", "LoopStep", "Result" }, null, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Api.Expr.V1Alpha1.Constant), global::Google.Api.Expr.V1Alpha1.Constant.Parser, new[]{ "NullValue", "BoolValue", "Int64Value", "Uint64Value", "DoubleValue", "StringValue", "BytesValue", "DurationValue", "TimestampValue" }, new[]{ "ConstantKind" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Api.Expr.V1Alpha1.SourceInfo), global::Google.Api.Expr.V1Alpha1.SourceInfo.Parser, new[]{ "SyntaxVersion", "Location", "LineOffsets", "Positions", "MacroCalls" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, }),
@@ -1804,6 +1806,7 @@ namespace Google.Api.Expr.V1Alpha1 {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public CreateList(CreateList other) : this() {
           elements_ = other.elements_.Clone();
+          optionalIndices_ = other.optionalIndices_.Clone();
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
@@ -1827,6 +1830,25 @@ namespace Google.Api.Expr.V1Alpha1 {
           get { return elements_; }
         }
 
+        /// <summary>Field number for the "optional_indices" field.</summary>
+        public const int OptionalIndicesFieldNumber = 2;
+        private static readonly pb::FieldCodec<int> _repeated_optionalIndices_codec
+            = pb::FieldCodec.ForInt32(18);
+        private readonly pbc::RepeatedField<int> optionalIndices_ = new pbc::RepeatedField<int>();
+        /// <summary>
+        /// The indices within the elements list which are marked as optional
+        /// elements.
+        ///
+        /// When an optional-typed value is present, the value it contains
+        /// is included in the list. If the optional-typed value is absent, the list
+        /// element is omitted from the CreateList result.
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public pbc::RepeatedField<int> OptionalIndices {
+          get { return optionalIndices_; }
+        }
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
@@ -1843,6 +1865,7 @@ namespace Google.Api.Expr.V1Alpha1 {
             return true;
           }
           if(!elements_.Equals(other.elements_)) return false;
+          if(!optionalIndices_.Equals(other.optionalIndices_)) return false;
           return Equals(_unknownFields, other._unknownFields);
         }
 
@@ -1851,6 +1874,7 @@ namespace Google.Api.Expr.V1Alpha1 {
         public override int GetHashCode() {
           int hash = 1;
           hash ^= elements_.GetHashCode();
+          hash ^= optionalIndices_.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -1870,6 +1894,7 @@ namespace Google.Api.Expr.V1Alpha1 {
           output.WriteRawMessage(this);
         #else
           elements_.WriteTo(output, _repeated_elements_codec);
+          optionalIndices_.WriteTo(output, _repeated_optionalIndices_codec);
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
@@ -1881,6 +1906,7 @@ namespace Google.Api.Expr.V1Alpha1 {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           elements_.WriteTo(ref output, _repeated_elements_codec);
+          optionalIndices_.WriteTo(ref output, _repeated_optionalIndices_codec);
           if (_unknownFields != null) {
             _unknownFields.WriteTo(ref output);
           }
@@ -1892,6 +1918,7 @@ namespace Google.Api.Expr.V1Alpha1 {
         public int CalculateSize() {
           int size = 0;
           size += elements_.CalculateSize(_repeated_elements_codec);
+          size += optionalIndices_.CalculateSize(_repeated_optionalIndices_codec);
           if (_unknownFields != null) {
             size += _unknownFields.CalculateSize();
           }
@@ -1905,6 +1932,7 @@ namespace Google.Api.Expr.V1Alpha1 {
             return;
           }
           elements_.Add(other.elements_);
+          optionalIndices_.Add(other.optionalIndices_);
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
         }
 
@@ -1924,6 +1952,11 @@ namespace Google.Api.Expr.V1Alpha1 {
                 elements_.AddEntriesFrom(input, _repeated_elements_codec);
                 break;
               }
+              case 18:
+              case 16: {
+                optionalIndices_.AddEntriesFrom(input, _repeated_optionalIndices_codec);
+                break;
+              }
             }
           }
         #endif
@@ -1941,6 +1974,11 @@ namespace Google.Api.Expr.V1Alpha1 {
                 break;
               case 10: {
                 elements_.AddEntriesFrom(ref input, _repeated_elements_codec);
+                break;
+              }
+              case 18:
+              case 16: {
+                optionalIndices_.AddEntriesFrom(ref input, _repeated_optionalIndices_codec);
                 break;
               }
             }
@@ -2221,6 +2259,7 @@ namespace Google.Api.Expr.V1Alpha1 {
             public Entry(Entry other) : this() {
               id_ = other.id_;
               value_ = other.value_ != null ? other.value_.Clone() : null;
+              optionalEntry_ = other.optionalEntry_;
               switch (other.KeyKindCase) {
                 case KeyKindOneofCase.FieldKey:
                   FieldKey = other.FieldKey;
@@ -2264,10 +2303,24 @@ namespace Google.Api.Expr.V1Alpha1 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
             [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public string FieldKey {
-              get { return keyKindCase_ == KeyKindOneofCase.FieldKey ? (string) keyKind_ : ""; }
+              get { return HasFieldKey ? (string) keyKind_ : ""; }
               set {
                 keyKind_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
                 keyKindCase_ = KeyKindOneofCase.FieldKey;
+              }
+            }
+            /// <summary>Gets whether the "field_key" field is set</summary>
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public bool HasFieldKey {
+              get { return keyKindCase_ == KeyKindOneofCase.FieldKey; }
+            }
+            /// <summary> Clears the value of the oneof if it's currently set to "field_key" </summary>
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public void ClearFieldKey() {
+              if (HasFieldKey) {
+                ClearKeyKind();
               }
             }
 
@@ -2291,6 +2344,10 @@ namespace Google.Api.Expr.V1Alpha1 {
             private global::Google.Api.Expr.V1Alpha1.Expr value_;
             /// <summary>
             /// Required. The value assigned to the key.
+            ///
+            /// If the optional_entry field is true, the expression must resolve to an
+            /// optional-typed value. If the optional value is present, the key will be
+            /// set; however, if the optional value is absent, the key will be unset.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
             [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2298,6 +2355,21 @@ namespace Google.Api.Expr.V1Alpha1 {
               get { return value_; }
               set {
                 value_ = value;
+              }
+            }
+
+            /// <summary>Field number for the "optional_entry" field.</summary>
+            public const int OptionalEntryFieldNumber = 5;
+            private bool optionalEntry_;
+            /// <summary>
+            /// Whether the key-value pair is optional.
+            /// </summary>
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public bool OptionalEntry {
+              get { return optionalEntry_; }
+              set {
+                optionalEntry_ = value;
               }
             }
 
@@ -2341,6 +2413,7 @@ namespace Google.Api.Expr.V1Alpha1 {
               if (FieldKey != other.FieldKey) return false;
               if (!object.Equals(MapKey, other.MapKey)) return false;
               if (!object.Equals(Value, other.Value)) return false;
+              if (OptionalEntry != other.OptionalEntry) return false;
               if (KeyKindCase != other.KeyKindCase) return false;
               return Equals(_unknownFields, other._unknownFields);
             }
@@ -2350,9 +2423,10 @@ namespace Google.Api.Expr.V1Alpha1 {
             public override int GetHashCode() {
               int hash = 1;
               if (Id != 0L) hash ^= Id.GetHashCode();
-              if (keyKindCase_ == KeyKindOneofCase.FieldKey) hash ^= FieldKey.GetHashCode();
+              if (HasFieldKey) hash ^= FieldKey.GetHashCode();
               if (keyKindCase_ == KeyKindOneofCase.MapKey) hash ^= MapKey.GetHashCode();
               if (value_ != null) hash ^= Value.GetHashCode();
+              if (OptionalEntry != false) hash ^= OptionalEntry.GetHashCode();
               hash ^= (int) keyKindCase_;
               if (_unknownFields != null) {
                 hash ^= _unknownFields.GetHashCode();
@@ -2376,7 +2450,7 @@ namespace Google.Api.Expr.V1Alpha1 {
                 output.WriteRawTag(8);
                 output.WriteInt64(Id);
               }
-              if (keyKindCase_ == KeyKindOneofCase.FieldKey) {
+              if (HasFieldKey) {
                 output.WriteRawTag(18);
                 output.WriteString(FieldKey);
               }
@@ -2387,6 +2461,10 @@ namespace Google.Api.Expr.V1Alpha1 {
               if (value_ != null) {
                 output.WriteRawTag(34);
                 output.WriteMessage(Value);
+              }
+              if (OptionalEntry != false) {
+                output.WriteRawTag(40);
+                output.WriteBool(OptionalEntry);
               }
               if (_unknownFields != null) {
                 _unknownFields.WriteTo(output);
@@ -2402,7 +2480,7 @@ namespace Google.Api.Expr.V1Alpha1 {
                 output.WriteRawTag(8);
                 output.WriteInt64(Id);
               }
-              if (keyKindCase_ == KeyKindOneofCase.FieldKey) {
+              if (HasFieldKey) {
                 output.WriteRawTag(18);
                 output.WriteString(FieldKey);
               }
@@ -2413,6 +2491,10 @@ namespace Google.Api.Expr.V1Alpha1 {
               if (value_ != null) {
                 output.WriteRawTag(34);
                 output.WriteMessage(Value);
+              }
+              if (OptionalEntry != false) {
+                output.WriteRawTag(40);
+                output.WriteBool(OptionalEntry);
               }
               if (_unknownFields != null) {
                 _unknownFields.WriteTo(ref output);
@@ -2427,7 +2509,7 @@ namespace Google.Api.Expr.V1Alpha1 {
               if (Id != 0L) {
                 size += 1 + pb::CodedOutputStream.ComputeInt64Size(Id);
               }
-              if (keyKindCase_ == KeyKindOneofCase.FieldKey) {
+              if (HasFieldKey) {
                 size += 1 + pb::CodedOutputStream.ComputeStringSize(FieldKey);
               }
               if (keyKindCase_ == KeyKindOneofCase.MapKey) {
@@ -2435,6 +2517,9 @@ namespace Google.Api.Expr.V1Alpha1 {
               }
               if (value_ != null) {
                 size += 1 + pb::CodedOutputStream.ComputeMessageSize(Value);
+              }
+              if (OptionalEntry != false) {
+                size += 1 + 1;
               }
               if (_unknownFields != null) {
                 size += _unknownFields.CalculateSize();
@@ -2456,6 +2541,9 @@ namespace Google.Api.Expr.V1Alpha1 {
                   Value = new global::Google.Api.Expr.V1Alpha1.Expr();
                 }
                 Value.MergeFrom(other.Value);
+              }
+              if (other.OptionalEntry != false) {
+                OptionalEntry = other.OptionalEntry;
               }
               switch (other.KeyKindCase) {
                 case KeyKindOneofCase.FieldKey:
@@ -2508,6 +2596,10 @@ namespace Google.Api.Expr.V1Alpha1 {
                     input.ReadMessage(Value);
                     break;
                   }
+                  case 40: {
+                    OptionalEntry = input.ReadBool();
+                    break;
+                  }
                 }
               }
             #endif
@@ -2545,6 +2637,10 @@ namespace Google.Api.Expr.V1Alpha1 {
                       Value = new global::Google.Api.Expr.V1Alpha1.Expr();
                     }
                     input.ReadMessage(Value);
+                    break;
+                  }
+                  case 40: {
+                    OptionalEntry = input.ReadBool();
                     break;
                   }
                 }
@@ -3172,10 +3268,24 @@ namespace Google.Api.Expr.V1Alpha1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.NullValue NullValue {
-      get { return constantKindCase_ == ConstantKindOneofCase.NullValue ? (global::Google.Protobuf.WellKnownTypes.NullValue) constantKind_ : global::Google.Protobuf.WellKnownTypes.NullValue.NullValue; }
+      get { return HasNullValue ? (global::Google.Protobuf.WellKnownTypes.NullValue) constantKind_ : global::Google.Protobuf.WellKnownTypes.NullValue.NullValue; }
       set {
         constantKind_ = value;
         constantKindCase_ = ConstantKindOneofCase.NullValue;
+      }
+    }
+    /// <summary>Gets whether the "null_value" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasNullValue {
+      get { return constantKindCase_ == ConstantKindOneofCase.NullValue; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "null_value" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearNullValue() {
+      if (HasNullValue) {
+        ClearConstantKind();
       }
     }
 
@@ -3187,10 +3297,24 @@ namespace Google.Api.Expr.V1Alpha1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool BoolValue {
-      get { return constantKindCase_ == ConstantKindOneofCase.BoolValue ? (bool) constantKind_ : false; }
+      get { return HasBoolValue ? (bool) constantKind_ : false; }
       set {
         constantKind_ = value;
         constantKindCase_ = ConstantKindOneofCase.BoolValue;
+      }
+    }
+    /// <summary>Gets whether the "bool_value" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasBoolValue {
+      get { return constantKindCase_ == ConstantKindOneofCase.BoolValue; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "bool_value" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearBoolValue() {
+      if (HasBoolValue) {
+        ClearConstantKind();
       }
     }
 
@@ -3202,10 +3326,24 @@ namespace Google.Api.Expr.V1Alpha1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long Int64Value {
-      get { return constantKindCase_ == ConstantKindOneofCase.Int64Value ? (long) constantKind_ : 0L; }
+      get { return HasInt64Value ? (long) constantKind_ : 0L; }
       set {
         constantKind_ = value;
         constantKindCase_ = ConstantKindOneofCase.Int64Value;
+      }
+    }
+    /// <summary>Gets whether the "int64_value" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasInt64Value {
+      get { return constantKindCase_ == ConstantKindOneofCase.Int64Value; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "int64_value" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearInt64Value() {
+      if (HasInt64Value) {
+        ClearConstantKind();
       }
     }
 
@@ -3217,10 +3355,24 @@ namespace Google.Api.Expr.V1Alpha1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ulong Uint64Value {
-      get { return constantKindCase_ == ConstantKindOneofCase.Uint64Value ? (ulong) constantKind_ : 0UL; }
+      get { return HasUint64Value ? (ulong) constantKind_ : 0UL; }
       set {
         constantKind_ = value;
         constantKindCase_ = ConstantKindOneofCase.Uint64Value;
+      }
+    }
+    /// <summary>Gets whether the "uint64_value" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasUint64Value {
+      get { return constantKindCase_ == ConstantKindOneofCase.Uint64Value; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "uint64_value" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearUint64Value() {
+      if (HasUint64Value) {
+        ClearConstantKind();
       }
     }
 
@@ -3232,10 +3384,24 @@ namespace Google.Api.Expr.V1Alpha1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double DoubleValue {
-      get { return constantKindCase_ == ConstantKindOneofCase.DoubleValue ? (double) constantKind_ : 0D; }
+      get { return HasDoubleValue ? (double) constantKind_ : 0D; }
       set {
         constantKind_ = value;
         constantKindCase_ = ConstantKindOneofCase.DoubleValue;
+      }
+    }
+    /// <summary>Gets whether the "double_value" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasDoubleValue {
+      get { return constantKindCase_ == ConstantKindOneofCase.DoubleValue; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "double_value" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearDoubleValue() {
+      if (HasDoubleValue) {
+        ClearConstantKind();
       }
     }
 
@@ -3247,10 +3413,24 @@ namespace Google.Api.Expr.V1Alpha1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string StringValue {
-      get { return constantKindCase_ == ConstantKindOneofCase.StringValue ? (string) constantKind_ : ""; }
+      get { return HasStringValue ? (string) constantKind_ : ""; }
       set {
         constantKind_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         constantKindCase_ = ConstantKindOneofCase.StringValue;
+      }
+    }
+    /// <summary>Gets whether the "string_value" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasStringValue {
+      get { return constantKindCase_ == ConstantKindOneofCase.StringValue; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "string_value" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearStringValue() {
+      if (HasStringValue) {
+        ClearConstantKind();
       }
     }
 
@@ -3262,10 +3442,24 @@ namespace Google.Api.Expr.V1Alpha1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pb::ByteString BytesValue {
-      get { return constantKindCase_ == ConstantKindOneofCase.BytesValue ? (pb::ByteString) constantKind_ : pb::ByteString.Empty; }
+      get { return HasBytesValue ? (pb::ByteString) constantKind_ : pb::ByteString.Empty; }
       set {
         constantKind_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         constantKindCase_ = ConstantKindOneofCase.BytesValue;
+      }
+    }
+    /// <summary>Gets whether the "bytes_value" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasBytesValue {
+      get { return constantKindCase_ == ConstantKindOneofCase.BytesValue; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "bytes_value" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearBytesValue() {
+      if (HasBytesValue) {
+        ClearConstantKind();
       }
     }
 
@@ -3365,13 +3559,13 @@ namespace Google.Api.Expr.V1Alpha1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (constantKindCase_ == ConstantKindOneofCase.NullValue) hash ^= NullValue.GetHashCode();
-      if (constantKindCase_ == ConstantKindOneofCase.BoolValue) hash ^= BoolValue.GetHashCode();
-      if (constantKindCase_ == ConstantKindOneofCase.Int64Value) hash ^= Int64Value.GetHashCode();
-      if (constantKindCase_ == ConstantKindOneofCase.Uint64Value) hash ^= Uint64Value.GetHashCode();
-      if (constantKindCase_ == ConstantKindOneofCase.DoubleValue) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(DoubleValue);
-      if (constantKindCase_ == ConstantKindOneofCase.StringValue) hash ^= StringValue.GetHashCode();
-      if (constantKindCase_ == ConstantKindOneofCase.BytesValue) hash ^= BytesValue.GetHashCode();
+      if (HasNullValue) hash ^= NullValue.GetHashCode();
+      if (HasBoolValue) hash ^= BoolValue.GetHashCode();
+      if (HasInt64Value) hash ^= Int64Value.GetHashCode();
+      if (HasUint64Value) hash ^= Uint64Value.GetHashCode();
+      if (HasDoubleValue) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(DoubleValue);
+      if (HasStringValue) hash ^= StringValue.GetHashCode();
+      if (HasBytesValue) hash ^= BytesValue.GetHashCode();
       if (constantKindCase_ == ConstantKindOneofCase.DurationValue) hash ^= DurationValue.GetHashCode();
       if (constantKindCase_ == ConstantKindOneofCase.TimestampValue) hash ^= TimestampValue.GetHashCode();
       hash ^= (int) constantKindCase_;
@@ -3393,31 +3587,31 @@ namespace Google.Api.Expr.V1Alpha1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (constantKindCase_ == ConstantKindOneofCase.NullValue) {
+      if (HasNullValue) {
         output.WriteRawTag(8);
         output.WriteEnum((int) NullValue);
       }
-      if (constantKindCase_ == ConstantKindOneofCase.BoolValue) {
+      if (HasBoolValue) {
         output.WriteRawTag(16);
         output.WriteBool(BoolValue);
       }
-      if (constantKindCase_ == ConstantKindOneofCase.Int64Value) {
+      if (HasInt64Value) {
         output.WriteRawTag(24);
         output.WriteInt64(Int64Value);
       }
-      if (constantKindCase_ == ConstantKindOneofCase.Uint64Value) {
+      if (HasUint64Value) {
         output.WriteRawTag(32);
         output.WriteUInt64(Uint64Value);
       }
-      if (constantKindCase_ == ConstantKindOneofCase.DoubleValue) {
+      if (HasDoubleValue) {
         output.WriteRawTag(41);
         output.WriteDouble(DoubleValue);
       }
-      if (constantKindCase_ == ConstantKindOneofCase.StringValue) {
+      if (HasStringValue) {
         output.WriteRawTag(50);
         output.WriteString(StringValue);
       }
-      if (constantKindCase_ == ConstantKindOneofCase.BytesValue) {
+      if (HasBytesValue) {
         output.WriteRawTag(58);
         output.WriteBytes(BytesValue);
       }
@@ -3439,31 +3633,31 @@ namespace Google.Api.Expr.V1Alpha1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (constantKindCase_ == ConstantKindOneofCase.NullValue) {
+      if (HasNullValue) {
         output.WriteRawTag(8);
         output.WriteEnum((int) NullValue);
       }
-      if (constantKindCase_ == ConstantKindOneofCase.BoolValue) {
+      if (HasBoolValue) {
         output.WriteRawTag(16);
         output.WriteBool(BoolValue);
       }
-      if (constantKindCase_ == ConstantKindOneofCase.Int64Value) {
+      if (HasInt64Value) {
         output.WriteRawTag(24);
         output.WriteInt64(Int64Value);
       }
-      if (constantKindCase_ == ConstantKindOneofCase.Uint64Value) {
+      if (HasUint64Value) {
         output.WriteRawTag(32);
         output.WriteUInt64(Uint64Value);
       }
-      if (constantKindCase_ == ConstantKindOneofCase.DoubleValue) {
+      if (HasDoubleValue) {
         output.WriteRawTag(41);
         output.WriteDouble(DoubleValue);
       }
-      if (constantKindCase_ == ConstantKindOneofCase.StringValue) {
+      if (HasStringValue) {
         output.WriteRawTag(50);
         output.WriteString(StringValue);
       }
-      if (constantKindCase_ == ConstantKindOneofCase.BytesValue) {
+      if (HasBytesValue) {
         output.WriteRawTag(58);
         output.WriteBytes(BytesValue);
       }
@@ -3485,25 +3679,25 @@ namespace Google.Api.Expr.V1Alpha1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (constantKindCase_ == ConstantKindOneofCase.NullValue) {
+      if (HasNullValue) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) NullValue);
       }
-      if (constantKindCase_ == ConstantKindOneofCase.BoolValue) {
+      if (HasBoolValue) {
         size += 1 + 1;
       }
-      if (constantKindCase_ == ConstantKindOneofCase.Int64Value) {
+      if (HasInt64Value) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(Int64Value);
       }
-      if (constantKindCase_ == ConstantKindOneofCase.Uint64Value) {
+      if (HasUint64Value) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Uint64Value);
       }
-      if (constantKindCase_ == ConstantKindOneofCase.DoubleValue) {
+      if (HasDoubleValue) {
         size += 1 + 8;
       }
-      if (constantKindCase_ == ConstantKindOneofCase.StringValue) {
+      if (HasStringValue) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(StringValue);
       }
-      if (constantKindCase_ == ConstantKindOneofCase.BytesValue) {
+      if (HasBytesValue) {
         size += 1 + pb::CodedOutputStream.ComputeBytesSize(BytesValue);
       }
       if (constantKindCase_ == ConstantKindOneofCase.DurationValue) {
@@ -3951,8 +4145,8 @@ namespace Google.Api.Expr.V1Alpha1 {
         Location = other.Location;
       }
       lineOffsets_.Add(other.lineOffsets_);
-      positions_.Add(other.positions_);
-      macroCalls_.Add(other.macroCalls_);
+      positions_.MergeFrom(other.positions_);
+      macroCalls_.MergeFrom(other.macroCalls_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
