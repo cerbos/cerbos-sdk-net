@@ -116,7 +116,7 @@ namespace Cerbos.Sdk
 
                 public Value Get(string src)
                 {
-                    return ToDictionary()[src];
+                    return _outputs.Find(outputEntry => outputEntry.Src == src).Val;
                 }
 
                 public Dictionary<string, Value> ToDictionary()
