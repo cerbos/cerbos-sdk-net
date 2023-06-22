@@ -2,9 +2,13 @@
 // SPDX-License-Identifier: Apache-2.0
 
 using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 using Cerbos.Api.V1.Effect;
 using Cerbos.Api.V1.Engine;
 using Cerbos.Api.V1.Response;
+using Cerbos.Api.V1.Schema;
+using Google.Protobuf.WellKnownTypes;
 
 namespace Cerbos.Sdk
 {
@@ -17,33 +21,15 @@ namespace Cerbos.Sdk
     /// </remarks>
     public class CheckResult
     {
-        private readonly Dictionary<string, Effect> _effects;
-        public CheckResourcesResponse.Types.ResultEntry.Types.Resource Resource { get; }
-        public CheckResourcesResponse.Types.ResultEntry.Types.Meta Meta { get; }
-        public List<OutputEntry> Outputs { get; }
+        private readonly CheckResourcesResponse.Types.ResultEntry _result;
+        public CheckResourcesResponse.Types.ResultEntry.Types.Resource Resource => _result.Resource;
+        public Types.Meta Meta => new Types.Meta(_result.Meta);
+        public Types.Outputs Outputs => new Types.Outputs(_result.Outputs.ToList());
+        public List<ValidationError> ValidationErrors => _result.ValidationErrors.ToList();
 
-        public CheckResult(CheckResourcesResponse.Types.ResultEntry result)
+        internal CheckResult(CheckResourcesResponse.Types.ResultEntry result)
         {
-            var effectsDictionary = new Dictionary<string, Effect>();
-            foreach (var kvp in result.Actions)
-            {
-                effectsDictionary.Add(kvp.Key, kvp.Value);
-            }
-            _effects = effectsDictionary;
-
-            Meta = result.Meta;
-            Resource = result.Resource;
-            
-            var outputList = new List<OutputEntry>();
-            foreach (var output in result.Outputs)
-            {
-                outputList.Add(output);
-            }
-            Outputs = outputList;
-        }
-
-        public CheckResult(Dictionary<string, Effect> effects) {
-            _effects = effects;
+            _result = result;
         }
 
         /// <summary>
@@ -51,17 +37,102 @@ namespace Cerbos.Sdk
         /// </summary>
         public bool IsAllowed(string action)
         {
-            return _effects[action].Equals(Effect.Allow);
+            if (_result == null)
+            {
+                return false;
+            }
+
+            return _result.Actions.ToDictionary(
+                x => x.Key,
+                x => x.Value
+            ).TryGetValue(action, out var effect) && effect == Effect.Allow;
         }
 
         public Dictionary<string, bool> GetAll()
         {
-            var all = new Dictionary<string, bool>();
-            foreach(var effect in _effects)
+            return _result.Actions.ToDictionary(
+                x => x.Key,
+                x => x.Value == Effect.Allow
+            );
+        }
+
+        public Types.Meta GetMeta()
+        {
+            return new Types.Meta(_result.Meta);
+        }
+        
+        public Types.Outputs GetOutputs()
+        {
+            return new Types.Outputs(_result.Outputs.ToList());
+        }
+
+        public List<ValidationError> GetValidationErrors()
+        {
+            return _result.ValidationErrors.ToList();
+        }
+
+        public CheckResourcesResponse.Types.ResultEntry GetRaw()
+        {
+            return _result;
+        }
+
+        public static class Types 
+        {
+            public sealed class Meta
             {
-                all[effect.Key] = effect.Value.Equals(Effect.Allow);
+                private readonly CheckResourcesResponse.Types.ResultEntry.Types.Meta _meta;
+                public Dictionary<string, CheckResourcesResponse.Types.ResultEntry.Types.Meta.Types.EffectMeta> Actions => GetActions();
+                public List<string> EffectiveDerivedRoles => GetEffectiveDerivedRoles();
+
+                internal Meta(CheckResourcesResponse.Types.ResultEntry.Types.Meta meta)
+                {
+                    _meta = meta;
+                }
+            
+                public List<string> GetEffectiveDerivedRoles() {
+                    return _meta.EffectiveDerivedRoles.ToList();
+                }
+            
+                public Dictionary<string, CheckResourcesResponse.Types.ResultEntry.Types.Meta.Types.EffectMeta> GetActions() {
+                    return _meta.Actions.ToDictionary(
+                        x => x.Key,
+                        x => x.Value
+                    );
+                }
+
+                public CheckResourcesResponse.Types.ResultEntry.Types.Meta GetRaw()
+                {
+                    return _meta;
+                }
             }
-            return all;
+        
+            public sealed class Outputs
+            {
+                private readonly List<OutputEntry> _outputs;
+            
+                internal Outputs(List<OutputEntry> outputs) {
+                    _outputs = outputs;
+                }
+
+                public Value Get(string src)
+                {
+                    return ToDictionary()[src];
+                }
+
+                public Dictionary<string, Value> ToDictionary()
+                {
+                    return _outputs
+                        .ToDictionary(
+                            x => x.Src,
+                            x => x.Val
+                        );
+                }
+
+                public List<OutputEntry> GetRaw()
+                {
+                    return _outputs;
+                }
+            }
         }
     }
 }
