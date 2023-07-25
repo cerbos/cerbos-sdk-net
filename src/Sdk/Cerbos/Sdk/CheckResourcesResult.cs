@@ -38,7 +38,7 @@ namespace Cerbos.Sdk
         /// Find looks for the <see cref="Cerbos.Sdk.CheckResult"/> with the given <paramref name="resourceId"/>.
         /// </summary>
         /// <remarks>
-        /// The <paramref name="resourceId"/> must be specified with the request send using the <see cref="Cerbos.Sdk.CerbosBlockingClient"/>. 
+        /// The <paramref name="resourceId"/> must be specified with the request send using the <see cref="CerbosClient"/>. 
         /// </remarks>
         public CheckResult Find(string resourceId)
         {

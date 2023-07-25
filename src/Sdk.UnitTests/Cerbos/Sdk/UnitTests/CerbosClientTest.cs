@@ -12,7 +12,7 @@ using Resource = Cerbos.Sdk.Builders.Resource;
 
 namespace Cerbos.Sdk.UnitTests
 {
-    public class CerbosBlockingClientTest
+    public class CerbosClientTest
     {
         private const int HttpPort = 3592;
         private const int GrpcPort = 3593;
@@ -22,11 +22,11 @@ namespace Cerbos.Sdk.UnitTests
         private const string PathToConfig = "./../../../res/config";
         private IContainer Container;
         
-        private CerbosBlockingClient _client;
+        private CerbosClient _client;
         private readonly string _jwt =
             "eyJhbGciOiJFUzM4NCIsImtpZCI6IjE5TGZaYXRFZGc4M1lOYzVyMjNndU1KcXJuND0iLCJ0eXAiOiJKV1QifQ.eyJhdWQiOlsiY2VyYm9zLWp3dC10ZXN0cyJdLCJjdXN0b21BcnJheSI6WyJBIiwiQiIsIkMiXSwiY3VzdG9tSW50Ijo0MiwiY3VzdG9tTWFwIjp7IkEiOiJBQSIsIkIiOiJCQiIsIkMiOiJDQyJ9LCJjdXN0b21TdHJpbmciOiJmb29iYXIiLCJleHAiOjE5NTAyNzc5MjYsImlzcyI6ImNlcmJvcy10ZXN0LXN1aXRlIn0._nCHIsuFI3wczeuUv_xjSwaVnIQUdYA9sGf_jVsrsDWloLs3iPWDaA1bXpuIUJVsi8-G6qqdrPI0cOBxEocg1NCm8fyD9T_3hsZV0fYWon_Je6Kl93a3JIW3S6kbvjsL";
         
-        private CerbosBlockingClient _clientPlayground;
+        private CerbosClient _clientPlayground;
         private const string PlaygroundHost = "https://demo-pdp.cerbos.cloud";
         private const string PlaygroundInstanceId = "XhkOi82fFKk3YW60e2c806Yvm0trKEje"; // See: https://play.cerbos.dev/p/XhkOi82fFKk3YW60e2c806Yvm0trKEje
         
@@ -44,8 +44,8 @@ namespace Cerbos.Sdk.UnitTests
 
             Task.Run(async () => await Container.StartAsync()).Wait();
             Thread.Sleep(3000);
-            _client = new CerbosClientBuilder("http://127.0.0.1:3593").WithPlaintext().BuildBlockingClient().WithMeta(true);
-            _clientPlayground = new CerbosClientBuilder(PlaygroundHost).WithPlaygroundInstance(PlaygroundInstanceId).BuildBlockingClient();
+            _client = new CerbosClientBuilder("http://127.0.0.1:3593").WithPlaintext().BuildClient().WithMeta(true);
+            _clientPlayground = new CerbosClientBuilder(PlaygroundHost).WithPlaygroundInstance(PlaygroundInstanceId).BuildClient();
         }
 
         [TearDown]
@@ -279,6 +279,47 @@ namespace Cerbos.Sdk.UnitTests
             
             Assert.That(actual.IsAllowed("approve"), Is.True);
             Assert.That(actual.IsAllowed("delete"), Is.True);
+        }
+        
+        [Test]
+        public async Task CheckWithoutJwtAsync()
+        {
+            var have = await _client
+                    .CheckResourcesAsync(
+                        Principal.NewInstance("john","employee")
+                        .WithPolicyVersion("20210210")
+                        .WithAttribute("team", AttributeValue.StringValue("design"))
+                        .WithAttribute("department", AttributeValue.StringValue("marketing"))
+                        .WithAttribute("geography", AttributeValue.StringValue("GB"))
+                        .WithAttribute("reader", AttributeValue.BoolValue(false)),
+                        
+                        Resource.NewInstance("leave_request", "XX125")
+                            .WithPolicyVersion("20210210")
+                            .WithAttribute("id", AttributeValue.StringValue("XX125"))
+                            .WithAttribute("department", AttributeValue.StringValue("marketing"))
+                            .WithAttribute("geography", AttributeValue.StringValue("GB"))
+                            .WithAttribute("team", AttributeValue.StringValue("design"))
+                            .WithAttribute("owner", AttributeValue.StringValue("john")),
+                        
+            "view:public", "approve"
+                    );
+            
+            Assert.That(have.IsAllowed("view:public"), Is.True);
+            Assert.That(have.IsAllowed("approve"), Is.False);
+            
+            Assert.That(have.Meta, Is.Not.Null);
+            Assert.That(have.Outputs, Is.Not.Null);
+            Assert.That(have.Resource, Is.Not.Null);
+
+            Assert.That(have.Meta.Actions["approve"].MatchedPolicy, Is.EqualTo("resource.leave_request.v20210210"));
+            
+            Assert.That(have.Outputs.Get("resource.leave_request.v20210210#public-view"), Is.Not.Null);
+            Assert.That(have.Outputs.Get("resource.leave_request.v20210210#public-view").StringValue, Is.EqualTo("view:public:john"));
+            
+            Assert.That(have.Resource.Id, Is.EqualTo("XX125"));
+            Assert.That(have.Resource.Kind, Is.EqualTo("leave_request"));
+            Assert.That(have.Resource.Scope, Is.EqualTo(""));
+            Assert.That(have.Resource.PolicyVersion, Is.EqualTo("20210210"));
         }
     }
 }

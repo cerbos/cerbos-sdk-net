@@ -49,7 +49,6 @@ namespace Cerbos.Sdk.Builders
         public static AttributeValue MapValue(Dictionary<string, AttributeValue> dict)
         {
             var s = new Struct();
-            var fields = new MapField<string, Value>();
             foreach (KeyValuePair<string, AttributeValue> kvp in dict)
             {
                 s.Fields.Add(kvp.Key, kvp.Value.V);

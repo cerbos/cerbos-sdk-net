@@ -51,7 +51,7 @@ namespace Cerbos.Sdk.Builders
             return this;
         }
 
-        public CerbosBlockingClient BuildBlockingClient()
+        public CerbosClient BuildClient()
         {
             if (_target == "")
             {
@@ -112,7 +112,7 @@ namespace Cerbos.Sdk.Builders
                 channel = GrpcChannel.ForAddress(_target, grpcChannelOptions);
             }
 
-            return new CerbosBlockingClient(new CerbosService.CerbosServiceClient(channel));
+            return new CerbosClient(new CerbosService.CerbosServiceClient(channel));
         }
     }
 }

@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 using System;
-using System.ComponentModel.Design.Serialization;
+using System.Threading.Tasks;
 using Cerbos.Api.V1.Request;
 using Cerbos.Api.V1.Response;
 using Cerbos.Api.V1.Svc;
@@ -11,20 +11,20 @@ using Cerbos.Sdk.Builders;
 namespace Cerbos.Sdk
 {
     /// <summary>
-    /// CerbosBlockingClient provides a client implementation that blocks waiting for a response from the PDP.
+    /// CerbosClient provides a client implementation that communicates with the PDP.
     /// </summary>
-    public class CerbosBlockingClient
+    public class CerbosClient
     {
         private readonly CerbosService.CerbosServiceClient _csc;
         private readonly Builders.AuxData _auxData;
         private bool _includeMeta = false;
 
-        public CerbosBlockingClient(CerbosService.CerbosServiceClient csc)
+        public CerbosClient(CerbosService.CerbosServiceClient csc)
         {
             _csc = csc;
         }
 
-        public CerbosBlockingClient(CerbosService.CerbosServiceClient csc, Builders.AuxData auxData)
+        public CerbosClient(CerbosService.CerbosServiceClient csc, Builders.AuxData auxData)
         {
             _csc = csc;
             _auxData = auxData;
@@ -33,15 +33,15 @@ namespace Cerbos.Sdk
         /// <summary>
         /// Automatically attach the provided auxiliary data to requests.
         /// </summary>
-        public CerbosBlockingClient With(Builders.AuxData auxData)
+        public CerbosClient With(Builders.AuxData auxData)
         {
-            return new CerbosBlockingClient(_csc, auxData);
+            return new CerbosClient(_csc, auxData);
         }
         
         /// <summary>
         /// Set includeMeta field for the requests
         /// </summary>
-        public CerbosBlockingClient WithMeta(bool include)
+        public CerbosClient WithMeta(bool include)
         {
             _includeMeta = include;
             return this;
@@ -179,6 +179,139 @@ namespace Cerbos.Sdk
         public PlanResourcesResult PlanResources(Principal principal, Resource resource, string action)
         {
             return PlanResources(RequestId.Generate(), principal, resource, action);
+        }
+        
+        /// <summary>
+        /// Send a request consisting of a principal, resource(s) & action(s) to see if the principal is authorized to do the action(s) on the resource(s).
+        /// </summary>
+        private async Task<CheckResourcesResult> CheckResourcesAsync(CheckResourcesRequest request)
+        {
+            CheckResourcesResponse response;
+            try
+            {
+                request.AuxData = _auxData?.ToAuxData();
+                request.IncludeMeta = _includeMeta;
+                response = await _csc.CheckResourcesAsync(request);
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Failed to check resources: ${e}");
+            }
+
+            return new CheckResourcesResult(response);
+        }
+        
+        /// <summary>
+        /// Check whether the principal is authorized to do the actions on the resources.
+        /// </summary>
+        /// <param name="requestId">Use the requestId to trace the request on Cerbos</param>
+        public async Task<CheckResourcesResult> CheckResourcesAsync(string requestId, Principal principal,
+            params ResourceAction[] resourceActions)
+        {
+            var request = new CheckResourcesRequest
+            {
+                RequestId = requestId,
+                IncludeMeta = _includeMeta,
+                Principal = principal.ToPrincipal(),
+            };
+
+            foreach (var resourceAction in resourceActions)
+            {
+                request.Resources.Add(resourceAction.ToResourceEntry());
+            }
+
+            return await CheckResourcesAsync(request);;
+        }
+        
+        /// <summary>
+        /// Check whether the principal is authorized to do the actions on the resources.
+        /// </summary>
+        public async Task<CheckResourcesResult> CheckResourcesAsync(Principal principal, params ResourceAction[] resourceActions)
+        {
+            return await CheckResourcesAsync(RequestId.Generate(), principal, resourceActions);
+        }
+        
+        /// <summary>
+        /// Check whether the principal is authorized to do the action on the resource.
+        /// </summary>
+        /// <param name="requestId">Use the requestId to trace the request on Cerbos</param>
+        public async Task<CheckResult> CheckResourcesAsync(string requestId, Principal principal,
+            ResourceAction resourceAction)
+        {
+            var result = await CheckResourcesAsync(new CheckResourcesRequest
+            {
+                RequestId = requestId,
+                IncludeMeta = _includeMeta,
+                Principal = principal.ToPrincipal(),
+                Resources = { resourceAction.ToResourceEntry() }
+            });
+
+            return result.Find(resourceAction.ToResourceEntry().Resource.Id);
+        }
+        
+        /// <summary>
+        /// Check whether the principal is authorized to do the action on the resource.
+        /// </summary>
+        public async Task<CheckResult> CheckResourcesAsync(Principal principal, ResourceAction resourceAction)
+        {
+            return await CheckResourcesAsync(RequestId.Generate(), principal, resourceAction);
+        }
+        
+        /// <summary>
+        /// Check whether the principal is authorized to do the action on the resource.
+        /// </summary>
+        /// <param name="requestId">Use the requestId to trace the request on Cerbos</param>
+        public async Task<CheckResult> CheckResourcesAsync(string requestId, Principal principal, Resource resource,
+            params string[] actions)
+        {
+            return await CheckResourcesAsync(requestId, principal, ResourceAction.NewInstance(resource, actions));
+        }
+        
+        /// <summary>
+        /// Check whether the principal is authorized to do the action on the resource.
+        /// </summary>
+        public async Task<CheckResult> CheckResourcesAsync(Principal principal, Resource resource, params string[] actions)
+        {
+            return await CheckResourcesAsync(RequestId.Generate(), principal, resource, actions);
+        }
+        
+        /// <summary>
+        /// Obtain a query plan for performing the given action on the given resource kind.
+        /// </summary>
+        public async Task<PlanResourcesResult> PlanResourcesAsync(PlanResourcesRequest request)
+        {
+            PlanResourcesResponse response;
+            try
+            {
+                request.AuxData = _auxData?.ToAuxData();
+                request.IncludeMeta = _includeMeta;
+                response = await _csc.PlanResourcesAsync(request);
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Failed to plan resources: ${e}");
+            }
+
+            return new PlanResourcesResult(response);
+        }
+        
+        public async Task<PlanResourcesResult> PlanResourcesAsync(string requestId, Principal principal, Resource resource, string action)
+        {
+            var request = new PlanResourcesRequest
+            {
+                RequestId = requestId,
+                Action = action,
+                IncludeMeta = _includeMeta,
+                Principal = principal.ToPrincipal(),
+                Resource = resource.ToPlanResource(),
+            };
+            
+            return await PlanResourcesAsync(request);
+        }
+        
+        public async Task<PlanResourcesResult> PlanResourcesAsync(Principal principal, Resource resource, string action)
+        {
+            return await PlanResourcesAsync(RequestId.Generate(), principal, resource, action);
         }
     }
 }
