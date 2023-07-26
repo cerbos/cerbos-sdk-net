@@ -1,77 +1,80 @@
 [![NuGeT](https://img.shields.io/nuget/v/Cerbos.Sdk?style=plastic)](https://www.nuget.org/packages/Cerbos.Sdk)
 [![NuGeT Downloads](https://img.shields.io/nuget/dt/Cerbos.Sdk?style=plastic)](https://www.nuget.org/packages/Cerbos.Sdk)
 
-Cerbos .NET SDK
-===============
+# Cerbos .NET SDK
 
 .NET client library for the [Cerbos](https://github.com/cerbos/cerbos) open source access control solution. This library
-includes RPC clients for accessing the Cerbos PDP.
+includes gRPC clients for accessing the Cerbos PDP.
 
 Find out more about Cerbos at https://cerbos.dev and read the documentation at https://docs.cerbos.dev.
 
-Installation
--------------
+# Installation
 
 - Add `Cerbos.Sdk` NuGet package as dependency to the project. See [here](https://www.nuget.org/packages/Cerbos.Sdk) for the published packages.
 
-Examples
---------
+# Examples
 
-### Creating a client without TLS
+## Creating a client without TLS
 
 ```csharp
-var client = new CerbosClientBuilder("http://localhost:3593").WithPlaintext().BuildBlockingClient();
+var client = CerbosClientBuilder.NewInstance("http://localhost:3593").WithPlaintext().BuildClient();
 ```
 
-### Check a single principal and resource
+## CheckResources API
 
 ```csharp
-CheckResult result = client
-    .CheckResources(
+var request = CheckResourcesRequest.NewInstance()
+    .WithRequestId(RequestId.Generate())
+    .WithIncludeMeta(true)
+    .WithPrincipal(
         Principal.NewInstance("john", "employee")
-        .WithPolicyVersion("20210210")
-        .WithAttribute("department", AttributeValue.StringValue("marketing"))
-        .WithAttribute("geography", AttributeValue.StringValue("GB")),
-        
-        Resource.NewInstance("leave_request", "xx125")
             .WithPolicyVersion("20210210")
             .WithAttribute("department", AttributeValue.StringValue("marketing"))
             .WithAttribute("geography", AttributeValue.StringValue("GB"))
-            .WithAttribute("owner", AttributeValue.StringValue("john")),
-        
-        "view:public", "approve"
+    )
+    .WithResourceEntries(
+        ResourceEntry.NewInstance("leave_request", "XX125")
+            .WithPolicyVersion("20210210")
+            .WithAttribute("department", AttributeValue.StringValue("marketing"))
+            .WithAttribute("geography", AttributeValue.StringValue("GB"))
+            .WithAttribute("owner", AttributeValue.StringValue("john"))
+            .WithActions("approve", "view:public")
     );
 
+var result = client.CheckResources(request).Find("XX125");
 if(result.IsAllowed("approve")){ // returns true if `approve` action is allowed
     // ...
 }
 ```
 
-### Check a single principal and multiple resource & action pairs
-
 ```csharp
-CheckResourcesResult result = client
-    .CheckResources(
+var request = CheckResourcesRequest.NewInstance()
+    .WithRequestId(RequestId.Generate())
+    .WithIncludeMeta(true)
+    .WithPrincipal
+    (
         Principal.NewInstance("john", "employee")
             .WithPolicyVersion("20210210")
             .WithAttribute("department", AttributeValue.StringValue("marketing"))
-            .WithAttribute("geography", AttributeValue.StringValue("GB")),
-        
-        ResourceAction.NewInstance("leave_request", "XX125")
+            .WithAttribute("geography", AttributeValue.StringValue("GB"))
+    )
+    .WithResourceEntries
+    (
+        ResourceEntry.NewInstance("leave_request", "XX125")
             .WithPolicyVersion("20210210")
             .WithAttribute("department", AttributeValue.StringValue("marketing"))
             .WithAttribute("geography", AttributeValue.StringValue("GB"))
             .WithAttribute("owner", AttributeValue.StringValue("john"))
             .WithActions("view:public", "approve", "defer"),
         
-        ResourceAction.NewInstance("leave_request", "XX225")
+        ResourceEntry.NewInstance("leave_request", "XX225")
             .WithPolicyVersion("20210210")
             .WithAttribute("department", AttributeValue.StringValue("marketing"))
             .WithAttribute("geography", AttributeValue.StringValue("GB"))
             .WithAttribute("owner", AttributeValue.StringValue("martha"))
             .WithActions("view:public", "approve"),
         
-        ResourceAction.NewInstance("leave_request", "XX325")
+        ResourceEntry.NewInstance("leave_request", "XX325")
             .WithPolicyVersion("20210210")
             .WithAttribute("department", AttributeValue.StringValue("marketing"))
             .WithAttribute("geography", AttributeValue.StringValue("US"))
@@ -79,6 +82,7 @@ CheckResourcesResult result = client
             .WithActions("view:public", "approve")
     );
 
+CheckResourcesResponse result = client.CheckResources(request);
 var resultXX125 = result.Find("XX125");
 var resultXX225 = result.Find("XX225");
 var resultXX325 = result.Find("XX325");
@@ -96,22 +100,27 @@ if(resultXX325.IsAllowed("view:public")){ // returns true if `view:public` actio
 }
 ```
 
-### Plan Resources API
+## Plan Resources API
 
 ```csharp
-PlanResourcesResult result = client.
-    .PlanResources(
+var request = PlanResourcesRequest.NewInstance()
+    .WithRequestId(RequestId.Generate())
+    .WithIncludeMeta(true)
+    .WithPrincipal
+    (
         Principal.NewInstance("maggie","manager")
-        .WithAttribute("department", AttributeValue.StringValue("marketing"))
-        .WithAttribute("geography", AttributeValue.StringValue("GB"))
-        .WithAttribute("team", AttributeValue.StringValue("design")),
-        
+            .WithAttribute("department", AttributeValue.StringValue("marketing"))
+            .WithAttribute("geography", AttributeValue.StringValue("GB"))
+            .WithAttribute("team", AttributeValue.StringValue("design"))
+    )
+    .WithResource
+    (
         Resource.NewInstance("leave_request")
-        .WithPolicyVersion("20210210"),
-        
-        "approve"
-    );
+            .WithPolicyVersion("20210210")
+    )
+    .WithAction("approve");
 
+PlanResourcesResponse result = client.PlanResources(request);
 if(result.IsAlwaysAllowed()) {
     // ...
 }
@@ -122,3 +131,68 @@ else {
     // ...
 }
 ```
+
+# Upgrading from v0.2.x
+
+Newer versions changed the way how some parts of the SDK works. These changes require existing users
+of v0.2.x versions to perform some migration steps.
+
+## Simpler `CerbosClientBuilder`
+
+`CerbosClientBuilder` is simpler and only expects `hostname` as a parameter.
+```csharp
+var client = CerbosClientBuilder
+    .NewInstance("http://localhost:3593")
+    .WithPlaintext()
+    .BuildClient();
+```
+
+## Renamed `ResourceAction` to `ResourceEntry`
+
+The `ResourceAction` class has been renamed to `ResourceEntry`.
+
+## New `CheckResourcesRequest` and `PlanResourcesRequest` builder classes
+
+Use the new builder classes to construct `CheckResources` and `PlanResources` requests.
+
+```csharp
+var request = CheckResourcesRequest
+    .NewInstance()
+    .WithRequestId(RequestId.Generate())
+    .WithPrincipal(
+        Principal.NewInstance("john", "employee")
+            .WithPolicyVersion("20210210")
+            .WithAttribute("department", AttributeValue.StringValue("marketing"))
+    )
+    .WithResourceEntries(
+        ResourceEntry.NewInstance("leave_request", "XX125")
+            .WithPolicyVersion("20210210")
+            .WithAttribute("department", AttributeValue.StringValue("marketing"))
+    );
+```
+
+```csharp
+var request = PlanResourcesRequest
+    .NewInstance()
+    .WithRequestId(RequestId.Generate())
+    .WithPrincipal(
+        Principal.NewInstance("john", "employee")
+            .WithPolicyVersion("20210210")
+            .WithAttribute("department", AttributeValue.StringValue("marketing"))
+    )
+    .WithResource
+    (
+        Resource.NewInstance("leave_request")
+            .WithPolicyVersion("20210210")
+    )
+    .WithAction("approve");
+```
+
+### Simpler `CerbosClient`
+
+The `CheckResources` and `PlanResources` methods on the `CerbosClient` now accepts only a `CheckResourcesRequest` and
+`PlanResourcesRequest` object respectively.
+
+### `CerbosClient` supports async
+
+`CerbosClient` has support for async operations with the new `CheckResourcesAsync` and `PlanResourcesAsync` methods.

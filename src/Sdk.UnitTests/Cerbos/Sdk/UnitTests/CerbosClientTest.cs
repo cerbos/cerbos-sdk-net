@@ -2,13 +2,14 @@
 // SPDX-License-Identifier: Apache-2.0
 
 using Cerbos.Api.V1.Engine;
-using Cerbos.Sdk.Builders;
+using Cerbos.Sdk.Builder;
+using Cerbos.Sdk.Utility;
 using DotNet.Testcontainers.Builders;
 using DotNet.Testcontainers.Containers;
 using NUnit.Framework;
-using AuxData = Cerbos.Sdk.Builders.AuxData;
-using Principal = Cerbos.Sdk.Builders.Principal;
-using Resource = Cerbos.Sdk.Builders.Resource;
+using AuxData = Cerbos.Sdk.Builder.AuxData;
+using Principal = Cerbos.Sdk.Builder.Principal;
+using Resource = Cerbos.Sdk.Builder.Resource;
 
 namespace Cerbos.Sdk.UnitTests
 {
@@ -20,20 +21,20 @@ namespace Cerbos.Sdk.UnitTests
         private const string Tag = "dev";
         private const string PathToPolicies = "./../../../res/policies";
         private const string PathToConfig = "./../../../res/config";
-        private IContainer Container;
+        private IContainer? _container;
         
-        private CerbosClient _client;
+        private CerbosClient? _client;
+        private CerbosClient? _clientPlayground;
+
         private readonly string _jwt =
             "eyJhbGciOiJFUzM4NCIsImtpZCI6IjE5TGZaYXRFZGc4M1lOYzVyMjNndU1KcXJuND0iLCJ0eXAiOiJKV1QifQ.eyJhdWQiOlsiY2VyYm9zLWp3dC10ZXN0cyJdLCJjdXN0b21BcnJheSI6WyJBIiwiQiIsIkMiXSwiY3VzdG9tSW50Ijo0MiwiY3VzdG9tTWFwIjp7IkEiOiJBQSIsIkIiOiJCQiIsIkMiOiJDQyJ9LCJjdXN0b21TdHJpbmciOiJmb29iYXIiLCJleHAiOjE5NTAyNzc5MjYsImlzcyI6ImNlcmJvcy10ZXN0LXN1aXRlIn0._nCHIsuFI3wczeuUv_xjSwaVnIQUdYA9sGf_jVsrsDWloLs3iPWDaA1bXpuIUJVsi8-G6qqdrPI0cOBxEocg1NCm8fyD9T_3hsZV0fYWon_Je6Kl93a3JIW3S6kbvjsL";
-        
-        private CerbosClient _clientPlayground;
         private const string PlaygroundHost = "https://demo-pdp.cerbos.cloud";
         private const string PlaygroundInstanceId = "XhkOi82fFKk3YW60e2c806Yvm0trKEje"; // See: https://play.cerbos.dev/p/XhkOi82fFKk3YW60e2c806Yvm0trKEje
         
-        [SetUp]
-        public void Setup()
+        [OneTimeSetUp]
+        public void OneTimeSetUp()
         {
-            Container = new ContainerBuilder()
+            _container = new ContainerBuilder()
                 .WithImage($"{Image}:{Tag}")
                 .WithPortBinding(HttpPort)
                 .WithPortBinding(GrpcPort)
@@ -42,42 +43,44 @@ namespace Cerbos.Sdk.UnitTests
                 .WithCommand("server", "--config=/config/config.yaml")
                 .Build();
 
-            Task.Run(async () => await Container.StartAsync()).Wait();
+            Task.Run(async () => await _container.StartAsync()).Wait();
             Thread.Sleep(3000);
-            _client = new CerbosClientBuilder("http://127.0.0.1:3593").WithPlaintext().BuildClient().WithMeta(true);
-            _clientPlayground = new CerbosClientBuilder(PlaygroundHost).WithPlaygroundInstance(PlaygroundInstanceId).BuildClient();
+            _client = CerbosClientBuilder.NewInstance("http://127.0.0.1:3593").WithPlaintext().BuildClient();
+            _clientPlayground = CerbosClientBuilder.NewInstance(PlaygroundHost).WithPlaygroundInstance(PlaygroundInstanceId).BuildClient();
         }
 
-        [TearDown]
+        [OneTimeTearDown]
         public void TearDown()
         {
-            Task.Run(async () => await Container.StopAsync()).Wait();
+            Task.Run(async () => await _container.StopAsync()).Wait();
         }
 
         [Test]
         public void CheckWithoutJwt()
         {
-            var have =
-                _client
-                    .CheckResources(
-                        Principal.NewInstance("john","employee")
+            var request = CheckResourcesRequest.NewInstance()
+                .WithRequestId(RequestId.Generate())
+                .WithPrincipal(
+                    Principal.NewInstance("john", "employee")
                         .WithPolicyVersion("20210210")
                         .WithAttribute("team", AttributeValue.StringValue("design"))
                         .WithAttribute("department", AttributeValue.StringValue("marketing"))
                         .WithAttribute("geography", AttributeValue.StringValue("GB"))
-                        .WithAttribute("reader", AttributeValue.BoolValue(false)),
-                        
-                        Resource.NewInstance("leave_request", "XX125")
-                            .WithPolicyVersion("20210210")
-                            .WithAttribute("id", AttributeValue.StringValue("XX125"))
-                            .WithAttribute("department", AttributeValue.StringValue("marketing"))
-                            .WithAttribute("geography", AttributeValue.StringValue("GB"))
-                            .WithAttribute("team", AttributeValue.StringValue("design"))
-                            .WithAttribute("owner", AttributeValue.StringValue("john")),
-                        
-            "view:public", "approve"
-                    );
+                        .WithAttribute("reader", AttributeValue.BoolValue(false))
+                )
+                .WithResourceEntries(
+                    ResourceEntry.NewInstance("leave_request", "XX125")
+                        .WithPolicyVersion("20210210")
+                        .WithAttribute("id", AttributeValue.StringValue("XX125"))
+                        .WithAttribute("department", AttributeValue.StringValue("marketing"))
+                        .WithAttribute("geography", AttributeValue.StringValue("GB"))
+                        .WithAttribute("team", AttributeValue.StringValue("design"))
+                        .WithAttribute("owner", AttributeValue.StringValue("john"))
+                        .WithActions("approve", "view:public")
+                )
+                .WithIncludeMeta(true);
             
+            var have = _client.CheckResources(request).Find("XX125");
             Assert.That(have.IsAllowed("view:public"), Is.True);
             Assert.That(have.IsAllowed("approve"), Is.False);
             
@@ -99,72 +102,79 @@ namespace Cerbos.Sdk.UnitTests
         [Test]
         public void CheckWithJwt()
         {
-            var have =
-                _client
-                    .With(AuxData.WithJwt(_jwt))
-                    .CheckResources(
-                        Principal.NewInstance("john", "employee")
-                            .WithPolicyVersion("20210210")
-                            .WithAttribute("team", AttributeValue.StringValue("design"))
-                            .WithAttribute("department", AttributeValue.StringValue("marketing"))
-                            .WithAttribute("geography", AttributeValue.StringValue("GB"))
-                            .WithAttribute("reader", AttributeValue.BoolValue(false)),
-                        
-                        Resource.NewInstance("leave_request", "XX125")
-                            .WithPolicyVersion("20210210")
-                            .WithAttribute("id", AttributeValue.StringValue("XX125"))
-                            .WithAttribute("team", AttributeValue.StringValue("design"))
-                            .WithAttribute("department", AttributeValue.StringValue("marketing"))
-                            .WithAttribute("geography", AttributeValue.StringValue("GB"))
-                            .WithAttribute("owner", AttributeValue.StringValue("john")),
-                        
-                        "defer"
-                    );
+            var request = CheckResourcesRequest.NewInstance()
+                .WithRequestId(RequestId.Generate())
+                .WithIncludeMeta(true)
+                .WithAuxData(AuxData.WithJwt(_jwt))
+                .WithPrincipal(
+                    Principal.NewInstance("john", "employee")
+                        .WithPolicyVersion("20210210")
+                        .WithAttribute("team", AttributeValue.StringValue("design"))
+                        .WithAttribute("department", AttributeValue.StringValue("marketing"))
+                        .WithAttribute("geography", AttributeValue.StringValue("GB"))
+                        .WithAttribute("reader", AttributeValue.BoolValue(false))
+                )
+                .WithResourceEntries(
+                    ResourceEntry.NewInstance("leave_request", "XX125")
+                        .WithPolicyVersion("20210210")
+                        .WithAttribute("id", AttributeValue.StringValue("XX125"))
+                        .WithAttribute("team", AttributeValue.StringValue("design"))
+                        .WithAttribute("department", AttributeValue.StringValue("marketing"))
+                        .WithAttribute("geography", AttributeValue.StringValue("GB"))
+                        .WithAttribute("owner", AttributeValue.StringValue("john"))
+                        .WithActions("defer")
+                );
+            
+            var have = _client.CheckResources(request).Find("XX125");
             Assert.That(have.IsAllowed("defer"), Is.True);
         }
         
         [Test]
         public void CheckMultiple()
         {
-            var have =
-                _client
-                    .With(AuxData.WithJwt(_jwt))
-                    .CheckResources(
-                        Principal.NewInstance("john", "employee")
-                            .WithPolicyVersion("20210210")
-                            .WithAttribute("team", AttributeValue.StringValue("design"))
-                            .WithAttribute("department", AttributeValue.StringValue("marketing"))
-                            .WithAttribute("geography", AttributeValue.StringValue("GB"))
-                            .WithAttribute("reader", AttributeValue.BoolValue(false)),
-                        
-                        ResourceAction.NewInstance("leave_request", "XX125")
-                            .WithPolicyVersion("20210210")
-                            .WithAttribute("id", AttributeValue.StringValue("XX125"))
-                            .WithAttribute("department", AttributeValue.StringValue("marketing"))
-                            .WithAttribute("geography", AttributeValue.StringValue("GB"))
-                            .WithAttribute("team", AttributeValue.StringValue("design"))
-                            .WithAttribute("owner", AttributeValue.StringValue("john"))
-                            .WithActions("view:public", "approve", "defer"),
-                        
-                        ResourceAction.NewInstance("leave_request", "XX225")
-                            .WithPolicyVersion("20210210")
-                            .WithAttribute("id", AttributeValue.StringValue("XX225"))
-                            .WithAttribute("department", AttributeValue.StringValue("marketing"))
-                            .WithAttribute("geography", AttributeValue.StringValue("GB"))
-                            .WithAttribute("team", AttributeValue.StringValue("design"))
-                            .WithAttribute("owner", AttributeValue.StringValue("martha"))
-                            .WithActions("view:public", "approve"),
-                        
-                        ResourceAction.NewInstance("leave_request", "XX325")
-                            .WithPolicyVersion("20210210")
-                            .WithAttribute("id", AttributeValue.StringValue("XX325"))
-                            .WithAttribute("department", AttributeValue.StringValue("marketing"))
-                            .WithAttribute("geography", AttributeValue.StringValue("US"))
-                            .WithAttribute("team", AttributeValue.StringValue("design"))
-                            .WithAttribute("owner", AttributeValue.StringValue("peggy"))
-                            .WithActions("view:public", "approve")
-                    );
+            var request = CheckResourcesRequest.NewInstance()
+                .WithRequestId(RequestId.Generate())
+                .WithIncludeMeta(true)
+                .WithAuxData(AuxData.WithJwt(_jwt))
+                .WithPrincipal(
+                    Principal.NewInstance("john", "employee")
+                        .WithPolicyVersion("20210210")
+                        .WithAttribute("team", AttributeValue.StringValue("design"))
+                        .WithAttribute("department", AttributeValue.StringValue("marketing"))
+                        .WithAttribute("geography", AttributeValue.StringValue("GB"))
+                        .WithAttribute("reader", AttributeValue.BoolValue(false))
+                )
+                .WithResourceEntries(
+                    ResourceEntry.NewInstance("leave_request", "XX125")
+                        .WithPolicyVersion("20210210")
+                        .WithAttribute("id", AttributeValue.StringValue("XX125"))
+                        .WithAttribute("department", AttributeValue.StringValue("marketing"))
+                        .WithAttribute("geography", AttributeValue.StringValue("GB"))
+                        .WithAttribute("team", AttributeValue.StringValue("design"))
+                        .WithAttribute("owner", AttributeValue.StringValue("john"))
+                        .WithActions("view:public", "approve", "defer"),
 
+                    ResourceEntry.NewInstance("leave_request", "XX225")
+                        .WithPolicyVersion("20210210")
+                        .WithAttribute("id", AttributeValue.StringValue("XX225"))
+                        .WithAttribute("department", AttributeValue.StringValue("marketing"))
+                        .WithAttribute("geography", AttributeValue.StringValue("GB"))
+                        .WithAttribute("team", AttributeValue.StringValue("design"))
+                        .WithAttribute("owner", AttributeValue.StringValue("martha"))
+                        .WithActions("view:public", "approve"),
+
+                    ResourceEntry.NewInstance("leave_request", "XX325")
+                        .WithPolicyVersion("20210210")
+                        .WithAttribute("id", AttributeValue.StringValue("XX325"))
+                        .WithAttribute("department", AttributeValue.StringValue("marketing"))
+                        .WithAttribute("geography", AttributeValue.StringValue("US"))
+                        .WithAttribute("team", AttributeValue.StringValue("design"))
+                        .WithAttribute("owner", AttributeValue.StringValue("peggy"))
+                        .WithActions("view:public", "approve")
+                );
+
+
+            var have = _client.CheckResources(request);
             var resourcexx125 = have.Find("XX125");
             Assert.That(resourcexx125.IsAllowed("view:public"), Is.True);
             Assert.That(resourcexx125.IsAllowed("defer"), Is.True);
@@ -182,31 +192,36 @@ namespace Cerbos.Sdk.UnitTests
         [Test]
         public void PlanResources()
         {
-            PlanResourcesResult have = _client.With(AuxData.WithJwt(_jwt)).PlanResources
-            (
-                Principal.NewInstance("maggie", "manager")
-                    .WithPolicyVersion("20210210")
-                    .WithAttribute("department", AttributeValue.StringValue("marketing"))
-                    .WithAttribute("geography", AttributeValue.StringValue("GB"))
-                    .WithAttribute("managed_geographies", AttributeValue.StringValue("GB"))
-                    .WithAttribute("team", AttributeValue.StringValue("design"))
-                    .WithAttribute("reader", AttributeValue.BoolValue(false)),
-                
-                Resource.NewInstance("leave_request")
-                    .WithPolicyVersion("20210210"), 
-                
-                "approve"
-            );
+            var request = PlanResourcesRequest.NewInstance()
+                .WithRequestId(RequestId.Generate())
+                .WithIncludeMeta(true)
+                .WithAuxData(AuxData.WithJwt(_jwt))
+                .WithPrincipal(
+                    Principal.NewInstance("maggie", "manager")
+                        .WithPolicyVersion("20210210")
+                        .WithAttribute("department", AttributeValue.StringValue("marketing"))
+                        .WithAttribute("geography", AttributeValue.StringValue("GB"))
+                        .WithAttribute("managed_geographies", AttributeValue.StringValue("GB"))
+                        .WithAttribute("team", AttributeValue.StringValue("design"))
+                        .WithAttribute("reader", AttributeValue.BoolValue(false))
+                )
+                .WithResource(
+                    Resource.NewInstance("leave_request")
+                        .WithPolicyVersion("20210210")
+                )
+                .WithAction("approve");
+
             
-            Assert.That(have.GetAction(), Is.EqualTo("approve"));
-            Assert.That(have.GetPolicyVersion(), Is.EqualTo("20210210"));
-            Assert.That(have.GetResourceKind(), Is.EqualTo("leave_request"));
+            var have = _client.PlanResources(request);
+            Assert.That(have.Action, Is.EqualTo("approve"));
+            Assert.That(have.PolicyVersion, Is.EqualTo("20210210"));
+            Assert.That(have.ResourceKind, Is.EqualTo("leave_request"));
             Assert.That(have.HasValidationErrors(), Is.False);
             Assert.That(have.IsAlwaysAllowed(), Is.False);
             Assert.That(have.IsAlwaysDenied(), Is.False);
             Assert.That(have.IsConditional(), Is.True);
 
-            PlanResourcesFilter.Types.Expression.Types.Operand cond = have.GetCondition();
+            PlanResourcesFilter.Types.Expression.Types.Operand cond = have.Filter.Condition;
             PlanResourcesFilter.Types.Expression expr = cond.Expression;
             
             Assert.NotNull(expr);
@@ -224,29 +239,33 @@ namespace Cerbos.Sdk.UnitTests
         [Test]
         public void PlanResourcesValidation()
         {
-            PlanResourcesResult have = _client.With(AuxData.WithJwt(_jwt)).PlanResources
-            (
-                Principal.NewInstance("maggie", "manager")
-                    .WithPolicyVersion("20210210")
-                    .WithAttribute("department", AttributeValue.StringValue("accounting"))
-                    .WithAttribute("geography", AttributeValue.StringValue("GB"))
-                    .WithAttribute("managed_geographies", AttributeValue.StringValue("GB"))
-                    .WithAttribute("team", AttributeValue.StringValue("design"))
-                    .WithAttribute("reader", AttributeValue.BoolValue(false)),
-                
-                Resource.NewInstance("leave_request")
-                    .WithPolicyVersion("20210210")
-                    .WithAttribute("department", AttributeValue.StringValue("accounting")), 
-                
-                "approve"
-            );
+            var request = PlanResourcesRequest.NewInstance()
+                .WithRequestId(RequestId.Generate())
+                .WithIncludeMeta(true)
+                .WithAuxData(AuxData.WithJwt(_jwt))
+                .WithPrincipal(
+                    Principal.NewInstance("maggie", "manager")
+                        .WithPolicyVersion("20210210")
+                        .WithAttribute("department", AttributeValue.StringValue("accounting"))
+                        .WithAttribute("geography", AttributeValue.StringValue("GB"))
+                        .WithAttribute("managed_geographies", AttributeValue.StringValue("GB"))
+                        .WithAttribute("team", AttributeValue.StringValue("design"))
+                        .WithAttribute("reader", AttributeValue.BoolValue(false))
+                )
+                .WithResource(
+                    Resource.NewInstance("leave_request")
+                        .WithPolicyVersion("20210210")
+                        .WithAttribute("department", AttributeValue.StringValue("accounting"))
+                )
+                .WithAction("approve");
             
-            Assert.That(have.GetAction(), Is.EqualTo("approve"));
-            Assert.That(have.GetPolicyVersion(), Is.EqualTo("20210210"));
-            Assert.That(have.GetResourceKind(), Is.EqualTo("leave_request"));
+            var have = _client.PlanResources(request);
+            Assert.That(have.Action, Is.EqualTo("approve"));
+            Assert.That(have.PolicyVersion, Is.EqualTo("20210210"));
+            Assert.That(have.ResourceKind, Is.EqualTo("leave_request"));
             
             Assert.That(have.HasValidationErrors(), Is.True);
-            Assert.That(have.GetValidationErrors().Count(), Is.EqualTo(2));
+            Assert.That(have.ValidationErrors.Count, Is.EqualTo(2));
             
             Assert.That(have.IsAlwaysDenied(), Is.True);
             Assert.That(have.IsAlwaysAllowed(), Is.False);
@@ -256,54 +275,64 @@ namespace Cerbos.Sdk.UnitTests
         [Test]
         public void Playground()
         {
-            var principal = Principal.NewInstance("sajit", "ADMIN")
-                .WithAttributes(new Dictionary<string, AttributeValue>() {
-                    {"department", AttributeValue.StringValue("IT")},
-                });
-            
-            var resource = Resource.NewInstance("expense", "expense1")
-                .WithAttributes(new Dictionary<string, AttributeValue>() {
-                    {"ownerId", AttributeValue.StringValue("sally")},
-                    {"createdAt", AttributeValue.StringValue("2021-10-01T10:00:00.021-05:00")},
-                    {"vendor", AttributeValue.StringValue("Flux Water Gear")},
-                    {"region", AttributeValue.StringValue("EMEA")},
-                    {"amount", AttributeValue.DoubleValue(500)},
-                    {"status", AttributeValue.StringValue("OPEN")},
-                });
-            
-            CheckResult actual = _clientPlayground.CheckResources(
-                principal,
-                resource,
-                "approve", "delete"
-            );
-            
-            Assert.That(actual.IsAllowed("approve"), Is.True);
-            Assert.That(actual.IsAllowed("delete"), Is.True);
+            var request = CheckResourcesRequest.NewInstance()
+                .WithRequestId(RequestId.Generate())
+                .WithIncludeMeta(true)
+                .WithAuxData(AuxData.WithJwt(_jwt))
+                .WithPrincipal(
+                    Principal.NewInstance("sajit", "ADMIN")
+                        .WithAttributes(
+                            new Dictionary<string, AttributeValue> 
+                            {
+                                {"department", AttributeValue.StringValue("IT")}
+                            }
+                        )
+                )
+                .WithResourceEntries(
+                    ResourceEntry.NewInstance("expense", "XX125")
+                        .WithAttributes(new Dictionary<string, AttributeValue> {
+                            {"ownerId", AttributeValue.StringValue("sally")},
+                            {"createdAt", AttributeValue.StringValue("2021-10-01T10:00:00.021-05:00")},
+                            {"vendor", AttributeValue.StringValue("Flux Water Gear")},
+                            {"region", AttributeValue.StringValue("EMEA")},
+                            {"amount", AttributeValue.DoubleValue(500)},
+                            {"status", AttributeValue.StringValue("OPEN")},
+                        })
+                        .WithActions("approve", "delete")
+                );
+
+            var have = _clientPlayground.CheckResources(request).Find("XX125");
+            Assert.That(have.IsAllowed("approve"), Is.True);
+            Assert.That(have.IsAllowed("delete"), Is.True);
         }
         
         [Test]
         public async Task CheckWithoutJwtAsync()
         {
-            var have = await _client
-                    .CheckResourcesAsync(
-                        Principal.NewInstance("john","employee")
+            var request = CheckResourcesRequest.NewInstance()
+                .WithRequestId(RequestId.Generate())
+                .WithIncludeMeta(true)
+                .WithAuxData(AuxData.WithJwt(_jwt))
+                .WithPrincipal(
+                    Principal.NewInstance("john", "employee")
                         .WithPolicyVersion("20210210")
                         .WithAttribute("team", AttributeValue.StringValue("design"))
                         .WithAttribute("department", AttributeValue.StringValue("marketing"))
                         .WithAttribute("geography", AttributeValue.StringValue("GB"))
-                        .WithAttribute("reader", AttributeValue.BoolValue(false)),
-                        
-                        Resource.NewInstance("leave_request", "XX125")
-                            .WithPolicyVersion("20210210")
-                            .WithAttribute("id", AttributeValue.StringValue("XX125"))
-                            .WithAttribute("department", AttributeValue.StringValue("marketing"))
-                            .WithAttribute("geography", AttributeValue.StringValue("GB"))
-                            .WithAttribute("team", AttributeValue.StringValue("design"))
-                            .WithAttribute("owner", AttributeValue.StringValue("john")),
-                        
-            "view:public", "approve"
-                    );
-            
+                        .WithAttribute("reader", AttributeValue.BoolValue(false))
+                )
+                .WithResourceEntries(
+                    ResourceEntry.NewInstance("leave_request", "XX125")
+                        .WithPolicyVersion("20210210")
+                        .WithAttribute("id", AttributeValue.StringValue("XX125"))
+                        .WithAttribute("department", AttributeValue.StringValue("marketing"))
+                        .WithAttribute("geography", AttributeValue.StringValue("GB"))
+                        .WithAttribute("team", AttributeValue.StringValue("design"))
+                        .WithAttribute("owner", AttributeValue.StringValue("john"))
+                        .WithActions("approve", "view:public")
+                );
+
+            var have = (await _client.CheckResourcesAsync(request)).Find("XX125");
             Assert.That(have.IsAllowed("view:public"), Is.True);
             Assert.That(have.IsAllowed("approve"), Is.False);
             
