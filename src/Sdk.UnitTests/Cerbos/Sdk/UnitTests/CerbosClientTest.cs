@@ -45,8 +45,8 @@ namespace Cerbos.Sdk.UnitTests
 
             Task.Run(async () => await _container.StartAsync()).Wait();
             Thread.Sleep(3000);
-            _client = CerbosClientBuilder.ForTarget("http://127.0.0.1:3593").WithPlaintext().BuildClient();
-            _clientPlayground = CerbosClientBuilder.ForTarget(PlaygroundHost).WithPlaygroundInstance(PlaygroundInstanceId).BuildClient();
+            _client = CerbosClientBuilder.ForTarget("http://127.0.0.1:3593").WithPlaintext().Build();
+            _clientPlayground = CerbosClientBuilder.ForTarget(PlaygroundHost).WithPlaygroundInstance(PlaygroundInstanceId).Build();
         }
 
         [OneTimeTearDown]
