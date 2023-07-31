@@ -134,12 +134,16 @@ else {
 
 # Upgrading from v0.2.x
 
-Newer versions changed the way how some parts of the SDK works. These changes require existing users
-of v0.2.x versions to perform some migration steps.
+v1.0.0 of the SDK contains some breaking API changes and requires existing users to make a few changes to their code.
+
+## `CerbosBlockingClient` has been renamed to `CerbosClient`
+
+`CerbosBlockingClient` has been renamed to `CerbosClient` and it has support for async operations with the new 
+`CheckResourcesAsync` and `PlanResourcesAsync` methods.
 
 ## Simpler `CerbosClientBuilder`
 
-`CerbosClientBuilder` is simpler and only expects `hostname` as a parameter.
+`CerbosClientBuilder` has a static constructor and `hostname` is the only required parameter.
 ```csharp
 var client = CerbosClientBuilder
     .NewInstance("http://localhost:3593")
@@ -147,13 +151,15 @@ var client = CerbosClientBuilder
     .BuildClient();
 ```
 
-## Renamed `ResourceAction` to `ResourceEntry`
+## Rename `ResourceAction` to `ResourceEntry`
 
-The `ResourceAction` class has been renamed to `ResourceEntry`.
+Replace references to `ResourceAction` with `ResourceEntry`.
 
 ## New `CheckResourcesRequest` and `PlanResourcesRequest` builder classes
 
-Use the new builder classes to construct `CheckResources` and `PlanResources` requests.
+The `CheckResources` and `PlanResources` methods now require a `CheckResourcesRequest` or a `PlanResourcesRequest` 
+object respectively. They can be built using the new builder classes to construct `CheckResources` and `PlanResources`
+requests.
 
 ```csharp
 var request = CheckResourcesRequest
@@ -187,12 +193,3 @@ var request = PlanResourcesRequest
     )
     .WithAction("approve");
 ```
-
-### Simpler `CerbosClient`
-
-The `CheckResources` and `PlanResources` methods on the `CerbosClient` now accepts only a `CheckResourcesRequest` and
-`PlanResourcesRequest` object respectively.
-
-### `CerbosClient` supports async
-
-`CerbosClient` has support for async operations with the new `CheckResourcesAsync` and `PlanResourcesAsync` methods.
