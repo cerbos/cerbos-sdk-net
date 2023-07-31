@@ -69,7 +69,7 @@ namespace Cerbos.Sdk.Builder
 
             if (string.IsNullOrEmpty(RequestId))
             {
-                throw new Exception("RequestId is not set");
+                RequestId = Utility.RequestId.Generate();
             }
 
             var resourceEntries = new RepeatedField<Api.V1.Request.CheckResourcesRequest.Types.ResourceEntry>();

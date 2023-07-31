@@ -75,7 +75,7 @@ namespace Cerbos.Sdk.Builder
             
             if (string.IsNullOrEmpty(RequestId))
             {
-                throw new Exception("RequestId is not set");
+                RequestId = Utility.RequestId.Generate();
             }
             
             var request = new Api.V1.Request.PlanResourcesRequest
