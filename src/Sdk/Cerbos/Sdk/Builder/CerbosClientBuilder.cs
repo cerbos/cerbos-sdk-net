@@ -24,7 +24,7 @@ namespace Cerbos.Sdk.Builder
             Target = target;
         }
 
-        public static CerbosClientBuilder NewInstance(string target)
+        public static CerbosClientBuilder ForTarget(string target)
         {
             return new CerbosClientBuilder(target);
         }

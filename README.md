@@ -17,7 +17,7 @@ Find out more about Cerbos at https://cerbos.dev and read the documentation at h
 ## Creating a client without TLS
 
 ```csharp
-var client = CerbosClientBuilder.NewInstance("http://localhost:3593").WithPlaintext().BuildClient();
+var client = CerbosClientBuilder.ForTarget("http://localhost:3593").WithPlaintext().BuildClient();
 ```
 
 ## CheckResources API
@@ -146,7 +146,7 @@ v1.0.0 of the SDK contains some breaking API changes and requires existing users
 `CerbosClientBuilder` has a static constructor and `hostname` is the only required parameter.
 ```csharp
 var client = CerbosClientBuilder
-    .NewInstance("http://localhost:3593")
+    .ForTarget("http://localhost:3593")
     .WithPlaintext()
     .BuildClient();
 ```
