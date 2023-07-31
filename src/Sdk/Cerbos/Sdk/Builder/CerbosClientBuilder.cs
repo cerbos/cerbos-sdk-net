@@ -62,9 +62,19 @@ namespace Cerbos.Sdk.Builder
                 throw new Exception("Target must not be empty");
             }
 
-            CallCredentials callCredentials = null;
-            SslCredentials sslCredentials = null;
+            if ((CaCertificate != null || TlsCertificate != null || TlsKey != null) && Plaintext)
+            {
+                throw new Exception("TLS certificates and plaintext must not be specified at the same time");
+            }
 
+            if (!string.IsNullOrEmpty(PlaygroundInstanceId) && Plaintext)
+            {
+                throw new Exception(
+                    "Plaintext connections are not supported by the Cerbos Playground"
+                );
+            }
+
+            CallCredentials callCredentials = null;
             if (!string.IsNullOrEmpty(PlaygroundInstanceId))
             {
                 callCredentials = CallCredentials.FromInterceptor((context, metadata) =>
@@ -73,7 +83,8 @@ namespace Cerbos.Sdk.Builder
                     return Task.CompletedTask;
                 });
             }
-            
+
+            SslCredentials sslCredentials = null;
             if (CaCertificate != null)
             {
                 if (TlsCertificate != null && TlsKey != null)
@@ -86,13 +97,6 @@ namespace Cerbos.Sdk.Builder
                 }
             }
 
-            if (Plaintext && callCredentials != null)
-            {
-                throw new Exception(
-                    "Plaintext connections are not supported by the Cerbos Playground"
-                    );
-            }
-            
             GrpcChannel channel;
             if (Plaintext)
             {
