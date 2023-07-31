@@ -59,7 +59,7 @@ namespace Cerbos.Sdk.Builder
         {
             if (string.IsNullOrEmpty(Target))
             {
-                throw new Exception(string.Format($"Invalid target [{Target}]"));
+                throw new Exception("Target must not be empty");
             }
 
             CallCredentials callCredentials = null;
@@ -89,7 +89,7 @@ namespace Cerbos.Sdk.Builder
             if (Plaintext && callCredentials != null)
             {
                 throw new Exception(
-                    "It is not possible to connect to a playground instance using credentials if connection is plaintext due to the nature of gRPC"
+                    "Plaintext connections are not supported by the Cerbos Playground"
                     );
             }
             
