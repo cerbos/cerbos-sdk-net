@@ -37,11 +37,16 @@ namespace Cerbos.Sdk
         /// <summary>
         /// Send an async request consisting of a principal, resource(s) & action(s) to see if the principal is authorized to do the action(s) on the resource(s).
         /// </summary>
-        public async Task<CheckResourcesResponse> CheckResourcesAsync(Builder.CheckResourcesRequest request)
+        public Task<CheckResourcesResponse> CheckResourcesAsync(Builder.CheckResourcesRequest request)
         {
             try
             {
-                return new CheckResourcesResponse(await CerbosServiceClient.CheckResourcesAsync(request.ToCheckResourcesRequest()));
+                return CerbosServiceClient
+                    .CheckResourcesAsync(request.ToCheckResourcesRequest())
+                    .ResponseAsync
+                    .ContinueWith(
+                        r => new CheckResourcesResponse(r.Result)
+                    );
             }
             catch (Exception e)
             {
@@ -67,11 +72,16 @@ namespace Cerbos.Sdk
         /// <summary>
         /// Obtain a query plan for performing the given action on the given resource kind.
         /// </summary>
-        public async Task<PlanResourcesResponse> PlanResourcesAsync(Builder.PlanResourcesRequest request)
+        public Task<PlanResourcesResponse> PlanResourcesAsync(Builder.PlanResourcesRequest request)
         {
             try
             {
-                return new PlanResourcesResponse(await CerbosServiceClient.PlanResourcesAsync(request.ToPlanResourcesRequest()));
+                return CerbosServiceClient
+                    .PlanResourcesAsync(request.ToPlanResourcesRequest())
+                    .ResponseAsync
+                    .ContinueWith(
+                        r => new PlanResourcesResponse(r.Result)
+                    );            
             }
             catch (Exception e)
             {
