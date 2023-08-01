@@ -3,7 +3,7 @@
 
 using System;
 
-namespace Cerbos.Sdk
+namespace Cerbos.Sdk.Utility
 {
     public static class RequestId {
         public static string Generate() {

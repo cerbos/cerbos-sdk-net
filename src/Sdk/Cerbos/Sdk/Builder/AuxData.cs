@@ -1,15 +1,17 @@
 // Copyright 2021-2023 Zenauth Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
-namespace Cerbos.Sdk.Builders
+namespace Cerbos.Sdk.Builder
 {
-    public class AuxData
+    public sealed class AuxData
     {
         private Cerbos.Api.V1.Request.AuxData A { get; }
 
         private AuxData() {
-            A = new Cerbos.Api.V1.Request.AuxData();
-            A.Jwt = new Api.V1.Request.AuxData.Types.JWT();
+            A = new Cerbos.Api.V1.Request.AuxData
+            {
+                Jwt = new Api.V1.Request.AuxData.Types.JWT()
+            };
         }
 
         public static AuxData WithJwt(string token) {
