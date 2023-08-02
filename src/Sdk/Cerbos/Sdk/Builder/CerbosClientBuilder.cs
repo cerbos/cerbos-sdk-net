@@ -19,6 +19,7 @@ namespace Cerbos.Sdk.Builder
         private StreamReader CaCertificate { get; set; }
         private StreamReader TlsCertificate { get; set; }
         private StreamReader TlsKey { get; set; }
+        private GrpcChannelOptions GrpcChannelOptions { get; set; }
 
         private CerbosClientBuilder(string target) {
             Target = target;
@@ -52,6 +53,12 @@ namespace Cerbos.Sdk.Builder
         public CerbosClientBuilder WithPlaygroundInstance(string playgroundInstanceId)
         {
             PlaygroundInstanceId = playgroundInstanceId;
+            return this;
+        }
+
+        public CerbosClientBuilder WithGrpcChannelOptions(GrpcChannelOptions grpcChannelOptions)
+        {
+            GrpcChannelOptions = grpcChannelOptions;
             return this;
         }
 
@@ -100,11 +107,18 @@ namespace Cerbos.Sdk.Builder
             GrpcChannel channel;
             if (Plaintext)
             {
-                channel = GrpcChannel.ForAddress(Target);
+                if (GrpcChannelOptions != null)
+                {
+                    channel = GrpcChannel.ForAddress(Target, GrpcChannelOptions);
+                }
+                else
+                {
+                    channel = GrpcChannel.ForAddress(Target);
+                }
             }
             else
             {
-                GrpcChannelOptions grpcChannelOptions = new GrpcChannelOptions();
+                GrpcChannelOptions grpcChannelOptions = GrpcChannelOptions ?? new GrpcChannelOptions();
                 if (callCredentials != null && sslCredentials != null)
                 {
                     grpcChannelOptions.Credentials = ChannelCredentials.Create(sslCredentials, callCredentials);
