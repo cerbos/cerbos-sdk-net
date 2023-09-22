@@ -53,6 +53,7 @@ namespace Cerbos.Sdk.UnitTests
         public void TearDown()
         {
             Task.Run(async () => await _container.StopAsync()).Wait();
+            _container.DisposeAsync();
         }
 
         [Test]
