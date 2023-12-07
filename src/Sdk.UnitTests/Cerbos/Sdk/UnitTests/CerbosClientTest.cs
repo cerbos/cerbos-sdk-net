@@ -225,15 +225,15 @@ namespace Cerbos.Sdk.UnitTests
             PlanResourcesFilter.Types.Expression.Types.Operand cond = have.Filter.Condition;
             PlanResourcesFilter.Types.Expression expr = cond.Expression;
             
-            Assert.NotNull(expr);
+            Assert.That(expr, !Is.Null);
             Assert.That(expr.Operator, Is.EqualTo("and"));
 
             PlanResourcesFilter.Types.Expression argExpr = expr.Operands[0].Expression;
-            Assert.NotNull(argExpr);
+            Assert.That(argExpr, !Is.Null);
             Assert.That(argExpr.Operator, Is.EqualTo("eq"));
             
             PlanResourcesFilter.Types.Expression argExpr1 = expr.Operands[1].Expression;
-            Assert.NotNull(argExpr1);
+            Assert.That(argExpr1, !Is.Null);
             Assert.That(argExpr1.Operator, Is.EqualTo("eq"));
         }
         
