@@ -20,6 +20,7 @@ namespace Cerbos.Sdk.Builder
         private StreamReader TlsCertificate { get; set; }
         private StreamReader TlsKey { get; set; }
         private GrpcChannelOptions GrpcChannelOptions { get; set; }
+        private Metadata Metadata { get; set; }
 
         private CerbosClientBuilder(string target) {
             Target = target;
@@ -28,6 +29,12 @@ namespace Cerbos.Sdk.Builder
         public static CerbosClientBuilder ForTarget(string target)
         {
             return new CerbosClientBuilder(target);
+        }
+
+        public CerbosClientBuilder WithMetadata(Metadata headers)
+        {
+            Metadata = headers;
+            return this;
         }
 
         public CerbosClientBuilder WithPlaintext() {
@@ -87,6 +94,14 @@ namespace Cerbos.Sdk.Builder
                 callCredentials = CallCredentials.FromInterceptor((context, metadata) =>
                 {
                     metadata.Add(PlaygroundInstanceHeader, PlaygroundInstanceId.Trim());
+                    if (Metadata != null)
+                    {
+                        foreach (var m in Metadata)
+                        {
+                            metadata.Add(m);
+                        }
+                    }
+
                     return Task.CompletedTask;
                 });
             }
