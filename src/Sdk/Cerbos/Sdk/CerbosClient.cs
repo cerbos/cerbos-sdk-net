@@ -14,10 +14,12 @@ namespace Cerbos.Sdk
     public sealed class CerbosClient
     {
         private Api.V1.Svc.CerbosService.CerbosServiceClient CerbosServiceClient { get; }
-
-        public CerbosClient(Api.V1.Svc.CerbosService.CerbosServiceClient cerbosServiceClient)
+        private readonly Metadata _metadata;
+        
+        public CerbosClient(Api.V1.Svc.CerbosService.CerbosServiceClient cerbosServiceClient, Metadata metadata = null)
         {
             CerbosServiceClient = cerbosServiceClient;
+            _metadata = metadata;
         }
 
         /// <summary>
@@ -27,7 +29,7 @@ namespace Cerbos.Sdk
         {
             try
             {
-                return new CheckResourcesResponse(CerbosServiceClient.CheckResources(request.ToCheckResourcesRequest(), headers));
+                return new CheckResourcesResponse(CerbosServiceClient.CheckResources(request.ToCheckResourcesRequest(), Utility.Metadata.Merge(_metadata, headers)));
             }
             catch (Exception e)
             {
@@ -43,7 +45,7 @@ namespace Cerbos.Sdk
             try
             {
                 return CerbosServiceClient
-                    .CheckResourcesAsync(request.ToCheckResourcesRequest(), headers)
+                    .CheckResourcesAsync(request.ToCheckResourcesRequest(), Utility.Metadata.Merge(_metadata, headers))
                     .ResponseAsync
                     .ContinueWith(
                         r => new CheckResourcesResponse(r.Result)
@@ -62,7 +64,7 @@ namespace Cerbos.Sdk
         {
             try
             {
-                return new PlanResourcesResponse(CerbosServiceClient.PlanResources(request.ToPlanResourcesRequest(), headers));
+                return new PlanResourcesResponse(CerbosServiceClient.PlanResources(request.ToPlanResourcesRequest(), Utility.Metadata.Merge(_metadata, headers)));
             }
             catch (Exception e)
             {
@@ -78,7 +80,7 @@ namespace Cerbos.Sdk
             try
             {
                 return CerbosServiceClient
-                    .PlanResourcesAsync(request.ToPlanResourcesRequest(), headers)
+                    .PlanResourcesAsync(request.ToPlanResourcesRequest(), Utility.Metadata.Merge(_metadata, headers))
                     .ResponseAsync
                     .ContinueWith(
                         r => new PlanResourcesResponse(r.Result)
