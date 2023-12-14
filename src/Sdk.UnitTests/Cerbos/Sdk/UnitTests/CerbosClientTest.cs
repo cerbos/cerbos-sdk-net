@@ -21,6 +21,8 @@ namespace Cerbos.Sdk.UnitTests
         private const string Tag = "dev";
         private const string PathToPolicies = "./../../../res/policies";
         private const string PathToConfig = "./../../../res/config";
+        private readonly Grpc.Core.Metadata _metadata = new() { { "wibble", "wobble" } };
+
         private IContainer? _container;
         
         private CerbosClient? _client;
@@ -45,8 +47,8 @@ namespace Cerbos.Sdk.UnitTests
 
             Task.Run(async () => await _container.StartAsync()).Wait();
             Thread.Sleep(3000);
-            _client = CerbosClientBuilder.ForTarget("http://127.0.0.1:3593").WithPlaintext().Build();
-            _clientPlayground = CerbosClientBuilder.ForTarget(PlaygroundHost).WithPlaygroundInstance(PlaygroundInstanceId).Build();
+            _client = CerbosClientBuilder.ForTarget("http://127.0.0.1:3593").WithMetadata(_metadata).WithPlaintext().Build();
+            _clientPlayground = CerbosClientBuilder.ForTarget(PlaygroundHost).WithMetadata(_metadata).WithPlaygroundInstance(PlaygroundInstanceId).Build();
         }
 
         [OneTimeTearDown]
@@ -81,7 +83,7 @@ namespace Cerbos.Sdk.UnitTests
                 )
                 .WithIncludeMeta(true);
             
-            var have = _client.CheckResources(request).Find("XX125");
+            var have = _client.CheckResources(request, _metadata).Find("XX125");
             Assert.That(have.IsAllowed("view:public"), Is.True);
             Assert.That(have.IsAllowed("approve"), Is.False);
             
@@ -126,7 +128,7 @@ namespace Cerbos.Sdk.UnitTests
                         .WithActions("defer")
                 );
             
-            var have = _client.CheckResources(request).Find("XX125");
+            var have = _client.CheckResources(request, _metadata).Find("XX125");
             Assert.That(have.IsAllowed("defer"), Is.True);
         }
         
@@ -175,7 +177,7 @@ namespace Cerbos.Sdk.UnitTests
                 );
 
 
-            var have = _client.CheckResources(request);
+            var have = _client.CheckResources(request, _metadata);
             var resourcexx125 = have.Find("XX125");
             Assert.That(resourcexx125.IsAllowed("view:public"), Is.True);
             Assert.That(resourcexx125.IsAllowed("defer"), Is.True);
@@ -213,7 +215,7 @@ namespace Cerbos.Sdk.UnitTests
                 .WithAction("approve");
 
             
-            var have = _client.PlanResources(request);
+            var have = _client.PlanResources(request, _metadata);
             Assert.That(have.Action, Is.EqualTo("approve"));
             Assert.That(have.PolicyVersion, Is.EqualTo("20210210"));
             Assert.That(have.ResourceKind, Is.EqualTo("leave_request"));
@@ -260,7 +262,7 @@ namespace Cerbos.Sdk.UnitTests
                 )
                 .WithAction("approve");
             
-            var have = _client.PlanResources(request);
+            var have = _client.PlanResources(request, _metadata);
             Assert.That(have.Action, Is.EqualTo("approve"));
             Assert.That(have.PolicyVersion, Is.EqualTo("20210210"));
             Assert.That(have.ResourceKind, Is.EqualTo("leave_request"));
@@ -302,7 +304,7 @@ namespace Cerbos.Sdk.UnitTests
                         .WithActions("approve", "delete")
                 );
 
-            var have = _clientPlayground.CheckResources(request).Find("XX125");
+            var have = _clientPlayground.CheckResources(request, _metadata).Find("XX125");
             Assert.That(have.IsAllowed("approve"), Is.True);
             Assert.That(have.IsAllowed("delete"), Is.True);
         }
@@ -333,7 +335,7 @@ namespace Cerbos.Sdk.UnitTests
                         .WithActions("approve", "view:public")
                 );
 
-            var have = (await _client.CheckResourcesAsync(request)).Find("XX125");
+            var have = (await _client.CheckResourcesAsync(request, _metadata)).Find("XX125");
             Assert.That(have.IsAllowed("view:public"), Is.True);
             Assert.That(have.IsAllowed("approve"), Is.False);
             

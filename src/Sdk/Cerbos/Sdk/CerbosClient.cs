@@ -4,6 +4,7 @@
 using System;
 using System.Threading.Tasks;
 using Cerbos.Sdk.Response;
+using Grpc.Core;
 
 namespace Cerbos.Sdk
 {
@@ -13,20 +14,22 @@ namespace Cerbos.Sdk
     public sealed class CerbosClient
     {
         private Api.V1.Svc.CerbosService.CerbosServiceClient CerbosServiceClient { get; }
-
-        public CerbosClient(Api.V1.Svc.CerbosService.CerbosServiceClient cerbosServiceClient)
+        private readonly Metadata _metadata;
+        
+        public CerbosClient(Api.V1.Svc.CerbosService.CerbosServiceClient cerbosServiceClient, Metadata metadata = null)
         {
             CerbosServiceClient = cerbosServiceClient;
+            _metadata = metadata;
         }
 
         /// <summary>
         /// Send a request consisting of a principal, resource(s) & action(s) to see if the principal is authorized to do the action(s) on the resource(s).
         /// </summary>
-        public CheckResourcesResponse CheckResources(Builder.CheckResourcesRequest request)
+        public CheckResourcesResponse CheckResources(Builder.CheckResourcesRequest request, Metadata headers = null)
         {
             try
             {
-                return new CheckResourcesResponse(CerbosServiceClient.CheckResources(request.ToCheckResourcesRequest()));
+                return new CheckResourcesResponse(CerbosServiceClient.CheckResources(request.ToCheckResourcesRequest(), Utility.Metadata.Merge(_metadata, headers)));
             }
             catch (Exception e)
             {
@@ -37,12 +40,12 @@ namespace Cerbos.Sdk
         /// <summary>
         /// Send an async request consisting of a principal, resource(s) & action(s) to see if the principal is authorized to do the action(s) on the resource(s).
         /// </summary>
-        public Task<CheckResourcesResponse> CheckResourcesAsync(Builder.CheckResourcesRequest request)
+        public Task<CheckResourcesResponse> CheckResourcesAsync(Builder.CheckResourcesRequest request, Metadata headers = null)
         {
             try
             {
                 return CerbosServiceClient
-                    .CheckResourcesAsync(request.ToCheckResourcesRequest())
+                    .CheckResourcesAsync(request.ToCheckResourcesRequest(), Utility.Metadata.Merge(_metadata, headers))
                     .ResponseAsync
                     .ContinueWith(
                         r => new CheckResourcesResponse(r.Result)
@@ -57,11 +60,11 @@ namespace Cerbos.Sdk
         /// <summary>
         /// Obtain a query plan for performing the given action on the given resource kind.
         /// </summary>
-        public PlanResourcesResponse PlanResources(Builder.PlanResourcesRequest request)
+        public PlanResourcesResponse PlanResources(Builder.PlanResourcesRequest request, Metadata headers = null)
         {
             try
             {
-                return new PlanResourcesResponse(CerbosServiceClient.PlanResources(request.ToPlanResourcesRequest()));
+                return new PlanResourcesResponse(CerbosServiceClient.PlanResources(request.ToPlanResourcesRequest(), Utility.Metadata.Merge(_metadata, headers)));
             }
             catch (Exception e)
             {
@@ -72,12 +75,12 @@ namespace Cerbos.Sdk
         /// <summary>
         /// Obtain a query plan for performing the given action on the given resource kind.
         /// </summary>
-        public Task<PlanResourcesResponse> PlanResourcesAsync(Builder.PlanResourcesRequest request)
+        public Task<PlanResourcesResponse> PlanResourcesAsync(Builder.PlanResourcesRequest request, Metadata headers = null)
         {
             try
             {
                 return CerbosServiceClient
-                    .PlanResourcesAsync(request.ToPlanResourcesRequest())
+                    .PlanResourcesAsync(request.ToPlanResourcesRequest(), Utility.Metadata.Merge(_metadata, headers))
                     .ResponseAsync
                     .ContinueWith(
                         r => new PlanResourcesResponse(r.Result)

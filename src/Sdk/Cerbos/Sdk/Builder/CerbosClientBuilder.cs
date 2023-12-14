@@ -3,8 +3,8 @@
 
 using System;
 using System.IO;
-using System.Threading.Tasks;
 using Grpc.Core;
+using Grpc.Core.Interceptors;
 using Grpc.Net.Client;
 
 namespace Cerbos.Sdk.Builder
@@ -20,6 +20,7 @@ namespace Cerbos.Sdk.Builder
         private StreamReader TlsCertificate { get; set; }
         private StreamReader TlsKey { get; set; }
         private GrpcChannelOptions GrpcChannelOptions { get; set; }
+        private Metadata Metadata { get; set; }
 
         private CerbosClientBuilder(string target) {
             Target = target;
@@ -28,6 +29,12 @@ namespace Cerbos.Sdk.Builder
         public static CerbosClientBuilder ForTarget(string target)
         {
             return new CerbosClientBuilder(target);
+        }
+
+        public CerbosClientBuilder WithMetadata(Metadata headers)
+        {
+            Metadata = headers;
+            return this;
         }
 
         public CerbosClientBuilder WithPlaintext() {
@@ -81,14 +88,15 @@ namespace Cerbos.Sdk.Builder
                 );
             }
 
-            CallCredentials callCredentials = null;
+            Metadata combined = Metadata;
             if (!string.IsNullOrEmpty(PlaygroundInstanceId))
-            {
-                callCredentials = CallCredentials.FromInterceptor((context, metadata) =>
-                {
-                    metadata.Add(PlaygroundInstanceHeader, PlaygroundInstanceId.Trim());
-                    return Task.CompletedTask;
-                });
+            {   
+                combined = Utility.Metadata.Merge(
+                    Metadata,
+                    new Metadata {
+                        { PlaygroundInstanceHeader, PlaygroundInstanceId.Trim() }
+                    }
+                );
             }
 
             SslCredentials sslCredentials = null;
@@ -103,39 +111,21 @@ namespace Cerbos.Sdk.Builder
                     sslCredentials = new SslCredentials(CaCertificate.ReadToEnd());   
                 }
             }
-
-            GrpcChannel channel;
-            if (Plaintext)
+            
+            var grpcChannelOptions = GrpcChannelOptions ?? new GrpcChannelOptions();
+            if (sslCredentials != null)
             {
-                if (GrpcChannelOptions != null)
-                {
-                    channel = GrpcChannel.ForAddress(Target, GrpcChannelOptions);
-                }
-                else
-                {
-                    channel = GrpcChannel.ForAddress(Target);
-                }
+                grpcChannelOptions.Credentials = sslCredentials;
             }
-            else
+            else if (!Plaintext)
             {
-                GrpcChannelOptions grpcChannelOptions = GrpcChannelOptions ?? new GrpcChannelOptions();
-                if (callCredentials != null && sslCredentials != null)
-                {
-                    grpcChannelOptions.Credentials = ChannelCredentials.Create(sslCredentials, callCredentials);
-                }
-                else if (sslCredentials != null)
-                {
-                    grpcChannelOptions.Credentials = sslCredentials;
-                }
-                else if (callCredentials != null)
-                {
-                    grpcChannelOptions.Credentials = ChannelCredentials.Create(ChannelCredentials.SecureSsl, callCredentials);
-                }
-                
-                channel = GrpcChannel.ForAddress(Target, grpcChannelOptions);
+                grpcChannelOptions.Credentials = ChannelCredentials.SecureSsl;
             }
 
-            return new CerbosClient(new Api.V1.Svc.CerbosService.CerbosServiceClient(channel));
+            var grpcChannel = GrpcChannel
+                .ForAddress(Target, grpcChannelOptions)
+                .Intercept();
+            return new CerbosClient(new Api.V1.Svc.CerbosService.CerbosServiceClient(grpcChannel), combined);
         }
     }
 }
