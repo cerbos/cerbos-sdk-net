@@ -25,53 +25,61 @@ namespace Cerbos.Api.V1.Audit {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChtjZXJib3MvYXVkaXQvdjEvYXVkaXQucHJvdG8SD2NlcmJvcy5hdWRpdC52",
-            "MRodY2VyYm9zL2VuZ2luZS92MS9lbmdpbmUucHJvdG8aH2dvb2dsZS9wcm90",
-            "b2J1Zi90aW1lc3RhbXAucHJvdG8i7AIKDkFjY2Vzc0xvZ0VudHJ5EhcKB2Nh",
-            "bGxfaWQYASABKAlSBmNhbGxJZBI4Cgl0aW1lc3RhbXAYAiABKAsyGi5nb29n",
-            "bGUucHJvdG9idWYuVGltZXN0YW1wUgl0aW1lc3RhbXASKQoEcGVlchgDIAEo",
-            "CzIVLmNlcmJvcy5hdWRpdC52MS5QZWVyUgRwZWVyEkkKCG1ldGFkYXRhGAQg",
-            "AygLMi0uY2VyYm9zLmF1ZGl0LnYxLkFjY2Vzc0xvZ0VudHJ5Lk1ldGFkYXRh",
-            "RW50cnlSCG1ldGFkYXRhEhYKBm1ldGhvZBgFIAEoCVIGbWV0aG9kEh8KC3N0",
-            "YXR1c19jb2RlGAYgASgNUgpzdGF0dXNDb2RlGlgKDU1ldGFkYXRhRW50cnkS",
-            "EAoDa2V5GAEgASgJUgNrZXkSMQoFdmFsdWUYAiABKAsyGy5jZXJib3MuYXVk",
-            "aXQudjEuTWV0YVZhbHVlc1IFdmFsdWU6AjgBIrgHChBEZWNpc2lvbkxvZ0Vu",
-            "dHJ5EhcKB2NhbGxfaWQYASABKAlSBmNhbGxJZBI4Cgl0aW1lc3RhbXAYAiAB",
-            "KAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl0aW1lc3RhbXASKQoE",
-            "cGVlchgDIAEoCzIVLmNlcmJvcy5hdWRpdC52MS5QZWVyUgRwZWVyEjQKBmlu",
-            "cHV0cxgEIAMoCzIcLmNlcmJvcy5lbmdpbmUudjEuQ2hlY2tJbnB1dFIGaW5w",
-            "dXRzEjcKB291dHB1dHMYBSADKAsyHS5jZXJib3MuZW5naW5lLnYxLkNoZWNr",
-            "T3V0cHV0UgdvdXRwdXRzEhQKBWVycm9yGAYgASgJUgVlcnJvchJbCg9jaGVj",
-            "a19yZXNvdXJjZXMYByABKAsyMC5jZXJib3MuYXVkaXQudjEuRGVjaXNpb25M",
-            "b2dFbnRyeS5DaGVja1Jlc291cmNlc0gAUg5jaGVja1Jlc291cmNlcxJYCg5w",
-            "bGFuX3Jlc291cmNlcxgIIAEoCzIvLmNlcmJvcy5hdWRpdC52MS5EZWNpc2lv",
-            "bkxvZ0VudHJ5LlBsYW5SZXNvdXJjZXNIAFINcGxhblJlc291cmNlcxJLCght",
-            "ZXRhZGF0YRgPIAMoCzIvLmNlcmJvcy5hdWRpdC52MS5EZWNpc2lvbkxvZ0Vu",
-            "dHJ5Lk1ldGFkYXRhRW50cnlSCG1ldGFkYXRhGpUBCg5DaGVja1Jlc291cmNl",
-            "cxI0CgZpbnB1dHMYASADKAsyHC5jZXJib3MuZW5naW5lLnYxLkNoZWNrSW5w",
-            "dXRSBmlucHV0cxI3CgdvdXRwdXRzGAIgAygLMh0uY2VyYm9zLmVuZ2luZS52",
-            "MS5DaGVja091dHB1dFIHb3V0cHV0cxIUCgVlcnJvchgDIAEoCVIFZXJyb3Ia",
-            "oAEKDVBsYW5SZXNvdXJjZXMSOgoFaW5wdXQYASABKAsyJC5jZXJib3MuZW5n",
-            "aW5lLnYxLlBsYW5SZXNvdXJjZXNJbnB1dFIFaW5wdXQSPQoGb3V0cHV0GAIg",
-            "ASgLMiUuY2VyYm9zLmVuZ2luZS52MS5QbGFuUmVzb3VyY2VzT3V0cHV0UgZv",
-            "dXRwdXQSFAoFZXJyb3IYAyABKAlSBWVycm9yGlgKDU1ldGFkYXRhRW50cnkS",
-            "EAoDa2V5GAEgASgJUgNrZXkSMQoFdmFsdWUYAiABKAsyGy5jZXJib3MuYXVk",
-            "aXQudjEuTWV0YVZhbHVlc1IFdmFsdWU6AjgBQggKBm1ldGhvZCIkCgpNZXRh",
-            "VmFsdWVzEhYKBnZhbHVlcxgBIAMoCVIGdmFsdWVzIoEBCgRQZWVyEhgKB2Fk",
-            "ZHJlc3MYASABKAlSB2FkZHJlc3MSGwoJYXV0aF9pbmZvGAIgASgJUghhdXRo",
-            "SW5mbxIdCgp1c2VyX2FnZW50GAMgASgJUgl1c2VyQWdlbnQSIwoNZm9yd2Fy",
-            "ZGVkX2ZvchgEIAEoCVIMZm9yd2FyZGVkRm9yQmsKF2Rldi5jZXJib3MuYXBp",
-            "LnYxLmF1ZGl0WjpnaXRodWIuY29tL2NlcmJvcy9jZXJib3MvYXBpL2dlbnBi",
-            "L2NlcmJvcy9hdWRpdC92MTthdWRpdHYxqgITQ2VyYm9zLkFwaS5WMS5BdWRp",
-            "dGIGcHJvdG8z"));
+            "MRodY2VyYm9zL2VuZ2luZS92MS9lbmdpbmUucHJvdG8aHWNlcmJvcy9wb2xp",
+            "Y3kvdjEvcG9saWN5LnByb3RvGh9nb29nbGUvcHJvdG9idWYvdGltZXN0YW1w",
+            "LnByb3RvIuwCCg5BY2Nlc3NMb2dFbnRyeRIXCgdjYWxsX2lkGAEgASgJUgZj",
+            "YWxsSWQSOAoJdGltZXN0YW1wGAIgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRp",
+            "bWVzdGFtcFIJdGltZXN0YW1wEikKBHBlZXIYAyABKAsyFS5jZXJib3MuYXVk",
+            "aXQudjEuUGVlclIEcGVlchJJCghtZXRhZGF0YRgEIAMoCzItLmNlcmJvcy5h",
+            "dWRpdC52MS5BY2Nlc3NMb2dFbnRyeS5NZXRhZGF0YUVudHJ5UghtZXRhZGF0",
+            "YRIWCgZtZXRob2QYBSABKAlSBm1ldGhvZBIfCgtzdGF0dXNfY29kZRgGIAEo",
+            "DVIKc3RhdHVzQ29kZRpYCg1NZXRhZGF0YUVudHJ5EhAKA2tleRgBIAEoCVID",
+            "a2V5EjEKBXZhbHVlGAIgASgLMhsuY2VyYm9zLmF1ZGl0LnYxLk1ldGFWYWx1",
+            "ZXNSBXZhbHVlOgI4ASL2BwoQRGVjaXNpb25Mb2dFbnRyeRIXCgdjYWxsX2lk",
+            "GAEgASgJUgZjYWxsSWQSOAoJdGltZXN0YW1wGAIgASgLMhouZ29vZ2xlLnBy",
+            "b3RvYnVmLlRpbWVzdGFtcFIJdGltZXN0YW1wEikKBHBlZXIYAyABKAsyFS5j",
+            "ZXJib3MuYXVkaXQudjEuUGVlclIEcGVlchI0CgZpbnB1dHMYBCADKAsyHC5j",
+            "ZXJib3MuZW5naW5lLnYxLkNoZWNrSW5wdXRSBmlucHV0cxI3CgdvdXRwdXRz",
+            "GAUgAygLMh0uY2VyYm9zLmVuZ2luZS52MS5DaGVja091dHB1dFIHb3V0cHV0",
+            "cxIUCgVlcnJvchgGIAEoCVIFZXJyb3ISWwoPY2hlY2tfcmVzb3VyY2VzGAcg",
+            "ASgLMjAuY2VyYm9zLmF1ZGl0LnYxLkRlY2lzaW9uTG9nRW50cnkuQ2hlY2tS",
+            "ZXNvdXJjZXNIAFIOY2hlY2tSZXNvdXJjZXMSWAoOcGxhbl9yZXNvdXJjZXMY",
+            "CCABKAsyLy5jZXJib3MuYXVkaXQudjEuRGVjaXNpb25Mb2dFbnRyeS5QbGFu",
+            "UmVzb3VyY2VzSABSDXBsYW5SZXNvdXJjZXMSSwoIbWV0YWRhdGEYDyADKAsy",
+            "Ly5jZXJib3MuYXVkaXQudjEuRGVjaXNpb25Mb2dFbnRyeS5NZXRhZGF0YUVu",
+            "dHJ5UghtZXRhZGF0YRI8CgthdWRpdF90cmFpbBgQIAEoCzIbLmNlcmJvcy5h",
+            "dWRpdC52MS5BdWRpdFRyYWlsUgphdWRpdFRyYWlsGpUBCg5DaGVja1Jlc291",
+            "cmNlcxI0CgZpbnB1dHMYASADKAsyHC5jZXJib3MuZW5naW5lLnYxLkNoZWNr",
+            "SW5wdXRSBmlucHV0cxI3CgdvdXRwdXRzGAIgAygLMh0uY2VyYm9zLmVuZ2lu",
+            "ZS52MS5DaGVja091dHB1dFIHb3V0cHV0cxIUCgVlcnJvchgDIAEoCVIFZXJy",
+            "b3IaoAEKDVBsYW5SZXNvdXJjZXMSOgoFaW5wdXQYASABKAsyJC5jZXJib3Mu",
+            "ZW5naW5lLnYxLlBsYW5SZXNvdXJjZXNJbnB1dFIFaW5wdXQSPQoGb3V0cHV0",
+            "GAIgASgLMiUuY2VyYm9zLmVuZ2luZS52MS5QbGFuUmVzb3VyY2VzT3V0cHV0",
+            "UgZvdXRwdXQSFAoFZXJyb3IYAyABKAlSBWVycm9yGlgKDU1ldGFkYXRhRW50",
+            "cnkSEAoDa2V5GAEgASgJUgNrZXkSMQoFdmFsdWUYAiABKAsyGy5jZXJib3Mu",
+            "YXVkaXQudjEuTWV0YVZhbHVlc1IFdmFsdWU6AjgBQggKBm1ldGhvZCIkCgpN",
+            "ZXRhVmFsdWVzEhYKBnZhbHVlcxgBIAMoCVIGdmFsdWVzIoEBCgRQZWVyEhgK",
+            "B2FkZHJlc3MYASABKAlSB2FkZHJlc3MSGwoJYXV0aF9pbmZvGAIgASgJUghh",
+            "dXRoSW5mbxIdCgp1c2VyX2FnZW50GAMgASgJUgl1c2VyQWdlbnQSIwoNZm9y",
+            "d2FyZGVkX2ZvchgEIAEoCVIMZm9yd2FyZGVkRm9yItkBCgpBdWRpdFRyYWls",
+            "EmEKEmVmZmVjdGl2ZV9wb2xpY2llcxgBIAMoCzIyLmNlcmJvcy5hdWRpdC52",
+            "MS5BdWRpdFRyYWlsLkVmZmVjdGl2ZVBvbGljaWVzRW50cnlSEWVmZmVjdGl2",
+            "ZVBvbGljaWVzGmgKFkVmZmVjdGl2ZVBvbGljaWVzRW50cnkSEAoDa2V5GAEg",
+            "ASgJUgNrZXkSOAoFdmFsdWUYAiABKAsyIi5jZXJib3MucG9saWN5LnYxLlNv",
+            "dXJjZUF0dHJpYnV0ZXNSBXZhbHVlOgI4AUJrChdkZXYuY2VyYm9zLmFwaS52",
+            "MS5hdWRpdFo6Z2l0aHViLmNvbS9jZXJib3MvY2VyYm9zL2FwaS9nZW5wYi9j",
+            "ZXJib3MvYXVkaXQvdjE7YXVkaXR2MaoCE0NlcmJvcy5BcGkuVjEuQXVkaXRi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Cerbos.Api.V1.Engine.EngineReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Cerbos.Api.V1.Engine.EngineReflection.Descriptor, global::Cerbos.Api.V1.Policy.PolicyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Audit.AccessLogEntry), global::Cerbos.Api.V1.Audit.AccessLogEntry.Parser, new[]{ "CallId", "Timestamp", "Peer", "Metadata", "Method", "StatusCode" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Audit.DecisionLogEntry), global::Cerbos.Api.V1.Audit.DecisionLogEntry.Parser, new[]{ "CallId", "Timestamp", "Peer", "Inputs", "Outputs", "Error", "CheckResources", "PlanResources", "Metadata" }, new[]{ "Method" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Audit.DecisionLogEntry.Types.CheckResources), global::Cerbos.Api.V1.Audit.DecisionLogEntry.Types.CheckResources.Parser, new[]{ "Inputs", "Outputs", "Error" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Audit.DecisionLogEntry), global::Cerbos.Api.V1.Audit.DecisionLogEntry.Parser, new[]{ "CallId", "Timestamp", "Peer", "Inputs", "Outputs", "Error", "CheckResources", "PlanResources", "Metadata", "AuditTrail" }, new[]{ "Method" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Audit.DecisionLogEntry.Types.CheckResources), global::Cerbos.Api.V1.Audit.DecisionLogEntry.Types.CheckResources.Parser, new[]{ "Inputs", "Outputs", "Error" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Audit.DecisionLogEntry.Types.PlanResources), global::Cerbos.Api.V1.Audit.DecisionLogEntry.Types.PlanResources.Parser, new[]{ "Input", "Output", "Error" }, null, null, null, null),
             null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Audit.MetaValues), global::Cerbos.Api.V1.Audit.MetaValues.Parser, new[]{ "Values" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Audit.Peer), global::Cerbos.Api.V1.Audit.Peer.Parser, new[]{ "Address", "AuthInfo", "UserAgent", "ForwardedFor" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Audit.Peer), global::Cerbos.Api.V1.Audit.Peer.Parser, new[]{ "Address", "AuthInfo", "UserAgent", "ForwardedFor" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Audit.AuditTrail), global::Cerbos.Api.V1.Audit.AuditTrail.Parser, new[]{ "EffectivePolicies" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -500,6 +508,7 @@ namespace Cerbos.Api.V1.Audit {
       outputs_ = other.outputs_.Clone();
       error_ = other.error_;
       metadata_ = other.metadata_.Clone();
+      auditTrail_ = other.auditTrail_ != null ? other.auditTrail_.Clone() : null;
       switch (other.MethodCase) {
         case MethodOneofCase.CheckResources:
           CheckResources = other.CheckResources.Clone();
@@ -632,6 +641,18 @@ namespace Cerbos.Api.V1.Audit {
       get { return metadata_; }
     }
 
+    /// <summary>Field number for the "audit_trail" field.</summary>
+    public const int AuditTrailFieldNumber = 16;
+    private global::Cerbos.Api.V1.Audit.AuditTrail auditTrail_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Cerbos.Api.V1.Audit.AuditTrail AuditTrail {
+      get { return auditTrail_; }
+      set {
+        auditTrail_ = value;
+      }
+    }
+
     private object method_;
     /// <summary>Enum of possible cases for the "method" oneof.</summary>
     public enum MethodOneofCase {
@@ -677,6 +698,7 @@ namespace Cerbos.Api.V1.Audit {
       if (!object.Equals(CheckResources, other.CheckResources)) return false;
       if (!object.Equals(PlanResources, other.PlanResources)) return false;
       if (!Metadata.Equals(other.Metadata)) return false;
+      if (!object.Equals(AuditTrail, other.AuditTrail)) return false;
       if (MethodCase != other.MethodCase) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -694,6 +716,7 @@ namespace Cerbos.Api.V1.Audit {
       if (methodCase_ == MethodOneofCase.CheckResources) hash ^= CheckResources.GetHashCode();
       if (methodCase_ == MethodOneofCase.PlanResources) hash ^= PlanResources.GetHashCode();
       hash ^= Metadata.GetHashCode();
+      if (auditTrail_ != null) hash ^= AuditTrail.GetHashCode();
       hash ^= (int) methodCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -740,6 +763,10 @@ namespace Cerbos.Api.V1.Audit {
         output.WriteMessage(PlanResources);
       }
       metadata_.WriteTo(output, _map_metadata_codec);
+      if (auditTrail_ != null) {
+        output.WriteRawTag(130, 1);
+        output.WriteMessage(AuditTrail);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -777,6 +804,10 @@ namespace Cerbos.Api.V1.Audit {
         output.WriteMessage(PlanResources);
       }
       metadata_.WriteTo(ref output, _map_metadata_codec);
+      if (auditTrail_ != null) {
+        output.WriteRawTag(130, 1);
+        output.WriteMessage(AuditTrail);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -808,6 +839,9 @@ namespace Cerbos.Api.V1.Audit {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(PlanResources);
       }
       size += metadata_.CalculateSize(_map_metadata_codec);
+      if (auditTrail_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(AuditTrail);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -841,6 +875,12 @@ namespace Cerbos.Api.V1.Audit {
         Error = other.Error;
       }
       metadata_.MergeFrom(other.metadata_);
+      if (other.auditTrail_ != null) {
+        if (auditTrail_ == null) {
+          AuditTrail = new global::Cerbos.Api.V1.Audit.AuditTrail();
+        }
+        AuditTrail.MergeFrom(other.AuditTrail);
+      }
       switch (other.MethodCase) {
         case MethodOneofCase.CheckResources:
           if (CheckResources == null) {
@@ -923,6 +963,13 @@ namespace Cerbos.Api.V1.Audit {
             metadata_.AddEntriesFrom(input, _map_metadata_codec);
             break;
           }
+          case 130: {
+            if (auditTrail_ == null) {
+              AuditTrail = new global::Cerbos.Api.V1.Audit.AuditTrail();
+            }
+            input.ReadMessage(AuditTrail);
+            break;
+          }
         }
       }
     #endif
@@ -988,6 +1035,13 @@ namespace Cerbos.Api.V1.Audit {
           }
           case 122: {
             metadata_.AddEntriesFrom(ref input, _map_metadata_codec);
+            break;
+          }
+          case 130: {
+            if (auditTrail_ == null) {
+              AuditTrail = new global::Cerbos.Api.V1.Audit.AuditTrail();
+            }
+            input.ReadMessage(AuditTrail);
             break;
           }
         }
@@ -1996,6 +2050,184 @@ namespace Cerbos.Api.V1.Audit {
           }
           case 34: {
             ForwardedFor = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class AuditTrail : pb::IMessage<AuditTrail>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<AuditTrail> _parser = new pb::MessageParser<AuditTrail>(() => new AuditTrail());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<AuditTrail> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Cerbos.Api.V1.Audit.AuditReflection.Descriptor.MessageTypes[4]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AuditTrail() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AuditTrail(AuditTrail other) : this() {
+      effectivePolicies_ = other.effectivePolicies_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AuditTrail Clone() {
+      return new AuditTrail(this);
+    }
+
+    /// <summary>Field number for the "effective_policies" field.</summary>
+    public const int EffectivePoliciesFieldNumber = 1;
+    private static readonly pbc::MapField<string, global::Cerbos.Api.V1.Policy.SourceAttributes>.Codec _map_effectivePolicies_codec
+        = new pbc::MapField<string, global::Cerbos.Api.V1.Policy.SourceAttributes>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::Cerbos.Api.V1.Policy.SourceAttributes.Parser), 10);
+    private readonly pbc::MapField<string, global::Cerbos.Api.V1.Policy.SourceAttributes> effectivePolicies_ = new pbc::MapField<string, global::Cerbos.Api.V1.Policy.SourceAttributes>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<string, global::Cerbos.Api.V1.Policy.SourceAttributes> EffectivePolicies {
+      get { return effectivePolicies_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as AuditTrail);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(AuditTrail other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!EffectivePolicies.Equals(other.EffectivePolicies)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= EffectivePolicies.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      effectivePolicies_.WriteTo(output, _map_effectivePolicies_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      effectivePolicies_.WriteTo(ref output, _map_effectivePolicies_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += effectivePolicies_.CalculateSize(_map_effectivePolicies_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(AuditTrail other) {
+      if (other == null) {
+        return;
+      }
+      effectivePolicies_.MergeFrom(other.effectivePolicies_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            effectivePolicies_.AddEntriesFrom(input, _map_effectivePolicies_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            effectivePolicies_.AddEntriesFrom(ref input, _map_effectivePolicies_codec);
             break;
           }
         }

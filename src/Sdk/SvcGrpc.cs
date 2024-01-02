@@ -3,7 +3,7 @@
 //     source: cerbos/svc/v1/svc.proto
 // </auto-generated>
 // Original file comments:
-// Copyright 2021-2023 Zenauth Ltd.
+// Copyright 2021-2024 Zenauth Ltd.
 // SPDX-License-Identifier: Apache-2.0
 //
 #pragma warning disable 0414, 1591, 8981

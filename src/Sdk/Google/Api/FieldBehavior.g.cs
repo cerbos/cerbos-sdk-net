@@ -25,16 +25,16 @@ namespace Google.Api {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch9nb29nbGUvYXBpL2ZpZWxkX2JlaGF2aW9yLnByb3RvEgpnb29nbGUuYXBp",
-            "GiBnb29nbGUvcHJvdG9idWYvZGVzY3JpcHRvci5wcm90byqmAQoNRmllbGRC",
+            "GiBnb29nbGUvcHJvdG9idWYvZGVzY3JpcHRvci5wcm90byq2AQoNRmllbGRC",
             "ZWhhdmlvchIeChpGSUVMRF9CRUhBVklPUl9VTlNQRUNJRklFRBAAEgwKCE9Q",
             "VElPTkFMEAESDAoIUkVRVUlSRUQQAhIPCgtPVVRQVVRfT05MWRADEg4KCklO",
             "UFVUX09OTFkQBBINCglJTU1VVEFCTEUQBRISCg5VTk9SREVSRURfTElTVBAG",
-            "EhUKEU5PTl9FTVBUWV9ERUZBVUxUEAc6YAoOZmllbGRfYmVoYXZpb3ISHS5n",
-            "b29nbGUucHJvdG9idWYuRmllbGRPcHRpb25zGJwIIAMoDjIZLmdvb2dsZS5h",
-            "cGkuRmllbGRCZWhhdmlvclINZmllbGRCZWhhdmlvckJwCg5jb20uZ29vZ2xl",
-            "LmFwaUISRmllbGRCZWhhdmlvclByb3RvUAFaQWdvb2dsZS5nb2xhbmcub3Jn",
-            "L2dlbnByb3RvL2dvb2dsZWFwaXMvYXBpL2Fubm90YXRpb25zO2Fubm90YXRp",
-            "b25zogIER0FQSWIGcHJvdG8z"));
+            "EhUKEU5PTl9FTVBUWV9ERUZBVUxUEAcSDgoKSURFTlRJRklFUhAIOmAKDmZp",
+            "ZWxkX2JlaGF2aW9yEh0uZ29vZ2xlLnByb3RvYnVmLkZpZWxkT3B0aW9ucxic",
+            "CCADKA4yGS5nb29nbGUuYXBpLkZpZWxkQmVoYXZpb3JSDWZpZWxkQmVoYXZp",
+            "b3JCcAoOY29tLmdvb2dsZS5hcGlCEkZpZWxkQmVoYXZpb3JQcm90b1ABWkFn",
+            "b29nbGUuZ29sYW5nLm9yZy9nZW5wcm90by9nb29nbGVhcGlzL2FwaS9hbm5v",
+            "dGF0aW9uczthbm5vdGF0aW9uc6ICBEdBUEliBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Google.Api.FieldBehavior), }, new pb::Extension[] { FieldBehaviorExtensions.FieldBehavior }, null));
@@ -121,6 +121,21 @@ namespace Google.Api {
     /// non-empty value to expect.
     /// </summary>
     [pbr::OriginalName("NON_EMPTY_DEFAULT")] NonEmptyDefault = 7,
+    /// <summary>
+    /// Denotes that the field in a resource (a message annotated with
+    /// google.api.resource) is used in the resource name to uniquely identify the
+    /// resource. For AIP-compliant APIs, this should only be applied to the
+    /// `name` field on the resource.
+    ///
+    /// This behavior should not be applied to references to other resources within
+    /// the message.
+    ///
+    /// The identifier field of resources often have different field behavior
+    /// depending on the request it is embedded in (e.g. for Create methods name
+    /// is optional and unused, while for Update methods it is required). Instead
+    /// of method-specific annotations, only `IDENTIFIER` is required.
+    /// </summary>
+    [pbr::OriginalName("IDENTIFIER")] Identifier = 8,
   }
 
   #endregion
