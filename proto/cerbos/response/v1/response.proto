@@ -1,4 +1,4 @@
-// Copyright 2021-2023 Zenauth Ltd.
+// Copyright 2021-2024 Zenauth Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 syntax = "proto3";
@@ -48,7 +48,6 @@ message PlanResourcesResponse {
   string resource_kind = 3 [(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
     description: "Resource kind."
     example: "\"album:object\""
-    pattern: "^[[:alpha:]][[:word:]\\@\\.\\-]*(\\:[[:alpha:]][[:word:]\\@\\.\\-]*)*$"
   }];
 
   string policy_version = 4 [(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
@@ -61,6 +60,8 @@ message PlanResourcesResponse {
   Meta meta = 6 [(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {description: "Optional metadata about the request evaluation process"}];
 
   repeated cerbos.schema.v1.ValidationError validation_errors = 7 [(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {description: "List of validation errors (if schema validation is enabled)"}];
+
+  string cerbos_call_id = 8 [(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {description: "Audit log call ID associated with this request"}];
 }
 
 // Deprecated. See CheckResourcesResponse.
@@ -166,7 +167,6 @@ message CheckResourcesResponse {
       string kind = 2 [(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
         description: "Name of the resource kind being accessed.",
         example: "\"album:photo\"",
-        pattern: "^[[:alpha:]][[:word:]\\@\\.\\-]*(\\:[[:alpha:]][[:word:]\\@\\.\\-]*)*$"
       }];
       string policy_version = 3 [(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
         description: "The policy version to use to evaluate this request. If not specified, will default to the server-configured default version."
@@ -233,6 +233,7 @@ message CheckResourcesResponse {
     description: "Result for each resource"
     example: "[{\"resource\": {\"Id\":\"XX125\", \"kind\":\"album:object\"}, \"actions\":{\"view\":\"EFFECT_ALLOW\",\"comment\":\"EFFECT_DENY\"}}]"
   }];
+  string cerbos_call_id = 3 [(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {description: "Audit log call ID associated with this request"}];
 }
 
 message PlaygroundFailure {
