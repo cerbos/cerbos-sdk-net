@@ -9,8 +9,8 @@ deps:
   - remote: buf.build
     owner: cerbos
     repository: cerbos-api
-    commit: f68054407be34c5f9de72b58253186b2
-    digest: shake256:34807b5aa37ddd25985d781c0ff91f4e6c130eb265d84f785f2e23185660a8192cb7107fad21c1bc51ed92b04ab59ce1ef036ea459d058de01a1907f4ce6aec3
+    commit: 75004b0044b24782a2000dbf4f395cd1
+    digest: shake256:e11642fbe5550cae550115f8a857a89726d373f79766d82bcaea41c88d3436c12fb953d7af5a4eed18e5feffd3ea80ae072ca42f70aceea019eb046be09d833d
   - remote: buf.build
     owner: googleapis
     repository: googleapis
