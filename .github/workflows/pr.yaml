@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Setup Buf
-        uses: bufbuild/buf-setup-action@v1.29.0
+        uses: bufbuild/buf-setup-action@v1.30.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -39,7 +39,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Setup Buf
-        uses: bufbuild/buf-setup-action@v1.29.0
+        uses: bufbuild/buf-setup-action@v1.30.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
