@@ -357,6 +357,10 @@ namespace Cerbos.Api.V1.Svc {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::Cerbos.Api.V1.Response.AddOrUpdatePolicyResponse> __Marshaller_cerbos_response_v1_AddOrUpdatePolicyResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Cerbos.Api.V1.Response.AddOrUpdatePolicyResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Cerbos.Api.V1.Request.InspectPoliciesRequest> __Marshaller_cerbos_request_v1_InspectPoliciesRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Cerbos.Api.V1.Request.InspectPoliciesRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Cerbos.Api.V1.Response.InspectPoliciesResponse> __Marshaller_cerbos_response_v1_InspectPoliciesResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Cerbos.Api.V1.Response.InspectPoliciesResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::Cerbos.Api.V1.Request.ListPoliciesRequest> __Marshaller_cerbos_request_v1_ListPoliciesRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Cerbos.Api.V1.Request.ListPoliciesRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::Cerbos.Api.V1.Response.ListPoliciesResponse> __Marshaller_cerbos_response_v1_ListPoliciesResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Cerbos.Api.V1.Response.ListPoliciesResponse.Parser));
@@ -404,6 +408,14 @@ namespace Cerbos.Api.V1.Svc {
         "AddOrUpdatePolicy",
         __Marshaller_cerbos_request_v1_AddOrUpdatePolicyRequest,
         __Marshaller_cerbos_response_v1_AddOrUpdatePolicyResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::Cerbos.Api.V1.Request.InspectPoliciesRequest, global::Cerbos.Api.V1.Response.InspectPoliciesResponse> __Method_InspectPolicies = new grpc::Method<global::Cerbos.Api.V1.Request.InspectPoliciesRequest, global::Cerbos.Api.V1.Response.InspectPoliciesResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "InspectPolicies",
+        __Marshaller_cerbos_request_v1_InspectPoliciesRequest,
+        __Marshaller_cerbos_response_v1_InspectPoliciesResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::Cerbos.Api.V1.Request.ListPoliciesRequest, global::Cerbos.Api.V1.Response.ListPoliciesResponse> __Method_ListPolicies = new grpc::Method<global::Cerbos.Api.V1.Request.ListPoliciesRequest, global::Cerbos.Api.V1.Response.ListPoliciesResponse>(
@@ -497,6 +509,12 @@ namespace Cerbos.Api.V1.Svc {
     {
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::Cerbos.Api.V1.Response.AddOrUpdatePolicyResponse> AddOrUpdatePolicy(global::Cerbos.Api.V1.Request.AddOrUpdatePolicyRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::Cerbos.Api.V1.Response.InspectPoliciesResponse> InspectPolicies(global::Cerbos.Api.V1.Request.InspectPoliciesRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -609,6 +627,26 @@ namespace Cerbos.Api.V1.Svc {
       public virtual grpc::AsyncUnaryCall<global::Cerbos.Api.V1.Response.AddOrUpdatePolicyResponse> AddOrUpdatePolicyAsync(global::Cerbos.Api.V1.Request.AddOrUpdatePolicyRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_AddOrUpdatePolicy, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Cerbos.Api.V1.Response.InspectPoliciesResponse InspectPolicies(global::Cerbos.Api.V1.Request.InspectPoliciesRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return InspectPolicies(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Cerbos.Api.V1.Response.InspectPoliciesResponse InspectPolicies(global::Cerbos.Api.V1.Request.InspectPoliciesRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_InspectPolicies, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Cerbos.Api.V1.Response.InspectPoliciesResponse> InspectPoliciesAsync(global::Cerbos.Api.V1.Request.InspectPoliciesRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return InspectPoliciesAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Cerbos.Api.V1.Response.InspectPoliciesResponse> InspectPoliciesAsync(global::Cerbos.Api.V1.Request.InspectPoliciesRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_InspectPolicies, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::Cerbos.Api.V1.Response.ListPoliciesResponse ListPolicies(global::Cerbos.Api.V1.Request.ListPoliciesRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
@@ -815,6 +853,7 @@ namespace Cerbos.Api.V1.Svc {
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
           .AddMethod(__Method_AddOrUpdatePolicy, serviceImpl.AddOrUpdatePolicy)
+          .AddMethod(__Method_InspectPolicies, serviceImpl.InspectPolicies)
           .AddMethod(__Method_ListPolicies, serviceImpl.ListPolicies)
           .AddMethod(__Method_GetPolicy, serviceImpl.GetPolicy)
           .AddMethod(__Method_DisablePolicy, serviceImpl.DisablePolicy)
@@ -835,6 +874,7 @@ namespace Cerbos.Api.V1.Svc {
     public static void BindService(grpc::ServiceBinderBase serviceBinder, CerbosAdminServiceBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_AddOrUpdatePolicy, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Cerbos.Api.V1.Request.AddOrUpdatePolicyRequest, global::Cerbos.Api.V1.Response.AddOrUpdatePolicyResponse>(serviceImpl.AddOrUpdatePolicy));
+      serviceBinder.AddMethod(__Method_InspectPolicies, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Cerbos.Api.V1.Request.InspectPoliciesRequest, global::Cerbos.Api.V1.Response.InspectPoliciesResponse>(serviceImpl.InspectPolicies));
       serviceBinder.AddMethod(__Method_ListPolicies, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Cerbos.Api.V1.Request.ListPoliciesRequest, global::Cerbos.Api.V1.Response.ListPoliciesResponse>(serviceImpl.ListPolicies));
       serviceBinder.AddMethod(__Method_GetPolicy, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Cerbos.Api.V1.Request.GetPolicyRequest, global::Cerbos.Api.V1.Response.GetPolicyResponse>(serviceImpl.GetPolicy));
       serviceBinder.AddMethod(__Method_DisablePolicy, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Cerbos.Api.V1.Request.DisablePolicyRequest, global::Cerbos.Api.V1.Response.DisablePolicyResponse>(serviceImpl.DisablePolicy));
