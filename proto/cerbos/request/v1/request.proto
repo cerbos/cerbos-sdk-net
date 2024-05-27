@@ -445,14 +445,14 @@ message AddOrUpdatePolicyRequest {
   repeated cerbos.policy.v1.Policy policies = 1 [
     (buf.validate.field).repeated = {
       min_items: 1,
-      max_items: 10
+      max_items: 100
     },
     (buf.validate.field).required = true,
     (google.api.field_behavior) = REQUIRED,
     (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
       description: "List of policies."
       min_items: 1
-      max_items: 10
+      max_items: 100
     }
   ];
 }
@@ -554,6 +554,19 @@ message ListPoliciesRequest {
     (google.api.field_behavior) = OPTIONAL,
     (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {description: "Filter policies by version with regexp"}
   ];
+  repeated string policy_id = 5 [
+    (google.api.field_behavior) = OPTIONAL,
+    (buf.validate.field).repeated = {
+      max_items: 25,
+      items {
+        string {min_len: 1}
+      }
+    },
+    (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
+      description: "For blob, disk, git stores use file name (<filename>.yaml). For mysql, postgres, sqlite3 use id (<kind>.<name>.<version>) of the policy"
+      example: "\"principal.sarah.vdefault\""
+    }
+  ];
 }
 
 message GetPolicyRequest {
@@ -565,12 +578,8 @@ message GetPolicyRequest {
     (buf.validate.field).repeated = {
       unique: true,
       min_items: 1,
-      max_items: 25,
       items {
-        string {
-          min_len: 1,
-          max_len: 1280
-        }
+        string {min_len: 1}
       }
     },
     (buf.validate.field).required = true,
@@ -590,12 +599,8 @@ message DisablePolicyRequest {
     (buf.validate.field).repeated = {
       unique: true,
       min_items: 1,
-      max_items: 25,
       items {
-        string {
-          min_len: 1,
-          max_len: 1280
-        }
+        string {min_len: 1}
       }
     },
     (buf.validate.field).required = true,
@@ -615,12 +620,8 @@ message EnablePolicyRequest {
     (buf.validate.field).repeated = {
       unique: true,
       min_items: 1,
-      max_items: 25,
       items {
-        string {
-          min_len: 1,
-          max_len: 1280
-        }
+        string {min_len: 1}
       }
     },
     (buf.validate.field).required = true,
@@ -651,6 +652,19 @@ message InspectPoliciesRequest {
     (google.api.field_behavior) = OPTIONAL,
     (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {description: "Filter policies by version with regexp"}
   ];
+  repeated string policy_id = 5 [
+    (google.api.field_behavior) = OPTIONAL,
+    (buf.validate.field).repeated = {
+      max_items: 25,
+      items {
+        string {min_len: 1}
+      }
+    },
+    (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
+      description: "For blob, disk, git stores use file name (<filename>.yaml). For mysql, postgres, sqlite3 use id (<kind>.<name>.<version>) of the policy"
+      example: "\"principal.sarah.vdefault\""
+    }
+  ];
 }
 
 message AddOrUpdateSchemaRequest {
@@ -662,13 +676,13 @@ message AddOrUpdateSchemaRequest {
     (google.api.field_behavior) = REQUIRED,
     (buf.validate.field).repeated = {
       min_items: 1,
-      max_items: 10
+      max_items: 100
     },
     (buf.validate.field).required = true,
     (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
       description: "List of schemas."
       min_items: 1
-      max_items: 10
+      max_items: 100
     }
   ];
 }
@@ -688,7 +702,6 @@ message GetSchemaRequest {
     (buf.validate.field).repeated = {
       unique: true,
       min_items: 1,
-      max_items: 25,
       items {
         string {
           min_len: 1,
@@ -713,7 +726,6 @@ message DeleteSchemaRequest {
     (buf.validate.field).repeated = {
       unique: true,
       min_items: 1,
-      max_items: 25,
       items {
         string {
           min_len: 1,
