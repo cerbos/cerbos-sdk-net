@@ -190,8 +190,8 @@ namespace Cerbos.Api.V1.Request {
             "a1Jlc291cmNlczofkkEcChoyGFBsYXlncm91bmQgcHJveHkgcmVxdWVzdEIW",
             "Cg1wcm94eV9yZXF1ZXN0EgW6SAIIASKhAQoYQWRkT3JVcGRhdGVQb2xpY3lS",
             "ZXF1ZXN0EmMKCHBvbGljaWVzGAEgAygLMhguY2VyYm9zLnBvbGljeS52MS5Q",
-            "b2xpY3lCLZJBGTIRTGlzdCBvZiBwb2xpY2llcy6gAQqoAQHiQQECukgKyAEB",
-            "kgEECAEQClIIcG9saWNpZXM6IJJBHQobMhlBZGQvdXBkYXRlIHBvbGljeSBy",
+            "b2xpY3lCLZJBGTIRTGlzdCBvZiBwb2xpY2llcy6gAWSoAQHiQQECukgKyAEB",
+            "kgEECAEQZFIIcG9saWNpZXM6IJJBHQobMhlBZGQvdXBkYXRlIHBvbGljeSBy",
             "ZXF1ZXN0Iq4HChpMaXN0QXVkaXRMb2dFbnRyaWVzUmVxdWVzdBKJAQoEa2lu",
             "ZBgBIAEoDjIyLmNlcmJvcy5yZXF1ZXN0LnYxLkxpc3RBdWRpdExvZ0VudHJp",
             "ZXNSZXF1ZXN0LktpbmRCQZJBMTIRS2luZCBvZiBsb2cgZW50cnnyAgtLSU5E",
@@ -214,7 +214,7 @@ namespace Cerbos.Api.V1.Request {
             "YSB0aW1lIHJhbmdlLiJACgRLaW5kEhQKEEtJTkRfVU5TUEVDSUZJRUQQABIP",
             "CgtLSU5EX0FDQ0VTUxABEhEKDUtJTkRfREVDSVNJT04QAkIPCgZmaWx0ZXIS",
             "BbpIAggBIi8KEVNlcnZlckluZm9SZXF1ZXN0OhqSQRcKFTITU2VydmVyIGlu",
-            "Zm8gcmVxdWVzdCL7AgoTTGlzdFBvbGljaWVzUmVxdWVzdBJNChBpbmNsdWRl",
+            "Zm8gcmVxdWVzdCLYBAoTTGlzdFBvbGljaWVzUmVxdWVzdBJNChBpbmNsdWRl",
             "X2Rpc2FibGVkGAEgASgIQiKSQRsyGUluY2x1ZGUgZGlzYWJsZWQgcG9saWNp",
             "ZXPiQQEBUg9pbmNsdWRlRGlzYWJsZWQSTQoLbmFtZV9yZWdleHAYAiABKAlC",
             "LJJBJTIjRmlsdGVyIHBvbGljaWVzIGJ5IG5hbWUgd2l0aCByZWdleHDiQQEB",
@@ -222,46 +222,56 @@ namespace Cerbos.Api.V1.Request {
             "ZXIgcG9saWNpZXMgYnkgc2NvcGUgd2l0aCByZWdleHDiQQEBUgtzY29wZVJl",
             "Z2V4cBJWCg52ZXJzaW9uX3JlZ2V4cBgEIAEoCUIvkkEoMiZGaWx0ZXIgcG9s",
             "aWNpZXMgYnkgdmVyc2lvbiB3aXRoIHJlZ2V4cOJBAQFSDXZlcnNpb25SZWdl",
-            "eHA6HJJBGQoXMhVMaXN0IHBvbGljaWVzIHJlcXVlc3QihwIKEEdldFBvbGlj",
-            "eVJlcXVlc3QS1wEKAmlkGAEgAygJQsYBkkGmATKHAUZvciBibG9iLCBkaXNr",
-            "LCBnaXQgc3RvcmVzIHVzZSBmaWxlIG5hbWUgKDxmaWxlbmFtZT4ueWFtbCku",
-            "IEZvciBteXNxbCwgcG9zdGdyZXMsIHNxbGl0ZTMgdXNlIGlkICg8a2luZD4u",
-            "PG5hbWU+Ljx2ZXJzaW9uPikgb2YgdGhlIHBvbGljeUoaInByaW5jaXBhbC5z",
-            "YXJhaC52ZGVmYXVsdCLiQQECukgVyAEBkgEPCAEQGRgBIgdyBRABGIAKUgJp",
-            "ZDoZkkEWChQyEkdldCBwb2xpY3kgcmVxdWVzdCKkAQoURGlzYWJsZVBvbGlj",
-            "eVJlcXVlc3QSbQoCaWQYASADKAlCXZJBPjIgVW5pcXVlIGlkZW50aWZpZXIg",
-            "Zm9yIHRoZSBwb2xpY3lKGiJwcmluY2lwYWwuc2FyYWgudmRlZmF1bHQi4kEB",
-            "ArpIFcgBAZIBDwgBEBkYASIHcgUQARiAClICaWQ6HZJBGgoYMhZEaXNhYmxl",
-            "IHBvbGljeSByZXF1ZXN0IqIBChNFbmFibGVQb2xpY3lSZXF1ZXN0Em0KAmlk",
-            "GAEgAygJQl2SQT4yIFVuaXF1ZSBpZGVudGlmaWVyIGZvciB0aGUgcG9saWN5",
-            "ShoicHJpbmNpcGFsLnNhcmFoLnZkZWZhdWx0IuJBAQK6SBXIAQGSAQ8IARAZ",
-            "GAEiB3IFEAEYgApSAmlkOhySQRkKFzIVRW5hYmxlIHBvbGljeSByZXF1ZXN0",
-            "IoEDChZJbnNwZWN0UG9saWNpZXNSZXF1ZXN0Ek0KEGluY2x1ZGVfZGlzYWJs",
-            "ZWQYASABKAhCIpJBGzIZSW5jbHVkZSBkaXNhYmxlZCBwb2xpY2llc+JBAQFS",
-            "D2luY2x1ZGVEaXNhYmxlZBJNCgtuYW1lX3JlZ2V4cBgCIAEoCUIskkElMiNG",
-            "aWx0ZXIgcG9saWNpZXMgYnkgbmFtZSB3aXRoIHJlZ2V4cOJBAQFSCm5hbWVS",
-            "ZWdleHASUAoMc2NvcGVfcmVnZXhwGAMgASgJQi2SQSYyJEZpbHRlciBwb2xp",
-            "Y2llcyBieSBzY29wZSB3aXRoIHJlZ2V4cOJBAQFSC3Njb3BlUmVnZXhwElYK",
-            "DnZlcnNpb25fcmVnZXhwGAQgASgJQi+SQSgyJkZpbHRlciBwb2xpY2llcyBi",
-            "eSB2ZXJzaW9uIHdpdGggcmVnZXhw4kEBAVINdmVyc2lvblJlZ2V4cDofkkEc",
-            "ChoyGEluc3BlY3QgcG9saWNpZXMgcmVxdWVzdCKeAQoYQWRkT3JVcGRhdGVT",
-            "Y2hlbWFSZXF1ZXN0EmAKB3NjaGVtYXMYASADKAsyGC5jZXJib3Muc2NoZW1h",
-            "LnYxLlNjaGVtYUIskkEYMhBMaXN0IG9mIHNjaGVtYXMuoAEKqAEB4kEBArpI",
-            "CsgBAZIBBAgBEApSB3NjaGVtYXM6IJJBHQobMhlBZGQvdXBkYXRlIHNjaGVt",
-            "YSByZXF1ZXN0IjQKEkxpc3RTY2hlbWFzUmVxdWVzdDoekkEbChkyF0xpc3Qg",
-            "c2NoZW1hIGlkcyByZXF1ZXN0IpUBChBHZXRTY2hlbWFSZXF1ZXN0EmMKAmlk",
-            "GAEgAygJQlOSQTQyIFVuaXF1ZSBpZGVudGlmaWVyIGZvciB0aGUgc2NoZW1h",
-            "ShAicHJpbmNpcGFsLmpzb24i4kEBArpIFcgBAZIBDwgBEBkYASIHcgUQARj/",
-            "AVICaWQ6HJJBGQoXMhVHZXQgc2NoZW1hKHMpIHJlcXVlc3QimwEKE0RlbGV0",
-            "ZVNjaGVtYVJlcXVlc3QSYwoCaWQYASADKAlCU5JBNDIgVW5pcXVlIGlkZW50",
-            "aWZpZXIgZm9yIHRoZSBzY2hlbWFKECJwcmluY2lwYWwuanNvbiLiQQECukgV",
-            "yAEBkgEPCAEQGRgBIgdyBRABGP8BUgJpZDofkkEcChoyGERlbGV0ZSBzY2hl",
-            "bWEocykgcmVxdWVzdCJ5ChJSZWxvYWRTdG9yZVJlcXVlc3QSRgoEd2FpdBgB",
-            "IAEoCEIykkErMilXYWl0IHVudGlsIHRoZSByZWxvYWRpbmcgcHJvY2VzcyBm",
-            "aW5pc2hlc+JBAQFSBHdhaXQ6G5JBGAoWMhRSZWxvYWQgc3RvcmUgcmVxdWVz",
-            "dEJzChlkZXYuY2VyYm9zLmFwaS52MS5yZXF1ZXN0Wj5naXRodWIuY29tL2Nl",
-            "cmJvcy9jZXJib3MvYXBpL2dlbnBiL2NlcmJvcy9yZXF1ZXN0L3YxO3JlcXVl",
-            "c3R2MaoCFUNlcmJvcy5BcGkuVjEuUmVxdWVzdGIGcHJvdG8z"));
+            "eHAS2gEKCXBvbGljeV9pZBgFIAMoCUK8AZJBpgEyhwFGb3IgYmxvYiwgZGlz",
+            "aywgZ2l0IHN0b3JlcyB1c2UgZmlsZSBuYW1lICg8ZmlsZW5hbWU+LnlhbWwp",
+            "LiBGb3IgbXlzcWwsIHBvc3RncmVzLCBzcWxpdGUzIHVzZSBpZCAoPGtpbmQ+",
+            "LjxuYW1lPi48dmVyc2lvbj4pIG9mIHRoZSBwb2xpY3lKGiJwcmluY2lwYWwu",
+            "c2FyYWgudmRlZmF1bHQi4kEBAbpIC5IBCBAZIgRyAhABUghwb2xpY3lJZDoc",
+            "kkEZChcyFUxpc3QgcG9saWNpZXMgcmVxdWVzdCKCAgoQR2V0UG9saWN5UmVx",
+            "dWVzdBLSAQoCaWQYASADKAlCwQGSQaYBMocBRm9yIGJsb2IsIGRpc2ssIGdp",
+            "dCBzdG9yZXMgdXNlIGZpbGUgbmFtZSAoPGZpbGVuYW1lPi55YW1sKS4gRm9y",
+            "IG15c3FsLCBwb3N0Z3Jlcywgc3FsaXRlMyB1c2UgaWQgKDxraW5kPi48bmFt",
+            "ZT4uPHZlcnNpb24+KSBvZiB0aGUgcG9saWN5ShoicHJpbmNpcGFsLnNhcmFo",
+            "LnZkZWZhdWx0IuJBAQK6SBDIAQGSAQoIARgBIgRyAhABUgJpZDoZkkEWChQy",
+            "EkdldCBwb2xpY3kgcmVxdWVzdCKfAQoURGlzYWJsZVBvbGljeVJlcXVlc3QS",
+            "aAoCaWQYASADKAlCWJJBPjIgVW5pcXVlIGlkZW50aWZpZXIgZm9yIHRoZSBw",
+            "b2xpY3lKGiJwcmluY2lwYWwuc2FyYWgudmRlZmF1bHQi4kEBArpIEMgBAZIB",
+            "CggBGAEiBHICEAFSAmlkOh2SQRoKGDIWRGlzYWJsZSBwb2xpY3kgcmVxdWVz",
+            "dCKdAQoTRW5hYmxlUG9saWN5UmVxdWVzdBJoCgJpZBgBIAMoCUJYkkE+MiBV",
+            "bmlxdWUgaWRlbnRpZmllciBmb3IgdGhlIHBvbGljeUoaInByaW5jaXBhbC5z",
+            "YXJhaC52ZGVmYXVsdCLiQQECukgQyAEBkgEKCAEYASIEcgIQAVICaWQ6HJJB",
+            "GQoXMhVFbmFibGUgcG9saWN5IHJlcXVlc3Qi3gQKFkluc3BlY3RQb2xpY2ll",
+            "c1JlcXVlc3QSTQoQaW5jbHVkZV9kaXNhYmxlZBgBIAEoCEIikkEbMhlJbmNs",
+            "dWRlIGRpc2FibGVkIHBvbGljaWVz4kEBAVIPaW5jbHVkZURpc2FibGVkEk0K",
+            "C25hbWVfcmVnZXhwGAIgASgJQiySQSUyI0ZpbHRlciBwb2xpY2llcyBieSBu",
+            "YW1lIHdpdGggcmVnZXhw4kEBAVIKbmFtZVJlZ2V4cBJQCgxzY29wZV9yZWdl",
+            "eHAYAyABKAlCLZJBJjIkRmlsdGVyIHBvbGljaWVzIGJ5IHNjb3BlIHdpdGgg",
+            "cmVnZXhw4kEBAVILc2NvcGVSZWdleHASVgoOdmVyc2lvbl9yZWdleHAYBCAB",
+            "KAlCL5JBKDImRmlsdGVyIHBvbGljaWVzIGJ5IHZlcnNpb24gd2l0aCByZWdl",
+            "eHDiQQEBUg12ZXJzaW9uUmVnZXhwEtoBCglwb2xpY3lfaWQYBSADKAlCvAGS",
+            "QaYBMocBRm9yIGJsb2IsIGRpc2ssIGdpdCBzdG9yZXMgdXNlIGZpbGUgbmFt",
+            "ZSAoPGZpbGVuYW1lPi55YW1sKS4gRm9yIG15c3FsLCBwb3N0Z3Jlcywgc3Fs",
+            "aXRlMyB1c2UgaWQgKDxraW5kPi48bmFtZT4uPHZlcnNpb24+KSBvZiB0aGUg",
+            "cG9saWN5ShoicHJpbmNpcGFsLnNhcmFoLnZkZWZhdWx0IuJBAQG6SAuSAQgQ",
+            "GSIEcgIQAVIIcG9saWN5SWQ6H5JBHAoaMhhJbnNwZWN0IHBvbGljaWVzIHJl",
+            "cXVlc3QingEKGEFkZE9yVXBkYXRlU2NoZW1hUmVxdWVzdBJgCgdzY2hlbWFz",
+            "GAEgAygLMhguY2VyYm9zLnNjaGVtYS52MS5TY2hlbWFCLJJBGDIQTGlzdCBv",
+            "ZiBzY2hlbWFzLqABZKgBAeJBAQK6SArIAQGSAQQIARBkUgdzY2hlbWFzOiCS",
+            "QR0KGzIZQWRkL3VwZGF0ZSBzY2hlbWEgcmVxdWVzdCI0ChJMaXN0U2NoZW1h",
+            "c1JlcXVlc3Q6HpJBGwoZMhdMaXN0IHNjaGVtYSBpZHMgcmVxdWVzdCKTAQoQ",
+            "R2V0U2NoZW1hUmVxdWVzdBJhCgJpZBgBIAMoCUJRkkE0MiBVbmlxdWUgaWRl",
+            "bnRpZmllciBmb3IgdGhlIHNjaGVtYUoQInByaW5jaXBhbC5qc29uIuJBAQK6",
+            "SBPIAQGSAQ0IARgBIgdyBRABGP8BUgJpZDockkEZChcyFUdldCBzY2hlbWEo",
+            "cykgcmVxdWVzdCKZAQoTRGVsZXRlU2NoZW1hUmVxdWVzdBJhCgJpZBgBIAMo",
+            "CUJRkkE0MiBVbmlxdWUgaWRlbnRpZmllciBmb3IgdGhlIHNjaGVtYUoQInBy",
+            "aW5jaXBhbC5qc29uIuJBAQK6SBPIAQGSAQ0IARgBIgdyBRABGP8BUgJpZDof",
+            "kkEcChoyGERlbGV0ZSBzY2hlbWEocykgcmVxdWVzdCJ5ChJSZWxvYWRTdG9y",
+            "ZVJlcXVlc3QSRgoEd2FpdBgBIAEoCEIykkErMilXYWl0IHVudGlsIHRoZSBy",
+            "ZWxvYWRpbmcgcHJvY2VzcyBmaW5pc2hlc+JBAQFSBHdhaXQ6G5JBGAoWMhRS",
+            "ZWxvYWQgc3RvcmUgcmVxdWVzdEJzChlkZXYuY2VyYm9zLmFwaS52MS5yZXF1",
+            "ZXN0Wj5naXRodWIuY29tL2NlcmJvcy9jZXJib3MvYXBpL2dlbnBiL2NlcmJv",
+            "cy9yZXF1ZXN0L3YxO3JlcXVlc3R2MaoCFUNlcmJvcy5BcGkuVjEuUmVxdWVz",
+            "dGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Cerbos.Api.V1.Engine.EngineReflection.Descriptor, global::Cerbos.Api.V1.Policy.PolicyReflection.Descriptor, global::Cerbos.Api.V1.Schema.SchemaReflection.Descriptor, global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.StructReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Grpc.Gateway.ProtocGenOpenapiv2.Options.AnnotationsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -280,11 +290,11 @@ namespace Cerbos.Api.V1.Request {
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Request.AddOrUpdatePolicyRequest), global::Cerbos.Api.V1.Request.AddOrUpdatePolicyRequest.Parser, new[]{ "Policies" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Request.ListAuditLogEntriesRequest), global::Cerbos.Api.V1.Request.ListAuditLogEntriesRequest.Parser, new[]{ "Kind", "Tail", "Between", "Since", "Lookup" }, new[]{ "Filter" }, new[]{ typeof(global::Cerbos.Api.V1.Request.ListAuditLogEntriesRequest.Types.Kind) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Request.ListAuditLogEntriesRequest.Types.TimeRange), global::Cerbos.Api.V1.Request.ListAuditLogEntriesRequest.Types.TimeRange.Parser, new[]{ "Start", "End" }, null, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Request.ServerInfoRequest), global::Cerbos.Api.V1.Request.ServerInfoRequest.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Request.ListPoliciesRequest), global::Cerbos.Api.V1.Request.ListPoliciesRequest.Parser, new[]{ "IncludeDisabled", "NameRegexp", "ScopeRegexp", "VersionRegexp" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Request.ListPoliciesRequest), global::Cerbos.Api.V1.Request.ListPoliciesRequest.Parser, new[]{ "IncludeDisabled", "NameRegexp", "ScopeRegexp", "VersionRegexp", "PolicyId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Request.GetPolicyRequest), global::Cerbos.Api.V1.Request.GetPolicyRequest.Parser, new[]{ "Id" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Request.DisablePolicyRequest), global::Cerbos.Api.V1.Request.DisablePolicyRequest.Parser, new[]{ "Id" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Request.EnablePolicyRequest), global::Cerbos.Api.V1.Request.EnablePolicyRequest.Parser, new[]{ "Id" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Request.InspectPoliciesRequest), global::Cerbos.Api.V1.Request.InspectPoliciesRequest.Parser, new[]{ "IncludeDisabled", "NameRegexp", "ScopeRegexp", "VersionRegexp" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Request.InspectPoliciesRequest), global::Cerbos.Api.V1.Request.InspectPoliciesRequest.Parser, new[]{ "IncludeDisabled", "NameRegexp", "ScopeRegexp", "VersionRegexp", "PolicyId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Request.AddOrUpdateSchemaRequest), global::Cerbos.Api.V1.Request.AddOrUpdateSchemaRequest.Parser, new[]{ "Schemas" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Request.ListSchemasRequest), global::Cerbos.Api.V1.Request.ListSchemasRequest.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Request.GetSchemaRequest), global::Cerbos.Api.V1.Request.GetSchemaRequest.Parser, new[]{ "Id" }, null, null, null, null),
@@ -5655,6 +5665,7 @@ namespace Cerbos.Api.V1.Request {
       nameRegexp_ = other.nameRegexp_;
       scopeRegexp_ = other.scopeRegexp_;
       versionRegexp_ = other.versionRegexp_;
+      policyId_ = other.policyId_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -5712,6 +5723,17 @@ namespace Cerbos.Api.V1.Request {
       }
     }
 
+    /// <summary>Field number for the "policy_id" field.</summary>
+    public const int PolicyIdFieldNumber = 5;
+    private static readonly pb::FieldCodec<string> _repeated_policyId_codec
+        = pb::FieldCodec.ForString(42);
+    private readonly pbc::RepeatedField<string> policyId_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<string> PolicyId {
+      get { return policyId_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -5731,6 +5753,7 @@ namespace Cerbos.Api.V1.Request {
       if (NameRegexp != other.NameRegexp) return false;
       if (ScopeRegexp != other.ScopeRegexp) return false;
       if (VersionRegexp != other.VersionRegexp) return false;
+      if(!policyId_.Equals(other.policyId_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -5742,6 +5765,7 @@ namespace Cerbos.Api.V1.Request {
       if (NameRegexp.Length != 0) hash ^= NameRegexp.GetHashCode();
       if (ScopeRegexp.Length != 0) hash ^= ScopeRegexp.GetHashCode();
       if (VersionRegexp.Length != 0) hash ^= VersionRegexp.GetHashCode();
+      hash ^= policyId_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -5776,6 +5800,7 @@ namespace Cerbos.Api.V1.Request {
         output.WriteRawTag(34);
         output.WriteString(VersionRegexp);
       }
+      policyId_.WriteTo(output, _repeated_policyId_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -5802,6 +5827,7 @@ namespace Cerbos.Api.V1.Request {
         output.WriteRawTag(34);
         output.WriteString(VersionRegexp);
       }
+      policyId_.WriteTo(ref output, _repeated_policyId_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -5824,6 +5850,7 @@ namespace Cerbos.Api.V1.Request {
       if (VersionRegexp.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(VersionRegexp);
       }
+      size += policyId_.CalculateSize(_repeated_policyId_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -5848,6 +5875,7 @@ namespace Cerbos.Api.V1.Request {
       if (other.VersionRegexp.Length != 0) {
         VersionRegexp = other.VersionRegexp;
       }
+      policyId_.Add(other.policyId_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -5879,6 +5907,10 @@ namespace Cerbos.Api.V1.Request {
             VersionRegexp = input.ReadString();
             break;
           }
+          case 42: {
+            policyId_.AddEntriesFrom(input, _repeated_policyId_codec);
+            break;
+          }
         }
       }
     #endif
@@ -5908,6 +5940,10 @@ namespace Cerbos.Api.V1.Request {
           }
           case 34: {
             VersionRegexp = input.ReadString();
+            break;
+          }
+          case 42: {
+            policyId_.AddEntriesFrom(ref input, _repeated_policyId_codec);
             break;
           }
         }
@@ -6489,6 +6525,7 @@ namespace Cerbos.Api.V1.Request {
       nameRegexp_ = other.nameRegexp_;
       scopeRegexp_ = other.scopeRegexp_;
       versionRegexp_ = other.versionRegexp_;
+      policyId_ = other.policyId_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -6546,6 +6583,17 @@ namespace Cerbos.Api.V1.Request {
       }
     }
 
+    /// <summary>Field number for the "policy_id" field.</summary>
+    public const int PolicyIdFieldNumber = 5;
+    private static readonly pb::FieldCodec<string> _repeated_policyId_codec
+        = pb::FieldCodec.ForString(42);
+    private readonly pbc::RepeatedField<string> policyId_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<string> PolicyId {
+      get { return policyId_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -6565,6 +6613,7 @@ namespace Cerbos.Api.V1.Request {
       if (NameRegexp != other.NameRegexp) return false;
       if (ScopeRegexp != other.ScopeRegexp) return false;
       if (VersionRegexp != other.VersionRegexp) return false;
+      if(!policyId_.Equals(other.policyId_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -6576,6 +6625,7 @@ namespace Cerbos.Api.V1.Request {
       if (NameRegexp.Length != 0) hash ^= NameRegexp.GetHashCode();
       if (ScopeRegexp.Length != 0) hash ^= ScopeRegexp.GetHashCode();
       if (VersionRegexp.Length != 0) hash ^= VersionRegexp.GetHashCode();
+      hash ^= policyId_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -6610,6 +6660,7 @@ namespace Cerbos.Api.V1.Request {
         output.WriteRawTag(34);
         output.WriteString(VersionRegexp);
       }
+      policyId_.WriteTo(output, _repeated_policyId_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -6636,6 +6687,7 @@ namespace Cerbos.Api.V1.Request {
         output.WriteRawTag(34);
         output.WriteString(VersionRegexp);
       }
+      policyId_.WriteTo(ref output, _repeated_policyId_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -6658,6 +6710,7 @@ namespace Cerbos.Api.V1.Request {
       if (VersionRegexp.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(VersionRegexp);
       }
+      size += policyId_.CalculateSize(_repeated_policyId_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -6682,6 +6735,7 @@ namespace Cerbos.Api.V1.Request {
       if (other.VersionRegexp.Length != 0) {
         VersionRegexp = other.VersionRegexp;
       }
+      policyId_.Add(other.policyId_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -6713,6 +6767,10 @@ namespace Cerbos.Api.V1.Request {
             VersionRegexp = input.ReadString();
             break;
           }
+          case 42: {
+            policyId_.AddEntriesFrom(input, _repeated_policyId_codec);
+            break;
+          }
         }
       }
     #endif
@@ -6742,6 +6800,10 @@ namespace Cerbos.Api.V1.Request {
           }
           case 34: {
             VersionRegexp = input.ReadString();
+            break;
+          }
+          case 42: {
+            policyId_.AddEntriesFrom(ref input, _repeated_policyId_codec);
             break;
           }
         }

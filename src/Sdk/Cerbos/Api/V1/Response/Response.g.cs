@@ -272,26 +272,42 @@ namespace Cerbos.Api.V1.Response {
             "X3BvbGljaWVzGAEgASgNUhBkaXNhYmxlZFBvbGljaWVzOh6SQRsKGTIXRGlz",
             "YWJsZSBwb2xpY3kgcmVzcG9uc2UiYAoURW5hYmxlUG9saWN5UmVzcG9uc2US",
             "KQoQZW5hYmxlZF9wb2xpY2llcxgBIAEoDVIPZW5hYmxlZFBvbGljaWVzOh2S",
-            "QRoKGDIWRW5hYmxlIHBvbGljeSByZXNwb25zZSKjAgoXSW5zcGVjdFBvbGlj",
+            "QRoKGDIWRW5hYmxlIHBvbGljeSByZXNwb25zZSKOCAoXSW5zcGVjdFBvbGlj",
             "aWVzUmVzcG9uc2USUgoHcmVzdWx0cxgBIAMoCzI4LmNlcmJvcy5yZXNwb25z",
             "ZS52MS5JbnNwZWN0UG9saWNpZXNSZXNwb25zZS5SZXN1bHRzRW50cnlSB3Jl",
-            "c3VsdHMaIgoGUmVzdWx0EhgKB2FjdGlvbnMYASADKAlSB2FjdGlvbnMabgoM",
-            "UmVzdWx0c0VudHJ5EhAKA2tleRgBIAEoCVIDa2V5EkgKBXZhbHVlGAIgASgL",
-            "MjIuY2VyYm9zLnJlc3BvbnNlLnYxLkluc3BlY3RQb2xpY2llc1Jlc3BvbnNl",
-            "LlJlc3VsdFIFdmFsdWU6AjgBOiCSQR0KGzIZSW5zcGVjdCBwb2xpY2llcyBy",
-            "ZXNwb25zZSI+ChlBZGRPclVwZGF0ZVNjaGVtYVJlc3BvbnNlOiGSQR4KHDIa",
-            "QWRkL3VwZGF0ZSBzY2hlbWEgcmVzcG9uc2UiVQoTTGlzdFNjaGVtYXNSZXNw",
-            "b25zZRIdCgpzY2hlbWFfaWRzGAEgAygJUglzY2hlbWFJZHM6H5JBHAoaMhhM",
-            "aXN0IHNjaGVtYSBpZHMgcmVzcG9uc2UiZgoRR2V0U2NoZW1hUmVzcG9uc2US",
-            "MgoHc2NoZW1hcxgBIAMoCzIYLmNlcmJvcy5zY2hlbWEudjEuU2NoZW1hUgdz",
-            "Y2hlbWFzOh2SQRoKGDIWR2V0IHNjaGVtYShzKSByZXNwb25zZSJhChREZWxl",
-            "dGVTY2hlbWFSZXNwb25zZRInCg9kZWxldGVkX3NjaGVtYXMYASABKA1SDmRl",
-            "bGV0ZWRTY2hlbWFzOiCSQR0KGzIZRGVsZXRlIHNjaGVtYShzKSByZXNwb25z",
-            "ZSIzChNSZWxvYWRTdG9yZVJlc3BvbnNlOhySQRkKFzIVUmVsb2FkIHN0b3Jl",
-            "IHJlc3BvbnNlQncKGmRldi5jZXJib3MuYXBpLnYxLnJlc3BvbnNlWkBnaXRo",
-            "dWIuY29tL2NlcmJvcy9jZXJib3MvYXBpL2dlbnBiL2NlcmJvcy9yZXNwb25z",
-            "ZS92MTtyZXNwb25zZXYxqgIWQ2VyYm9zLkFwaS5WMS5SZXNwb25zZWIGcHJv",
-            "dG8z"));
+            "c3VsdHMayQQKCFZhcmlhYmxlEj0KBG5hbWUYASABKAlCKZJBJjIkVmFyaWFi",
+            "bGUgbmFtZSBkZWZpbmVkIGluIHRoZSBwb2xpY3kuUgRuYW1lEksKBXZhbHVl",
+            "GAIgASgJQjWSQTIyMFJhdyB2YWx1ZSBvZiB0aGUgdmFyaWFibGUgZGVmaW5l",
+            "ZCBpbiB0aGUgcG9saWN5LlIFdmFsdWUSfwoEa2luZBgDIAEoDjI5LmNlcmJv",
+            "cy5yZXNwb25zZS52MS5JbnNwZWN0UG9saWNpZXNSZXNwb25zZS5WYXJpYWJs",
+            "ZS5LaW5kQjCSQS0yK0tpbmQgb2YgdGhlIHZhcmlhYmxlIGRlZmluZWQgaW4g",
+            "dGhlIHBvbGljeS5SBGtpbmQSbwoGc291cmNlGAQgASgJQleSQVQyUlNvdXJj",
+            "ZSBvZiB0aGUgdmFyaWFibGUgZGVmaW5lZCBpbiB0aGUgcG9saWN5LiBPbmx5",
+            "IGV4aXN0cyBpZiB0aGUga2luZCBpcyBpbXBvcnRlZC5SBnNvdXJjZRJFCgR1",
+            "c2VkGAUgASgIQjGSQS4yLFdoZXRoZXIgdGhlIHZhcmlhYmxlIGlzIHVzZWQg",
+            "aW4gYSBjb25kaXRpb24uUgR1c2VkIngKBEtpbmQSFAoQS0lORF9VTlNQRUNJ",
+            "RklFRBAAEhEKDUtJTkRfRVhQT1JURUQQARIRCg1LSU5EX0lNUE9SVEVEEAIS",
+            "DgoKS0lORF9MT0NBTBADEhIKDktJTkRfVU5ERUZJTkVEEAQSEAoMS0lORF9V",
+            "TktOT1dOEAUawAEKBlJlc3VsdBI8CgdhY3Rpb25zGAEgAygJQiKSQR8yHUFj",
+            "dGlvbnMgZGVmaW5lZCBpbiB0aGUgcG9saWN5UgdhY3Rpb25zEngKCXZhcmlh",
+            "YmxlcxgCIAMoCzI0LmNlcmJvcy5yZXNwb25zZS52MS5JbnNwZWN0UG9saWNp",
+            "ZXNSZXNwb25zZS5WYXJpYWJsZUIkkkEhMh9WYXJpYWJsZXMgZGVmaW5lZCBp",
+            "biB0aGUgcG9saWN5Ugl2YXJpYWJsZXMabgoMUmVzdWx0c0VudHJ5EhAKA2tl",
+            "eRgBIAEoCVIDa2V5EkgKBXZhbHVlGAIgASgLMjIuY2VyYm9zLnJlc3BvbnNl",
+            "LnYxLkluc3BlY3RQb2xpY2llc1Jlc3BvbnNlLlJlc3VsdFIFdmFsdWU6AjgB",
+            "OiCSQR0KGzIZSW5zcGVjdCBwb2xpY2llcyByZXNwb25zZSI+ChlBZGRPclVw",
+            "ZGF0ZVNjaGVtYVJlc3BvbnNlOiGSQR4KHDIaQWRkL3VwZGF0ZSBzY2hlbWEg",
+            "cmVzcG9uc2UiVQoTTGlzdFNjaGVtYXNSZXNwb25zZRIdCgpzY2hlbWFfaWRz",
+            "GAEgAygJUglzY2hlbWFJZHM6H5JBHAoaMhhMaXN0IHNjaGVtYSBpZHMgcmVz",
+            "cG9uc2UiZgoRR2V0U2NoZW1hUmVzcG9uc2USMgoHc2NoZW1hcxgBIAMoCzIY",
+            "LmNlcmJvcy5zY2hlbWEudjEuU2NoZW1hUgdzY2hlbWFzOh2SQRoKGDIWR2V0",
+            "IHNjaGVtYShzKSByZXNwb25zZSJhChREZWxldGVTY2hlbWFSZXNwb25zZRIn",
+            "Cg9kZWxldGVkX3NjaGVtYXMYASABKA1SDmRlbGV0ZWRTY2hlbWFzOiCSQR0K",
+            "GzIZRGVsZXRlIHNjaGVtYShzKSByZXNwb25zZSIzChNSZWxvYWRTdG9yZVJl",
+            "c3BvbnNlOhySQRkKFzIVUmVsb2FkIHN0b3JlIHJlc3BvbnNlQncKGmRldi5j",
+            "ZXJib3MuYXBpLnYxLnJlc3BvbnNlWkBnaXRodWIuY29tL2NlcmJvcy9jZXJi",
+            "b3MvYXBpL2dlbnBiL2NlcmJvcy9yZXNwb25zZS92MTtyZXNwb25zZXYxqgIW",
+            "Q2VyYm9zLkFwaS5WMS5SZXNwb25zZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Cerbos.Api.V1.Audit.AuditReflection.Descriptor, global::Cerbos.Api.V1.Effect.EffectReflection.Descriptor, global::Cerbos.Api.V1.Engine.EngineReflection.Descriptor, global::Cerbos.Api.V1.Policy.PolicyReflection.Descriptor, global::Cerbos.Api.V1.Schema.SchemaReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Grpc.Gateway.ProtocGenOpenapiv2.Options.AnnotationsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -320,7 +336,8 @@ namespace Cerbos.Api.V1.Response {
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Response.GetPolicyResponse), global::Cerbos.Api.V1.Response.GetPolicyResponse.Parser, new[]{ "Policies" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Response.DisablePolicyResponse), global::Cerbos.Api.V1.Response.DisablePolicyResponse.Parser, new[]{ "DisabledPolicies" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Response.EnablePolicyResponse), global::Cerbos.Api.V1.Response.EnablePolicyResponse.Parser, new[]{ "EnabledPolicies" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Response.InspectPoliciesResponse), global::Cerbos.Api.V1.Response.InspectPoliciesResponse.Parser, new[]{ "Results" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Response.InspectPoliciesResponse.Types.Result), global::Cerbos.Api.V1.Response.InspectPoliciesResponse.Types.Result.Parser, new[]{ "Actions" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Response.InspectPoliciesResponse), global::Cerbos.Api.V1.Response.InspectPoliciesResponse.Parser, new[]{ "Results" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Response.InspectPoliciesResponse.Types.Variable), global::Cerbos.Api.V1.Response.InspectPoliciesResponse.Types.Variable.Parser, new[]{ "Name", "Value", "Kind", "Source", "Used" }, null, new[]{ typeof(global::Cerbos.Api.V1.Response.InspectPoliciesResponse.Types.Variable.Types.Kind) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Response.InspectPoliciesResponse.Types.Result), global::Cerbos.Api.V1.Response.InspectPoliciesResponse.Types.Result.Parser, new[]{ "Actions", "Variables" }, null, null, null, null),
             null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Response.AddOrUpdateSchemaResponse), global::Cerbos.Api.V1.Response.AddOrUpdateSchemaResponse.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Response.ListSchemasResponse), global::Cerbos.Api.V1.Response.ListSchemasResponse.Parser, new[]{ "SchemaIds" }, null, null, null, null),
@@ -8525,6 +8542,360 @@ namespace Cerbos.Api.V1.Response {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
+      public sealed partial class Variable : pb::IMessage<Variable>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
+        private static readonly pb::MessageParser<Variable> _parser = new pb::MessageParser<Variable>(() => new Variable());
+        private pb::UnknownFieldSet _unknownFields;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pb::MessageParser<Variable> Parser { get { return _parser; } }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pbr::MessageDescriptor Descriptor {
+          get { return global::Cerbos.Api.V1.Response.InspectPoliciesResponse.Descriptor.NestedTypes[0]; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        pbr::MessageDescriptor pb::IMessage.Descriptor {
+          get { return Descriptor; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public Variable() {
+          OnConstruction();
+        }
+
+        partial void OnConstruction();
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public Variable(Variable other) : this() {
+          name_ = other.name_;
+          value_ = other.value_;
+          kind_ = other.kind_;
+          source_ = other.source_;
+          used_ = other.used_;
+          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public Variable Clone() {
+          return new Variable(this);
+        }
+
+        /// <summary>Field number for the "name" field.</summary>
+        public const int NameFieldNumber = 1;
+        private string name_ = "";
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public string Name {
+          get { return name_; }
+          set {
+            name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        /// <summary>Field number for the "value" field.</summary>
+        public const int ValueFieldNumber = 2;
+        private string value_ = "";
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public string Value {
+          get { return value_; }
+          set {
+            value_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        /// <summary>Field number for the "kind" field.</summary>
+        public const int KindFieldNumber = 3;
+        private global::Cerbos.Api.V1.Response.InspectPoliciesResponse.Types.Variable.Types.Kind kind_ = global::Cerbos.Api.V1.Response.InspectPoliciesResponse.Types.Variable.Types.Kind.Unspecified;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public global::Cerbos.Api.V1.Response.InspectPoliciesResponse.Types.Variable.Types.Kind Kind {
+          get { return kind_; }
+          set {
+            kind_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "source" field.</summary>
+        public const int SourceFieldNumber = 4;
+        private string source_ = "";
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public string Source {
+          get { return source_; }
+          set {
+            source_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        /// <summary>Field number for the "used" field.</summary>
+        public const int UsedFieldNumber = 5;
+        private bool used_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool Used {
+          get { return used_; }
+          set {
+            used_ = value;
+          }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override bool Equals(object other) {
+          return Equals(other as Variable);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool Equals(Variable other) {
+          if (ReferenceEquals(other, null)) {
+            return false;
+          }
+          if (ReferenceEquals(other, this)) {
+            return true;
+          }
+          if (Name != other.Name) return false;
+          if (Value != other.Value) return false;
+          if (Kind != other.Kind) return false;
+          if (Source != other.Source) return false;
+          if (Used != other.Used) return false;
+          return Equals(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override int GetHashCode() {
+          int hash = 1;
+          if (Name.Length != 0) hash ^= Name.GetHashCode();
+          if (Value.Length != 0) hash ^= Value.GetHashCode();
+          if (Kind != global::Cerbos.Api.V1.Response.InspectPoliciesResponse.Types.Variable.Types.Kind.Unspecified) hash ^= Kind.GetHashCode();
+          if (Source.Length != 0) hash ^= Source.GetHashCode();
+          if (Used != false) hash ^= Used.GetHashCode();
+          if (_unknownFields != null) {
+            hash ^= _unknownFields.GetHashCode();
+          }
+          return hash;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override string ToString() {
+          return pb::JsonFormatter.ToDiagnosticString(this);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
+          if (Name.Length != 0) {
+            output.WriteRawTag(10);
+            output.WriteString(Name);
+          }
+          if (Value.Length != 0) {
+            output.WriteRawTag(18);
+            output.WriteString(Value);
+          }
+          if (Kind != global::Cerbos.Api.V1.Response.InspectPoliciesResponse.Types.Variable.Types.Kind.Unspecified) {
+            output.WriteRawTag(24);
+            output.WriteEnum((int) Kind);
+          }
+          if (Source.Length != 0) {
+            output.WriteRawTag(34);
+            output.WriteString(Source);
+          }
+          if (Used != false) {
+            output.WriteRawTag(40);
+            output.WriteBool(Used);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(output);
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (Name.Length != 0) {
+            output.WriteRawTag(10);
+            output.WriteString(Name);
+          }
+          if (Value.Length != 0) {
+            output.WriteRawTag(18);
+            output.WriteString(Value);
+          }
+          if (Kind != global::Cerbos.Api.V1.Response.InspectPoliciesResponse.Types.Variable.Types.Kind.Unspecified) {
+            output.WriteRawTag(24);
+            output.WriteEnum((int) Kind);
+          }
+          if (Source.Length != 0) {
+            output.WriteRawTag(34);
+            output.WriteString(Source);
+          }
+          if (Used != false) {
+            output.WriteRawTag(40);
+            output.WriteBool(Used);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public int CalculateSize() {
+          int size = 0;
+          if (Name.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+          }
+          if (Value.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(Value);
+          }
+          if (Kind != global::Cerbos.Api.V1.Response.InspectPoliciesResponse.Types.Variable.Types.Kind.Unspecified) {
+            size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Kind);
+          }
+          if (Source.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(Source);
+          }
+          if (Used != false) {
+            size += 1 + 1;
+          }
+          if (_unknownFields != null) {
+            size += _unknownFields.CalculateSize();
+          }
+          return size;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(Variable other) {
+          if (other == null) {
+            return;
+          }
+          if (other.Name.Length != 0) {
+            Name = other.Name;
+          }
+          if (other.Value.Length != 0) {
+            Value = other.Value;
+          }
+          if (other.Kind != global::Cerbos.Api.V1.Response.InspectPoliciesResponse.Types.Variable.Types.Kind.Unspecified) {
+            Kind = other.Kind;
+          }
+          if (other.Source.Length != 0) {
+            Source = other.Source;
+          }
+          if (other.Used != false) {
+            Used = other.Used;
+          }
+          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+                break;
+              case 10: {
+                Name = input.ReadString();
+                break;
+              }
+              case 18: {
+                Value = input.ReadString();
+                break;
+              }
+              case 24: {
+                Kind = (global::Cerbos.Api.V1.Response.InspectPoliciesResponse.Types.Variable.Types.Kind) input.ReadEnum();
+                break;
+              }
+              case 34: {
+                Source = input.ReadString();
+                break;
+              }
+              case 40: {
+                Used = input.ReadBool();
+                break;
+              }
+            }
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 10: {
+                Name = input.ReadString();
+                break;
+              }
+              case 18: {
+                Value = input.ReadString();
+                break;
+              }
+              case 24: {
+                Kind = (global::Cerbos.Api.V1.Response.InspectPoliciesResponse.Types.Variable.Types.Kind) input.ReadEnum();
+                break;
+              }
+              case 34: {
+                Source = input.ReadString();
+                break;
+              }
+              case 40: {
+                Used = input.ReadBool();
+                break;
+              }
+            }
+          }
+        }
+        #endif
+
+        #region Nested types
+        /// <summary>Container for nested types declared in the Variable message type.</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static partial class Types {
+          public enum Kind {
+            [pbr::OriginalName("KIND_UNSPECIFIED")] Unspecified = 0,
+            [pbr::OriginalName("KIND_EXPORTED")] Exported = 1,
+            [pbr::OriginalName("KIND_IMPORTED")] Imported = 2,
+            [pbr::OriginalName("KIND_LOCAL")] Local = 3,
+            [pbr::OriginalName("KIND_UNDEFINED")] Undefined = 4,
+            [pbr::OriginalName("KIND_UNKNOWN")] Unknown = 5,
+          }
+
+        }
+        #endregion
+
+      }
+
       public sealed partial class Result : pb::IMessage<Result>
       #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           , pb::IBufferMessage
@@ -8539,7 +8910,7 @@ namespace Cerbos.Api.V1.Response {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Cerbos.Api.V1.Response.InspectPoliciesResponse.Descriptor.NestedTypes[0]; }
+          get { return global::Cerbos.Api.V1.Response.InspectPoliciesResponse.Descriptor.NestedTypes[1]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8560,6 +8931,7 @@ namespace Cerbos.Api.V1.Response {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Result(Result other) : this() {
           actions_ = other.actions_.Clone();
+          variables_ = other.variables_.Clone();
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
@@ -8580,6 +8952,17 @@ namespace Cerbos.Api.V1.Response {
           get { return actions_; }
         }
 
+        /// <summary>Field number for the "variables" field.</summary>
+        public const int VariablesFieldNumber = 2;
+        private static readonly pb::FieldCodec<global::Cerbos.Api.V1.Response.InspectPoliciesResponse.Types.Variable> _repeated_variables_codec
+            = pb::FieldCodec.ForMessage(18, global::Cerbos.Api.V1.Response.InspectPoliciesResponse.Types.Variable.Parser);
+        private readonly pbc::RepeatedField<global::Cerbos.Api.V1.Response.InspectPoliciesResponse.Types.Variable> variables_ = new pbc::RepeatedField<global::Cerbos.Api.V1.Response.InspectPoliciesResponse.Types.Variable>();
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public pbc::RepeatedField<global::Cerbos.Api.V1.Response.InspectPoliciesResponse.Types.Variable> Variables {
+          get { return variables_; }
+        }
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
@@ -8596,6 +8979,7 @@ namespace Cerbos.Api.V1.Response {
             return true;
           }
           if(!actions_.Equals(other.actions_)) return false;
+          if(!variables_.Equals(other.variables_)) return false;
           return Equals(_unknownFields, other._unknownFields);
         }
 
@@ -8604,6 +8988,7 @@ namespace Cerbos.Api.V1.Response {
         public override int GetHashCode() {
           int hash = 1;
           hash ^= actions_.GetHashCode();
+          hash ^= variables_.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -8623,6 +9008,7 @@ namespace Cerbos.Api.V1.Response {
           output.WriteRawMessage(this);
         #else
           actions_.WriteTo(output, _repeated_actions_codec);
+          variables_.WriteTo(output, _repeated_variables_codec);
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
@@ -8634,6 +9020,7 @@ namespace Cerbos.Api.V1.Response {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           actions_.WriteTo(ref output, _repeated_actions_codec);
+          variables_.WriteTo(ref output, _repeated_variables_codec);
           if (_unknownFields != null) {
             _unknownFields.WriteTo(ref output);
           }
@@ -8645,6 +9032,7 @@ namespace Cerbos.Api.V1.Response {
         public int CalculateSize() {
           int size = 0;
           size += actions_.CalculateSize(_repeated_actions_codec);
+          size += variables_.CalculateSize(_repeated_variables_codec);
           if (_unknownFields != null) {
             size += _unknownFields.CalculateSize();
           }
@@ -8658,6 +9046,7 @@ namespace Cerbos.Api.V1.Response {
             return;
           }
           actions_.Add(other.actions_);
+          variables_.Add(other.variables_);
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
         }
 
@@ -8677,6 +9066,10 @@ namespace Cerbos.Api.V1.Response {
                 actions_.AddEntriesFrom(input, _repeated_actions_codec);
                 break;
               }
+              case 18: {
+                variables_.AddEntriesFrom(input, _repeated_variables_codec);
+                break;
+              }
             }
           }
         #endif
@@ -8694,6 +9087,10 @@ namespace Cerbos.Api.V1.Response {
                 break;
               case 10: {
                 actions_.AddEntriesFrom(ref input, _repeated_actions_codec);
+                break;
+              }
+              case 18: {
+                variables_.AddEntriesFrom(ref input, _repeated_variables_codec);
                 break;
               }
             }
