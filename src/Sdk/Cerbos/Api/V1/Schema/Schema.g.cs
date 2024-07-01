@@ -34,9 +34,9 @@ namespace Cerbos.Api.V1.Schema {
             "UEVDSUZJRUQQABIUChBTT1VSQ0VfUFJJTkNJUEFMEAESEwoPU09VUkNFX1JF",
             "U09VUkNFEAIi0QEKBlNjaGVtYRJYCgJpZBgBIAEoCUJIkkE0MiBVbmlxdWUg",
             "aWRlbnRpZmllciBmb3IgdGhlIHNjaGVtYUoQInByaW5jaXBhbC5qc29uIuJB",
-            "AQK6SArIAQFyBRABGP8BUgJpZBJtCgpkZWZpbml0aW9uGAIgASgMQk2SQTwy",
+            "AQK6SApyBRABGP8ByAEBUgJpZBJtCgpkZWZpbml0aW9uGAIgASgMQk2SQTwy",
             "FkpTT04gc2NoZW1hIGRlZmluaXRpb25KInsidHlwZSI6Im9iamVjdCIsICJw",
-            "cm9wZXJ0aWVzIjp7fX3iQQECukgHyAEBegIQClIKZGVmaW5pdGlvbkJvChhk",
+            "cm9wZXJ0aWVzIjp7fX3iQQECukgHegIQCsgBAVIKZGVmaW5pdGlvbkJvChhk",
             "ZXYuY2VyYm9zLmFwaS52MS5zY2hlbWFaPGdpdGh1Yi5jb20vY2VyYm9zL2Nl",
             "cmJvcy9hcGkvZ2VucGIvY2VyYm9zL3NjaGVtYS92MTtzY2hlbWF2MaoCFENl",
             "cmJvcy5BcGkuVjEuU2NoZW1hYgZwcm90bzM="));
@@ -51,6 +51,7 @@ namespace Cerbos.Api.V1.Schema {
 
   }
   #region Messages
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ValidationError : pb::IMessage<ValidationError>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -264,7 +265,11 @@ namespace Cerbos.Api.V1.Schema {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -291,7 +296,11 @@ namespace Cerbos.Api.V1.Schema {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -328,6 +337,7 @@ namespace Cerbos.Api.V1.Schema {
 
   }
 
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class Schema : pb::IMessage<Schema>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -512,7 +522,11 @@ namespace Cerbos.Api.V1.Schema {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -535,7 +549,11 @@ namespace Cerbos.Api.V1.Schema {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
