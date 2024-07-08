@@ -17,7 +17,7 @@ Task("Clean")
 Task("Generate")
     .Does(() =>
 {
-    StartProcess("buf", new ProcessSettings{Arguments = "generate proto"});
+    StartProcess("buf", new ProcessSettings{Arguments = "generate protos"});
 });
 
 Task("Build")
