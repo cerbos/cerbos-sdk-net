@@ -7,8 +7,8 @@ on:
       - 'v*'
 
 jobs:
-  build-and-check-changes:
-    name: Build and check uncommitted changes
+  generate-build-and-check-changes:
+    name: Generate, build and check uncommitted changes
     runs-on: ubuntu-latest
     steps:
       - name: Setup Buf
@@ -18,6 +18,14 @@ jobs:
 
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Run the generate script
+        uses: cake-build/cake-action@v1
+        env:
+          BUF_TOKEN: ${{ secrets.BUF_TOKEN }}
+        with:
+          cake-bootstrap: true
+          target: Generate
 
       - name: Run the build script
         uses: cake-build/cake-action@v1
