@@ -69,7 +69,7 @@ namespace Cerbos.Sdk.Builder
             return this;
         }
 
-        public CerbosClient Build()
+        public ICerbosClient Build()
         {
             if (string.IsNullOrEmpty(Target))
             {

@@ -11,7 +11,7 @@ namespace Cerbos.Sdk
     /// <summary>
     /// CerbosClient provides a client implementation that communicates with the PDP.
     /// </summary>
-    public sealed class CerbosClient
+    public sealed class CerbosClient: ICerbosClient
     {
         private Api.V1.Svc.CerbosService.CerbosServiceClient CerbosServiceClient { get; }
         private readonly Metadata _metadata;
