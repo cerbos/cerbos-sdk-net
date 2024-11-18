@@ -3,7 +3,7 @@
   "extends": [
     "config:base",
     "group:allNonMajor",
-    "schedule:weekly",
+    "schedule:monthly",
     ":automergeDisabled",
     ":combinePatchMinorReleases",
     ":gitSignOff",
@@ -23,9 +23,5 @@
       "groupSlug": "gh-actions-deps"
     }
   ],
-  "labels": [
-    "area/ci",
-    "bots",
-    "kind/chore"
-  ]
+  "labels": ["area/ci", "bots", "kind/chore"]
 }
