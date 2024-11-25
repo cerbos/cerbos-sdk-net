@@ -29,12 +29,12 @@ namespace Google.Api {
             "ZWhhdmlvchIeChpGSUVMRF9CRUhBVklPUl9VTlNQRUNJRklFRBAAEgwKCE9Q",
             "VElPTkFMEAESDAoIUkVRVUlSRUQQAhIPCgtPVVRQVVRfT05MWRADEg4KCklO",
             "UFVUX09OTFkQBBINCglJTU1VVEFCTEUQBRISCg5VTk9SREVSRURfTElTVBAG",
-            "EhUKEU5PTl9FTVBUWV9ERUZBVUxUEAcSDgoKSURFTlRJRklFUhAIOmAKDmZp",
+            "EhUKEU5PTl9FTVBUWV9ERUZBVUxUEAcSDgoKSURFTlRJRklFUhAIOmQKDmZp",
             "ZWxkX2JlaGF2aW9yEh0uZ29vZ2xlLnByb3RvYnVmLkZpZWxkT3B0aW9ucxic",
-            "CCADKA4yGS5nb29nbGUuYXBpLkZpZWxkQmVoYXZpb3JSDWZpZWxkQmVoYXZp",
-            "b3JCcAoOY29tLmdvb2dsZS5hcGlCEkZpZWxkQmVoYXZpb3JQcm90b1ABWkFn",
-            "b29nbGUuZ29sYW5nLm9yZy9nZW5wcm90by9nb29nbGVhcGlzL2FwaS9hbm5v",
-            "dGF0aW9uczthbm5vdGF0aW9uc6ICBEdBUEliBnByb3RvMw=="));
+            "CCADKA4yGS5nb29nbGUuYXBpLkZpZWxkQmVoYXZpb3JCAhAAUg1maWVsZEJl",
+            "aGF2aW9yQnAKDmNvbS5nb29nbGUuYXBpQhJGaWVsZEJlaGF2aW9yUHJvdG9Q",
+            "AVpBZ29vZ2xlLmdvbGFuZy5vcmcvZ2VucHJvdG8vZ29vZ2xlYXBpcy9hcGkv",
+            "YW5ub3RhdGlvbnM7YW5ub3RhdGlvbnOiAgRHQVBJYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Google.Api.FieldBehavior), }, new pb::Extension[] { FieldBehaviorExtensions.FieldBehavior }, null));
@@ -59,7 +59,7 @@ namespace Google.Api {
     ///      (google.api.field_behavior) = IMMUTABLE];
     /// </summary>
     public static readonly pb::RepeatedExtension<global::Google.Protobuf.Reflection.FieldOptions, global::Google.Api.FieldBehavior> FieldBehavior =
-      new pb::RepeatedExtension<global::Google.Protobuf.Reflection.FieldOptions, global::Google.Api.FieldBehavior>(1052, pb::FieldCodec.ForEnum(8418, x => (int) x, x => (global::Google.Api.FieldBehavior) x));
+      new pb::RepeatedExtension<global::Google.Protobuf.Reflection.FieldOptions, global::Google.Api.FieldBehavior>(1052, pb::FieldCodec.ForEnum(8416, x => (int) x, x => (global::Google.Api.FieldBehavior) x));
   }
 
   #region Enums
