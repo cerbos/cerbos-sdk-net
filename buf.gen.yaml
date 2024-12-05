@@ -2,11 +2,11 @@ version: v2
 managed:
   enabled: false
 plugins:
-  - remote: buf.build/protocolbuffers/csharp:v27.2
+  - remote: buf.build/protocolbuffers/csharp:v29.0
     opt:
       - base_namespace=
       - file_extension=.g.cs
     out: ./src/Sdk
 
-  - remote: buf.build/grpc/csharp:v1.65.0
+  - remote: buf.build/grpc/csharp:v1.68.1
     out: ./src/Sdk

@@ -23,5 +23,5 @@
       "groupSlug": "gh-actions-deps"
     }
   ],
-  "labels": ["area/ci", "bots", "kind/chore"]
+  "labels": ["area/dependencies", "bots", "kind/chore"]
 }

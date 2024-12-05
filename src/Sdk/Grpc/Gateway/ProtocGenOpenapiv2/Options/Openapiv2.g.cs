@@ -2173,7 +2173,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
-      /// `Type` is a a supported HTTP header type.
+      /// `Type` is a supported HTTP header type.
       /// See https://swagger.io/specification/v2/#parameterType.
       /// </summary>
       public enum Type {

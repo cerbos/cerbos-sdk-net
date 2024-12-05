@@ -30,7 +30,7 @@ namespace Google.Api.Expr.V1Alpha1 {
             "L3Byb3RvYnVmL3RpbWVzdGFtcC5wcm90byKHAQoKUGFyc2VkRXhwchIyCgRl",
             "eHByGAIgASgLMh4uZ29vZ2xlLmFwaS5leHByLnYxYWxwaGExLkV4cHJSBGV4",
             "cHISRQoLc291cmNlX2luZm8YAyABKAsyJC5nb29nbGUuYXBpLmV4cHIudjFh",
-            "bHBoYTEuU291cmNlSW5mb1IKc291cmNlSW5mbyKuDQoERXhwchIOCgJpZBgC",
+            "bHBoYTEuU291cmNlSW5mb1IKc291cmNlSW5mbyLLDQoERXhwchIOCgJpZBgC",
             "IAEoA1ICaWQSQwoKY29uc3RfZXhwchgDIAEoCzIiLmdvb2dsZS5hcGkuZXhw",
             "ci52MWFscGhhMS5Db25zdGFudEgAUgljb25zdEV4cHISRQoKaWRlbnRfZXhw",
             "chgEIAEoCzIkLmdvb2dsZS5hcGkuZXhwci52MWFscGhhMS5FeHByLklkZW50",
@@ -59,41 +59,52 @@ namespace Google.Api.Expr.V1Alpha1 {
             "UghmaWVsZEtleRI5CgdtYXBfa2V5GAMgASgLMh4uZ29vZ2xlLmFwaS5leHBy",
             "LnYxYWxwaGExLkV4cHJIAFIGbWFwS2V5EjQKBXZhbHVlGAQgASgLMh4uZ29v",
             "Z2xlLmFwaS5leHByLnYxYWxwaGExLkV4cHJSBXZhbHVlEiUKDm9wdGlvbmFs",
-            "X2VudHJ5GAUgASgIUg1vcHRpb25hbEVudHJ5QgoKCGtleV9raW5kGv0CCg1D",
-            "b21wcmVoZW5zaW9uEhkKCGl0ZXJfdmFyGAEgASgJUgdpdGVyVmFyEj0KCml0",
-            "ZXJfcmFuZ2UYAiABKAsyHi5nb29nbGUuYXBpLmV4cHIudjFhbHBoYTEuRXhw",
-            "clIJaXRlclJhbmdlEhkKCGFjY3VfdmFyGAMgASgJUgdhY2N1VmFyEjsKCWFj",
-            "Y3VfaW5pdBgEIAEoCzIeLmdvb2dsZS5hcGkuZXhwci52MWFscGhhMS5FeHBy",
-            "UghhY2N1SW5pdBJFCg5sb29wX2NvbmRpdGlvbhgFIAEoCzIeLmdvb2dsZS5h",
-            "cGkuZXhwci52MWFscGhhMS5FeHByUg1sb29wQ29uZGl0aW9uEjsKCWxvb3Bf",
-            "c3RlcBgGIAEoCzIeLmdvb2dsZS5hcGkuZXhwci52MWFscGhhMS5FeHByUghs",
-            "b29wU3RlcBI2CgZyZXN1bHQYByABKAsyHi5nb29nbGUuYXBpLmV4cHIudjFh",
-            "bHBoYTEuRXhwclIGcmVzdWx0QgsKCWV4cHJfa2luZCLBAwoIQ29uc3RhbnQS",
-            "OwoKbnVsbF92YWx1ZRgBIAEoDjIaLmdvb2dsZS5wcm90b2J1Zi5OdWxsVmFs",
-            "dWVIAFIJbnVsbFZhbHVlEh8KCmJvb2xfdmFsdWUYAiABKAhIAFIJYm9vbFZh",
-            "bHVlEiEKC2ludDY0X3ZhbHVlGAMgASgDSABSCmludDY0VmFsdWUSIwoMdWlu",
-            "dDY0X3ZhbHVlGAQgASgESABSC3VpbnQ2NFZhbHVlEiMKDGRvdWJsZV92YWx1",
-            "ZRgFIAEoAUgAUgtkb3VibGVWYWx1ZRIjCgxzdHJpbmdfdmFsdWUYBiABKAlI",
-            "AFILc3RyaW5nVmFsdWUSIQoLYnl0ZXNfdmFsdWUYByABKAxIAFIKYnl0ZXNW",
-            "YWx1ZRJGCg5kdXJhdGlvbl92YWx1ZRgIIAEoCzIZLmdvb2dsZS5wcm90b2J1",
-            "Zi5EdXJhdGlvbkICGAFIAFINZHVyYXRpb25WYWx1ZRJJCg90aW1lc3RhbXBf",
-            "dmFsdWUYCSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wQgIYAUgA",
-            "Ug50aW1lc3RhbXBWYWx1ZUIPCg1jb25zdGFudF9raW5kIrkDCgpTb3VyY2VJ",
-            "bmZvEiUKDnN5bnRheF92ZXJzaW9uGAEgASgJUg1zeW50YXhWZXJzaW9uEhoK",
-            "CGxvY2F0aW9uGAIgASgJUghsb2NhdGlvbhIhCgxsaW5lX29mZnNldHMYAyAD",
-            "KAVSC2xpbmVPZmZzZXRzElEKCXBvc2l0aW9ucxgEIAMoCzIzLmdvb2dsZS5h",
-            "cGkuZXhwci52MWFscGhhMS5Tb3VyY2VJbmZvLlBvc2l0aW9uc0VudHJ5Uglw",
-            "b3NpdGlvbnMSVQoLbWFjcm9fY2FsbHMYBSADKAsyNC5nb29nbGUuYXBpLmV4",
-            "cHIudjFhbHBoYTEuU291cmNlSW5mby5NYWNyb0NhbGxzRW50cnlSCm1hY3Jv",
-            "Q2FsbHMaPAoOUG9zaXRpb25zRW50cnkSEAoDa2V5GAEgASgDUgNrZXkSFAoF",
-            "dmFsdWUYAiABKAVSBXZhbHVlOgI4ARpdCg9NYWNyb0NhbGxzRW50cnkSEAoD",
-            "a2V5GAEgASgDUgNrZXkSNAoFdmFsdWUYAiABKAsyHi5nb29nbGUuYXBpLmV4",
-            "cHIudjFhbHBoYTEuRXhwclIFdmFsdWU6AjgBInAKDlNvdXJjZVBvc2l0aW9u",
-            "EhoKCGxvY2F0aW9uGAEgASgJUghsb2NhdGlvbhIWCgZvZmZzZXQYAiABKAVS",
-            "Bm9mZnNldBISCgRsaW5lGAMgASgFUgRsaW5lEhYKBmNvbHVtbhgEIAEoBVIG",
-            "Y29sdW1uQm4KHGNvbS5nb29nbGUuYXBpLmV4cHIudjFhbHBoYTFCC1N5bnRh",
-            "eFByb3RvUAFaPGdvb2dsZS5nb2xhbmcub3JnL2dlbnByb3RvL2dvb2dsZWFw",
-            "aXMvYXBpL2V4cHIvdjFhbHBoYTE7ZXhwcvgBAWIGcHJvdG8z"));
+            "X2VudHJ5GAUgASgIUg1vcHRpb25hbEVudHJ5QgoKCGtleV9raW5kGpoDCg1D",
+            "b21wcmVoZW5zaW9uEhkKCGl0ZXJfdmFyGAEgASgJUgdpdGVyVmFyEhsKCWl0",
+            "ZXJfdmFyMhgIIAEoCVIIaXRlclZhcjISPQoKaXRlcl9yYW5nZRgCIAEoCzIe",
+            "Lmdvb2dsZS5hcGkuZXhwci52MWFscGhhMS5FeHByUglpdGVyUmFuZ2USGQoI",
+            "YWNjdV92YXIYAyABKAlSB2FjY3VWYXISOwoJYWNjdV9pbml0GAQgASgLMh4u",
+            "Z29vZ2xlLmFwaS5leHByLnYxYWxwaGExLkV4cHJSCGFjY3VJbml0EkUKDmxv",
+            "b3BfY29uZGl0aW9uGAUgASgLMh4uZ29vZ2xlLmFwaS5leHByLnYxYWxwaGEx",
+            "LkV4cHJSDWxvb3BDb25kaXRpb24SOwoJbG9vcF9zdGVwGAYgASgLMh4uZ29v",
+            "Z2xlLmFwaS5leHByLnYxYWxwaGExLkV4cHJSCGxvb3BTdGVwEjYKBnJlc3Vs",
+            "dBgHIAEoCzIeLmdvb2dsZS5hcGkuZXhwci52MWFscGhhMS5FeHByUgZyZXN1",
+            "bHRCCwoJZXhwcl9raW5kIsEDCghDb25zdGFudBI7CgpudWxsX3ZhbHVlGAEg",
+            "ASgOMhouZ29vZ2xlLnByb3RvYnVmLk51bGxWYWx1ZUgAUgludWxsVmFsdWUS",
+            "HwoKYm9vbF92YWx1ZRgCIAEoCEgAUglib29sVmFsdWUSIQoLaW50NjRfdmFs",
+            "dWUYAyABKANIAFIKaW50NjRWYWx1ZRIjCgx1aW50NjRfdmFsdWUYBCABKARI",
+            "AFILdWludDY0VmFsdWUSIwoMZG91YmxlX3ZhbHVlGAUgASgBSABSC2RvdWJs",
+            "ZVZhbHVlEiMKDHN0cmluZ192YWx1ZRgGIAEoCUgAUgtzdHJpbmdWYWx1ZRIh",
+            "CgtieXRlc192YWx1ZRgHIAEoDEgAUgpieXRlc1ZhbHVlEkYKDmR1cmF0aW9u",
+            "X3ZhbHVlGAggASgLMhkuZ29vZ2xlLnByb3RvYnVmLkR1cmF0aW9uQgIYAUgA",
+            "Ug1kdXJhdGlvblZhbHVlEkkKD3RpbWVzdGFtcF92YWx1ZRgJIAEoCzIaLmdv",
+            "b2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBCAhgBSABSDnRpbWVzdGFtcFZhbHVl",
+            "Qg8KDWNvbnN0YW50X2tpbmQijAcKClNvdXJjZUluZm8SJQoOc3ludGF4X3Zl",
+            "cnNpb24YASABKAlSDXN5bnRheFZlcnNpb24SGgoIbG9jYXRpb24YAiABKAlS",
+            "CGxvY2F0aW9uEiEKDGxpbmVfb2Zmc2V0cxgDIAMoBVILbGluZU9mZnNldHMS",
+            "UQoJcG9zaXRpb25zGAQgAygLMjMuZ29vZ2xlLmFwaS5leHByLnYxYWxwaGEx",
+            "LlNvdXJjZUluZm8uUG9zaXRpb25zRW50cnlSCXBvc2l0aW9ucxJVCgttYWNy",
+            "b19jYWxscxgFIAMoCzI0Lmdvb2dsZS5hcGkuZXhwci52MWFscGhhMS5Tb3Vy",
+            "Y2VJbmZvLk1hY3JvQ2FsbHNFbnRyeVIKbWFjcm9DYWxscxJOCgpleHRlbnNp",
+            "b25zGAYgAygLMi4uZ29vZ2xlLmFwaS5leHByLnYxYWxwaGExLlNvdXJjZUlu",
+            "Zm8uRXh0ZW5zaW9uUgpleHRlbnNpb25zGoADCglFeHRlbnNpb24SDgoCaWQY",
+            "ASABKAlSAmlkEmkKE2FmZmVjdGVkX2NvbXBvbmVudHMYAiADKA4yOC5nb29n",
+            "bGUuYXBpLmV4cHIudjFhbHBoYTEuU291cmNlSW5mby5FeHRlbnNpb24uQ29t",
+            "cG9uZW50UhJhZmZlY3RlZENvbXBvbmVudHMSUAoHdmVyc2lvbhgDIAEoCzI2",
+            "Lmdvb2dsZS5hcGkuZXhwci52MWFscGhhMS5Tb3VyY2VJbmZvLkV4dGVuc2lv",
+            "bi5WZXJzaW9uUgd2ZXJzaW9uGjUKB1ZlcnNpb24SFAoFbWFqb3IYASABKANS",
+            "BW1ham9yEhQKBW1pbm9yGAIgASgDUgVtaW5vciJvCglDb21wb25lbnQSGQoV",
+            "Q09NUE9ORU5UX1VOU1BFQ0lGSUVEEAASFAoQQ09NUE9ORU5UX1BBUlNFUhAB",
+            "EhoKFkNPTVBPTkVOVF9UWVBFX0NIRUNLRVIQAhIVChFDT01QT05FTlRfUlVO",
+            "VElNRRADGjwKDlBvc2l0aW9uc0VudHJ5EhAKA2tleRgBIAEoA1IDa2V5EhQK",
+            "BXZhbHVlGAIgASgFUgV2YWx1ZToCOAEaXQoPTWFjcm9DYWxsc0VudHJ5EhAK",
+            "A2tleRgBIAEoA1IDa2V5EjQKBXZhbHVlGAIgASgLMh4uZ29vZ2xlLmFwaS5l",
+            "eHByLnYxYWxwaGExLkV4cHJSBXZhbHVlOgI4ASJwCg5Tb3VyY2VQb3NpdGlv",
+            "bhIaCghsb2NhdGlvbhgBIAEoCVIIbG9jYXRpb24SFgoGb2Zmc2V0GAIgASgF",
+            "UgZvZmZzZXQSEgoEbGluZRgDIAEoBVIEbGluZRIWCgZjb2x1bW4YBCABKAVS",
+            "BmNvbHVtbkJuChxjb20uZ29vZ2xlLmFwaS5leHByLnYxYWxwaGExQgtTeW50",
+            "YXhQcm90b1ABWjxnb29nbGUuZ29sYW5nLm9yZy9nZW5wcm90by9nb29nbGVh",
+            "cGlzL2FwaS9leHByL3YxYWxwaGExO2V4cHL4AQFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.StructReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -103,9 +114,10 @@ namespace Google.Api.Expr.V1Alpha1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Api.Expr.V1Alpha1.Expr.Types.Call), global::Google.Api.Expr.V1Alpha1.Expr.Types.Call.Parser, new[]{ "Target", "Function", "Args" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Api.Expr.V1Alpha1.Expr.Types.CreateList), global::Google.Api.Expr.V1Alpha1.Expr.Types.CreateList.Parser, new[]{ "Elements", "OptionalIndices" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Api.Expr.V1Alpha1.Expr.Types.CreateStruct), global::Google.Api.Expr.V1Alpha1.Expr.Types.CreateStruct.Parser, new[]{ "MessageName", "Entries" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Api.Expr.V1Alpha1.Expr.Types.CreateStruct.Types.Entry), global::Google.Api.Expr.V1Alpha1.Expr.Types.CreateStruct.Types.Entry.Parser, new[]{ "Id", "FieldKey", "MapKey", "Value", "OptionalEntry" }, new[]{ "KeyKind" }, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Api.Expr.V1Alpha1.Expr.Types.Comprehension), global::Google.Api.Expr.V1Alpha1.Expr.Types.Comprehension.Parser, new[]{ "IterVar", "IterRange", "AccuVar", "AccuInit", "LoopCondition", "LoopStep", "Result" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Api.Expr.V1Alpha1.Expr.Types.Comprehension), global::Google.Api.Expr.V1Alpha1.Expr.Types.Comprehension.Parser, new[]{ "IterVar", "IterVar2", "IterRange", "AccuVar", "AccuInit", "LoopCondition", "LoopStep", "Result" }, null, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Api.Expr.V1Alpha1.Constant), global::Google.Api.Expr.V1Alpha1.Constant.Parser, new[]{ "NullValue", "BoolValue", "Int64Value", "Uint64Value", "DoubleValue", "StringValue", "BytesValue", "DurationValue", "TimestampValue" }, new[]{ "ConstantKind" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Api.Expr.V1Alpha1.SourceInfo), global::Google.Api.Expr.V1Alpha1.SourceInfo.Parser, new[]{ "SyntaxVersion", "Location", "LineOffsets", "Positions", "MacroCalls" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Api.Expr.V1Alpha1.SourceInfo), global::Google.Api.Expr.V1Alpha1.SourceInfo.Parser, new[]{ "SyntaxVersion", "Location", "LineOffsets", "Positions", "MacroCalls", "Extensions" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Api.Expr.V1Alpha1.SourceInfo.Types.Extension), global::Google.Api.Expr.V1Alpha1.SourceInfo.Types.Extension.Parser, new[]{ "Id", "AffectedComponents", "Version" }, null, new[]{ typeof(global::Google.Api.Expr.V1Alpha1.SourceInfo.Types.Extension.Types.Component) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Api.Expr.V1Alpha1.SourceInfo.Types.Extension.Types.Version), global::Google.Api.Expr.V1Alpha1.SourceInfo.Types.Extension.Types.Version.Parser, new[]{ "Major", "Minor" }, null, null, null, null)}),
+            null, null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Api.Expr.V1Alpha1.SourcePosition), global::Google.Api.Expr.V1Alpha1.SourcePosition.Parser, new[]{ "Location", "Offset", "Line", "Column" }, null, null, null, null)
           }));
     }
@@ -383,14 +395,16 @@ namespace Google.Api.Expr.V1Alpha1 {
   /// operators with the exception of the '.' operator are modelled as function
   /// calls. This makes it easy to represent new operators into the existing AST.
   ///
-  /// All references within expressions must resolve to a [Decl][google.api.expr.v1alpha1.Decl] provided at
-  /// type-check for an expression to be valid. A reference may either be a bare
-  /// identifier `name` or a qualified identifier `google.api.name`. References
-  /// may either refer to a value or a function declaration.
+  /// All references within expressions must resolve to a
+  /// [Decl][google.api.expr.v1alpha1.Decl] provided at type-check for an
+  /// expression to be valid. A reference may either be a bare identifier `name` or
+  /// a qualified identifier `google.api.name`. References may either refer to a
+  /// value or a function declaration.
   ///
   /// For example, the expression `google.api.name.startsWith('expr')` references
-  /// the declaration `google.api.name` within a [Expr.Select][google.api.expr.v1alpha1.Expr.Select] expression, and
-  /// the function declaration `startsWith`.
+  /// the declaration `google.api.name` within a
+  /// [Expr.Select][google.api.expr.v1alpha1.Expr.Select] expression, and the
+  /// function declaration `startsWith`.
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class Expr : pb::IMessage<Expr>
@@ -1072,7 +1086,8 @@ namespace Google.Api.Expr.V1Alpha1 {
         /// Required. Holds a single, unqualified identifier, possibly preceded by a
         /// '.'.
         ///
-        /// Qualified names are represented by the [Expr.Select][google.api.expr.v1alpha1.Expr.Select] expression.
+        /// Qualified names are represented by the
+        /// [Expr.Select][google.api.expr.v1alpha1.Expr.Select] expression.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2754,6 +2769,36 @@ namespace Google.Api.Expr.V1Alpha1 {
       /// messages `has(m.x)` is defined as 'defined, but not set`. For proto3, the
       /// macro tests whether the property is set to its default. For map and struct
       /// types, the macro tests whether the property `x` is defined on `m`.
+      ///
+      /// Comprehensions for the standard environment macros evaluation can be best
+      /// visualized as the following pseudocode:
+      ///
+      /// ```
+      /// let `accu_var` = `accu_init`
+      /// for (let `iter_var` in `iter_range`) {
+      ///   if (!`loop_condition`) {
+      ///     break
+      ///   }
+      ///   `accu_var` = `loop_step`
+      /// }
+      /// return `result`
+      /// ```
+      ///
+      /// Comprehensions for the optional V2 macros which support map-to-map
+      /// translation differ slightly from the standard environment macros in that
+      /// they expose both the key or index in addition to the value for each list
+      /// or map entry:
+      ///
+      /// ```
+      /// let `accu_var` = `accu_init`
+      /// for (let `iter_var`, `iter_var2` in `iter_range`) {
+      ///   if (!`loop_condition`) {
+      ///     break
+      ///   }
+      ///   `accu_var` = `loop_step`
+      /// }
+      /// return `result`
+      /// ```
       /// </summary>
       [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
       public sealed partial class Comprehension : pb::IMessage<Comprehension>
@@ -2791,6 +2836,7 @@ namespace Google.Api.Expr.V1Alpha1 {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Comprehension(Comprehension other) : this() {
           iterVar_ = other.iterVar_;
+          iterVar2_ = other.iterVar2_;
           iterRange_ = other.iterRange_ != null ? other.iterRange_.Clone() : null;
           accuVar_ = other.accuVar_;
           accuInit_ = other.accuInit_ != null ? other.accuInit_.Clone() : null;
@@ -2810,7 +2856,9 @@ namespace Google.Api.Expr.V1Alpha1 {
         public const int IterVarFieldNumber = 1;
         private string iterVar_ = "";
         /// <summary>
-        /// The name of the iteration variable.
+        /// The name of the first iteration variable.
+        /// When the iter_range is a list, this variable is the list element.
+        /// When the iter_range is a map, this variable is the map entry key.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2821,11 +2869,29 @@ namespace Google.Api.Expr.V1Alpha1 {
           }
         }
 
+        /// <summary>Field number for the "iter_var2" field.</summary>
+        public const int IterVar2FieldNumber = 8;
+        private string iterVar2_ = "";
+        /// <summary>
+        /// The name of the second iteration variable, empty if not set.
+        /// When the iter_range is a list, this variable is the integer index.
+        /// When the iter_range is a map, this variable is the map entry value.
+        /// This field is only set for comprehension v2 macros.
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public string IterVar2 {
+          get { return iterVar2_; }
+          set {
+            iterVar2_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
         /// <summary>Field number for the "iter_range" field.</summary>
         public const int IterRangeFieldNumber = 2;
         private global::Google.Api.Expr.V1Alpha1.Expr iterRange_;
         /// <summary>
-        /// The range over which var iterates.
+        /// The range over which the comprehension iterates.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2870,7 +2936,7 @@ namespace Google.Api.Expr.V1Alpha1 {
         public const int LoopConditionFieldNumber = 5;
         private global::Google.Api.Expr.V1Alpha1.Expr loopCondition_;
         /// <summary>
-        /// An expression which can contain iter_var and accu_var.
+        /// An expression which can contain iter_var, iter_var2, and accu_var.
         ///
         /// Returns false when the result has been computed and may be used as
         /// a hint to short-circuit the remainder of the comprehension.
@@ -2888,7 +2954,7 @@ namespace Google.Api.Expr.V1Alpha1 {
         public const int LoopStepFieldNumber = 6;
         private global::Google.Api.Expr.V1Alpha1.Expr loopStep_;
         /// <summary>
-        /// An expression which can contain iter_var and accu_var.
+        /// An expression which can contain iter_var, iter_var2, and accu_var.
         ///
         /// Computes the next value of accu_var.
         /// </summary>
@@ -2934,6 +3000,7 @@ namespace Google.Api.Expr.V1Alpha1 {
             return true;
           }
           if (IterVar != other.IterVar) return false;
+          if (IterVar2 != other.IterVar2) return false;
           if (!object.Equals(IterRange, other.IterRange)) return false;
           if (AccuVar != other.AccuVar) return false;
           if (!object.Equals(AccuInit, other.AccuInit)) return false;
@@ -2948,6 +3015,7 @@ namespace Google.Api.Expr.V1Alpha1 {
         public override int GetHashCode() {
           int hash = 1;
           if (IterVar.Length != 0) hash ^= IterVar.GetHashCode();
+          if (IterVar2.Length != 0) hash ^= IterVar2.GetHashCode();
           if (iterRange_ != null) hash ^= IterRange.GetHashCode();
           if (AccuVar.Length != 0) hash ^= AccuVar.GetHashCode();
           if (accuInit_ != null) hash ^= AccuInit.GetHashCode();
@@ -3000,6 +3068,10 @@ namespace Google.Api.Expr.V1Alpha1 {
             output.WriteRawTag(58);
             output.WriteMessage(Result);
           }
+          if (IterVar2.Length != 0) {
+            output.WriteRawTag(66);
+            output.WriteString(IterVar2);
+          }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
@@ -3038,6 +3110,10 @@ namespace Google.Api.Expr.V1Alpha1 {
             output.WriteRawTag(58);
             output.WriteMessage(Result);
           }
+          if (IterVar2.Length != 0) {
+            output.WriteRawTag(66);
+            output.WriteString(IterVar2);
+          }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(ref output);
           }
@@ -3050,6 +3126,9 @@ namespace Google.Api.Expr.V1Alpha1 {
           int size = 0;
           if (IterVar.Length != 0) {
             size += 1 + pb::CodedOutputStream.ComputeStringSize(IterVar);
+          }
+          if (IterVar2.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(IterVar2);
           }
           if (iterRange_ != null) {
             size += 1 + pb::CodedOutputStream.ComputeMessageSize(IterRange);
@@ -3083,6 +3162,9 @@ namespace Google.Api.Expr.V1Alpha1 {
           }
           if (other.IterVar.Length != 0) {
             IterVar = other.IterVar;
+          }
+          if (other.IterVar2.Length != 0) {
+            IterVar2 = other.IterVar2;
           }
           if (other.iterRange_ != null) {
             if (iterRange_ == null) {
@@ -3179,6 +3261,10 @@ namespace Google.Api.Expr.V1Alpha1 {
                 input.ReadMessage(Result);
                 break;
               }
+              case 66: {
+                IterVar2 = input.ReadString();
+                break;
+              }
             }
           }
         #endif
@@ -3241,6 +3327,10 @@ namespace Google.Api.Expr.V1Alpha1 {
                 input.ReadMessage(Result);
                 break;
               }
+              case 66: {
+                IterVar2 = input.ReadString();
+                break;
+              }
             }
           }
         }
@@ -3263,7 +3353,8 @@ namespace Google.Api.Expr.V1Alpha1 {
   /// primitives.
   ///
   /// Lists and structs are not included as constants as these aggregate types may
-  /// contain [Expr][google.api.expr.v1alpha1.Expr] elements which require evaluation and are thus not constant.
+  /// contain [Expr][google.api.expr.v1alpha1.Expr] elements which require
+  /// evaluation and are thus not constant.
   ///
   /// Examples of literals include: `"hello"`, `b'bytes'`, `1u`, `4.2`, `-2`,
   /// `true`, `null`.
@@ -4018,6 +4109,7 @@ namespace Google.Api.Expr.V1Alpha1 {
       lineOffsets_ = other.lineOffsets_.Clone();
       positions_ = other.positions_.Clone();
       macroCalls_ = other.macroCalls_.Clone();
+      extensions_ = other.extensions_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -4116,6 +4208,26 @@ namespace Google.Api.Expr.V1Alpha1 {
       get { return macroCalls_; }
     }
 
+    /// <summary>Field number for the "extensions" field.</summary>
+    public const int ExtensionsFieldNumber = 6;
+    private static readonly pb::FieldCodec<global::Google.Api.Expr.V1Alpha1.SourceInfo.Types.Extension> _repeated_extensions_codec
+        = pb::FieldCodec.ForMessage(50, global::Google.Api.Expr.V1Alpha1.SourceInfo.Types.Extension.Parser);
+    private readonly pbc::RepeatedField<global::Google.Api.Expr.V1Alpha1.SourceInfo.Types.Extension> extensions_ = new pbc::RepeatedField<global::Google.Api.Expr.V1Alpha1.SourceInfo.Types.Extension>();
+    /// <summary>
+    /// A list of tags for extensions that were used while parsing or type checking
+    /// the source expression. For example, optimizations that require special
+    /// runtime support may be specified.
+    ///
+    /// These are used to check feature support between components in separate
+    /// implementations. This can be used to either skip redundant work or
+    /// report an error if the extension is unsupported.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Google.Api.Expr.V1Alpha1.SourceInfo.Types.Extension> Extensions {
+      get { return extensions_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -4136,6 +4248,7 @@ namespace Google.Api.Expr.V1Alpha1 {
       if(!lineOffsets_.Equals(other.lineOffsets_)) return false;
       if (!Positions.Equals(other.Positions)) return false;
       if (!MacroCalls.Equals(other.MacroCalls)) return false;
+      if(!extensions_.Equals(other.extensions_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -4148,6 +4261,7 @@ namespace Google.Api.Expr.V1Alpha1 {
       hash ^= lineOffsets_.GetHashCode();
       hash ^= Positions.GetHashCode();
       hash ^= MacroCalls.GetHashCode();
+      hash ^= extensions_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -4177,6 +4291,7 @@ namespace Google.Api.Expr.V1Alpha1 {
       lineOffsets_.WriteTo(output, _repeated_lineOffsets_codec);
       positions_.WriteTo(output, _map_positions_codec);
       macroCalls_.WriteTo(output, _map_macroCalls_codec);
+      extensions_.WriteTo(output, _repeated_extensions_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -4198,6 +4313,7 @@ namespace Google.Api.Expr.V1Alpha1 {
       lineOffsets_.WriteTo(ref output, _repeated_lineOffsets_codec);
       positions_.WriteTo(ref output, _map_positions_codec);
       macroCalls_.WriteTo(ref output, _map_macroCalls_codec);
+      extensions_.WriteTo(ref output, _repeated_extensions_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -4217,6 +4333,7 @@ namespace Google.Api.Expr.V1Alpha1 {
       size += lineOffsets_.CalculateSize(_repeated_lineOffsets_codec);
       size += positions_.CalculateSize(_map_positions_codec);
       size += macroCalls_.CalculateSize(_map_macroCalls_codec);
+      size += extensions_.CalculateSize(_repeated_extensions_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -4238,6 +4355,7 @@ namespace Google.Api.Expr.V1Alpha1 {
       lineOffsets_.Add(other.lineOffsets_);
       positions_.MergeFrom(other.positions_);
       macroCalls_.MergeFrom(other.macroCalls_);
+      extensions_.Add(other.extensions_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -4276,6 +4394,10 @@ namespace Google.Api.Expr.V1Alpha1 {
           }
           case 42: {
             macroCalls_.AddEntriesFrom(input, _map_macroCalls_codec);
+            break;
+          }
+          case 50: {
+            extensions_.AddEntriesFrom(input, _repeated_extensions_codec);
             break;
           }
         }
@@ -4318,10 +4440,588 @@ namespace Google.Api.Expr.V1Alpha1 {
             macroCalls_.AddEntriesFrom(ref input, _map_macroCalls_codec);
             break;
           }
+          case 50: {
+            extensions_.AddEntriesFrom(ref input, _repeated_extensions_codec);
+            break;
+          }
         }
       }
     }
     #endif
+
+    #region Nested types
+    /// <summary>Container for nested types declared in the SourceInfo message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static partial class Types {
+      /// <summary>
+      /// An extension that was requested for the source expression.
+      /// </summary>
+      [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+      public sealed partial class Extension : pb::IMessage<Extension>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
+        private static readonly pb::MessageParser<Extension> _parser = new pb::MessageParser<Extension>(() => new Extension());
+        private pb::UnknownFieldSet _unknownFields;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pb::MessageParser<Extension> Parser { get { return _parser; } }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pbr::MessageDescriptor Descriptor {
+          get { return global::Google.Api.Expr.V1Alpha1.SourceInfo.Descriptor.NestedTypes[0]; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        pbr::MessageDescriptor pb::IMessage.Descriptor {
+          get { return Descriptor; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public Extension() {
+          OnConstruction();
+        }
+
+        partial void OnConstruction();
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public Extension(Extension other) : this() {
+          id_ = other.id_;
+          affectedComponents_ = other.affectedComponents_.Clone();
+          version_ = other.version_ != null ? other.version_.Clone() : null;
+          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public Extension Clone() {
+          return new Extension(this);
+        }
+
+        /// <summary>Field number for the "id" field.</summary>
+        public const int IdFieldNumber = 1;
+        private string id_ = "";
+        /// <summary>
+        /// Identifier for the extension. Example: constant_folding
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public string Id {
+          get { return id_; }
+          set {
+            id_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        /// <summary>Field number for the "affected_components" field.</summary>
+        public const int AffectedComponentsFieldNumber = 2;
+        private static readonly pb::FieldCodec<global::Google.Api.Expr.V1Alpha1.SourceInfo.Types.Extension.Types.Component> _repeated_affectedComponents_codec
+            = pb::FieldCodec.ForEnum(18, x => (int) x, x => (global::Google.Api.Expr.V1Alpha1.SourceInfo.Types.Extension.Types.Component) x);
+        private readonly pbc::RepeatedField<global::Google.Api.Expr.V1Alpha1.SourceInfo.Types.Extension.Types.Component> affectedComponents_ = new pbc::RepeatedField<global::Google.Api.Expr.V1Alpha1.SourceInfo.Types.Extension.Types.Component>();
+        /// <summary>
+        /// If set, the listed components must understand the extension for the
+        /// expression to evaluate correctly.
+        ///
+        /// This field has set semantics, repeated values should be deduplicated.
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public pbc::RepeatedField<global::Google.Api.Expr.V1Alpha1.SourceInfo.Types.Extension.Types.Component> AffectedComponents {
+          get { return affectedComponents_; }
+        }
+
+        /// <summary>Field number for the "version" field.</summary>
+        public const int VersionFieldNumber = 3;
+        private global::Google.Api.Expr.V1Alpha1.SourceInfo.Types.Extension.Types.Version version_;
+        /// <summary>
+        /// Version info. May be skipped if it isn't meaningful for the extension.
+        /// (for example constant_folding might always be v0.0).
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public global::Google.Api.Expr.V1Alpha1.SourceInfo.Types.Extension.Types.Version Version {
+          get { return version_; }
+          set {
+            version_ = value;
+          }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override bool Equals(object other) {
+          return Equals(other as Extension);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool Equals(Extension other) {
+          if (ReferenceEquals(other, null)) {
+            return false;
+          }
+          if (ReferenceEquals(other, this)) {
+            return true;
+          }
+          if (Id != other.Id) return false;
+          if(!affectedComponents_.Equals(other.affectedComponents_)) return false;
+          if (!object.Equals(Version, other.Version)) return false;
+          return Equals(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override int GetHashCode() {
+          int hash = 1;
+          if (Id.Length != 0) hash ^= Id.GetHashCode();
+          hash ^= affectedComponents_.GetHashCode();
+          if (version_ != null) hash ^= Version.GetHashCode();
+          if (_unknownFields != null) {
+            hash ^= _unknownFields.GetHashCode();
+          }
+          return hash;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override string ToString() {
+          return pb::JsonFormatter.ToDiagnosticString(this);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
+          if (Id.Length != 0) {
+            output.WriteRawTag(10);
+            output.WriteString(Id);
+          }
+          affectedComponents_.WriteTo(output, _repeated_affectedComponents_codec);
+          if (version_ != null) {
+            output.WriteRawTag(26);
+            output.WriteMessage(Version);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(output);
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (Id.Length != 0) {
+            output.WriteRawTag(10);
+            output.WriteString(Id);
+          }
+          affectedComponents_.WriteTo(ref output, _repeated_affectedComponents_codec);
+          if (version_ != null) {
+            output.WriteRawTag(26);
+            output.WriteMessage(Version);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public int CalculateSize() {
+          int size = 0;
+          if (Id.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
+          }
+          size += affectedComponents_.CalculateSize(_repeated_affectedComponents_codec);
+          if (version_ != null) {
+            size += 1 + pb::CodedOutputStream.ComputeMessageSize(Version);
+          }
+          if (_unknownFields != null) {
+            size += _unknownFields.CalculateSize();
+          }
+          return size;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(Extension other) {
+          if (other == null) {
+            return;
+          }
+          if (other.Id.Length != 0) {
+            Id = other.Id;
+          }
+          affectedComponents_.Add(other.affectedComponents_);
+          if (other.version_ != null) {
+            if (version_ == null) {
+              Version = new global::Google.Api.Expr.V1Alpha1.SourceInfo.Types.Extension.Types.Version();
+            }
+            Version.MergeFrom(other.Version);
+          }
+          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+          if ((tag & 7) == 4) {
+            // Abort on any end group tag.
+            return;
+          }
+          switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+                break;
+              case 10: {
+                Id = input.ReadString();
+                break;
+              }
+              case 18:
+              case 16: {
+                affectedComponents_.AddEntriesFrom(input, _repeated_affectedComponents_codec);
+                break;
+              }
+              case 26: {
+                if (version_ == null) {
+                  Version = new global::Google.Api.Expr.V1Alpha1.SourceInfo.Types.Extension.Types.Version();
+                }
+                input.ReadMessage(Version);
+                break;
+              }
+            }
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+          if ((tag & 7) == 4) {
+            // Abort on any end group tag.
+            return;
+          }
+          switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 10: {
+                Id = input.ReadString();
+                break;
+              }
+              case 18:
+              case 16: {
+                affectedComponents_.AddEntriesFrom(ref input, _repeated_affectedComponents_codec);
+                break;
+              }
+              case 26: {
+                if (version_ == null) {
+                  Version = new global::Google.Api.Expr.V1Alpha1.SourceInfo.Types.Extension.Types.Version();
+                }
+                input.ReadMessage(Version);
+                break;
+              }
+            }
+          }
+        }
+        #endif
+
+        #region Nested types
+        /// <summary>Container for nested types declared in the Extension message type.</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static partial class Types {
+          /// <summary>
+          /// CEL component specifier.
+          /// </summary>
+          public enum Component {
+            /// <summary>
+            /// Unspecified, default.
+            /// </summary>
+            [pbr::OriginalName("COMPONENT_UNSPECIFIED")] Unspecified = 0,
+            /// <summary>
+            /// Parser. Converts a CEL string to an AST.
+            /// </summary>
+            [pbr::OriginalName("COMPONENT_PARSER")] Parser = 1,
+            /// <summary>
+            /// Type checker. Checks that references in an AST are defined and types
+            /// agree.
+            /// </summary>
+            [pbr::OriginalName("COMPONENT_TYPE_CHECKER")] TypeChecker = 2,
+            /// <summary>
+            /// Runtime. Evaluates a parsed and optionally checked CEL AST against a
+            /// context.
+            /// </summary>
+            [pbr::OriginalName("COMPONENT_RUNTIME")] Runtime = 3,
+          }
+
+          /// <summary>
+          /// Version
+          /// </summary>
+          [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+          public sealed partial class Version : pb::IMessage<Version>
+          #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+              , pb::IBufferMessage
+          #endif
+          {
+            private static readonly pb::MessageParser<Version> _parser = new pb::MessageParser<Version>(() => new Version());
+            private pb::UnknownFieldSet _unknownFields;
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public static pb::MessageParser<Version> Parser { get { return _parser; } }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public static pbr::MessageDescriptor Descriptor {
+              get { return global::Google.Api.Expr.V1Alpha1.SourceInfo.Types.Extension.Descriptor.NestedTypes[0]; }
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            pbr::MessageDescriptor pb::IMessage.Descriptor {
+              get { return Descriptor; }
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public Version() {
+              OnConstruction();
+            }
+
+            partial void OnConstruction();
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public Version(Version other) : this() {
+              major_ = other.major_;
+              minor_ = other.minor_;
+              _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public Version Clone() {
+              return new Version(this);
+            }
+
+            /// <summary>Field number for the "major" field.</summary>
+            public const int MajorFieldNumber = 1;
+            private long major_;
+            /// <summary>
+            /// Major version changes indicate different required support level from
+            /// the required components.
+            /// </summary>
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public long Major {
+              get { return major_; }
+              set {
+                major_ = value;
+              }
+            }
+
+            /// <summary>Field number for the "minor" field.</summary>
+            public const int MinorFieldNumber = 2;
+            private long minor_;
+            /// <summary>
+            /// Minor version changes must not change the observed behavior from
+            /// existing implementations, but may be provided informationally.
+            /// </summary>
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public long Minor {
+              get { return minor_; }
+              set {
+                minor_ = value;
+              }
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public override bool Equals(object other) {
+              return Equals(other as Version);
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public bool Equals(Version other) {
+              if (ReferenceEquals(other, null)) {
+                return false;
+              }
+              if (ReferenceEquals(other, this)) {
+                return true;
+              }
+              if (Major != other.Major) return false;
+              if (Minor != other.Minor) return false;
+              return Equals(_unknownFields, other._unknownFields);
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public override int GetHashCode() {
+              int hash = 1;
+              if (Major != 0L) hash ^= Major.GetHashCode();
+              if (Minor != 0L) hash ^= Minor.GetHashCode();
+              if (_unknownFields != null) {
+                hash ^= _unknownFields.GetHashCode();
+              }
+              return hash;
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public override string ToString() {
+              return pb::JsonFormatter.ToDiagnosticString(this);
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public void WriteTo(pb::CodedOutputStream output) {
+            #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+              output.WriteRawMessage(this);
+            #else
+              if (Major != 0L) {
+                output.WriteRawTag(8);
+                output.WriteInt64(Major);
+              }
+              if (Minor != 0L) {
+                output.WriteRawTag(16);
+                output.WriteInt64(Minor);
+              }
+              if (_unknownFields != null) {
+                _unknownFields.WriteTo(output);
+              }
+            #endif
+            }
+
+            #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+              if (Major != 0L) {
+                output.WriteRawTag(8);
+                output.WriteInt64(Major);
+              }
+              if (Minor != 0L) {
+                output.WriteRawTag(16);
+                output.WriteInt64(Minor);
+              }
+              if (_unknownFields != null) {
+                _unknownFields.WriteTo(ref output);
+              }
+            }
+            #endif
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public int CalculateSize() {
+              int size = 0;
+              if (Major != 0L) {
+                size += 1 + pb::CodedOutputStream.ComputeInt64Size(Major);
+              }
+              if (Minor != 0L) {
+                size += 1 + pb::CodedOutputStream.ComputeInt64Size(Minor);
+              }
+              if (_unknownFields != null) {
+                size += _unknownFields.CalculateSize();
+              }
+              return size;
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public void MergeFrom(Version other) {
+              if (other == null) {
+                return;
+              }
+              if (other.Major != 0L) {
+                Major = other.Major;
+              }
+              if (other.Minor != 0L) {
+                Minor = other.Minor;
+              }
+              _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public void MergeFrom(pb::CodedInputStream input) {
+            #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+              input.ReadRawMessage(this);
+            #else
+              uint tag;
+              while ((tag = input.ReadTag()) != 0) {
+              if ((tag & 7) == 4) {
+                // Abort on any end group tag.
+                return;
+              }
+              switch(tag) {
+                  default:
+                    _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+                    break;
+                  case 8: {
+                    Major = input.ReadInt64();
+                    break;
+                  }
+                  case 16: {
+                    Minor = input.ReadInt64();
+                    break;
+                  }
+                }
+              }
+            #endif
+            }
+
+            #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+              uint tag;
+              while ((tag = input.ReadTag()) != 0) {
+              if ((tag & 7) == 4) {
+                // Abort on any end group tag.
+                return;
+              }
+              switch(tag) {
+                  default:
+                    _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                    break;
+                  case 8: {
+                    Major = input.ReadInt64();
+                    break;
+                  }
+                  case 16: {
+                    Minor = input.ReadInt64();
+                    break;
+                  }
+                }
+              }
+            }
+            #endif
+
+          }
+
+        }
+        #endregion
+
+      }
+
+    }
+    #endregion
 
   }
 
