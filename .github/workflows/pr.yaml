@@ -4,7 +4,7 @@ on:
   pull_request:
     branches:
       - main
-      - 'v*'
+      - "v*"
 
 jobs:
   generate-build-and-check-changes:
@@ -18,6 +18,10 @@ jobs:
 
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "6.x"
 
       - name: Run the generate script
         uses: cake-build/cake-action@v1
