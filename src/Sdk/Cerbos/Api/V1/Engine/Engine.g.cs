@@ -167,10 +167,10 @@ namespace Cerbos.Api.V1.Engine {
             "b3MuZW5naW5lLnYxLkF1eERhdGEuSnd0RW50cnlSA2p3dBpOCghKd3RFbnRy",
             "eRIQCgNrZXkYASABKAlSA2tleRIsCgV2YWx1ZRgCIAEoCzIWLmdvb2dsZS5w",
             "cm90b2J1Zi5WYWx1ZVIFdmFsdWU6AjgBOiCSQR0KGzIZU3RydWN0dXJlZCBh",
-            "dXhpbGlhcnkgZGF0YSLdCQoFVHJhY2USQQoKY29tcG9uZW50cxgBIAMoCzIh",
+            "dXhpbGlhcnkgZGF0YSKCCgoFVHJhY2USQQoKY29tcG9uZW50cxgBIAMoCzIh",
             "LmNlcmJvcy5lbmdpbmUudjEuVHJhY2UuQ29tcG9uZW50Ugpjb21wb25lbnRz",
             "EjMKBWV2ZW50GAIgASgLMh0uY2VyYm9zLmVuZ2luZS52MS5UcmFjZS5FdmVu",
-            "dFIFZXZlbnQatQYKCUNvbXBvbmVudBI6CgRraW5kGAEgASgOMiYuY2VyYm9z",
+            "dFIFZXZlbnQa2gYKCUNvbXBvbmVudBI6CgRraW5kGAEgASgOMiYuY2VyYm9z",
             "LmVuZ2luZS52MS5UcmFjZS5Db21wb25lbnQuS2luZFIEa2luZBIYCgZhY3Rp",
             "b24YAiABKAlIAFIGYWN0aW9uEiMKDGRlcml2ZWRfcm9sZRgDIAEoCUgAUgtk",
             "ZXJpdmVkUm9sZRIUCgRleHByGAQgASgJSABSBGV4cHISFgoFaW5kZXgYBSAB",
@@ -179,43 +179,43 @@ namespace Cerbos.Api.V1.Engine {
             "FgoFc2NvcGUYCSABKAlIAFIFc2NvcGUSSAoIdmFyaWFibGUYCiABKAsyKi5j",
             "ZXJib3MuZW5naW5lLnYxLlRyYWNlLkNvbXBvbmVudC5WYXJpYWJsZUgAUgh2",
             "YXJpYWJsZRIYCgZvdXRwdXQYCyABKAlIAFIGb3V0cHV0EiwKEXJvbGVfcG9s",
-            "aWN5X3Njb3BlGAwgASgJSABSD3JvbGVQb2xpY3lTY29wZRoyCghWYXJpYWJs",
-            "ZRISCgRuYW1lGAEgASgJUgRuYW1lEhIKBGV4cHIYAiABKAlSBGV4cHIixwIK",
-            "BEtpbmQSFAoQS0lORF9VTlNQRUNJRklFRBAAEg8KC0tJTkRfQUNUSU9OEAES",
-            "FgoSS0lORF9DT05ESVRJT05fQUxMEAISFgoSS0lORF9DT05ESVRJT05fQU5Z",
-            "EAMSFwoTS0lORF9DT05ESVRJT05fTk9ORRAEEhIKDktJTkRfQ09ORElUSU9O",
-            "EAUSFQoRS0lORF9ERVJJVkVEX1JPTEUQBhINCglLSU5EX0VYUFIQBxIPCgtL",
-            "SU5EX1BPTElDWRAIEhEKDUtJTkRfUkVTT1VSQ0UQCRINCglLSU5EX1JVTEUQ",
-            "ChIOCgpLSU5EX1NDT1BFEAsSEQoNS0lORF9WQVJJQUJMRRAMEhIKDktJTkRf",
-            "VkFSSUFCTEVTEA0SDwoLS0lORF9PVVRQVVQQDhIaChZLSU5EX1JPTEVfUE9M",
-            "SUNZX1NDT1BFEA9CCQoHZGV0YWlscxqjAgoFRXZlbnQSPAoGc3RhdHVzGAEg",
-            "ASgOMiQuY2VyYm9zLmVuZ2luZS52MS5UcmFjZS5FdmVudC5TdGF0dXNSBnN0",
-            "YXR1cxIwCgZlZmZlY3QYAiABKA4yGC5jZXJib3MuZWZmZWN0LnYxLkVmZmVj",
-            "dFIGZWZmZWN0EhQKBWVycm9yGAMgASgJUgVlcnJvchIYCgdtZXNzYWdlGAQg",
-            "ASgJUgdtZXNzYWdlEi4KBnJlc3VsdBgFIAEoCzIWLmdvb2dsZS5wcm90b2J1",
-            "Zi5WYWx1ZVIGcmVzdWx0IkoKBlN0YXR1cxIWChJTVEFUVVNfVU5TUEVDSUZJ",
-            "RUQQABIUChBTVEFUVVNfQUNUSVZBVEVEEAESEgoOU1RBVFVTX1NLSVBQRUQQ",
-            "AiLIBQoHUmVxdWVzdBJBCglwcmluY2lwYWwYASABKAsyIy5jZXJib3MuZW5n",
-            "aW5lLnYxLlJlcXVlc3QuUHJpbmNpcGFsUglwcmluY2lwYWwSPgoIcmVzb3Vy",
-            "Y2UYAiABKAsyIi5jZXJib3MuZW5naW5lLnYxLlJlcXVlc3QuUmVzb3VyY2VS",
-            "CHJlc291cmNlEjQKCGF1eF9kYXRhGAMgASgLMhkuY2VyYm9zLmVuZ2luZS52",
-            "MS5BdXhEYXRhUgdhdXhEYXRhGoICCglQcmluY2lwYWwSDgoCaWQYASABKAlS",
-            "AmlkEhQKBXJvbGVzGAIgAygJUgVyb2xlcxJBCgRhdHRyGAMgAygLMi0uY2Vy",
-            "Ym9zLmVuZ2luZS52MS5SZXF1ZXN0LlByaW5jaXBhbC5BdHRyRW50cnlSBGF0",
-            "dHISJQoOcG9saWN5X3ZlcnNpb24YBCABKAlSDXBvbGljeVZlcnNpb24SFAoF",
-            "c2NvcGUYBSABKAlSBXNjb3BlGk8KCUF0dHJFbnRyeRIQCgNrZXkYASABKAlS",
-            "A2tleRIsCgV2YWx1ZRgCIAEoCzIWLmdvb2dsZS5wcm90b2J1Zi5WYWx1ZVIF",
-            "dmFsdWU6AjgBGv4BCghSZXNvdXJjZRISCgRraW5kGAEgASgJUgRraW5kEg4K",
-            "AmlkGAIgASgJUgJpZBJACgRhdHRyGAMgAygLMiwuY2VyYm9zLmVuZ2luZS52",
-            "MS5SZXF1ZXN0LlJlc291cmNlLkF0dHJFbnRyeVIEYXR0chIlCg5wb2xpY3lf",
-            "dmVyc2lvbhgEIAEoCVINcG9saWN5VmVyc2lvbhIUCgVzY29wZRgFIAEoCVIF",
-            "c2NvcGUaTwoJQXR0ckVudHJ5EhAKA2tleRgBIAEoCVIDa2V5EiwKBXZhbHVl",
-            "GAIgASgLMhYuZ29vZ2xlLnByb3RvYnVmLlZhbHVlUgV2YWx1ZToCOAEiQQoH",
-            "UnVudGltZRI2ChdlZmZlY3RpdmVfZGVyaXZlZF9yb2xlcxgBIAMoCVIVZWZm",
-            "ZWN0aXZlRGVyaXZlZFJvbGVzQm8KGGRldi5jZXJib3MuYXBpLnYxLmVuZ2lu",
-            "ZVo8Z2l0aHViLmNvbS9jZXJib3MvY2VyYm9zL2FwaS9nZW5wYi9jZXJib3Mv",
-            "ZW5naW5lL3YxO2VuZ2luZXYxqgIUQ2VyYm9zLkFwaS5WMS5FbmdpbmViBnBy",
-            "b3RvMw=="));
+            "aWN5X3Njb3BlGAwgASgJSABSD3JvbGVQb2xpY3lTY29wZRIUCgRyb2xlGA0g",
+            "ASgJSABSBHJvbGUaMgoIVmFyaWFibGUSEgoEbmFtZRgBIAEoCVIEbmFtZRIS",
+            "CgRleHByGAIgASgJUgRleHByItYCCgRLaW5kEhQKEEtJTkRfVU5TUEVDSUZJ",
+            "RUQQABIPCgtLSU5EX0FDVElPThABEhYKEktJTkRfQ09ORElUSU9OX0FMTBAC",
+            "EhYKEktJTkRfQ09ORElUSU9OX0FOWRADEhcKE0tJTkRfQ09ORElUSU9OX05P",
+            "TkUQBBISCg5LSU5EX0NPTkRJVElPThAFEhUKEUtJTkRfREVSSVZFRF9ST0xF",
+            "EAYSDQoJS0lORF9FWFBSEAcSDwoLS0lORF9QT0xJQ1kQCBIRCg1LSU5EX1JF",
+            "U09VUkNFEAkSDQoJS0lORF9SVUxFEAoSDgoKS0lORF9TQ09QRRALEhEKDUtJ",
+            "TkRfVkFSSUFCTEUQDBISCg5LSU5EX1ZBUklBQkxFUxANEg8KC0tJTkRfT1VU",
+            "UFVUEA4SGgoWS0lORF9ST0xFX1BPTElDWV9TQ09QRRAPEg0KCUtJTkRfUk9M",
+            "RRAQQgkKB2RldGFpbHMaowIKBUV2ZW50EjwKBnN0YXR1cxgBIAEoDjIkLmNl",
+            "cmJvcy5lbmdpbmUudjEuVHJhY2UuRXZlbnQuU3RhdHVzUgZzdGF0dXMSMAoG",
+            "ZWZmZWN0GAIgASgOMhguY2VyYm9zLmVmZmVjdC52MS5FZmZlY3RSBmVmZmVj",
+            "dBIUCgVlcnJvchgDIAEoCVIFZXJyb3ISGAoHbWVzc2FnZRgEIAEoCVIHbWVz",
+            "c2FnZRIuCgZyZXN1bHQYBSABKAsyFi5nb29nbGUucHJvdG9idWYuVmFsdWVS",
+            "BnJlc3VsdCJKCgZTdGF0dXMSFgoSU1RBVFVTX1VOU1BFQ0lGSUVEEAASFAoQ",
+            "U1RBVFVTX0FDVElWQVRFRBABEhIKDlNUQVRVU19TS0lQUEVEEAIiyAUKB1Jl",
+            "cXVlc3QSQQoJcHJpbmNpcGFsGAEgASgLMiMuY2VyYm9zLmVuZ2luZS52MS5S",
+            "ZXF1ZXN0LlByaW5jaXBhbFIJcHJpbmNpcGFsEj4KCHJlc291cmNlGAIgASgL",
+            "MiIuY2VyYm9zLmVuZ2luZS52MS5SZXF1ZXN0LlJlc291cmNlUghyZXNvdXJj",
+            "ZRI0CghhdXhfZGF0YRgDIAEoCzIZLmNlcmJvcy5lbmdpbmUudjEuQXV4RGF0",
+            "YVIHYXV4RGF0YRqCAgoJUHJpbmNpcGFsEg4KAmlkGAEgASgJUgJpZBIUCgVy",
+            "b2xlcxgCIAMoCVIFcm9sZXMSQQoEYXR0chgDIAMoCzItLmNlcmJvcy5lbmdp",
+            "bmUudjEuUmVxdWVzdC5QcmluY2lwYWwuQXR0ckVudHJ5UgRhdHRyEiUKDnBv",
+            "bGljeV92ZXJzaW9uGAQgASgJUg1wb2xpY3lWZXJzaW9uEhQKBXNjb3BlGAUg",
+            "ASgJUgVzY29wZRpPCglBdHRyRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSLAoF",
+            "dmFsdWUYAiABKAsyFi5nb29nbGUucHJvdG9idWYuVmFsdWVSBXZhbHVlOgI4",
+            "ARr+AQoIUmVzb3VyY2USEgoEa2luZBgBIAEoCVIEa2luZBIOCgJpZBgCIAEo",
+            "CVICaWQSQAoEYXR0chgDIAMoCzIsLmNlcmJvcy5lbmdpbmUudjEuUmVxdWVz",
+            "dC5SZXNvdXJjZS5BdHRyRW50cnlSBGF0dHISJQoOcG9saWN5X3ZlcnNpb24Y",
+            "BCABKAlSDXBvbGljeVZlcnNpb24SFAoFc2NvcGUYBSABKAlSBXNjb3BlGk8K",
+            "CUF0dHJFbnRyeRIQCgNrZXkYASABKAlSA2tleRIsCgV2YWx1ZRgCIAEoCzIW",
+            "Lmdvb2dsZS5wcm90b2J1Zi5WYWx1ZVIFdmFsdWU6AjgBIkEKB1J1bnRpbWUS",
+            "NgoXZWZmZWN0aXZlX2Rlcml2ZWRfcm9sZXMYASADKAlSFWVmZmVjdGl2ZURl",
+            "cml2ZWRSb2xlc0JvChhkZXYuY2VyYm9zLmFwaS52MS5lbmdpbmVaPGdpdGh1",
+            "Yi5jb20vY2VyYm9zL2NlcmJvcy9hcGkvZ2VucGIvY2VyYm9zL2VuZ2luZS92",
+            "MTtlbmdpbmV2MaoCFENlcmJvcy5BcGkuVjEuRW5naW5lYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Cerbos.Api.V1.Effect.EffectReflection.Descriptor, global::Cerbos.Api.V1.Schema.SchemaReflection.Descriptor, global::Google.Api.Expr.V1Alpha1.CheckedReflection.Descriptor, global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.StructReflection.Descriptor, global::Grpc.Gateway.ProtocGenOpenapiv2.Options.AnnotationsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -231,7 +231,7 @@ namespace Cerbos.Api.V1.Engine {
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Engine.Resource), global::Cerbos.Api.V1.Engine.Resource.Parser, new[]{ "Kind", "PolicyVersion", "Id", "Attr", "Scope" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Engine.Principal), global::Cerbos.Api.V1.Engine.Principal.Parser, new[]{ "Id", "PolicyVersion", "Roles", "Attr", "Scope" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Engine.AuxData), global::Cerbos.Api.V1.Engine.AuxData.Parser, new[]{ "Jwt" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Engine.Trace), global::Cerbos.Api.V1.Engine.Trace.Parser, new[]{ "Components", "Event" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Engine.Trace.Types.Component), global::Cerbos.Api.V1.Engine.Trace.Types.Component.Parser, new[]{ "Kind", "Action", "DerivedRole", "Expr", "Index", "Policy", "Resource", "Rule", "Scope", "Variable", "Output", "RolePolicyScope" }, new[]{ "Details" }, new[]{ typeof(global::Cerbos.Api.V1.Engine.Trace.Types.Component.Types.Kind) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Engine.Trace.Types.Component.Types.Variable), global::Cerbos.Api.V1.Engine.Trace.Types.Component.Types.Variable.Parser, new[]{ "Name", "Expr" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Engine.Trace), global::Cerbos.Api.V1.Engine.Trace.Parser, new[]{ "Components", "Event" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Engine.Trace.Types.Component), global::Cerbos.Api.V1.Engine.Trace.Types.Component.Parser, new[]{ "Kind", "Action", "DerivedRole", "Expr", "Index", "Policy", "Resource", "Rule", "Scope", "Variable", "Output", "RolePolicyScope", "Role" }, new[]{ "Details" }, new[]{ typeof(global::Cerbos.Api.V1.Engine.Trace.Types.Component.Types.Kind) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Engine.Trace.Types.Component.Types.Variable), global::Cerbos.Api.V1.Engine.Trace.Types.Component.Types.Variable.Parser, new[]{ "Name", "Expr" }, null, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Engine.Trace.Types.Event), global::Cerbos.Api.V1.Engine.Trace.Types.Event.Parser, new[]{ "Status", "Effect", "Error", "Message", "Result" }, null, new[]{ typeof(global::Cerbos.Api.V1.Engine.Trace.Types.Event.Types.Status) }, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Engine.Request), global::Cerbos.Api.V1.Engine.Request.Parser, new[]{ "Principal", "Resource", "AuxData" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Engine.Request.Types.Principal), global::Cerbos.Api.V1.Engine.Request.Types.Principal.Parser, new[]{ "Id", "Roles", "Attr", "PolicyVersion", "Scope" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Engine.Request.Types.Resource), global::Cerbos.Api.V1.Engine.Request.Types.Resource.Parser, new[]{ "Kind", "Id", "Attr", "PolicyVersion", "Scope" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })}),
@@ -5377,6 +5377,9 @@ namespace Cerbos.Api.V1.Engine {
             case DetailsOneofCase.RolePolicyScope:
               RolePolicyScope = other.RolePolicyScope;
               break;
+            case DetailsOneofCase.Role:
+              Role = other.Role;
+              break;
           }
 
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -5672,6 +5675,32 @@ namespace Cerbos.Api.V1.Engine {
           }
         }
 
+        /// <summary>Field number for the "role" field.</summary>
+        public const int RoleFieldNumber = 13;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public string Role {
+          get { return HasRole ? (string) details_ : ""; }
+          set {
+            details_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+            detailsCase_ = DetailsOneofCase.Role;
+          }
+        }
+        /// <summary>Gets whether the "role" field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool HasRole {
+          get { return detailsCase_ == DetailsOneofCase.Role; }
+        }
+        /// <summary> Clears the value of the oneof if it's currently set to "role" </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void ClearRole() {
+          if (HasRole) {
+            ClearDetails();
+          }
+        }
+
         private object details_;
         /// <summary>Enum of possible cases for the "details" oneof.</summary>
         public enum DetailsOneofCase {
@@ -5687,6 +5716,7 @@ namespace Cerbos.Api.V1.Engine {
           Variable = 10,
           Output = 11,
           RolePolicyScope = 12,
+          Role = 13,
         }
         private DetailsOneofCase detailsCase_ = DetailsOneofCase.None;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5729,6 +5759,7 @@ namespace Cerbos.Api.V1.Engine {
           if (!object.Equals(Variable, other.Variable)) return false;
           if (Output != other.Output) return false;
           if (RolePolicyScope != other.RolePolicyScope) return false;
+          if (Role != other.Role) return false;
           if (DetailsCase != other.DetailsCase) return false;
           return Equals(_unknownFields, other._unknownFields);
         }
@@ -5749,6 +5780,7 @@ namespace Cerbos.Api.V1.Engine {
           if (detailsCase_ == DetailsOneofCase.Variable) hash ^= Variable.GetHashCode();
           if (HasOutput) hash ^= Output.GetHashCode();
           if (HasRolePolicyScope) hash ^= RolePolicyScope.GetHashCode();
+          if (HasRole) hash ^= Role.GetHashCode();
           hash ^= (int) detailsCase_;
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
@@ -5816,6 +5848,10 @@ namespace Cerbos.Api.V1.Engine {
             output.WriteRawTag(98);
             output.WriteString(RolePolicyScope);
           }
+          if (HasRole) {
+            output.WriteRawTag(106);
+            output.WriteString(Role);
+          }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
@@ -5874,6 +5910,10 @@ namespace Cerbos.Api.V1.Engine {
             output.WriteRawTag(98);
             output.WriteString(RolePolicyScope);
           }
+          if (HasRole) {
+            output.WriteRawTag(106);
+            output.WriteString(Role);
+          }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(ref output);
           }
@@ -5919,6 +5959,9 @@ namespace Cerbos.Api.V1.Engine {
           }
           if (HasRolePolicyScope) {
             size += 1 + pb::CodedOutputStream.ComputeStringSize(RolePolicyScope);
+          }
+          if (HasRole) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(Role);
           }
           if (_unknownFields != null) {
             size += _unknownFields.CalculateSize();
@@ -5971,6 +6014,9 @@ namespace Cerbos.Api.V1.Engine {
               break;
             case DetailsOneofCase.RolePolicyScope:
               RolePolicyScope = other.RolePolicyScope;
+              break;
+            case DetailsOneofCase.Role:
+              Role = other.Role;
               break;
           }
 
@@ -6046,6 +6092,10 @@ namespace Cerbos.Api.V1.Engine {
                 RolePolicyScope = input.ReadString();
                 break;
               }
+              case 106: {
+                Role = input.ReadString();
+                break;
+              }
             }
           }
         #endif
@@ -6118,6 +6168,10 @@ namespace Cerbos.Api.V1.Engine {
                 RolePolicyScope = input.ReadString();
                 break;
               }
+              case 106: {
+                Role = input.ReadString();
+                break;
+              }
             }
           }
         }
@@ -6145,6 +6199,7 @@ namespace Cerbos.Api.V1.Engine {
             [pbr::OriginalName("KIND_VARIABLES")] Variables = 13,
             [pbr::OriginalName("KIND_OUTPUT")] Output = 14,
             [pbr::OriginalName("KIND_ROLE_POLICY_SCOPE")] RolePolicyScope = 15,
+            [pbr::OriginalName("KIND_ROLE")] Role = 16,
           }
 
           [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
