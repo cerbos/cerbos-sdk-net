@@ -26,7 +26,7 @@ jobs:
             6.0.x
 
       - name: Build the NuGeT package
-        uses: cake-build/cake-action@v1
+        uses: cake-build/cake-action@v3
         with:
           cake-bootstrap: true
           target: Pack

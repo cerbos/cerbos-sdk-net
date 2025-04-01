@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run the generate script
-        uses: cake-build/cake-action@v1
+        uses: cake-build/cake-action@v3
         env:
           BUF_TOKEN: ${{ secrets.BUF_TOKEN }}
         with:
@@ -28,7 +28,7 @@ jobs:
           target: Generate
 
       - name: Run the build script
-        uses: cake-build/cake-action@v1
+        uses: cake-build/cake-action@v3
         with:
           cake-bootstrap: true
           target: Build
@@ -55,7 +55,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run the test script
-        uses: cake-build/cake-action@v1
+        uses: cake-build/cake-action@v3
         with:
           cake-bootstrap: true
           target: UnitTests
