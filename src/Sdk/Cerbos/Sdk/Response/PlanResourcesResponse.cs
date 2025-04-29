@@ -56,7 +56,12 @@ namespace Cerbos.Sdk.Response
                 private Api.V1.Response.PlanResourcesResponse.Types.Meta M { get; }
         
                 public string FilterDebug => M.FilterDebug;
+                [Obsolete("Use MatchedScopes instead.")]
                 public string MatchedScope => M.MatchedScope;
+                public Dictionary<string, string> MatchedScopes => M.MatchedScopes.ToDictionary(
+                    x => x.Key,
+                    x => x.Value
+                );
                 public Api.V1.Response.PlanResourcesResponse.Types.Meta Raw => M;
 
                 public Meta(Api.V1.Response.PlanResourcesResponse.Types.Meta meta)
