@@ -193,3 +193,9 @@ var request = PlanResourcesRequest
     )
     .WithAction("approve");
 ```
+
+> [!NOTE]  
+> Cerbos PDP v0.44.0 and onwards support specifying multiple actions with the following syntax: 
+> ```csharp
+> .WithActions("approve", "create")
+> ``` 

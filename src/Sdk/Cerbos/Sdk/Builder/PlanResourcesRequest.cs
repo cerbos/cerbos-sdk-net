@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 using System;
+using System.Collections.Generic;
 
 namespace Cerbos.Sdk.Builder
 {
@@ -9,23 +10,34 @@ namespace Cerbos.Sdk.Builder
     {
         private AuxData AuxData { get; set; }
         private string Action { get; set; } = "";
+        private List<string> Actions { get; set; }
         private bool IncludeMeta { get; set; }
         private Principal Principal { get; set; }
         private Resource Resource { get; set; }
         private string RequestId { get; set; } = "";
 
-        private PlanResourcesRequest() { }
+        private PlanResourcesRequest() { 
+            Actions = new List<string>();
+        }
         
         public static PlanResourcesRequest NewInstance()
         {
             return new PlanResourcesRequest();
         }
         
+        [Obsolete("Use WithActions instead.")]
         public PlanResourcesRequest WithAction(string action)
         {
             Action = action;
             return this;
         }
+        
+        public PlanResourcesRequest WithActions(params string[] actions)
+        {
+            Actions.AddRange(actions);
+            return this;
+        }
+
         public PlanResourcesRequest WithAuxData(AuxData auxData)
         {
             AuxData = auxData;
@@ -58,9 +70,9 @@ namespace Cerbos.Sdk.Builder
 
         public Api.V1.Request.PlanResourcesRequest ToPlanResourcesRequest()
         {
-            if (string.IsNullOrEmpty(Action))
+            if (string.IsNullOrEmpty(Action) && Actions.Count == 0)
             {
-                throw new Exception("Action is not set");
+                throw new Exception("Action(s) is not set");
             }
             
             if (Principal == null)
@@ -80,13 +92,27 @@ namespace Cerbos.Sdk.Builder
             
             var request = new Api.V1.Request.PlanResourcesRequest
             {
+                #pragma warning disable CS0612
                 Action = Action,
+                #pragma warning restore CS0612
                 AuxData = AuxData?.ToAuxData(),
                 IncludeMeta = IncludeMeta,
                 Principal = Principal.ToPrincipal(),
                 Resource = Resource.ToPlanResource(),
                 RequestId = RequestId,
             };
+
+            if (string.IsNullOrEmpty(Action)) {
+                request.Actions.AddRange(Actions);
+            }
+            else if (Actions.Count == 0) {
+                #pragma warning disable CS0612
+                request.Action = Action;
+                #pragma warning restore CS0612
+            }
+            else {
+                throw new Exception("Either use WithAction or WithActions to specify action(s)");
+            }
 
             return request;
         }

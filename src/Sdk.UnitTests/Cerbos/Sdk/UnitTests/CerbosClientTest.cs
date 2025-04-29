@@ -212,11 +212,11 @@ namespace Cerbos.Sdk.UnitTests
                     Resource.NewInstance("leave_request")
                         .WithPolicyVersion("20210210")
                 )
-                .WithAction("approve");
+                .WithActions("approve");
 
             
             var have = _client.PlanResources(request, _metadata);
-            Assert.That(have.Action, Is.EqualTo("approve"));
+            Assert.That(have.Actions[0], Is.EqualTo("approve"));
             Assert.That(have.PolicyVersion, Is.EqualTo("20210210"));
             Assert.That(have.ResourceKind, Is.EqualTo("leave_request"));
             Assert.That(have.HasValidationErrors(), Is.False);
@@ -260,10 +260,10 @@ namespace Cerbos.Sdk.UnitTests
                         .WithPolicyVersion("20210210")
                         .WithAttribute("department", AttributeValue.StringValue("accounting"))
                 )
-                .WithAction("approve");
+                .WithActions("approve");
             
             var have = _client.PlanResources(request, _metadata);
-            Assert.That(have.Action, Is.EqualTo("approve"));
+            Assert.That(have.Actions[0], Is.EqualTo("approve"));
             Assert.That(have.PolicyVersion, Is.EqualTo("20210210"));
             Assert.That(have.ResourceKind, Is.EqualTo("leave_request"));
             

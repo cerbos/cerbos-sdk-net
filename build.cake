@@ -12,6 +12,10 @@ Task("Clean")
 {
     CleanDirectories("./src/**/bin");
     CleanDirectories("./src/**/obj");
+    CleanDirectories("./src/Sdk/Buf");
+    CleanDirectories("./src/Sdk/Cerbos/Api");
+    CleanDirectories("./src/Sdk/Google");
+    CleanDirectories("./src/Sdk/Grpc");
 });
 
 Task("Generate")
