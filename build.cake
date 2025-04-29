@@ -45,6 +45,7 @@ Task("UnitTests")
 
 Task("Pack")
     .IsDependentOn("Clean")
+    .IsDependentOn("Generate")
     .Does(() =>
 {
     var path = "./src/Sdk";
