@@ -1,6 +1,7 @@
 // Copyright 2021-2025 Zenauth Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -10,7 +11,11 @@ namespace Cerbos.Sdk.Response
     {
         private Api.V1.Response.PlanResourcesResponse R { get; }
         
-        public string Action => R.Action;
+        #pragma warning disable CS0612
+        [Obsolete("Use Actions instead.")]
+        public string Action => R.Action;        
+        #pragma warning restore CS0612
+        public List<string> Actions => R.Actions.ToList();        
         public Api.V1.Engine.PlanResourcesFilter Filter => R.Filter;
         public Types.Meta Meta => new Types.Meta(R.Meta);
         public string PolicyVersion => R.PolicyVersion;
