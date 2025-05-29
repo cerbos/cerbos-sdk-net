@@ -27,55 +27,54 @@ namespace Cerbos.Api.V1.Audit {
             "ChtjZXJib3MvYXVkaXQvdjEvYXVkaXQucHJvdG8SD2NlcmJvcy5hdWRpdC52",
             "MRodY2VyYm9zL2VuZ2luZS92MS9lbmdpbmUucHJvdG8aHWNlcmJvcy9wb2xp",
             "Y3kvdjEvcG9saWN5LnByb3RvGh9nb29nbGUvcHJvdG9idWYvdGltZXN0YW1w",
-            "LnByb3RvIooDCg5BY2Nlc3NMb2dFbnRyeRIXCgdjYWxsX2lkGAEgASgJUgZj",
+            "LnByb3RvIuwCCg5BY2Nlc3NMb2dFbnRyeRIXCgdjYWxsX2lkGAEgASgJUgZj",
             "YWxsSWQSOAoJdGltZXN0YW1wGAIgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRp",
             "bWVzdGFtcFIJdGltZXN0YW1wEikKBHBlZXIYAyABKAsyFS5jZXJib3MuYXVk",
             "aXQudjEuUGVlclIEcGVlchJJCghtZXRhZGF0YRgEIAMoCzItLmNlcmJvcy5h",
             "dWRpdC52MS5BY2Nlc3NMb2dFbnRyeS5NZXRhZGF0YUVudHJ5UghtZXRhZGF0",
             "YRIWCgZtZXRob2QYBSABKAlSBm1ldGhvZBIfCgtzdGF0dXNfY29kZRgGIAEo",
-            "DVIKc3RhdHVzQ29kZRIcCglvdmVyc2l6ZWQYByABKAhSCW92ZXJzaXplZBpY",
-            "Cg1NZXRhZGF0YUVudHJ5EhAKA2tleRgBIAEoCVIDa2V5EjEKBXZhbHVlGAIg",
-            "ASgLMhsuY2VyYm9zLmF1ZGl0LnYxLk1ldGFWYWx1ZXNSBXZhbHVlOgI4ASKg",
-            "CAoQRGVjaXNpb25Mb2dFbnRyeRIXCgdjYWxsX2lkGAEgASgJUgZjYWxsSWQS",
-            "OAoJdGltZXN0YW1wGAIgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFt",
-            "cFIJdGltZXN0YW1wEikKBHBlZXIYAyABKAsyFS5jZXJib3MuYXVkaXQudjEu",
-            "UGVlclIEcGVlchI4CgZpbnB1dHMYBCADKAsyHC5jZXJib3MuZW5naW5lLnYx",
-            "LkNoZWNrSW5wdXRCAhgBUgZpbnB1dHMSOwoHb3V0cHV0cxgFIAMoCzIdLmNl",
-            "cmJvcy5lbmdpbmUudjEuQ2hlY2tPdXRwdXRCAhgBUgdvdXRwdXRzEhgKBWVy",
-            "cm9yGAYgASgJQgIYAVIFZXJyb3ISWwoPY2hlY2tfcmVzb3VyY2VzGAcgASgL",
-            "MjAuY2VyYm9zLmF1ZGl0LnYxLkRlY2lzaW9uTG9nRW50cnkuQ2hlY2tSZXNv",
-            "dXJjZXNIAFIOY2hlY2tSZXNvdXJjZXMSWAoOcGxhbl9yZXNvdXJjZXMYCCAB",
-            "KAsyLy5jZXJib3MuYXVkaXQudjEuRGVjaXNpb25Mb2dFbnRyeS5QbGFuUmVz",
-            "b3VyY2VzSABSDXBsYW5SZXNvdXJjZXMSSwoIbWV0YWRhdGEYDyADKAsyLy5j",
-            "ZXJib3MuYXVkaXQudjEuRGVjaXNpb25Mb2dFbnRyeS5NZXRhZGF0YUVudHJ5",
-            "UghtZXRhZGF0YRI8CgthdWRpdF90cmFpbBgQIAEoCzIbLmNlcmJvcy5hdWRp",
-            "dC52MS5BdWRpdFRyYWlsUgphdWRpdFRyYWlsEhwKCW92ZXJzaXplZBgRIAEo",
-            "CFIJb3ZlcnNpemVkGpUBCg5DaGVja1Jlc291cmNlcxI0CgZpbnB1dHMYASAD",
-            "KAsyHC5jZXJib3MuZW5naW5lLnYxLkNoZWNrSW5wdXRSBmlucHV0cxI3Cgdv",
-            "dXRwdXRzGAIgAygLMh0uY2VyYm9zLmVuZ2luZS52MS5DaGVja091dHB1dFIH",
-            "b3V0cHV0cxIUCgVlcnJvchgDIAEoCVIFZXJyb3IaoAEKDVBsYW5SZXNvdXJj",
-            "ZXMSOgoFaW5wdXQYASABKAsyJC5jZXJib3MuZW5naW5lLnYxLlBsYW5SZXNv",
-            "dXJjZXNJbnB1dFIFaW5wdXQSPQoGb3V0cHV0GAIgASgLMiUuY2VyYm9zLmVu",
-            "Z2luZS52MS5QbGFuUmVzb3VyY2VzT3V0cHV0UgZvdXRwdXQSFAoFZXJyb3IY",
-            "AyABKAlSBWVycm9yGlgKDU1ldGFkYXRhRW50cnkSEAoDa2V5GAEgASgJUgNr",
-            "ZXkSMQoFdmFsdWUYAiABKAsyGy5jZXJib3MuYXVkaXQudjEuTWV0YVZhbHVl",
-            "c1IFdmFsdWU6AjgBQggKBm1ldGhvZCIkCgpNZXRhVmFsdWVzEhYKBnZhbHVl",
-            "cxgBIAMoCVIGdmFsdWVzIoEBCgRQZWVyEhgKB2FkZHJlc3MYASABKAlSB2Fk",
-            "ZHJlc3MSGwoJYXV0aF9pbmZvGAIgASgJUghhdXRoSW5mbxIdCgp1c2VyX2Fn",
-            "ZW50GAMgASgJUgl1c2VyQWdlbnQSIwoNZm9yd2FyZGVkX2ZvchgEIAEoCVIM",
-            "Zm9yd2FyZGVkRm9yItkBCgpBdWRpdFRyYWlsEmEKEmVmZmVjdGl2ZV9wb2xp",
-            "Y2llcxgBIAMoCzIyLmNlcmJvcy5hdWRpdC52MS5BdWRpdFRyYWlsLkVmZmVj",
-            "dGl2ZVBvbGljaWVzRW50cnlSEWVmZmVjdGl2ZVBvbGljaWVzGmgKFkVmZmVj",
-            "dGl2ZVBvbGljaWVzRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSOAoFdmFsdWUY",
-            "AiABKAsyIi5jZXJib3MucG9saWN5LnYxLlNvdXJjZUF0dHJpYnV0ZXNSBXZh",
-            "bHVlOgI4AUJrChdkZXYuY2VyYm9zLmFwaS52MS5hdWRpdFo6Z2l0aHViLmNv",
-            "bS9jZXJib3MvY2VyYm9zL2FwaS9nZW5wYi9jZXJib3MvYXVkaXQvdjE7YXVk",
-            "aXR2MaoCE0NlcmJvcy5BcGkuVjEuQXVkaXRiBnByb3RvMw=="));
+            "DVIKc3RhdHVzQ29kZRpYCg1NZXRhZGF0YUVudHJ5EhAKA2tleRgBIAEoCVID",
+            "a2V5EjEKBXZhbHVlGAIgASgLMhsuY2VyYm9zLmF1ZGl0LnYxLk1ldGFWYWx1",
+            "ZXNSBXZhbHVlOgI4ASKCCAoQRGVjaXNpb25Mb2dFbnRyeRIXCgdjYWxsX2lk",
+            "GAEgASgJUgZjYWxsSWQSOAoJdGltZXN0YW1wGAIgASgLMhouZ29vZ2xlLnBy",
+            "b3RvYnVmLlRpbWVzdGFtcFIJdGltZXN0YW1wEikKBHBlZXIYAyABKAsyFS5j",
+            "ZXJib3MuYXVkaXQudjEuUGVlclIEcGVlchI4CgZpbnB1dHMYBCADKAsyHC5j",
+            "ZXJib3MuZW5naW5lLnYxLkNoZWNrSW5wdXRCAhgBUgZpbnB1dHMSOwoHb3V0",
+            "cHV0cxgFIAMoCzIdLmNlcmJvcy5lbmdpbmUudjEuQ2hlY2tPdXRwdXRCAhgB",
+            "UgdvdXRwdXRzEhgKBWVycm9yGAYgASgJQgIYAVIFZXJyb3ISWwoPY2hlY2tf",
+            "cmVzb3VyY2VzGAcgASgLMjAuY2VyYm9zLmF1ZGl0LnYxLkRlY2lzaW9uTG9n",
+            "RW50cnkuQ2hlY2tSZXNvdXJjZXNIAFIOY2hlY2tSZXNvdXJjZXMSWAoOcGxh",
+            "bl9yZXNvdXJjZXMYCCABKAsyLy5jZXJib3MuYXVkaXQudjEuRGVjaXNpb25M",
+            "b2dFbnRyeS5QbGFuUmVzb3VyY2VzSABSDXBsYW5SZXNvdXJjZXMSSwoIbWV0",
+            "YWRhdGEYDyADKAsyLy5jZXJib3MuYXVkaXQudjEuRGVjaXNpb25Mb2dFbnRy",
+            "eS5NZXRhZGF0YUVudHJ5UghtZXRhZGF0YRI8CgthdWRpdF90cmFpbBgQIAEo",
+            "CzIbLmNlcmJvcy5hdWRpdC52MS5BdWRpdFRyYWlsUgphdWRpdFRyYWlsGpUB",
+            "Cg5DaGVja1Jlc291cmNlcxI0CgZpbnB1dHMYASADKAsyHC5jZXJib3MuZW5n",
+            "aW5lLnYxLkNoZWNrSW5wdXRSBmlucHV0cxI3CgdvdXRwdXRzGAIgAygLMh0u",
+            "Y2VyYm9zLmVuZ2luZS52MS5DaGVja091dHB1dFIHb3V0cHV0cxIUCgVlcnJv",
+            "chgDIAEoCVIFZXJyb3IaoAEKDVBsYW5SZXNvdXJjZXMSOgoFaW5wdXQYASAB",
+            "KAsyJC5jZXJib3MuZW5naW5lLnYxLlBsYW5SZXNvdXJjZXNJbnB1dFIFaW5w",
+            "dXQSPQoGb3V0cHV0GAIgASgLMiUuY2VyYm9zLmVuZ2luZS52MS5QbGFuUmVz",
+            "b3VyY2VzT3V0cHV0UgZvdXRwdXQSFAoFZXJyb3IYAyABKAlSBWVycm9yGlgK",
+            "DU1ldGFkYXRhRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSMQoFdmFsdWUYAiAB",
+            "KAsyGy5jZXJib3MuYXVkaXQudjEuTWV0YVZhbHVlc1IFdmFsdWU6AjgBQggK",
+            "Bm1ldGhvZCIkCgpNZXRhVmFsdWVzEhYKBnZhbHVlcxgBIAMoCVIGdmFsdWVz",
+            "IoEBCgRQZWVyEhgKB2FkZHJlc3MYASABKAlSB2FkZHJlc3MSGwoJYXV0aF9p",
+            "bmZvGAIgASgJUghhdXRoSW5mbxIdCgp1c2VyX2FnZW50GAMgASgJUgl1c2Vy",
+            "QWdlbnQSIwoNZm9yd2FyZGVkX2ZvchgEIAEoCVIMZm9yd2FyZGVkRm9yItkB",
+            "CgpBdWRpdFRyYWlsEmEKEmVmZmVjdGl2ZV9wb2xpY2llcxgBIAMoCzIyLmNl",
+            "cmJvcy5hdWRpdC52MS5BdWRpdFRyYWlsLkVmZmVjdGl2ZVBvbGljaWVzRW50",
+            "cnlSEWVmZmVjdGl2ZVBvbGljaWVzGmgKFkVmZmVjdGl2ZVBvbGljaWVzRW50",
+            "cnkSEAoDa2V5GAEgASgJUgNrZXkSOAoFdmFsdWUYAiABKAsyIi5jZXJib3Mu",
+            "cG9saWN5LnYxLlNvdXJjZUF0dHJpYnV0ZXNSBXZhbHVlOgI4AUJrChdkZXYu",
+            "Y2VyYm9zLmFwaS52MS5hdWRpdFo6Z2l0aHViLmNvbS9jZXJib3MvY2VyYm9z",
+            "L2FwaS9nZW5wYi9jZXJib3MvYXVkaXQvdjE7YXVkaXR2MaoCE0NlcmJvcy5B",
+            "cGkuVjEuQXVkaXRiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Cerbos.Api.V1.Engine.EngineReflection.Descriptor, global::Cerbos.Api.V1.Policy.PolicyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Audit.AccessLogEntry), global::Cerbos.Api.V1.Audit.AccessLogEntry.Parser, new[]{ "CallId", "Timestamp", "Peer", "Metadata", "Method", "StatusCode", "Oversized" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Audit.DecisionLogEntry), global::Cerbos.Api.V1.Audit.DecisionLogEntry.Parser, new[]{ "CallId", "Timestamp", "Peer", "Inputs", "Outputs", "Error", "CheckResources", "PlanResources", "Metadata", "AuditTrail", "Oversized" }, new[]{ "Method" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Audit.DecisionLogEntry.Types.CheckResources), global::Cerbos.Api.V1.Audit.DecisionLogEntry.Types.CheckResources.Parser, new[]{ "Inputs", "Outputs", "Error" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Audit.AccessLogEntry), global::Cerbos.Api.V1.Audit.AccessLogEntry.Parser, new[]{ "CallId", "Timestamp", "Peer", "Metadata", "Method", "StatusCode" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Audit.DecisionLogEntry), global::Cerbos.Api.V1.Audit.DecisionLogEntry.Parser, new[]{ "CallId", "Timestamp", "Peer", "Inputs", "Outputs", "Error", "CheckResources", "PlanResources", "Metadata", "AuditTrail" }, new[]{ "Method" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Audit.DecisionLogEntry.Types.CheckResources), global::Cerbos.Api.V1.Audit.DecisionLogEntry.Types.CheckResources.Parser, new[]{ "Inputs", "Outputs", "Error" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Audit.DecisionLogEntry.Types.PlanResources), global::Cerbos.Api.V1.Audit.DecisionLogEntry.Types.PlanResources.Parser, new[]{ "Input", "Output", "Error" }, null, null, null, null),
             null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Audit.MetaValues), global::Cerbos.Api.V1.Audit.MetaValues.Parser, new[]{ "Values" }, null, null, null, null),
@@ -128,7 +127,6 @@ namespace Cerbos.Api.V1.Audit {
       metadata_ = other.metadata_.Clone();
       method_ = other.method_;
       statusCode_ = other.statusCode_;
-      oversized_ = other.oversized_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -209,18 +207,6 @@ namespace Cerbos.Api.V1.Audit {
       }
     }
 
-    /// <summary>Field number for the "oversized" field.</summary>
-    public const int OversizedFieldNumber = 7;
-    private bool oversized_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Oversized {
-      get { return oversized_; }
-      set {
-        oversized_ = value;
-      }
-    }
-
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -242,7 +228,6 @@ namespace Cerbos.Api.V1.Audit {
       if (!Metadata.Equals(other.Metadata)) return false;
       if (Method != other.Method) return false;
       if (StatusCode != other.StatusCode) return false;
-      if (Oversized != other.Oversized) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -256,7 +241,6 @@ namespace Cerbos.Api.V1.Audit {
       hash ^= Metadata.GetHashCode();
       if (Method.Length != 0) hash ^= Method.GetHashCode();
       if (StatusCode != 0) hash ^= StatusCode.GetHashCode();
-      if (Oversized != false) hash ^= Oversized.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -296,10 +280,6 @@ namespace Cerbos.Api.V1.Audit {
         output.WriteRawTag(48);
         output.WriteUInt32(StatusCode);
       }
-      if (Oversized != false) {
-        output.WriteRawTag(56);
-        output.WriteBool(Oversized);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -331,10 +311,6 @@ namespace Cerbos.Api.V1.Audit {
         output.WriteRawTag(48);
         output.WriteUInt32(StatusCode);
       }
-      if (Oversized != false) {
-        output.WriteRawTag(56);
-        output.WriteBool(Oversized);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -360,9 +336,6 @@ namespace Cerbos.Api.V1.Audit {
       }
       if (StatusCode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StatusCode);
-      }
-      if (Oversized != false) {
-        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -397,9 +370,6 @@ namespace Cerbos.Api.V1.Audit {
       }
       if (other.StatusCode != 0) {
         StatusCode = other.StatusCode;
-      }
-      if (other.Oversized != false) {
-        Oversized = other.Oversized;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -450,10 +420,6 @@ namespace Cerbos.Api.V1.Audit {
             StatusCode = input.ReadUInt32();
             break;
           }
-          case 56: {
-            Oversized = input.ReadBool();
-            break;
-          }
         }
       }
     #endif
@@ -501,10 +467,6 @@ namespace Cerbos.Api.V1.Audit {
           }
           case 48: {
             StatusCode = input.ReadUInt32();
-            break;
-          }
-          case 56: {
-            Oversized = input.ReadBool();
             break;
           }
         }
@@ -557,7 +519,6 @@ namespace Cerbos.Api.V1.Audit {
       error_ = other.error_;
       metadata_ = other.metadata_.Clone();
       auditTrail_ = other.auditTrail_ != null ? other.auditTrail_.Clone() : null;
-      oversized_ = other.oversized_;
       switch (other.MethodCase) {
         case MethodOneofCase.CheckResources:
           CheckResources = other.CheckResources.Clone();
@@ -705,18 +666,6 @@ namespace Cerbos.Api.V1.Audit {
       }
     }
 
-    /// <summary>Field number for the "oversized" field.</summary>
-    public const int OversizedFieldNumber = 17;
-    private bool oversized_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Oversized {
-      get { return oversized_; }
-      set {
-        oversized_ = value;
-      }
-    }
-
     private object method_;
     /// <summary>Enum of possible cases for the "method" oneof.</summary>
     public enum MethodOneofCase {
@@ -763,7 +712,6 @@ namespace Cerbos.Api.V1.Audit {
       if (!object.Equals(PlanResources, other.PlanResources)) return false;
       if (!Metadata.Equals(other.Metadata)) return false;
       if (!object.Equals(AuditTrail, other.AuditTrail)) return false;
-      if (Oversized != other.Oversized) return false;
       if (MethodCase != other.MethodCase) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -782,7 +730,6 @@ namespace Cerbos.Api.V1.Audit {
       if (methodCase_ == MethodOneofCase.PlanResources) hash ^= PlanResources.GetHashCode();
       hash ^= Metadata.GetHashCode();
       if (auditTrail_ != null) hash ^= AuditTrail.GetHashCode();
-      if (Oversized != false) hash ^= Oversized.GetHashCode();
       hash ^= (int) methodCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -833,10 +780,6 @@ namespace Cerbos.Api.V1.Audit {
         output.WriteRawTag(130, 1);
         output.WriteMessage(AuditTrail);
       }
-      if (Oversized != false) {
-        output.WriteRawTag(136, 1);
-        output.WriteBool(Oversized);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -878,10 +821,6 @@ namespace Cerbos.Api.V1.Audit {
         output.WriteRawTag(130, 1);
         output.WriteMessage(AuditTrail);
       }
-      if (Oversized != false) {
-        output.WriteRawTag(136, 1);
-        output.WriteBool(Oversized);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -915,9 +854,6 @@ namespace Cerbos.Api.V1.Audit {
       size += metadata_.CalculateSize(_map_metadata_codec);
       if (auditTrail_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(AuditTrail);
-      }
-      if (Oversized != false) {
-        size += 2 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -957,9 +893,6 @@ namespace Cerbos.Api.V1.Audit {
           AuditTrail = new global::Cerbos.Api.V1.Audit.AuditTrail();
         }
         AuditTrail.MergeFrom(other.AuditTrail);
-      }
-      if (other.Oversized != false) {
-        Oversized = other.Oversized;
       }
       switch (other.MethodCase) {
         case MethodOneofCase.CheckResources:
@@ -1054,10 +987,6 @@ namespace Cerbos.Api.V1.Audit {
             input.ReadMessage(AuditTrail);
             break;
           }
-          case 136: {
-            Oversized = input.ReadBool();
-            break;
-          }
         }
       }
     #endif
@@ -1134,10 +1063,6 @@ namespace Cerbos.Api.V1.Audit {
               AuditTrail = new global::Cerbos.Api.V1.Audit.AuditTrail();
             }
             input.ReadMessage(AuditTrail);
-            break;
-          }
-          case 136: {
-            Oversized = input.ReadBool();
             break;
           }
         }
