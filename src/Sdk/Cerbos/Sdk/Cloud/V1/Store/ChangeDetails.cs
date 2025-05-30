@@ -1,0 +1,323 @@
+// Copyright 2021-2025 Zenauth Ltd.
+// SPDX-License-Identifier: Apache-2.0
+
+using System;
+using System.Collections.Generic;
+using Google.Protobuf.WellKnownTypes;
+
+namespace Cerbos.Sdk.Cloud.V1.Store
+{
+    public sealed class ChangeDetails
+    {
+        private Api.Cloud.V1.Store.ChangeDetails.OriginOneofCase OneOf = Api.Cloud.V1.Store.ChangeDetails.OriginOneofCase.None;
+        private string Description { get; set; }
+        private Types.Git Git { get; set; }
+        private Types.Internal Internal { get; set; }
+        private Types.Uploader Uploader { get; set; }
+
+        private ChangeDetails() { }
+
+        public static ChangeDetails NewInstance()
+        {
+            return new ChangeDetails();
+        }
+
+        public ChangeDetails WithDescription(string description)
+        {
+            Description = description;
+            return this;
+        }
+
+        public ChangeDetails WithUploader(Types.Uploader uploader)
+        {
+            Uploader = uploader;
+            return this;
+        }
+
+        public ChangeDetails OriginGit(Types.Git git)
+        {
+            Git = git;
+            OneOf = Api.Cloud.V1.Store.ChangeDetails.OriginOneofCase.Git;
+            return this;
+        }
+
+        public ChangeDetails OriginInternal(Types.Internal internal_)
+        {
+            Internal = internal_;
+            OneOf = Api.Cloud.V1.Store.ChangeDetails.OriginOneofCase.Internal;
+            return this;
+        }
+
+        public Api.Cloud.V1.Store.ChangeDetails ToChangeDetails()
+        {
+            if (OneOf == Api.Cloud.V1.Store.ChangeDetails.OriginOneofCase.None)
+            {
+                throw new Exception("Either internal or git origin must be specified");
+            }
+
+            var changeDetails = new Api.Cloud.V1.Store.ChangeDetails
+            {
+                Description = Description,
+                Uploader = Uploader.ToUploader(),
+            };
+
+            if (OneOf == Api.Cloud.V1.Store.ChangeDetails.OriginOneofCase.Git)
+            {
+                if (Git == null)
+                {
+                    throw new Exception("Specify non-null value for git origin");
+                }
+
+                changeDetails.Git = Git.ToGit();
+            }
+            else if (OneOf == Api.Cloud.V1.Store.ChangeDetails.OriginOneofCase.Internal)
+            {
+                if (Internal == null)
+                {
+                    throw new Exception("Specify non-null value for internal origin");
+                }
+
+                changeDetails.Internal = Internal.ToInternal();
+            }
+
+            return changeDetails;
+        }
+
+        public static class Types
+        {
+            public sealed class Git
+            {
+                private string Author { get; set; }
+                private string Committer { get; set; }
+                private string Hash { get; set; }
+                private string Message { get; set; }
+                private string Repo { get; set; }
+                private string Ref { get; set; }
+                private DateTime AuthorDate { get; set; }
+                private DateTime CommitDate { get; set; }
+
+                private Git() { }
+
+                public static Git NewInstance()
+                {
+                    return new Git();
+                }
+
+                public Git WithAuthor(string author)
+                {
+                    Author = author;
+                    return this;
+                }
+
+                public Git WithCommitter(string committer)
+                {
+                    Committer = committer;
+                    return this;
+                }
+
+                public Git WithHash(string hash)
+                {
+                    Hash = hash;
+                    return this;
+                }
+
+                public Git WithMessage(string message)
+                {
+                    Message = message;
+                    return this;
+                }
+
+                public Git WithRepo(string repo)
+                {
+                    Repo = repo;
+                    return this;
+                }
+
+                public Git WithRef(string ref_)
+                {
+                    Ref = ref_;
+                    return this;
+                }
+
+                public Git WithAuthorDate(DateTime authorDate)
+                {
+                    AuthorDate = authorDate;
+                    return this;
+                }
+
+                public Git WithCommitDate(DateTime commitDate)
+                {
+                    CommitDate = commitDate;
+                    return this;
+                }
+
+                public Api.Cloud.V1.Store.ChangeDetails.Types.Git ToGit()
+                {
+                    return new Api.Cloud.V1.Store.ChangeDetails.Types.Git()
+                    {
+                        Author = Author,
+                        Committer = Committer,
+                        Hash = Hash,
+                        Message = Message,
+                        Repo = Repo,
+                        Ref = Ref,
+                        AuthorDate = Timestamp.FromDateTime(AuthorDate),
+                        CommitDate = Timestamp.FromDateTime(CommitDate),
+                    };
+                }
+            }
+
+            public sealed class Internal
+            {
+                private string Source { get; set; }
+
+                private Dictionary<string, Value> Metadata { get; }
+
+                private Internal()
+                {
+                    Metadata = new Dictionary<string, Value>();
+                }
+
+                public static Internal NewInstance()
+                {
+                    return new Internal();
+                }
+
+                public Internal WithSource(string source)
+                {
+                    Source = source;
+                    return this;
+                }
+
+                public Internal WithMetadata(string key, MetadataValue value)
+                {
+                    Metadata.Add(key, value.ToValue());
+                    return this;
+                }
+
+                public Internal WithMetadatas(Dictionary<string, MetadataValue> metadata)
+                {
+                    foreach (KeyValuePair<string, MetadataValue> m in metadata)
+                    {
+                        Metadata.Add(m.Key, m.Value.ToValue());
+                    }
+
+                    return this;
+                }
+
+                public Api.Cloud.V1.Store.ChangeDetails.Types.Internal ToInternal()
+                {
+                    return new Api.Cloud.V1.Store.ChangeDetails.Types.Internal()
+                    {
+                        Source = Source,
+                        Metadata = { Metadata }
+                    };
+                }
+            }
+
+            public sealed class MetadataValue
+            {
+                private Value V { get; }
+
+                private MetadataValue(Value value)
+                {
+                    V = value;
+                }
+
+                public static MetadataValue BoolValue(bool value)
+                {
+                    return new MetadataValue(Value.ForBool(value));
+                }
+
+                public static MetadataValue DoubleValue(double value)
+                {
+                    return new MetadataValue(Value.ForNumber(value));
+                }
+
+                public static MetadataValue ListValue(params MetadataValue[] values)
+                {
+                    Value[] v = new Value[values.Length];
+                    for (var i = 0; i < values.Length; i++)
+                    {
+                        v[i] = values[i].ToValue();
+                    }
+                    return new MetadataValue(Value.ForList(v));
+                }
+
+                public static MetadataValue MapValue(Dictionary<string, MetadataValue> dict)
+                {
+                    var s = new Struct();
+                    foreach (KeyValuePair<string, MetadataValue> kvp in dict)
+                    {
+                        s.Fields.Add(kvp.Key, kvp.Value.V);
+                    }
+
+                    return new MetadataValue(Value.ForStruct(s));
+                }
+
+                public static MetadataValue NullValue()
+                {
+                    return new MetadataValue(Value.ForNull());
+                }
+
+                public static MetadataValue StringValue(string value)
+                {
+                    return new MetadataValue(Value.ForString(value));
+                }
+
+                public Value ToValue()
+                {
+                    return V;
+                }
+            }
+
+            public sealed class Uploader
+            {
+                private string Name { get; set; }
+
+                private Dictionary<string, Value> Metadata { get; }
+
+                private Uploader()
+                {
+                    Metadata = new Dictionary<string, Value>();
+                }
+
+                public static Uploader NewInstance()
+                {
+                    return new Uploader();
+                }
+
+                public Uploader WithName(string name)
+                {
+                    Name = name;
+                    return this;
+                }
+
+                public Uploader WithMetadata(string key, MetadataValue value)
+                {
+                    Metadata.Add(key, value.ToValue());
+                    return this;
+                }
+
+                public Uploader WithMetadatas(Dictionary<string, MetadataValue> metadata)
+                {
+                    foreach (KeyValuePair<string, MetadataValue> m in metadata)
+                    {
+                        Metadata.Add(m.Key, m.Value.ToValue());
+                    }
+
+                    return this;
+                }
+
+                public Api.Cloud.V1.Store.ChangeDetails.Types.Uploader ToUploader()
+                {
+                    return new Api.Cloud.V1.Store.ChangeDetails.Types.Uploader()
+                    {
+                        Name = Name,
+                        Metadata = { Metadata }
+                    };
+                }
+            }
+        }
+    }
+}
