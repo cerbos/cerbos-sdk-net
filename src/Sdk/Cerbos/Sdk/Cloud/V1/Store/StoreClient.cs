@@ -11,6 +11,8 @@ namespace Cerbos.Sdk.Cloud.V1.Store
     {
         GetFilesResponse GetFiles(GetFilesRequest request);
         Task<GetFilesResponse> GetFilesAsync(GetFilesRequest request);
+        ListFilesResponse ListFiles(ListFilesRequest request);
+        Task<ListFilesResponse> ListFilesAsync(ListFilesRequest request);
     }
 
     /// <summary>
@@ -56,6 +58,39 @@ namespace Cerbos.Sdk.Cloud.V1.Store
             catch (Exception e)
             {
                 throw new Exception($"Failed to get files: ${e}");
+            }
+        }
+
+        public ListFilesResponse ListFiles(ListFilesRequest request)
+        {
+            try
+            {
+                return new ListFilesResponse(
+                    Client.ListFiles(
+                        request.ToListFilesRequest()
+                    )
+                );
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Failed to list files: ${e}");
+            }
+        }
+
+        public Task<ListFilesResponse> ListFilesAsync(ListFilesRequest request)
+        {
+            try
+            {
+                return Client
+                    .ListFilesAsync(request.ToListFilesRequest())
+                    .ResponseAsync
+                    .ContinueWith(
+                        r => new ListFilesResponse(r.Result)
+                    );
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Failed to list files: ${e}");
             }
         }
     }
