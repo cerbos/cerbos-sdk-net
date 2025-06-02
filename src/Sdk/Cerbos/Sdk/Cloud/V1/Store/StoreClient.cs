@@ -15,6 +15,8 @@ namespace Cerbos.Sdk.Cloud.V1.Store
         Task<ListFilesResponse> ListFilesAsync(ListFilesRequest request);
         ModifyFilesResponse ModifyFiles(ModifyFilesRequest request);
         Task<ModifyFilesResponse> ModifyFilesAsync(ModifyFilesRequest request);
+        ReplaceFilesResponse ReplaceFiles(ReplaceFilesRequest request);
+        Task<ReplaceFilesResponse> ReplaceFilesAsync(ReplaceFilesRequest request);
     }
 
     /// <summary>
@@ -126,6 +128,39 @@ namespace Cerbos.Sdk.Cloud.V1.Store
             catch (Exception e)
             {
                 throw new Exception($"Failed to modify files: ${e}");
+            }
+        }
+
+        public ReplaceFilesResponse ReplaceFiles(ReplaceFilesRequest request)
+        {
+            try
+            {
+                return new ReplaceFilesResponse(
+                    Client.ReplaceFiles(
+                        request.ToReplaceFilesRequest()
+                    )
+                );
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Failed to replace files: ${e}");
+            }
+        }
+
+        public Task<ReplaceFilesResponse> ReplaceFilesAsync(ReplaceFilesRequest request)
+        {
+            try
+            {
+                return Client
+                    .ReplaceFilesAsync(request.ToReplaceFilesRequest())
+                    .ResponseAsync
+                    .ContinueWith(
+                        r => new ReplaceFilesResponse(r.Result)
+                    );
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Failed to replace files: ${e}");
             }
         }
     }
