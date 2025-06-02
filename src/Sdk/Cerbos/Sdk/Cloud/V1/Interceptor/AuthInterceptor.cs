@@ -2,7 +2,6 @@
 // SPDX-License-Identifier: Apache-2.0
 
 using System;
-using System.Threading.Tasks;
 using Cerbos.Sdk.Cloud.V1.ApiKey;
 using Grpc.Core;
 using Grpc.Core.Interceptors;
@@ -30,8 +29,12 @@ namespace Cerbos.Sdk.Cloud.V1.Interceptor
         )
         {
             IssueAccessToken();
-            context.Options.WithHeaders(MetadataWithAuthToken(context.Options.Headers));
-            return continuation(request, context);
+            var newContext = new ClientInterceptorContext<TRequest, TResponse>(
+                context.Method,
+                context.Host,
+                context.Options.WithHeaders(MetadataWithAuthToken(context.Options.Headers))
+            );
+            return continuation(request, newContext);
         }
 
         public override AsyncUnaryCall<TResponse> AsyncUnaryCall<TRequest, TResponse>(
@@ -40,14 +43,12 @@ namespace Cerbos.Sdk.Cloud.V1.Interceptor
             AsyncUnaryCallContinuation<TRequest, TResponse> continuation)
         {
             IssueAccessToken();
-            context.Options.WithHeaders(MetadataWithAuthToken(context.Options.Headers));
-            return continuation(request, context);
-        }
-
-        private async Task<TResponse> HandleResponse<TResponse>(Task<TResponse> t)
-        {
-            var response = await t;
-            return response;
+            var newContext = new ClientInterceptorContext<TRequest, TResponse>(
+                context.Method,
+                context.Host,
+                context.Options.WithHeaders(MetadataWithAuthToken(context.Options.Headers))
+            );
+            return continuation(request, newContext);
         }
 
         private void IssueAccessToken()
@@ -60,7 +61,7 @@ namespace Cerbos.Sdk.Cloud.V1.Interceptor
             try
             {
                 var response = ApiKeyClient.IssueAccessToken(Credentials.ToIssueAccessTokenRequest());
-                AccessToken = AccessToken;
+                AccessToken = response.AccessToken;
                 AccessTokenExpiresAt = response.ExpiresAt;
             }
             catch (Exception e)
