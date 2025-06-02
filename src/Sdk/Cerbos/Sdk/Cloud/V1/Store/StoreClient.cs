@@ -13,6 +13,8 @@ namespace Cerbos.Sdk.Cloud.V1.Store
         Task<GetFilesResponse> GetFilesAsync(GetFilesRequest request);
         ListFilesResponse ListFiles(ListFilesRequest request);
         Task<ListFilesResponse> ListFilesAsync(ListFilesRequest request);
+        ModifyFilesResponse ModifyFiles(ModifyFilesRequest request);
+        Task<ModifyFilesResponse> ModifyFilesAsync(ModifyFilesRequest request);
     }
 
     /// <summary>
@@ -91,6 +93,39 @@ namespace Cerbos.Sdk.Cloud.V1.Store
             catch (Exception e)
             {
                 throw new Exception($"Failed to list files: ${e}");
+            }
+        }
+
+        public ModifyFilesResponse ModifyFiles(ModifyFilesRequest request)
+        {
+            try
+            {
+                return new ModifyFilesResponse(
+                    Client.ModifyFiles(
+                        request.ToModifyFilesRequest()
+                    )
+                );
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Failed to modify files: ${e}");
+            }
+        }
+
+        public Task<ModifyFilesResponse> ModifyFilesAsync(ModifyFilesRequest request)
+        {
+            try
+            {
+                return Client
+                    .ModifyFilesAsync(request.ToModifyFilesRequest())
+                    .ResponseAsync
+                    .ContinueWith(
+                        r => new ModifyFilesResponse(r.Result)
+                    );
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Failed to modify files: ${e}");
             }
         }
     }
