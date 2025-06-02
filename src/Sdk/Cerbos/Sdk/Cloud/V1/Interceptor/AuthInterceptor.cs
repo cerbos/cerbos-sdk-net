@@ -12,15 +12,15 @@ namespace Cerbos.Sdk.Cloud.V1.Interceptor
     public sealed class AuthInterceptor : Grpc.Core.Interceptors.Interceptor
     {
         private const string AuthTokenHeader = "x-cerbos-auth";
-        private HubCredentials HubCredentials { get; }
+        private Credentials Credentials { get; }
         private IApiKeyClient ApiKeyClient { get; }
         private string AccessToken { get; set; }
         private DateTime AccessTokenExpiresAt { get; set; }
 
-        public AuthInterceptor(IApiKeyClient apiKeyClient, HubCredentials hubCredentials)
+        public AuthInterceptor(IApiKeyClient apiKeyClient, Credentials credentials)
         {
             ApiKeyClient = apiKeyClient;
-            HubCredentials = hubCredentials;
+            Credentials = credentials;
         }
 
         public override TResponse BlockingUnaryCall<TRequest, TResponse>(
@@ -59,7 +59,7 @@ namespace Cerbos.Sdk.Cloud.V1.Interceptor
 
             try
             {
-                var response = ApiKeyClient.IssueAccessToken(HubCredentials.ToIssueAccessTokenRequest());
+                var response = ApiKeyClient.IssueAccessToken(Credentials.ToIssueAccessTokenRequest());
                 AccessToken = AccessToken;
                 AccessTokenExpiresAt = response.ExpiresAt;
             }
@@ -77,23 +77,6 @@ namespace Cerbos.Sdk.Cloud.V1.Interceptor
                     { AuthTokenHeader, AccessToken }
                 }
             );
-        }
-    }
-
-    public sealed class HubCredentials
-    {
-        public string ClientId { get; }
-        public string ClientSecret { get; }
-
-        public HubCredentials(string clientId, string clientSecret)
-        {
-            ClientId = clientId;
-            ClientSecret = clientSecret;
-        }
-
-        public IssueAccessTokenRequest ToIssueAccessTokenRequest()
-        {
-            return IssueAccessTokenRequest.NewInstance().WithClientId(ClientId).WithClientSecret(ClientSecret);
         }
     }
 }

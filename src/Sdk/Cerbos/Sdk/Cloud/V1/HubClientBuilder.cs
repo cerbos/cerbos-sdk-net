@@ -16,7 +16,7 @@ namespace Cerbos.Sdk.Cloud.V1
     public sealed class HubClientBuilder
     {
         private string Target { get; }
-        private HubCredentials HubCredentials { get; set; }
+        private Credentials Credentials { get; set; }
         private bool Plaintext { get; set; }
 
         private HubClientBuilder(string target)
@@ -29,15 +29,15 @@ namespace Cerbos.Sdk.Cloud.V1
             return new HubClientBuilder(target);
         }
 
-        public HubClientBuilder WithCredentials(HubCredentials hubCredentials)
+        public HubClientBuilder WithCredentials(Credentials credentials)
         {
-            HubCredentials = hubCredentials;
+            Credentials = credentials;
             return this;
         }
 
         public HubClientBuilder WithCredentials(string clientId, string clientSecret)
         {
-            HubCredentials = new HubCredentials(clientId, clientSecret);
+            Credentials = new Credentials(clientId, clientSecret);
             return this;
         }
 
@@ -54,7 +54,7 @@ namespace Cerbos.Sdk.Cloud.V1
                 throw new Exception("Target must be specified");
             }
 
-            if (HubCredentials == null)
+            if (Credentials == null)
             {
                 throw new Exception("Credentials must be specified");
             }
@@ -67,7 +67,7 @@ namespace Cerbos.Sdk.Cloud.V1
 
             var authInterceptor = new AuthInterceptor(
                 new ApiKeyClient(new ApiKeyService.ApiKeyServiceClient(GrpcChannel.ForAddress(Target, grpcChannelOptions))),
-                HubCredentials
+                Credentials
             );
 
             var grpcChannel = GrpcChannel.ForAddress(Target, grpcChannelOptions).Intercept(authInterceptor);
