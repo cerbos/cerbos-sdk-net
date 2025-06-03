@@ -65,16 +65,15 @@ namespace Cerbos.Sdk.Cloud.V1
                 grpcChannelOptions.Credentials = ChannelCredentials.SecureSsl;
             }
 
+            var apiKeyClient = new ApiKeyClient(new ApiKeyService.ApiKeyServiceClient(GrpcChannel.ForAddress(Target, grpcChannelOptions)));
             var authInterceptor = new AuthInterceptor(
-                new ApiKeyClient(new ApiKeyService.ApiKeyServiceClient(GrpcChannel.ForAddress(Target, grpcChannelOptions))),
+                apiKeyClient,
                 Credentials
             );
-
-            var grpcChannel = GrpcChannel.ForAddress(Target, grpcChannelOptions).Intercept(authInterceptor);
-
+            var grpcChannelWithInterceptor = GrpcChannel.ForAddress(Target, grpcChannelOptions).Intercept(authInterceptor);
             return new HubClient(
-                new ApiKeyClient(new ApiKeyService.ApiKeyServiceClient(grpcChannel)),
-                new StoreClient(new CerbosStoreService.CerbosStoreServiceClient(grpcChannel))
+                apiKeyClient,
+                new StoreClient(new CerbosStoreService.CerbosStoreServiceClient(grpcChannelWithInterceptor))
             );
         }
     }
