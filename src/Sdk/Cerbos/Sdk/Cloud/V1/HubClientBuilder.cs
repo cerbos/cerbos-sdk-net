@@ -10,12 +10,15 @@ using Cerbos.Api.Cloud.V1.Store;
 using Cerbos.Sdk.Cloud.V1.Interceptor;
 using Cerbos.Sdk.Cloud.V1.Store;
 using Cerbos.Sdk.Cloud.V1.ApiKey;
+using System.Net.Http;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Cerbos.Sdk.Cloud.V1
 {
     public sealed class HubClientBuilder
     {
         private string Target { get; }
+        private string CaCertificate { get; set; }
         private Credentials Credentials { get; set; }
         private bool Plaintext { get; set; }
 
@@ -27,6 +30,11 @@ namespace Cerbos.Sdk.Cloud.V1
         public static HubClientBuilder ForTarget(string target)
         {
             return new HubClientBuilder(target);
+        }
+
+        public HubClientBuilder WithCaCertificate(string path) {
+            CaCertificate = path;
+            return this;
         }
 
         public HubClientBuilder WithCredentials(Credentials credentials)
@@ -54,13 +62,25 @@ namespace Cerbos.Sdk.Cloud.V1
                 throw new Exception("Target must be specified");
             }
 
+            if (CaCertificate != null && Plaintext)
+            {
+                throw new Exception("CaCertificate and plaintext must not be specified at the same time");
+            }
+
             if (Credentials == null)
             {
                 throw new Exception("Credentials must be specified");
             }
 
             var grpcChannelOptions = new GrpcChannelOptions();
-            if (!Plaintext)
+            if (CaCertificate != null)
+            {
+                var handler = new HttpClientHandler();
+                var cert = new X509Certificate(CaCertificate);
+                handler.ClientCertificates.Add(cert);
+                grpcChannelOptions.HttpHandler = handler;
+            }
+            else if (!Plaintext)
             {
                 grpcChannelOptions.Credentials = ChannelCredentials.SecureSsl;
             }
