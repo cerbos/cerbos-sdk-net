@@ -47,4 +47,14 @@ public class StoreClientTest
 
         StoreClient = hubClient.StoreClient;
     }
+
+    [Test]
+    public void GetFiles()
+    {
+        var response = StoreClient.GetFiles(
+            GetFilesRequest.NewInstance().WithStoreId(StoreId).WithFiles("resource_policies/resource_leave_request.yaml")
+        );
+
+        Assert.That(response.Files[0].Path, Is.EqualTo("resource_policies/resource_leave_request.yaml"));
+    }
 }
