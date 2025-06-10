@@ -41,6 +41,11 @@ jobs:
       
       - name: Run the test script
         uses: cake-build/cake-action@v3
+        env:
+          CERBOS_HUB_API_ENDPOINT: ${{ secrets.CERBOS_HUB_API_ENDPOINT }}
+          CERBOS_HUB_CLIENT_ID: ${{ secrets.CERBOS_HUB_CLIENT_ID }}
+          CERBOS_HUB_CLIENT_SECRET: ${{ secrets.CERBOS_HUB_CLIENT_SECRET }}
+          CERBOS_HUB_STORE_ID: ${{ secrets.CERBOS_HUB_STORE_ID }}
         with:
           cake-bootstrap: true
           target: UnitTests
