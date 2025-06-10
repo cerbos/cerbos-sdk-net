@@ -13,6 +13,8 @@ public class StoreClientTest
 
     private IStoreClient StoreClient { get; set; }
 
+    private List<string> ExpectedFiles { get; set; }
+
     [OneTimeSetUp]
     public void OneTimeSetUp()
     {
@@ -46,15 +48,99 @@ public class StoreClientTest
             Build();
 
         StoreClient = hubClient.StoreClient;
+
+        ExpectedFiles =
+        [
+            "_schemas/principal.json",
+            "_schemas/resources/leave_request.json",
+            "_schemas/resources/purchase_order.json",
+            "_schemas/resources/salary_record.json",
+
+            "derived_roles/common_roles.yaml",
+            "derived_roles/derived_roles_01.yaml",
+            "derived_roles/derived_roles_02.yaml",
+            "derived_roles/derived_roles_03.yaml",
+            "derived_roles/derived_roles_04.yaml",
+            "derived_roles/derived_roles_05.yaml",
+
+            "export_constants/export_constants_01.yaml",
+
+            "export_variables/export_variables_01.yaml",
+
+            "principal_policies/policy_01.yaml",
+            "principal_policies/policy_02.yaml",
+            "principal_policies/policy_02_acme.hr.yaml",
+            "principal_policies/policy_02_acme.sales.yaml",
+            "principal_policies/policy_02_acme.yaml",
+            "principal_policies/policy_03.yaml",
+            "principal_policies/policy_04.yaml",
+            "principal_policies/policy_05.yaml",
+            "principal_policies/policy_06.yaml",
+
+            "resource_policies/disabled_policy_01.yaml",
+            "resource_policies/policy_01.yaml",
+            "resource_policies/policy_02.yaml",
+            "resource_policies/policy_03.yaml",
+            "resource_policies/policy_04.yaml",
+            "resource_policies/policy_04_test.yaml",
+            "resource_policies/policy_05.yaml",
+            "resource_policies/policy_05_acme.hr.uk.brighton.kemptown.yaml",
+            "resource_policies/policy_05_acme.hr.uk.brighton.yaml",
+            "resource_policies/policy_05_acme.hr.uk.london.yaml",
+            "resource_policies/policy_05_acme.hr.uk.yaml",
+            "resource_policies/policy_05_acme.hr.yaml",
+            "resource_policies/policy_05_acme.yaml",
+            "resource_policies/policy_06.yaml",
+            "resource_policies/policy_07.yaml",
+            "resource_policies/policy_07_acme.yaml",
+            "resource_policies/policy_08.yaml",
+            "resource_policies/policy_09.yaml",
+            "resource_policies/policy_10.yaml",
+            "resource_policies/policy_11.yaml",
+            "resource_policies/policy_12.yaml",
+            "resource_policies/policy_13.yaml",
+            "resource_policies/policy_14.yaml",
+            "resource_policies/policy_15.yaml",
+            "resource_policies/policy_16.yaml",
+            "resource_policies/policy_17.acme.sales.yaml",
+            "resource_policies/policy_17.acme.yaml",
+            "resource_policies/policy_17.yaml",
+            "resource_policies/policy_18.yaml",
+
+            "role_policies/policy_01_acme.hr.uk.brighton.yaml",
+            "role_policies/policy_02_acme.hr.uk.brighton.yaml",
+            "role_policies/policy_03_acme.hr.uk.yaml",
+            "role_policies/policy_04_acme.hr.uk.yaml",
+            "role_policies/policy_05_acme.hr.uk.london.yaml",
+            "role_policies/policy_06_acme.hr.uk.brighton.kemptown.yaml",
+
+            "tests/policy_04_test.yaml",
+            "tests/policy_05_test.yaml",
+        ];
     }
 
     [Test]
     public void GetFiles()
     {
         var response = StoreClient.GetFiles(
-            GetFilesRequest.NewInstance().WithStoreId(StoreId).WithFiles("resource_policies/resource_leave_request.yaml")
+            GetFilesRequest.NewInstance().
+                WithStoreId(StoreId).
+                WithFiles(ExpectedFiles[0])
         );
 
-        Assert.That(response.Files[0].Path, Is.EqualTo("resource_policies/resource_leave_request.yaml"));
+        Assert.That(response.Files[0].Path, Is.EqualTo(ExpectedFiles[0]));
+        Assert.That(response.StoreVersion, Is.EqualTo(1));
+    }
+
+    [Test]
+    public void ListFiles()
+    {
+        var response = StoreClient.ListFiles(
+            ListFilesRequest.NewInstance().
+                WithStoreId(StoreId)
+        );
+
+        Assert.That(response.Files, Is.EqualTo(ExpectedFiles));
+        Assert.That(response.StoreVersion, Is.EqualTo(1));
     }
 }
