@@ -17,7 +17,7 @@ public class ReplaceFilesRequestTest
     private const string Source = "source";
     private const string MetadataKeyAndValue1 = "keyAndValue1";
     private const string MetadataKeyAndValue2 = "keyAndValue2";
-    private const string PathToZippedContents = "./../../../res/cloud/v1/hr.zip";
+    private const string PathToZippedContents = "./../../../res/cloud/v1/store.zip";
 
     [Test]
     public void ReplaceFilesRequest()
