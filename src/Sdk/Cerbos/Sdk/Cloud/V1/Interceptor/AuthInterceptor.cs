@@ -35,7 +35,30 @@ namespace Cerbos.Sdk.Cloud.V1.Interceptor
                 throw Unauthenticated;
             }
 
-            IssueAccessTokenIfExpired();
+            if (TokenExpired(AccessTokenExpiresAt))
+            {
+                try
+                {
+                    var response = ApiKeyClient.IssueAccessToken(Credentials.ToIssueAccessTokenRequest());
+                    AccessToken = response.AccessToken;
+                    AccessTokenExpiresAt = response.ExpiresAt;
+                }
+                catch (RpcException e)
+                {
+                    if (e.StatusCode == StatusCode.Unauthenticated)
+                    {
+                        // There is no point retrying because the given credentials are not valid
+                        Unauthenticated = e;
+                    }
+
+                    throw;
+                }
+                catch (Exception e)
+                {
+                    throw new Exception($"Failed to issue access token: ${e}");
+                }
+            }
+
             var newContext = new ClientInterceptorContext<TRequest, TResponse>(
                 context.Method,
                 context.Host,
@@ -54,42 +77,36 @@ namespace Cerbos.Sdk.Cloud.V1.Interceptor
                 throw Unauthenticated;
             }
 
-            IssueAccessTokenIfExpired();
+            if (TokenExpired(AccessTokenExpiresAt))
+            {
+                try
+                {
+                    var response = ApiKeyClient.IssueAccessTokenAsync(Credentials.ToIssueAccessTokenRequest()).GetAwaiter().GetResult();
+                    AccessToken = response.AccessToken;
+                    AccessTokenExpiresAt = response.ExpiresAt;
+                }
+                catch (RpcException e)
+                {
+                    if (e.StatusCode == StatusCode.Unauthenticated)
+                    {
+                        // There is no point retrying because the given credentials are not valid
+                        Unauthenticated = e;
+                    }
+
+                    throw;
+                }
+                catch (Exception e)
+                {
+                    throw new Exception($"Failed to issue access token: ${e}");
+                }
+            }
+
             var newContext = new ClientInterceptorContext<TRequest, TResponse>(
                 context.Method,
                 context.Host,
                 context.Options.WithHeaders(MetadataWithAuthToken(context.Options.Headers))
             );
             return continuation(request, newContext);
-        }
-
-        private void IssueAccessTokenIfExpired()
-        {
-            if (!TokenExpired(AccessTokenExpiresAt))
-            {
-                return;
-            }
-
-            try
-            {
-                var response = ApiKeyClient.IssueAccessToken(Credentials.ToIssueAccessTokenRequest());
-                AccessToken = response.AccessToken;
-                AccessTokenExpiresAt = response.ExpiresAt;
-            }
-            catch (RpcException e)
-            {
-                if (e.StatusCode == StatusCode.Unauthenticated)
-                {
-                    // There is no point retrying because the given credentials are not valid
-                    Unauthenticated = e;
-                }
-
-                throw;
-            }
-            catch (Exception e)
-            {
-                throw new Exception($"Failed to issue access token: ${e}");
-            }
         }
 
         private bool TokenExpired(DateTime expiresAt) {
