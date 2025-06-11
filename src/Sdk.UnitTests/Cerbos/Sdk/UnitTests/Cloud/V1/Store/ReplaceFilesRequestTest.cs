@@ -10,8 +10,6 @@ namespace Cerbos.Sdk.UnitTests.Cloud.V1;
 public class ReplaceFilesRequestTest
 {
     private const string StoreId = "MD1LAP5BJNA9";
-    private const string File = "policy.yaml";
-    private const string Content = "content";
     private const string Description = "description";
     private const string Name = "name";
     private const string Source = "source";

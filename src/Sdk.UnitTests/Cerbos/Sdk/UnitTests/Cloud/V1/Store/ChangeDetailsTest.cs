@@ -23,7 +23,6 @@ public class ChangeDetailsTest
     private const string Source = "source";
     private const string MetadataKeyAndValue1 = "keyAndValue1";
     private const string MetadataKeyAndValue2 = "keyAndValue2";
-    private const string MetadataKeyAndValue3 = "keyAndValue3";
 
     [Test]
     public void Git()
