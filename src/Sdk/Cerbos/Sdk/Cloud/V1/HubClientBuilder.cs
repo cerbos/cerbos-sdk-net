@@ -12,6 +12,7 @@ using Cerbos.Sdk.Cloud.V1.Store;
 using Cerbos.Sdk.Cloud.V1.ApiKey;
 using System.Net.Http;
 using System.Security.Cryptography.X509Certificates;
+using Grpc.Net.Client.Configuration;
 
 namespace Cerbos.Sdk.Cloud.V1
 {
@@ -72,7 +73,41 @@ namespace Cerbos.Sdk.Cloud.V1
                 throw new Exception("Credentials must be specified");
             }
 
-            var grpcChannelOptions = new GrpcChannelOptions();
+            var grpcChannelOptions = new GrpcChannelOptions()
+            {
+                ServiceConfig = new ServiceConfig
+                {
+                    MethodConfigs = {
+                        new MethodConfig{
+                            Names = { MethodName.Default },
+                            RetryPolicy = new RetryPolicy
+                            {
+                                MaxAttempts = 5,
+                                InitialBackoff = TimeSpan.FromMilliseconds(500),
+                                MaxBackoff = TimeSpan.FromSeconds(60),
+                                BackoffMultiplier = 1.5,
+                                RetryableStatusCodes = {
+                                    StatusCode.Unknown,
+                                    StatusCode.InvalidArgument,
+                                    StatusCode.DeadlineExceeded,
+                                    StatusCode.NotFound,
+                                    StatusCode.AlreadyExists,
+                                    StatusCode.PermissionDenied,
+                                    StatusCode.ResourceExhausted,
+                                    StatusCode.FailedPrecondition,
+                                    StatusCode.Aborted,
+                                    StatusCode.OutOfRange,
+                                    StatusCode.Unimplemented,
+                                    StatusCode.Internal,
+                                    StatusCode.Unavailable,
+                                    StatusCode.DataLoss,
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+
             if (CaCertificate != null)
             {
                 var handler = new HttpClientHandler();
