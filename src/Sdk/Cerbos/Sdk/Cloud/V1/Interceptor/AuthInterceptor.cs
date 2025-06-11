@@ -11,6 +11,8 @@ namespace Cerbos.Sdk.Cloud.V1.Interceptor
     public sealed class AuthInterceptor : Grpc.Core.Interceptors.Interceptor
     {
         private const string AuthTokenHeader = "x-cerbos-auth";
+        private const double EarlyExpireInMinutes = 5;
+        private RpcException Unauthenticated { get; set; }
         private Credentials Credentials { get; }
         private IApiKeyClient ApiKeyClient { get; }
         private string AccessToken { get; set; }
@@ -28,7 +30,12 @@ namespace Cerbos.Sdk.Cloud.V1.Interceptor
             BlockingUnaryCallContinuation<TRequest, TResponse> continuation
         )
         {
-            IssueAccessToken();
+            if (Unauthenticated != null)
+            {
+                throw Unauthenticated;
+            }
+
+            IssueAccessTokenIfExpired();
             var newContext = new ClientInterceptorContext<TRequest, TResponse>(
                 context.Method,
                 context.Host,
@@ -42,7 +49,12 @@ namespace Cerbos.Sdk.Cloud.V1.Interceptor
             ClientInterceptorContext<TRequest, TResponse> context,
             AsyncUnaryCallContinuation<TRequest, TResponse> continuation)
         {
-            IssueAccessToken();
+            if (Unauthenticated != null)
+            {
+                throw Unauthenticated;
+            }
+
+            IssueAccessTokenIfExpired();
             var newContext = new ClientInterceptorContext<TRequest, TResponse>(
                 context.Method,
                 context.Host,
@@ -51,9 +63,9 @@ namespace Cerbos.Sdk.Cloud.V1.Interceptor
             return continuation(request, newContext);
         }
 
-        private void IssueAccessToken()
+        private void IssueAccessTokenIfExpired()
         {
-            if (DateTime.UtcNow.CompareTo(AccessTokenExpiresAt) < 1)
+            if (!TokenExpired(AccessTokenExpiresAt))
             {
                 return;
             }
@@ -64,10 +76,30 @@ namespace Cerbos.Sdk.Cloud.V1.Interceptor
                 AccessToken = response.AccessToken;
                 AccessTokenExpiresAt = response.ExpiresAt;
             }
+            catch (RpcException e)
+            {
+                if (e.StatusCode == StatusCode.Unauthenticated)
+                {
+                    // There is no point retrying because the given credentials are not valid
+                    Unauthenticated = e;
+                }
+
+                throw;
+            }
             catch (Exception e)
             {
                 throw new Exception($"Failed to issue access token: ${e}");
             }
+        }
+
+        private bool TokenExpired(DateTime expiresAt) {
+            if (expiresAt.CompareTo(DateTime.MinValue) == 0)
+            {
+                return true;
+            }
+
+            var earlyExpiresAt = expiresAt.Subtract(TimeSpan.FromMinutes(EarlyExpireInMinutes));
+            return DateTime.UtcNow.CompareTo(earlyExpiresAt) > 0;
         }
 
         private Metadata MetadataWithAuthToken(Metadata metadata)
