@@ -73,10 +73,14 @@ namespace Cerbos.Sdk.Cloud.V1
                 throw new Exception("Credentials must be specified");
             }
 
-            var grpcChannelOptions = new GrpcChannelOptions()
+            var channelOptions = new GrpcChannelOptions()
             {
                 ServiceConfig = new ServiceConfig
                 {
+                    RetryThrottling = {
+                        TokenRatio = 0.1,
+                        MaxTokens = 10
+                    },
                     MethodConfigs = {
                         new MethodConfig{
                             Names = { MethodName.Default },
@@ -87,22 +91,27 @@ namespace Cerbos.Sdk.Cloud.V1
                                 MaxBackoff = TimeSpan.FromSeconds(60),
                                 BackoffMultiplier = 1.5,
                                 RetryableStatusCodes = {
-                                    StatusCode.Unknown,
-                                    StatusCode.InvalidArgument,
-                                    StatusCode.DeadlineExceeded,
-                                    StatusCode.NotFound,
-                                    StatusCode.AlreadyExists,
-                                    StatusCode.PermissionDenied,
-                                    StatusCode.ResourceExhausted,
-                                    StatusCode.FailedPrecondition,
-                                    StatusCode.Aborted,
-                                    StatusCode.OutOfRange,
-                                    StatusCode.Unimplemented,
                                     StatusCode.Internal,
                                     StatusCode.Unavailable,
-                                    StatusCode.DataLoss,
                                 }
-                            }
+                            },
+                        }
+                    }
+                }
+            };
+
+            var noRetryChannelOptions = new GrpcChannelOptions()
+            {
+                ServiceConfig = new ServiceConfig
+                {
+                    MethodConfigs = {
+                        new MethodConfig{
+                            Names = { MethodName.Default },
+                            RetryPolicy = new RetryPolicy
+                            {
+                                MaxAttempts = 1,
+                                RetryableStatusCodes = {}
+                            },
                         }
                     }
                 }
@@ -113,22 +122,31 @@ namespace Cerbos.Sdk.Cloud.V1
                 var handler = new HttpClientHandler();
                 var cert = new X509Certificate(CaCertificate);
                 handler.ClientCertificates.Add(cert);
-                grpcChannelOptions.HttpHandler = handler;
+                channelOptions.HttpHandler = handler;
+                noRetryChannelOptions.HttpHandler = handler;
             }
             else if (!Plaintext)
             {
-                grpcChannelOptions.Credentials = ChannelCredentials.SecureSsl;
+                channelOptions.Credentials = ChannelCredentials.SecureSsl;
+                noRetryChannelOptions.Credentials = ChannelCredentials.SecureSsl;
             }
 
-            var apiKeyClient = new ApiKeyClient(new ApiKeyService.ApiKeyServiceClient(GrpcChannel.ForAddress(Target, grpcChannelOptions)));
             var authInterceptor = new AuthInterceptor(
-                apiKeyClient,
+                new ApiKeyClient(
+                    new ApiKeyService.ApiKeyServiceClient(
+                        GrpcChannel.ForAddress(
+                            Target,
+                            noRetryChannelOptions
+                        )
+                    )
+                ),
                 Credentials
             );
-            var grpcChannelWithInterceptor = GrpcChannel.ForAddress(Target, grpcChannelOptions).Intercept(authInterceptor);
+
+            var channelWithInterceptor = GrpcChannel.ForAddress(Target, channelOptions).Intercept(authInterceptor);
             return new HubClient(
-                apiKeyClient,
-                new StoreClient(new CerbosStoreService.CerbosStoreServiceClient(grpcChannelWithInterceptor))
+                new ApiKeyClient(new ApiKeyService.ApiKeyServiceClient(channelWithInterceptor)),
+                new StoreClient(new CerbosStoreService.CerbosStoreServiceClient(channelWithInterceptor))
             );
         }
     }
