@@ -40,7 +40,7 @@ public class ReplaceFilesRequestTest
         var request = Sdk.Cloud.V1.Store.ReplaceFilesRequest.NewInstance().
             WithStoreId(StoreId).
             WithCondition(condition).
-            WithZippedContents(zippedContents).
+            ContentsZippedContents(zippedContents).
             WithChangeDetails(changeDetails).
             ToReplaceFilesRequest();
 
@@ -56,7 +56,7 @@ public class ReplaceFilesRequestTest
         var zippedContents = System.IO.File.ReadAllBytes(Path.GetFullPath(PathToZippedContents));
         var request = Sdk.Cloud.V1.Store.ReplaceFilesRequest.NewInstance().
             WithStoreId(StoreId).
-            WithZippedContents(zippedContents).
+            ContentsZippedContents(zippedContents).
             ToReplaceFilesRequest();
 
         Assert.That(request.StoreId, Is.EqualTo(StoreId));

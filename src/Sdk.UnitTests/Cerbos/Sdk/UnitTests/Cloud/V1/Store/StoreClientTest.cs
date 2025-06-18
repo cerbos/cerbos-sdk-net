@@ -285,7 +285,7 @@ public class StoreClientTest
                         OriginInternal(ChangeDetails.Types.Internal.NewInstance().WithSource("sdk")).
                         WithUploader(ChangeDetails.Types.Uploader.NewInstance().WithName("cerbos-sdk-net"))
                 ).
-                WithZippedContents(
+                ContentsZippedContents(
                     temporaryContents
                 )
         );
@@ -302,7 +302,7 @@ public class StoreClientTest
                         OriginInternal(ChangeDetails.Types.Internal.NewInstance().WithSource("sdk")).
                         WithUploader(ChangeDetails.Types.Uploader.NewInstance().WithName("cerbos-sdk-net"))
                 ).
-                WithZippedContents(
+                ContentsZippedContents(
                     storeContents
                 )
         );
@@ -328,7 +328,7 @@ public class StoreClientTest
                         OriginInternal(ChangeDetails.Types.Internal.NewInstance().WithSource("sdk")).
                         WithUploader(ChangeDetails.Types.Uploader.NewInstance().WithName("cerbos-sdk-net"))
                 ).
-                WithZippedContents(
+                ContentsZippedContents(
                     temporaryContents
                 )
         );
@@ -345,7 +345,7 @@ public class StoreClientTest
                         OriginInternal(ChangeDetails.Types.Internal.NewInstance().WithSource("sdk")).
                         WithUploader(ChangeDetails.Types.Uploader.NewInstance().WithName("cerbos-sdk-net"))
                 ).
-                WithZippedContents(
+                ContentsZippedContents(
                     storeContents
                 )
         );

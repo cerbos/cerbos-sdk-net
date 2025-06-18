@@ -86,37 +86,45 @@ namespace Cerbos.Api.Cloud.V1.Store {
             "X0ZJTEVfRVhURU5TSU9OEAISHwobQ0FVU0VfSU5WQUxJRF9GSUxFX0NPTlRF",
             "TlRTEAMSHQoZQ0FVU0VfRFVQTElDQVRFX0ZJTEVfUEFUSBAEEhgKFENBVVNF",
             "X0ZJTEVfVE9PX0xBUkdFEAUiQQoTTW9kaWZ5RmlsZXNSZXNwb25zZRIqChFu",
-            "ZXdfc3RvcmVfdmVyc2lvbhgBIAEoA1IPbmV3U3RvcmVWZXJzaW9uIowDChNS",
+            "ZXdfc3RvcmVfdmVyc2lvbhgBIAEoA1IPbmV3U3RvcmVWZXJzaW9uIoMFChNS",
             "ZXBsYWNlRmlsZXNSZXF1ZXN0EiMKCHN0b3JlX2lkGAEgASgJQgi6SAVyA5gB",
             "DFIHc3RvcmVJZBJXCgljb25kaXRpb24YAiABKAsyNC5jZXJib3MuY2xvdWQu",
-            "c3RvcmUudjEuUmVwbGFjZUZpbGVzUmVxdWVzdC5Db25kaXRpb25IAFIJY29u",
-            "ZGl0aW9uiAEBEjUKD3ppcHBlZF9jb250ZW50cxgDIAEoDEIMukgJegcQFhiA",
-            "gMAHUg56aXBwZWRDb250ZW50cxJQCg5jaGFuZ2VfZGV0YWlscxgEIAEoCzIk",
-            "LmNlcmJvcy5jbG91ZC5zdG9yZS52MS5DaGFuZ2VEZXRhaWxzSAFSDWNoYW5n",
-            "ZURldGFpbHOIAQEaTQoJQ29uZGl0aW9uEkAKGHN0b3JlX3ZlcnNpb25fbXVz",
-            "dF9lcXVhbBgBIAEoA0IHukgEIgIoAFIVc3RvcmVWZXJzaW9uTXVzdEVxdWFs",
-            "QgwKCl9jb25kaXRpb25CEQoPX2NoYW5nZV9kZXRhaWxzIlYKGkVyckRldGFp",
-            "bFZhbGlkYXRpb25GYWlsdXJlEjgKBmVycm9ycxgBIAMoCzIgLmNlcmJvcy5j",
-            "bG91ZC5zdG9yZS52MS5GaWxlRXJyb3JSBmVycm9ycyI9ChZFcnJEZXRhaWxO",
-            "b1VzYWJsZUZpbGVzEiMKDWlnbm9yZWRfZmlsZXMYASADKAlSDGlnbm9yZWRG",
-            "aWxlcyJRChtFcnJEZXRhaWxPcGVyYXRpb25EaXNjYXJkZWQSMgoVY3VycmVu",
-            "dF9zdG9yZV92ZXJzaW9uGAEgASgDUhNjdXJyZW50U3RvcmVWZXJzaW9uImcK",
-            "FFJlcGxhY2VGaWxlc1Jlc3BvbnNlEioKEW5ld19zdG9yZV92ZXJzaW9uGAEg",
-            "ASgDUg9uZXdTdG9yZVZlcnNpb24SIwoNaWdub3JlZF9maWxlcxgCIAMoCVIM",
-            "aWdub3JlZEZpbGVzMsQDChJDZXJib3NTdG9yZVNlcnZpY2USYwoJTGlzdEZp",
-            "bGVzEicuY2VyYm9zLmNsb3VkLnN0b3JlLnYxLkxpc3RGaWxlc1JlcXVlc3Qa",
-            "KC5jZXJib3MuY2xvdWQuc3RvcmUudjEuTGlzdEZpbGVzUmVzcG9uc2UiA5AC",
-            "ARJgCghHZXRGaWxlcxImLmNlcmJvcy5jbG91ZC5zdG9yZS52MS5HZXRGaWxl",
-            "c1JlcXVlc3QaJy5jZXJib3MuY2xvdWQuc3RvcmUudjEuR2V0RmlsZXNSZXNw",
-            "b25zZSIDkAIBEmYKC01vZGlmeUZpbGVzEikuY2VyYm9zLmNsb3VkLnN0b3Jl",
-            "LnYxLk1vZGlmeUZpbGVzUmVxdWVzdBoqLmNlcmJvcy5jbG91ZC5zdG9yZS52",
-            "MS5Nb2RpZnlGaWxlc1Jlc3BvbnNlIgASaQoMUmVwbGFjZUZpbGVzEiouY2Vy",
-            "Ym9zLmNsb3VkLnN0b3JlLnYxLlJlcGxhY2VGaWxlc1JlcXVlc3QaKy5jZXJi",
-            "b3MuY2xvdWQuc3RvcmUudjEuUmVwbGFjZUZpbGVzUmVzcG9uc2UiABoU+tLk",
-            "kwIOEgxFWFBFUklNRU5UQUxCfAodZGV2LmNlcmJvcy5hcGkuY2xvdWQudjEu",
-            "c3RvcmVaP2dpdGh1Yi5jb20vY2VyYm9zL2Nsb3VkLWFwaS9nZW5wYi9jZXJi",
-            "b3MvY2xvdWQvc3RvcmUvdjE7c3RvcmV2MaoCGUNlcmJvcy5BcGkuQ2xvdWQu",
-            "VjEuU3RvcmViBnByb3RvMw=="));
+            "c3RvcmUudjEuUmVwbGFjZUZpbGVzUmVxdWVzdC5Db25kaXRpb25IAVIJY29u",
+            "ZGl0aW9uiAEBEjcKD3ppcHBlZF9jb250ZW50cxgDIAEoDEIMukgJegcQFhiA",
+            "gMAHSABSDnppcHBlZENvbnRlbnRzEkgKBWZpbGVzGAUgASgLMjAuY2VyYm9z",
+            "LmNsb3VkLnN0b3JlLnYxLlJlcGxhY2VGaWxlc1JlcXVlc3QuRmlsZXNIAFIF",
+            "ZmlsZXMSUAoOY2hhbmdlX2RldGFpbHMYBCABKAsyJC5jZXJib3MuY2xvdWQu",
+            "c3RvcmUudjEuQ2hhbmdlRGV0YWlsc0gCUg1jaGFuZ2VEZXRhaWxziAEBGk0K",
+            "CUNvbmRpdGlvbhJAChhzdG9yZV92ZXJzaW9uX211c3RfZXF1YWwYASABKANC",
+            "B7pIBCICKABSFXN0b3JlVmVyc2lvbk11c3RFcXVhbBqVAQoFRmlsZXMSiwEK",
+            "BWZpbGVzGAEgAygLMhsuY2VyYm9zLmNsb3VkLnN0b3JlLnYxLkZpbGVCWLpI",
+            "VZIBAggBugFNChJmaWxlcy51bmlxdWVfcGF0aHMSGUZpbGUgcGF0aHMgbXVz",
+            "dCBiZSB1bmlxdWUaHHRoaXMubWFwKGYsIGYucGF0aCkudW5pcXVlKClSBWZp",
+            "bGVzQhEKCGNvbnRlbnRzEgW6SAIIAUIMCgpfY29uZGl0aW9uQhEKD19jaGFu",
+            "Z2VfZGV0YWlscyJWChpFcnJEZXRhaWxWYWxpZGF0aW9uRmFpbHVyZRI4CgZl",
+            "cnJvcnMYASADKAsyIC5jZXJib3MuY2xvdWQuc3RvcmUudjEuRmlsZUVycm9y",
+            "UgZlcnJvcnMiPQoWRXJyRGV0YWlsTm9Vc2FibGVGaWxlcxIjCg1pZ25vcmVk",
+            "X2ZpbGVzGAEgAygJUgxpZ25vcmVkRmlsZXMiUwodRXJyRGV0YWlsQ29uZGl0",
+            "aW9uVW5zYXRpc2ZpZWQSMgoVY3VycmVudF9zdG9yZV92ZXJzaW9uGAEgASgD",
+            "UhNjdXJyZW50U3RvcmVWZXJzaW9uIlEKG0VyckRldGFpbE9wZXJhdGlvbkRp",
+            "c2NhcmRlZBIyChVjdXJyZW50X3N0b3JlX3ZlcnNpb24YASABKANSE2N1cnJl",
+            "bnRTdG9yZVZlcnNpb24iKAomRXJyRGV0YWlsQ2Fubm90TW9kaWZ5R2l0Q29u",
+            "bmVjdGVkU3RvcmUiZwoUUmVwbGFjZUZpbGVzUmVzcG9uc2USKgoRbmV3X3N0",
+            "b3JlX3ZlcnNpb24YASABKANSD25ld1N0b3JlVmVyc2lvbhIjCg1pZ25vcmVk",
+            "X2ZpbGVzGAIgAygJUgxpZ25vcmVkRmlsZXMyxAMKEkNlcmJvc1N0b3JlU2Vy",
+            "dmljZRJjCglMaXN0RmlsZXMSJy5jZXJib3MuY2xvdWQuc3RvcmUudjEuTGlz",
+            "dEZpbGVzUmVxdWVzdBooLmNlcmJvcy5jbG91ZC5zdG9yZS52MS5MaXN0Rmls",
+            "ZXNSZXNwb25zZSIDkAIBEmAKCEdldEZpbGVzEiYuY2VyYm9zLmNsb3VkLnN0",
+            "b3JlLnYxLkdldEZpbGVzUmVxdWVzdBonLmNlcmJvcy5jbG91ZC5zdG9yZS52",
+            "MS5HZXRGaWxlc1Jlc3BvbnNlIgOQAgESZgoLTW9kaWZ5RmlsZXMSKS5jZXJi",
+            "b3MuY2xvdWQuc3RvcmUudjEuTW9kaWZ5RmlsZXNSZXF1ZXN0GiouY2VyYm9z",
+            "LmNsb3VkLnN0b3JlLnYxLk1vZGlmeUZpbGVzUmVzcG9uc2UiABJpCgxSZXBs",
+            "YWNlRmlsZXMSKi5jZXJib3MuY2xvdWQuc3RvcmUudjEuUmVwbGFjZUZpbGVz",
+            "UmVxdWVzdBorLmNlcmJvcy5jbG91ZC5zdG9yZS52MS5SZXBsYWNlRmlsZXNS",
+            "ZXNwb25zZSIAGhT60uSTAg4SDEVYUEVSSU1FTlRBTEJ8Ch1kZXYuY2VyYm9z",
+            "LmFwaS5jbG91ZC52MS5zdG9yZVo/Z2l0aHViLmNvbS9jZXJib3MvY2xvdWQt",
+            "YXBpL2dlbnBiL2NlcmJvcy9jbG91ZC9zdG9yZS92MTtzdG9yZXYxqgIZQ2Vy",
+            "Ym9zLkFwaS5DbG91ZC5WMS5TdG9yZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Google.Api.VisibilityReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.StructReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -134,10 +142,13 @@ namespace Cerbos.Api.Cloud.V1.Store {
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.Cloud.V1.Store.ModifyFilesRequest), global::Cerbos.Api.Cloud.V1.Store.ModifyFilesRequest.Parser, new[]{ "StoreId", "Condition", "Operations", "ChangeDetails" }, new[]{ "Condition", "ChangeDetails" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.Cloud.V1.Store.ModifyFilesRequest.Types.Condition), global::Cerbos.Api.Cloud.V1.Store.ModifyFilesRequest.Types.Condition.Parser, new[]{ "StoreVersionMustEqual" }, null, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.Cloud.V1.Store.FileError), global::Cerbos.Api.Cloud.V1.Store.FileError.Parser, new[]{ "File", "Cause", "Details" }, null, new[]{ typeof(global::Cerbos.Api.Cloud.V1.Store.FileError.Types.Cause) }, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.Cloud.V1.Store.ModifyFilesResponse), global::Cerbos.Api.Cloud.V1.Store.ModifyFilesResponse.Parser, new[]{ "NewStoreVersion" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.Cloud.V1.Store.ReplaceFilesRequest), global::Cerbos.Api.Cloud.V1.Store.ReplaceFilesRequest.Parser, new[]{ "StoreId", "Condition", "ZippedContents", "ChangeDetails" }, new[]{ "Condition", "ChangeDetails" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.Cloud.V1.Store.ReplaceFilesRequest.Types.Condition), global::Cerbos.Api.Cloud.V1.Store.ReplaceFilesRequest.Types.Condition.Parser, new[]{ "StoreVersionMustEqual" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.Cloud.V1.Store.ReplaceFilesRequest), global::Cerbos.Api.Cloud.V1.Store.ReplaceFilesRequest.Parser, new[]{ "StoreId", "Condition", "ZippedContents", "Files", "ChangeDetails" }, new[]{ "Contents", "Condition", "ChangeDetails" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.Cloud.V1.Store.ReplaceFilesRequest.Types.Condition), global::Cerbos.Api.Cloud.V1.Store.ReplaceFilesRequest.Types.Condition.Parser, new[]{ "StoreVersionMustEqual" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.Cloud.V1.Store.ReplaceFilesRequest.Types.Files), global::Cerbos.Api.Cloud.V1.Store.ReplaceFilesRequest.Types.Files.Parser, new[]{ "Files_" }, null, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.Cloud.V1.Store.ErrDetailValidationFailure), global::Cerbos.Api.Cloud.V1.Store.ErrDetailValidationFailure.Parser, new[]{ "Errors" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.Cloud.V1.Store.ErrDetailNoUsableFiles), global::Cerbos.Api.Cloud.V1.Store.ErrDetailNoUsableFiles.Parser, new[]{ "IgnoredFiles" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.Cloud.V1.Store.ErrDetailConditionUnsatisfied), global::Cerbos.Api.Cloud.V1.Store.ErrDetailConditionUnsatisfied.Parser, new[]{ "CurrentStoreVersion" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.Cloud.V1.Store.ErrDetailOperationDiscarded), global::Cerbos.Api.Cloud.V1.Store.ErrDetailOperationDiscarded.Parser, new[]{ "CurrentStoreVersion" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.Cloud.V1.Store.ErrDetailCannotModifyGitConnectedStore), global::Cerbos.Api.Cloud.V1.Store.ErrDetailCannotModifyGitConnectedStore.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.Cloud.V1.Store.ReplaceFilesResponse), global::Cerbos.Api.Cloud.V1.Store.ReplaceFilesResponse.Parser, new[]{ "NewStoreVersion", "IgnoredFiles" }, null, null, null, null)
           }));
     }
@@ -4696,8 +4707,16 @@ namespace Cerbos.Api.Cloud.V1.Store {
     public ReplaceFilesRequest(ReplaceFilesRequest other) : this() {
       storeId_ = other.storeId_;
       condition_ = other.condition_ != null ? other.condition_.Clone() : null;
-      zippedContents_ = other.zippedContents_;
       changeDetails_ = other.changeDetails_ != null ? other.changeDetails_.Clone() : null;
+      switch (other.ContentsCase) {
+        case ContentsOneofCase.ZippedContents:
+          ZippedContents = other.ZippedContents;
+          break;
+        case ContentsOneofCase.Files:
+          Files = other.Files.Clone();
+          break;
+      }
+
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -4733,13 +4752,39 @@ namespace Cerbos.Api.Cloud.V1.Store {
 
     /// <summary>Field number for the "zipped_contents" field.</summary>
     public const int ZippedContentsFieldNumber = 3;
-    private pb::ByteString zippedContents_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pb::ByteString ZippedContents {
-      get { return zippedContents_; }
+      get { return HasZippedContents ? (pb::ByteString) contents_ : pb::ByteString.Empty; }
       set {
-        zippedContents_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        contents_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        contentsCase_ = ContentsOneofCase.ZippedContents;
+      }
+    }
+    /// <summary>Gets whether the "zipped_contents" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasZippedContents {
+      get { return contentsCase_ == ContentsOneofCase.ZippedContents; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "zipped_contents" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearZippedContents() {
+      if (HasZippedContents) {
+        ClearContents();
+      }
+    }
+
+    /// <summary>Field number for the "files" field.</summary>
+    public const int FilesFieldNumber = 5;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Cerbos.Api.Cloud.V1.Store.ReplaceFilesRequest.Types.Files Files {
+      get { return contentsCase_ == ContentsOneofCase.Files ? (global::Cerbos.Api.Cloud.V1.Store.ReplaceFilesRequest.Types.Files) contents_ : null; }
+      set {
+        contents_ = value;
+        contentsCase_ = value == null ? ContentsOneofCase.None : ContentsOneofCase.Files;
       }
     }
 
@@ -4753,6 +4798,27 @@ namespace Cerbos.Api.Cloud.V1.Store {
       set {
         changeDetails_ = value;
       }
+    }
+
+    private object contents_;
+    /// <summary>Enum of possible cases for the "contents" oneof.</summary>
+    public enum ContentsOneofCase {
+      None = 0,
+      ZippedContents = 3,
+      Files = 5,
+    }
+    private ContentsOneofCase contentsCase_ = ContentsOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ContentsOneofCase ContentsCase {
+      get { return contentsCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearContents() {
+      contentsCase_ = ContentsOneofCase.None;
+      contents_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4773,7 +4839,9 @@ namespace Cerbos.Api.Cloud.V1.Store {
       if (StoreId != other.StoreId) return false;
       if (!object.Equals(Condition, other.Condition)) return false;
       if (ZippedContents != other.ZippedContents) return false;
+      if (!object.Equals(Files, other.Files)) return false;
       if (!object.Equals(ChangeDetails, other.ChangeDetails)) return false;
+      if (ContentsCase != other.ContentsCase) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -4783,8 +4851,10 @@ namespace Cerbos.Api.Cloud.V1.Store {
       int hash = 1;
       if (StoreId.Length != 0) hash ^= StoreId.GetHashCode();
       if (condition_ != null) hash ^= Condition.GetHashCode();
-      if (ZippedContents.Length != 0) hash ^= ZippedContents.GetHashCode();
+      if (HasZippedContents) hash ^= ZippedContents.GetHashCode();
+      if (contentsCase_ == ContentsOneofCase.Files) hash ^= Files.GetHashCode();
       if (changeDetails_ != null) hash ^= ChangeDetails.GetHashCode();
+      hash ^= (int) contentsCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -4811,13 +4881,17 @@ namespace Cerbos.Api.Cloud.V1.Store {
         output.WriteRawTag(18);
         output.WriteMessage(Condition);
       }
-      if (ZippedContents.Length != 0) {
+      if (HasZippedContents) {
         output.WriteRawTag(26);
         output.WriteBytes(ZippedContents);
       }
       if (changeDetails_ != null) {
         output.WriteRawTag(34);
         output.WriteMessage(ChangeDetails);
+      }
+      if (contentsCase_ == ContentsOneofCase.Files) {
+        output.WriteRawTag(42);
+        output.WriteMessage(Files);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -4837,13 +4911,17 @@ namespace Cerbos.Api.Cloud.V1.Store {
         output.WriteRawTag(18);
         output.WriteMessage(Condition);
       }
-      if (ZippedContents.Length != 0) {
+      if (HasZippedContents) {
         output.WriteRawTag(26);
         output.WriteBytes(ZippedContents);
       }
       if (changeDetails_ != null) {
         output.WriteRawTag(34);
         output.WriteMessage(ChangeDetails);
+      }
+      if (contentsCase_ == ContentsOneofCase.Files) {
+        output.WriteRawTag(42);
+        output.WriteMessage(Files);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -4861,8 +4939,11 @@ namespace Cerbos.Api.Cloud.V1.Store {
       if (condition_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Condition);
       }
-      if (ZippedContents.Length != 0) {
+      if (HasZippedContents) {
         size += 1 + pb::CodedOutputStream.ComputeBytesSize(ZippedContents);
+      }
+      if (contentsCase_ == ContentsOneofCase.Files) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Files);
       }
       if (changeDetails_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(ChangeDetails);
@@ -4888,15 +4969,24 @@ namespace Cerbos.Api.Cloud.V1.Store {
         }
         Condition.MergeFrom(other.Condition);
       }
-      if (other.ZippedContents.Length != 0) {
-        ZippedContents = other.ZippedContents;
-      }
       if (other.changeDetails_ != null) {
         if (changeDetails_ == null) {
           ChangeDetails = new global::Cerbos.Api.Cloud.V1.Store.ChangeDetails();
         }
         ChangeDetails.MergeFrom(other.ChangeDetails);
       }
+      switch (other.ContentsCase) {
+        case ContentsOneofCase.ZippedContents:
+          ZippedContents = other.ZippedContents;
+          break;
+        case ContentsOneofCase.Files:
+          if (Files == null) {
+            Files = new global::Cerbos.Api.Cloud.V1.Store.ReplaceFilesRequest.Types.Files();
+          }
+          Files.MergeFrom(other.Files);
+          break;
+      }
+
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -4938,6 +5028,15 @@ namespace Cerbos.Api.Cloud.V1.Store {
             input.ReadMessage(ChangeDetails);
             break;
           }
+          case 42: {
+            global::Cerbos.Api.Cloud.V1.Store.ReplaceFilesRequest.Types.Files subBuilder = new global::Cerbos.Api.Cloud.V1.Store.ReplaceFilesRequest.Types.Files();
+            if (contentsCase_ == ContentsOneofCase.Files) {
+              subBuilder.MergeFrom(Files);
+            }
+            input.ReadMessage(subBuilder);
+            Files = subBuilder;
+            break;
+          }
         }
       }
     #endif
@@ -4977,6 +5076,15 @@ namespace Cerbos.Api.Cloud.V1.Store {
               ChangeDetails = new global::Cerbos.Api.Cloud.V1.Store.ChangeDetails();
             }
             input.ReadMessage(ChangeDetails);
+            break;
+          }
+          case 42: {
+            global::Cerbos.Api.Cloud.V1.Store.ReplaceFilesRequest.Types.Files subBuilder = new global::Cerbos.Api.Cloud.V1.Store.ReplaceFilesRequest.Types.Files();
+            if (contentsCase_ == ContentsOneofCase.Files) {
+              subBuilder.MergeFrom(Files);
+            }
+            input.ReadMessage(subBuilder);
+            Files = subBuilder;
             break;
           }
         }
@@ -5178,6 +5286,193 @@ namespace Cerbos.Api.Cloud.V1.Store {
                 break;
               case 8: {
                 StoreVersionMustEqual = input.ReadInt64();
+                break;
+              }
+            }
+          }
+        }
+        #endif
+
+      }
+
+      [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+      public sealed partial class Files : pb::IMessage<Files>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
+        private static readonly pb::MessageParser<Files> _parser = new pb::MessageParser<Files>(() => new Files());
+        private pb::UnknownFieldSet _unknownFields;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pb::MessageParser<Files> Parser { get { return _parser; } }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pbr::MessageDescriptor Descriptor {
+          get { return global::Cerbos.Api.Cloud.V1.Store.ReplaceFilesRequest.Descriptor.NestedTypes[1]; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        pbr::MessageDescriptor pb::IMessage.Descriptor {
+          get { return Descriptor; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public Files() {
+          OnConstruction();
+        }
+
+        partial void OnConstruction();
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public Files(Files other) : this() {
+          files_ = other.files_.Clone();
+          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public Files Clone() {
+          return new Files(this);
+        }
+
+        /// <summary>Field number for the "files" field.</summary>
+        public const int Files_FieldNumber = 1;
+        private static readonly pb::FieldCodec<global::Cerbos.Api.Cloud.V1.Store.File> _repeated_files_codec
+            = pb::FieldCodec.ForMessage(10, global::Cerbos.Api.Cloud.V1.Store.File.Parser);
+        private readonly pbc::RepeatedField<global::Cerbos.Api.Cloud.V1.Store.File> files_ = new pbc::RepeatedField<global::Cerbos.Api.Cloud.V1.Store.File>();
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public pbc::RepeatedField<global::Cerbos.Api.Cloud.V1.Store.File> Files_ {
+          get { return files_; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override bool Equals(object other) {
+          return Equals(other as Files);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool Equals(Files other) {
+          if (ReferenceEquals(other, null)) {
+            return false;
+          }
+          if (ReferenceEquals(other, this)) {
+            return true;
+          }
+          if(!files_.Equals(other.files_)) return false;
+          return Equals(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override int GetHashCode() {
+          int hash = 1;
+          hash ^= files_.GetHashCode();
+          if (_unknownFields != null) {
+            hash ^= _unknownFields.GetHashCode();
+          }
+          return hash;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override string ToString() {
+          return pb::JsonFormatter.ToDiagnosticString(this);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
+          files_.WriteTo(output, _repeated_files_codec);
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(output);
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          files_.WriteTo(ref output, _repeated_files_codec);
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public int CalculateSize() {
+          int size = 0;
+          size += files_.CalculateSize(_repeated_files_codec);
+          if (_unknownFields != null) {
+            size += _unknownFields.CalculateSize();
+          }
+          return size;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(Files other) {
+          if (other == null) {
+            return;
+          }
+          files_.Add(other.files_);
+          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+          if ((tag & 7) == 4) {
+            // Abort on any end group tag.
+            return;
+          }
+          switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+                break;
+              case 10: {
+                files_.AddEntriesFrom(input, _repeated_files_codec);
+                break;
+              }
+            }
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+          if ((tag & 7) == 4) {
+            // Abort on any end group tag.
+            return;
+          }
+          switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 10: {
+                files_.AddEntriesFrom(ref input, _repeated_files_codec);
                 break;
               }
             }
@@ -5567,6 +5862,204 @@ namespace Cerbos.Api.Cloud.V1.Store {
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class ErrDetailConditionUnsatisfied : pb::IMessage<ErrDetailConditionUnsatisfied>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ErrDetailConditionUnsatisfied> _parser = new pb::MessageParser<ErrDetailConditionUnsatisfied>(() => new ErrDetailConditionUnsatisfied());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ErrDetailConditionUnsatisfied> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Cerbos.Api.Cloud.V1.Store.StoreReflection.Descriptor.MessageTypes[15]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ErrDetailConditionUnsatisfied() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ErrDetailConditionUnsatisfied(ErrDetailConditionUnsatisfied other) : this() {
+      currentStoreVersion_ = other.currentStoreVersion_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ErrDetailConditionUnsatisfied Clone() {
+      return new ErrDetailConditionUnsatisfied(this);
+    }
+
+    /// <summary>Field number for the "current_store_version" field.</summary>
+    public const int CurrentStoreVersionFieldNumber = 1;
+    private long currentStoreVersion_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public long CurrentStoreVersion {
+      get { return currentStoreVersion_; }
+      set {
+        currentStoreVersion_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ErrDetailConditionUnsatisfied);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ErrDetailConditionUnsatisfied other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (CurrentStoreVersion != other.CurrentStoreVersion) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (CurrentStoreVersion != 0L) hash ^= CurrentStoreVersion.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (CurrentStoreVersion != 0L) {
+        output.WriteRawTag(8);
+        output.WriteInt64(CurrentStoreVersion);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (CurrentStoreVersion != 0L) {
+        output.WriteRawTag(8);
+        output.WriteInt64(CurrentStoreVersion);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (CurrentStoreVersion != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(CurrentStoreVersion);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ErrDetailConditionUnsatisfied other) {
+      if (other == null) {
+        return;
+      }
+      if (other.CurrentStoreVersion != 0L) {
+        CurrentStoreVersion = other.CurrentStoreVersion;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            CurrentStoreVersion = input.ReadInt64();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            CurrentStoreVersion = input.ReadInt64();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ErrDetailOperationDiscarded : pb::IMessage<ErrDetailOperationDiscarded>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -5581,7 +6074,7 @@ namespace Cerbos.Api.Cloud.V1.Store {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Cerbos.Api.Cloud.V1.Store.StoreReflection.Descriptor.MessageTypes[15]; }
+      get { return global::Cerbos.Api.Cloud.V1.Store.StoreReflection.Descriptor.MessageTypes[16]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5765,6 +6258,167 @@ namespace Cerbos.Api.Cloud.V1.Store {
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class ErrDetailCannotModifyGitConnectedStore : pb::IMessage<ErrDetailCannotModifyGitConnectedStore>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ErrDetailCannotModifyGitConnectedStore> _parser = new pb::MessageParser<ErrDetailCannotModifyGitConnectedStore>(() => new ErrDetailCannotModifyGitConnectedStore());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ErrDetailCannotModifyGitConnectedStore> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Cerbos.Api.Cloud.V1.Store.StoreReflection.Descriptor.MessageTypes[17]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ErrDetailCannotModifyGitConnectedStore() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ErrDetailCannotModifyGitConnectedStore(ErrDetailCannotModifyGitConnectedStore other) : this() {
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ErrDetailCannotModifyGitConnectedStore Clone() {
+      return new ErrDetailCannotModifyGitConnectedStore(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ErrDetailCannotModifyGitConnectedStore);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ErrDetailCannotModifyGitConnectedStore other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ErrDetailCannotModifyGitConnectedStore other) {
+      if (other == null) {
+        return;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ReplaceFilesResponse : pb::IMessage<ReplaceFilesResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -5779,7 +6433,7 @@ namespace Cerbos.Api.Cloud.V1.Store {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Cerbos.Api.Cloud.V1.Store.StoreReflection.Descriptor.MessageTypes[16]; }
+      get { return global::Cerbos.Api.Cloud.V1.Store.StoreReflection.Descriptor.MessageTypes[18]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
