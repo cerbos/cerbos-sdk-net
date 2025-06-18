@@ -109,7 +109,7 @@ namespace Cerbos.Sdk.Cloud.V1
                             Names = { MethodName.Default },
                             RetryPolicy = new RetryPolicy
                             {
-                                MaxAttempts = 1,
+                                MaxAttempts = 2,
                                 RetryableStatusCodes = {}
                             },
                         }

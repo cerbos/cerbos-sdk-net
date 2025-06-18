@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 using System;
+using System.Threading;
 using Cerbos.Sdk.Cloud.V1.ApiKey;
 using Grpc.Core;
 using Grpc.Core.Interceptors;
@@ -12,16 +13,19 @@ namespace Cerbos.Sdk.Cloud.V1.Interceptor
     {
         private const string AuthTokenHeader = "x-cerbos-auth";
         private const double EarlyExpireInMinutes = 5;
-        private RpcException Unauthenticated { get; set; }
         private Credentials Credentials { get; }
         private IApiKeyClient ApiKeyClient { get; }
+
         private string AccessToken { get; set; }
         private DateTime AccessTokenExpiresAt { get; set; }
+        private RpcException LastException { get; set; }
+        private ReaderWriterLock RWLock;
 
         public AuthInterceptor(IApiKeyClient apiKeyClient, Credentials credentials)
         {
             ApiKeyClient = apiKeyClient;
             Credentials = credentials;
+            RWLock = new ReaderWriterLock();
         }
 
         public override TResponse BlockingUnaryCall<TRequest, TResponse>(
@@ -30,33 +34,11 @@ namespace Cerbos.Sdk.Cloud.V1.Interceptor
             BlockingUnaryCallContinuation<TRequest, TResponse> continuation
         )
         {
-            if (Unauthenticated != null)
-            {
-                throw Unauthenticated;
-            }
+            ThrowIfUnauthenticated();
 
-            if (TokenExpired(AccessTokenExpiresAt))
+            if (Expired())
             {
-                try
-                {
-                    var response = ApiKeyClient.IssueAccessToken(Credentials.ToIssueAccessTokenRequest());
-                    AccessToken = response.AccessToken;
-                    AccessTokenExpiresAt = response.ExpiresAt;
-                }
-                catch (RpcException e)
-                {
-                    if (e.StatusCode == StatusCode.Unauthenticated)
-                    {
-                        // There is no point retrying because the given credentials are not valid
-                        Unauthenticated = e;
-                    }
-
-                    throw;
-                }
-                catch (Exception e)
-                {
-                    throw new Exception($"Failed to issue access token: ${e}");
-                }
+                IssueToken();
             }
 
             var newContext = new ClientInterceptorContext<TRequest, TResponse>(
@@ -66,39 +48,17 @@ namespace Cerbos.Sdk.Cloud.V1.Interceptor
             );
             return continuation(request, newContext);
         }
-
+        
         public override AsyncUnaryCall<TResponse> AsyncUnaryCall<TRequest, TResponse>(
             TRequest request,
             ClientInterceptorContext<TRequest, TResponse> context,
             AsyncUnaryCallContinuation<TRequest, TResponse> continuation)
         {
-            if (Unauthenticated != null)
-            {
-                throw Unauthenticated;
-            }
+            ThrowIfUnauthenticated();
 
-            if (TokenExpired(AccessTokenExpiresAt))
+            if (Expired())
             {
-                try
-                {
-                    var response = ApiKeyClient.IssueAccessTokenAsync(Credentials.ToIssueAccessTokenRequest()).GetAwaiter().GetResult();
-                    AccessToken = response.AccessToken;
-                    AccessTokenExpiresAt = response.ExpiresAt;
-                }
-                catch (RpcException e)
-                {
-                    if (e.StatusCode == StatusCode.Unauthenticated)
-                    {
-                        // There is no point retrying because the given credentials are not valid
-                        Unauthenticated = e;
-                    }
-
-                    throw;
-                }
-                catch (Exception e)
-                {
-                    throw new Exception($"Failed to issue access token: ${e}");
-                }
+                IssueToken();
             }
 
             var newContext = new ClientInterceptorContext<TRequest, TResponse>(
@@ -109,14 +69,79 @@ namespace Cerbos.Sdk.Cloud.V1.Interceptor
             return continuation(request, newContext);
         }
 
-        private bool TokenExpired(DateTime expiresAt) {
-            if (expiresAt.CompareTo(DateTime.MinValue) == 0)
-            {
-                return true;
-            }
+        private void IssueToken()
+        {
+            RWLock.AcquireWriterLock(0);
 
-            var earlyExpiresAt = expiresAt.Subtract(TimeSpan.FromMinutes(EarlyExpireInMinutes));
-            return DateTime.UtcNow.CompareTo(earlyExpiresAt) > 0;
+            try
+            {
+                if (!Expired())
+                {
+                    return;
+                }
+
+                var response = ApiKeyClient.IssueAccessToken(Credentials.ToIssueAccessTokenRequest());
+                AccessToken = response.AccessToken;
+                AccessTokenExpiresAt = response.ExpiresAt;
+                LastException = null;
+            }
+            catch (RpcException e)
+            {
+                if (e.StatusCode == StatusCode.Unauthenticated)
+                {
+                    LastException = e;
+                }
+                else if (e.StatusCode == StatusCode.ResourceExhausted)
+                {
+                    // TODO: Needs backoff
+                    LastException = e;
+                }
+
+                throw;
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Failed to issue access token: ${e}");
+            }
+            finally
+            {
+                RWLock.ReleaseWriterLock();
+            }
+        }
+
+        private void ThrowIfUnauthenticated()
+        {
+            RWLock.AcquireReaderLock(0);
+            try
+            {
+                if (LastException is RpcException && LastException.StatusCode == StatusCode.Unauthenticated)
+                {
+                    throw LastException;
+                }
+            }
+            finally
+            {
+                RWLock.ReleaseReaderLock();
+            }
+        }
+
+        private bool Expired()
+        {
+            RWLock.AcquireReaderLock(0);
+            try
+            {
+                if (AccessTokenExpiresAt.CompareTo(DateTime.MinValue) == 0)
+                {
+                    return true;
+                }
+
+                var earlyExpiresAt = AccessTokenExpiresAt.Subtract(TimeSpan.FromMinutes(EarlyExpireInMinutes));
+                return DateTime.UtcNow.CompareTo(earlyExpiresAt) > 0;
+            }
+            finally
+            {
+                RWLock.ReleaseReaderLock();
+            }
         }
 
         private Metadata MetadataWithAuthToken(Metadata metadata)

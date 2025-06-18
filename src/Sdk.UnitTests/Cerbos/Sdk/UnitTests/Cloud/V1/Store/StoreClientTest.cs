@@ -50,7 +50,8 @@ public class StoreClientTest
         }
         StoreId = storeId;
 
-        var hubClient = HubClientBuilder.ForTarget(apiEndpoint).
+        var hubClient = HubClientBuilder.
+            ForTarget(apiEndpoint).
             WithCredentials(clientId, clientSecret).
             Build();
 
