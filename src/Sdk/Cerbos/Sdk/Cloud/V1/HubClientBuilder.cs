@@ -73,11 +73,12 @@ namespace Cerbos.Sdk.Cloud.V1
                 throw new Exception("Credentials must be specified");
             }
 
-            var channelOptions = new GrpcChannelOptions()
+            var channelOptions = new GrpcChannelOptions
             {
                 ServiceConfig = new ServiceConfig
                 {
-                    RetryThrottling = {
+                    RetryThrottling = new RetryThrottlingPolicy()
+                    {
                         TokenRatio = 0.1,
                         MaxTokens = 10
                     },
@@ -107,11 +108,6 @@ namespace Cerbos.Sdk.Cloud.V1
                     MethodConfigs = {
                         new MethodConfig{
                             Names = { MethodName.Default },
-                            RetryPolicy = new RetryPolicy
-                            {
-                                MaxAttempts = 2,
-                                RetryableStatusCodes = {}
-                            },
                         }
                     }
                 }
