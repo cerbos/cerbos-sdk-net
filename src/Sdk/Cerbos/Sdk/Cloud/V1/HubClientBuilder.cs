@@ -12,7 +12,6 @@ using Cerbos.Sdk.Cloud.V1.Store;
 using Cerbos.Sdk.Cloud.V1.ApiKey;
 using System.Net.Http;
 using System.Security.Cryptography.X509Certificates;
-using Grpc.Net.Client.Configuration;
 
 namespace Cerbos.Sdk.Cloud.V1
 {
@@ -73,58 +72,17 @@ namespace Cerbos.Sdk.Cloud.V1
                 throw new Exception("Credentials must be specified");
             }
 
-            var channelOptions = new GrpcChannelOptions
-            {
-                ServiceConfig = new ServiceConfig
-                {
-                    RetryThrottling = new RetryThrottlingPolicy()
-                    {
-                        TokenRatio = 0.1,
-                        MaxTokens = 10
-                    },
-                    MethodConfigs = {
-                        new MethodConfig{
-                            Names = { MethodName.Default },
-                            RetryPolicy = new RetryPolicy
-                            {
-                                MaxAttempts = 5,
-                                InitialBackoff = TimeSpan.FromMilliseconds(500),
-                                MaxBackoff = TimeSpan.FromSeconds(60),
-                                BackoffMultiplier = 1.5,
-                                RetryableStatusCodes = {
-                                    StatusCode.Internal,
-                                    StatusCode.Unavailable,
-                                }
-                            },
-                        }
-                    }
-                }
-            };
-
-            var noRetryChannelOptions = new GrpcChannelOptions()
-            {
-                ServiceConfig = new ServiceConfig
-                {
-                    MethodConfigs = {
-                        new MethodConfig{
-                            Names = { MethodName.Default },
-                        }
-                    }
-                }
-            };
-
+            var channelOptions = new GrpcChannelOptions{};
             if (CaCertificate != null)
             {
                 var handler = new HttpClientHandler();
                 var cert = new X509Certificate(CaCertificate);
                 handler.ClientCertificates.Add(cert);
                 channelOptions.HttpHandler = handler;
-                noRetryChannelOptions.HttpHandler = handler;
             }
             else if (!Plaintext)
             {
                 channelOptions.Credentials = ChannelCredentials.SecureSsl;
-                noRetryChannelOptions.Credentials = ChannelCredentials.SecureSsl;
             }
 
             var authInterceptor = new AuthInterceptor(
@@ -132,17 +90,19 @@ namespace Cerbos.Sdk.Cloud.V1
                     new ApiKeyService.ApiKeyServiceClient(
                         GrpcChannel.ForAddress(
                             Target,
-                            noRetryChannelOptions
+                            channelOptions
                         )
-                    )
+                    ),
+                    Resilience.NewInstance().WithCircuitBreaker().WithRetry(StatusCode.ResourceExhausted)
                 ),
                 Credentials
             );
 
+            var resilience = Resilience.NewInstance().WithCircuitBreaker().WithRetry(StatusCode.Internal, StatusCode.Unavailable);
             var channelWithInterceptor = GrpcChannel.ForAddress(Target, channelOptions).Intercept(authInterceptor);
             return new HubClient(
-                new ApiKeyClient(new ApiKeyService.ApiKeyServiceClient(channelWithInterceptor)),
-                new StoreClient(new CerbosStoreService.CerbosStoreServiceClient(channelWithInterceptor))
+                new ApiKeyClient(new ApiKeyService.ApiKeyServiceClient(channelWithInterceptor), resilience),
+                new StoreClient(new CerbosStoreService.CerbosStoreServiceClient(channelWithInterceptor), resilience)
             );
         }
     }

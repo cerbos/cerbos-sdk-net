@@ -4,6 +4,8 @@
 using System;
 using System.Threading.Tasks;
 using Cerbos.Api.Cloud.V1.ApiKey;
+using Grpc.Core;
+using Polly;
 
 namespace Cerbos.Sdk.Cloud.V1.ApiKey
 {
@@ -20,21 +22,32 @@ namespace Cerbos.Sdk.Cloud.V1.ApiKey
     public sealed class ApiKeyClient : IApiKeyClient
     {
         private ApiKeyService.ApiKeyServiceClient Client { get; }
+        private ResiliencePipeline Resilience { get; }
 
         public ApiKeyClient(ApiKeyService.ApiKeyServiceClient apiKeyServiceClient)
         {
             Client = apiKeyServiceClient;
+            Resilience = V1.Resilience.NewInstance().WithCircuitBreaker().WithRetry(StatusCode.Internal, StatusCode.Unavailable).Build();
+        }
+        
+        internal ApiKeyClient(ApiKeyService.ApiKeyServiceClient apiKeyServiceClient, Resilience resilience)
+        {
+            Client = apiKeyServiceClient;
+            Resilience = resilience.Build();
         }
 
         public IssueAccessTokenResponse IssueAccessToken(IssueAccessTokenRequest request)
         {
             try
             {
-                return new IssueAccessTokenResponse(
-                    Client.IssueAccessToken(
-                        request.ToIssueAccessTokenRequest()
-                    )
-                );
+                return Resilience.Execute(() =>
+                {
+                    return new IssueAccessTokenResponse(
+                        Client.IssueAccessToken(
+                            request.ToIssueAccessTokenRequest()
+                        )
+                    );
+                });
             }
             catch (Exception e)
             {
@@ -46,12 +59,11 @@ namespace Cerbos.Sdk.Cloud.V1.ApiKey
         {
             try
             {
-                return Client
-                    .IssueAccessTokenAsync(request.ToIssueAccessTokenRequest())
-                    .ResponseAsync
-                    .ContinueWith(
-                        r => new IssueAccessTokenResponse(r.Result)
-                    );
+                return Resilience.ExecuteAsync(
+                    async (token) => {
+                        return await Client.IssueAccessTokenAsync(request.ToIssueAccessTokenRequest()).ResponseAsync.ContinueWith(r => new IssueAccessTokenResponse(r.Result));
+                    }
+                ).AsTask();
             }
             catch (Exception e)
             {

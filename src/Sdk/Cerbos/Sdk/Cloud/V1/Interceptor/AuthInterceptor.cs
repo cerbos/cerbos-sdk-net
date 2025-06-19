@@ -91,11 +91,6 @@ namespace Cerbos.Sdk.Cloud.V1.Interceptor
                 {
                     LastException = e;
                 }
-                else if (e.StatusCode == StatusCode.ResourceExhausted)
-                {
-                    // TODO: Needs backoff
-                    LastException = e;
-                }
 
                 throw;
             }

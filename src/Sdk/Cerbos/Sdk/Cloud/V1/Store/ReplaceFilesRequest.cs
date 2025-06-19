@@ -3,7 +3,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Net;
 using Google.Protobuf.Collections;
 
 namespace Cerbos.Sdk.Cloud.V1.Store

@@ -4,6 +4,8 @@
 using System;
 using System.Threading.Tasks;
 using Cerbos.Api.Cloud.V1.Store;
+using Grpc.Core;
+using Polly;
 
 namespace Cerbos.Sdk.Cloud.V1.Store
 {
@@ -26,21 +28,32 @@ namespace Cerbos.Sdk.Cloud.V1.Store
     public sealed class StoreClient : IStoreClient
     {
         private CerbosStoreService.CerbosStoreServiceClient Client { get; }
+        private ResiliencePipeline Resilience { get; }
 
         public StoreClient(CerbosStoreService.CerbosStoreServiceClient storeServiceClient)
         {
             Client = storeServiceClient;
+            Resilience = V1.Resilience.NewInstance().WithCircuitBreaker().WithRetry(StatusCode.Internal, StatusCode.Unavailable).Build();
+        }
+        
+        internal StoreClient(CerbosStoreService.CerbosStoreServiceClient storeServiceClient, Resilience resilience)
+        {
+            Client = storeServiceClient;
+            Resilience = resilience.Build();
         }
 
         public GetFilesResponse GetFiles(GetFilesRequest request)
         {
             try
             {
-                return new GetFilesResponse(
-                    Client.GetFiles(
-                        request.ToGetFilesRequest()
-                    )
-                );
+                return Resilience.Execute(() =>
+                {
+                    return new GetFilesResponse(
+                        Client.GetFiles(
+                            request.ToGetFilesRequest()
+                        )
+                    );
+                });
             }
             catch (Exception e)
             {
@@ -52,12 +65,11 @@ namespace Cerbos.Sdk.Cloud.V1.Store
         {
             try
             {
-                return Client
-                    .GetFilesAsync(request.ToGetFilesRequest())
-                    .ResponseAsync
-                    .ContinueWith(
-                        r => new GetFilesResponse(r.Result)
-                    );
+                return Resilience.ExecuteAsync(
+                    async (token) => {
+                        return await Client.GetFilesAsync(request.ToGetFilesRequest()).ResponseAsync.ContinueWith(r => new GetFilesResponse(r.Result));
+                    }
+                ).AsTask();
             }
             catch (Exception e)
             {
@@ -69,11 +81,14 @@ namespace Cerbos.Sdk.Cloud.V1.Store
         {
             try
             {
-                return new ListFilesResponse(
-                    Client.ListFiles(
-                        request.ToListFilesRequest()
-                    )
-                );
+                return Resilience.Execute(() =>
+                {
+                    return new ListFilesResponse(
+                        Client.ListFiles(
+                            request.ToListFilesRequest()
+                        )
+                    );
+                });
             }
             catch (Exception e)
             {
@@ -85,12 +100,11 @@ namespace Cerbos.Sdk.Cloud.V1.Store
         {
             try
             {
-                return Client
-                    .ListFilesAsync(request.ToListFilesRequest())
-                    .ResponseAsync
-                    .ContinueWith(
-                        r => new ListFilesResponse(r.Result)
-                    );
+                return Resilience.ExecuteAsync(
+                    async (token) => {
+                        return await Client.ListFilesAsync(request.ToListFilesRequest()).ResponseAsync.ContinueWith(r => new ListFilesResponse(r.Result));
+                    }
+                ).AsTask();
             }
             catch (Exception e)
             {
@@ -102,11 +116,14 @@ namespace Cerbos.Sdk.Cloud.V1.Store
         {
             try
             {
-                return new ModifyFilesResponse(
-                    Client.ModifyFiles(
-                        request.ToModifyFilesRequest()
-                    )
-                );
+                return Resilience.Execute(() =>
+                {
+                    return new ModifyFilesResponse(
+                        Client.ModifyFiles(
+                            request.ToModifyFilesRequest()
+                        )
+                    );
+                });
             }
             catch (Exception e)
             {
@@ -118,12 +135,11 @@ namespace Cerbos.Sdk.Cloud.V1.Store
         {
             try
             {
-                return Client
-                    .ModifyFilesAsync(request.ToModifyFilesRequest())
-                    .ResponseAsync
-                    .ContinueWith(
-                        r => new ModifyFilesResponse(r.Result)
-                    );
+                return Resilience.ExecuteAsync(
+                    async (token) => {
+                        return await Client.ModifyFilesAsync(request.ToModifyFilesRequest()).ResponseAsync.ContinueWith(r => new ModifyFilesResponse(r.Result));
+                    }
+                ).AsTask();
             }
             catch (Exception e)
             {
@@ -135,11 +151,14 @@ namespace Cerbos.Sdk.Cloud.V1.Store
         {
             try
             {
-                return new ReplaceFilesResponse(
-                    Client.ReplaceFiles(
-                        request.ToReplaceFilesRequest()
-                    )
-                );
+                return Resilience.Execute(() =>
+                {
+                    return new ReplaceFilesResponse(
+                        Client.ReplaceFiles(
+                            request.ToReplaceFilesRequest()
+                        )
+                    );
+                });
             }
             catch (Exception e)
             {
@@ -151,12 +170,11 @@ namespace Cerbos.Sdk.Cloud.V1.Store
         {
             try
             {
-                return Client
-                    .ReplaceFilesAsync(request.ToReplaceFilesRequest())
-                    .ResponseAsync
-                    .ContinueWith(
-                        r => new ReplaceFilesResponse(r.Result)
-                    );
+                return Resilience.ExecuteAsync(
+                    async (token) => {
+                        return await Client.ReplaceFilesAsync(request.ToReplaceFilesRequest()).ResponseAsync.ContinueWith(r => new ReplaceFilesResponse(r.Result));
+                    }
+                ).AsTask();
             }
             catch (Exception e)
             {
