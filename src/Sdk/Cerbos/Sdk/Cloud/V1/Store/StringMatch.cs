@@ -20,21 +20,21 @@ namespace Cerbos.Sdk.Cloud.V1.Store
             return new StringMatch();
         }
 
-        public StringMatch MatchEquals(string equals)
+        public StringMatch WithEquals(string equals)
         {
             Equals_ = equals;
             OneOf = Api.Cloud.V1.Store.StringMatch.MatchOneofCase.Equals_;
             return this;
         }
 
-        public StringMatch MatchIn(Types.InList inList)
+        public StringMatch WithIn(Types.InList inList)
         {
             In = inList;
             OneOf = Api.Cloud.V1.Store.StringMatch.MatchOneofCase.In;
             return this;
         }
 
-        public StringMatch MatchLike(string like)
+        public StringMatch WithLike(string like)
         {
             Like = like;
             OneOf = Api.Cloud.V1.Store.StringMatch.MatchOneofCase.Like;

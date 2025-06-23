@@ -14,7 +14,7 @@ public class ListFilesRequestTest
     public void ListFilesRequest()
     {
         var stringMatch = Sdk.Cloud.V1.Store.StringMatch.NewInstance().
-            MatchEquals(File);
+            WithEquals(File);
 
         var fileFilter = Sdk.Cloud.V1.Store.FileFilter.NewInstance().
             WithPath(stringMatch);

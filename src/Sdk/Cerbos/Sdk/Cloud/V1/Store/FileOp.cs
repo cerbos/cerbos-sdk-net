@@ -18,14 +18,14 @@ namespace Cerbos.Sdk.Cloud.V1.Store
             return new FileOp();
         }
 
-        public FileOp OpAddOrUpdate(File addOrUpdate)
+        public FileOp WithAddOrUpdate(File addOrUpdate)
         {
             AddOrUpdate = addOrUpdate;
             OneOf = Api.Cloud.V1.Store.FileOp.OpOneofCase.AddOrUpdate;
             return this;
         }
 
-        public FileOp OpDelete(string delete)
+        public FileOp WithDelete(string delete)
         {
             Delete = delete;
             OneOf = Api.Cloud.V1.Store.FileOp.OpOneofCase.Delete;

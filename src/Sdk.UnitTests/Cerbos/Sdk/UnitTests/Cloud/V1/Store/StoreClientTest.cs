@@ -188,12 +188,12 @@ public class StoreClientTest
                 WithChangeDetails(
                     ChangeDetails.NewInstance().
                         WithDescription("cerbos-sdk-net/ModifyFiles/Op=AddOrUpdate").
-                        OriginInternal(ChangeDetails.Types.Internal.NewInstance().WithSource("sdk")).
+                        WithInternal(ChangeDetails.Types.Internal.NewInstance().WithSource("sdk")).
                         WithUploader(ChangeDetails.Types.Uploader.NewInstance().WithName("cerbos-sdk-net"))
                 ).
                 WithOperations(
                     FileOp.NewInstance().
-                        OpAddOrUpdate(
+                        WithAddOrUpdate(
                             File.NewInstance().
                                 WithPath("temporary_policies/temporary.yaml").
                                 WithContents(fileContents)
@@ -209,11 +209,11 @@ public class StoreClientTest
                 WithChangeDetails(
                     ChangeDetails.NewInstance().
                         WithDescription("cerbos-sdk-net/ModifyFiles/Op=Delete").
-                        OriginInternal(ChangeDetails.Types.Internal.NewInstance().WithSource("sdk")).
+                        WithInternal(ChangeDetails.Types.Internal.NewInstance().WithSource("sdk")).
                         WithUploader(ChangeDetails.Types.Uploader.NewInstance().WithName("cerbos-sdk-net"))
                 ).
                 WithOperations(
-                    FileOp.NewInstance().OpDelete("temporary_policies/temporary.yaml")
+                    FileOp.NewInstance().WithDelete("temporary_policies/temporary.yaml")
                 )
         );
 
@@ -235,12 +235,12 @@ public class StoreClientTest
                 WithChangeDetails(
                     ChangeDetails.NewInstance().
                         WithDescription("cerbos-sdk-net/ModifyFiles/Op=AddOrUpdate").
-                        OriginInternal(ChangeDetails.Types.Internal.NewInstance().WithSource("sdk")).
+                        WithInternal(ChangeDetails.Types.Internal.NewInstance().WithSource("sdk")).
                         WithUploader(ChangeDetails.Types.Uploader.NewInstance().WithName("cerbos-sdk-net"))
                 ).
                 WithOperations(
                     FileOp.NewInstance().
-                        OpAddOrUpdate(
+                        WithAddOrUpdate(
                             File.NewInstance().
                                 WithPath("temporary_policies/temporary.yaml").
                                 WithContents(fileContents)
@@ -256,11 +256,11 @@ public class StoreClientTest
                 WithChangeDetails(
                     ChangeDetails.NewInstance().
                         WithDescription("cerbos-sdk-net/ModifyFiles/Op=Delete").
-                        OriginInternal(ChangeDetails.Types.Internal.NewInstance().WithSource("sdk")).
+                        WithInternal(ChangeDetails.Types.Internal.NewInstance().WithSource("sdk")).
                         WithUploader(ChangeDetails.Types.Uploader.NewInstance().WithName("cerbos-sdk-net"))
                 ).
                 WithOperations(
-                    FileOp.NewInstance().OpDelete("temporary_policies/temporary.yaml")
+                    FileOp.NewInstance().WithDelete("temporary_policies/temporary.yaml")
                 )
         );
 
@@ -282,10 +282,10 @@ public class StoreClientTest
                 WithChangeDetails(
                     ChangeDetails.NewInstance().
                         WithDescription("cerbos-sdk-net/ReplaceFiles/With=temporary.zip").
-                        OriginInternal(ChangeDetails.Types.Internal.NewInstance().WithSource("sdk")).
+                        WithInternal(ChangeDetails.Types.Internal.NewInstance().WithSource("sdk")).
                         WithUploader(ChangeDetails.Types.Uploader.NewInstance().WithName("cerbos-sdk-net"))
                 ).
-                ContentsZippedContents(
+                WithZippedContents(
                     temporaryContents
                 )
         );
@@ -299,10 +299,10 @@ public class StoreClientTest
                 WithChangeDetails(
                     ChangeDetails.NewInstance().
                         WithDescription("cerbos-sdk-net/ReplaceFiles/With=store.zip").
-                        OriginInternal(ChangeDetails.Types.Internal.NewInstance().WithSource("sdk")).
+                        WithInternal(ChangeDetails.Types.Internal.NewInstance().WithSource("sdk")).
                         WithUploader(ChangeDetails.Types.Uploader.NewInstance().WithName("cerbos-sdk-net"))
                 ).
-                ContentsZippedContents(
+                WithZippedContents(
                     storeContents
                 )
         );
@@ -325,10 +325,10 @@ public class StoreClientTest
                 WithChangeDetails(
                     ChangeDetails.NewInstance().
                         WithDescription("cerbos-sdk-net/ReplaceFiles/With=temporary.zip").
-                        OriginInternal(ChangeDetails.Types.Internal.NewInstance().WithSource("sdk")).
+                        WithInternal(ChangeDetails.Types.Internal.NewInstance().WithSource("sdk")).
                         WithUploader(ChangeDetails.Types.Uploader.NewInstance().WithName("cerbos-sdk-net"))
                 ).
-                ContentsZippedContents(
+                WithZippedContents(
                     temporaryContents
                 )
         );
@@ -342,10 +342,10 @@ public class StoreClientTest
                 WithChangeDetails(
                     ChangeDetails.NewInstance().
                         WithDescription("cerbos-sdk-net/ReplaceFiles/With=store.zip").
-                        OriginInternal(ChangeDetails.Types.Internal.NewInstance().WithSource("sdk")).
+                        WithInternal(ChangeDetails.Types.Internal.NewInstance().WithSource("sdk")).
                         WithUploader(ChangeDetails.Types.Uploader.NewInstance().WithName("cerbos-sdk-net"))
                 ).
-                ContentsZippedContents(
+                WithZippedContents(
                     storeContents
                 )
         );

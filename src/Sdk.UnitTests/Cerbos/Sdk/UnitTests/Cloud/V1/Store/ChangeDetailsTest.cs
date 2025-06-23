@@ -43,7 +43,7 @@ public class ChangeDetailsTest
         var changeDetails = ChangeDetails.NewInstance().
             WithDescription(Description).
             WithUploader(uploader).
-            OriginGit(git).
+            WithGit(git).
             ToChangeDetails();
 
         Assert.That(changeDetails.Description, Is.EqualTo(Description));
@@ -73,7 +73,7 @@ public class ChangeDetailsTest
         var changeDetails = ChangeDetails.NewInstance().
             WithDescription(Description).
             WithUploader(uploader).
-            OriginInternal(internal_).
+            WithInternal(internal_).
             ToChangeDetails();
 
         Assert.That(changeDetails.Description, Is.EqualTo(Description));

@@ -19,7 +19,7 @@ public class FileOpTest
             WithPath(PathToPolicy);
         var fileOp = Sdk.Cloud.V1.Store.FileOp.
             NewInstance().
-            OpAddOrUpdate(file).
+            WithAddOrUpdate(file).
             ToFileOp();
 
         Assert.That(fileOp.AddOrUpdate, Is.EqualTo(file.ToFile()));
@@ -30,7 +30,7 @@ public class FileOpTest
     {
         var fileOp = Sdk.Cloud.V1.Store.FileOp.
             NewInstance().
-            OpDelete(PathToPolicy).
+            WithDelete(PathToPolicy).
             ToFileOp();
 
         Assert.That(fileOp.Delete, Is.EqualTo(PathToPolicy));

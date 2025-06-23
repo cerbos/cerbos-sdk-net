@@ -34,14 +34,14 @@ namespace Cerbos.Sdk.Cloud.V1.Store
             return this;
         }
 
-        public ChangeDetails OriginGit(Types.Git git)
+        public ChangeDetails WithGit(Types.Git git)
         {
             Git = git;
             OneOf = Api.Cloud.V1.Store.ChangeDetails.OriginOneofCase.Git;
             return this;
         }
 
-        public ChangeDetails OriginInternal(Types.Internal internal_)
+        public ChangeDetails WithInternal(Types.Internal internal_)
         {
             Internal = internal_;
             OneOf = Api.Cloud.V1.Store.ChangeDetails.OriginOneofCase.Internal;

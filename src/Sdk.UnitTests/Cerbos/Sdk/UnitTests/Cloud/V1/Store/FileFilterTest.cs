@@ -13,7 +13,7 @@ public class FileFilterTest
     public void WithPath()
     {
         var stringMatch = Sdk.Cloud.V1.Store.StringMatch.NewInstance().
-            MatchEquals(Something);
+            WithEquals(Something);
 
         var fileFilter = Sdk.Cloud.V1.Store.FileFilter.NewInstance().
             WithPath(stringMatch).

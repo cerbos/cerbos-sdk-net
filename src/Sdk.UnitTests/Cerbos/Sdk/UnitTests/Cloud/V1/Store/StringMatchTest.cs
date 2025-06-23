@@ -13,7 +13,7 @@ public class StringMatchTest
     public void StringMatchEquals()
     {
         var stringMatch = Sdk.Cloud.V1.Store.StringMatch.NewInstance().
-            MatchEquals(Something)
+            WithEquals(Something)
             .ToStringMatch();
 
         Assert.That(stringMatch.Equals_, Is.EqualTo(Something));
@@ -25,7 +25,7 @@ public class StringMatchTest
         var inList = Sdk.Cloud.V1.Store.StringMatch.Types.InList.NewInstance()
             .WithValues(Something, Something);
         var stringMatch = Sdk.Cloud.V1.Store.StringMatch.NewInstance().
-            MatchIn(inList)
+            WithIn(inList)
             .ToStringMatch();
 
         Assert.That(stringMatch.In, Is.EqualTo(inList.ToInList()));
@@ -35,7 +35,7 @@ public class StringMatchTest
     public void StringMatchLike()
     {
         var stringMatch = Sdk.Cloud.V1.Store.StringMatch.NewInstance().
-            MatchLike(Something)
+            WithLike(Something)
             .ToStringMatch();
 
         Assert.That(stringMatch.Like, Is.EqualTo(Something));

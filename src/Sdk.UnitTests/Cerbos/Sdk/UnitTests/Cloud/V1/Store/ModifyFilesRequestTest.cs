@@ -32,7 +32,7 @@ public class ModifyFilesRequestTest
 
         var fileOp = Sdk.Cloud.V1.Store.FileOp.
             NewInstance().
-            OpAddOrUpdate(file);
+            WithAddOrUpdate(file);
 
         var uploader = Uploader.NewInstance().
             WithName(Name);
@@ -45,7 +45,7 @@ public class ModifyFilesRequestTest
         var changeDetails = ChangeDetails.NewInstance().
             WithDescription(Description).
             WithUploader(uploader).
-            OriginInternal(internal_);
+            WithInternal(internal_);
 
         var request = Sdk.Cloud.V1.Store.ModifyFilesRequest.NewInstance().
             WithStoreId(StoreId).
@@ -69,7 +69,7 @@ public class ModifyFilesRequestTest
 
         var fileOp = FileOp.
             NewInstance().
-            OpAddOrUpdate(file);
+            WithAddOrUpdate(file);
 
         var request = Sdk.Cloud.V1.Store.ModifyFilesRequest.NewInstance().
             WithStoreId(StoreId).
