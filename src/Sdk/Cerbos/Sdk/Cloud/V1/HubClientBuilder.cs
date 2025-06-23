@@ -2,7 +2,6 @@
 // SPDX-License-Identifier: Apache-2.0
 
 using System;
-using Grpc.Core;
 using Grpc.Core.Interceptors;
 using Grpc.Net.Client;
 using Cerbos.Api.Cloud.V1.ApiKey;
@@ -10,6 +9,8 @@ using Cerbos.Api.Cloud.V1.Store;
 using Cerbos.Sdk.Cloud.V1.Interceptor;
 using Cerbos.Sdk.Cloud.V1.Store;
 using Cerbos.Sdk.Cloud.V1.ApiKey;
+using Grpc.Net.Client.Configuration;
+using Grpc.Core;
 
 namespace Cerbos.Sdk.Cloud.V1
 {
@@ -46,7 +47,28 @@ namespace Cerbos.Sdk.Cloud.V1
                 throw new Exception("Credentials must be specified");
             }
 
-            var channelOptions = new GrpcChannelOptions{};
+            var channelOptions = new GrpcChannelOptions
+            {
+                ServiceConfig = new ServiceConfig
+                {
+                    MethodConfigs = {
+                        new MethodConfig {
+                            Names = { MethodName.Default },
+                            RetryPolicy = new RetryPolicy
+                            {
+                                RetryableStatusCodes = {
+                                    StatusCode.ResourceExhausted,
+                                    StatusCode.Unavailable
+                                },
+                                MaxAttempts = 5,
+                                InitialBackoff = TimeSpan.FromSeconds(1),
+                                MaxBackoff = TimeSpan.FromSeconds(5),
+                                BackoffMultiplier = 1.5
+                            }
+                        }
+                    }
+                }
+            };
             var authInterceptor = new AuthInterceptor(
                 new ApiKeyClient(
                     new ApiKeyService.ApiKeyServiceClient(
@@ -54,16 +76,14 @@ namespace Cerbos.Sdk.Cloud.V1
                             Target,
                             channelOptions
                         )
-                    ),
-                    Resilience.NewInstance().WithCircuitBreaker().WithRetry(StatusCode.ResourceExhausted)
+                    )
                 ),
                 Credentials
             );
 
-            var resilience = Resilience.NewInstance().WithCircuitBreaker().WithRetry(StatusCode.Internal, StatusCode.Unavailable);
             var channelWithInterceptor = GrpcChannel.ForAddress(Target, channelOptions).Intercept(authInterceptor);
             return new HubClient(
-                new StoreClient(new CerbosStoreService.CerbosStoreServiceClient(channelWithInterceptor), resilience)
+                new StoreClient(new CerbosStoreService.CerbosStoreServiceClient(channelWithInterceptor))
             );
         }
     }

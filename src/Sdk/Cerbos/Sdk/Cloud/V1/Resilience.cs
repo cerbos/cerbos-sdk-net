@@ -2,58 +2,23 @@
 // SPDX-License-Identifier: Apache-2.0
 
 using System;
-using System.Linq;
 using Grpc.Core;
 using Polly;
 using Polly.CircuitBreaker;
-using Polly.Retry;
 
 namespace Cerbos.Sdk.Cloud.V1
 {
     internal class Resilience
     {
-        private CircuitBreakerStrategyOptions CircuitBreakerOptions { get; set; }
-        private RetryStrategyOptions RetryOptions { get; set; }
+        public static ResiliencePipeline Pipeline = NewInstance();
 
-        private Resilience() { }
+        private Resilience() {}
 
-        public static Resilience NewInstance()
+        private static ResiliencePipeline NewInstance()
         {
-            return new Resilience();
-        }
-
-        public Resilience WithRetry(params StatusCode[] statusCodesToHandle)
-        {
-            if (RetryOptions == null)
-            { 
-                RetryOptions = new RetryStrategyOptions
-                {
-                    MaxRetryAttempts = 5,
-                    BackoffType = DelayBackoffType.Exponential,
-                    UseJitter = true,
-                    ShouldHandle = new PredicateBuilder()
-                        .Handle(
-                            (RpcException e) =>
-                            {
-                                if (statusCodesToHandle.Contains(e.StatusCode))
-                                {
-                                    return true;
-                                }
-
-                                return false;
-                            }
-                        )
-                };
-            }
-
-            return this;
-        }
-
-        public Resilience WithCircuitBreaker()
-        {
-            if (CircuitBreakerOptions == null)
-            {
-                CircuitBreakerOptions = new CircuitBreakerStrategyOptions
+            var builder = new ResiliencePipelineBuilder().
+            AddCircuitBreaker(
+                new CircuitBreakerStrategyOptions
                 {
                     FailureRatio = 0.6,
                     SamplingDuration = TimeSpan.FromSeconds(15),
@@ -75,26 +40,10 @@ namespace Cerbos.Sdk.Cloud.V1
                                 }
                             }
                         )
-                };
-            }
+                }
+            );
 
-            return this;
-        }
-
-        public ResiliencePipeline Build()
-        {
-            var pipeline = new ResiliencePipelineBuilder();
-            if (CircuitBreakerOptions != null)
-            {
-                pipeline.AddCircuitBreaker(CircuitBreakerOptions);
-            }
-
-            if (RetryOptions != null)
-            {
-                pipeline.AddRetry(RetryOptions);
-            }
-
-            return pipeline.Build();
+            return builder.Build();
         }
     }
 }

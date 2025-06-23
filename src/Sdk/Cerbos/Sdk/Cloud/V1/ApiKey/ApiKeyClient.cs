@@ -4,7 +4,6 @@
 using System;
 using System.Threading.Tasks;
 using Cerbos.Api.Cloud.V1.ApiKey;
-using Polly;
 
 namespace Cerbos.Sdk.Cloud.V1.ApiKey
 {
@@ -21,19 +20,17 @@ namespace Cerbos.Sdk.Cloud.V1.ApiKey
     internal sealed class ApiKeyClient : IApiKeyClient
     {
         private ApiKeyService.ApiKeyServiceClient Client { get; }
-        private ResiliencePipeline Resilience { get; }
 
-        internal ApiKeyClient(ApiKeyService.ApiKeyServiceClient apiKeyServiceClient, Resilience resilience)
+        internal ApiKeyClient(ApiKeyService.ApiKeyServiceClient apiKeyServiceClient)
         {
             Client = apiKeyServiceClient;
-            Resilience = resilience.Build();
         }
 
         public IssueAccessTokenResponse IssueAccessToken(IssueAccessTokenRequest request)
         {
             try
             {
-                return Resilience.Execute(() =>
+                return Resilience.Pipeline.Execute(() =>
                 {
                     return new IssueAccessTokenResponse(
                         Client.IssueAccessToken(
@@ -52,7 +49,7 @@ namespace Cerbos.Sdk.Cloud.V1.ApiKey
         {
             try
             {
-                return Resilience.ExecuteAsync(
+                return Resilience.Pipeline.ExecuteAsync(
                     async (token) => {
                         return await Client.IssueAccessTokenAsync(request.ToIssueAccessTokenRequest()).ResponseAsync.ContinueWith(r => new IssueAccessTokenResponse(r.Result));
                     }
