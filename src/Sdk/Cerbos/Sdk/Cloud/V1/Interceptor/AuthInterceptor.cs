@@ -18,7 +18,7 @@ namespace Cerbos.Sdk.Cloud.V1.Interceptor
 
         private string AccessToken { get; set; }
         private DateTime AccessTokenExpiresAt { get; set; }
-        private RpcException LastException { get; set; }
+        private bool Unauthenticated { get; set; }
         private ReaderWriterLock RWLock;
 
         public AuthInterceptor(IApiKeyClient apiKeyClient, Credentials credentials)
@@ -83,13 +83,13 @@ namespace Cerbos.Sdk.Cloud.V1.Interceptor
                 var response = ApiKeyClient.IssueAccessToken(Credentials.ToIssueAccessTokenRequest());
                 AccessToken = response.AccessToken;
                 AccessTokenExpiresAt = response.ExpiresAt;
-                LastException = null;
+                Unauthenticated = false;
             }
             catch (RpcException e)
             {
                 if (e.StatusCode == StatusCode.Unauthenticated)
                 {
-                    LastException = e;
+                    Unauthenticated = true;
                 }
 
                 throw;
@@ -109,9 +109,9 @@ namespace Cerbos.Sdk.Cloud.V1.Interceptor
             RWLock.AcquireReaderLock(0);
             try
             {
-                if (LastException is RpcException && LastException.StatusCode == StatusCode.Unauthenticated)
+                if (Unauthenticated)
                 {
-                    throw LastException;
+                    throw new RpcException(new Status(StatusCode.Unauthenticated, "Given credentials results in unauthenticated response from server"));
                 }
             }
             finally
