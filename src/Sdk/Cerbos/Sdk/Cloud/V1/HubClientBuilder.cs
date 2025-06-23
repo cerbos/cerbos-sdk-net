@@ -18,9 +18,7 @@ namespace Cerbos.Sdk.Cloud.V1
     public sealed class HubClientBuilder
     {
         private string Target { get; }
-        private string CaCertificate { get; set; }
         private Credentials Credentials { get; set; }
-        private bool Plaintext { get; set; }
 
         private HubClientBuilder(string target)
         {
@@ -30,11 +28,6 @@ namespace Cerbos.Sdk.Cloud.V1
         public static HubClientBuilder ForTarget(string target)
         {
             return new HubClientBuilder(target);
-        }
-
-        public HubClientBuilder WithCaCertificate(string path) {
-            CaCertificate = path;
-            return this;
         }
 
         public HubClientBuilder WithCredentials(Credentials credentials)
@@ -49,22 +42,11 @@ namespace Cerbos.Sdk.Cloud.V1
             return this;
         }
 
-        public HubClientBuilder WithPlaintext()
-        {
-            Plaintext = true;
-            return this;
-        }
-
         public IHubClient Build()
         {
             if (string.IsNullOrEmpty(Target))
             {
                 throw new Exception("Target must be specified");
-            }
-
-            if (CaCertificate != null && Plaintext)
-            {
-                throw new Exception("CaCertificate and plaintext must not be specified at the same time");
             }
 
             if (Credentials == null)
@@ -73,18 +55,6 @@ namespace Cerbos.Sdk.Cloud.V1
             }
 
             var channelOptions = new GrpcChannelOptions{};
-            if (CaCertificate != null)
-            {
-                var handler = new HttpClientHandler();
-                var cert = new X509Certificate(CaCertificate);
-                handler.ClientCertificates.Add(cert);
-                channelOptions.HttpHandler = handler;
-            }
-            else if (!Plaintext)
-            {
-                channelOptions.Credentials = ChannelCredentials.SecureSsl;
-            }
-
             var authInterceptor = new AuthInterceptor(
                 new ApiKeyClient(
                     new ApiKeyService.ApiKeyServiceClient(
