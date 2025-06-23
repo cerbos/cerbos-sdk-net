@@ -42,10 +42,10 @@ namespace Cerbos.Sdk.Cloud.V1.Store
             return this;
         }
 
-        public ReplaceFilesRequest ContentsFiles(byte[] zippedContents)
+        public ReplaceFilesRequest ContentsFiles(Types.Files files)
         {
             ContentsOneOf = Api.Cloud.V1.Store.ReplaceFilesRequest.ContentsOneofCase.Files;
-            ZippedContents = zippedContents;
+            Files = files;
             return this;
         }
 
