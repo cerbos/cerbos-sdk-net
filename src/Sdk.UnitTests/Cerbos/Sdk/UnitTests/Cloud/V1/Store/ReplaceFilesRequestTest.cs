@@ -20,25 +20,18 @@ public class ReplaceFilesRequestTest
     [Test]
     public void ReplaceFilesRequest()
     {
-        var condition = Sdk.Cloud.V1.Store.ReplaceFilesRequest.Types.Condition.NewInstance().
-            WithStoreVersionMustEqual(1);
+        var condition = Sdk.Cloud.V1.Store.ReplaceFilesRequest.Types.Condition.NewInstance(1);
 
-        var uploader = Uploader.NewInstance().
-            WithName(Name);
+        var uploader = Uploader.NewInstance(Name);
 
-        var internal_ = ChangeDetails.Types.Internal.NewInstance().
-            WithSource(Source).
+        var internal_ = ChangeDetails.Types.Internal.NewInstance(Source).
             WithMetadata(MetadataKeyAndValue1, MetadataValue.StringValue(MetadataKeyAndValue1)).
             WithMetadata(MetadataKeyAndValue2, MetadataValue.StringValue(MetadataKeyAndValue2));
 
-        var changeDetails = ChangeDetails.NewInstance().
-            WithDescription(Description).
-            WithUploader(uploader).
-            WithInternal(internal_);
+        var changeDetails = ChangeDetails.NewInstance(Description, uploader).WithInternal(internal_);
 
         var zippedContents = System.IO.File.ReadAllBytes(Path.GetFullPath(PathToZippedContents));
-        var request = Sdk.Cloud.V1.Store.ReplaceFilesRequest.NewInstance().
-            WithStoreId(StoreId).
+        var request = Sdk.Cloud.V1.Store.ReplaceFilesRequest.NewInstance(StoreId).
             WithCondition(condition).
             WithZippedContents(zippedContents).
             WithChangeDetails(changeDetails).
@@ -54,8 +47,7 @@ public class ReplaceFilesRequestTest
     public void Optional()
     {
         var zippedContents = System.IO.File.ReadAllBytes(Path.GetFullPath(PathToZippedContents));
-        var request = Sdk.Cloud.V1.Store.ReplaceFilesRequest.NewInstance().
-            WithStoreId(StoreId).
+        var request = Sdk.Cloud.V1.Store.ReplaceFilesRequest.NewInstance(StoreId).
             WithZippedContents(zippedContents).
             ToReplaceFilesRequest();
 

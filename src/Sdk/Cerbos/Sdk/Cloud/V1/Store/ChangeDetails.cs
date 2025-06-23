@@ -15,23 +15,15 @@ namespace Cerbos.Sdk.Cloud.V1.Store
         private Types.Internal Internal { get; set; }
         private Types.Uploader Uploader { get; set; }
 
-        private ChangeDetails() { }
-
-        public static ChangeDetails NewInstance()
-        {
-            return new ChangeDetails();
-        }
-
-        public ChangeDetails WithDescription(string description)
+        private ChangeDetails(string description, Types.Uploader uploader)
         {
             Description = description;
-            return this;
+            Uploader = uploader;
         }
 
-        public ChangeDetails WithUploader(Types.Uploader uploader)
+        public static ChangeDetails NewInstance(string description, Types.Uploader uploader)
         {
-            Uploader = uploader;
-            return this;
+            return new ChangeDetails(description, uploader);
         }
 
         public ChangeDetails WithGit(Types.Git git)
@@ -96,11 +88,15 @@ namespace Cerbos.Sdk.Cloud.V1.Store
                 private DateTime AuthorDate { get; set; }
                 private DateTime CommitDate { get; set; }
 
-                private Git() { }
-
-                public static Git NewInstance()
+                private Git(string repo, string hash)
                 {
-                    return new Git();
+                    Repo = repo;
+                    Hash = hash; 
+                }
+
+                public static Git NewInstance(string repo, string hash)
+                {
+                    return new Git(repo, hash);
                 }
 
                 public Git WithAuthor(string author)
@@ -115,21 +111,9 @@ namespace Cerbos.Sdk.Cloud.V1.Store
                     return this;
                 }
 
-                public Git WithHash(string hash)
-                {
-                    Hash = hash;
-                    return this;
-                }
-
                 public Git WithMessage(string message)
                 {
                     Message = message;
-                    return this;
-                }
-
-                public Git WithRepo(string repo)
-                {
-                    Repo = repo;
                     return this;
                 }
 
@@ -173,20 +157,15 @@ namespace Cerbos.Sdk.Cloud.V1.Store
 
                 private Dictionary<string, Value> Metadata { get; }
 
-                private Internal()
+                private Internal(string source)
                 {
+                    Source = source;
                     Metadata = new Dictionary<string, Value>();
                 }
 
-                public static Internal NewInstance()
+                public static Internal NewInstance(string source)
                 {
-                    return new Internal();
-                }
-
-                public Internal WithSource(string source)
-                {
-                    Source = source;
-                    return this;
+                    return new Internal(source);
                 }
 
                 public Internal WithMetadata(string key, MetadataValue value)
@@ -277,20 +256,15 @@ namespace Cerbos.Sdk.Cloud.V1.Store
 
                 private Dictionary<string, Value> Metadata { get; }
 
-                private Uploader()
+                private Uploader(string name)
                 {
+                    Name = name;
                     Metadata = new Dictionary<string, Value>();
                 }
 
-                public static Uploader NewInstance()
+                public static Uploader NewInstance(string name)
                 {
-                    return new Uploader();
-                }
-
-                public Uploader WithName(string name)
-                {
-                    Name = name;
-                    return this;
+                    return new Uploader(name);
                 }
 
                 public Uploader WithMetadata(string key, MetadataValue value)

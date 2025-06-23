@@ -14,10 +14,7 @@ public class GetFilesRequestTest
     [Test]
     public void GetFilesRequest()
     {
-        var request = Sdk.Cloud.V1.Store.GetFilesRequest.NewInstance().
-            WithStoreId(StoreId).
-            WithFiles(File, File1)
-            .ToGetFilesRequest();
+        var request = Sdk.Cloud.V1.Store.GetFilesRequest.NewInstance(StoreId, [File, File1]).ToGetFilesRequest();
 
         Assert.That(request.StoreId, Is.EqualTo(StoreId));
         Assert.That(request.Files.ToList(), Is.EqualTo(new List<string>() { File, File1 }));

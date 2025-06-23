@@ -27,22 +27,17 @@ public class ChangeDetailsTest
     [Test]
     public void Git()
     {
-        var uploader = Uploader.NewInstance().
-            WithName(Name);
+        var uploader = Uploader.NewInstance(Name);
 
-        var git = ChangeDetails.Types.Git.NewInstance().
+        var git = ChangeDetails.Types.Git.NewInstance(Repo, Hash).
             WithAuthor(Author).
             WithCommitter(Committer).
-            WithHash(Hash).
             WithMessage(Message).
-            WithRepo(Repo).
             WithRef(Ref).
             WithAuthorDate(AuthorDate).
             WithCommitDate(CommitDate);
 
-        var changeDetails = ChangeDetails.NewInstance().
-            WithDescription(Description).
-            WithUploader(uploader).
+        var changeDetails = ChangeDetails.NewInstance(Description, uploader).
             WithGit(git).
             ToChangeDetails();
 
@@ -62,17 +57,13 @@ public class ChangeDetailsTest
     [Test]
     public void Internal()
     {
-        var uploader = Uploader.NewInstance().
-            WithName(Name);
+        var uploader = Uploader.NewInstance(Name);
 
-        var internal_ = ChangeDetails.Types.Internal.NewInstance().
-            WithSource(Source).
+        var internal_ = ChangeDetails.Types.Internal.NewInstance(Source).
             WithMetadata(MetadataKeyAndValue1, MetadataValue.StringValue(MetadataKeyAndValue1)).
             WithMetadata(MetadataKeyAndValue2, MetadataValue.StringValue(MetadataKeyAndValue2));
 
-        var changeDetails = ChangeDetails.NewInstance().
-            WithDescription(Description).
-            WithUploader(uploader).
+        var changeDetails = ChangeDetails.NewInstance(Description, uploader).
             WithInternal(internal_).
             ToChangeDetails();
 
@@ -100,12 +91,10 @@ public class ChangeDetailsTest
             [Test]
             public void All()
             {
-                var git = ChangeDetails.Types.Git.NewInstance().
+                var git = ChangeDetails.Types.Git.NewInstance(Repo, Hash).
                     WithAuthor(Author).
                     WithCommitter(Committer).
-                    WithHash(Hash).
                     WithMessage(Message).
-                    WithRepo(Repo).
                     WithRef(Ref).
                     WithAuthorDate(AuthorDate).
                     WithCommitDate(CommitDate).
@@ -132,8 +121,7 @@ public class ChangeDetailsTest
             [Test]
             public void WithMetadata()
             {
-                var i = ChangeDetails.Types.Internal.NewInstance().
-                    WithSource(Source).
+                var i = ChangeDetails.Types.Internal.NewInstance(Source).
                     WithMetadata(MetadataKeyAndValue1, MetadataValue.StringValue(MetadataKeyAndValue1)).
                     WithMetadata(MetadataKeyAndValue2, MetadataValue.StringValue(MetadataKeyAndValue2)).
                     ToInternal();
@@ -146,8 +134,7 @@ public class ChangeDetailsTest
             [Test]
             public void WithMetadatas()
             {
-                var i = ChangeDetails.Types.Internal.NewInstance().
-                    WithSource(Source).
+                var i = ChangeDetails.Types.Internal.NewInstance(Source).
                     WithMetadatas(
                         new Dictionary<string, MetadataValue>
                         {
@@ -172,8 +159,7 @@ public class ChangeDetailsTest
             [Test]
             public void WithSource()
             {
-                var i = ChangeDetails.Types.Internal.NewInstance().
-                    WithSource(Source).
+                var i = ChangeDetails.Types.Internal.NewInstance(Source).
                     ToInternal();
 
                 Assert.That(i.Source, Is.EqualTo(Source));
@@ -243,8 +229,7 @@ public class ChangeDetailsTest
             [Test]
             public void WithName()
             {
-                var uploader = Uploader.NewInstance().
-                    WithName(Name).
+                var uploader = Uploader.NewInstance(Name).
                     ToUploader();
 
                 Assert.That(uploader.Name, Is.EqualTo(Name));
@@ -253,8 +238,7 @@ public class ChangeDetailsTest
             [Test]
             public void WithMetadata()
             {
-                var uploader = Uploader.NewInstance().
-                    WithName(Name).
+                var uploader = Uploader.NewInstance(Name).
                     WithMetadata(MetadataKeyAndValue1, MetadataValue.StringValue(MetadataKeyAndValue1)).
                     WithMetadata(MetadataKeyAndValue2, MetadataValue.StringValue(MetadataKeyAndValue2)).
                     ToUploader();
@@ -267,8 +251,7 @@ public class ChangeDetailsTest
             [Test]
             public void WithMetadatas()
             {
-                var uploader = Uploader.NewInstance().
-                    WithName(Name).
+                var uploader = Uploader.NewInstance(Name).
                     WithMetadatas(
                         new Dictionary<string, MetadataValue>
                         {

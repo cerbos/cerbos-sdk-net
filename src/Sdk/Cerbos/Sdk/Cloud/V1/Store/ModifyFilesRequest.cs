@@ -1,9 +1,8 @@
 // Copyright 2021-2025 Zenauth Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
-using System;
 using System.Collections.Generic;
-using Google.Protobuf.Collections;
+using System.Linq;
 
 namespace Cerbos.Sdk.Cloud.V1.Store
 {
@@ -14,32 +13,15 @@ namespace Cerbos.Sdk.Cloud.V1.Store
         private List<FileOp> Operations { get; set; }
         private ChangeDetails ChangeDetails { get; set; }
 
-        private ModifyFilesRequest()
-        {
-            Operations = new List<FileOp>();
-        }
-
-        public static ModifyFilesRequest NewInstance()
-        {
-            return new ModifyFilesRequest();
-        }
-
-        public ModifyFilesRequest WithStoreId(string storeId)
+        private ModifyFilesRequest(string storeId, FileOp[] operations)
         {
             StoreId = storeId;
-            return this;
+            Operations = new List<FileOp>(operations);
         }
 
-        public ModifyFilesRequest WithCondition(Types.Condition condition)
+        public static ModifyFilesRequest NewInstance(string storeId, FileOp[] operations)
         {
-            Condition = condition;
-            return this;
-        }
-
-        public ModifyFilesRequest WithOperations(params FileOp[] operations)
-        {
-            Operations.AddRange(operations);
-            return this;
+            return new ModifyFilesRequest(storeId, operations);
         }
 
         public ModifyFilesRequest WithChangeDetails(ChangeDetails changeDetails)
@@ -47,29 +29,19 @@ namespace Cerbos.Sdk.Cloud.V1.Store
             ChangeDetails = changeDetails;
             return this;
         }
+        
+        public ModifyFilesRequest WithCondition(Types.Condition condition)
+        {
+            Condition = condition;
+            return this;
+        }
 
         public Api.Cloud.V1.Store.ModifyFilesRequest ToModifyFilesRequest()
         {
-            if (StoreId == null)
-            {
-                throw new Exception("StoreId must be specified");
-            }
-
-            if (Operations.Count == 0)
-            {
-                throw new Exception("Operations must be specified");
-            }
-
-            var operations = new RepeatedField<Api.Cloud.V1.Store.FileOp>();
-            foreach (var op in Operations)
-            {
-                operations.Add(op.ToFileOp());
-            }
-
             var request = new Api.Cloud.V1.Store.ModifyFilesRequest
             {
                 StoreId = StoreId,
-                Operations = { operations },
+                Operations = { Operations.Select((op) => { return op.ToFileOp(); }) }
             };
 
             if (ChangeDetails != null)
@@ -91,17 +63,14 @@ namespace Cerbos.Sdk.Cloud.V1.Store
             {
                 private long StoreVersionMustEqual { get; set; }
 
-                private Condition() { }
-
-                public static Condition NewInstance()
-                {
-                    return new Condition();
-                }
-
-                public Condition WithStoreVersionMustEqual(long storeVersionMustEqual)
+                private Condition(long storeVersionMustEqual)
                 {
                     StoreVersionMustEqual = storeVersionMustEqual;
-                    return this;
+                }
+
+                public static Condition NewInstance(long storeVersionMustEqual)
+                {
+                    return new Condition(storeVersionMustEqual);
                 }
 
                 public Api.Cloud.V1.Store.ModifyFilesRequest.Types.Condition ToCondition()

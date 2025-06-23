@@ -13,10 +13,9 @@ public class FileOpTest
 
     [Test]
     public void OpAddOrUpdate()
-    {   
-        var file = Sdk.Cloud.V1.Store.File.NewInstance().
-            WithContents(Encoding.UTF8.GetBytes(Content)).
-            WithPath(PathToPolicy);
+    {
+        var contentBytes = Encoding.UTF8.GetBytes(Content);
+        var file = Sdk.Cloud.V1.Store.File.NewInstance(PathToPolicy, contentBytes);
         var fileOp = Sdk.Cloud.V1.Store.FileOp.
             NewInstance().
             WithAddOrUpdate(file).

@@ -131,9 +131,7 @@ public class StoreClientTest
     public void GetFiles()
     {
         var response = StoreClient.GetFiles(
-            GetFilesRequest.NewInstance().
-                WithStoreId(StoreId).
-                WithFiles(ExpectedFiles[0])
+            GetFilesRequest.NewInstance(StoreId, [ExpectedFiles[0]])
         );
 
         Assert.That(response.Files[0].Path, Is.EqualTo(ExpectedFiles[0]));
@@ -143,9 +141,7 @@ public class StoreClientTest
     public async Task GetFilesAsync()
     {
         var response = await StoreClient.GetFilesAsync(
-            GetFilesRequest.NewInstance().
-                WithStoreId(StoreId).
-                WithFiles(ExpectedFiles[0])
+            GetFilesRequest.NewInstance(StoreId, [ExpectedFiles[0]])
         );
 
         Assert.That(response.Files[0].Path, Is.EqualTo(ExpectedFiles[0]));
@@ -155,8 +151,7 @@ public class StoreClientTest
     public void ListFiles()
     {
         var response = StoreClient.ListFiles(
-            ListFilesRequest.NewInstance().
-                WithStoreId(StoreId)
+            ListFilesRequest.NewInstance(StoreId)
         );
 
         Assert.That(response.Files, Is.EqualTo(ExpectedFiles));
@@ -166,8 +161,7 @@ public class StoreClientTest
     public async Task ListFilesAsync()
     {
         var response = await StoreClient.ListFilesAsync(
-            ListFilesRequest.NewInstance().
-                WithStoreId(StoreId)
+            ListFilesRequest.NewInstance(StoreId)
         );
 
         Assert.That(response.Files, Is.EqualTo(ExpectedFiles));
@@ -177,43 +171,23 @@ public class StoreClientTest
     public void ModifyFiles()
     {
         var initialStoreVersion = StoreClient.ListFiles(
-            ListFilesRequest.NewInstance().
-                WithStoreId(StoreId)
+            ListFilesRequest.NewInstance(StoreId)
         ).StoreVersion;
 
         var fileContents = System.IO.File.ReadAllBytes(Path.GetFullPath(PathToTemporaryPolicyFile));
         var response = StoreClient.ModifyFiles(
-            ModifyFilesRequest.NewInstance().
-                WithStoreId(StoreId).
+            ModifyFilesRequest.NewInstance(StoreId, [FileOp.NewInstance().WithAddOrUpdate(File.NewInstance("temporary_policies/temporary.yaml", fileContents))]).
                 WithChangeDetails(
-                    ChangeDetails.NewInstance().
-                        WithDescription("cerbos-sdk-net/ModifyFiles/Op=AddOrUpdate").
-                        WithInternal(ChangeDetails.Types.Internal.NewInstance().WithSource("sdk")).
-                        WithUploader(ChangeDetails.Types.Uploader.NewInstance().WithName("cerbos-sdk-net"))
-                ).
-                WithOperations(
-                    FileOp.NewInstance().
-                        WithAddOrUpdate(
-                            File.NewInstance().
-                                WithPath("temporary_policies/temporary.yaml").
-                                WithContents(fileContents)
-                        )
+                    ChangeDetails.NewInstance("cerbos-sdk-net/ModifyFiles/Op=AddOrUpdate", ChangeDetails.Types.Uploader.NewInstance("cerbos-sdk-net")).WithInternal(ChangeDetails.Types.Internal.NewInstance("sdk"))
                 )
         );
 
         Assert.That(response.NewStoreVersion, Is.EqualTo(initialStoreVersion + 1));
 
         response = StoreClient.ModifyFiles(
-            ModifyFilesRequest.NewInstance().
-                WithStoreId(StoreId).
+            ModifyFilesRequest.NewInstance(StoreId, [FileOp.NewInstance().WithDelete("temporary_policies/temporary.yaml")]).
                 WithChangeDetails(
-                    ChangeDetails.NewInstance().
-                        WithDescription("cerbos-sdk-net/ModifyFiles/Op=Delete").
-                        WithInternal(ChangeDetails.Types.Internal.NewInstance().WithSource("sdk")).
-                        WithUploader(ChangeDetails.Types.Uploader.NewInstance().WithName("cerbos-sdk-net"))
-                ).
-                WithOperations(
-                    FileOp.NewInstance().WithDelete("temporary_policies/temporary.yaml")
+                    ChangeDetails.NewInstance("cerbos-sdk-net/ModifyFiles/Op=Delete", ChangeDetails.Types.Uploader.NewInstance("cerbos-sdk-net")).WithInternal(ChangeDetails.Types.Internal.NewInstance("sdk"))
                 )
         );
 
@@ -224,43 +198,23 @@ public class StoreClientTest
     public async Task ModifyFilesAsync()
     {
         var initialStoreVersion = (await StoreClient.ListFilesAsync(
-            ListFilesRequest.NewInstance().
-                WithStoreId(StoreId)
+            ListFilesRequest.NewInstance(StoreId)
         )).StoreVersion;
 
         var fileContents = System.IO.File.ReadAllBytes(Path.GetFullPath(PathToTemporaryPolicyFile));
         var response = await StoreClient.ModifyFilesAsync(
-            ModifyFilesRequest.NewInstance().
-                WithStoreId(StoreId).
+            ModifyFilesRequest.NewInstance(StoreId, [FileOp.NewInstance().WithAddOrUpdate(File.NewInstance("temporary_policies/temporary.yaml", fileContents))]).
                 WithChangeDetails(
-                    ChangeDetails.NewInstance().
-                        WithDescription("cerbos-sdk-net/ModifyFiles/Op=AddOrUpdate").
-                        WithInternal(ChangeDetails.Types.Internal.NewInstance().WithSource("sdk")).
-                        WithUploader(ChangeDetails.Types.Uploader.NewInstance().WithName("cerbos-sdk-net"))
-                ).
-                WithOperations(
-                    FileOp.NewInstance().
-                        WithAddOrUpdate(
-                            File.NewInstance().
-                                WithPath("temporary_policies/temporary.yaml").
-                                WithContents(fileContents)
-                        )
+                    ChangeDetails.NewInstance("cerbos-sdk-net/ModifyFilesAsync/Op=AddOrUpdate", ChangeDetails.Types.Uploader.NewInstance("cerbos-sdk-net")).WithInternal(ChangeDetails.Types.Internal.NewInstance("sdk"))
                 )
         );
 
         Assert.That(response.NewStoreVersion, Is.EqualTo(initialStoreVersion + 1));
 
         response = await StoreClient.ModifyFilesAsync(
-            ModifyFilesRequest.NewInstance().
-                WithStoreId(StoreId).
+            ModifyFilesRequest.NewInstance(StoreId, [FileOp.NewInstance().WithDelete("temporary_policies/temporary.yaml")]).
                 WithChangeDetails(
-                    ChangeDetails.NewInstance().
-                        WithDescription("cerbos-sdk-net/ModifyFiles/Op=Delete").
-                        WithInternal(ChangeDetails.Types.Internal.NewInstance().WithSource("sdk")).
-                        WithUploader(ChangeDetails.Types.Uploader.NewInstance().WithName("cerbos-sdk-net"))
-                ).
-                WithOperations(
-                    FileOp.NewInstance().WithDelete("temporary_policies/temporary.yaml")
+                    ChangeDetails.NewInstance("cerbos-sdk-net/ModifyFilesAsync/Op=Delete", ChangeDetails.Types.Uploader.NewInstance("cerbos-sdk-net")).WithInternal(ChangeDetails.Types.Internal.NewInstance("sdk"))
                 )
         );
 
@@ -271,19 +225,14 @@ public class StoreClientTest
     public void ReplaceFiles()
     {
         var initialStoreVersion = StoreClient.ListFiles(
-            ListFilesRequest.NewInstance().
-                WithStoreId(StoreId)
+            ListFilesRequest.NewInstance(StoreId)
         ).StoreVersion;
 
         var temporaryContents = System.IO.File.ReadAllBytes(Path.GetFullPath(PathToTemporaryContents));
         var response = StoreClient.ReplaceFiles(
-            ReplaceFilesRequest.NewInstance().
-                WithStoreId(StoreId).
+            ReplaceFilesRequest.NewInstance(StoreId).
                 WithChangeDetails(
-                    ChangeDetails.NewInstance().
-                        WithDescription("cerbos-sdk-net/ReplaceFiles/With=temporary.zip").
-                        WithInternal(ChangeDetails.Types.Internal.NewInstance().WithSource("sdk")).
-                        WithUploader(ChangeDetails.Types.Uploader.NewInstance().WithName("cerbos-sdk-net"))
+                    ChangeDetails.NewInstance("cerbos-sdk-net/ReplaceFiles/With=temporary.zip", ChangeDetails.Types.Uploader.NewInstance("cerbos-sdk-net")).WithInternal(ChangeDetails.Types.Internal.NewInstance("sdk"))
                 ).
                 WithZippedContents(
                     temporaryContents
@@ -294,13 +243,9 @@ public class StoreClientTest
 
         var storeContents = System.IO.File.ReadAllBytes(Path.GetFullPath(PathToStoreContents));
         response = StoreClient.ReplaceFiles(
-            ReplaceFilesRequest.NewInstance().
-                WithStoreId(StoreId).
+            ReplaceFilesRequest.NewInstance(StoreId).
                 WithChangeDetails(
-                    ChangeDetails.NewInstance().
-                        WithDescription("cerbos-sdk-net/ReplaceFiles/With=store.zip").
-                        WithInternal(ChangeDetails.Types.Internal.NewInstance().WithSource("sdk")).
-                        WithUploader(ChangeDetails.Types.Uploader.NewInstance().WithName("cerbos-sdk-net"))
+                    ChangeDetails.NewInstance("cerbos-sdk-net/ReplaceFiles/With=store.zip", ChangeDetails.Types.Uploader.NewInstance("cerbos-sdk-net")).WithInternal(ChangeDetails.Types.Internal.NewInstance("sdk"))
                 ).
                 WithZippedContents(
                     storeContents
@@ -314,19 +259,14 @@ public class StoreClientTest
     public async Task ReplaceFilesAsync()
     {
         var initialStoreVersion = (await StoreClient.ListFilesAsync(
-            ListFilesRequest.NewInstance().
-                WithStoreId(StoreId)
+            ListFilesRequest.NewInstance(StoreId)
         )).StoreVersion;
 
         var temporaryContents = System.IO.File.ReadAllBytes(Path.GetFullPath(PathToTemporaryContents));
-        var response = await StoreClient.ReplaceFilesAsync(
-            ReplaceFilesRequest.NewInstance().
-                WithStoreId(StoreId).
+        var response = StoreClient.ReplaceFiles(
+            ReplaceFilesRequest.NewInstance(StoreId).
                 WithChangeDetails(
-                    ChangeDetails.NewInstance().
-                        WithDescription("cerbos-sdk-net/ReplaceFiles/With=temporary.zip").
-                        WithInternal(ChangeDetails.Types.Internal.NewInstance().WithSource("sdk")).
-                        WithUploader(ChangeDetails.Types.Uploader.NewInstance().WithName("cerbos-sdk-net"))
+                    ChangeDetails.NewInstance("cerbos-sdk-net/ReplaceFilesAsync/With=temporary.zip", ChangeDetails.Types.Uploader.NewInstance("cerbos-sdk-net")).WithInternal(ChangeDetails.Types.Internal.NewInstance("sdk"))
                 ).
                 WithZippedContents(
                     temporaryContents
@@ -336,14 +276,10 @@ public class StoreClientTest
         Assert.That(response.NewStoreVersion, Is.EqualTo(initialStoreVersion + 1));
 
         var storeContents = System.IO.File.ReadAllBytes(Path.GetFullPath(PathToStoreContents));
-        response = await StoreClient.ReplaceFilesAsync(
-            ReplaceFilesRequest.NewInstance().
-                WithStoreId(StoreId).
+        response = StoreClient.ReplaceFiles(
+            ReplaceFilesRequest.NewInstance(StoreId).
                 WithChangeDetails(
-                    ChangeDetails.NewInstance().
-                        WithDescription("cerbos-sdk-net/ReplaceFiles/With=store.zip").
-                        WithInternal(ChangeDetails.Types.Internal.NewInstance().WithSource("sdk")).
-                        WithUploader(ChangeDetails.Types.Uploader.NewInstance().WithName("cerbos-sdk-net"))
+                    ChangeDetails.NewInstance("cerbos-sdk-net/ReplaceFilesAsync/With=store.zip", ChangeDetails.Types.Uploader.NewInstance("cerbos-sdk-net")).WithInternal(ChangeDetails.Types.Internal.NewInstance("sdk"))
                 ).
                 WithZippedContents(
                     storeContents

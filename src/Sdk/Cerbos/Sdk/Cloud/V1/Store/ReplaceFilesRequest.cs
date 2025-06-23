@@ -3,7 +3,7 @@
 
 using System;
 using System.Collections.Generic;
-using Google.Protobuf.Collections;
+using System.Linq;
 
 namespace Cerbos.Sdk.Cloud.V1.Store
 {
@@ -16,17 +16,14 @@ namespace Cerbos.Sdk.Cloud.V1.Store
         private byte[] ZippedContents { get; set; }
         private ChangeDetails ChangeDetails { get; set; }
 
-        private ReplaceFilesRequest() { }
-
-        public static ReplaceFilesRequest NewInstance()
-        {
-            return new ReplaceFilesRequest();
-        }
-
-        public ReplaceFilesRequest WithStoreId(string storeId)
+        private ReplaceFilesRequest(string storeId)
         {
             StoreId = storeId;
-            return this;
+        }
+
+        public static ReplaceFilesRequest NewInstance(string storeId)
+        {
+            return new ReplaceFilesRequest(storeId);
         }
 
         public ReplaceFilesRequest WithCondition(Types.Condition condition)
@@ -57,11 +54,6 @@ namespace Cerbos.Sdk.Cloud.V1.Store
 
         public Api.Cloud.V1.Store.ReplaceFilesRequest ToReplaceFilesRequest()
         {
-            if (StoreId == null)
-            {
-                throw new Exception("StoreId must be specified");
-            }
-
             var request = new Api.Cloud.V1.Store.ReplaceFilesRequest
             {
                 StoreId = StoreId,
@@ -109,17 +101,14 @@ namespace Cerbos.Sdk.Cloud.V1.Store
             {
                 private long StoreVersionMustEqual { get; set; }
 
-                private Condition() { }
-
-                public static Condition NewInstance()
-                {
-                    return new Condition();
-                }
-
-                public Condition WithStoreVersionMustEqual(long storeVersionMustEqual)
+                private Condition(long storeVersionMustEqual)
                 {
                     StoreVersionMustEqual = storeVersionMustEqual;
-                    return this;
+                }
+
+                public static Condition NewInstance(long storeVersionMustEqual)
+                {
+                    return new Condition(storeVersionMustEqual);
                 }
 
                 public Api.Cloud.V1.Store.ReplaceFilesRequest.Types.Condition ToCondition()
@@ -135,33 +124,21 @@ namespace Cerbos.Sdk.Cloud.V1.Store
             {
                 private List<File> F { get; set; }
 
-                private Files()
+                private Files(File[] files)
                 {
-                    F = new List<File>();
+                    F = new List<File>(files);
                 }
 
-                public static Files NewInstance()
+                public static Files NewInstance(File[] files)
                 {
-                    return new Files();
-                }
-
-                public Files WithFiles(params File[] files)
-                {
-                    F.AddRange(files);
-                    return this;
+                    return new Files(files);
                 }
 
                 public Api.Cloud.V1.Store.ReplaceFilesRequest.Types.Files ToFiles()
                 {
-                    var files = new RepeatedField<Api.Cloud.V1.Store.File>();
-                    foreach (var f in F)
-                    {
-                        files.Add(f.ToFile());
-                    }
-
                     return new Api.Cloud.V1.Store.ReplaceFilesRequest.Types.Files()
                     {
-                        Files_ = { files }
+                        Files_ = { F.Select((file) => { return file.ToFile(); }) }
                     };
                 }
             }

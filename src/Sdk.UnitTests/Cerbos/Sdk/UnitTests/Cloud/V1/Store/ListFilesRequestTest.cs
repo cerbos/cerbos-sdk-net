@@ -19,8 +19,7 @@ public class ListFilesRequestTest
         var fileFilter = Sdk.Cloud.V1.Store.FileFilter.NewInstance().
             WithPath(stringMatch);
 
-        var request = Sdk.Cloud.V1.Store.ListFilesRequest.NewInstance().
-            WithStoreId(StoreId).
+        var request = Sdk.Cloud.V1.Store.ListFilesRequest.NewInstance(StoreId).
             WithFilter(fileFilter).
             ToListFilesRequest();
 
@@ -31,9 +30,7 @@ public class ListFilesRequestTest
     [Test]
     public void Optional()
     {
-        var request = Sdk.Cloud.V1.Store.ListFilesRequest.NewInstance().
-            WithStoreId(StoreId).
-            ToListFilesRequest();
+        var request = Sdk.Cloud.V1.Store.ListFilesRequest.NewInstance(StoreId).ToListFilesRequest();
 
         Assert.That(request.StoreId, Is.EqualTo(StoreId));
     }

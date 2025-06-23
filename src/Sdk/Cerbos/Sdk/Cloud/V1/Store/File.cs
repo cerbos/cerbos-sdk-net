@@ -1,15 +1,12 @@
 // Copyright 2021-2025 Zenauth Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
-using System;
-
 namespace Cerbos.Sdk.Cloud.V1.Store
 {
     public sealed class File
     {
         private byte[] contents;
         private string path;
-
         private Api.Cloud.V1.Store.File R { get; set; }
         public byte[] Contents {
             get
@@ -26,7 +23,11 @@ namespace Cerbos.Sdk.Cloud.V1.Store
          }
         public Api.Cloud.V1.Store.File Raw => R;
 
-        private File() {}
+        private File(string path, byte[] contents)
+        {
+            this.path = path;
+            this.contents = contents;
+        }
 
         public File(Api.Cloud.V1.Store.File file)
         {
@@ -35,59 +36,13 @@ namespace Cerbos.Sdk.Cloud.V1.Store
             contents = file.Contents.ToByteArray();
         }
 
-        public static File NewInstance()
+        public static File NewInstance(string path, byte[] contents)
         {
-            return new File();
-        }
-
-        public File WithContents(byte[] contents)
-        {
-            this.contents = contents;
-            if (R == null)
-            {
-                R = new Api.Cloud.V1.Store.File()
-                {
-                    Contents = Google.Protobuf.ByteString.CopyFrom(this.contents)
-                };
-            }
-            else
-            {
-                R.Contents = Google.Protobuf.ByteString.CopyFrom(this.contents);
-            }
-
-            return this;
-        }
-
-        public File WithPath(string path)
-        {
-            this.path = path;
-            if (R == null)
-            {
-                R = new Api.Cloud.V1.Store.File()
-                {
-                    Path = this.path
-                };
-            }
-            else
-            {
-                R.Path = this.path;
-            }
-
-            return this;
+            return new File(path, contents);
         }
 
         public Api.Cloud.V1.Store.File ToFile()
         {
-            if (Contents == null)
-            {
-                throw new Exception("Contents must be specified");
-            }
-
-            if (string.IsNullOrEmpty(Path))
-            {
-                throw new Exception("Path must be specified");
-            }
-
             return new Api.Cloud.V1.Store.File
             {
                 Path = Path,

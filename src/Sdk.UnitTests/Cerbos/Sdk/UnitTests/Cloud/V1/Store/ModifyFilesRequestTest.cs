@@ -23,34 +23,24 @@ public class ModifyFilesRequestTest
     [Test]
     public void ModifyFilesRequest()
     {
-        var condition = Sdk.Cloud.V1.Store.ModifyFilesRequest.Types.Condition.NewInstance().
-            WithStoreVersionMustEqual(1);
+        var condition = Sdk.Cloud.V1.Store.ModifyFilesRequest.Types.Condition.NewInstance(1);
 
-        var file = Sdk.Cloud.V1.Store.File.NewInstance().
-            WithContents(Encoding.UTF8.GetBytes(Content)).
-            WithPath(File);
-
+        var contentBytes = Encoding.UTF8.GetBytes(Content);
+        var file = Sdk.Cloud.V1.Store.File.NewInstance(File, contentBytes);
         var fileOp = Sdk.Cloud.V1.Store.FileOp.
             NewInstance().
             WithAddOrUpdate(file);
 
-        var uploader = Uploader.NewInstance().
-            WithName(Name);
+        var uploader = Uploader.NewInstance(Name);
 
-        var internal_ = ChangeDetails.Types.Internal.NewInstance().
-            WithSource(Source).
+        var internal_ = ChangeDetails.Types.Internal.NewInstance(Source).
             WithMetadata(MetadataKeyAndValue1, MetadataValue.StringValue(MetadataKeyAndValue1)).
             WithMetadata(MetadataKeyAndValue2, MetadataValue.StringValue(MetadataKeyAndValue2));
 
-        var changeDetails = ChangeDetails.NewInstance().
-            WithDescription(Description).
-            WithUploader(uploader).
-            WithInternal(internal_);
+        var changeDetails = ChangeDetails.NewInstance(Description, uploader).WithInternal(internal_);
 
-        var request = Sdk.Cloud.V1.Store.ModifyFilesRequest.NewInstance().
-            WithStoreId(StoreId).
+        var request = Sdk.Cloud.V1.Store.ModifyFilesRequest.NewInstance(StoreId, [fileOp]).
             WithCondition(condition).
-            WithOperations(fileOp).
             WithChangeDetails(changeDetails).
             ToModifyFilesRequest();
 
@@ -63,18 +53,14 @@ public class ModifyFilesRequestTest
     [Test]
     public void Optional()
     {
-        var file = Sdk.Cloud.V1.Store.File.NewInstance().
-            WithContents(Encoding.UTF8.GetBytes(Content)).
-            WithPath(File);
+        var contentBytes = Encoding.UTF8.GetBytes(Content);
+        var file = Sdk.Cloud.V1.Store.File.NewInstance(File, contentBytes);
 
         var fileOp = FileOp.
             NewInstance().
             WithAddOrUpdate(file);
 
-        var request = Sdk.Cloud.V1.Store.ModifyFilesRequest.NewInstance().
-            WithStoreId(StoreId).
-            WithOperations(fileOp).
-            ToModifyFilesRequest();
+        var request = Sdk.Cloud.V1.Store.ModifyFilesRequest.NewInstance(StoreId, [fileOp]).ToModifyFilesRequest();
 
         Assert.That(request.StoreId, Is.EqualTo(StoreId));
     }

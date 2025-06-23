@@ -15,10 +15,7 @@ public class FileTest
     public void WithContentsAndPath()
     {
         var contentBytes = Encoding.UTF8.GetBytes(Content);
-        var file = Sdk.Cloud.V1.Store.File.NewInstance().
-            WithContents(contentBytes).
-            WithPath(PathToPolicy).
-            ToFile();
+        var file = Sdk.Cloud.V1.Store.File.NewInstance(PathToPolicy, contentBytes).ToFile();
 
         Assert.That(file.Contents.ToArray(), Is.EqualTo(contentBytes));
         Assert.That(file.Path, Is.EqualTo(PathToPolicy));
