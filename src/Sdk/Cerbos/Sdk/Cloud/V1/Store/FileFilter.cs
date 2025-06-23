@@ -20,6 +20,24 @@ namespace Cerbos.Sdk.Cloud.V1.Store
             return this;
         }
 
+        public FileFilter WithPathEquals(string equals)
+        {
+            Path = StringMatch.NewInstance().WithEquals(equals);
+            return this;
+        }
+
+        public FileFilter WithPathIn(StringMatch.Types.InList inList)
+        {
+            Path = StringMatch.NewInstance().WithIn(inList);
+            return this;
+        }
+
+        public FileFilter WithPathLike(string like)
+        {
+            Path = StringMatch.NewInstance().WithLike(like);
+            return this;
+        }
+
         public Api.Cloud.V1.Store.FileFilter ToFileFilter()
         {
             var request = new Api.Cloud.V1.Store.FileFilter();
