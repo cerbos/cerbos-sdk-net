@@ -10,8 +10,6 @@ using Cerbos.Api.Cloud.V1.Store;
 using Cerbos.Sdk.Cloud.V1.Interceptor;
 using Cerbos.Sdk.Cloud.V1.Store;
 using Cerbos.Sdk.Cloud.V1.ApiKey;
-using System.Net.Http;
-using System.Security.Cryptography.X509Certificates;
 
 namespace Cerbos.Sdk.Cloud.V1
 {
@@ -28,12 +26,6 @@ namespace Cerbos.Sdk.Cloud.V1
         public static HubClientBuilder ForTarget(string target)
         {
             return new HubClientBuilder(target);
-        }
-
-        public HubClientBuilder WithCredentials(Credentials credentials)
-        {
-            Credentials = credentials;
-            return this;
         }
 
         public HubClientBuilder WithCredentials(string clientId, string clientSecret)
@@ -71,7 +63,6 @@ namespace Cerbos.Sdk.Cloud.V1
             var resilience = Resilience.NewInstance().WithCircuitBreaker().WithRetry(StatusCode.Internal, StatusCode.Unavailable);
             var channelWithInterceptor = GrpcChannel.ForAddress(Target, channelOptions).Intercept(authInterceptor);
             return new HubClient(
-                new ApiKeyClient(new ApiKeyService.ApiKeyServiceClient(channelWithInterceptor), resilience),
                 new StoreClient(new CerbosStoreService.CerbosStoreServiceClient(channelWithInterceptor), resilience)
             );
         }

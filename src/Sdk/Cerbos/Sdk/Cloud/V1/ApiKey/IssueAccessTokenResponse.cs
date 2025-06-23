@@ -5,7 +5,7 @@ using System;
 
 namespace Cerbos.Sdk.Cloud.V1.ApiKey
 {
-    public sealed class IssueAccessTokenResponse
+    internal sealed class IssueAccessTokenResponse
     {
         private Api.Cloud.V1.ApiKey.IssueAccessTokenResponse R { get; }
 

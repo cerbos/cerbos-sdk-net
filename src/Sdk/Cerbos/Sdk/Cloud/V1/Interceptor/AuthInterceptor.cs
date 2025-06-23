@@ -9,7 +9,7 @@ using Grpc.Core.Interceptors;
 
 namespace Cerbos.Sdk.Cloud.V1.Interceptor
 {
-    public sealed class AuthInterceptor : Grpc.Core.Interceptors.Interceptor
+    internal sealed class AuthInterceptor : Grpc.Core.Interceptors.Interceptor
     {
         private const string AuthTokenHeader = "x-cerbos-auth";
         private const double EarlyExpireInMinutes = 5;

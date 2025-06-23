@@ -4,12 +4,11 @@
 using System;
 using System.Threading.Tasks;
 using Cerbos.Api.Cloud.V1.ApiKey;
-using Grpc.Core;
 using Polly;
 
 namespace Cerbos.Sdk.Cloud.V1.ApiKey
 {
-    public interface IApiKeyClient
+    internal interface IApiKeyClient
     {
         IssueAccessTokenResponse IssueAccessToken(IssueAccessTokenRequest request);
         Task<IssueAccessTokenResponse> IssueAccessTokenAsync(IssueAccessTokenRequest request);
@@ -19,17 +18,11 @@ namespace Cerbos.Sdk.Cloud.V1.ApiKey
     /// ApiKeyClient provides a client implementation that communicates with the Cerbos Hub API Key Service.
     /// </summary>
     /// 
-    public sealed class ApiKeyClient : IApiKeyClient
+    internal sealed class ApiKeyClient : IApiKeyClient
     {
         private ApiKeyService.ApiKeyServiceClient Client { get; }
         private ResiliencePipeline Resilience { get; }
 
-        public ApiKeyClient(ApiKeyService.ApiKeyServiceClient apiKeyServiceClient)
-        {
-            Client = apiKeyServiceClient;
-            Resilience = V1.Resilience.NewInstance().WithCircuitBreaker().WithRetry(StatusCode.Internal, StatusCode.Unavailable).Build();
-        }
-        
         internal ApiKeyClient(ApiKeyService.ApiKeyServiceClient apiKeyServiceClient, Resilience resilience)
         {
             Client = apiKeyServiceClient;

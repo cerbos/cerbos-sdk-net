@@ -5,7 +5,7 @@ using Cerbos.Sdk.Cloud.V1.ApiKey;
 
 namespace Cerbos.Sdk.Cloud.V1
 {
-    public sealed class Credentials
+    internal sealed class Credentials
     {
         public string ClientId { get; }
         public string ClientSecret { get; }
