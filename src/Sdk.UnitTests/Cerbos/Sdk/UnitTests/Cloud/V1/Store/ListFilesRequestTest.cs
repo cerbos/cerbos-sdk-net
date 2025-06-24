@@ -1,0 +1,37 @@
+// Copyright 2021-2025 Zenauth Ltd.
+// SPDX-License-Identifier: Apache-2.0
+
+using NUnit.Framework;
+
+namespace Cerbos.Sdk.UnitTests.Cloud.V1;
+
+public class ListFilesRequestTest
+{
+    private const string StoreId = "MD1LAP5BJNA9";
+    private const string File = "policy.yaml";
+
+    [Test]
+    public void ListFilesRequest()
+    {
+        var stringMatch = Sdk.Cloud.V1.Store.StringMatch.NewInstance().
+            WithEquals(File);
+
+        var fileFilter = Sdk.Cloud.V1.Store.FileFilter.NewInstance().
+            WithPath(stringMatch);
+
+        var request = Sdk.Cloud.V1.Store.ListFilesRequest.NewInstance(StoreId).
+            WithFilter(fileFilter).
+            ToListFilesRequest();
+
+        Assert.That(request.StoreId, Is.EqualTo(StoreId));
+        Assert.That(request.Filter.Path.Equals_, Is.EqualTo(File));
+    }
+
+    [Test]
+    public void Optional()
+    {
+        var request = Sdk.Cloud.V1.Store.ListFilesRequest.NewInstance(StoreId).ToListFilesRequest();
+
+        Assert.That(request.StoreId, Is.EqualTo(StoreId));
+    }
+}

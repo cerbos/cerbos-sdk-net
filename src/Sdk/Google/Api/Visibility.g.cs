@@ -43,9 +43,9 @@ namespace Google.Api {
             "aS5WaXNpYmlsaXR5UnVsZVIQbWV0aG9kVmlzaWJpbGl0eTplCg5hcGlfdmlz",
             "aWJpbGl0eRIfLmdvb2dsZS5wcm90b2J1Zi5TZXJ2aWNlT3B0aW9ucxivyrwi",
             "IAEoCzIaLmdvb2dsZS5hcGkuVmlzaWJpbGl0eVJ1bGVSDWFwaVZpc2liaWxp",
-            "dHlCbgoOY29tLmdvb2dsZS5hcGlCD1Zpc2liaWxpdHlQcm90b1ABWj9nb29n",
+            "dHlCawoOY29tLmdvb2dsZS5hcGlCD1Zpc2liaWxpdHlQcm90b1ABWj9nb29n",
             "bGUuZ29sYW5nLm9yZy9nZW5wcm90by9nb29nbGVhcGlzL2FwaS92aXNpYmls",
-            "aXR5O3Zpc2liaWxpdHn4AQGiAgRHQVBJYgZwcm90bzM="));
+            "aXR5O3Zpc2liaWxpdHmiAgRHQVBJYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pb::Extension[] { VisibilityExtensions.EnumVisibility, VisibilityExtensions.ValueVisibility, VisibilityExtensions.FieldVisibility, VisibilityExtensions.MessageVisibility, VisibilityExtensions.MethodVisibility, VisibilityExtensions.ApiVisibility }, new pbr::GeneratedClrTypeInfo[] {

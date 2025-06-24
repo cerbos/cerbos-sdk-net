@@ -7,28 +7,27 @@ on:
       - 'v*'
 
 jobs:
-  generate-build-and-check-changes:
-    name: Generate, build and check uncommitted changes
+  build-check-changes-and-run-unit-tests:
+    name: Build, check uncommitted changes and run unit tests
     runs-on: ubuntu-latest
     steps:
-      - name: Setup Buf
-        uses: bufbuild/buf-setup-action@v1.50.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Checkout code
         uses: actions/checkout@v4
-
-      - name: Run the generate script
-        uses: cake-build/cake-action@v3
-        env:
-          BUF_TOKEN: ${{ secrets.BUF_TOKEN }}
         with:
-          cake-bootstrap: true
-          target: Generate
+          lfs: true
+
+      - name: Setup Buf
+        uses: bufbuild/buf-action@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          setup_only: true
+          token: ${{ secrets.BUF_TOKEN }}
+          
 
       - name: Run the build script
         uses: cake-build/cake-action@v3
+        env:
+          BUF_TOKEN: ${{ secrets.BUF_TOKEN }}
         with:
           cake-bootstrap: true
           target: Build
@@ -41,21 +40,14 @@ jobs:
             echo "$REPO_STATUS"
             exit 1
           fi
-
-  tests:
-    name: Run unit tests
-    runs-on: ubuntu-latest
-    steps:
-      - name: Setup Buf
-        uses: bufbuild/buf-setup-action@v1.50.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Checkout code
-        uses: actions/checkout@v4
-
+      
       - name: Run the test script
         uses: cake-build/cake-action@v3
+        env:
+          CERBOS_HUB_API_ENDPOINT: "${{ secrets.CERBOS_HUB_API_ENDPOINT }}"
+          CERBOS_HUB_CLIENT_ID: "${{ secrets.CERBOS_HUB_CLIENT_ID }}"
+          CERBOS_HUB_CLIENT_SECRET: "${{ secrets.CERBOS_HUB_CLIENT_SECRET }}"
+          CERBOS_HUB_STORE_ID: "${{ secrets.CERBOS_HUB_STORE_ID }}"
         with:
           cake-bootstrap: true
           target: UnitTests
