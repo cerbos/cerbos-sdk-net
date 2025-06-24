@@ -53,19 +53,37 @@ namespace Cerbos.Sdk.Cloud.V1
                 {
                     MethodConfigs = {
                         new MethodConfig {
-                            Names = { MethodName.Default },
+                            Names = {
+                                new MethodName() {
+                                    Service = "cerbos.cloud.store.v1.CerbosStoreService",
+                                    Method = "ModifyFiles"
+                                },
+                                new MethodName() {
+                                    Service = "cerbos.cloud.store.v1.CerbosStoreService",
+                                    Method = "ReplaceFiles"
+                                }
+                            }
+                        },
+                        new MethodConfig {
+                            Names = {
+                                MethodName.Default
+                            },
                             RetryPolicy = new RetryPolicy
                             {
                                 RetryableStatusCodes = {
-                                    StatusCode.ResourceExhausted,
                                     StatusCode.Unavailable
                                 },
-                                MaxAttempts = 5,
-                                InitialBackoff = TimeSpan.FromSeconds(1),
+                                MaxAttempts = 3,
+                                InitialBackoff = TimeSpan.FromSeconds(0.2),
                                 MaxBackoff = TimeSpan.FromSeconds(5),
-                                BackoffMultiplier = 1.5
+                                BackoffMultiplier = 2
                             }
-                        }
+                        },
+                    },
+                    RetryThrottling = new RetryThrottlingPolicy
+                    {
+                        MaxTokens = 10,
+                        TokenRatio = 0.5
                     }
                 }
             };

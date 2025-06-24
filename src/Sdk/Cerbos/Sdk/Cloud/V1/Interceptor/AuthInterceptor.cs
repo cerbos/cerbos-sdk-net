@@ -111,7 +111,7 @@ namespace Cerbos.Sdk.Cloud.V1.Interceptor
             {
                 if (Unauthenticated)
                 {
-                    throw new RpcException(new Status(StatusCode.Unauthenticated, "Given credentials results in unauthenticated response from server"));
+                    throw new RpcException(new Status(StatusCode.Unauthenticated, "Invalid credentials"));
                 }
             }
             finally
