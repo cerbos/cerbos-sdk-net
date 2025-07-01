@@ -20,6 +20,12 @@ namespace Cerbos.Sdk.Cloud.V1.Store
             return this;
         }
 
+        public FileFilter WithPathContains(string contains)
+        {
+            Path = StringMatch.NewInstance().WithContains(contains);
+            return this;
+        }
+
         public FileFilter WithPathEquals(string equals)
         {
             Path = StringMatch.NewInstance().WithEquals(equals);
@@ -29,12 +35,6 @@ namespace Cerbos.Sdk.Cloud.V1.Store
         public FileFilter WithPathIn(StringMatch.Types.InList inList)
         {
             Path = StringMatch.NewInstance().WithIn(inList);
-            return this;
-        }
-
-        public FileFilter WithPathLike(string like)
-        {
-            Path = StringMatch.NewInstance().WithLike(like);
             return this;
         }
 

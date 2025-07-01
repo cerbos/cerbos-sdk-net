@@ -35,10 +35,10 @@ public class StringMatchTest
     public void StringMatchLike()
     {
         var stringMatch = Sdk.Cloud.V1.Store.StringMatch.NewInstance().
-            WithLike(Something)
+            WithContains(Something)
             .ToStringMatch();
 
-        Assert.That(stringMatch.Like, Is.EqualTo(Something));
+        Assert.That(stringMatch.Contains, Is.EqualTo(Something));
     }
 
     public static class Types

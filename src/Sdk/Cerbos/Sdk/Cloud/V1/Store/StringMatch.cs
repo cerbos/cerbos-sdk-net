@@ -9,8 +9,8 @@ namespace Cerbos.Sdk.Cloud.V1.Store
     public sealed class StringMatch
     {
         private Api.Cloud.V1.Store.StringMatch.MatchOneofCase OneOf = Api.Cloud.V1.Store.StringMatch.MatchOneofCase.None;
+        private string Contains { get; set; }
         private string Equals_ { get; set; }
-        private string Like { get; set; }
         private Types.InList In { get; set; }
 
         private StringMatch() {}
@@ -18,6 +18,13 @@ namespace Cerbos.Sdk.Cloud.V1.Store
         public static StringMatch NewInstance()
         {
             return new StringMatch();
+        }
+
+        public StringMatch WithContains(string contains)
+        {
+            Contains = contains;
+            OneOf = Api.Cloud.V1.Store.StringMatch.MatchOneofCase.Contains;
+            return this;
         }
 
         public StringMatch WithEquals(string equals)
@@ -31,13 +38,6 @@ namespace Cerbos.Sdk.Cloud.V1.Store
         {
             In = inList;
             OneOf = Api.Cloud.V1.Store.StringMatch.MatchOneofCase.In;
-            return this;
-        }
-
-        public StringMatch WithLike(string like)
-        {
-            Like = like;
-            OneOf = Api.Cloud.V1.Store.StringMatch.MatchOneofCase.Like;
             return this;
         }
 
@@ -62,16 +62,16 @@ namespace Cerbos.Sdk.Cloud.V1.Store
                     In = In.ToInList()
                 };
             }
-            else if (OneOf == Api.Cloud.V1.Store.StringMatch.MatchOneofCase.Like)
+            else if (OneOf == Api.Cloud.V1.Store.StringMatch.MatchOneofCase.Contains)
             {
                 return new Api.Cloud.V1.Store.StringMatch
                 {
-                    Like = Like
+                    Contains = Contains
                 };
             }
             else
             {
-                throw new Exception("Either equals, in or like match operator must be specified");
+                throw new Exception("Either contains, equals or in match operator must be specified");
             }
         }
         
