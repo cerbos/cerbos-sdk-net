@@ -12,25 +12,19 @@ public class FileOpTest
     private const string Content = "content";
 
     [Test]
-    public void OpAddOrUpdate()
+    public void AddOrUpdate()
     {
         var contentBytes = Encoding.UTF8.GetBytes(Content);
         var file = Sdk.Cloud.V1.Store.File.NewInstance(PathToPolicy, contentBytes);
-        var fileOp = Sdk.Cloud.V1.Store.FileOp.
-            NewInstance().
-            WithAddOrUpdate(file).
-            ToFileOp();
+        var fileOp = Sdk.Cloud.V1.Store.FileOp.AddOrUpdate(file).ToFileOp();
 
         Assert.That(fileOp.AddOrUpdate, Is.EqualTo(file.ToFile()));
     }
 
     [Test]
-    public void OpDelete()
+    public void Delete()
     {
-        var fileOp = Sdk.Cloud.V1.Store.FileOp.
-            NewInstance().
-            WithDelete(PathToPolicy).
-            ToFileOp();
+        var fileOp = Sdk.Cloud.V1.Store.FileOp.Delete(PathToPolicy).ToFileOp();
 
         Assert.That(fileOp.Delete, Is.EqualTo(PathToPolicy));
     }

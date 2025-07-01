@@ -18,10 +18,12 @@ namespace Cerbos.Sdk.Cloud.V1.Store
             return new ListFilesRequest(storeId);
         }
 
-        public ListFilesRequest WithFilter(FileFilter filter)
+        public static ListFilesRequest WithFilter(string storeId, FileFilter filter)
         {
-            Filter = filter;
-            return this;
+            return new ListFilesRequest(storeId)
+            {
+                Filter = filter
+            };
         }
         
         public Api.Cloud.V1.Store.ListFilesRequest ToListFilesRequest()

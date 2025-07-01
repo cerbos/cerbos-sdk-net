@@ -22,7 +22,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           setup_only: true
           token: ${{ secrets.BUF_TOKEN }}
-          
 
       - name: Run the build script
         uses: cake-build/cake-action@v3

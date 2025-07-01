@@ -8,49 +8,48 @@ namespace Cerbos.Sdk.Cloud.V1.Store
     public sealed class FileOp
     {
         private Api.Cloud.V1.Store.FileOp.OpOneofCase OneOf = Api.Cloud.V1.Store.FileOp.OpOneofCase.None;
-        private File AddOrUpdate { get; set; }
-        private string Delete { get; set; }
+        private File AddOrUpdate_ { get; set; }
+        private string Delete_ { get; set; }
     
         private FileOp() {}
         
-        public static FileOp NewInstance()
+        public static FileOp AddOrUpdate(File addOrUpdate)
         {
-            return new FileOp();
+            return new FileOp()
+            {
+                AddOrUpdate_ = addOrUpdate,
+                OneOf = Api.Cloud.V1.Store.FileOp.OpOneofCase.AddOrUpdate
+            };
         }
 
-        public FileOp WithAddOrUpdate(File addOrUpdate)
+        public static FileOp Delete(string delete)
         {
-            AddOrUpdate = addOrUpdate;
-            OneOf = Api.Cloud.V1.Store.FileOp.OpOneofCase.AddOrUpdate;
-            return this;
-        }
-
-        public FileOp WithDelete(string delete)
-        {
-            Delete = delete;
-            OneOf = Api.Cloud.V1.Store.FileOp.OpOneofCase.Delete;
-            return this;
+            return new FileOp()
+            {
+                Delete_ = delete,
+                OneOf = Api.Cloud.V1.Store.FileOp.OpOneofCase.Delete
+            };
         }
         
         public Api.Cloud.V1.Store.FileOp ToFileOp()
         {
             if (OneOf == Api.Cloud.V1.Store.FileOp.OpOneofCase.AddOrUpdate)
             {
-                if (AddOrUpdate == null)
+                if (AddOrUpdate_ == null)
                 {
                     throw new Exception("Specify non-null value for addOrUpdate operation");
                 }
 
                 return new Api.Cloud.V1.Store.FileOp
                 {
-                    AddOrUpdate = AddOrUpdate.ToFile()
+                    AddOrUpdate = AddOrUpdate_.ToFile()
                 };
             }
             else if (OneOf == Api.Cloud.V1.Store.FileOp.OpOneofCase.Delete)
             {
                 return new Api.Cloud.V1.Store.FileOp
                 {
-                    Delete = Delete
+                    Delete = Delete_
                 };
             }
             else

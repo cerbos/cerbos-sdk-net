@@ -19,17 +19,14 @@ public class ModifyFilesRequestTest
     private const string MetadataKeyAndValue1 = "keyAndValue1";
     private const string MetadataKeyAndValue2 = "keyAndValue2";
 
-
     [Test]
-    public void ModifyFilesRequest()
+    public void NewInstance()
     {
         var condition = Sdk.Cloud.V1.Store.ModifyFilesRequest.Types.Condition.NewInstance(1);
 
         var contentBytes = Encoding.UTF8.GetBytes(Content);
         var file = Sdk.Cloud.V1.Store.File.NewInstance(File, contentBytes);
-        var fileOp = Sdk.Cloud.V1.Store.FileOp.
-            NewInstance().
-            WithAddOrUpdate(file);
+        var fileOp = Sdk.Cloud.V1.Store.FileOp.AddOrUpdate(file);
 
         var uploader = Uploader.NewInstance(Name);
 
@@ -37,12 +34,9 @@ public class ModifyFilesRequestTest
             WithMetadata(MetadataKeyAndValue1, MetadataValue.StringValue(MetadataKeyAndValue1)).
             WithMetadata(MetadataKeyAndValue2, MetadataValue.StringValue(MetadataKeyAndValue2));
 
-        var changeDetails = ChangeDetails.NewInstance(Description, uploader).WithInternal(internal_);
+        var changeDetails = ChangeDetails.Internal(Description, uploader, internal_);
 
-        var request = Sdk.Cloud.V1.Store.ModifyFilesRequest.NewInstance(StoreId, [fileOp]).
-            WithCondition(condition).
-            WithChangeDetails(changeDetails).
-            ToModifyFilesRequest();
+        var request = Sdk.Cloud.V1.Store.ModifyFilesRequest.NewInstance(StoreId, condition, changeDetails, fileOp).ToModifyFilesRequest();
 
         Assert.That(request.StoreId, Is.EqualTo(StoreId));
         Assert.That(request.Condition, Is.EqualTo(condition.ToCondition()));
@@ -51,17 +45,40 @@ public class ModifyFilesRequestTest
     }
 
     [Test]
-    public void Optional()
+    public void WithCondition()
+    {
+        var condition = Sdk.Cloud.V1.Store.ModifyFilesRequest.Types.Condition.NewInstance(1);
+
+        var contentBytes = Encoding.UTF8.GetBytes(Content);
+        var file = Sdk.Cloud.V1.Store.File.NewInstance(File, contentBytes);
+        var fileOp = Sdk.Cloud.V1.Store.FileOp.AddOrUpdate(file);
+
+        var request = Sdk.Cloud.V1.Store.ModifyFilesRequest.WithCondition(StoreId, condition, fileOp).ToModifyFilesRequest();
+
+        Assert.That(request.StoreId, Is.EqualTo(StoreId));
+        Assert.That(request.Condition, Is.EqualTo(condition.ToCondition()));
+        Assert.That(request.Operations[0], Is.EqualTo(fileOp.ToFileOp()));
+    }
+
+    [Test]
+    public void WithChangeDetails()
     {
         var contentBytes = Encoding.UTF8.GetBytes(Content);
         var file = Sdk.Cloud.V1.Store.File.NewInstance(File, contentBytes);
+        var fileOp = Sdk.Cloud.V1.Store.FileOp.AddOrUpdate(file);
 
-        var fileOp = FileOp.
-            NewInstance().
-            WithAddOrUpdate(file);
+        var uploader = Uploader.NewInstance(Name);
 
-        var request = Sdk.Cloud.V1.Store.ModifyFilesRequest.NewInstance(StoreId, [fileOp]).ToModifyFilesRequest();
+        var internal_ = ChangeDetails.Types.Internal.NewInstance(Source).
+            WithMetadata(MetadataKeyAndValue1, MetadataValue.StringValue(MetadataKeyAndValue1)).
+            WithMetadata(MetadataKeyAndValue2, MetadataValue.StringValue(MetadataKeyAndValue2));
+
+        var changeDetails = ChangeDetails.Internal(Description, uploader, internal_);
+
+        var request = Sdk.Cloud.V1.Store.ModifyFilesRequest.WithChangeDetails(StoreId, changeDetails, fileOp).ToModifyFilesRequest();
 
         Assert.That(request.StoreId, Is.EqualTo(StoreId));
+        Assert.That(request.Operations[0], Is.EqualTo(fileOp.ToFileOp()));
+        Assert.That(request.ChangeDetails, Is.EqualTo(changeDetails.ToChangeDetails()));
     }
 }

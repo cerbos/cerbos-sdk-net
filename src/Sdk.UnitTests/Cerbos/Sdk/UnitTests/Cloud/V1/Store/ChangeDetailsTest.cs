@@ -37,9 +37,7 @@ public class ChangeDetailsTest
             WithAuthorDate(AuthorDate).
             WithCommitDate(CommitDate);
 
-        var changeDetails = ChangeDetails.NewInstance(Description, uploader).
-            WithGit(git).
-            ToChangeDetails();
+        var changeDetails = ChangeDetails.Git(Description, uploader, git).ToChangeDetails();
 
         Assert.That(changeDetails.Description, Is.EqualTo(Description));
         Assert.That(changeDetails.Uploader.Name, Is.EqualTo(Name));
@@ -63,9 +61,7 @@ public class ChangeDetailsTest
             WithMetadata(MetadataKeyAndValue1, MetadataValue.StringValue(MetadataKeyAndValue1)).
             WithMetadata(MetadataKeyAndValue2, MetadataValue.StringValue(MetadataKeyAndValue2));
 
-        var changeDetails = ChangeDetails.NewInstance(Description, uploader).
-            WithInternal(internal_).
-            ToChangeDetails();
+        var changeDetails = ChangeDetails.Internal(Description, uploader, internal_).ToChangeDetails();
 
         Assert.That(changeDetails.Description, Is.EqualTo(Description));
         Assert.That(changeDetails.Uploader.Name, Is.EqualTo(Name));

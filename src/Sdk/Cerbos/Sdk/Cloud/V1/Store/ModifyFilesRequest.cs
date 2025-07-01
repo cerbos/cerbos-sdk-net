@@ -13,27 +13,45 @@ namespace Cerbos.Sdk.Cloud.V1.Store
         private List<FileOp> Operations { get; set; }
         private ChangeDetails ChangeDetails { get; set; }
 
-        private ModifyFilesRequest(string storeId, FileOp[] operations)
+        private ModifyFilesRequest(
+            string storeId,
+            Types.Condition condition = null,
+            ChangeDetails changeDetails = null,
+            params FileOp[] operations
+        )
         {
             StoreId = storeId;
             Operations = new List<FileOp>(operations);
-        }
-
-        public static ModifyFilesRequest NewInstance(string storeId, FileOp[] operations)
-        {
-            return new ModifyFilesRequest(storeId, operations);
-        }
-
-        public ModifyFilesRequest WithChangeDetails(ChangeDetails changeDetails)
-        {
+            Condition = condition;
             ChangeDetails = changeDetails;
-            return this;
+        }
+
+        public static ModifyFilesRequest NewInstance(
+            string storeId,
+            Types.Condition condition = null,
+            ChangeDetails changeDetails = null,
+            params FileOp[] operations
+        )
+        {
+            return new ModifyFilesRequest(storeId, condition, changeDetails, operations);
+        }
+
+        public static ModifyFilesRequest WithChangeDetails(
+            string storeId,
+            ChangeDetails changeDetails,
+            params FileOp[] operations
+        )
+        {
+            return new ModifyFilesRequest(storeId, null, changeDetails, operations);
         }
         
-        public ModifyFilesRequest WithCondition(Types.Condition condition)
+        public static ModifyFilesRequest WithCondition(
+            string storeId,
+            Types.Condition condition,
+            params FileOp[] operations
+        )
         {
-            Condition = condition;
-            return this;
+            return new ModifyFilesRequest(storeId, condition, null, operations);
         }
 
         public Api.Cloud.V1.Store.ModifyFilesRequest ToModifyFilesRequest()

@@ -9,70 +9,79 @@ namespace Cerbos.Sdk.Cloud.V1.Store
     public sealed class StringMatch
     {
         private Api.Cloud.V1.Store.StringMatch.MatchOneofCase OneOf = Api.Cloud.V1.Store.StringMatch.MatchOneofCase.None;
-        private string Contains { get; set; }
+        private string Contains_ { get; set; }
         private string Equals_ { get; set; }
-        private Types.InList In { get; set; }
+        private Types.InList In_ { get; set; }
 
-        private StringMatch() {}
-
-        public static StringMatch NewInstance()
+        private StringMatch(
+            string contains = null,
+            string equals = null,
+            Types.InList inList = null
+        )
         {
-            return new StringMatch();
+            if (contains == null && equals == null && inList == null)
+            {
+                throw new Exception("Either contains, equals or in match operator must be specified");
+            }
+
+            if (contains != null)
+            {
+                OneOf = Api.Cloud.V1.Store.StringMatch.MatchOneofCase.Contains;
+                Contains_ = contains;
+            }
+            else if (equals != null)
+            {
+                OneOf = Api.Cloud.V1.Store.StringMatch.MatchOneofCase.Equals_;
+                Equals_ = equals;
+            }
+            else if (inList != null)
+            {
+                OneOf = Api.Cloud.V1.Store.StringMatch.MatchOneofCase.In;
+                In_ = inList;
+            }
         }
 
-        public StringMatch WithContains(string contains)
+        public static StringMatch Contains(string contains)
         {
-            Contains = contains;
-            OneOf = Api.Cloud.V1.Store.StringMatch.MatchOneofCase.Contains;
-            return this;
+            return new StringMatch(contains, null, null);
         }
 
-        public StringMatch WithEquals(string equals)
+        public static StringMatch Equals(string equals)
         {
-            Equals_ = equals;
-            OneOf = Api.Cloud.V1.Store.StringMatch.MatchOneofCase.Equals_;
-            return this;
+            return new StringMatch(null, equals, null);
         }
 
-        public StringMatch WithIn(Types.InList inList)
+        public static StringMatch In(Types.InList inList)
         {
-            In = inList;
-            OneOf = Api.Cloud.V1.Store.StringMatch.MatchOneofCase.In;
-            return this;
+            if (inList == null)
+            {
+                throw new Exception("Specify non-null value for in match operator");
+            }
+
+            return new StringMatch(null, null, inList);
         }
 
         public Api.Cloud.V1.Store.StringMatch ToStringMatch()
         {
-            if (OneOf == Api.Cloud.V1.Store.StringMatch.MatchOneofCase.Equals_)
+            if (OneOf == Api.Cloud.V1.Store.StringMatch.MatchOneofCase.Contains)
+            {
+                return new Api.Cloud.V1.Store.StringMatch
+                {
+                    Contains = Contains_
+                };
+            }
+            else if (OneOf == Api.Cloud.V1.Store.StringMatch.MatchOneofCase.Equals_)
             {
                 return new Api.Cloud.V1.Store.StringMatch
                 {
                     Equals_ = Equals_
                 };
             }
-            else if (OneOf == Api.Cloud.V1.Store.StringMatch.MatchOneofCase.In)
-            {
-                if (In == null)
-                {
-                    throw new Exception("Specify non-null value for in match operator");
-                }
 
-                return new Api.Cloud.V1.Store.StringMatch
-                {
-                    In = In.ToInList()
-                };
-            }
-            else if (OneOf == Api.Cloud.V1.Store.StringMatch.MatchOneofCase.Contains)
+            return new Api.Cloud.V1.Store.StringMatch
             {
-                return new Api.Cloud.V1.Store.StringMatch
-                {
-                    Contains = Contains
-                };
-            }
-            else
-            {
-                throw new Exception("Either contains, equals or in match operator must be specified");
-            }
+                In = In_.ToInList()
+            };
         }
         
         public static class Types

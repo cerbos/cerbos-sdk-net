@@ -10,24 +10,28 @@ public class FileFilterTest
     private const string Something = "something";
 
     [Test]
-    public void WithPath()
+    public void PathContains()
     {
-        var stringMatch = Sdk.Cloud.V1.Store.StringMatch.NewInstance().
-            WithEquals(Something);
+        var fileFilter = Sdk.Cloud.V1.Store.FileFilter.PathContains(Something).ToFileFilter();
 
-        var fileFilter = Sdk.Cloud.V1.Store.FileFilter.NewInstance().
-            WithPath(stringMatch).
-            ToFileFilter();
-
-        Assert.That(fileFilter.Path.Equals_, Is.EqualTo(stringMatch.ToStringMatch().Equals_));
+        Assert.That(fileFilter.Path.Contains, Is.EqualTo(Something));
     }
 
     [Test]
-    public void Optional()
+    public void PathEquals()
     {
-        var fileFilter = Sdk.Cloud.V1.Store.FileFilter.NewInstance().
-            ToFileFilter();
+        var fileFilter = Sdk.Cloud.V1.Store.FileFilter.PathEquals(Something).ToFileFilter();
 
-        Assert.That(fileFilter.Path, Is.EqualTo(null));
+        Assert.That(fileFilter.Path.Equals_, Is.EqualTo(Something));
+    }
+
+    [Test]
+    public void PathIn()
+    {
+        var inList = Sdk.Cloud.V1.Store.StringMatch.Types.InList.NewInstance().WithValues(Something, Something);
+        var fileFilter = Sdk.Cloud.V1.Store.FileFilter.PathIn(inList).ToFileFilter();
+
+        Assert.That(fileFilter.Path.In.Values[0], Is.EqualTo(Something));
+        Assert.That(fileFilter.Path.In.Values[1], Is.EqualTo(Something));
     }
 }

@@ -1,6 +1,8 @@
 // Copyright 2021-2025 Zenauth Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
+using System;
+
 namespace Cerbos.Sdk.Cloud.V1.Store
 {
     public sealed class FileFilter
@@ -9,33 +11,33 @@ namespace Cerbos.Sdk.Cloud.V1.Store
 
         private FileFilter() { }
 
-        public static FileFilter NewInstance()
+        public static FileFilter PathContains(string contains)
         {
-            return new FileFilter();
+            return new FileFilter()
+            {
+                Path = StringMatch.Contains(contains)
+            };
         }
 
-        public FileFilter WithPath(StringMatch path)
+        public static FileFilter PathEquals(string equals)
         {
-            Path = path;
-            return this;
+            return new FileFilter()
+            {
+                Path = StringMatch.Equals(equals)
+            };
         }
 
-        public FileFilter WithPathContains(string contains)
+        public static FileFilter PathIn(StringMatch.Types.InList inList)
         {
-            Path = StringMatch.NewInstance().WithContains(contains);
-            return this;
-        }
+            if (inList == null)
+            {
+                throw new Exception("Specify non-null value for path in");
+            }
 
-        public FileFilter WithPathEquals(string equals)
-        {
-            Path = StringMatch.NewInstance().WithEquals(equals);
-            return this;
-        }
-
-        public FileFilter WithPathIn(StringMatch.Types.InList inList)
-        {
-            Path = StringMatch.NewInstance().WithIn(inList);
-            return this;
+            return new FileFilter()
+            {
+                Path = StringMatch.In(inList)
+            };
         }
 
         public Api.Cloud.V1.Store.FileFilter ToFileFilter()
