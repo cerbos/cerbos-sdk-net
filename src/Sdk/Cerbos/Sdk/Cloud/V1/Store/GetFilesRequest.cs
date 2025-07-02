@@ -10,13 +10,13 @@ namespace Cerbos.Sdk.Cloud.V1.Store
         private string StoreId { get; set; }
         private List<string> Files { get; }
 
-        private GetFilesRequest(string storeId, string[] files)
+        private GetFilesRequest(string storeId, params string[] files)
         {
             StoreId = storeId;
             Files = new List<string>(files);
         }
         
-        public static GetFilesRequest NewInstance(string storeId, string[] files)
+        public static GetFilesRequest NewInstance(string storeId, params string[] files)
         {
             return new GetFilesRequest(storeId, files);
         }
