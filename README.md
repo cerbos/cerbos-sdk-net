@@ -147,13 +147,8 @@ else {
 ```csharp
 using Cerbos.Sdk.Cloud.V1;
 
-var apiEndpoint = Environment.GetEnvironmentVariable("CERBOS_HUB_API_ENDPOINT") ?? "https://api.cerbos.cloud";
-var clientId = Environment.GetEnvironmentVariable("CERBOS_HUB_CLIENT_ID"); // ClientID generated for a store
-var clientSecret = Environment.GetEnvironmentVariable("CERBOS_HUB_CLIENT_SECRET"); // ClientSecret generated for a store
-
 var hubClient = HubClientBuilder
-    .ForTarget(apiEndpoint).
-    .WithCredentials(clientId, clientSecret).
+    .FromEnv() // Gets clientId and clientSecret from environment variables CERBOS_HUB_CLIENT_ID and CERBOS_HUB_CLIENT_SECRET.
     .Build();
 
 var storeId = Environment.GetEnvironmentVariable("CERBOS_HUB_STORE_ID");
