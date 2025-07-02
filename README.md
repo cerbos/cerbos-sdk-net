@@ -4,9 +4,9 @@
 # Cerbos .NET SDK
 
 .NET client library for the [Cerbos](https://github.com/cerbos/cerbos) open source access control solution. This library
-includes gRPC clients for accessing the Cerbos PDP.
+includes gRPC clients for accessing the Cerbos PDP and [Cerbos Hub](https://hub.cerbos.cloud/).
 
-Find out more about Cerbos at https://cerbos.dev and read the documentation at https://docs.cerbos.dev.
+Find out more about Cerbos at https://cerbos.dev, Cerbos Hub at https://www.cerbos.dev/product-cerbos-hub and read the documentation at https://docs.cerbos.dev.
 
 # Installation
 
@@ -14,13 +14,15 @@ Find out more about Cerbos at https://cerbos.dev and read the documentation at h
 
 # Examples
 
-## Creating a client without TLS
+## Cerbos
+
+### Creating a client without TLS
 
 ```csharp
 var client = CerbosClientBuilder.ForTarget("http://localhost:3593").WithPlaintext().Build();
 ```
 
-## CheckResources API
+### CheckResources API
 
 ```csharp
 var request = CheckResourcesRequest.NewInstance()
@@ -100,7 +102,7 @@ if(resultXX325.IsAllowed("view:public")){ // returns true if `view:public` actio
 }
 ```
 
-## Plan Resources API
+### Plan Resources API
 
 ```csharp
 var request = PlanResourcesRequest.NewInstance()
@@ -132,70 +134,99 @@ else {
 }
 ```
 
-# Upgrading from v0.2.x
-
-v1.0.0 of the SDK contains some breaking API changes and requires existing users to make a few changes to their code.
-
-## `CerbosBlockingClient` has been renamed to `CerbosClient`
-
-`CerbosBlockingClient` has been renamed to `CerbosClient` and it has support for async operations with the new 
-`CheckResourcesAsync` and `PlanResourcesAsync` methods.
-
-## Simpler `CerbosClientBuilder`
-
-`CerbosClientBuilder` has a static constructor and `hostname` is the only required parameter.
-```csharp
-var client = CerbosClientBuilder
-    .ForTarget("http://localhost:3593")
-    .WithPlaintext()
-    .Build();
-```
-
-## Rename `ResourceAction` to `ResourceEntry`
-
-Replace references to `ResourceAction` with `ResourceEntry`.
-
-## New `CheckResourcesRequest` and `PlanResourcesRequest` builder classes
-
-The `CheckResources` and `PlanResources` methods now require a `CheckResourcesRequest` or a `PlanResourcesRequest` 
-object respectively. They can be built using the new builder classes to construct `CheckResources` and `PlanResources`
-requests.
-
-```csharp
-var request = CheckResourcesRequest
-    .NewInstance()
-    .WithRequestId(RequestId.Generate())
-    .WithPrincipal(
-        Principal.NewInstance("john", "employee")
-            .WithPolicyVersion("20210210")
-            .WithAttribute("department", AttributeValue.StringValue("marketing"))
-    )
-    .WithResourceEntries(
-        ResourceEntry.NewInstance("leave_request", "XX125")
-            .WithPolicyVersion("20210210")
-            .WithAttribute("department", AttributeValue.StringValue("marketing"))
-    );
-```
-
-```csharp
-var request = PlanResourcesRequest
-    .NewInstance()
-    .WithRequestId(RequestId.Generate())
-    .WithPrincipal(
-        Principal.NewInstance("john", "employee")
-            .WithPolicyVersion("20210210")
-            .WithAttribute("department", AttributeValue.StringValue("marketing"))
-    )
-    .WithResource
-    (
-        Resource.NewInstance("leave_request")
-            .WithPolicyVersion("20210210")
-    )
-    .WithAction("approve");
-```
-
 > [!NOTE]  
 > Cerbos PDP v0.44.0 and onwards support specifying multiple actions with the following syntax: 
 > ```csharp
 > .WithActions("approve", "create")
-> ``` 
+> ```
+
+## Cerbos Hub
+
+### Creating a Cerbos Hub client
+
+```csharp
+using Cerbos.Sdk.Cloud.V1;
+
+var hubClient = HubClientBuilder
+    .FromEnv() // Gets clientId and clientSecret from environment variables CERBOS_HUB_CLIENT_ID and CERBOS_HUB_CLIENT_SECRET.
+    .Build();
+
+var storeId = Environment.GetEnvironmentVariable("CERBOS_HUB_STORE_ID");
+var storeClient = hubClient.StoreClient;
+```
+
+### GetFiles API
+
+```csharp
+using Cerbos.Sdk.Cloud.V1.Store;
+
+var request = GetFilesRequest.NewInstance(
+    storeId, 
+    "resource_policies/leave_request.yaml",
+    "resource_policies/purchase_order.yaml"
+);
+
+var response = StoreClient.GetFiles(request);
+```
+
+### ListFiles API
+
+```csharp
+using Cerbos.Sdk.Cloud.V1.Store;
+
+var request = ListFilesRequest
+    .NewInstance(storeId);
+
+var requestWithFilter = ListFilesRequest
+    .NewInstance(
+        storeId,
+        FileFilter.PathContains("resource_policies")
+    );
+
+var response = StoreClient.ListFiles(request);
+var filteredResponse = StoreClient.ListFiles(requestWithFilter);
+```
+
+### ModifyFiles API
+
+```csharp
+using Cerbos.Sdk.Cloud.V1.Store;
+
+var path = "./cerbos/policies/leave_request.yaml";
+var fullPath = Path.GetFullPath(path);
+var fileContents = System.IO.File.ReadAllBytes(fullPath);
+
+var requestAddOrUpdate = ModifyFilesRequest.WithChangeDetails(
+    storeId,
+    ChangeDetails.Internal("myApp/ModifyFiles/Op=AddOrUpdate", ChangeDetails.Types.Uploader.NewInstance("myApp"), ChangeDetails.Types.Internal.NewInstance("sdk")),
+    FileOp.AddOrUpdate(File.NewInstance(path, fileContents))
+);
+
+var requestDelete = ModifyFilesRequest.WithChangeDetails(
+    storeId,
+    ChangeDetails.Internal("myApp/ModifyFiles/Op=Delete", ChangeDetails.Types.Uploader.NewInstance("myApp"), ChangeDetails.Types.Internal.NewInstance("sdk")),
+    FileOp.Delete(path)
+);
+
+var responseAddOrUpdate = StoreClient.ModifyFiles(requestAddOrUpdate);
+var responseDelete = StoreClient.ModifyFiles(requestDelete);
+```
+
+### ReplaceFiles API
+
+```csharp
+using Cerbos.Sdk.Cloud.V1.Store;
+
+var path = "./cerbos/policies.zip";
+var fullPath = Path.GetFullPath(path);
+var policiesContents = System.IO.File.ReadAllBytes(fullPath);
+
+var request = ReplaceFilesRequest.WithZippedContents(
+    storeId,
+    policiesContents,
+    null,
+    ChangeDetails.Internal("myApp/ReplaceFiles/With=policies.zip", ChangeDetails.Types.Uploader.NewInstance("myApp"), ChangeDetails.Types.Internal.NewInstance("sdk"))
+);
+
+var response = StoreClient.ReplaceFiles(request);
+```
