@@ -198,14 +198,22 @@ var fileContents = System.IO.File.ReadAllBytes(fullPath);
 
 var requestAddOrUpdate = ModifyFilesRequest.WithChangeDetails(
     storeId,
-    ChangeDetails.Internal("myApp/ModifyFiles/Op=AddOrUpdate", ChangeDetails.Types.Uploader.NewInstance("myApp"), ChangeDetails.Types.Internal.NewInstance("sdk")),
-    FileOp.AddOrUpdate(File.NewInstance(path, fileContents))
+    ChangeDetails.Internal(
+        "myApp/ModifyFiles/Op=AddOrUpdate",
+        ChangeDetails.Types.Uploader.NewInstance("myApp"),
+        ChangeDetails.Types.Internal.NewInstance("sdk")
+    ),
+    FileOp.AddOrUpdate(File.NewInstance("policies/leave_request.yaml", fileContents))
 );
 
 var requestDelete = ModifyFilesRequest.WithChangeDetails(
     storeId,
-    ChangeDetails.Internal("myApp/ModifyFiles/Op=Delete", ChangeDetails.Types.Uploader.NewInstance("myApp"), ChangeDetails.Types.Internal.NewInstance("sdk")),
-    FileOp.Delete(path)
+    ChangeDetails.Internal(
+        "myApp/ModifyFiles/Op=Delete",
+        ChangeDetails.Types.Uploader.NewInstance("myApp"),
+        ChangeDetails.Types.Internal.NewInstance("sdk")
+    ),
+    FileOp.Delete("policies/leave_request.yaml")
 );
 
 var responseAddOrUpdate = StoreClient.ModifyFiles(requestAddOrUpdate);
@@ -225,7 +233,11 @@ var request = ReplaceFilesRequest.WithZippedContents(
     storeId,
     policiesContents,
     null,
-    ChangeDetails.Internal("myApp/ReplaceFiles/With=policies.zip", ChangeDetails.Types.Uploader.NewInstance("myApp"), ChangeDetails.Types.Internal.NewInstance("sdk"))
+    ChangeDetails.Internal(
+        "myApp/ReplaceFiles/With=policies.zip",
+        ChangeDetails.Types.Uploader.NewInstance("myApp"),
+        ChangeDetails.Types.Internal.NewInstance("sdk")
+    )
 );
 
 var response = StoreClient.ReplaceFiles(request);
