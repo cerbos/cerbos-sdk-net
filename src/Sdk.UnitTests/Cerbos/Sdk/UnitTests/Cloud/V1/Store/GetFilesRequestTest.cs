@@ -12,7 +12,7 @@ public class GetFilesRequestTest
     private const string File1 = "policy1.yaml";
 
     [Test]
-    public void GetFilesRequest()
+    public void NewInstance()
     {
         var request = Sdk.Cloud.V1.Store.GetFilesRequest.NewInstance(StoreId, [File, File1]).ToGetFilesRequest();
 

@@ -11,27 +11,21 @@ public class ListFilesRequestTest
     private const string File = "policy.yaml";
 
     [Test]
-    public void ListFilesRequest()
-    {
-        var stringMatch = Sdk.Cloud.V1.Store.StringMatch.NewInstance().
-            WithEquals(File);
-
-        var fileFilter = Sdk.Cloud.V1.Store.FileFilter.NewInstance().
-            WithPath(stringMatch);
-
-        var request = Sdk.Cloud.V1.Store.ListFilesRequest.NewInstance(StoreId).
-            WithFilter(fileFilter).
-            ToListFilesRequest();
-
-        Assert.That(request.StoreId, Is.EqualTo(StoreId));
-        Assert.That(request.Filter.Path.Equals_, Is.EqualTo(File));
-    }
-
-    [Test]
-    public void Optional()
+    public void NewInstance()
     {
         var request = Sdk.Cloud.V1.Store.ListFilesRequest.NewInstance(StoreId).ToListFilesRequest();
 
         Assert.That(request.StoreId, Is.EqualTo(StoreId));
+    }
+    
+    [Test]
+    public void WithFilter()
+    {
+        var fileFilter = Sdk.Cloud.V1.Store.FileFilter.PathEquals(File);
+
+        var request = Sdk.Cloud.V1.Store.ListFilesRequest.WithFilter(StoreId, fileFilter).ToListFilesRequest();
+
+        Assert.That(request.StoreId, Is.EqualTo(StoreId));
+        Assert.That(request.Filter.Path.Equals_, Is.EqualTo(File));
     }
 }

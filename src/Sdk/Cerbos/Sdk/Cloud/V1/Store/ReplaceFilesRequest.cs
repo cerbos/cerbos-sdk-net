@@ -16,40 +16,61 @@ namespace Cerbos.Sdk.Cloud.V1.Store
         private byte[] ZippedContents { get; set; }
         private ChangeDetails ChangeDetails { get; set; }
 
-        private ReplaceFilesRequest(string storeId)
+        private ReplaceFilesRequest(
+            string storeId,
+            Types.Condition condition = null,
+            byte[] zippedContents = null,
+            Types.Files files = null,
+            ChangeDetails changeDetails = null
+        )
         {
             StoreId = storeId;
-        }
-
-        public static ReplaceFilesRequest NewInstance(string storeId)
-        {
-            return new ReplaceFilesRequest(storeId);
-        }
-
-        public ReplaceFilesRequest WithCondition(Types.Condition condition)
-        {
             Condition = condition;
-            return this;
-        }
-
-        public ReplaceFilesRequest WithZippedContents(byte[] zippedContents)
-        {
-            ContentsOneOf = Api.Cloud.V1.Store.ReplaceFilesRequest.ContentsOneofCase.ZippedContents;
-            ZippedContents = zippedContents;
-            return this;
-        }
-
-        public ReplaceFilesRequest WithFiles(Types.Files files)
-        {
-            ContentsOneOf = Api.Cloud.V1.Store.ReplaceFilesRequest.ContentsOneofCase.Files;
-            Files = files;
-            return this;
-        }
-
-        public ReplaceFilesRequest WithChangeDetails(ChangeDetails changeDetails)
-        {
             ChangeDetails = changeDetails;
-            return this;
+            if (files != null)
+            {
+                ContentsOneOf = Api.Cloud.V1.Store.ReplaceFilesRequest.ContentsOneofCase.Files;
+                Files = files;
+            }
+            else if (zippedContents != null)
+            {
+                ContentsOneOf = Api.Cloud.V1.Store.ReplaceFilesRequest.ContentsOneofCase.ZippedContents;
+                ZippedContents = zippedContents;
+            }
+            else
+            {
+                throw new Exception("Either files or zippedContents must be specified");
+            }
+        }
+
+        public static ReplaceFilesRequest WithFiles(
+            string storeId,
+            Types.Files files,
+            Types.Condition condition = null,
+            ChangeDetails changeDetails = null
+        )
+        {
+            if (files == null)
+            {
+                throw new Exception("Specify non-null value for files");
+            }
+
+            return new ReplaceFilesRequest(storeId, condition, null, files, changeDetails);
+        }
+
+        public static ReplaceFilesRequest WithZippedContents(
+            string storeId,
+            byte[] zippedContents,
+            Types.Condition condition = null,
+            ChangeDetails changeDetails = null
+        )
+        {
+            if (zippedContents == null)
+            {
+                throw new Exception("Specify non-null value for zipped contents");
+            }
+
+            return new ReplaceFilesRequest(storeId, condition, zippedContents, null, changeDetails);
         }
 
         public Api.Cloud.V1.Store.ReplaceFilesRequest ToReplaceFilesRequest()
@@ -61,25 +82,11 @@ namespace Cerbos.Sdk.Cloud.V1.Store
 
             if (ContentsOneOf == Api.Cloud.V1.Store.ReplaceFilesRequest.ContentsOneofCase.Files)
             {
-                if (Files == null)
-                {
-                    throw new Exception("Specify non-null value for files");
-                }
-
                 request.Files = Files.ToFiles();
             }
             else if (ContentsOneOf == Api.Cloud.V1.Store.ReplaceFilesRequest.ContentsOneofCase.ZippedContents)
             {
-                if (ZippedContents == null)
-                {
-                    throw new Exception("Specify non-null value for zipped contents");
-                }
-
                 request.ZippedContents = Google.Protobuf.ByteString.CopyFrom(ZippedContents);
-            }
-            else
-            {
-                throw new Exception("Either addOrUpdate or delete operation must be specified");
             }
 
             if (ChangeDetails != null)
@@ -129,7 +136,7 @@ namespace Cerbos.Sdk.Cloud.V1.Store
                     F = new List<File>(files);
                 }
 
-                public static Files NewInstance(File[] files)
+                public static Files NewInstance(params File[] files)
                 {
                     return new Files(files);
                 }

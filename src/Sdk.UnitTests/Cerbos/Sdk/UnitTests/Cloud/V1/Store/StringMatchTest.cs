@@ -10,35 +10,28 @@ public class StringMatchTest
     private const string Something = "something";
 
     [Test]
-    public void StringMatchEquals()
+    public void Equals()
     {
-        var stringMatch = Sdk.Cloud.V1.Store.StringMatch.NewInstance().
-            WithEquals(Something)
-            .ToStringMatch();
+        var stringMatch = Sdk.Cloud.V1.Store.StringMatch.Equals(Something).ToStringMatch();
 
         Assert.That(stringMatch.Equals_, Is.EqualTo(Something));
     }
 
     [Test]
-    public void StringMatchIn()
+    public void In()
     {
-        var inList = Sdk.Cloud.V1.Store.StringMatch.Types.InList.NewInstance()
-            .WithValues(Something, Something);
-        var stringMatch = Sdk.Cloud.V1.Store.StringMatch.NewInstance().
-            WithIn(inList)
-            .ToStringMatch();
+        var inList = Sdk.Cloud.V1.Store.StringMatch.Types.InList.NewInstance().WithValues(Something, Something);
+        var stringMatch = Sdk.Cloud.V1.Store.StringMatch.In(inList).ToStringMatch();
 
         Assert.That(stringMatch.In, Is.EqualTo(inList.ToInList()));
     }
 
     [Test]
-    public void StringMatchLike()
+    public void Contains()
     {
-        var stringMatch = Sdk.Cloud.V1.Store.StringMatch.NewInstance().
-            WithLike(Something)
-            .ToStringMatch();
+        var stringMatch = Sdk.Cloud.V1.Store.StringMatch.Contains(Something).ToStringMatch();
 
-        Assert.That(stringMatch.Like, Is.EqualTo(Something));
+        Assert.That(stringMatch.Contains, Is.EqualTo(Something));
     }
 
     public static class Types

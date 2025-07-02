@@ -11,41 +11,71 @@ namespace Cerbos.Sdk.Cloud.V1.Store
     {
         private Api.Cloud.V1.Store.ChangeDetails.OriginOneofCase OneOf = Api.Cloud.V1.Store.ChangeDetails.OriginOneofCase.None;
         private string Description { get; set; }
-        private Types.Git Git { get; set; }
-        private Types.Internal Internal { get; set; }
+        private Types.Git Git_ { get; set; }
+        private Types.Internal Internal_ { get; set; }
         private Types.Uploader Uploader { get; set; }
 
-        private ChangeDetails(string description, Types.Uploader uploader)
+        private ChangeDetails(
+            string description,
+            Types.Uploader uploader,
+            Types.Git git = null,
+            Types.Internal internal_ = null
+        )
         {
+            if (uploader == null)
+            {
+                throw new Exception("Specify non-null value for uploader");
+            }
+
             Description = description;
             Uploader = uploader;
+
+            if (git != null)
+            {
+                OneOf = Api.Cloud.V1.Store.ChangeDetails.OriginOneofCase.Git;
+                Git_ = git;
+            }
+            else if (internal_ != null)
+            {
+                OneOf = Api.Cloud.V1.Store.ChangeDetails.OriginOneofCase.Internal;
+                Internal_ = internal_;
+            }
+            else
+            {
+                throw new Exception("Either git or internal origin must be specified");
+            }
         }
 
-        public static ChangeDetails NewInstance(string description, Types.Uploader uploader)
+        public static ChangeDetails Git(
+            string description,
+            Types.Uploader uploader,
+            Types.Git git
+        )
         {
-            return new ChangeDetails(description, uploader);
+            if (git == null)
+            {
+                throw new Exception("Specify non-null value for git");
+            }
+
+            return new ChangeDetails(description, uploader, git, null);
         }
 
-        public ChangeDetails WithGit(Types.Git git)
+        public static ChangeDetails Internal(
+            string description,
+            Types.Uploader uploader,
+            Types.Internal internal_
+        )
         {
-            Git = git;
-            OneOf = Api.Cloud.V1.Store.ChangeDetails.OriginOneofCase.Git;
-            return this;
-        }
+            if (internal_ == null)
+            {
+                throw new Exception("Specify non-null value for internal");
+            }
 
-        public ChangeDetails WithInternal(Types.Internal internal_)
-        {
-            Internal = internal_;
-            OneOf = Api.Cloud.V1.Store.ChangeDetails.OriginOneofCase.Internal;
-            return this;
+            return new ChangeDetails(description, uploader, null, internal_);
         }
 
         public Api.Cloud.V1.Store.ChangeDetails ToChangeDetails()
         {
-            if (OneOf == Api.Cloud.V1.Store.ChangeDetails.OriginOneofCase.None)
-            {
-                throw new Exception("Either internal or git origin must be specified");
-            }
 
             var changeDetails = new Api.Cloud.V1.Store.ChangeDetails
             {
@@ -55,21 +85,11 @@ namespace Cerbos.Sdk.Cloud.V1.Store
 
             if (OneOf == Api.Cloud.V1.Store.ChangeDetails.OriginOneofCase.Git)
             {
-                if (Git == null)
-                {
-                    throw new Exception("Specify non-null value for git origin");
-                }
-
-                changeDetails.Git = Git.ToGit();
+                changeDetails.Git = Git_.ToGit();
             }
             else if (OneOf == Api.Cloud.V1.Store.ChangeDetails.OriginOneofCase.Internal)
             {
-                if (Internal == null)
-                {
-                    throw new Exception("Specify non-null value for internal origin");
-                }
-
-                changeDetails.Internal = Internal.ToInternal();
+                changeDetails.Internal = Internal_.ToInternal();
             }
 
             return changeDetails;

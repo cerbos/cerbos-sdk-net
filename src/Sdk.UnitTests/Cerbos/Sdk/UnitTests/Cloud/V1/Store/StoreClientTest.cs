@@ -176,19 +176,21 @@ public class StoreClientTest
 
         var fileContents = System.IO.File.ReadAllBytes(Path.GetFullPath(PathToTemporaryPolicyFile));
         var response = StoreClient.ModifyFiles(
-            ModifyFilesRequest.NewInstance(StoreId, [FileOp.NewInstance().WithAddOrUpdate(File.NewInstance("temporary_policies/temporary.yaml", fileContents))]).
-                WithChangeDetails(
-                    ChangeDetails.NewInstance("cerbos-sdk-net/ModifyFiles/Op=AddOrUpdate", ChangeDetails.Types.Uploader.NewInstance("cerbos-sdk-net")).WithInternal(ChangeDetails.Types.Internal.NewInstance("sdk"))
-                )
+            ModifyFilesRequest.WithChangeDetails(
+                StoreId,
+                ChangeDetails.Internal("cerbos-sdk-net/ModifyFiles/Op=AddOrUpdate", ChangeDetails.Types.Uploader.NewInstance("cerbos-sdk-net"), ChangeDetails.Types.Internal.NewInstance("sdk")),
+                FileOp.AddOrUpdate(File.NewInstance("temporary_policies/temporary.yaml", fileContents))
+            )
         );
 
         Assert.That(response.NewStoreVersion, Is.EqualTo(initialStoreVersion + 1));
 
         response = StoreClient.ModifyFiles(
-            ModifyFilesRequest.NewInstance(StoreId, [FileOp.NewInstance().WithDelete("temporary_policies/temporary.yaml")]).
-                WithChangeDetails(
-                    ChangeDetails.NewInstance("cerbos-sdk-net/ModifyFiles/Op=Delete", ChangeDetails.Types.Uploader.NewInstance("cerbos-sdk-net")).WithInternal(ChangeDetails.Types.Internal.NewInstance("sdk"))
-                )
+            ModifyFilesRequest.WithChangeDetails(
+                StoreId,
+                ChangeDetails.Internal("cerbos-sdk-net/ModifyFiles/Op=Delete", ChangeDetails.Types.Uploader.NewInstance("cerbos-sdk-net"), ChangeDetails.Types.Internal.NewInstance("sdk")),
+                FileOp.Delete("temporary_policies/temporary.yaml")
+            )
         );
 
         Assert.That(response.NewStoreVersion, Is.EqualTo(initialStoreVersion + 2));
@@ -203,19 +205,21 @@ public class StoreClientTest
 
         var fileContents = System.IO.File.ReadAllBytes(Path.GetFullPath(PathToTemporaryPolicyFile));
         var response = await StoreClient.ModifyFilesAsync(
-            ModifyFilesRequest.NewInstance(StoreId, [FileOp.NewInstance().WithAddOrUpdate(File.NewInstance("temporary_policies/temporary.yaml", fileContents))]).
-                WithChangeDetails(
-                    ChangeDetails.NewInstance("cerbos-sdk-net/ModifyFilesAsync/Op=AddOrUpdate", ChangeDetails.Types.Uploader.NewInstance("cerbos-sdk-net")).WithInternal(ChangeDetails.Types.Internal.NewInstance("sdk"))
-                )
+            ModifyFilesRequest.WithChangeDetails(
+                StoreId,
+                ChangeDetails.Internal("cerbos-sdk-net/ModifyFilesAsync/Op=AddOrUpdate", ChangeDetails.Types.Uploader.NewInstance("cerbos-sdk-net"), ChangeDetails.Types.Internal.NewInstance("sdk")),
+                FileOp.AddOrUpdate(File.NewInstance("temporary_policies/temporary.yaml", fileContents))
+            )
         );
 
         Assert.That(response.NewStoreVersion, Is.EqualTo(initialStoreVersion + 1));
 
         response = await StoreClient.ModifyFilesAsync(
-            ModifyFilesRequest.NewInstance(StoreId, [FileOp.NewInstance().WithDelete("temporary_policies/temporary.yaml")]).
-                WithChangeDetails(
-                    ChangeDetails.NewInstance("cerbos-sdk-net/ModifyFilesAsync/Op=Delete", ChangeDetails.Types.Uploader.NewInstance("cerbos-sdk-net")).WithInternal(ChangeDetails.Types.Internal.NewInstance("sdk"))
-                )
+            ModifyFilesRequest.WithChangeDetails(
+                StoreId,
+                ChangeDetails.Internal("cerbos-sdk-net/ModifyFilesAsync/Op=Delete", ChangeDetails.Types.Uploader.NewInstance("cerbos-sdk-net"), ChangeDetails.Types.Internal.NewInstance("sdk")),
+                FileOp.Delete("temporary_policies/temporary.yaml")
+            )
         );
 
         Assert.That(response.NewStoreVersion, Is.EqualTo(initialStoreVersion + 2));
@@ -230,26 +234,24 @@ public class StoreClientTest
 
         var temporaryContents = System.IO.File.ReadAllBytes(Path.GetFullPath(PathToTemporaryContents));
         var response = StoreClient.ReplaceFiles(
-            ReplaceFilesRequest.NewInstance(StoreId).
-                WithChangeDetails(
-                    ChangeDetails.NewInstance("cerbos-sdk-net/ReplaceFiles/With=temporary.zip", ChangeDetails.Types.Uploader.NewInstance("cerbos-sdk-net")).WithInternal(ChangeDetails.Types.Internal.NewInstance("sdk"))
-                ).
-                WithZippedContents(
-                    temporaryContents
-                )
+            ReplaceFilesRequest.WithZippedContents(
+                StoreId,
+                temporaryContents,
+                null,
+                ChangeDetails.Internal("cerbos-sdk-net/ReplaceFiles/With=temporary.zip", ChangeDetails.Types.Uploader.NewInstance("cerbos-sdk-net"), ChangeDetails.Types.Internal.NewInstance("sdk"))
+            )
         );
 
         Assert.That(response.NewStoreVersion, Is.EqualTo(initialStoreVersion + 1));
 
         var storeContents = System.IO.File.ReadAllBytes(Path.GetFullPath(PathToStoreContents));
         response = StoreClient.ReplaceFiles(
-            ReplaceFilesRequest.NewInstance(StoreId).
-                WithChangeDetails(
-                    ChangeDetails.NewInstance("cerbos-sdk-net/ReplaceFiles/With=store.zip", ChangeDetails.Types.Uploader.NewInstance("cerbos-sdk-net")).WithInternal(ChangeDetails.Types.Internal.NewInstance("sdk"))
-                ).
-                WithZippedContents(
-                    storeContents
-                )
+            ReplaceFilesRequest.WithZippedContents(
+                StoreId,
+                storeContents,
+                null,
+                ChangeDetails.Internal("cerbos-sdk-net/ReplaceFiles/With=store.zip", ChangeDetails.Types.Uploader.NewInstance("cerbos-sdk-net"), ChangeDetails.Types.Internal.NewInstance("sdk"))
+            )
         );
 
         Assert.That(response.NewStoreVersion, Is.EqualTo(initialStoreVersion + 2));
@@ -264,26 +266,24 @@ public class StoreClientTest
 
         var temporaryContents = System.IO.File.ReadAllBytes(Path.GetFullPath(PathToTemporaryContents));
         var response = StoreClient.ReplaceFiles(
-            ReplaceFilesRequest.NewInstance(StoreId).
-                WithChangeDetails(
-                    ChangeDetails.NewInstance("cerbos-sdk-net/ReplaceFilesAsync/With=temporary.zip", ChangeDetails.Types.Uploader.NewInstance("cerbos-sdk-net")).WithInternal(ChangeDetails.Types.Internal.NewInstance("sdk"))
-                ).
-                WithZippedContents(
-                    temporaryContents
-                )
+            ReplaceFilesRequest.WithZippedContents(
+                StoreId,
+                temporaryContents,
+                null,
+                ChangeDetails.Internal("cerbos-sdk-net/ReplaceFilesAsync/With=temporary.zip", ChangeDetails.Types.Uploader.NewInstance("cerbos-sdk-net"), ChangeDetails.Types.Internal.NewInstance("sdk"))
+            )
         );
 
         Assert.That(response.NewStoreVersion, Is.EqualTo(initialStoreVersion + 1));
 
         var storeContents = System.IO.File.ReadAllBytes(Path.GetFullPath(PathToStoreContents));
         response = StoreClient.ReplaceFiles(
-            ReplaceFilesRequest.NewInstance(StoreId).
-                WithChangeDetails(
-                    ChangeDetails.NewInstance("cerbos-sdk-net/ReplaceFilesAsync/With=store.zip", ChangeDetails.Types.Uploader.NewInstance("cerbos-sdk-net")).WithInternal(ChangeDetails.Types.Internal.NewInstance("sdk"))
-                ).
-                WithZippedContents(
-                    storeContents
-                )
+            ReplaceFilesRequest.WithZippedContents(
+                StoreId,
+                storeContents,
+                null,
+                ChangeDetails.Internal("cerbos-sdk-net/ReplaceFilesAsync/With=store.zip", ChangeDetails.Types.Uploader.NewInstance("cerbos-sdk-net"), ChangeDetails.Types.Internal.NewInstance("sdk"))
+            )
         );
 
         Assert.That(response.NewStoreVersion, Is.EqualTo(initialStoreVersion + 2));
