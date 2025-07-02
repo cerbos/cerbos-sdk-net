@@ -25,35 +25,23 @@ public class StoreClientTest
     [OneTimeSetUp]
     public void OneTimeSetUp()
     {
-        var apiEndpoint = Environment.GetEnvironmentVariable("CERBOS_HUB_API_ENDPOINT");
-        if (apiEndpoint == null)
+        if (
+            string.IsNullOrEmpty(Environment.GetEnvironmentVariable("CERBOS_HUB_API_ENDPOINT"))
+            || string.IsNullOrEmpty(Environment.GetEnvironmentVariable("CERBOS_HUB_CLIENT_ID"))
+            || string.IsNullOrEmpty(Environment.GetEnvironmentVariable("CERBOS_HUB_CLIENT_SECRET"))
+        )
         {
-            Assert.Ignore("Skipping the test, CERBOS_HUB_API_ENDPOINT environment variable is not set!");
-        }
-
-        var clientId = Environment.GetEnvironmentVariable("CERBOS_HUB_CLIENT_ID");
-        if (clientId == null)
-        {
-            Assert.Ignore("Skipping the test, CERBOS_HUB_CLIENT_ID environment variable is not set!");
-        }
-
-        var clientSecret = Environment.GetEnvironmentVariable("CERBOS_HUB_CLIENT_SECRET");
-        if (clientSecret == null)
-        {
-            Assert.Ignore("Skipping the test, CERBOS_HUB_CLIENT_SECRET environment variable is not set!");
+            Assert.Ignore("Skipping the test because CERBOS_HUB_API_ENDPOINT, CERBOS_HUB_CLIENT_ID or CERBOS_HUB_CLIENT_SECRET environment variables must be specified");
         }
 
         var storeId = Environment.GetEnvironmentVariable("CERBOS_HUB_STORE_ID");
         if (storeId == null)
         {
-            Assert.Ignore("Skipping the test, CERBOS_HUB_STORE_ID environment variable is not set!");
+            Assert.Ignore("Skipping the test because CERBOS_HUB_STORE_ID environment variable must be specified");
         }
         StoreId = storeId;
 
-        var hubClient = HubClientBuilder.
-            ForTarget(apiEndpoint).
-            WithCredentials(clientId, clientSecret).
-            Build();
+        var hubClient = HubClientBuilder.FromEnv().Build();
 
         StoreClient = hubClient.StoreClient;
 

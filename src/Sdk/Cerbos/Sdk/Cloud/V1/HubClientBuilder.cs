@@ -18,35 +18,51 @@ namespace Cerbos.Sdk.Cloud.V1
     {
         private string Target { get; }
         private Credentials Credentials { get; set; }
+        private const string DefaultTarget = "https://api.cerbos.cloud";
 
-        private HubClientBuilder(string target)
+        private HubClientBuilder(string target, string clientId, string clientSecret)
         {
             Target = target;
-        }
-
-        public static HubClientBuilder ForTarget(string target)
-        {
-            return new HubClientBuilder(target);
-        }
-
-        public HubClientBuilder WithCredentials(string clientId, string clientSecret)
-        {
             Credentials = new Credentials(clientId, clientSecret);
-            return this;
+        }
+
+        public static HubClientBuilder FromEnv()
+        {
+            var target = EnvOrDefault("CERBOS_HUB_API_ENDPOINT", DefaultTarget);
+            var clientId = EnvOrDefault("CERBOS_HUB_CLIENT_ID", "");
+            var clientSecret = EnvOrDefault("CERBOS_HUB_CLIENT_SECRET", "");
+            if (string.IsNullOrEmpty(clientId) && string.IsNullOrEmpty(clientSecret))
+            {
+                throw new Exception("CERBOS_HUB_CLIENT_ID and CERBOS_HUB_CLIENT_SECRET environment variables must be specified");
+            }
+
+            return new HubClientBuilder(target, clientId, clientSecret);
+        }
+
+        public static HubClientBuilder FromCredentials(string clientId, string clientSecret)
+        {
+            var target = EnvOrDefault("CERBOS_HUB_API_ENDPOINT", DefaultTarget);
+            if (string.IsNullOrEmpty(clientId) && string.IsNullOrEmpty(clientSecret))
+            {
+                throw new Exception("ClientId and clientSecret must be specified");
+            }
+
+            return new HubClientBuilder(target, clientId, clientSecret);
+        }
+
+        private static string EnvOrDefault(string environment, string defaultValue)
+        {
+            var value = Environment.GetEnvironmentVariable(environment);
+            if (!string.IsNullOrEmpty(value))
+            {
+                return value;
+            }
+
+            return defaultValue;
         }
 
         public IHubClient Build()
         {
-            if (string.IsNullOrEmpty(Target))
-            {
-                throw new Exception("Target must be specified");
-            }
-
-            if (Credentials == null)
-            {
-                throw new Exception("Credentials must be specified");
-            }
-
             var channelOptions = new GrpcChannelOptions
             {
                 ServiceConfig = new ServiceConfig
