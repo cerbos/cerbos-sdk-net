@@ -1,0 +1,64 @@
+name: Release
+
+on:
+  push:
+    tags:        
+      - 'v*'
+
+jobs:
+  release:
+    name: Release NuGeT package
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add mask for NUGET_API_KEY
+        run: |
+          echo "::add-mask::${{ secrets.NUGET_API_KEY }}" 
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+          
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        env:
+          DOTNET_NOLOGO: true
+          DOTNET_CLI_TELEMETRY_OPTOUT: true
+        with:
+          dotnet-version: |
+            2.0.x
+            2.1.x
+            8.0.x
+      
+      - name: Setup Buf
+        uses: bufbuild/buf-action@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          setup_only: true
+          token: ${{ secrets.BUF_TOKEN }}
+
+      - name: Set sdk.csproj version to current tag
+        uses: KageKirin/set-csproj-version@v0
+        with:
+          file: src/Sdk/sdk.csproj
+          version: ${{ github.ref_name }}
+
+      - name: Build the NuGeT package
+        uses: cake-build/cake-action@v3
+        env:
+          BUF_TOKEN: ${{ secrets.BUF_TOKEN }}
+        with:
+          cake-bootstrap: true
+          target: Pack
+
+      - name: Check repo status
+        run: |-
+          REPO_STATUS="$(git status --porcelain)"
+          if [[ ! -z $REPO_STATUS ]]; then
+            echo "::error::Uncommitted changes detected"
+            echo "$REPO_STATUS"
+            exit 1
+          fi
+
+      - name: Publish generated NuGeT package
+        run: dotnet nuget push ./src/Sdk/bin/Release/Cerbos.Sdk.*.nupkg -s https://api.nuget.org/v3/index.json -k ${{ secrets.NUGET_API_KEY }} --skip-duplicate --no-symbols /p:Version=${{ github.ref_name }}
