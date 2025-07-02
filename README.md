@@ -132,70 +132,8 @@ else {
 }
 ```
 
-# Upgrading from v0.2.x
-
-v1.0.0 of the SDK contains some breaking API changes and requires existing users to make a few changes to their code.
-
-## `CerbosBlockingClient` has been renamed to `CerbosClient`
-
-`CerbosBlockingClient` has been renamed to `CerbosClient` and it has support for async operations with the new 
-`CheckResourcesAsync` and `PlanResourcesAsync` methods.
-
-## Simpler `CerbosClientBuilder`
-
-`CerbosClientBuilder` has a static constructor and `hostname` is the only required parameter.
-```csharp
-var client = CerbosClientBuilder
-    .ForTarget("http://localhost:3593")
-    .WithPlaintext()
-    .Build();
-```
-
-## Rename `ResourceAction` to `ResourceEntry`
-
-Replace references to `ResourceAction` with `ResourceEntry`.
-
-## New `CheckResourcesRequest` and `PlanResourcesRequest` builder classes
-
-The `CheckResources` and `PlanResources` methods now require a `CheckResourcesRequest` or a `PlanResourcesRequest` 
-object respectively. They can be built using the new builder classes to construct `CheckResources` and `PlanResources`
-requests.
-
-```csharp
-var request = CheckResourcesRequest
-    .NewInstance()
-    .WithRequestId(RequestId.Generate())
-    .WithPrincipal(
-        Principal.NewInstance("john", "employee")
-            .WithPolicyVersion("20210210")
-            .WithAttribute("department", AttributeValue.StringValue("marketing"))
-    )
-    .WithResourceEntries(
-        ResourceEntry.NewInstance("leave_request", "XX125")
-            .WithPolicyVersion("20210210")
-            .WithAttribute("department", AttributeValue.StringValue("marketing"))
-    );
-```
-
-```csharp
-var request = PlanResourcesRequest
-    .NewInstance()
-    .WithRequestId(RequestId.Generate())
-    .WithPrincipal(
-        Principal.NewInstance("john", "employee")
-            .WithPolicyVersion("20210210")
-            .WithAttribute("department", AttributeValue.StringValue("marketing"))
-    )
-    .WithResource
-    (
-        Resource.NewInstance("leave_request")
-            .WithPolicyVersion("20210210")
-    )
-    .WithAction("approve");
-```
-
 > [!NOTE]  
 > Cerbos PDP v0.44.0 and onwards support specifying multiple actions with the following syntax: 
 > ```csharp
 > .WithActions("approve", "create")
-> ``` 
+> ```
