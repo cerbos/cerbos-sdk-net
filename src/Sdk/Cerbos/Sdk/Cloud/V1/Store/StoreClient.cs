@@ -4,6 +4,7 @@
 using System;
 using System.Threading.Tasks;
 using Cerbos.Api.Cloud.V1.Store;
+using Grpc.Core;
 
 namespace Cerbos.Sdk.Cloud.V1.Store
 {
@@ -45,6 +46,11 @@ namespace Cerbos.Sdk.Cloud.V1.Store
                     );
                 });
             }
+            catch (RpcException e)
+            {
+                ErrorDetailException.FromTrailers(e.Message, e.Trailers);
+                throw;
+            }
             catch (Exception e)
             {
                 throw new Exception($"Failed to get files: ${e}");
@@ -60,6 +66,11 @@ namespace Cerbos.Sdk.Cloud.V1.Store
                         return await Client.GetFilesAsync(request.ToGetFilesRequest()).ResponseAsync.ContinueWith(r => new GetFilesResponse(r.Result));
                     }
                 ).AsTask();
+            }
+            catch (RpcException e)
+            {
+                ErrorDetailException.FromTrailers(e.Message, e.Trailers);
+                throw;
             }
             catch (Exception e)
             {
@@ -80,6 +91,11 @@ namespace Cerbos.Sdk.Cloud.V1.Store
                     );
                 });
             }
+            catch (RpcException e)
+            {
+                ErrorDetailException.FromTrailers(e.Message, e.Trailers);
+                throw;
+            }
             catch (Exception e)
             {
                 throw new Exception($"Failed to list files: ${e}");
@@ -95,6 +111,11 @@ namespace Cerbos.Sdk.Cloud.V1.Store
                         return await Client.ListFilesAsync(request.ToListFilesRequest()).ResponseAsync.ContinueWith(r => new ListFilesResponse(r.Result));
                     }
                 ).AsTask();
+            }
+            catch (RpcException e)
+            {
+                ErrorDetailException.FromTrailers(e.Message, e.Trailers);
+                throw;
             }
             catch (Exception e)
             {
@@ -115,6 +136,11 @@ namespace Cerbos.Sdk.Cloud.V1.Store
                     );
                 });
             }
+            catch (RpcException e)
+            {
+                ErrorDetailException.FromTrailers(e.Message, e.Trailers);
+                throw;
+            }
             catch (Exception e)
             {
                 throw new Exception($"Failed to modify files: ${e}");
@@ -130,6 +156,11 @@ namespace Cerbos.Sdk.Cloud.V1.Store
                         return await Client.ModifyFilesAsync(request.ToModifyFilesRequest()).ResponseAsync.ContinueWith(r => new ModifyFilesResponse(r.Result));
                     }
                 ).AsTask();
+            }
+            catch (RpcException e)
+            {
+                ErrorDetailException.FromTrailers(e.Message, e.Trailers);
+                throw;
             }
             catch (Exception e)
             {
@@ -150,6 +181,11 @@ namespace Cerbos.Sdk.Cloud.V1.Store
                     );
                 });
             }
+            catch (RpcException e)
+            {
+                ErrorDetailException.FromTrailers(e.Message, e.Trailers);
+                throw;
+            }
             catch (Exception e)
             {
                 throw new Exception($"Failed to replace files: ${e}");
@@ -165,6 +201,11 @@ namespace Cerbos.Sdk.Cloud.V1.Store
                         return await Client.ReplaceFilesAsync(request.ToReplaceFilesRequest()).ResponseAsync.ContinueWith(r => new ReplaceFilesResponse(r.Result));
                     }
                 ).AsTask();
+            }
+            catch (RpcException e)
+            {
+                ErrorDetailException.FromTrailers(e.Message, e.Trailers);
+                throw;
             }
             catch (Exception e)
             {
