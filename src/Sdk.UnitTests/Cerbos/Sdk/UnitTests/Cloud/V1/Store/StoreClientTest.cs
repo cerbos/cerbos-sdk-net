@@ -45,6 +45,24 @@ public class StoreClientTest
 
         StoreClient = hubClient.StoreClient;
 
+        // Reset the store contents before starting the tests.
+        var storeContents = System.IO.File.ReadAllBytes(Path.GetFullPath(PathToStoreContents));
+        try
+        {
+            StoreClient.ReplaceFiles(
+                ReplaceFilesRequest.WithZippedContents(
+                    StoreId,
+                    storeContents,
+                    null,
+                    ChangeDetails.Internal("cerbos-sdk-net/ResetStoreContents/With=store.zip", ChangeDetails.Types.Uploader.NewInstance("cerbos-sdk-net"), ChangeDetails.Types.Internal.NewInstance("sdk"))
+                )
+            );
+        }
+        catch (Exception e)
+        {
+            TestContext.Out.WriteLine(e.ToString());
+        }
+
         ExpectedFiles =
         [
             "_schemas/principal.json",
