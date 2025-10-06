@@ -1,13 +1,13 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "commitMessageLowerCase": "never",
   "extends": [
-    "config:recommended",
-    "group:allNonMajor",
-    "schedule:monthly",
     ":automergeDisabled",
-    ":combinePatchMinorReleases",
+    "config:recommended",
     ":gitSignOff",
+    "group:allNonMajor",
     ":renovatePrefix",
+    "schedule:monthly",
     ":semanticCommitTypeAll(chore)",
     ":separateMultipleMajorReleases"
   ],
