@@ -3,6 +3,7 @@
 
 using Cerbos.Api.V1.Engine;
 using Cerbos.Sdk.Builder;
+using Cerbos.Sdk.Response;
 using Cerbos.Sdk.Utility;
 using DotNet.Testcontainers.Builders;
 using DotNet.Testcontainers.Containers;
@@ -24,7 +25,7 @@ namespace Cerbos.Sdk.UnitTests
         private readonly Grpc.Core.Metadata _metadata = new() { { "wibble", "wobble" } };
 
         private IContainer? _container;
-        
+
         private ICerbosClient? _client;
         private ICerbosClient? _clientPlayground;
 
@@ -32,7 +33,7 @@ namespace Cerbos.Sdk.UnitTests
             "eyJhbGciOiJFUzM4NCIsImtpZCI6IjE5TGZaYXRFZGc4M1lOYzVyMjNndU1KcXJuND0iLCJ0eXAiOiJKV1QifQ.eyJhdWQiOlsiY2VyYm9zLWp3dC10ZXN0cyJdLCJjdXN0b21BcnJheSI6WyJBIiwiQiIsIkMiXSwiY3VzdG9tSW50Ijo0MiwiY3VzdG9tTWFwIjp7IkEiOiJBQSIsIkIiOiJCQiIsIkMiOiJDQyJ9LCJjdXN0b21TdHJpbmciOiJmb29iYXIiLCJleHAiOjE5NTAyNzc5MjYsImlzcyI6ImNlcmJvcy10ZXN0LXN1aXRlIn0._nCHIsuFI3wczeuUv_xjSwaVnIQUdYA9sGf_jVsrsDWloLs3iPWDaA1bXpuIUJVsi8-G6qqdrPI0cOBxEocg1NCm8fyD9T_3hsZV0fYWon_Je6Kl93a3JIW3S6kbvjsL";
         private const string PlaygroundHost = "https://demo-pdp.cerbos.cloud";
         private const string PlaygroundInstanceId = "XhkOi82fFKk3YW60e2c806Yvm0trKEje"; // See: https://play.cerbos.dev/p/XhkOi82fFKk3YW60e2c806Yvm0trKEje
-        
+
         [OneTimeSetUp]
         public void OneTimeSetUp()
         {
@@ -82,26 +83,26 @@ namespace Cerbos.Sdk.UnitTests
                         .WithActions("approve", "view:public")
                 )
                 .WithIncludeMeta(true);
-            
+
             var have = _client.CheckResources(request, _metadata).Find("XX125");
             Assert.That(have.IsAllowed("view:public"), Is.True);
             Assert.That(have.IsAllowed("approve"), Is.False);
-            
+
             Assert.That(have.Meta, Is.Not.Null);
             Assert.That(have.Outputs, Is.Not.Null);
             Assert.That(have.Resource, Is.Not.Null);
 
             Assert.That(have.Meta.Actions["approve"].MatchedPolicy, Is.EqualTo("resource.leave_request.v20210210"));
-            
+
             Assert.That(have.Outputs.Get("resource.leave_request.v20210210#public-view"), Is.Not.Null);
             Assert.That(have.Outputs.Get("resource.leave_request.v20210210#public-view").StringValue, Is.EqualTo("view:public:john"));
-            
+
             Assert.That(have.Resource.Id, Is.EqualTo("XX125"));
             Assert.That(have.Resource.Kind, Is.EqualTo("leave_request"));
             Assert.That(have.Resource.Scope, Is.EqualTo(""));
             Assert.That(have.Resource.PolicyVersion, Is.EqualTo("20210210"));
         }
-        
+
         [Test]
         public void CheckWithJwt()
         {
@@ -127,11 +128,11 @@ namespace Cerbos.Sdk.UnitTests
                         .WithAttribute("owner", AttributeValue.StringValue("john"))
                         .WithActions("defer")
                 );
-            
+
             var have = _client.CheckResources(request, _metadata).Find("XX125");
             Assert.That(have.IsAllowed("defer"), Is.True);
         }
-        
+
         [Test]
         public void CheckMultiple()
         {
@@ -182,7 +183,7 @@ namespace Cerbos.Sdk.UnitTests
             Assert.That(resourcexx125.IsAllowed("view:public"), Is.True);
             Assert.That(resourcexx125.IsAllowed("defer"), Is.True);
             Assert.That(resourcexx125.IsAllowed("approve"), Is.False);
-            
+
             var resourcexx225 = have.Find("XX225");
             Assert.That(resourcexx225.IsAllowed("view:public"), Is.True);
             Assert.That(resourcexx225.IsAllowed("approve"), Is.False);
@@ -214,7 +215,7 @@ namespace Cerbos.Sdk.UnitTests
                 )
                 .WithActions("approve");
 
-            
+
             var have = _client.PlanResources(request, _metadata);
             Assert.That(have.Actions[0], Is.EqualTo("approve"));
             Assert.That(have.PolicyVersion, Is.EqualTo("20210210"));
@@ -226,19 +227,19 @@ namespace Cerbos.Sdk.UnitTests
 
             PlanResourcesFilter.Types.Expression.Types.Operand cond = have.Filter.Condition;
             PlanResourcesFilter.Types.Expression expr = cond.Expression;
-            
+
             Assert.That(expr, !Is.Null);
             Assert.That(expr.Operator, Is.EqualTo("and"));
 
             PlanResourcesFilter.Types.Expression argExpr = expr.Operands[0].Expression;
             Assert.That(argExpr, !Is.Null);
             Assert.That(argExpr.Operator, Is.EqualTo("eq"));
-            
+
             PlanResourcesFilter.Types.Expression argExpr1 = expr.Operands[1].Expression;
             Assert.That(argExpr1, !Is.Null);
             Assert.That(argExpr1.Operator, Is.EqualTo("eq"));
         }
-        
+
         [Test]
         public void PlanResourcesValidation()
         {
@@ -261,15 +262,15 @@ namespace Cerbos.Sdk.UnitTests
                         .WithAttribute("department", AttributeValue.StringValue("accounting"))
                 )
                 .WithActions("approve");
-            
+
             var have = _client.PlanResources(request, _metadata);
             Assert.That(have.Actions[0], Is.EqualTo("approve"));
             Assert.That(have.PolicyVersion, Is.EqualTo("20210210"));
             Assert.That(have.ResourceKind, Is.EqualTo("leave_request"));
-            
+
             Assert.That(have.HasValidationErrors(), Is.True);
             Assert.That(have.ValidationErrors.Count, Is.EqualTo(2));
-            
+
             Assert.That(have.IsAlwaysDenied(), Is.True);
             Assert.That(have.IsAlwaysAllowed(), Is.False);
             Assert.That(have.IsConditional(), Is.False);
@@ -285,7 +286,7 @@ namespace Cerbos.Sdk.UnitTests
                 .WithPrincipal(
                     Principal.NewInstance("sajit", "ADMIN")
                         .WithAttributes(
-                            new Dictionary<string, AttributeValue> 
+                            new Dictionary<string, AttributeValue>
                             {
                                 {"department", AttributeValue.StringValue("IT")}
                             }
@@ -308,7 +309,7 @@ namespace Cerbos.Sdk.UnitTests
             Assert.That(have.IsAllowed("approve"), Is.True);
             Assert.That(have.IsAllowed("delete"), Is.True);
         }
-        
+
         [Test]
         public async Task CheckWithoutJwtAsync()
         {
@@ -338,20 +339,46 @@ namespace Cerbos.Sdk.UnitTests
             var have = (await _client.CheckResourcesAsync(request, _metadata)).Find("XX125");
             Assert.That(have.IsAllowed("view:public"), Is.True);
             Assert.That(have.IsAllowed("approve"), Is.False);
-            
+
             Assert.That(have.Meta, Is.Not.Null);
             Assert.That(have.Outputs, Is.Not.Null);
             Assert.That(have.Resource, Is.Not.Null);
 
             Assert.That(have.Meta.Actions["approve"].MatchedPolicy, Is.EqualTo("resource.leave_request.v20210210"));
-            
+
             Assert.That(have.Outputs.Get("resource.leave_request.v20210210#public-view"), Is.Not.Null);
             Assert.That(have.Outputs.Get("resource.leave_request.v20210210#public-view").StringValue, Is.EqualTo("view:public:john"));
-            
+
             Assert.That(have.Resource.Id, Is.EqualTo("XX125"));
             Assert.That(have.Resource.Kind, Is.EqualTo("leave_request"));
             Assert.That(have.Resource.Scope, Is.EqualTo(""));
             Assert.That(have.Resource.PolicyVersion, Is.EqualTo("20210210"));
+        }
+
+        [Test]
+        public void CheckHealth()
+        {
+            var request = HealthCheckRequest.NewInstance(HealthCheckRequest.Types.Service.Cerbos);
+
+            var have = _client.CheckHealth(request, _metadata);
+            Assert.That(have.Status, Is.EqualTo(HealthCheckResponse.Types.ServiceStatus.Serving));
+
+            request = HealthCheckRequest.NewInstance(HealthCheckRequest.Types.Service.Admin);
+            have = _client.CheckHealth(request, _metadata);
+            Assert.That(have.Status, Is.EqualTo(HealthCheckResponse.Types.ServiceStatus.Disabled));
+        }
+
+        [Test]
+        public async Task CheckHealthAsync()
+        {
+            var request = HealthCheckRequest.NewInstance(HealthCheckRequest.Types.Service.Cerbos);
+
+            var have = await _client.CheckHealthAsync(request, _metadata);
+            Assert.That(have.Status, Is.EqualTo(HealthCheckResponse.Types.ServiceStatus.Serving));
+
+            request = HealthCheckRequest.NewInstance(HealthCheckRequest.Types.Service.Admin);
+            have = _client.CheckHealth(request, _metadata);
+            Assert.That(have.Status, Is.EqualTo(HealthCheckResponse.Types.ServiceStatus.Disabled));
         }
     }
 }

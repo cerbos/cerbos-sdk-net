@@ -10,12 +10,12 @@ namespace Cerbos.Sdk.Response
     public sealed class PlanResourcesResponse
     {
         private Api.V1.Response.PlanResourcesResponse R { get; }
-        
-        #pragma warning disable CS0612
+
+#pragma warning disable CS0612
         [Obsolete("Use Actions instead.")]
-        public string Action => R.Action;        
-        #pragma warning restore CS0612
-        public List<string> Actions => R.Actions.ToList();        
+        public string Action => R.Action;
+#pragma warning restore CS0612
+        public List<string> Actions => R.Actions.ToList();
         public Api.V1.Engine.PlanResourcesFilter Filter => R.Filter;
         public Types.Meta Meta => new Types.Meta(R.Meta);
         public string PolicyVersion => R.PolicyVersion;
@@ -38,12 +38,12 @@ namespace Cerbos.Sdk.Response
         {
             return R.Filter.Kind == Api.V1.Engine.PlanResourcesFilter.Types.Kind.AlwaysAllowed;
         }
-        
+
         public bool IsAlwaysDenied()
         {
             return R.Filter.Kind == Api.V1.Engine.PlanResourcesFilter.Types.Kind.AlwaysDenied;
         }
-        
+
         public bool IsConditional()
         {
             return R.Filter.Kind == Api.V1.Engine.PlanResourcesFilter.Types.Kind.Conditional;
@@ -54,7 +54,7 @@ namespace Cerbos.Sdk.Response
             public sealed class Meta
             {
                 private Api.V1.Response.PlanResourcesResponse.Types.Meta M { get; }
-        
+
                 public string FilterDebug => M.FilterDebug;
                 [Obsolete("Use MatchedScopes instead.")]
                 public string MatchedScope => M.MatchedScope;

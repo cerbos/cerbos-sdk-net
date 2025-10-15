@@ -49,7 +49,7 @@ namespace Cerbos.Sdk.Response
                 public Api.V1.Response.CheckResourcesResponse.Types.ResultEntry.Types.Resource Resource => Re.Resource;
                 public Types.Outputs Outputs => new Types.Outputs(Re.Outputs.ToList());
                 public List<Api.V1.Schema.ValidationError> ValidationErrors => Re.ValidationErrors.ToList();
-                
+
                 public ResultEntry(Api.V1.Response.CheckResourcesResponse.Types.ResultEntry resultEntry)
                 {
                     Re = resultEntry;
@@ -58,7 +58,8 @@ namespace Cerbos.Sdk.Response
                 public bool IsAllowed(string action)
                 {
                     var ok = Re.Actions.TryGetValue(action, out var effect);
-                    if (!ok || effect == Cerbos.Api.V1.Effect.Effect.Deny || effect == Cerbos.Api.V1.Effect.Effect.Unspecified) {
+                    if (!ok || effect == Cerbos.Api.V1.Effect.Effect.Deny || effect == Cerbos.Api.V1.Effect.Effect.Unspecified)
+                    {
                         return false;
                     }
 
@@ -84,14 +85,15 @@ namespace Cerbos.Sdk.Response
                             M = meta;
                         }
                     }
-                    
+
                     public sealed class Outputs
                     {
                         private List<OutputEntry> O { get; }
-            
+
                         public List<OutputEntry> Raw => O;
 
-                        internal Outputs(List<OutputEntry> outputs) {
+                        internal Outputs(List<OutputEntry> outputs)
+                        {
                             O = outputs;
                         }
 
@@ -111,7 +113,6 @@ namespace Cerbos.Sdk.Response
                     }
                 }
             }
+        }
     }
-}
-
 }

@@ -12,7 +12,7 @@ namespace Cerbos.Sdk.Builder
     public sealed class CerbosClientBuilder
     {
         private const string PlaygroundInstanceHeader = "playground-instance";
-        
+
         private string Target { get; }
         private string PlaygroundInstanceId { get; set; }
         private bool Plaintext { get; set; }
@@ -22,7 +22,8 @@ namespace Cerbos.Sdk.Builder
         private GrpcChannelOptions GrpcChannelOptions { get; set; }
         private Metadata Metadata { get; set; }
 
-        private CerbosClientBuilder(string target) {
+        private CerbosClientBuilder(string target)
+        {
             Target = target;
         }
 
@@ -37,22 +38,26 @@ namespace Cerbos.Sdk.Builder
             return this;
         }
 
-        public CerbosClientBuilder WithPlaintext() {
+        public CerbosClientBuilder WithPlaintext()
+        {
             Plaintext = true;
             return this;
         }
 
-        public CerbosClientBuilder WithCaCertificate(StreamReader caCertificate) {
+        public CerbosClientBuilder WithCaCertificate(StreamReader caCertificate)
+        {
             CaCertificate = caCertificate;
             return this;
         }
 
-        public CerbosClientBuilder WithTlsCertificate(StreamReader tlsCertificate) {
+        public CerbosClientBuilder WithTlsCertificate(StreamReader tlsCertificate)
+        {
             TlsCertificate = tlsCertificate;
             return this;
         }
 
-        public CerbosClientBuilder WithTlsKey(StreamReader tlsKey) {
+        public CerbosClientBuilder WithTlsKey(StreamReader tlsKey)
+        {
             TlsKey = tlsKey;
             return this;
         }
@@ -90,7 +95,7 @@ namespace Cerbos.Sdk.Builder
 
             Metadata combined = Metadata;
             if (!string.IsNullOrEmpty(PlaygroundInstanceId))
-            {   
+            {
                 combined = Utility.Metadata.Merge(
                     Metadata,
                     new Metadata {
@@ -108,10 +113,10 @@ namespace Cerbos.Sdk.Builder
                 }
                 else
                 {
-                    sslCredentials = new SslCredentials(CaCertificate.ReadToEnd());   
+                    sslCredentials = new SslCredentials(CaCertificate.ReadToEnd());
                 }
             }
-            
+
             var grpcChannelOptions = GrpcChannelOptions ?? new GrpcChannelOptions();
             if (sslCredentials != null)
             {
@@ -125,7 +130,8 @@ namespace Cerbos.Sdk.Builder
             var grpcChannel = GrpcChannel
                 .ForAddress(Target, grpcChannelOptions)
                 .Intercept();
-            return new CerbosClient(new Api.V1.Svc.CerbosService.CerbosServiceClient(grpcChannel), combined);
+
+            return new CerbosClient(new Api.V1.Svc.CerbosService.CerbosServiceClient(grpcChannel), new Grpc.Health.V1.Health.HealthClient(grpcChannel), combined);
         }
     }
 }
