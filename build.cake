@@ -1,27 +1,27 @@
 string target = Argument("target", "Build");
 
-Task("Fetch")
-    .Does(() =>
-{
-    StartProcess("./fetch_protos.sh");
-});
-
 Task("Clean")
     .ContinueOnError()
     .Does(() =>
 {
-    CleanDirectories("./src/**/bin");
-    CleanDirectories("./src/**/obj");
-    CleanDirectories("./src/Sdk/Buf");
-    CleanDirectories("./src/Sdk/Cerbos/Api");
-    CleanDirectories("./src/Sdk/Google");
-    CleanDirectories("./src/Sdk/Grpc");
+    var settings = new DeleteDirectorySettings
+    {
+        Recursive = true,
+        Force = true
+    };
+
+    EnsureDirectoryDoesNotExist("./src/**/bin", settings);
+    EnsureDirectoryDoesNotExist("./src/**/obj", settings);
+    EnsureDirectoryDoesNotExist("./src/Sdk/Buf", settings);
+    EnsureDirectoryDoesNotExist("./src/Sdk/Cerbos/Api", settings);
+    EnsureDirectoryDoesNotExist("./src/Sdk/Google", settings);
+    EnsureDirectoryDoesNotExist("./src/Sdk/Grpc", settings);
 });
 
 Task("Generate")
     .Does(() =>
 {
-    StartProcess("buf", new ProcessSettings{Arguments = "generate protos"});
+    StartProcess("buf", new ProcessSettings { Arguments = "generate" });
 });
 
 Task("Build")
@@ -35,9 +35,9 @@ Task("Build")
 });
 
 Task("UnitTests")
-    .Does(() => 
+    .Does(() =>
 {
-    var path = "./src/Sdk.UnitTests"; 
+    var path = "./src/Sdk.UnitTests";
     DotNetRestore(path);
     DotNetBuild(path, new DotNetBuildSettings { Configuration = "Release" });
     DotNetTest(path + "/Sdk.UnitTests.csproj", new DotNetTestSettings { Configuration = "Release" });
