@@ -11,15 +11,56 @@ namespace Cerbos.Sdk
     /// <summary>
     /// CerbosClient provides a client implementation that communicates with the PDP.
     /// </summary>
-    public sealed class CerbosClient: ICerbosClient
+    public sealed class CerbosClient : ICerbosClient
     {
         private Api.V1.Svc.CerbosService.CerbosServiceClient CerbosServiceClient { get; }
+        private Grpc.Health.V1.Health.HealthClient HealthClient { get; }
         private readonly Metadata _metadata;
-        
-        public CerbosClient(Api.V1.Svc.CerbosService.CerbosServiceClient cerbosServiceClient, Metadata metadata = null)
+
+        public CerbosClient(
+            Api.V1.Svc.CerbosService.CerbosServiceClient cerbosServiceClient,
+            Grpc.Health.V1.Health.HealthClient healthClient,
+            Metadata metadata = null
+        )
         {
             CerbosServiceClient = cerbosServiceClient;
+            HealthClient = healthClient;
             _metadata = metadata;
+        }
+
+        /// <summary>
+        /// Send a request consisting of the service name to see if the service is up and running.
+        /// </summary>
+        public HealthCheckResponse CheckHealth(Builder.HealthCheckRequest request, Metadata headers = null)
+        {
+            try
+            {
+                return new HealthCheckResponse(HealthClient.Check(request.ToHealthCheckRequest(), Utility.Metadata.Merge(_metadata, headers)));
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Failed to check health: ${e}");
+            }
+        }
+
+        /// <summary>
+        /// Send an async request consisting of the service name to see if the service is up and running.
+        /// </summary>
+        public Task<HealthCheckResponse> CheckHealthAsync(Builder.HealthCheckRequest request, Metadata headers = null)
+        {
+            try
+            {
+                return HealthClient
+                    .CheckAsync(request.ToHealthCheckRequest(), Utility.Metadata.Merge(_metadata, headers))
+                    .ResponseAsync
+                    .ContinueWith(
+                        r => new HealthCheckResponse(r.Result)
+                    );
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Failed to check health: ${e}");
+            }
         }
 
         /// <summary>
@@ -36,7 +77,7 @@ namespace Cerbos.Sdk
                 throw new Exception($"Failed to check resources: ${e}");
             }
         }
-        
+
         /// <summary>
         /// Send an async request consisting of a principal, resource(s) & action(s) to see if the principal is authorized to do the action(s) on the resource(s).
         /// </summary>
@@ -56,7 +97,7 @@ namespace Cerbos.Sdk
                 throw new Exception($"Failed to check resources: ${e}");
             }
         }
-        
+
         /// <summary>
         /// Obtain a query plan for performing the given action on the given resource kind.
         /// </summary>
@@ -71,7 +112,7 @@ namespace Cerbos.Sdk
                 throw new Exception($"Failed to plan resources: ${e}");
             }
         }
-        
+
         /// <summary>
         /// Obtain a query plan for performing the given action on the given resource kind.
         /// </summary>
@@ -84,7 +125,7 @@ namespace Cerbos.Sdk
                     .ResponseAsync
                     .ContinueWith(
                         r => new PlanResourcesResponse(r.Result)
-                    );            
+                    );
             }
             catch (Exception e)
             {
