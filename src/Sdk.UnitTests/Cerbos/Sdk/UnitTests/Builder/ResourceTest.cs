@@ -15,7 +15,7 @@ public class ResourceTest
     [OneTimeSetUp]
     public void OneTimeSetUp()
     {
-        _listAttr = new []
+        _listAttr = new[]
         {
             AttributeValue.BoolValue(true),
             AttributeValue.DoubleValue(1.2),
@@ -53,14 +53,14 @@ public class ResourceTest
         Assert.That(resource.Attr["nullAttr"].NullValue, Is.EqualTo(NullValue.NullValue));
         Assert.That(resource.Attr["intAttr"].NumberValue, Is.EqualTo(2));
         Assert.That(resource.Attr["stringAttr"].StringValue, Is.EqualTo("GB"));
-        
+
         Assert.That(resource.Attr["listAttr"].ListValue.Values.Count, Is.EqualTo(5));
         Assert.That(resource.Attr["listAttr"].ListValue.Values[0].BoolValue, Is.EqualTo(true));
         Assert.That(resource.Attr["listAttr"].ListValue.Values[1].NumberValue, Is.EqualTo(1.2));
         Assert.That(resource.Attr["listAttr"].ListValue.Values[2].NullValue, Is.EqualTo(NullValue.NullValue));
         Assert.That(resource.Attr["listAttr"].ListValue.Values[3].NumberValue, Is.EqualTo(2));
         Assert.That(resource.Attr["listAttr"].ListValue.Values[4].StringValue, Is.EqualTo("GB"));
-        
+
         Assert.That(resource.Attr["mapAttr"].StructValue.Fields.Count, Is.EqualTo(6));
         Assert.That(resource.Attr["mapAttr"].StructValue.Fields["listAttr"].ListValue.Values.Count, Is.EqualTo(5));
 
@@ -75,7 +75,7 @@ public class ResourceTest
         Assert.That(resource.Attr["mapAttr"].StructValue.Fields["listAttr"].ListValue.Values[4].StringValue, Is.EqualTo("GB"));
         Assert.That(resource.Attr["mapAttr"].StructValue.Fields["stringAttr"].StringValue, Is.EqualTo("GB"));
     }
-    
+
     [Test]
     public void TestWithAttributes()
     {
@@ -98,21 +98,21 @@ public class ResourceTest
                 }
             )
             .ToResource();
-        
+
         Assert.That(resource.Attr.Count, Is.EqualTo(7));
         Assert.That(resource.Attr["boolAttr"].BoolValue, Is.EqualTo(true));
         Assert.That(resource.Attr["doubleAttr"].NumberValue, Is.EqualTo(1.2));
         Assert.That(resource.Attr["nullAttr"].NullValue, Is.EqualTo(NullValue.NullValue));
         Assert.That(resource.Attr["intAttr"].NumberValue, Is.EqualTo(2));
         Assert.That(resource.Attr["stringAttr"].StringValue, Is.EqualTo("GB"));
-        
+
         Assert.That(resource.Attr["listAttr"].ListValue.Values.Count, Is.EqualTo(5));
         Assert.That(resource.Attr["listAttr"].ListValue.Values[0].BoolValue, Is.EqualTo(true));
         Assert.That(resource.Attr["listAttr"].ListValue.Values[1].NumberValue, Is.EqualTo(1.2));
         Assert.That(resource.Attr["listAttr"].ListValue.Values[2].NullValue, Is.EqualTo(NullValue.NullValue));
         Assert.That(resource.Attr["listAttr"].ListValue.Values[3].NumberValue, Is.EqualTo(2));
         Assert.That(resource.Attr["listAttr"].ListValue.Values[4].StringValue, Is.EqualTo("GB"));
-        
+
         Assert.That(resource.Attr["mapAttr"].StructValue.Fields.Count, Is.EqualTo(6));
         Assert.That(resource.Attr["mapAttr"].StructValue.Fields["listAttr"].ListValue.Values.Count, Is.EqualTo(5));
 
@@ -127,7 +127,7 @@ public class ResourceTest
         Assert.That(resource.Attr["mapAttr"].StructValue.Fields["listAttr"].ListValue.Values[4].StringValue, Is.EqualTo("GB"));
         Assert.That(resource.Attr["mapAttr"].StructValue.Fields["stringAttr"].StringValue, Is.EqualTo("GB"));
     }
-    
+
     [Test]
     public void TestConstructor()
     {
@@ -135,28 +135,28 @@ public class ResourceTest
         Assert.That(resource.Id, Is.EqualTo("XX125"));
         Assert.That(resource.Kind, Is.EqualTo("leave_request"));
     }
-    
+
     [Test]
     public void TestWithId()
     {
         var resource = Resource.NewInstance("leave_request", "XX125").WithId("XX225").ToResource();
         Assert.That(resource.Id, Is.EqualTo("XX225"));
     }
-    
+
     [Test]
     public void TestWithKind()
     {
         var resource = Resource.NewInstance("leave_request", "XX125").WithKind("purchase_order").ToResource();
         Assert.That(resource.Kind, Is.EqualTo("purchase_order"));
     }
-    
+
     [Test]
     public void TestWithPolicyVersion()
     {
         var resource = Resource.NewInstance("leave_request", "XX125").WithPolicyVersion("20210210").ToResource();
         Assert.That(resource.PolicyVersion, Is.EqualTo("20210210"));
     }
-    
+
     [Test]
     public void TestWithScope()
     {

@@ -19,7 +19,7 @@ namespace Cerbos.Sdk.Builder
         {
             ResourceEntries = new List<ResourceEntry>();
         }
-        
+
         public static CheckResourcesRequest NewInstance()
         {
             return new CheckResourcesRequest();
@@ -54,14 +54,14 @@ namespace Cerbos.Sdk.Builder
             RequestId = requestId;
             return this;
         }
-        
+
         public Api.V1.Request.CheckResourcesRequest ToCheckResourcesRequest()
         {
             if (Principal == null)
             {
                 throw new Exception("Principal is not set");
             }
-            
+
             if (ResourceEntries.Count == 0)
             {
                 throw new Exception("ResourceEntries are not set");
@@ -77,7 +77,7 @@ namespace Cerbos.Sdk.Builder
             {
                 resourceEntries.Add(re.ToResourceEntry());
             }
-            
+
             var request = new Api.V1.Request.CheckResourcesRequest
             {
                 AuxData = AuxData?.ToAuxData(),

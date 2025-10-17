@@ -62,7 +62,8 @@ namespace Cerbos.Sdk.Cloud.V1.Store
             try
             {
                 return Resilience.Pipeline.ExecuteAsync(
-                    async (token) => {
+                    async (token) =>
+                    {
                         return await Client.GetFilesAsync(request.ToGetFilesRequest()).ResponseAsync.ContinueWith(r => new GetFilesResponse(r.Result));
                     }
                 ).AsTask();
@@ -107,7 +108,8 @@ namespace Cerbos.Sdk.Cloud.V1.Store
             try
             {
                 return Resilience.Pipeline.ExecuteAsync(
-                    async (token) => {
+                    async (token) =>
+                    {
                         return await Client.ListFilesAsync(request.ToListFilesRequest()).ResponseAsync.ContinueWith(r => new ListFilesResponse(r.Result));
                     }
                 ).AsTask();
@@ -152,7 +154,8 @@ namespace Cerbos.Sdk.Cloud.V1.Store
             try
             {
                 return Resilience.Pipeline.ExecuteAsync(
-                    async (token) => {
+                    async (token) =>
+                    {
                         return await Client.ModifyFilesAsync(request.ToModifyFilesRequest()).ResponseAsync.ContinueWith(r => new ModifyFilesResponse(r.Result));
                     }
                 ).AsTask();
@@ -197,7 +200,8 @@ namespace Cerbos.Sdk.Cloud.V1.Store
             try
             {
                 return Resilience.Pipeline.ExecuteAsync(
-                    async (token) => {
+                    async (token) =>
+                    {
                         return await Client.ReplaceFilesAsync(request.ToReplaceFilesRequest()).ResponseAsync.ContinueWith(r => new ReplaceFilesResponse(r.Result));
                     }
                 ).AsTask();

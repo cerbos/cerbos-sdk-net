@@ -15,7 +15,7 @@ public class PrincipalTest
     [OneTimeSetUp]
     public void OneTimeSetUp()
     {
-        _listAttr = new []
+        _listAttr = new[]
         {
             AttributeValue.BoolValue(true),
             AttributeValue.DoubleValue(1.2),
@@ -53,14 +53,14 @@ public class PrincipalTest
         Assert.That(principal.Attr["intAttr"].NumberValue, Is.EqualTo(2));
         Assert.That(principal.Attr["nullAttr"].NullValue, Is.EqualTo(NullValue.NullValue));
         Assert.That(principal.Attr["stringAttr"].StringValue, Is.EqualTo("GB"));
-        
+
         Assert.That(principal.Attr["listAttr"].ListValue.Values.Count, Is.EqualTo(5));
         Assert.That(principal.Attr["listAttr"].ListValue.Values[0].BoolValue, Is.EqualTo(true));
         Assert.That(principal.Attr["listAttr"].ListValue.Values[1].NumberValue, Is.EqualTo(1.2));
         Assert.That(principal.Attr["listAttr"].ListValue.Values[2].NullValue, Is.EqualTo(NullValue.NullValue));
         Assert.That(principal.Attr["listAttr"].ListValue.Values[3].NumberValue, Is.EqualTo(2));
         Assert.That(principal.Attr["listAttr"].ListValue.Values[4].StringValue, Is.EqualTo("GB"));
-        
+
         Assert.That(principal.Attr["mapAttr"].StructValue.Fields.Count, Is.EqualTo(6));
         Assert.That(principal.Attr["mapAttr"].StructValue.Fields["listAttr"].ListValue.Values.Count, Is.EqualTo(5));
 
@@ -98,21 +98,21 @@ public class PrincipalTest
                 }
             )
             .ToPrincipal();
-        
+
         Assert.That(principal.Attr.Count, Is.EqualTo(7));
         Assert.That(principal.Attr["boolAttr"].BoolValue, Is.EqualTo(true));
         Assert.That(principal.Attr["doubleAttr"].NumberValue, Is.EqualTo(1.2));
         Assert.That(principal.Attr["nullAttr"].NullValue, Is.EqualTo(NullValue.NullValue));
         Assert.That(principal.Attr["intAttr"].NumberValue, Is.EqualTo(2));
         Assert.That(principal.Attr["stringAttr"].StringValue, Is.EqualTo("GB"));
-        
+
         Assert.That(principal.Attr["listAttr"].ListValue.Values.Count, Is.EqualTo(5));
         Assert.That(principal.Attr["listAttr"].ListValue.Values[0].BoolValue, Is.EqualTo(true));
         Assert.That(principal.Attr["listAttr"].ListValue.Values[1].NumberValue, Is.EqualTo(1.2));
         Assert.That(principal.Attr["listAttr"].ListValue.Values[2].NullValue, Is.EqualTo(NullValue.NullValue));
         Assert.That(principal.Attr["listAttr"].ListValue.Values[3].NumberValue, Is.EqualTo(2));
         Assert.That(principal.Attr["listAttr"].ListValue.Values[4].StringValue, Is.EqualTo("GB"));
-        
+
         Assert.That(principal.Attr["mapAttr"].StructValue.Fields.Count, Is.EqualTo(6));
         Assert.That(principal.Attr["mapAttr"].StructValue.Fields["listAttr"].ListValue.Values.Count, Is.EqualTo(5));
 
@@ -134,7 +134,7 @@ public class PrincipalTest
         var principal = Principal.NewInstance("john").ToPrincipal();
         Assert.That(principal.Id, Is.EqualTo("john"));
     }
-    
+
     [Test]
     public void TestWithId()
     {
@@ -159,7 +159,7 @@ public class PrincipalTest
         Assert.That(principal.Roles[2], Is.EqualTo("admin"));
         Assert.That(principal.Roles[3], Is.EqualTo("user"));
     }
-    
+
     [Test]
     public void TestWithScope()
     {

@@ -24,12 +24,12 @@ namespace Cerbos.Sdk.Utility
             {
                 combined.Add(m);
             }
-            
+
             foreach (var m in second)
             {
                 combined.Add(m);
             }
-            
+
             return combined;
         }
     }

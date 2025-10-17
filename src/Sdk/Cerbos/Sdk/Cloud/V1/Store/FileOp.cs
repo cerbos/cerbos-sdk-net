@@ -10,9 +10,9 @@ namespace Cerbos.Sdk.Cloud.V1.Store
         private Api.Cloud.V1.Store.FileOp.OpOneofCase OneOf = Api.Cloud.V1.Store.FileOp.OpOneofCase.None;
         private File AddOrUpdate_ { get; set; }
         private string Delete_ { get; set; }
-    
-        private FileOp() {}
-        
+
+        private FileOp() { }
+
         public static FileOp AddOrUpdate(File addOrUpdate)
         {
             return new FileOp()
@@ -30,7 +30,7 @@ namespace Cerbos.Sdk.Cloud.V1.Store
                 OneOf = Api.Cloud.V1.Store.FileOp.OpOneofCase.Delete
             };
         }
-        
+
         public Api.Cloud.V1.Store.FileOp ToFileOp()
         {
             if (OneOf == Api.Cloud.V1.Store.FileOp.OpOneofCase.AddOrUpdate)

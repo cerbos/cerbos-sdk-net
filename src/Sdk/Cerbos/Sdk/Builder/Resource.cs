@@ -20,20 +20,24 @@ namespace Cerbos.Sdk.Builder
             Kind = kind;
         }
 
-        public static Resource NewInstance(string kind) {
+        public static Resource NewInstance(string kind)
+        {
             return new Resource(kind, "_NEW_");
         }
-        
-        public static Resource NewInstance(string kind, string id) {
+
+        public static Resource NewInstance(string kind, string id)
+        {
             return new Resource(kind, id);
         }
-        
-        public Resource WithAttribute(string key, AttributeValue value) {
+
+        public Resource WithAttribute(string key, AttributeValue value)
+        {
             Attributes.Add(key, value.ToValue());
             return this;
         }
-        
-        public Resource WithAttributes(Dictionary<string, AttributeValue> attributes) {
+
+        public Resource WithAttributes(Dictionary<string, AttributeValue> attributes)
+        {
             foreach (KeyValuePair<string, AttributeValue> attribute in attributes)
             {
                 Attributes.Add(attribute.Key, attribute.Value.ToValue());
@@ -46,25 +50,26 @@ namespace Cerbos.Sdk.Builder
             Id = id;
             return this;
         }
-        
+
         public Resource WithKind(string kind)
         {
             Kind = kind;
             return this;
         }
 
-        public Resource WithPolicyVersion(string policyVersion) {
+        public Resource WithPolicyVersion(string policyVersion)
+        {
             PolicyVersion = policyVersion;
             return this;
         }
-        
+
         public Resource WithScope(string scope)
         {
             Scope = scope;
             return this;
         }
 
-        public Cerbos.Api.V1.Engine.Resource ToResource()
+        public Api.V1.Engine.Resource ToResource()
         {
             var r = new Api.V1.Engine.Resource()
             {

@@ -44,7 +44,7 @@ public class ReplaceFilesRequestTest
         Assert.That(request.ChangeDetails, Is.EqualTo(changeDetails.ToChangeDetails()));
     }
 
-        [Test]
+    [Test]
     public void WithFiles()
     {
         var condition = ReplaceFilesRequest.Types.Condition.NewInstance(1);

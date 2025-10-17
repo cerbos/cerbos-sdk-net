@@ -8,7 +8,8 @@ namespace Cerbos.Sdk.Cloud.V1.Store
         private byte[] contents;
         private string path;
         private Api.Cloud.V1.Store.File R { get; set; }
-        public byte[] Contents {
+        public byte[] Contents
+        {
             get
             {
                 return contents;
@@ -20,7 +21,7 @@ namespace Cerbos.Sdk.Cloud.V1.Store
             {
                 return path;
             }
-         }
+        }
         public Api.Cloud.V1.Store.File Raw => R;
 
         private File(string path, byte[] contents)

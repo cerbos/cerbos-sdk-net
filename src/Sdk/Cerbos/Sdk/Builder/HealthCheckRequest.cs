@@ -12,17 +12,14 @@ namespace Cerbos.Sdk.Builder
             get { return service; }
         }
 
-        private HealthCheckRequest() { }
-
-        public static HealthCheckRequest NewInstance()
-        {
-            return new HealthCheckRequest();
-        }
-
-        public HealthCheckRequest WithService(Types.Service service)
+        private HealthCheckRequest(Types.Service service)
         {
             this.service = service;
-            return this;
+        }
+
+        public static HealthCheckRequest NewInstance(Types.Service service)
+        {
+            return new HealthCheckRequest(service);
         }
 
         public Grpc.Health.V1.HealthCheckRequest ToHealthCheckRequest()
@@ -47,15 +44,15 @@ namespace Cerbos.Sdk.Builder
 
             return request;
         }
-    }
 
-    public static class Types
-    {
-        public enum Service
+        public static class Types
         {
-            Unspecified = 0,
-            Cerbos = 1, // cerbos.svc.v1.CerbosService
-            Admin = 2 // cerbos.svc.v1.CerbosAdminService
+            public enum Service
+            {
+                Unspecified = 0,
+                Cerbos = 1, // cerbos.svc.v1.CerbosService
+                Admin = 2 // cerbos.svc.v1.CerbosAdminService
+            }
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Cerbos.Sdk.Cloud.V1.Store
         {
             StoreId = storeId;
         }
-        
+
         public static ListFilesRequest NewInstance(string storeId)
         {
             return new ListFilesRequest(storeId);
@@ -25,7 +25,7 @@ namespace Cerbos.Sdk.Cloud.V1.Store
                 Filter = filter
             };
         }
-        
+
         public Api.Cloud.V1.Store.ListFilesRequest ToListFilesRequest()
         {
             var request = new Api.Cloud.V1.Store.ListFilesRequest

@@ -22,7 +22,7 @@ namespace Cerbos.Sdk.Response
         public Api.V1.Response.PlanResourcesResponse Raw => R;
         public string ResourceKind => R.ResourceKind;
         public string RequestId => R.RequestId;
-        public List<Cerbos.Api.V1.Schema.ValidationError> ValidationErrors => R.ValidationErrors.ToList();
+        public List<Api.V1.Schema.ValidationError> ValidationErrors => R.ValidationErrors.ToList();
 
         public PlanResourcesResponse(Api.V1.Response.PlanResourcesResponse response)
         {

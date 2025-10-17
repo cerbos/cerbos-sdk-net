@@ -50,7 +50,8 @@ namespace Cerbos.Sdk.Cloud.V1.ApiKey
             try
             {
                 return Resilience.Pipeline.ExecuteAsync(
-                    async (token) => {
+                    async (token) =>
+                    {
                         return await Client.IssueAccessTokenAsync(request.ToIssueAccessTokenRequest()).ResponseAsync.ContinueWith(r => new IssueAccessTokenResponse(r.Result));
                     }
                 ).AsTask();

@@ -7,26 +7,30 @@ namespace Cerbos.Sdk.Builder
 {
     public sealed class Principal
     {
-        private Cerbos.Api.V1.Engine.Principal P { get; }
+        private Api.V1.Engine.Principal P { get; }
 
-        private Principal(string id, params string[] roles) {
-            P = new Cerbos.Api.V1.Engine.Principal
+        private Principal(string id, params string[] roles)
+        {
+            P = new Api.V1.Engine.Principal
             {
                 Id = id,
                 Roles = { roles }
             };
         }
 
-        public static Principal NewInstance(string id, params string[] roles) {
+        public static Principal NewInstance(string id, params string[] roles)
+        {
             return new Principal(id, roles);
         }
 
-        public Principal WithAttribute(string key, AttributeValue value) {
+        public Principal WithAttribute(string key, AttributeValue value)
+        {
             P.Attr.Add(key, value.ToValue());
             return this;
         }
 
-        public Principal WithAttributes(Dictionary<string, AttributeValue> attributes) {
+        public Principal WithAttributes(Dictionary<string, AttributeValue> attributes)
+        {
             foreach (KeyValuePair<string, AttributeValue> attribute in attributes)
             {
                 P.Attr.Add(attribute.Key, attribute.Value.ToValue());
@@ -40,7 +44,8 @@ namespace Cerbos.Sdk.Builder
             return this;
         }
 
-        public Principal WithPolicyVersion(string version) {
+        public Principal WithPolicyVersion(string version)
+        {
             P.PolicyVersion = version;
             return this;
         }
@@ -57,7 +62,8 @@ namespace Cerbos.Sdk.Builder
             return this;
         }
 
-        public Cerbos.Api.V1.Engine.Principal ToPrincipal() {
+        public Api.V1.Engine.Principal ToPrincipal()
+        {
             return P;
         }
     }

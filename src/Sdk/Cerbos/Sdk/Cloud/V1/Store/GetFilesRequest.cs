@@ -15,7 +15,7 @@ namespace Cerbos.Sdk.Cloud.V1.Store
             StoreId = storeId;
             Files = new List<string>(files);
         }
-        
+
         public static GetFilesRequest NewInstance(string storeId, params string[] files)
         {
             return new GetFilesRequest(storeId, files);

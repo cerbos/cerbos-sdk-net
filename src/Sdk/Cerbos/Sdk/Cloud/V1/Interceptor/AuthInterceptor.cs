@@ -48,7 +48,7 @@ namespace Cerbos.Sdk.Cloud.V1.Interceptor
             );
             return continuation(request, newContext);
         }
-        
+
         public override AsyncUnaryCall<TResponse> AsyncUnaryCall<TRequest, TResponse>(
             TRequest request,
             ClientInterceptorContext<TRequest, TResponse> context,

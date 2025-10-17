@@ -10,20 +10,21 @@ namespace Cerbos.Sdk.Builder
     {
         private Value V { get; }
 
-        private AttributeValue(Value value) {
+        private AttributeValue(Value value)
+        {
             V = value;
         }
-        
+
         public static AttributeValue BoolValue(bool value)
         {
             return new AttributeValue(Value.ForBool(value));
         }
-        
+
         public static AttributeValue DoubleValue(double value)
         {
             return new AttributeValue(Value.ForNumber(value));
         }
-        
+
         public static AttributeValue ListValue(params AttributeValue[] values)
         {
             Value[] v = new Value[values.Length];
@@ -33,7 +34,7 @@ namespace Cerbos.Sdk.Builder
             }
             return new AttributeValue(Value.ForList(v));
         }
-        
+
         public static AttributeValue MapValue(Dictionary<string, AttributeValue> dict)
         {
             var s = new Struct();
@@ -44,7 +45,7 @@ namespace Cerbos.Sdk.Builder
 
             return new AttributeValue(Value.ForStruct(s));
         }
-        
+
         public static AttributeValue NullValue()
         {
             return new AttributeValue(Value.ForNull());
@@ -55,7 +56,8 @@ namespace Cerbos.Sdk.Builder
             return new AttributeValue(Value.ForString(value));
         }
 
-        public Value ToValue() {
+        public Value ToValue()
+        {
             return V;
         }
     }
