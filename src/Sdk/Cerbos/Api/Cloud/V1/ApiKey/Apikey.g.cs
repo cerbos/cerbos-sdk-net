@@ -32,14 +32,14 @@ namespace Cerbos.Api.Cloud.V1.ApiKey {
             "bnRfc2VjcmV0GAIgASgJQge6SARyAhABUgxjbGllbnRTZWNyZXQiiAEKGElz",
             "c3VlQWNjZXNzVG9rZW5SZXNwb25zZRIqCgxhY2Nlc3NfdG9rZW4YASABKAlC",
             "B7pIBHICEAFSC2FjY2Vzc1Rva2VuEkAKCmV4cGlyZXNfaW4YAiABKAsyGS5n",
-            "b29nbGUucHJvdG9idWYuRHVyYXRpb25CBrpIA8gBAVIJZXhwaXJlc0luMp4B",
-            "Cg1BcGlLZXlTZXJ2aWNlEncKEElzc3VlQWNjZXNzVG9rZW4SLy5jZXJib3Mu",
+            "b29nbGUucHJvdG9idWYuRHVyYXRpb25CBrpIA8gBAVIJZXhwaXJlc0luMpwB",
+            "Cg1BcGlLZXlTZXJ2aWNlEnUKEElzc3VlQWNjZXNzVG9rZW4SLy5jZXJib3Mu",
             "Y2xvdWQuYXBpa2V5LnYxLklzc3VlQWNjZXNzVG9rZW5SZXF1ZXN0GjAuY2Vy",
-            "Ym9zLmNsb3VkLmFwaWtleS52MS5Jc3N1ZUFjY2Vzc1Rva2VuUmVzcG9uc2Ui",
-            "ABoU+tLkkwIOEgxFWFBFUklNRU5UQUxCgAEKHmRldi5jZXJib3MuYXBpLmNs",
-            "b3VkLnYxLmFwaWtleVpBZ2l0aHViLmNvbS9jZXJib3MvY2xvdWQtYXBpL2dl",
-            "bnBiL2NlcmJvcy9jbG91ZC9hcGlrZXkvdjE7YXBpa2V5djGqAhpDZXJib3Mu",
-            "QXBpLkNsb3VkLlYxLkFwaUtleWIGcHJvdG8z"));
+            "Ym9zLmNsb3VkLmFwaWtleS52MS5Jc3N1ZUFjY2Vzc1Rva2VuUmVzcG9uc2Ua",
+            "FPrS5JMCDhIMRVhQRVJJTUVOVEFMQoABCh5kZXYuY2VyYm9zLmFwaS5jbG91",
+            "ZC52MS5hcGlrZXlaQWdpdGh1Yi5jb20vY2VyYm9zL2Nsb3VkLWFwaS9nZW5w",
+            "Yi9jZXJib3MvY2xvdWQvYXBpa2V5L3YxO2FwaWtleXYxqgIaQ2VyYm9zLkFw",
+            "aS5DbG91ZC5WMS5BcGlLZXliBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Google.Api.VisibilityReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

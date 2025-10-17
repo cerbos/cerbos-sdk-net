@@ -44,7 +44,7 @@ namespace Cerbos.Sdk.Cloud.V1.Store
         {
             return new ModifyFilesRequest(storeId, null, changeDetails, operations);
         }
-        
+
         public static ModifyFilesRequest WithCondition(
             string storeId,
             Types.Condition condition,

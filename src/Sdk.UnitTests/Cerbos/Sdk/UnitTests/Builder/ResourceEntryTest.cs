@@ -11,11 +11,11 @@ public class ResourceEntryTest
 {
     private AttributeValue[]? _listAttr;
     private Dictionary<string, AttributeValue>? _mapAttr;
-    
+
     [OneTimeSetUp]
     public void OneTimeSetUp()
     {
-        _listAttr = new []
+        _listAttr = new[]
         {
             AttributeValue.BoolValue(true),
             AttributeValue.DoubleValue(1.2),
@@ -41,7 +41,7 @@ public class ResourceEntryTest
             .WithActions("approve", "create")
             .WithActions("defer")
             .ToResourceEntry();
-        
+
         Assert.That(resourceEntry.Actions.Count, Is.EqualTo(3));
         Assert.That(resourceEntry.Actions[0], Is.EqualTo("approve"));
         Assert.That(resourceEntry.Actions[1], Is.EqualTo("create"));
@@ -67,14 +67,14 @@ public class ResourceEntryTest
         Assert.That(resourceEntry.Resource.Attr["nullAttr"].NullValue, Is.EqualTo(NullValue.NullValue));
         Assert.That(resourceEntry.Resource.Attr["intAttr"].NumberValue, Is.EqualTo(2));
         Assert.That(resourceEntry.Resource.Attr["stringAttr"].StringValue, Is.EqualTo("GB"));
-        
+
         Assert.That(resourceEntry.Resource.Attr["listAttr"].ListValue.Values.Count, Is.EqualTo(5));
         Assert.That(resourceEntry.Resource.Attr["listAttr"].ListValue.Values[0].BoolValue, Is.EqualTo(true));
         Assert.That(resourceEntry.Resource.Attr["listAttr"].ListValue.Values[1].NumberValue, Is.EqualTo(1.2));
         Assert.That(resourceEntry.Resource.Attr["listAttr"].ListValue.Values[2].NullValue, Is.EqualTo(NullValue.NullValue));
         Assert.That(resourceEntry.Resource.Attr["listAttr"].ListValue.Values[3].NumberValue, Is.EqualTo(2));
         Assert.That(resourceEntry.Resource.Attr["listAttr"].ListValue.Values[4].StringValue, Is.EqualTo("GB"));
-        
+
         Assert.That(resourceEntry.Resource.Attr["mapAttr"].StructValue.Fields.Count, Is.EqualTo(6));
         Assert.That(resourceEntry.Resource.Attr["mapAttr"].StructValue.Fields["listAttr"].ListValue.Values.Count, Is.EqualTo(5));
 
@@ -89,7 +89,7 @@ public class ResourceEntryTest
         Assert.That(resourceEntry.Resource.Attr["mapAttr"].StructValue.Fields["listAttr"].ListValue.Values[4].StringValue, Is.EqualTo("GB"));
         Assert.That(resourceEntry.Resource.Attr["mapAttr"].StructValue.Fields["stringAttr"].StringValue, Is.EqualTo("GB"));
     }
-    
+
     [Test]
     public void TestWithAttributes()
     {
@@ -112,21 +112,21 @@ public class ResourceEntryTest
                 }
             )
             .ToResourceEntry();
-        
+
         Assert.That(resourceEntry.Resource.Attr.Count, Is.EqualTo(7));
         Assert.That(resourceEntry.Resource.Attr["boolAttr"].BoolValue, Is.EqualTo(true));
         Assert.That(resourceEntry.Resource.Attr["doubleAttr"].NumberValue, Is.EqualTo(1.2));
         Assert.That(resourceEntry.Resource.Attr["nullAttr"].NullValue, Is.EqualTo(NullValue.NullValue));
         Assert.That(resourceEntry.Resource.Attr["intAttr"].NumberValue, Is.EqualTo(2));
         Assert.That(resourceEntry.Resource.Attr["stringAttr"].StringValue, Is.EqualTo("GB"));
-        
+
         Assert.That(resourceEntry.Resource.Attr["listAttr"].ListValue.Values.Count, Is.EqualTo(5));
         Assert.That(resourceEntry.Resource.Attr["listAttr"].ListValue.Values[0].BoolValue, Is.EqualTo(true));
         Assert.That(resourceEntry.Resource.Attr["listAttr"].ListValue.Values[1].NumberValue, Is.EqualTo(1.2));
         Assert.That(resourceEntry.Resource.Attr["listAttr"].ListValue.Values[2].NullValue, Is.EqualTo(NullValue.NullValue));
         Assert.That(resourceEntry.Resource.Attr["listAttr"].ListValue.Values[3].NumberValue, Is.EqualTo(2));
         Assert.That(resourceEntry.Resource.Attr["listAttr"].ListValue.Values[4].StringValue, Is.EqualTo("GB"));
-        
+
         Assert.That(resourceEntry.Resource.Attr["mapAttr"].StructValue.Fields.Count, Is.EqualTo(6));
         Assert.That(resourceEntry.Resource.Attr["mapAttr"].StructValue.Fields["listAttr"].ListValue.Values.Count, Is.EqualTo(5));
 
@@ -141,7 +141,7 @@ public class ResourceEntryTest
         Assert.That(resourceEntry.Resource.Attr["mapAttr"].StructValue.Fields["listAttr"].ListValue.Values[4].StringValue, Is.EqualTo("GB"));
         Assert.That(resourceEntry.Resource.Attr["mapAttr"].StructValue.Fields["stringAttr"].StringValue, Is.EqualTo("GB"));
     }
-    
+
     [Test]
     public void TestConstructor()
     {
@@ -149,28 +149,28 @@ public class ResourceEntryTest
         Assert.That(resourceEntry.Resource.Id, Is.EqualTo("XX125"));
         Assert.That(resourceEntry.Resource.Kind, Is.EqualTo("leave_request"));
     }
-    
+
     [Test]
     public void TestWithId()
     {
         var resourceEntry = ResourceEntry.NewInstance("leave_request", "XX125").WithId("XX225").ToResourceEntry();
         Assert.That(resourceEntry.Resource.Id, Is.EqualTo("XX225"));
     }
-    
+
     [Test]
     public void TestWithKind()
     {
         var resourceEntry = ResourceEntry.NewInstance("leave_request", "XX125").WithKind("purchase_order").ToResourceEntry();
         Assert.That(resourceEntry.Resource.Kind, Is.EqualTo("purchase_order"));
     }
-    
+
     [Test]
     public void TestWithPolicyVersion()
     {
         var resourceEntry = ResourceEntry.NewInstance("leave_request", "XX125").WithPolicyVersion("20210210").ToResourceEntry();
         Assert.That(resourceEntry.Resource.PolicyVersion, Is.EqualTo("20210210"));
     }
-    
+
     [Test]
     public void TestWithScope()
     {

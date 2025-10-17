@@ -13,7 +13,7 @@ namespace Cerbos.Sdk.Cloud.V1.ApiKey
         private IssueAccessTokenRequest()
         {
         }
-        
+
         public static IssueAccessTokenRequest NewInstance()
         {
             return new IssueAccessTokenRequest();
@@ -24,13 +24,13 @@ namespace Cerbos.Sdk.Cloud.V1.ApiKey
             ClientId = clientId;
             return this;
         }
-        
+
         public IssueAccessTokenRequest WithClientSecret(string clientSecret)
         {
             ClientSecret = clientSecret;
             return this;
         }
-        
+
         public Api.Cloud.V1.ApiKey.IssueAccessTokenRequest ToIssueAccessTokenRequest()
         {
             if (ClientId == null)

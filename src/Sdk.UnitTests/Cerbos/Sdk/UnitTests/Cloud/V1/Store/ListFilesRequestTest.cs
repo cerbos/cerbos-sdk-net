@@ -17,7 +17,7 @@ public class ListFilesRequestTest
 
         Assert.That(request.StoreId, Is.EqualTo(StoreId));
     }
-    
+
     [Test]
     public void WithFilter()
     {

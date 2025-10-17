@@ -111,7 +111,7 @@ namespace Cerbos.Sdk.Cloud.V1.Store
                 private Git(string repo, string hash)
                 {
                     Repo = repo;
-                    Hash = hash; 
+                    Hash = hash;
                 }
 
                 public static Git NewInstance(string repo, string hash)

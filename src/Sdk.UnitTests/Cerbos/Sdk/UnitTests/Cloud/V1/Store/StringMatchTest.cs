@@ -45,7 +45,7 @@ public class StringMatchTest
                     WithValues(Something, Something).
                     ToInList();
 
-                Assert.That(inList.Values.ToList(), Is.EqualTo(new List<string>{Something, Something}));
+                Assert.That(inList.Values.ToList(), Is.EqualTo(new List<string> { Something, Something }));
             }
         }
     }

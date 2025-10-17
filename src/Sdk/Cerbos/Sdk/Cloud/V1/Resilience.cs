@@ -12,7 +12,7 @@ namespace Cerbos.Sdk.Cloud.V1
     {
         public static ResiliencePipeline Pipeline = NewInstance();
 
-        private Resilience() {}
+        private Resilience() { }
 
         private static ResiliencePipeline NewInstance()
         {

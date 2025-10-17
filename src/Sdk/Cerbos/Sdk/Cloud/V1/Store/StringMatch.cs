@@ -83,7 +83,7 @@ namespace Cerbos.Sdk.Cloud.V1.Store
                 In = In_.ToInList()
             };
         }
-        
+
         public static class Types
         {
             public sealed class InList

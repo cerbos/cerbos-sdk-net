@@ -1,6 +1,31 @@
 version: v2
+
 managed:
   enabled: false
+
+inputs:
+  - module: buf.build/bufbuild/protovalidate
+
+  - module: buf.build/cerbos/cerbos-api
+    types:
+      - cerbos.svc.v1.CerbosService
+
+  - module: buf.build/cerbos/cloud-api
+    types:
+      - cerbos.cloud.apikey.v1.ApiKeyService
+      - cerbos.cloud.store.v1.CerbosStoreService
+      - cerbos.cloud.store.v1.ErrDetailValidationFailure
+      - cerbos.cloud.store.v1.ErrDetailNoUsableFiles
+      - cerbos.cloud.store.v1.ErrDetailConditionUnsatisfied
+      - cerbos.cloud.store.v1.ErrDetailOperationDiscarded
+      - cerbos.cloud.store.v1.ErrDetailCannotModifyGitConnectedStore
+
+  - module: buf.build/grpc/grpc
+    types:
+      - grpc.health.v1.Health
+
+  - module: buf.build/grpc-ecosystem/grpc-gateway
+
 plugins:
   - remote: buf.build/protocolbuffers/csharp:v31.0
     opt:

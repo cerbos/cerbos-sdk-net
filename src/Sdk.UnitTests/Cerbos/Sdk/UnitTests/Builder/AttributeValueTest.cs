@@ -22,7 +22,7 @@ public class AttributeValueTest
         var doubleAttr = AttributeValue.DoubleValue(1.32).ToValue();
         Assert.That(doubleAttr.NumberValue, Is.EqualTo(1.32));
     }
-    
+
     [Test]
     public void TestNullAttribute()
     {
@@ -36,16 +36,16 @@ public class AttributeValueTest
         var stringAttr = AttributeValue.StringValue("GB").ToValue();
         Assert.That(stringAttr.StringValue, Is.EqualTo("GB"));
     }
-    
+
     [Test]
     public void TestListAttribute()
     {
-        var listAttr = AttributeValue.ListValue(new AttributeValue[2]{AttributeValue.BoolValue(true), AttributeValue.StringValue("GB")}).ToValue();
+        var listAttr = AttributeValue.ListValue(new AttributeValue[2] { AttributeValue.BoolValue(true), AttributeValue.StringValue("GB") }).ToValue();
         Assert.That(listAttr.ListValue.Values.Count, Is.EqualTo(2));
         Assert.That(listAttr.ListValue.Values[0].BoolValue, Is.EqualTo(true));
         Assert.That(listAttr.ListValue.Values[1].StringValue, Is.EqualTo("GB"));
     }
-    
+
     [Test]
     public void TestMapAttribute()
     {
