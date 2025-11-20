@@ -1,9 +1,12 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "baseBranchPatterns": ["main"],
   "commitMessageLowerCase": "never",
+  "dependencyDashboard": true,
   "extends": [
     ":automergeDisabled",
     "config:recommended",
+    "docker:disable",
     ":gitSignOff",
     "group:allNonMajor",
     ":renovatePrefix",
@@ -11,25 +14,6 @@
     ":semanticCommitTypeAll(chore)",
     ":separateMultipleMajorReleases"
   ],
-  "packageRules": [
-    {
-      "matchManagers": [
-        "nuget"
-      ],
-      "groupName": ".NET deps",
-      "groupSlug": "net-deps"
-    },
-    {
-      "matchManagers": [
-        "github-actions"
-      ],
-      "groupName": "GitHub Actions deps",
-      "groupSlug": "gh-actions-deps"
-    }
-  ],
-  "labels": [
-    "area/dependencies",
-    "bots",
-    "kind/chore"
-  ]
+  "labels": ["area/dependencies", "bots", "kind/chore"],
+  "reviewers": ["oguzhand95"]
 }
