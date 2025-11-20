@@ -54,6 +54,10 @@ namespace Cerbos.Api.Cloud.V1.Store {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::Cerbos.Api.Cloud.V1.Store.ListFilesResponse> __Marshaller_cerbos_cloud_store_v1_ListFilesResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Cerbos.Api.Cloud.V1.Store.ListFilesResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Cerbos.Api.Cloud.V1.Store.GetCurrentVersionRequest> __Marshaller_cerbos_cloud_store_v1_GetCurrentVersionRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Cerbos.Api.Cloud.V1.Store.GetCurrentVersionRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Cerbos.Api.Cloud.V1.Store.GetCurrentVersionResponse> __Marshaller_cerbos_cloud_store_v1_GetCurrentVersionResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Cerbos.Api.Cloud.V1.Store.GetCurrentVersionResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::Cerbos.Api.Cloud.V1.Store.GetFilesRequest> __Marshaller_cerbos_cloud_store_v1_GetFilesRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Cerbos.Api.Cloud.V1.Store.GetFilesRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::Cerbos.Api.Cloud.V1.Store.GetFilesResponse> __Marshaller_cerbos_cloud_store_v1_GetFilesResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Cerbos.Api.Cloud.V1.Store.GetFilesResponse.Parser));
@@ -73,6 +77,14 @@ namespace Cerbos.Api.Cloud.V1.Store {
         "ListFiles",
         __Marshaller_cerbos_cloud_store_v1_ListFilesRequest,
         __Marshaller_cerbos_cloud_store_v1_ListFilesResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::Cerbos.Api.Cloud.V1.Store.GetCurrentVersionRequest, global::Cerbos.Api.Cloud.V1.Store.GetCurrentVersionResponse> __Method_GetCurrentVersion = new grpc::Method<global::Cerbos.Api.Cloud.V1.Store.GetCurrentVersionRequest, global::Cerbos.Api.Cloud.V1.Store.GetCurrentVersionResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetCurrentVersion",
+        __Marshaller_cerbos_cloud_store_v1_GetCurrentVersionRequest,
+        __Marshaller_cerbos_cloud_store_v1_GetCurrentVersionResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::Cerbos.Api.Cloud.V1.Store.GetFilesRequest, global::Cerbos.Api.Cloud.V1.Store.GetFilesResponse> __Method_GetFiles = new grpc::Method<global::Cerbos.Api.Cloud.V1.Store.GetFilesRequest, global::Cerbos.Api.Cloud.V1.Store.GetFilesResponse>(
@@ -110,6 +122,12 @@ namespace Cerbos.Api.Cloud.V1.Store {
     {
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::Cerbos.Api.Cloud.V1.Store.ListFilesResponse> ListFiles(global::Cerbos.Api.Cloud.V1.Store.ListFilesRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::Cerbos.Api.Cloud.V1.Store.GetCurrentVersionResponse> GetCurrentVersion(global::Cerbos.Api.Cloud.V1.Store.GetCurrentVersionRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -180,6 +198,26 @@ namespace Cerbos.Api.Cloud.V1.Store {
       public virtual grpc::AsyncUnaryCall<global::Cerbos.Api.Cloud.V1.Store.ListFilesResponse> ListFilesAsync(global::Cerbos.Api.Cloud.V1.Store.ListFilesRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_ListFiles, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Cerbos.Api.Cloud.V1.Store.GetCurrentVersionResponse GetCurrentVersion(global::Cerbos.Api.Cloud.V1.Store.GetCurrentVersionRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetCurrentVersion(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Cerbos.Api.Cloud.V1.Store.GetCurrentVersionResponse GetCurrentVersion(global::Cerbos.Api.Cloud.V1.Store.GetCurrentVersionRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetCurrentVersion, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Cerbos.Api.Cloud.V1.Store.GetCurrentVersionResponse> GetCurrentVersionAsync(global::Cerbos.Api.Cloud.V1.Store.GetCurrentVersionRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetCurrentVersionAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Cerbos.Api.Cloud.V1.Store.GetCurrentVersionResponse> GetCurrentVersionAsync(global::Cerbos.Api.Cloud.V1.Store.GetCurrentVersionRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetCurrentVersion, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::Cerbos.Api.Cloud.V1.Store.GetFilesResponse GetFiles(global::Cerbos.Api.Cloud.V1.Store.GetFilesRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
@@ -256,6 +294,7 @@ namespace Cerbos.Api.Cloud.V1.Store {
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
           .AddMethod(__Method_ListFiles, serviceImpl.ListFiles)
+          .AddMethod(__Method_GetCurrentVersion, serviceImpl.GetCurrentVersion)
           .AddMethod(__Method_GetFiles, serviceImpl.GetFiles)
           .AddMethod(__Method_ModifyFiles, serviceImpl.ModifyFiles)
           .AddMethod(__Method_ReplaceFiles, serviceImpl.ReplaceFiles).Build();
@@ -269,6 +308,7 @@ namespace Cerbos.Api.Cloud.V1.Store {
     public static void BindService(grpc::ServiceBinderBase serviceBinder, CerbosStoreServiceBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_ListFiles, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Cerbos.Api.Cloud.V1.Store.ListFilesRequest, global::Cerbos.Api.Cloud.V1.Store.ListFilesResponse>(serviceImpl.ListFiles));
+      serviceBinder.AddMethod(__Method_GetCurrentVersion, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Cerbos.Api.Cloud.V1.Store.GetCurrentVersionRequest, global::Cerbos.Api.Cloud.V1.Store.GetCurrentVersionResponse>(serviceImpl.GetCurrentVersion));
       serviceBinder.AddMethod(__Method_GetFiles, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Cerbos.Api.Cloud.V1.Store.GetFilesRequest, global::Cerbos.Api.Cloud.V1.Store.GetFilesResponse>(serviceImpl.GetFiles));
       serviceBinder.AddMethod(__Method_ModifyFiles, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Cerbos.Api.Cloud.V1.Store.ModifyFilesRequest, global::Cerbos.Api.Cloud.V1.Store.ModifyFilesResponse>(serviceImpl.ModifyFiles));
       serviceBinder.AddMethod(__Method_ReplaceFiles, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Cerbos.Api.Cloud.V1.Store.ReplaceFilesRequest, global::Cerbos.Api.Cloud.V1.Store.ReplaceFilesResponse>(serviceImpl.ReplaceFiles));
