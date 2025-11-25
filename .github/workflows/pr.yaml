@@ -12,19 +12,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
         with:
           lfs: true
 
       - name: Setup Buf
-        uses: bufbuild/buf-action@v1
+        uses: bufbuild/buf-action@8f4a1456a0ab6a1eb80ba68e53832e6fcfacc16c # v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           setup_only: true
           token: ${{ secrets.BUF_TOKEN }}
 
       - name: Run the build script
-        uses: cake-build/cake-action@v3
+        uses: cake-build/cake-action@d218f1133bb74a1df0b08c89cfd8fc100c09e1a0 # v3
         env:
           BUF_TOKEN: ${{ secrets.BUF_TOKEN }}
         with:
@@ -41,7 +41,7 @@ jobs:
           fi
       
       - name: Run the test script
-        uses: cake-build/cake-action@v3
+        uses: cake-build/cake-action@d218f1133bb74a1df0b08c89cfd8fc100c09e1a0 # v3
         env:
           CERBOS_HUB_API_ENDPOINT: "${{ secrets.CERBOS_HUB_API_ENDPOINT }}"
           CERBOS_HUB_CLIENT_ID: "${{ secrets.CERBOS_HUB_CLIENT_ID }}"
