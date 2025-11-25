@@ -9,6 +9,7 @@
     "docker:disable",
     ":gitSignOff",
     "group:allNonMajor",
+    "helpers:pinGitHubActionDigests",
     ":renovatePrefix",
     "schedule:monthly",
     ":semanticCommitTypeAll(chore)",
