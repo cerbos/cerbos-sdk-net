@@ -133,7 +133,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
             "eS5wcm90b2NfZ2VuX29wZW5hcGl2Mi5vcHRpb25zLkVudW1TY2hlbWEuRXh0",
             "ZW5zaW9uc0VudHJ5UgpleHRlbnNpb25zGlUKD0V4dGVuc2lvbnNFbnRyeRIQ",
             "CgNrZXkYASABKAlSA2tleRIsCgV2YWx1ZRgCIAEoCzIWLmdvb2dsZS5wcm90",
-            "b2J1Zi5WYWx1ZVIFdmFsdWU6AjgBItcKCgpKU09OU2NoZW1hEhAKA3JlZhgD",
+            "b2J1Zi5WYWx1ZVIFdmFsdWU6AjgBIvcKCgpKU09OU2NoZW1hEhAKA3JlZhgD",
             "IAEoCVIDcmVmEhQKBXRpdGxlGAUgASgJUgV0aXRsZRIgCgtkZXNjcmlwdGlv",
             "bhgGIAEoCVILZGVzY3JpcHRpb24SGAoHZGVmYXVsdBgHIAEoCVIHZGVmYXVs",
             "dBIbCglyZWFkX29ubHkYCCABKAhSCHJlYWRPbmx5EhgKB2V4YW1wbGUYCSAB",
@@ -156,63 +156,63 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
             "YS5GaWVsZENvbmZpZ3VyYXRpb25SEmZpZWxkQ29uZmlndXJhdGlvbhJlCgpl",
             "eHRlbnNpb25zGDAgAygLMkUuZ3JwYy5nYXRld2F5LnByb3RvY19nZW5fb3Bl",
             "bmFwaXYyLm9wdGlvbnMuSlNPTlNjaGVtYS5FeHRlbnNpb25zRW50cnlSCmV4",
-            "dGVuc2lvbnMaPAoSRmllbGRDb25maWd1cmF0aW9uEiYKD3BhdGhfcGFyYW1f",
-            "bmFtZRgvIAEoCVINcGF0aFBhcmFtTmFtZRpVCg9FeHRlbnNpb25zRW50cnkS",
-            "EAoDa2V5GAEgASgJUgNrZXkSLAoFdmFsdWUYAiABKAsyFi5nb29nbGUucHJv",
-            "dG9idWYuVmFsdWVSBXZhbHVlOgI4ASJ3ChVKU09OU2NoZW1hU2ltcGxlVHlw",
-            "ZXMSCwoHVU5LTk9XThAAEgkKBUFSUkFZEAESCwoHQk9PTEVBThACEgsKB0lO",
-            "VEVHRVIQAxIICgROVUxMEAQSCgoGTlVNQkVSEAUSCgoGT0JKRUNUEAYSCgoG",
-            "U1RSSU5HEAdKBAgBEAJKBAgCEANKBAgEEAVKBAgSEBNKBAgTEBRKBAgXEBhK",
-            "BAgbEBxKBAgcEB1KBAgdEB5KBAgeECJKBAglECpKBAgqECtKBAgrEC4i2QIK",
-            "A1RhZxISCgRuYW1lGAEgASgJUgRuYW1lEiAKC2Rlc2NyaXB0aW9uGAIgASgJ",
-            "UgtkZXNjcmlwdGlvbhJlCg1leHRlcm5hbF9kb2NzGAMgASgLMkAuZ3JwYy5n",
-            "YXRld2F5LnByb3RvY19nZW5fb3BlbmFwaXYyLm9wdGlvbnMuRXh0ZXJuYWxE",
-            "b2N1bWVudGF0aW9uUgxleHRlcm5hbERvY3MSXgoKZXh0ZW5zaW9ucxgEIAMo",
-            "CzI+LmdycGMuZ2F0ZXdheS5wcm90b2NfZ2VuX29wZW5hcGl2Mi5vcHRpb25z",
-            "LlRhZy5FeHRlbnNpb25zRW50cnlSCmV4dGVuc2lvbnMaVQoPRXh0ZW5zaW9u",
-            "c0VudHJ5EhAKA2tleRgBIAEoCVIDa2V5EiwKBXZhbHVlGAIgASgLMhYuZ29v",
-            "Z2xlLnByb3RvYnVmLlZhbHVlUgV2YWx1ZToCOAEi9wEKE1NlY3VyaXR5RGVm",
-            "aW5pdGlvbnMSaAoIc2VjdXJpdHkYASADKAsyTC5ncnBjLmdhdGV3YXkucHJv",
-            "dG9jX2dlbl9vcGVuYXBpdjIub3B0aW9ucy5TZWN1cml0eURlZmluaXRpb25z",
-            "LlNlY3VyaXR5RW50cnlSCHNlY3VyaXR5GnYKDVNlY3VyaXR5RW50cnkSEAoD",
-            "a2V5GAEgASgJUgNrZXkSTwoFdmFsdWUYAiABKAsyOS5ncnBjLmdhdGV3YXku",
-            "cHJvdG9jX2dlbl9vcGVuYXBpdjIub3B0aW9ucy5TZWN1cml0eVNjaGVtZVIF",
-            "dmFsdWU6AjgBIv8GCg5TZWN1cml0eVNjaGVtZRJSCgR0eXBlGAEgASgOMj4u",
-            "Z3JwYy5nYXRld2F5LnByb3RvY19nZW5fb3BlbmFwaXYyLm9wdGlvbnMuU2Vj",
-            "dXJpdHlTY2hlbWUuVHlwZVIEdHlwZRIgCgtkZXNjcmlwdGlvbhgCIAEoCVIL",
-            "ZGVzY3JpcHRpb24SEgoEbmFtZRgDIAEoCVIEbmFtZRJMCgJpbhgEIAEoDjI8",
-            "LmdycGMuZ2F0ZXdheS5wcm90b2NfZ2VuX29wZW5hcGl2Mi5vcHRpb25zLlNl",
-            "Y3VyaXR5U2NoZW1lLkluUgJpbhJSCgRmbG93GAUgASgOMj4uZ3JwYy5nYXRl",
-            "d2F5LnByb3RvY19nZW5fb3BlbmFwaXYyLm9wdGlvbnMuU2VjdXJpdHlTY2hl",
-            "bWUuRmxvd1IEZmxvdxIrChFhdXRob3JpemF0aW9uX3VybBgGIAEoCVIQYXV0",
-            "aG9yaXphdGlvblVybBIbCgl0b2tlbl91cmwYByABKAlSCHRva2VuVXJsEkkK",
-            "BnNjb3BlcxgIIAEoCzIxLmdycGMuZ2F0ZXdheS5wcm90b2NfZ2VuX29wZW5h",
-            "cGl2Mi5vcHRpb25zLlNjb3Blc1IGc2NvcGVzEmkKCmV4dGVuc2lvbnMYCSAD",
-            "KAsySS5ncnBjLmdhdGV3YXkucHJvdG9jX2dlbl9vcGVuYXBpdjIub3B0aW9u",
-            "cy5TZWN1cml0eVNjaGVtZS5FeHRlbnNpb25zRW50cnlSCmV4dGVuc2lvbnMa",
-            "VQoPRXh0ZW5zaW9uc0VudHJ5EhAKA2tleRgBIAEoCVIDa2V5EiwKBXZhbHVl",
-            "GAIgASgLMhYuZ29vZ2xlLnByb3RvYnVmLlZhbHVlUgV2YWx1ZToCOAEiSwoE",
-            "VHlwZRIQCgxUWVBFX0lOVkFMSUQQABIOCgpUWVBFX0JBU0lDEAESEAoMVFlQ",
-            "RV9BUElfS0VZEAISDwoLVFlQRV9PQVVUSDIQAyIxCgJJbhIOCgpJTl9JTlZB",
-            "TElEEAASDAoISU5fUVVFUlkQARINCglJTl9IRUFERVIQAiJqCgRGbG93EhAK",
-            "DEZMT1dfSU5WQUxJRBAAEhEKDUZMT1dfSU1QTElDSVQQARIRCg1GTE9XX1BB",
-            "U1NXT1JEEAISFAoQRkxPV19BUFBMSUNBVElPThADEhQKEEZMT1dfQUNDRVNT",
-            "X0NPREUQBCL2AgoTU2VjdXJpdHlSZXF1aXJlbWVudBKKAQoUc2VjdXJpdHlf",
-            "cmVxdWlyZW1lbnQYASADKAsyVy5ncnBjLmdhdGV3YXkucHJvdG9jX2dlbl9v",
-            "cGVuYXBpdjIub3B0aW9ucy5TZWN1cml0eVJlcXVpcmVtZW50LlNlY3VyaXR5",
-            "UmVxdWlyZW1lbnRFbnRyeVITc2VjdXJpdHlSZXF1aXJlbWVudBowChhTZWN1",
-            "cml0eVJlcXVpcmVtZW50VmFsdWUSFAoFc2NvcGUYASADKAlSBXNjb3BlGp8B",
-            "ChhTZWN1cml0eVJlcXVpcmVtZW50RW50cnkSEAoDa2V5GAEgASgJUgNrZXkS",
-            "bQoFdmFsdWUYAiABKAsyVy5ncnBjLmdhdGV3YXkucHJvdG9jX2dlbl9vcGVu",
-            "YXBpdjIub3B0aW9ucy5TZWN1cml0eVJlcXVpcmVtZW50LlNlY3VyaXR5UmVx",
-            "dWlyZW1lbnRWYWx1ZVIFdmFsdWU6AjgBIpYBCgZTY29wZXMSUgoFc2NvcGUY",
-            "ASADKAsyPC5ncnBjLmdhdGV3YXkucHJvdG9jX2dlbl9vcGVuYXBpdjIub3B0",
-            "aW9ucy5TY29wZXMuU2NvcGVFbnRyeVIFc2NvcGUaOAoKU2NvcGVFbnRyeRIQ",
-            "CgNrZXkYASABKAlSA2tleRIUCgV2YWx1ZRgCIAEoCVIFdmFsdWU6AjgBKjsK",
-            "BlNjaGVtZRILCgdVTktOT1dOEAASCAoESFRUUBABEgkKBUhUVFBTEAISBgoC",
-            "V1MQAxIHCgNXU1MQBEJIWkZnaXRodWIuY29tL2dycGMtZWNvc3lzdGVtL2dy",
-            "cGMtZ2F0ZXdheS92Mi9wcm90b2MtZ2VuLW9wZW5hcGl2Mi9vcHRpb25zYgZw",
-            "cm90bzM="));
+            "dGVuc2lvbnMaXAoSRmllbGRDb25maWd1cmF0aW9uEiYKD3BhdGhfcGFyYW1f",
+            "bmFtZRgvIAEoCVINcGF0aFBhcmFtTmFtZRIeCgpkZXByZWNhdGVkGDEgASgI",
+            "UgpkZXByZWNhdGVkGlUKD0V4dGVuc2lvbnNFbnRyeRIQCgNrZXkYASABKAlS",
+            "A2tleRIsCgV2YWx1ZRgCIAEoCzIWLmdvb2dsZS5wcm90b2J1Zi5WYWx1ZVIF",
+            "dmFsdWU6AjgBIncKFUpTT05TY2hlbWFTaW1wbGVUeXBlcxILCgdVTktOT1dO",
+            "EAASCQoFQVJSQVkQARILCgdCT09MRUFOEAISCwoHSU5URUdFUhADEggKBE5V",
+            "TEwQBBIKCgZOVU1CRVIQBRIKCgZPQkpFQ1QQBhIKCgZTVFJJTkcQB0oECAEQ",
+            "AkoECAIQA0oECAQQBUoECBIQE0oECBMQFEoECBcQGEoECBsQHEoECBwQHUoE",
+            "CB0QHkoECB4QIkoECCUQKkoECCoQK0oECCsQLiLZAgoDVGFnEhIKBG5hbWUY",
+            "ASABKAlSBG5hbWUSIAoLZGVzY3JpcHRpb24YAiABKAlSC2Rlc2NyaXB0aW9u",
+            "EmUKDWV4dGVybmFsX2RvY3MYAyABKAsyQC5ncnBjLmdhdGV3YXkucHJvdG9j",
+            "X2dlbl9vcGVuYXBpdjIub3B0aW9ucy5FeHRlcm5hbERvY3VtZW50YXRpb25S",
+            "DGV4dGVybmFsRG9jcxJeCgpleHRlbnNpb25zGAQgAygLMj4uZ3JwYy5nYXRl",
+            "d2F5LnByb3RvY19nZW5fb3BlbmFwaXYyLm9wdGlvbnMuVGFnLkV4dGVuc2lv",
+            "bnNFbnRyeVIKZXh0ZW5zaW9ucxpVCg9FeHRlbnNpb25zRW50cnkSEAoDa2V5",
+            "GAEgASgJUgNrZXkSLAoFdmFsdWUYAiABKAsyFi5nb29nbGUucHJvdG9idWYu",
+            "VmFsdWVSBXZhbHVlOgI4ASL3AQoTU2VjdXJpdHlEZWZpbml0aW9ucxJoCghz",
+            "ZWN1cml0eRgBIAMoCzJMLmdycGMuZ2F0ZXdheS5wcm90b2NfZ2VuX29wZW5h",
+            "cGl2Mi5vcHRpb25zLlNlY3VyaXR5RGVmaW5pdGlvbnMuU2VjdXJpdHlFbnRy",
+            "eVIIc2VjdXJpdHkadgoNU2VjdXJpdHlFbnRyeRIQCgNrZXkYASABKAlSA2tl",
+            "eRJPCgV2YWx1ZRgCIAEoCzI5LmdycGMuZ2F0ZXdheS5wcm90b2NfZ2VuX29w",
+            "ZW5hcGl2Mi5vcHRpb25zLlNlY3VyaXR5U2NoZW1lUgV2YWx1ZToCOAEi/wYK",
+            "DlNlY3VyaXR5U2NoZW1lElIKBHR5cGUYASABKA4yPi5ncnBjLmdhdGV3YXku",
+            "cHJvdG9jX2dlbl9vcGVuYXBpdjIub3B0aW9ucy5TZWN1cml0eVNjaGVtZS5U",
+            "eXBlUgR0eXBlEiAKC2Rlc2NyaXB0aW9uGAIgASgJUgtkZXNjcmlwdGlvbhIS",
+            "CgRuYW1lGAMgASgJUgRuYW1lEkwKAmluGAQgASgOMjwuZ3JwYy5nYXRld2F5",
+            "LnByb3RvY19nZW5fb3BlbmFwaXYyLm9wdGlvbnMuU2VjdXJpdHlTY2hlbWUu",
+            "SW5SAmluElIKBGZsb3cYBSABKA4yPi5ncnBjLmdhdGV3YXkucHJvdG9jX2dl",
+            "bl9vcGVuYXBpdjIub3B0aW9ucy5TZWN1cml0eVNjaGVtZS5GbG93UgRmbG93",
+            "EisKEWF1dGhvcml6YXRpb25fdXJsGAYgASgJUhBhdXRob3JpemF0aW9uVXJs",
+            "EhsKCXRva2VuX3VybBgHIAEoCVIIdG9rZW5VcmwSSQoGc2NvcGVzGAggASgL",
+            "MjEuZ3JwYy5nYXRld2F5LnByb3RvY19nZW5fb3BlbmFwaXYyLm9wdGlvbnMu",
+            "U2NvcGVzUgZzY29wZXMSaQoKZXh0ZW5zaW9ucxgJIAMoCzJJLmdycGMuZ2F0",
+            "ZXdheS5wcm90b2NfZ2VuX29wZW5hcGl2Mi5vcHRpb25zLlNlY3VyaXR5U2No",
+            "ZW1lLkV4dGVuc2lvbnNFbnRyeVIKZXh0ZW5zaW9ucxpVCg9FeHRlbnNpb25z",
+            "RW50cnkSEAoDa2V5GAEgASgJUgNrZXkSLAoFdmFsdWUYAiABKAsyFi5nb29n",
+            "bGUucHJvdG9idWYuVmFsdWVSBXZhbHVlOgI4ASJLCgRUeXBlEhAKDFRZUEVf",
+            "SU5WQUxJRBAAEg4KClRZUEVfQkFTSUMQARIQCgxUWVBFX0FQSV9LRVkQAhIP",
+            "CgtUWVBFX09BVVRIMhADIjEKAkluEg4KCklOX0lOVkFMSUQQABIMCghJTl9R",
+            "VUVSWRABEg0KCUlOX0hFQURFUhACImoKBEZsb3cSEAoMRkxPV19JTlZBTElE",
+            "EAASEQoNRkxPV19JTVBMSUNJVBABEhEKDUZMT1dfUEFTU1dPUkQQAhIUChBG",
+            "TE9XX0FQUExJQ0FUSU9OEAMSFAoQRkxPV19BQ0NFU1NfQ09ERRAEIvYCChNT",
+            "ZWN1cml0eVJlcXVpcmVtZW50EooBChRzZWN1cml0eV9yZXF1aXJlbWVudBgB",
+            "IAMoCzJXLmdycGMuZ2F0ZXdheS5wcm90b2NfZ2VuX29wZW5hcGl2Mi5vcHRp",
+            "b25zLlNlY3VyaXR5UmVxdWlyZW1lbnQuU2VjdXJpdHlSZXF1aXJlbWVudEVu",
+            "dHJ5UhNzZWN1cml0eVJlcXVpcmVtZW50GjAKGFNlY3VyaXR5UmVxdWlyZW1l",
+            "bnRWYWx1ZRIUCgVzY29wZRgBIAMoCVIFc2NvcGUanwEKGFNlY3VyaXR5UmVx",
+            "dWlyZW1lbnRFbnRyeRIQCgNrZXkYASABKAlSA2tleRJtCgV2YWx1ZRgCIAEo",
+            "CzJXLmdycGMuZ2F0ZXdheS5wcm90b2NfZ2VuX29wZW5hcGl2Mi5vcHRpb25z",
+            "LlNlY3VyaXR5UmVxdWlyZW1lbnQuU2VjdXJpdHlSZXF1aXJlbWVudFZhbHVl",
+            "UgV2YWx1ZToCOAEilgEKBlNjb3BlcxJSCgVzY29wZRgBIAMoCzI8LmdycGMu",
+            "Z2F0ZXdheS5wcm90b2NfZ2VuX29wZW5hcGl2Mi5vcHRpb25zLlNjb3Blcy5T",
+            "Y29wZUVudHJ5UgVzY29wZRo4CgpTY29wZUVudHJ5EhAKA2tleRgBIAEoCVID",
+            "a2V5EhQKBXZhbHVlGAIgASgJUgV2YWx1ZToCOAEqOwoGU2NoZW1lEgsKB1VO",
+            "S05PV04QABIICgRIVFRQEAESCQoFSFRUUFMQAhIGCgJXUxADEgcKA1dTUxAE",
+            "QkhaRmdpdGh1Yi5jb20vZ3JwYy1lY29zeXN0ZW0vZ3JwYy1nYXRld2F5L3Yy",
+            "L3Byb3RvYy1nZW4tb3BlbmFwaXYyL29wdGlvbnNiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.StructReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Scheme), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -228,7 +228,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
             new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.ExternalDocumentation), global::Grpc.Gateway.ProtocGenOpenapiv2.Options.ExternalDocumentation.Parser, new[]{ "Description", "Url" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Schema), global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Schema.Parser, new[]{ "JsonSchema", "Discriminator", "ReadOnly", "ExternalDocs", "Example" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.EnumSchema), global::Grpc.Gateway.ProtocGenOpenapiv2.Options.EnumSchema.Parser, new[]{ "Description", "Default", "Title", "Required", "ReadOnly", "ExternalDocs", "Example", "Ref", "Extensions" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.JSONSchema), global::Grpc.Gateway.ProtocGenOpenapiv2.Options.JSONSchema.Parser, new[]{ "Ref", "Title", "Description", "Default", "ReadOnly", "Example", "MultipleOf", "Maximum", "ExclusiveMaximum", "Minimum", "ExclusiveMinimum", "MaxLength", "MinLength", "Pattern", "MaxItems", "MinItems", "UniqueItems", "MaxProperties", "MinProperties", "Required", "Array", "Type", "Format", "Enum", "FieldConfiguration", "Extensions" }, null, new[]{ typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.JSONSchema.Types.JSONSchemaSimpleTypes) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.JSONSchema.Types.FieldConfiguration), global::Grpc.Gateway.ProtocGenOpenapiv2.Options.JSONSchema.Types.FieldConfiguration.Parser, new[]{ "PathParamName" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.JSONSchema), global::Grpc.Gateway.ProtocGenOpenapiv2.Options.JSONSchema.Parser, new[]{ "Ref", "Title", "Description", "Default", "ReadOnly", "Example", "MultipleOf", "Maximum", "ExclusiveMaximum", "Minimum", "ExclusiveMinimum", "MaxLength", "MinLength", "Pattern", "MaxItems", "MinItems", "UniqueItems", "MaxProperties", "MinProperties", "Required", "Array", "Type", "Format", "Enum", "FieldConfiguration", "Extensions" }, null, new[]{ typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.JSONSchema.Types.JSONSchemaSimpleTypes) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.JSONSchema.Types.FieldConfiguration), global::Grpc.Gateway.ProtocGenOpenapiv2.Options.JSONSchema.Types.FieldConfiguration.Parser, new[]{ "PathParamName", "Deprecated" }, null, null, null, null),
             null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Tag), global::Grpc.Gateway.ProtocGenOpenapiv2.Options.Tag.Parser, new[]{ "Name", "Description", "ExternalDocs", "Extensions" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv2.Options.SecurityDefinitions), global::Grpc.Gateway.ProtocGenOpenapiv2.Options.SecurityDefinitions.Parser, new[]{ "Security" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
@@ -6344,6 +6344,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public FieldConfiguration(FieldConfiguration other) : this() {
           pathParamName_ = other.pathParamName_;
+          deprecated_ = other.deprecated_;
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
@@ -6371,6 +6372,22 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
           }
         }
 
+        /// <summary>Field number for the "deprecated" field.</summary>
+        public const int DeprecatedFieldNumber = 49;
+        private bool deprecated_;
+        /// <summary>
+        /// Declares this field to be deprecated. Allows for the generated OpenAPI
+        /// parameter to be marked as deprecated without affecting the proto field.
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool Deprecated {
+          get { return deprecated_; }
+          set {
+            deprecated_ = value;
+          }
+        }
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
@@ -6387,6 +6404,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
             return true;
           }
           if (PathParamName != other.PathParamName) return false;
+          if (Deprecated != other.Deprecated) return false;
           return Equals(_unknownFields, other._unknownFields);
         }
 
@@ -6395,6 +6413,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
         public override int GetHashCode() {
           int hash = 1;
           if (PathParamName.Length != 0) hash ^= PathParamName.GetHashCode();
+          if (Deprecated != false) hash ^= Deprecated.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -6417,6 +6436,10 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
             output.WriteRawTag(250, 2);
             output.WriteString(PathParamName);
           }
+          if (Deprecated != false) {
+            output.WriteRawTag(136, 3);
+            output.WriteBool(Deprecated);
+          }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
@@ -6431,6 +6454,10 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
             output.WriteRawTag(250, 2);
             output.WriteString(PathParamName);
           }
+          if (Deprecated != false) {
+            output.WriteRawTag(136, 3);
+            output.WriteBool(Deprecated);
+          }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(ref output);
           }
@@ -6443,6 +6470,9 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
           int size = 0;
           if (PathParamName.Length != 0) {
             size += 2 + pb::CodedOutputStream.ComputeStringSize(PathParamName);
+          }
+          if (Deprecated != false) {
+            size += 2 + 1;
           }
           if (_unknownFields != null) {
             size += _unknownFields.CalculateSize();
@@ -6458,6 +6488,9 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
           }
           if (other.PathParamName.Length != 0) {
             PathParamName = other.PathParamName;
+          }
+          if (other.Deprecated != false) {
+            Deprecated = other.Deprecated;
           }
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
         }
@@ -6482,6 +6515,10 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
                 PathParamName = input.ReadString();
                 break;
               }
+              case 392: {
+                Deprecated = input.ReadBool();
+                break;
+              }
             }
           }
         #endif
@@ -6503,6 +6540,10 @@ namespace Grpc.Gateway.ProtocGenOpenapiv2.Options {
                 break;
               case 378: {
                 PathParamName = input.ReadString();
+                break;
+              }
+              case 392: {
+                Deprecated = input.ReadBool();
                 break;
               }
             }
