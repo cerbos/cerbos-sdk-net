@@ -1,19 +1,10 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "baseBranchPatterns": ["main"],
-  "commitMessageLowerCase": "never",
-  "dependencyDashboard": true,
   "extends": [
-    ":automergeDisabled",
-    "config:recommended",
+    "github>cerbos/renovate",
     "docker:disable",
-    ":gitSignOff",
     "group:allNonMajor",
-    "helpers:pinGitHubActionDigests",
-    ":renovatePrefix",
-    "schedule:monthly",
-    ":semanticCommitTypeAll(chore)",
-    ":separateMultipleMajorReleases"
+    "schedule:monthly"
   ],
   "labels": ["area/dependencies", "bots", "kind/chore"],
   "reviewers": ["oguzhand95"]
