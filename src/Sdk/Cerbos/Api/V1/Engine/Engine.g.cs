@@ -64,66 +64,68 @@ namespace Cerbos.Api.V1.Engine {
             "EhwKCHZhcmlhYmxlGAMgASgJSABSCHZhcmlhYmxlQgYKBG5vZGU6FZJBEgoQ",
             "Mg5DRUwgZXhwcmVzc2lvbiJjCgRLaW5kEhQKEEtJTkRfVU5TUEVDSUZJRUQQ",
             "ABIXChNLSU5EX0FMV0FZU19BTExPV0VEEAESFgoSS0lORF9BTFdBWVNfREVO",
-            "SUVEEAISFAoQS0lORF9DT05ESVRJT05BTBADIusBCgtPdXRwdXRFbnRyeRJl",
+            "SUVEEAISFAoQS0lORF9DT05ESVRJT05BTBADItACCgtPdXRwdXRFbnRyeRJl",
             "CgNzcmMYASABKAlCU5JBUDIpUnVsZSB0aGF0IG1hdGNoZWQgdG8gcHJvZHVj",
             "ZSB0aGlzIG91dHB1dC5KIyJyZXNvdXJjZS5leHBlbnNlLnYxL2FjbWUjcnVs",
             "ZS0wMDEiUgNzcmMSdQoDdmFsGAIgASgLMhYuZ29vZ2xlLnByb3RvYnVmLlZh",
             "bHVlQkuSQUgyN0R5bmFtaWMgb3V0cHV0LCBkZXRlcm1pbmVkIGJ5IHVzZXIg",
-            "ZGVmaW5lZCBydWxlIG91dHB1dC5KDSJzb21lX3N0cmluZyJSA3ZhbCKyBwoI",
-            "UmVzb3VyY2USXgoEa2luZBgBIAEoCUJKkkE6MilOYW1lIG9mIHRoZSByZXNv",
-            "dXJjZSBraW5kIGJlaW5nIGFjY2Vzc2VkLkoNImFsYnVtOnBob3RvIuBBArpI",
-            "B8gBAXICEAFSBGtpbmQS0AEKDnBvbGljeV92ZXJzaW9uGAIgASgJQqgBkkGT",
-            "ATJ8VGhlIHBvbGljeSB2ZXJzaW9uIHRvIHVzZSB0byBldmFsdWF0ZSB0aGlz",
-            "IHJlcXVlc3QuIElmIG5vdCBzcGVjaWZpZWQsIHdpbGwgZGVmYXVsdCB0byB0",
-            "aGUgc2VydmVyLWNvbmZpZ3VyZWQgZGVmYXVsdCB2ZXJzaW9uLkoJImRlZmF1",
-            "bHQiigEHXltcd10qJOBBAbpIC3IJMgdeW1x3XSokUg1wb2xpY3lWZXJzaW9u",
-            "EkYKAmlkGAMgASgJQjaSQSYyG0lEIG9mIHRoZSByZXNvdXJjZSBpbnN0YW5j",
-            "ZUoHIlhYMTI1IuBBArpIB8gBAXICEAFSAmlkEs4BCgRhdHRyGAQgAygLMiQu",
-            "Y2VyYm9zLmVuZ2luZS52MS5SZXNvdXJjZS5BdHRyRW50cnlCkwGSQX8yZEth",
-            "eS12YWx1ZSBwYWlycyBvZiBjb250ZXh0dWFsIGRhdGEgYWJvdXQgdGhpcyBy",
-            "ZXNvdXJjZSB0aGF0IHNob3VsZCBiZSB1c2VkIGR1cmluZyBwb2xpY3kgZXZh",
-            "bHVhdGlvbi5KF3sib3duZXIiOiAiYnVnc19idW5ueSJ9ukgOmgELIgRyAhAB",
-            "KgPIAQFSBGF0dHISiAIKBXNjb3BlGAUgASgJQvEBkkG5ATJ9QSBkb3Qtc2Vw",
-            "YXJhdGVkIHNjb3BlIHRoYXQgZGVzY3JpYmVzIHRoZSBoaWVyYXJjaHkgdGhp",
-            "cyByZXNvdXJjZSBiZWxvbmdzIHRvLiBUaGlzIGlzIHVzZWQgZm9yIGRldGVy",
-            "bWluaW5nIHBvbGljeSBpbmhlcml0YW5jZS5KCyJhY21lLmNvcnAiigEqXihe",
-            "JHxcLnxbMC05YS16QS1aXVtcd1wtXSooXC5cd1tcd1wtXSopKikk4EEBukgu",
-            "ciwyKl4oXiR8XC58WzAtOWEtekEtWl1bXHdcLV0qKFwuXHdbXHdcLV0qKSop",
-            "JFIFc2NvcGUaTwoJQXR0ckVudHJ5EhAKA2tleRgBIAEoCVIDa2V5EiwKBXZh",
-            "bHVlGAIgASgLMhYuZ29vZ2xlLnByb3RvYnVmLlZhbHVlUgV2YWx1ZToCOAEi",
-            "tggKCVByaW5jaXBhbBJDCgJpZBgBIAEoCUIzkkEjMhNJRCBvZiB0aGUgcHJp",
-            "bmNpcGFsSgwiYnVnc19idW5ueSLgQQK6SAfIAQFyAhABUgJpZBLQAQoOcG9s",
-            "aWN5X3ZlcnNpb24YAiABKAlCqAGSQZMBMnxUaGUgcG9saWN5IHZlcnNpb24g",
-            "dG8gdXNlIHRvIGV2YWx1YXRlIHRoaXMgcmVxdWVzdC4gSWYgbm90IHNwZWNp",
-            "ZmllZCwgd2lsbCBkZWZhdWx0IHRvIHRoZSBzZXJ2ZXItY29uZmlndXJlZCBk",
-            "ZWZhdWx0IHZlcnNpb24uSgkiZGVmYXVsdCKKAQdeW1x3XSok4EEBukgLcgky",
-            "B15bXHddKiRSDXBvbGljeVZlcnNpb24ShwEKBXJvbGVzGAMgAygJQnGSQVgy",
-            "RlJvbGVzIGFzc2lnbmVkIHRvIHRoaXMgcHJpbmNpcGFsIGZyb20geW91ciBp",
-            "ZGVudGl0eSBtYW5hZ2VtZW50IHN5c3RlbS5KCFsidXNlciJdqAEBsAEB4EEC",
-            "ukgQyAEBkgEKCAEYASIEcgIQAVIFcm9sZXMSzgEKBGF0dHIYBCADKAsyJS5j",
-            "ZXJib3MuZW5naW5lLnYxLlByaW5jaXBhbC5BdHRyRW50cnlCkgGSQX4yZUtl",
-            "eS12YWx1ZSBwYWlycyBvZiBjb250ZXh0dWFsIGRhdGEgYWJvdXQgdGhpcyBw",
-            "cmluY2lwYWwgdGhhdCBzaG91bGQgYmUgdXNlZCBkdXJpbmcgcG9saWN5IGV2",
-            "YWx1YXRpb24uShV7ImJldGFfdGVzdGVyIjogdHJ1ZX26SA6aAQsiBHICEAEq",
-            "A8gBAVIEYXR0chKJAgoFc2NvcGUYBSABKAlC8gGSQboBMn5BIGRvdC1zZXBh",
-            "cmF0ZWQgc2NvcGUgdGhhdCBkZXNjcmliZXMgdGhlIGhpZXJhcmNoeSB0aGlz",
-            "IHByaW5jaXBhbCBiZWxvbmdzIHRvLiBUaGlzIGlzIHVzZWQgZm9yIGRldGVy",
-            "bWluaW5nIHBvbGljeSBpbmhlcml0YW5jZS5KCyJhY21lLmNvcnAiigEqXihe",
-            "JHxcLnxbMC05YS16QS1aXVtcd1wtXSooXC5cd1tcd1wtXSopKikk4EEBukgu",
-            "ciwyKl4oXiR8XC58WzAtOWEtekEtWl1bXHdcLV0qKFwuXHdbXHdcLV0qKSop",
-            "JFIFc2NvcGUaTwoJQXR0ckVudHJ5EhAKA2tleRgBIAEoCVIDa2V5EiwKBXZh",
-            "bHVlGAIgASgLMhYuZ29vZ2xlLnByb3RvYnVmLlZhbHVlUgV2YWx1ZToCOAE6",
-            "WZJBVgpUMlJBIHBlcnNvbiBvciBhcHBsaWNhdGlvbiBhdHRlbXB0aW5nIHRv",
-            "IHBlcmZvcm0gdGhlIGFjdGlvbnMgb24gdGhlIHNldCBvZiByZXNvdXJjZXMu",
-            "Qm8KGGRldi5jZXJib3MuYXBpLnYxLmVuZ2luZVo8Z2l0aHViLmNvbS9jZXJi",
-            "b3MvY2VyYm9zL2FwaS9nZW5wYi9jZXJib3MvZW5naW5lL3YxO2VuZ2luZXYx",
-            "qgIUQ2VyYm9zLkFwaS5WMS5FbmdpbmViBnByb3RvMw=="));
+            "ZGVmaW5lZCBydWxlIG91dHB1dC5KDSJzb21lX3N0cmluZyJSA3ZhbBJjCgZh",
+            "Y3Rpb24YAyABKAlCS5JBSDI+QWN0aW9uIHRoYXQgd2FzIGJlaW5nIGV2YWx1",
+            "YXRlZCB3aGVuIHRoaXMgb3V0cHV0IHdhcyBwcm9kdWNlZC5KBiJ2aWV3IlIG",
+            "YWN0aW9uIrIHCghSZXNvdXJjZRJeCgRraW5kGAEgASgJQkqSQToyKU5hbWUg",
+            "b2YgdGhlIHJlc291cmNlIGtpbmQgYmVpbmcgYWNjZXNzZWQuSg0iYWxidW06",
+            "cGhvdG8i4EECukgHyAEBcgIQAVIEa2luZBLQAQoOcG9saWN5X3ZlcnNpb24Y",
+            "AiABKAlCqAGSQZMBMnxUaGUgcG9saWN5IHZlcnNpb24gdG8gdXNlIHRvIGV2",
+            "YWx1YXRlIHRoaXMgcmVxdWVzdC4gSWYgbm90IHNwZWNpZmllZCwgd2lsbCBk",
+            "ZWZhdWx0IHRvIHRoZSBzZXJ2ZXItY29uZmlndXJlZCBkZWZhdWx0IHZlcnNp",
+            "b24uSgkiZGVmYXVsdCKKAQdeW1x3XSok4EEBukgLcgkyB15bXHddKiRSDXBv",
+            "bGljeVZlcnNpb24SRgoCaWQYAyABKAlCNpJBJjIbSUQgb2YgdGhlIHJlc291",
+            "cmNlIGluc3RhbmNlSgciWFgxMjUi4EECukgHyAEBcgIQAVICaWQSzgEKBGF0",
+            "dHIYBCADKAsyJC5jZXJib3MuZW5naW5lLnYxLlJlc291cmNlLkF0dHJFbnRy",
+            "eUKTAZJBfzJkS2F5LXZhbHVlIHBhaXJzIG9mIGNvbnRleHR1YWwgZGF0YSBh",
+            "Ym91dCB0aGlzIHJlc291cmNlIHRoYXQgc2hvdWxkIGJlIHVzZWQgZHVyaW5n",
+            "IHBvbGljeSBldmFsdWF0aW9uLkoXeyJvd25lciI6ICJidWdzX2J1bm55In26",
+            "SA6aAQsiBHICEAEqA8gBAVIEYXR0chKIAgoFc2NvcGUYBSABKAlC8QGSQbkB",
+            "Mn1BIGRvdC1zZXBhcmF0ZWQgc2NvcGUgdGhhdCBkZXNjcmliZXMgdGhlIGhp",
+            "ZXJhcmNoeSB0aGlzIHJlc291cmNlIGJlbG9uZ3MgdG8uIFRoaXMgaXMgdXNl",
+            "ZCBmb3IgZGV0ZXJtaW5pbmcgcG9saWN5IGluaGVyaXRhbmNlLkoLImFjbWUu",
+            "Y29ycCKKASpeKF4kfFwufFswLTlhLXpBLVpdW1x3XC1dKihcLlx3W1x3XC1d",
+            "KikqKSTgQQG6SC5yLDIqXiheJHxcLnxbMC05YS16QS1aXVtcd1wtXSooXC5c",
+            "d1tcd1wtXSopKikkUgVzY29wZRpPCglBdHRyRW50cnkSEAoDa2V5GAEgASgJ",
+            "UgNrZXkSLAoFdmFsdWUYAiABKAsyFi5nb29nbGUucHJvdG9idWYuVmFsdWVS",
+            "BXZhbHVlOgI4ASK2CAoJUHJpbmNpcGFsEkMKAmlkGAEgASgJQjOSQSMyE0lE",
+            "IG9mIHRoZSBwcmluY2lwYWxKDCJidWdzX2J1bm55IuBBArpIB8gBAXICEAFS",
+            "AmlkEtABCg5wb2xpY3lfdmVyc2lvbhgCIAEoCUKoAZJBkwEyfFRoZSBwb2xp",
+            "Y3kgdmVyc2lvbiB0byB1c2UgdG8gZXZhbHVhdGUgdGhpcyByZXF1ZXN0LiBJ",
+            "ZiBub3Qgc3BlY2lmaWVkLCB3aWxsIGRlZmF1bHQgdG8gdGhlIHNlcnZlci1j",
+            "b25maWd1cmVkIGRlZmF1bHQgdmVyc2lvbi5KCSJkZWZhdWx0IooBB15bXHdd",
+            "KiTgQQG6SAtyCTIHXltcd10qJFINcG9saWN5VmVyc2lvbhKHAQoFcm9sZXMY",
+            "AyADKAlCcZJBWDJGUm9sZXMgYXNzaWduZWQgdG8gdGhpcyBwcmluY2lwYWwg",
+            "ZnJvbSB5b3VyIGlkZW50aXR5IG1hbmFnZW1lbnQgc3lzdGVtLkoIWyJ1c2Vy",
+            "Il2oAQGwAQHgQQK6SBDIAQGSAQoIARgBIgRyAhABUgVyb2xlcxLOAQoEYXR0",
+            "chgEIAMoCzIlLmNlcmJvcy5lbmdpbmUudjEuUHJpbmNpcGFsLkF0dHJFbnRy",
+            "eUKSAZJBfjJlS2V5LXZhbHVlIHBhaXJzIG9mIGNvbnRleHR1YWwgZGF0YSBh",
+            "Ym91dCB0aGlzIHByaW5jaXBhbCB0aGF0IHNob3VsZCBiZSB1c2VkIGR1cmlu",
+            "ZyBwb2xpY3kgZXZhbHVhdGlvbi5KFXsiYmV0YV90ZXN0ZXIiOiB0cnVlfbpI",
+            "DpoBCyIEcgIQASoDyAEBUgRhdHRyEokCCgVzY29wZRgFIAEoCULyAZJBugEy",
+            "fkEgZG90LXNlcGFyYXRlZCBzY29wZSB0aGF0IGRlc2NyaWJlcyB0aGUgaGll",
+            "cmFyY2h5IHRoaXMgcHJpbmNpcGFsIGJlbG9uZ3MgdG8uIFRoaXMgaXMgdXNl",
+            "ZCBmb3IgZGV0ZXJtaW5pbmcgcG9saWN5IGluaGVyaXRhbmNlLkoLImFjbWUu",
+            "Y29ycCKKASpeKF4kfFwufFswLTlhLXpBLVpdW1x3XC1dKihcLlx3W1x3XC1d",
+            "KikqKSTgQQG6SC5yLDIqXiheJHxcLnxbMC05YS16QS1aXVtcd1wtXSooXC5c",
+            "d1tcd1wtXSopKikkUgVzY29wZRpPCglBdHRyRW50cnkSEAoDa2V5GAEgASgJ",
+            "UgNrZXkSLAoFdmFsdWUYAiABKAsyFi5nb29nbGUucHJvdG9idWYuVmFsdWVS",
+            "BXZhbHVlOgI4ATpZkkFWClQyUkEgcGVyc29uIG9yIGFwcGxpY2F0aW9uIGF0",
+            "dGVtcHRpbmcgdG8gcGVyZm9ybSB0aGUgYWN0aW9ucyBvbiB0aGUgc2V0IG9m",
+            "IHJlc291cmNlcy5CbwoYZGV2LmNlcmJvcy5hcGkudjEuZW5naW5lWjxnaXRo",
+            "dWIuY29tL2NlcmJvcy9jZXJib3MvYXBpL2dlbnBiL2NlcmJvcy9lbmdpbmUv",
+            "djE7ZW5naW5ldjGqAhRDZXJib3MuQXBpLlYxLkVuZ2luZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.StructReflection.Descriptor, global::Grpc.Gateway.ProtocGenOpenapiv2.Options.AnnotationsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Engine.PlanResourcesInput), global::Cerbos.Api.V1.Engine.PlanResourcesInput.Parser, null, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Engine.PlanResourcesInput.Types.Resource), global::Cerbos.Api.V1.Engine.PlanResourcesInput.Types.Resource.Parser, new[]{ "Kind", "Attr", "PolicyVersion", "Scope" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Engine.PlanResourcesFilter), global::Cerbos.Api.V1.Engine.PlanResourcesFilter.Parser, new[]{ "Kind", "Condition" }, null, new[]{ typeof(global::Cerbos.Api.V1.Engine.PlanResourcesFilter.Types.Kind) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Engine.PlanResourcesFilter.Types.Expression), global::Cerbos.Api.V1.Engine.PlanResourcesFilter.Types.Expression.Parser, new[]{ "Operator", "Operands" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Engine.PlanResourcesFilter.Types.Expression.Types.Operand), global::Cerbos.Api.V1.Engine.PlanResourcesFilter.Types.Expression.Types.Operand.Parser, new[]{ "Value", "Expression", "Variable" }, new[]{ "Node" }, null, null, null)})}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Engine.OutputEntry), global::Cerbos.Api.V1.Engine.OutputEntry.Parser, new[]{ "Src", "Val" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Engine.OutputEntry), global::Cerbos.Api.V1.Engine.OutputEntry.Parser, new[]{ "Src", "Val", "Action" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Engine.Resource), global::Cerbos.Api.V1.Engine.Resource.Parser, new[]{ "Kind", "PolicyVersion", "Id", "Attr", "Scope" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Engine.Principal), global::Cerbos.Api.V1.Engine.Principal.Parser, new[]{ "Id", "PolicyVersion", "Roles", "Attr", "Scope" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
@@ -1475,6 +1477,7 @@ namespace Cerbos.Api.V1.Engine {
     public OutputEntry(OutputEntry other) : this() {
       src_ = other.src_;
       val_ = other.val_ != null ? other.val_.Clone() : null;
+      action_ = other.action_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1508,6 +1511,18 @@ namespace Cerbos.Api.V1.Engine {
       }
     }
 
+    /// <summary>Field number for the "action" field.</summary>
+    public const int ActionFieldNumber = 3;
+    private string action_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Action {
+      get { return action_; }
+      set {
+        action_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -1525,6 +1540,7 @@ namespace Cerbos.Api.V1.Engine {
       }
       if (Src != other.Src) return false;
       if (!object.Equals(Val, other.Val)) return false;
+      if (Action != other.Action) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1534,6 +1550,7 @@ namespace Cerbos.Api.V1.Engine {
       int hash = 1;
       if (Src.Length != 0) hash ^= Src.GetHashCode();
       if (val_ != null) hash ^= Val.GetHashCode();
+      if (Action.Length != 0) hash ^= Action.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1560,6 +1577,10 @@ namespace Cerbos.Api.V1.Engine {
         output.WriteRawTag(18);
         output.WriteMessage(Val);
       }
+      if (Action.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Action);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1578,6 +1599,10 @@ namespace Cerbos.Api.V1.Engine {
         output.WriteRawTag(18);
         output.WriteMessage(Val);
       }
+      if (Action.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Action);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1593,6 +1618,9 @@ namespace Cerbos.Api.V1.Engine {
       }
       if (val_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Val);
+      }
+      if (Action.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Action);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1614,6 +1642,9 @@ namespace Cerbos.Api.V1.Engine {
           Val = new global::Google.Protobuf.WellKnownTypes.Value();
         }
         Val.MergeFrom(other.Val);
+      }
+      if (other.Action.Length != 0) {
+        Action = other.Action;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1645,6 +1676,10 @@ namespace Cerbos.Api.V1.Engine {
             input.ReadMessage(Val);
             break;
           }
+          case 26: {
+            Action = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -1673,6 +1708,10 @@ namespace Cerbos.Api.V1.Engine {
               Val = new global::Google.Protobuf.WellKnownTypes.Value();
             }
             input.ReadMessage(Val);
+            break;
+          }
+          case 26: {
+            Action = input.ReadString();
             break;
           }
         }
