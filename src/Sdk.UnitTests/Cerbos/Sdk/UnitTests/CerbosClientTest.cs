@@ -37,8 +37,7 @@ namespace Cerbos.Sdk.UnitTests
         [OneTimeSetUp]
         public void OneTimeSetUp()
         {
-            _container = new ContainerBuilder()
-                .WithImage($"{Image}:{Tag}")
+            _container = new ContainerBuilder($"{Image}:{Tag}")
                 .WithPortBinding(HttpPort)
                 .WithPortBinding(GrpcPort)
                 .WithBindMount(Path.GetFullPath(PathToPolicies), "/policies")

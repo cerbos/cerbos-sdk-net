@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Google.Protobuf.Collections;
 
 namespace Cerbos.Sdk.Builder
@@ -10,6 +11,7 @@ namespace Cerbos.Sdk.Builder
     public sealed class CheckResourcesRequest
     {
         private AuxData AuxData { get; set; }
+        private bool AllowPartialRequests { get; set; }
         private bool IncludeMeta { get; set; }
         private Principal Principal { get; set; }
         private List<ResourceEntry> ResourceEntries { get; }
@@ -28,6 +30,12 @@ namespace Cerbos.Sdk.Builder
         public CheckResourcesRequest WithAuxData(AuxData auxData)
         {
             AuxData = auxData;
+            return this;
+        }
+
+        public CheckResourcesRequest WithAllowPartialRequests(bool allowPartialRequests)
+        {
+            AllowPartialRequests = allowPartialRequests;
             return this;
         }
 
@@ -57,35 +65,33 @@ namespace Cerbos.Sdk.Builder
 
         public Api.V1.Request.CheckResourcesRequest ToCheckResourcesRequest()
         {
-            if (Principal == null)
-            {
-                throw new Exception("Principal is not set");
-            }
-
-            if (ResourceEntries.Count == 0)
-            {
-                throw new Exception("ResourceEntries are not set");
-            }
-
-            if (string.IsNullOrEmpty(RequestId))
-            {
-                RequestId = Utility.RequestId.Generate();
-            }
-
-            var resourceEntries = new RepeatedField<Api.V1.Request.CheckResourcesRequest.Types.ResourceEntry>();
-            foreach (var re in ResourceEntries)
-            {
-                resourceEntries.Add(re.ToResourceEntry());
-            }
-
             var request = new Api.V1.Request.CheckResourcesRequest
             {
                 AuxData = AuxData?.ToAuxData(),
                 IncludeMeta = IncludeMeta,
-                Principal = Principal.ToPrincipal(),
-                Resources = { resourceEntries },
-                RequestId = RequestId,
+                RequestId = string.IsNullOrEmpty(RequestId) ? Utility.RequestId.Generate() : RequestId,
             };
+
+            if (Principal != null)
+            {
+                request.Principal = Principal.ToPrincipal();
+            }
+            else if (!AllowPartialRequests)
+            {
+                throw new Exception("Principal is not set");
+            }
+
+            if (ResourceEntries.Count > 0)
+            {
+                foreach (var re in ResourceEntries)
+                {
+                    request.Resources.Add(re.ToResourceEntry());
+                }
+            }
+            else if (!AllowPartialRequests)
+            {
+                throw new Exception("ResourceEntries are not set");
+            }
 
             return request;
         }
