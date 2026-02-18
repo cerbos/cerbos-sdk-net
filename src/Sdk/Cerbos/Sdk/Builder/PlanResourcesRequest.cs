@@ -16,6 +16,7 @@ namespace Cerbos.Sdk.Builder
         private Principal Principal { get; set; }
         private Resource Resource { get; set; }
         private string RequestId { get; set; } = "";
+        private RequestContext RequestContext { get; set; }
 
         private PlanResourcesRequest()
         {
@@ -76,6 +77,12 @@ namespace Cerbos.Sdk.Builder
             return this;
         }
 
+        public PlanResourcesRequest WithRequestContext(RequestContext requestContext)
+        {
+            RequestContext = requestContext;
+            return this;
+        }
+
         public Api.V1.Request.PlanResourcesRequest ToPlanResourcesRequest()
         {
             var request = new Api.V1.Request.PlanResourcesRequest
@@ -83,6 +90,7 @@ namespace Cerbos.Sdk.Builder
                 AuxData = AuxData?.ToAuxData(),
                 IncludeMeta = IncludeMeta,
                 RequestId = string.IsNullOrEmpty(RequestId) ? Utility.RequestId.Generate() : RequestId,
+                RequestContext = RequestContext?.ToRequestContext()
             };
 
             if (!string.IsNullOrEmpty(Action))

@@ -16,6 +16,7 @@ namespace Cerbos.Sdk.Builder
         private Principal Principal { get; set; }
         private List<ResourceEntry> ResourceEntries { get; }
         private string RequestId { get; set; }
+        private RequestContext RequestContext { get; set; }
 
         private CheckResourcesRequest()
         {
@@ -63,6 +64,12 @@ namespace Cerbos.Sdk.Builder
             return this;
         }
 
+        public CheckResourcesRequest WithRequestContext(RequestContext requestContext)
+        {
+            RequestContext = requestContext;
+            return this;
+        }
+
         public Api.V1.Request.CheckResourcesRequest ToCheckResourcesRequest()
         {
             var request = new Api.V1.Request.CheckResourcesRequest
@@ -70,6 +77,7 @@ namespace Cerbos.Sdk.Builder
                 AuxData = AuxData?.ToAuxData(),
                 IncludeMeta = IncludeMeta,
                 RequestId = string.IsNullOrEmpty(RequestId) ? Utility.RequestId.Generate() : RequestId,
+                RequestContext = RequestContext?.ToRequestContext()
             };
 
             if (Principal != null)
