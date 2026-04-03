@@ -31,7 +31,7 @@ jobs:
             8.0.x
       
       - name: Setup Buf
-        uses: bufbuild/buf-action@8f4a1456a0ab6a1eb80ba68e53832e6fcfacc16c # v1
+        uses: bufbuild/buf-action@fd21066df7214747548607aaa45548ba2b9bc1ff # v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           setup_only: true
