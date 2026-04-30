@@ -26,25 +26,44 @@ namespace Cerbos.Api.Cloud.V1.ApiKey {
           string.Concat(
             "CiNjZXJib3MvY2xvdWQvYXBpa2V5L3YxL2FwaWtleS5wcm90bxIWY2VyYm9z",
             "LmNsb3VkLmFwaWtleS52MRobYnVmL3ZhbGlkYXRlL3ZhbGlkYXRlLnByb3Rv",
-            "Ghtnb29nbGUvYXBpL3Zpc2liaWxpdHkucHJvdG8aHmdvb2dsZS9wcm90b2J1",
-            "Zi9kdXJhdGlvbi5wcm90byJuChdJc3N1ZUFjY2Vzc1Rva2VuUmVxdWVzdBIl",
-            "CgljbGllbnRfaWQYASABKAlCCLpIBXIDmAEMUghjbGllbnRJZBIsCg1jbGll",
-            "bnRfc2VjcmV0GAIgASgJQge6SARyAhABUgxjbGllbnRTZWNyZXQiiAEKGElz",
-            "c3VlQWNjZXNzVG9rZW5SZXNwb25zZRIqCgxhY2Nlc3NfdG9rZW4YASABKAlC",
-            "B7pIBHICEAFSC2FjY2Vzc1Rva2VuEkAKCmV4cGlyZXNfaW4YAiABKAsyGS5n",
-            "b29nbGUucHJvdG9idWYuRHVyYXRpb25CBrpIA8gBAVIJZXhwaXJlc0luMpwB",
-            "Cg1BcGlLZXlTZXJ2aWNlEnUKEElzc3VlQWNjZXNzVG9rZW4SLy5jZXJib3Mu",
-            "Y2xvdWQuYXBpa2V5LnYxLklzc3VlQWNjZXNzVG9rZW5SZXF1ZXN0GjAuY2Vy",
-            "Ym9zLmNsb3VkLmFwaWtleS52MS5Jc3N1ZUFjY2Vzc1Rva2VuUmVzcG9uc2Ua",
+            "Gh9jZXJib3MvY2xvdWQvYXV0aC92MS9hdXRoLnByb3RvGhtnb29nbGUvYXBp",
+            "L3Zpc2liaWxpdHkucHJvdG8aHmdvb2dsZS9wcm90b2J1Zi9kdXJhdGlvbi5w",
+            "cm90byJuChdJc3N1ZUFjY2Vzc1Rva2VuUmVxdWVzdBIlCgljbGllbnRfaWQY",
+            "ASABKAlCCLpIBXIDmAEMUghjbGllbnRJZBIsCg1jbGllbnRfc2VjcmV0GAIg",
+            "ASgJQge6SARyAhABUgxjbGllbnRTZWNyZXQiiAEKGElzc3VlQWNjZXNzVG9r",
+            "ZW5SZXNwb25zZRIqCgxhY2Nlc3NfdG9rZW4YASABKAlCB7pIBHICEAFSC2Fj",
+            "Y2Vzc1Rva2VuEkAKCmV4cGlyZXNfaW4YAiABKAsyGS5nb29nbGUucHJvdG9i",
+            "dWYuRHVyYXRpb25CBrpIA8gBAVIJZXhwaXJlc0luIhcKFVJlZ2lzdGVyRGV2",
+            "aWNlUmVxdWVzdCKfAQoWUmVnaXN0ZXJEZXZpY2VSZXNwb25zZRIrChB2ZXJp",
+            "ZmljYXRpb25fdXJsGAEgASgJSABSD3ZlcmlmaWNhdGlvblVybBJGCgxkZXZp",
+            "Y2VfdG9rZW4YAiABKAsyIS5jZXJib3MuY2xvdWQuYXV0aC52MS5EZXZpY2VU",
+            "b2tlbkgAUgtkZXZpY2VUb2tlbkIQCgdtZXNzYWdlEgW6SAIIASJpChlSZWZy",
+            "ZXNoRGV2aWNlVG9rZW5SZXF1ZXN0EkwKDGRldmljZV90b2tlbhgBIAEoCzIh",
+            "LmNlcmJvcy5jbG91ZC5hdXRoLnYxLkRldmljZVRva2VuQga6SAPIAQFSC2Rl",
+            "dmljZVRva2VuImoKGlJlZnJlc2hEZXZpY2VUb2tlblJlc3BvbnNlEkwKDGRl",
+            "dmljZV90b2tlbhgBIAEoCzIhLmNlcmJvcy5jbG91ZC5hdXRoLnYxLkRldmlj",
+            "ZVRva2VuQga6SAPIAQFSC2RldmljZVRva2VuMowDCg1BcGlLZXlTZXJ2aWNl",
+            "EnUKEElzc3VlQWNjZXNzVG9rZW4SLy5jZXJib3MuY2xvdWQuYXBpa2V5LnYx",
+            "Lklzc3VlQWNjZXNzVG9rZW5SZXF1ZXN0GjAuY2VyYm9zLmNsb3VkLmFwaWtl",
+            "eS52MS5Jc3N1ZUFjY2Vzc1Rva2VuUmVzcG9uc2UScQoOUmVnaXN0ZXJEZXZp",
+            "Y2USLS5jZXJib3MuY2xvdWQuYXBpa2V5LnYxLlJlZ2lzdGVyRGV2aWNlUmVx",
+            "dWVzdBouLmNlcmJvcy5jbG91ZC5hcGlrZXkudjEuUmVnaXN0ZXJEZXZpY2VS",
+            "ZXNwb25zZTABEnsKElJlZnJlc2hEZXZpY2VUb2tlbhIxLmNlcmJvcy5jbG91",
+            "ZC5hcGlrZXkudjEuUmVmcmVzaERldmljZVRva2VuUmVxdWVzdBoyLmNlcmJv",
+            "cy5jbG91ZC5hcGlrZXkudjEuUmVmcmVzaERldmljZVRva2VuUmVzcG9uc2Ua",
             "FPrS5JMCDhIMRVhQRVJJTUVOVEFMQoABCh5kZXYuY2VyYm9zLmFwaS5jbG91",
             "ZC52MS5hcGlrZXlaQWdpdGh1Yi5jb20vY2VyYm9zL2Nsb3VkLWFwaS9nZW5w",
             "Yi9jZXJib3MvY2xvdWQvYXBpa2V5L3YxO2FwaWtleXYxqgIaQ2VyYm9zLkFw",
             "aS5DbG91ZC5WMS5BcGlLZXliBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Google.Api.VisibilityReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Cerbos.Cloud.Auth.V1.AuthReflection.Descriptor, global::Google.Api.VisibilityReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.Cloud.V1.ApiKey.IssueAccessTokenRequest), global::Cerbos.Api.Cloud.V1.ApiKey.IssueAccessTokenRequest.Parser, new[]{ "ClientId", "ClientSecret" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.Cloud.V1.ApiKey.IssueAccessTokenResponse), global::Cerbos.Api.Cloud.V1.ApiKey.IssueAccessTokenResponse.Parser, new[]{ "AccessToken", "ExpiresIn" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.Cloud.V1.ApiKey.IssueAccessTokenResponse), global::Cerbos.Api.Cloud.V1.ApiKey.IssueAccessTokenResponse.Parser, new[]{ "AccessToken", "ExpiresIn" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.Cloud.V1.ApiKey.RegisterDeviceRequest), global::Cerbos.Api.Cloud.V1.ApiKey.RegisterDeviceRequest.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.Cloud.V1.ApiKey.RegisterDeviceResponse), global::Cerbos.Api.Cloud.V1.ApiKey.RegisterDeviceResponse.Parser, new[]{ "VerificationUrl", "DeviceToken" }, new[]{ "Message" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.Cloud.V1.ApiKey.RefreshDeviceTokenRequest), global::Cerbos.Api.Cloud.V1.ApiKey.RefreshDeviceTokenRequest.Parser, new[]{ "DeviceToken" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.Cloud.V1.ApiKey.RefreshDeviceTokenResponse), global::Cerbos.Api.Cloud.V1.ApiKey.RefreshDeviceTokenResponse.Parser, new[]{ "DeviceToken" }, null, null, null, null)
           }));
     }
     #endregion
@@ -521,6 +540,876 @@ namespace Cerbos.Api.Cloud.V1.ApiKey {
               ExpiresIn = new global::Google.Protobuf.WellKnownTypes.Duration();
             }
             input.ReadMessage(ExpiresIn);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class RegisterDeviceRequest : pb::IMessage<RegisterDeviceRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<RegisterDeviceRequest> _parser = new pb::MessageParser<RegisterDeviceRequest>(() => new RegisterDeviceRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<RegisterDeviceRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Cerbos.Api.Cloud.V1.ApiKey.ApikeyReflection.Descriptor.MessageTypes[2]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RegisterDeviceRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RegisterDeviceRequest(RegisterDeviceRequest other) : this() {
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RegisterDeviceRequest Clone() {
+      return new RegisterDeviceRequest(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as RegisterDeviceRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(RegisterDeviceRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(RegisterDeviceRequest other) {
+      if (other == null) {
+        return;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class RegisterDeviceResponse : pb::IMessage<RegisterDeviceResponse>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<RegisterDeviceResponse> _parser = new pb::MessageParser<RegisterDeviceResponse>(() => new RegisterDeviceResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<RegisterDeviceResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Cerbos.Api.Cloud.V1.ApiKey.ApikeyReflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RegisterDeviceResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RegisterDeviceResponse(RegisterDeviceResponse other) : this() {
+      switch (other.MessageCase) {
+        case MessageOneofCase.VerificationUrl:
+          VerificationUrl = other.VerificationUrl;
+          break;
+        case MessageOneofCase.DeviceToken:
+          DeviceToken = other.DeviceToken.Clone();
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RegisterDeviceResponse Clone() {
+      return new RegisterDeviceResponse(this);
+    }
+
+    /// <summary>Field number for the "verification_url" field.</summary>
+    public const int VerificationUrlFieldNumber = 1;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string VerificationUrl {
+      get { return HasVerificationUrl ? (string) message_ : ""; }
+      set {
+        message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        messageCase_ = MessageOneofCase.VerificationUrl;
+      }
+    }
+    /// <summary>Gets whether the "verification_url" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasVerificationUrl {
+      get { return messageCase_ == MessageOneofCase.VerificationUrl; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "verification_url" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearVerificationUrl() {
+      if (HasVerificationUrl) {
+        ClearMessage();
+      }
+    }
+
+    /// <summary>Field number for the "device_token" field.</summary>
+    public const int DeviceTokenFieldNumber = 2;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Cerbos.Cloud.Auth.V1.DeviceToken DeviceToken {
+      get { return messageCase_ == MessageOneofCase.DeviceToken ? (global::Cerbos.Cloud.Auth.V1.DeviceToken) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.DeviceToken;
+      }
+    }
+
+    private object message_;
+    /// <summary>Enum of possible cases for the "message" oneof.</summary>
+    public enum MessageOneofCase {
+      None = 0,
+      VerificationUrl = 1,
+      DeviceToken = 2,
+    }
+    private MessageOneofCase messageCase_ = MessageOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public MessageOneofCase MessageCase {
+      get { return messageCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearMessage() {
+      messageCase_ = MessageOneofCase.None;
+      message_ = null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as RegisterDeviceResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(RegisterDeviceResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (VerificationUrl != other.VerificationUrl) return false;
+      if (!object.Equals(DeviceToken, other.DeviceToken)) return false;
+      if (MessageCase != other.MessageCase) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (HasVerificationUrl) hash ^= VerificationUrl.GetHashCode();
+      if (messageCase_ == MessageOneofCase.DeviceToken) hash ^= DeviceToken.GetHashCode();
+      hash ^= (int) messageCase_;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (HasVerificationUrl) {
+        output.WriteRawTag(10);
+        output.WriteString(VerificationUrl);
+      }
+      if (messageCase_ == MessageOneofCase.DeviceToken) {
+        output.WriteRawTag(18);
+        output.WriteMessage(DeviceToken);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (HasVerificationUrl) {
+        output.WriteRawTag(10);
+        output.WriteString(VerificationUrl);
+      }
+      if (messageCase_ == MessageOneofCase.DeviceToken) {
+        output.WriteRawTag(18);
+        output.WriteMessage(DeviceToken);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (HasVerificationUrl) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(VerificationUrl);
+      }
+      if (messageCase_ == MessageOneofCase.DeviceToken) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DeviceToken);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(RegisterDeviceResponse other) {
+      if (other == null) {
+        return;
+      }
+      switch (other.MessageCase) {
+        case MessageOneofCase.VerificationUrl:
+          VerificationUrl = other.VerificationUrl;
+          break;
+        case MessageOneofCase.DeviceToken:
+          if (DeviceToken == null) {
+            DeviceToken = new global::Cerbos.Cloud.Auth.V1.DeviceToken();
+          }
+          DeviceToken.MergeFrom(other.DeviceToken);
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            VerificationUrl = input.ReadString();
+            break;
+          }
+          case 18: {
+            global::Cerbos.Cloud.Auth.V1.DeviceToken subBuilder = new global::Cerbos.Cloud.Auth.V1.DeviceToken();
+            if (messageCase_ == MessageOneofCase.DeviceToken) {
+              subBuilder.MergeFrom(DeviceToken);
+            }
+            input.ReadMessage(subBuilder);
+            DeviceToken = subBuilder;
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            VerificationUrl = input.ReadString();
+            break;
+          }
+          case 18: {
+            global::Cerbos.Cloud.Auth.V1.DeviceToken subBuilder = new global::Cerbos.Cloud.Auth.V1.DeviceToken();
+            if (messageCase_ == MessageOneofCase.DeviceToken) {
+              subBuilder.MergeFrom(DeviceToken);
+            }
+            input.ReadMessage(subBuilder);
+            DeviceToken = subBuilder;
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class RefreshDeviceTokenRequest : pb::IMessage<RefreshDeviceTokenRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<RefreshDeviceTokenRequest> _parser = new pb::MessageParser<RefreshDeviceTokenRequest>(() => new RefreshDeviceTokenRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<RefreshDeviceTokenRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Cerbos.Api.Cloud.V1.ApiKey.ApikeyReflection.Descriptor.MessageTypes[4]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RefreshDeviceTokenRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RefreshDeviceTokenRequest(RefreshDeviceTokenRequest other) : this() {
+      deviceToken_ = other.deviceToken_ != null ? other.deviceToken_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RefreshDeviceTokenRequest Clone() {
+      return new RefreshDeviceTokenRequest(this);
+    }
+
+    /// <summary>Field number for the "device_token" field.</summary>
+    public const int DeviceTokenFieldNumber = 1;
+    private global::Cerbos.Cloud.Auth.V1.DeviceToken deviceToken_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Cerbos.Cloud.Auth.V1.DeviceToken DeviceToken {
+      get { return deviceToken_; }
+      set {
+        deviceToken_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as RefreshDeviceTokenRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(RefreshDeviceTokenRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(DeviceToken, other.DeviceToken)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (deviceToken_ != null) hash ^= DeviceToken.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (deviceToken_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(DeviceToken);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (deviceToken_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(DeviceToken);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (deviceToken_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DeviceToken);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(RefreshDeviceTokenRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.deviceToken_ != null) {
+        if (deviceToken_ == null) {
+          DeviceToken = new global::Cerbos.Cloud.Auth.V1.DeviceToken();
+        }
+        DeviceToken.MergeFrom(other.DeviceToken);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (deviceToken_ == null) {
+              DeviceToken = new global::Cerbos.Cloud.Auth.V1.DeviceToken();
+            }
+            input.ReadMessage(DeviceToken);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            if (deviceToken_ == null) {
+              DeviceToken = new global::Cerbos.Cloud.Auth.V1.DeviceToken();
+            }
+            input.ReadMessage(DeviceToken);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class RefreshDeviceTokenResponse : pb::IMessage<RefreshDeviceTokenResponse>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<RefreshDeviceTokenResponse> _parser = new pb::MessageParser<RefreshDeviceTokenResponse>(() => new RefreshDeviceTokenResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<RefreshDeviceTokenResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Cerbos.Api.Cloud.V1.ApiKey.ApikeyReflection.Descriptor.MessageTypes[5]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RefreshDeviceTokenResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RefreshDeviceTokenResponse(RefreshDeviceTokenResponse other) : this() {
+      deviceToken_ = other.deviceToken_ != null ? other.deviceToken_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RefreshDeviceTokenResponse Clone() {
+      return new RefreshDeviceTokenResponse(this);
+    }
+
+    /// <summary>Field number for the "device_token" field.</summary>
+    public const int DeviceTokenFieldNumber = 1;
+    private global::Cerbos.Cloud.Auth.V1.DeviceToken deviceToken_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Cerbos.Cloud.Auth.V1.DeviceToken DeviceToken {
+      get { return deviceToken_; }
+      set {
+        deviceToken_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as RefreshDeviceTokenResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(RefreshDeviceTokenResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(DeviceToken, other.DeviceToken)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (deviceToken_ != null) hash ^= DeviceToken.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (deviceToken_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(DeviceToken);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (deviceToken_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(DeviceToken);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (deviceToken_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DeviceToken);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(RefreshDeviceTokenResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.deviceToken_ != null) {
+        if (deviceToken_ == null) {
+          DeviceToken = new global::Cerbos.Cloud.Auth.V1.DeviceToken();
+        }
+        DeviceToken.MergeFrom(other.DeviceToken);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (deviceToken_ == null) {
+              DeviceToken = new global::Cerbos.Cloud.Auth.V1.DeviceToken();
+            }
+            input.ReadMessage(DeviceToken);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            if (deviceToken_ == null) {
+              DeviceToken = new global::Cerbos.Cloud.Auth.V1.DeviceToken();
+            }
+            input.ReadMessage(DeviceToken);
             break;
           }
         }
