@@ -2,25 +2,30 @@ name: Release
 
 on:
   push:
-    tags:        
+    tags:
       - '*'
+
+defaults:
+  run:
+    shell: bash
+
+permissions: {}
 
 jobs:
   release:
-    name: Release NuGeT package
+    name: Release NuGet package
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
     steps:
-      - name: Add mask for NUGET_API_KEY
-        run: |
-          echo "::add-mask::${{ secrets.NUGET_API_KEY }}" 
-
-      - name: Checkout code
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      - name: Check out code
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           lfs: true
-          
-      - name: Setup .NET
-        uses: actions/setup-dotnet@c2fa09f4bde5ebb9d1777cf28262a3eb3db3ced7 # v5
+          persist-credentials: false
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@c2fa09f4bde5ebb9d1777cf28262a3eb3db3ced7 # v5.2.0
         env:
           DOTNET_NOLOGO: true
           DOTNET_CLI_TELEMETRY_OPTOUT: true
@@ -29,39 +34,41 @@ jobs:
             2.0.x
             2.1.x
             8.0.x
-      
-      - name: Setup Buf
-        uses: bufbuild/buf-action@fd21066df7214747548607aaa45548ba2b9bc1ff # v1
+
+      - name: Set up Buf
+        uses: cerbos/actions/install-tools@043c4c2f16da4bc1366f362cc41c288b8e48a3ae # main
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          setup_only: true
-          token: ${{ secrets.BUF_TOKEN }}
+          tools: buf
 
       - name: Run Clean
-        uses: cake-build/cake-action@d218f1133bb74a1df0b08c89cfd8fc100c09e1a0 # v3
+        uses: cake-build/cake-action@d218f1133bb74a1df0b08c89cfd8fc100c09e1a0 # v3.0.1
         with:
           cake-bootstrap: true
           target: Clean
 
       - name: Run Generate
-        uses: cake-build/cake-action@d218f1133bb74a1df0b08c89cfd8fc100c09e1a0 # v3
+        uses: cake-build/cake-action@d218f1133bb74a1df0b08c89cfd8fc100c09e1a0 # v3.0.1
         env:
           BUF_TOKEN: ${{ secrets.BUF_TOKEN }}
         with:
           cake-bootstrap: true
           target: Generate
 
-      - name: Build NuGeT package
-        run: dotnet pack -c Release /p:Version=${{ github.ref_name }} src/Sdk/sdk.csproj
+      - name: Build NuGet package
+        run: dotnet pack -c Release /p:Version="${VERSION}" src/Sdk/sdk.csproj
+        env:
+          VERSION: ${{ github.ref_name }}
 
       - name: Check repo status
-        run: |-
-          REPO_STATUS="$(git status --porcelain)"
-          if [[ ! -z $REPO_STATUS ]]; then
-            echo "::error::Uncommitted changes detected"
-            echo "$REPO_STATUS"
-            exit 1
-          fi
+        uses: cerbos/actions/check-repo-status@043c4c2f16da4bc1366f362cc41c288b8e48a3ae # main
 
-      - name: Publish generated NuGeT package
-        run: dotnet nuget push src/Sdk/bin/Release/Cerbos.Sdk.*.nupkg -s https://api.nuget.org/v3/index.json -k ${{ secrets.NUGET_API_KEY }} --skip-duplicate --no-symbols
+      - name: Log in to NuGet
+        id: nuget-login
+        uses: NuGet/login@8d196754b4036150537f80ac539e15c2f1028841 # v1.2.0
+        with:
+          user: ${{ secrets.NUGET_USER }}
+
+      - name: Publish generated NuGet package
+        run: dotnet NuGet push src/Sdk/bin/Release/Cerbos.Sdk.*.nupkg -s https://api.NuGet.org/v3/index.json -k "${NUGET_API_KEY}" --skip-duplicate --no-symbols
+        env:
+          NUGET_API_KEY: ${{ steps.nuget-login.outputs.NUGET_API_KEY }}

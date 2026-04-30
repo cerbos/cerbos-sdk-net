@@ -53,6 +53,14 @@ namespace Cerbos.Api.Cloud.V1.ApiKey {
     static readonly grpc::Marshaller<global::Cerbos.Api.Cloud.V1.ApiKey.IssueAccessTokenRequest> __Marshaller_cerbos_cloud_apikey_v1_IssueAccessTokenRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Cerbos.Api.Cloud.V1.ApiKey.IssueAccessTokenRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::Cerbos.Api.Cloud.V1.ApiKey.IssueAccessTokenResponse> __Marshaller_cerbos_cloud_apikey_v1_IssueAccessTokenResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Cerbos.Api.Cloud.V1.ApiKey.IssueAccessTokenResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Cerbos.Api.Cloud.V1.ApiKey.RegisterDeviceRequest> __Marshaller_cerbos_cloud_apikey_v1_RegisterDeviceRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Cerbos.Api.Cloud.V1.ApiKey.RegisterDeviceRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Cerbos.Api.Cloud.V1.ApiKey.RegisterDeviceResponse> __Marshaller_cerbos_cloud_apikey_v1_RegisterDeviceResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Cerbos.Api.Cloud.V1.ApiKey.RegisterDeviceResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Cerbos.Api.Cloud.V1.ApiKey.RefreshDeviceTokenRequest> __Marshaller_cerbos_cloud_apikey_v1_RefreshDeviceTokenRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Cerbos.Api.Cloud.V1.ApiKey.RefreshDeviceTokenRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Cerbos.Api.Cloud.V1.ApiKey.RefreshDeviceTokenResponse> __Marshaller_cerbos_cloud_apikey_v1_RefreshDeviceTokenResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Cerbos.Api.Cloud.V1.ApiKey.RefreshDeviceTokenResponse.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::Cerbos.Api.Cloud.V1.ApiKey.IssueAccessTokenRequest, global::Cerbos.Api.Cloud.V1.ApiKey.IssueAccessTokenResponse> __Method_IssueAccessToken = new grpc::Method<global::Cerbos.Api.Cloud.V1.ApiKey.IssueAccessTokenRequest, global::Cerbos.Api.Cloud.V1.ApiKey.IssueAccessTokenResponse>(
@@ -61,6 +69,22 @@ namespace Cerbos.Api.Cloud.V1.ApiKey {
         "IssueAccessToken",
         __Marshaller_cerbos_cloud_apikey_v1_IssueAccessTokenRequest,
         __Marshaller_cerbos_cloud_apikey_v1_IssueAccessTokenResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::Cerbos.Api.Cloud.V1.ApiKey.RegisterDeviceRequest, global::Cerbos.Api.Cloud.V1.ApiKey.RegisterDeviceResponse> __Method_RegisterDevice = new grpc::Method<global::Cerbos.Api.Cloud.V1.ApiKey.RegisterDeviceRequest, global::Cerbos.Api.Cloud.V1.ApiKey.RegisterDeviceResponse>(
+        grpc::MethodType.ServerStreaming,
+        __ServiceName,
+        "RegisterDevice",
+        __Marshaller_cerbos_cloud_apikey_v1_RegisterDeviceRequest,
+        __Marshaller_cerbos_cloud_apikey_v1_RegisterDeviceResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::Cerbos.Api.Cloud.V1.ApiKey.RefreshDeviceTokenRequest, global::Cerbos.Api.Cloud.V1.ApiKey.RefreshDeviceTokenResponse> __Method_RefreshDeviceToken = new grpc::Method<global::Cerbos.Api.Cloud.V1.ApiKey.RefreshDeviceTokenRequest, global::Cerbos.Api.Cloud.V1.ApiKey.RefreshDeviceTokenResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "RefreshDeviceToken",
+        __Marshaller_cerbos_cloud_apikey_v1_RefreshDeviceTokenRequest,
+        __Marshaller_cerbos_cloud_apikey_v1_RefreshDeviceTokenResponse);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -74,6 +98,18 @@ namespace Cerbos.Api.Cloud.V1.ApiKey {
     {
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::Cerbos.Api.Cloud.V1.ApiKey.IssueAccessTokenResponse> IssueAccessToken(global::Cerbos.Api.Cloud.V1.ApiKey.IssueAccessTokenRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task RegisterDevice(global::Cerbos.Api.Cloud.V1.ApiKey.RegisterDeviceRequest request, grpc::IServerStreamWriter<global::Cerbos.Api.Cloud.V1.ApiKey.RegisterDeviceResponse> responseStream, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::Cerbos.Api.Cloud.V1.ApiKey.RefreshDeviceTokenResponse> RefreshDeviceToken(global::Cerbos.Api.Cloud.V1.ApiKey.RefreshDeviceTokenRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -127,6 +163,36 @@ namespace Cerbos.Api.Cloud.V1.ApiKey {
       {
         return CallInvoker.AsyncUnaryCall(__Method_IssueAccessToken, null, options, request);
       }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncServerStreamingCall<global::Cerbos.Api.Cloud.V1.ApiKey.RegisterDeviceResponse> RegisterDevice(global::Cerbos.Api.Cloud.V1.ApiKey.RegisterDeviceRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return RegisterDevice(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncServerStreamingCall<global::Cerbos.Api.Cloud.V1.ApiKey.RegisterDeviceResponse> RegisterDevice(global::Cerbos.Api.Cloud.V1.ApiKey.RegisterDeviceRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncServerStreamingCall(__Method_RegisterDevice, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Cerbos.Api.Cloud.V1.ApiKey.RefreshDeviceTokenResponse RefreshDeviceToken(global::Cerbos.Api.Cloud.V1.ApiKey.RefreshDeviceTokenRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return RefreshDeviceToken(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Cerbos.Api.Cloud.V1.ApiKey.RefreshDeviceTokenResponse RefreshDeviceToken(global::Cerbos.Api.Cloud.V1.ApiKey.RefreshDeviceTokenRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_RefreshDeviceToken, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Cerbos.Api.Cloud.V1.ApiKey.RefreshDeviceTokenResponse> RefreshDeviceTokenAsync(global::Cerbos.Api.Cloud.V1.ApiKey.RefreshDeviceTokenRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return RefreshDeviceTokenAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Cerbos.Api.Cloud.V1.ApiKey.RefreshDeviceTokenResponse> RefreshDeviceTokenAsync(global::Cerbos.Api.Cloud.V1.ApiKey.RefreshDeviceTokenRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_RefreshDeviceToken, null, options, request);
+      }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       protected override ApiKeyServiceClient NewInstance(ClientBaseConfiguration configuration)
@@ -141,7 +207,9 @@ namespace Cerbos.Api.Cloud.V1.ApiKey {
     public static grpc::ServerServiceDefinition BindService(ApiKeyServiceBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_IssueAccessToken, serviceImpl.IssueAccessToken).Build();
+          .AddMethod(__Method_IssueAccessToken, serviceImpl.IssueAccessToken)
+          .AddMethod(__Method_RegisterDevice, serviceImpl.RegisterDevice)
+          .AddMethod(__Method_RefreshDeviceToken, serviceImpl.RefreshDeviceToken).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
@@ -152,6 +220,8 @@ namespace Cerbos.Api.Cloud.V1.ApiKey {
     public static void BindService(grpc::ServiceBinderBase serviceBinder, ApiKeyServiceBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_IssueAccessToken, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Cerbos.Api.Cloud.V1.ApiKey.IssueAccessTokenRequest, global::Cerbos.Api.Cloud.V1.ApiKey.IssueAccessTokenResponse>(serviceImpl.IssueAccessToken));
+      serviceBinder.AddMethod(__Method_RegisterDevice, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::Cerbos.Api.Cloud.V1.ApiKey.RegisterDeviceRequest, global::Cerbos.Api.Cloud.V1.ApiKey.RegisterDeviceResponse>(serviceImpl.RegisterDevice));
+      serviceBinder.AddMethod(__Method_RefreshDeviceToken, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Cerbos.Api.Cloud.V1.ApiKey.RefreshDeviceTokenRequest, global::Cerbos.Api.Cloud.V1.ApiKey.RefreshDeviceTokenResponse>(serviceImpl.RefreshDeviceToken));
     }
 
   }
