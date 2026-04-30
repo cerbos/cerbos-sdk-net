@@ -6,25 +6,30 @@ on:
       - main
       - 'v*'
 
+defaults:
+  run:
+    shell: bash
+
+permissions: {}
+
 jobs:
   build-check-changes-and-run-unit-tests:
     name: Build, check uncommitted changes and run unit tests
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      - name: Check out code
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           lfs: true
+          persist-credentials: false
 
-      - name: Setup Buf
-        uses: bufbuild/buf-action@fd21066df7214747548607aaa45548ba2b9bc1ff # v1
+      - name: Set up Buf
+        uses: cerbos/actions/install-tools@043c4c2f16da4bc1366f362cc41c288b8e48a3ae # main
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          setup_only: true
-          token: ${{ secrets.BUF_TOKEN }}
+          tools: buf
 
       - name: Run the build script
-        uses: cake-build/cake-action@d218f1133bb74a1df0b08c89cfd8fc100c09e1a0 # v3
+        uses: cake-build/cake-action@d218f1133bb74a1df0b08c89cfd8fc100c09e1a0 # v3.0.1
         env:
           BUF_TOKEN: ${{ secrets.BUF_TOKEN }}
         with:
@@ -32,16 +37,10 @@ jobs:
           target: Build
 
       - name: Check repo status
-        run: |-
-          REPO_STATUS="$(git status --porcelain)"
-          if [[ ! -z $REPO_STATUS ]]; then
-            echo "::error::Uncommitted changes detected"
-            echo "$REPO_STATUS"
-            exit 1
-          fi
-      
+        uses: cerbos/actions/check-repo-status@043c4c2f16da4bc1366f362cc41c288b8e48a3ae # main
+
       - name: Run the test script
-        uses: cake-build/cake-action@d218f1133bb74a1df0b08c89cfd8fc100c09e1a0 # v3
+        uses: cake-build/cake-action@d218f1133bb74a1df0b08c89cfd8fc100c09e1a0 # v3.0.1
         env:
           CERBOS_HUB_API_ENDPOINT: "${{ secrets.CERBOS_HUB_API_ENDPOINT }}"
           CERBOS_HUB_CLIENT_ID: "${{ secrets.CERBOS_HUB_CLIENT_ID }}"
