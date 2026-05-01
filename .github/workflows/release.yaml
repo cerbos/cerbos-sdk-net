@@ -69,6 +69,6 @@ jobs:
           user: ${{ secrets.NUGET_USER }}
 
       - name: Publish generated NuGet package
-        run: dotnet NuGet push src/Sdk/bin/Release/Cerbos.Sdk.*.nupkg -s https://api.NuGet.org/v3/index.json -k "${NUGET_API_KEY}" --skip-duplicate --no-symbols
+        run: dotnet nuget push src/Sdk/bin/Release/Cerbos.Sdk.*.nupkg -s https://api.NuGet.org/v3/index.json -k "${NUGET_API_KEY}" --skip-duplicate --no-symbols
         env:
           NUGET_API_KEY: ${{ steps.nuget-login.outputs.NUGET_API_KEY }}
