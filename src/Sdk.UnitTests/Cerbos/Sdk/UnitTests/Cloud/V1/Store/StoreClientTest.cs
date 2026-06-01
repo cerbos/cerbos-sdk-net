@@ -294,7 +294,7 @@ public class StoreClientTest
 
         Assert.That(response.NewStoreVersion, Is.EqualTo(initialStoreVersion + 2));
 
-        Assert.Catch<OperationDiscardedException>(() =>
+        Assert.Catch<OperationDiscardedException>((Action)(() =>
         {
             response = StoreClient.ReplaceFiles(
                 ReplaceFilesRequest.WithZippedContents(
@@ -304,6 +304,6 @@ public class StoreClientTest
                     ChangeDetails.Internal("cerbos-sdk-net/ReplaceFilesAsync/With=store.zip", ChangeDetails.Types.Uploader.NewInstance("cerbos-sdk-net"), ChangeDetails.Types.Internal.NewInstance("sdk"))
                 )
             );
-        });
+        }));
     }
 }

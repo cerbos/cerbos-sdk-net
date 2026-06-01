@@ -11,7 +11,7 @@ public class PlanResourcesRequestTest
     [Test]
     public void TestWithAllowPartialRequests()
     {
-        Assert.That(() => PlanResourcesRequest.NewInstance().ToPlanResourcesRequest(), Throws.Exception);
-        Assert.That(() => PlanResourcesRequest.NewInstance().WithAllowPartialRequests(true).ToPlanResourcesRequest(), Throws.Nothing);
+        Assert.That((Func<Api.V1.Request.PlanResourcesRequest>)(() => PlanResourcesRequest.NewInstance().ToPlanResourcesRequest()), Throws.Exception);
+        Assert.That((Func<Api.V1.Request.PlanResourcesRequest>)(() => PlanResourcesRequest.NewInstance().WithAllowPartialRequests(true).ToPlanResourcesRequest()), Throws.Nothing);
     }
 }
