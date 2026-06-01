@@ -11,7 +11,7 @@ public class CheckResourcesRequestTest
     [Test]
     public void TestWithAllowPartialRequests()
     {
-        Assert.That(() => CheckResourcesRequest.NewInstance().ToCheckResourcesRequest(), Throws.Exception);
-        Assert.That(() => CheckResourcesRequest.NewInstance().WithAllowPartialRequests(true).ToCheckResourcesRequest(), Throws.Nothing);
+        Assert.That((Func<Api.V1.Request.CheckResourcesRequest>)(() => CheckResourcesRequest.NewInstance().ToCheckResourcesRequest()), Throws.Exception);
+        Assert.That((Func<Api.V1.Request.CheckResourcesRequest>)(() => CheckResourcesRequest.NewInstance().WithAllowPartialRequests(true).ToCheckResourcesRequest()), Throws.Nothing);
     }
 }
