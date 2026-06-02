@@ -1,6 +1,10 @@
 // Copyright 2021-2026 Zenauth Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
+using System;
+using System.Threading.Tasks;
+using Cerbos.Sdk.Request;
+using Cerbos.Sdk.Response;
 using Grpc.Core;
 
 namespace Cerbos.Sdk
@@ -20,6 +24,35 @@ namespace Cerbos.Sdk
         {
             CerbosAdminServiceClient = cerbosAdminServiceClient;
             _metadata = metadata;
+        }
+
+        public ListPoliciesResponse ListPolicies(ListPoliciesRequest request, Metadata headers = null)
+        {
+            try
+            {
+                return new ListPoliciesResponse(CerbosAdminServiceClient.ListPolicies(request.ToListPoliciesRequest(), Utility.Metadata.Merge(_metadata, headers)));
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Failed to list policies: ${e}");
+            }
+        }
+
+        public Task<ListPoliciesResponse> ListPoliciesAsync(ListPoliciesRequest request, Metadata headers = null)
+        {
+            try
+            {
+                return CerbosAdminServiceClient
+                    .ListPoliciesAsync(request.ToListPoliciesRequest(), Utility.Metadata.Merge(_metadata, headers))
+                    .ResponseAsync
+                    .ContinueWith(
+                        r => new ListPoliciesResponse(r.Result)
+                    );
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Failed to check resources: ${e}");
+            }
         }
     }
 }

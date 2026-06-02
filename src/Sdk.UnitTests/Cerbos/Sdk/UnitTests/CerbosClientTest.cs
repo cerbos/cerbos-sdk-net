@@ -5,8 +5,6 @@ using Cerbos.Api.V1.Engine;
 using Cerbos.Sdk.Builder;
 using Cerbos.Sdk.Response;
 using Cerbos.Sdk.Utility;
-using DotNet.Testcontainers.Builders;
-using DotNet.Testcontainers.Containers;
 using NUnit.Framework;
 using AuxData = Cerbos.Sdk.Builder.AuxData;
 using Principal = Cerbos.Sdk.Builder.Principal;
@@ -14,49 +12,11 @@ using Resource = Cerbos.Sdk.Builder.Resource;
 
 namespace Cerbos.Sdk.UnitTests
 {
-    public class CerbosClientTest
+    [TestFixture]
+    public class CerbosClientTest : CerbosTest
     {
-        private const int HttpPort = 3592;
-        private const int GrpcPort = 3593;
-        private const string Image = "ghcr.io/cerbos/cerbos";
-        private const string Tag = "dev";
-        private const string PathToPolicies = "./../../../res/policies";
-        private const string PathToConfig = "./../../../res/config";
-        private readonly Grpc.Core.Metadata _metadata = new() { { "wibble", "wobble" } };
-
-        private IContainer? _container;
-
-        private ICerbosClient? _client;
-        private ICerbosClient? _clientPlayground;
-
         private readonly string _jwt =
-            "eyJhbGciOiJFUzM4NCIsImtpZCI6IjE5TGZaYXRFZGc4M1lOYzVyMjNndU1KcXJuND0iLCJ0eXAiOiJKV1QifQ.eyJhdWQiOlsiY2VyYm9zLWp3dC10ZXN0cyJdLCJjdXN0b21BcnJheSI6WyJBIiwiQiIsIkMiXSwiY3VzdG9tSW50Ijo0MiwiY3VzdG9tTWFwIjp7IkEiOiJBQSIsIkIiOiJCQiIsIkMiOiJDQyJ9LCJjdXN0b21TdHJpbmciOiJmb29iYXIiLCJleHAiOjE5NTAyNzc5MjYsImlzcyI6ImNlcmJvcy10ZXN0LXN1aXRlIn0._nCHIsuFI3wczeuUv_xjSwaVnIQUdYA9sGf_jVsrsDWloLs3iPWDaA1bXpuIUJVsi8-G6qqdrPI0cOBxEocg1NCm8fyD9T_3hsZV0fYWon_Je6Kl93a3JIW3S6kbvjsL";
-        private const string PlaygroundHost = "https://demo-pdp.cerbos.cloud";
-        private const string PlaygroundInstanceId = "XhkOi82fFKk3YW60e2c806Yvm0trKEje"; // See: https://play.cerbos.dev/p/XhkOi82fFKk3YW60e2c806Yvm0trKEje
-
-        [OneTimeSetUp]
-        public void OneTimeSetUp()
-        {
-            _container = new ContainerBuilder($"{Image}:{Tag}")
-                .WithPortBinding(HttpPort)
-                .WithPortBinding(GrpcPort)
-                .WithBindMount(Path.GetFullPath(PathToPolicies), "/policies")
-                .WithBindMount(Path.GetFullPath(PathToConfig), "/config")
-                .WithCommand("server", "--config=/config/config.yaml")
-                .Build();
-
-            Task.Run(async () => await _container.StartAsync()).Wait();
-            Thread.Sleep(3000);
-            _client = CerbosClientBuilder.ForTarget("http://127.0.0.1:3593").WithMetadata(_metadata).WithPlaintext().Build();
-            _clientPlayground = CerbosClientBuilder.ForTarget(PlaygroundHost).WithMetadata(_metadata).WithPlaygroundInstance(PlaygroundInstanceId).Build();
-        }
-
-        [OneTimeTearDown]
-        public void TearDown()
-        {
-            Task.Run(async () => await _container.StopAsync()).Wait();
-            _container.DisposeAsync();
-        }
+    "eyJhbGciOiJFUzM4NCIsImtpZCI6IjE5TGZaYXRFZGc4M1lOYzVyMjNndU1KcXJuND0iLCJ0eXAiOiJKV1QifQ.eyJhdWQiOlsiY2VyYm9zLWp3dC10ZXN0cyJdLCJjdXN0b21BcnJheSI6WyJBIiwiQiIsIkMiXSwiY3VzdG9tSW50Ijo0MiwiY3VzdG9tTWFwIjp7IkEiOiJBQSIsIkIiOiJCQiIsIkMiOiJDQyJ9LCJjdXN0b21TdHJpbmciOiJmb29iYXIiLCJleHAiOjE5NTAyNzc5MjYsImlzcyI6ImNlcmJvcy10ZXN0LXN1aXRlIn0._nCHIsuFI3wczeuUv_xjSwaVnIQUdYA9sGf_jVsrsDWloLs3iPWDaA1bXpuIUJVsi8-G6qqdrPI0cOBxEocg1NCm8fyD9T_3hsZV0fYWon_Je6Kl93a3JIW3S6kbvjsL";
 
         [Test]
         public void CheckWithoutJwt()
@@ -364,7 +324,7 @@ namespace Cerbos.Sdk.UnitTests
 
             request = HealthCheckRequest.NewInstance(HealthCheckRequest.Types.Service.Admin);
             have = _client.CheckHealth(request, _metadata);
-            Assert.That(have.Status, Is.EqualTo(HealthCheckResponse.Types.ServiceStatus.Disabled));
+            Assert.That(have.Status, Is.EqualTo(HealthCheckResponse.Types.ServiceStatus.Serving));
         }
 
         [Test]
@@ -377,7 +337,7 @@ namespace Cerbos.Sdk.UnitTests
 
             request = HealthCheckRequest.NewInstance(HealthCheckRequest.Types.Service.Admin);
             have = _client.CheckHealth(request, _metadata);
-            Assert.That(have.Status, Is.EqualTo(HealthCheckResponse.Types.ServiceStatus.Disabled));
+            Assert.That(have.Status, Is.EqualTo(HealthCheckResponse.Types.ServiceStatus.Serving));
         }
     }
 }
