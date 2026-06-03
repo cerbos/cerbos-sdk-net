@@ -41,7 +41,7 @@ namespace Cerbos.Sdk.Request
 
         private AddOrUpdatePolicyRequest AddPolicy(string policy)
         {
-            R.Policies.Add(JsonParser.Default.Parse<Api.V1.Policy.Policy>(policy));
+            R.Policies.Add(Policy.Policy.NewInstance(policy).ToPolicy());
             return this;
         }
 

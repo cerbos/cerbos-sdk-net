@@ -24,6 +24,23 @@ namespace Cerbos.Sdk.UnitTests
         }
 
         [Test]
+        public void AddOrUpdateSchema()
+        {
+            var addOrUpdateSchemaRequest = AddOrUpdateSchemaRequest.NewInstance()
+                .WithJson(
+                    "test_schema.json",
+                    """{"$schema":"https://json-schema.org/draft/2020-12/schema","type":"object","properties":{"department":{"type":"string","enum":["engineering"]}},"required":["department"]}"""
+                );
+
+            Assert.That((Func<Response.AddOrUpdateSchemaResponse>)(() => _clientAdmin.AddOrUpdateSchema(addOrUpdateSchemaRequest, _metadata)), Throws.Nothing);
+
+            var deleteSchemaRequest = DeleteSchemaRequest.NewInstance("test_schema.json");
+
+            var have = _clientAdmin.DeleteSchema(deleteSchemaRequest, _metadata);
+            Assert.That(have.DeletedSchemas, Is.EqualTo(1));
+        }
+
+        [Test]
         public void DisablePolicy()
         {
             var request = DisablePolicyRequest.NewInstance("resource.leave_request.vstaging");

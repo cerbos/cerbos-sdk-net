@@ -12,8 +12,12 @@ namespace Cerbos.Sdk
     {
         AddOrUpdatePolicyResponse AddOrUpdatePolicy(AddOrUpdatePolicyRequest request, Metadata headers = null);
         Task<AddOrUpdatePolicyResponse> AddOrUpdatePolicyAsync(AddOrUpdatePolicyRequest request, Metadata headers = null);
+        AddOrUpdateSchemaResponse AddOrUpdateSchema(AddOrUpdateSchemaRequest request, Metadata headers = null);
+        Task<AddOrUpdateSchemaResponse> AddOrUpdateSchemaAsync(AddOrUpdateSchemaRequest request, Metadata headers = null);
         DeletePolicyResponse DeletePolicy(DeletePolicyRequest request, Metadata headers = null);
         Task<DeletePolicyResponse> DeletePolicyAsync(DeletePolicyRequest request, Metadata headers = null);
+        DeleteSchemaResponse DeleteSchema(DeleteSchemaRequest request, Metadata headers = null);
+        Task<DeleteSchemaResponse> DeleteSchemaAsync(DeleteSchemaRequest request, Metadata headers = null);
         DisablePolicyResponse DisablePolicy(DisablePolicyRequest request, Metadata headers = null);
         Task<DisablePolicyResponse> DisablePolicyAsync(DisablePolicyRequest request, Metadata headers = null);
         EnablePolicyResponse EnablePolicy(EnablePolicyRequest request, Metadata headers = null);

@@ -55,6 +55,35 @@ namespace Cerbos.Sdk
             }
         }
 
+        public AddOrUpdateSchemaResponse AddOrUpdateSchema(AddOrUpdateSchemaRequest request, Metadata headers = null)
+        {
+            try
+            {
+                return new AddOrUpdateSchemaResponse(CerbosAdminServiceClient.AddOrUpdateSchema(request.ToAddOrUpdateSchemaRequest(), Utility.Metadata.Merge(_metadata, headers)));
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Failed to add/update schema: ${e}");
+            }
+        }
+
+        public Task<AddOrUpdateSchemaResponse> AddOrUpdateSchemaAsync(AddOrUpdateSchemaRequest request, Metadata headers = null)
+        {
+            try
+            {
+                return CerbosAdminServiceClient
+                    .AddOrUpdateSchemaAsync(request.ToAddOrUpdateSchemaRequest(), Utility.Metadata.Merge(_metadata, headers))
+                    .ResponseAsync
+                    .ContinueWith(
+                        r => new AddOrUpdateSchemaResponse(r.Result)
+                    );
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Failed to add/update schema: ${e}");
+            }
+        }
+
         public DeletePolicyResponse DeletePolicy(DeletePolicyRequest request, Metadata headers = null)
         {
             try
@@ -81,6 +110,35 @@ namespace Cerbos.Sdk
             catch (Exception e)
             {
                 throw new Exception($"Failed to delete policy: ${e}");
+            }
+        }
+
+        public DeleteSchemaResponse DeleteSchema(DeleteSchemaRequest request, Metadata headers = null)
+        {
+            try
+            {
+                return new DeleteSchemaResponse(CerbosAdminServiceClient.DeleteSchema(request.ToDeleteSchemaRequest(), Utility.Metadata.Merge(_metadata, headers)));
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Failed to delete schema: ${e}");
+            }
+        }
+
+        public Task<DeleteSchemaResponse> DeleteSchemaAsync(DeleteSchemaRequest request, Metadata headers = null)
+        {
+            try
+            {
+                return CerbosAdminServiceClient
+                    .DeleteSchemaAsync(request.ToDeleteSchemaRequest(), Utility.Metadata.Merge(_metadata, headers))
+                    .ResponseAsync
+                    .ContinueWith(
+                        r => new DeleteSchemaResponse(r.Result)
+                    );
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Failed to delete schema: ${e}");
             }
         }
 
