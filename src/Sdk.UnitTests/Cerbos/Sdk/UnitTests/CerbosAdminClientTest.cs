@@ -68,5 +68,12 @@ namespace Cerbos.Sdk.UnitTests
             var have = _clientAdmin.PurgeStoreRevisions(request, _metadata).AffectedRows;
             Assert.That(have, Is.EqualTo(19));
         }
+
+        [Test]
+        public void ReloadStore()
+        {
+            var request = ReloadStoreRequest.NewInstance(true);
+            Assert.That((Func<Response.ReloadStoreResponse>)(() => _clientAdmin.ReloadStore(request, _metadata)), Throws.Nothing);
+        }
     }
 }

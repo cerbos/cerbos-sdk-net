@@ -228,5 +228,34 @@ namespace Cerbos.Sdk
                 throw new Exception($"Failed to purge store revisions: ${e}");
             }
         }
+
+        public ReloadStoreResponse ReloadStore(ReloadStoreRequest request, Metadata headers = null)
+        {
+            try
+            {
+                return new ReloadStoreResponse(CerbosAdminServiceClient.ReloadStore(request.ToReloadStoreRequest(), Utility.Metadata.Merge(_metadata, headers)));
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Failed to reload store: ${e}");
+            }
+        }
+
+        public Task<ReloadStoreResponse> ReloadStoreAsync(ReloadStoreRequest request, Metadata headers = null)
+        {
+            try
+            {
+                return CerbosAdminServiceClient
+                    .ReloadStoreAsync(request.ToReloadStoreRequest(), Utility.Metadata.Merge(_metadata, headers))
+                    .ResponseAsync
+                    .ContinueWith(
+                        r => new ReloadStoreResponse(r.Result)
+                    );
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Failed to reload store: ${e}");
+            }
+        }
     }
 }
