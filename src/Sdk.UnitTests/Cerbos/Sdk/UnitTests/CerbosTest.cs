@@ -20,11 +20,11 @@ namespace Cerbos.Sdk.UnitTests
 
         protected readonly Grpc.Core.Metadata _metadata = new() { { "wibble", "wobble" } };
 
-        private IContainer? _container;
+        private IContainer _container = null!;
 
-        protected ICerbosClient? _client;
-        protected ICerbosAdminClient? _clientAdmin;
-        protected ICerbosClient? _clientPlayground;
+        protected ICerbosClient _client = null!;
+        protected ICerbosAdminClient _clientAdmin = null!;
+        protected ICerbosClient _clientPlayground = null!;
 
         private const string PlaygroundHost = "https://demo-pdp.cerbos.cloud";
         private const string PlaygroundInstanceId = "XhkOi82fFKk3YW60e2c806Yvm0trKEje"; // See: https://play.cerbos.dev/p/XhkOi82fFKk3YW60e2c806Yvm0trKEje

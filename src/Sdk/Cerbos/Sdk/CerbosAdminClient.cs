@@ -26,6 +26,35 @@ namespace Cerbos.Sdk
             _metadata = metadata;
         }
 
+        public AddOrUpdatePolicyResponse AddOrUpdatePolicy(AddOrUpdatePolicyRequest request, Metadata headers = null)
+        {
+            try
+            {
+                return new AddOrUpdatePolicyResponse(CerbosAdminServiceClient.AddOrUpdatePolicy(request.ToAddOrUpdatePolicyRequest(), Utility.Metadata.Merge(_metadata, headers)));
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Failed to add/update policy: ${e}");
+            }
+        }
+
+        public Task<AddOrUpdatePolicyResponse> AddOrUpdatePolicyAsync(AddOrUpdatePolicyRequest request, Metadata headers = null)
+        {
+            try
+            {
+                return CerbosAdminServiceClient
+                    .AddOrUpdatePolicyAsync(request.ToAddOrUpdatePolicyRequest(), Utility.Metadata.Merge(_metadata, headers))
+                    .ResponseAsync
+                    .ContinueWith(
+                        r => new AddOrUpdatePolicyResponse(r.Result)
+                    );
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Failed to add/update policy: ${e}");
+            }
+        }
+
         public DeletePolicyResponse DeletePolicy(DeletePolicyRequest request, Metadata headers = null)
         {
             try

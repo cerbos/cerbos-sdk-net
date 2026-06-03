@@ -2,7 +2,6 @@
 // SPDX-License-Identifier: Apache-2.0
 
 using System.IO;
-using Cerbos.Api.V1.Policy;
 using Google.Protobuf;
 
 namespace Cerbos.Sdk.Request
@@ -21,25 +20,28 @@ namespace Cerbos.Sdk.Request
             return new AddOrUpdatePolicyRequest();
         }
 
-        public AddOrUpdatePolicyRequest With(TextReader policyJson)
+        public AddOrUpdatePolicyRequest With(params Policy.Policy[] policy)
         {
-            return With(policyJson.ReadToEnd());
-        }
-
-        public AddOrUpdatePolicyRequest With(string policyJson)
-        {
-            return AddPolicy(policyJson);
-        }
-
-        public AddOrUpdatePolicyRequest With(params Policy[] policy)
-        {
-            R.Policies.AddRange(policy);
+            foreach (var p in policy)
+            {
+                R.Policies.Add(p.ToPolicy());
+            }
             return this;
+        }
+
+        public AddOrUpdatePolicyRequest WithJson(TextReader policy)
+        {
+            return WithJson(policy.ReadToEnd());
+        }
+
+        public AddOrUpdatePolicyRequest WithJson(string policy)
+        {
+            return AddPolicy(policy);
         }
 
         private AddOrUpdatePolicyRequest AddPolicy(string policy)
         {
-            R.Policies.Add(JsonParser.Default.Parse<Policy>(policy));
+            R.Policies.Add(JsonParser.Default.Parse<Api.V1.Policy.Policy>(policy));
             return this;
         }
 

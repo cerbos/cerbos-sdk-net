@@ -10,6 +10,8 @@ namespace Cerbos.Sdk
 {
     public interface ICerbosAdminClient
     {
+        AddOrUpdatePolicyResponse AddOrUpdatePolicy(AddOrUpdatePolicyRequest request, Metadata headers = null);
+        Task<AddOrUpdatePolicyResponse> AddOrUpdatePolicyAsync(AddOrUpdatePolicyRequest request, Metadata headers = null);
         DeletePolicyResponse DeletePolicy(DeletePolicyRequest request, Metadata headers = null);
         Task<DeletePolicyResponse> DeletePolicyAsync(DeletePolicyRequest request, Metadata headers = null);
         DisablePolicyResponse DisablePolicy(DisablePolicyRequest request, Metadata headers = null);

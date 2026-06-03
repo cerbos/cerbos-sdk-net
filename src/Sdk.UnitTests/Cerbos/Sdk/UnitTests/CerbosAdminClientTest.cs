@@ -10,6 +10,21 @@ namespace Cerbos.Sdk.UnitTests
     public class CerbosAdminClientTest : CerbosTest
     {
         [Test]
+        public void AddOrUpdatePolicy()
+        {
+            var addOrUpdatePolicyRequest = AddOrUpdatePolicyRequest.NewInstance()
+                .WithJson("""{"apiVersion":"api.cerbos.dev/v1","resourcePolicy":{"version":"default","resource":"add_or_update_test_policy"}}""");
+
+            Assert.That((Func<Response.AddOrUpdatePolicyResponse>)(() => _clientAdmin.AddOrUpdatePolicy(addOrUpdatePolicyRequest, _metadata)), Throws.Nothing);
+
+            var deletePolicyRequest = DeletePolicyRequest.NewInstance()
+                .WithId("resource.add_or_update_test_policy.vdefault");
+
+            var have = _clientAdmin.DeletePolicy(deletePolicyRequest, _metadata);
+            Assert.That(have.DeletedPolicies, Is.EqualTo(1));
+        }
+
+        [Test]
         public void DisablePolicy()
         {
             var request = DisablePolicyRequest.NewInstance()
