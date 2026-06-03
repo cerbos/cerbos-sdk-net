@@ -6,6 +6,7 @@ namespace Cerbos.Sdk.Response
     public sealed class AddOrUpdatePolicyResponse
     {
         private Api.V1.Response.AddOrUpdatePolicyResponse R { get; }
+
         public Api.V1.Response.AddOrUpdatePolicyResponse Raw => R;
 
         public AddOrUpdatePolicyResponse(Api.V1.Response.AddOrUpdatePolicyResponse response)

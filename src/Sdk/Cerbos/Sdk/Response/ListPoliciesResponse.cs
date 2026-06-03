@@ -10,8 +10,9 @@ namespace Cerbos.Sdk.Response
     {
         private Api.V1.Response.ListPoliciesResponse R { get; }
 
-        public List<string> PolicyIds => R.PolicyIds.ToList();
         public Api.V1.Response.ListPoliciesResponse Raw => R;
+
+        public List<string> PolicyIds => R.PolicyIds.ToList();
 
         public ListPoliciesResponse(Api.V1.Response.ListPoliciesResponse response)
         {

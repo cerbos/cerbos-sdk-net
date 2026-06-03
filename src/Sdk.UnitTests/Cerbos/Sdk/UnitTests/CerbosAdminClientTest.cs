@@ -60,5 +60,13 @@ namespace Cerbos.Sdk.UnitTests
             var have = _clientAdmin.ListPolicies(request, _metadata).PolicyIds;
             Assert.That(have, Is.EqualTo(new List<string> { "resource.leave_request.v20210210", "resource.leave_request.vstaging" }));
         }
+
+        [Test]
+        public void PurgeStoreRevisions()
+        {
+            var request = PurgeStoreRevisionsRequest.NewInstance(0);
+            var have = _clientAdmin.PurgeStoreRevisions(request, _metadata).AffectedRows;
+            Assert.That(have, Is.EqualTo(19));
+        }
     }
 }

@@ -9,6 +9,13 @@ namespace Cerbos.Sdk.UnitTests.Request;
 public class ListPoliciesRequestTest
 {
     [Test]
+    public void TestNewInstance()
+    {
+        var request = ListPoliciesRequest.NewInstance("leave_request.yaml").ToListPoliciesRequest();
+        Assert.That(request.PolicyId, Has.Member("leave_request.yaml"));
+    }
+
+    [Test]
     public void TestWithIncludeDisabled()
     {
         var request = ListPoliciesRequest.NewInstance().WithIncludeDisabled(true).ToListPoliciesRequest();
@@ -34,12 +41,5 @@ public class ListPoliciesRequestTest
     {
         var request = ListPoliciesRequest.NewInstance().WithVersionRegexp("^foo").ToListPoliciesRequest();
         Assert.That(request.VersionRegexp, Is.EqualTo("^foo"));
-    }
-
-    [Test]
-    public void TestWithPolicyId()
-    {
-        var request = ListPoliciesRequest.NewInstance("leave_request.yaml").ToListPoliciesRequest();
-        Assert.That(request.PolicyId, Has.Member("leave_request.yaml"));
     }
 }

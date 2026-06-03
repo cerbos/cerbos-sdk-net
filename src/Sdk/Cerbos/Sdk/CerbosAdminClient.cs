@@ -199,5 +199,34 @@ namespace Cerbos.Sdk
                 throw new Exception($"Failed to list policies: ${e}");
             }
         }
+
+        public PurgeStoreRevisionsResponse PurgeStoreRevisions(PurgeStoreRevisionsRequest request, Metadata headers = null)
+        {
+            try
+            {
+                return new PurgeStoreRevisionsResponse(CerbosAdminServiceClient.PurgeStoreRevisions(request.ToPurgeStoreRevisionsRequest(), Utility.Metadata.Merge(_metadata, headers)));
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Failed to purge store revisions: ${e}");
+            }
+        }
+
+        public Task<PurgeStoreRevisionsResponse> PurgeStoreRevisionsAsync(PurgeStoreRevisionsRequest request, Metadata headers = null)
+        {
+            try
+            {
+                return CerbosAdminServiceClient
+                    .PurgeStoreRevisionsAsync(request.ToPurgeStoreRevisionsRequest(), Utility.Metadata.Merge(_metadata, headers))
+                    .ResponseAsync
+                    .ContinueWith(
+                        r => new PurgeStoreRevisionsResponse(r.Result)
+                    );
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Failed to purge store revisions: ${e}");
+            }
+        }
     }
 }

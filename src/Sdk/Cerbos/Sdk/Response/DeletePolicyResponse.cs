@@ -7,8 +7,10 @@ namespace Cerbos.Sdk.Response
     {
         private Api.V1.Response.DeletePolicyResponse R { get; }
 
-        public uint DeletedPolicies => R.DeletedPolicies;
         public Api.V1.Response.DeletePolicyResponse Raw => R;
+
+        public uint DeletedPolicies => R.DeletedPolicies;
+
 
         public DeletePolicyResponse(Api.V1.Response.DeletePolicyResponse response)
         {

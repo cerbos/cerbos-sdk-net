@@ -7,8 +7,9 @@ namespace Cerbos.Sdk.Response
     {
         private Api.V1.Response.EnablePolicyResponse R { get; }
 
-        public uint EnabledPolicies => R.EnabledPolicies;
         public Api.V1.Response.EnablePolicyResponse Raw => R;
+
+        public uint EnabledPolicies => R.EnabledPolicies;
 
         public EnablePolicyResponse(Api.V1.Response.EnablePolicyResponse response)
         {
