@@ -18,6 +18,8 @@ namespace Cerbos.Sdk
         Task<DisablePolicyResponse> DisablePolicyAsync(DisablePolicyRequest request, Metadata headers = null);
         EnablePolicyResponse EnablePolicy(EnablePolicyRequest request, Metadata headers = null);
         Task<EnablePolicyResponse> EnablePolicyAsync(EnablePolicyRequest request, Metadata headers = null);
+        GetPolicyResponse GetPolicy(GetPolicyRequest request, Metadata headers = null);
+        Task<GetPolicyResponse> GetPolicyAsync(GetPolicyRequest request, Metadata headers = null);
         ListPoliciesResponse ListPolicies(ListPoliciesRequest request, Metadata headers = null);
         Task<ListPoliciesResponse> ListPoliciesAsync(ListPoliciesRequest request, Metadata headers = null);
     }

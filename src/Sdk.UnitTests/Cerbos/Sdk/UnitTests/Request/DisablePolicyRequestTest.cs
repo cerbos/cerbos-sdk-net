@@ -9,9 +9,9 @@ namespace Cerbos.Sdk.UnitTests.Request;
 public class DisablePolicyRequestTest
 {
     [Test]
-    public void TestWithId()
+    public void TestNewInstance()
     {
-        var request = DisablePolicyRequest.NewInstance().WithId("leave_request.yaml").ToDisablePolicyRequest();
+        var request = DisablePolicyRequest.NewInstance("leave_request.yaml").ToDisablePolicyRequest();
         Assert.That(request.Id, Has.Member("leave_request.yaml"));
     }
 }

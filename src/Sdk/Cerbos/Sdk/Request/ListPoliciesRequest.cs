@@ -13,14 +13,14 @@ namespace Cerbos.Sdk.Request
         private string VersionRegexp { get; set; }
         private List<string> PolicyId { get; }
 
-        private ListPoliciesRequest()
+        private ListPoliciesRequest(params string[] policyId)
         {
-            PolicyId = new List<string>();
+            PolicyId = new List<string>(policyId);
         }
 
-        public static ListPoliciesRequest NewInstance()
+        public static ListPoliciesRequest NewInstance(params string[] policyId)
         {
-            return new ListPoliciesRequest();
+            return new ListPoliciesRequest(policyId);
         }
 
         public ListPoliciesRequest WithIncludeDisabled(bool includeDisabled)
@@ -44,12 +44,6 @@ namespace Cerbos.Sdk.Request
         public ListPoliciesRequest WithVersionRegexp(string versionRegexp)
         {
             VersionRegexp = versionRegexp;
-            return this;
-        }
-
-        public ListPoliciesRequest WithPolicyId(params string[] policyIds)
-        {
-            PolicyId.AddRange(policyIds);
             return this;
         }
 

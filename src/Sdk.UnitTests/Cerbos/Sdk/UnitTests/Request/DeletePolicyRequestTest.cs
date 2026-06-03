@@ -9,9 +9,9 @@ namespace Cerbos.Sdk.UnitTests.Request;
 public class DeletePolicyRequestTest
 {
     [Test]
-    public void TestWithId()
+    public void TestNewInstance()
     {
-        var request = DeletePolicyRequest.NewInstance().WithId("leave_request.yaml").ToDeletePolicyRequest();
+        var request = DeletePolicyRequest.NewInstance("leave_request.yaml").ToDeletePolicyRequest();
         Assert.That(request.Id, Has.Member("leave_request.yaml"));
     }
 }

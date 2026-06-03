@@ -39,7 +39,7 @@ public class ListPoliciesRequestTest
     [Test]
     public void TestWithPolicyId()
     {
-        var request = ListPoliciesRequest.NewInstance().WithPolicyId("leave_request.yaml").ToListPoliciesRequest();
+        var request = ListPoliciesRequest.NewInstance("leave_request.yaml").ToListPoliciesRequest();
         Assert.That(request.PolicyId, Has.Member("leave_request.yaml"));
     }
 }

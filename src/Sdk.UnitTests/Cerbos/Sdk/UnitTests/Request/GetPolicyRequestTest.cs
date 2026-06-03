@@ -6,12 +6,12 @@ using NUnit.Framework;
 
 namespace Cerbos.Sdk.UnitTests.Request;
 
-public class EnablePolicyRequestTest
+public class GetPolicyRequestTest
 {
     [Test]
     public void TestNewInstance()
     {
-        var request = EnablePolicyRequest.NewInstance("leave_request.yaml").ToEnablePolicyRequest();
+        var request = GetPolicyRequest.NewInstance("leave_request.yaml").ToGetPolicyRequest();
         Assert.That(request.Id, Has.Member("leave_request.yaml"));
     }
 }

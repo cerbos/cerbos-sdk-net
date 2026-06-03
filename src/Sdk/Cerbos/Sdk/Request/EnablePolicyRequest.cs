@@ -9,20 +9,14 @@ namespace Cerbos.Sdk.Request
     {
         private List<string> Id { get; }
 
-        private EnablePolicyRequest()
+        private EnablePolicyRequest(params string[] id)
         {
-            Id = new List<string>();
+            Id = new List<string>(id);
         }
 
-        public static EnablePolicyRequest NewInstance()
+        public static EnablePolicyRequest NewInstance(params string[] id)
         {
-            return new EnablePolicyRequest();
-        }
-
-        public EnablePolicyRequest WithId(params string[] id)
-        {
-            Id.AddRange(id);
-            return this;
+            return new EnablePolicyRequest(id);
         }
 
         public Api.V1.Request.EnablePolicyRequest ToEnablePolicyRequest()

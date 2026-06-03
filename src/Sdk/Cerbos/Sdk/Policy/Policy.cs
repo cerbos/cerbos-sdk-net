@@ -7,19 +7,16 @@ namespace Cerbos.Sdk.Policy
     {
         private Api.V1.Policy.Policy P { get; }
 
+        public Api.V1.Policy.Policy Raw => P;
+
         public Policy(Api.V1.Policy.Policy policy)
         {
             P = policy;
         }
 
-        private Policy()
-        {
-            P = new Api.V1.Policy.Policy();
-        }
-
         public Api.V1.Policy.Policy ToPolicy()
         {
-            return P;
+            return Raw;
         }
     }
 }

@@ -142,6 +142,35 @@ namespace Cerbos.Sdk
             }
         }
 
+        public GetPolicyResponse GetPolicy(GetPolicyRequest request, Metadata headers = null)
+        {
+            try
+            {
+                return new GetPolicyResponse(CerbosAdminServiceClient.GetPolicy(request.ToGetPolicyRequest(), Utility.Metadata.Merge(_metadata, headers)));
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Failed to get policy: ${e}");
+            }
+        }
+
+        public Task<GetPolicyResponse> GetPolicyAsync(GetPolicyRequest request, Metadata headers = null)
+        {
+            try
+            {
+                return CerbosAdminServiceClient
+                    .GetPolicyAsync(request.ToGetPolicyRequest(), Utility.Metadata.Merge(_metadata, headers))
+                    .ResponseAsync
+                    .ContinueWith(
+                        r => new GetPolicyResponse(r.Result)
+                    );
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Failed to get policy: ${e}");
+            }
+        }
+
         public ListPoliciesResponse ListPolicies(ListPoliciesRequest request, Metadata headers = null)
         {
             try
@@ -167,7 +196,7 @@ namespace Cerbos.Sdk
             }
             catch (Exception e)
             {
-                throw new Exception($"Failed to check resources: ${e}");
+                throw new Exception($"Failed to list policies: ${e}");
             }
         }
     }
