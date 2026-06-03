@@ -69,9 +69,10 @@ namespace Cerbos.Sdk.UnitTests
             Assert.That(have[0].ApiVersion, Is.EqualTo("api.cerbos.dev/v1"));
             Assert.That(have[0].Description, Is.EqualTo(""));
             Assert.That(have[0].Disabled, Is.EqualTo(false));
+            Assert.That(have[0].OneOf, Is.EqualTo(Api.V1.Policy.Policy.PolicyTypeOneofCase.ResourcePolicy));
             Assert.That(have[0].Kind, Is.EqualTo(Api.V1.Policy.Kind.Resource));
-            Assert.That(have[0].Raw.ResourcePolicy.Resource, Is.EqualTo("leave_request"));
-            Assert.That(have[0].Raw.ResourcePolicy.Version, Is.EqualTo("staging"));
+            Assert.That(have[0].ResourcePolicy.Resource, Is.EqualTo("leave_request"));
+            Assert.That(have[0].ResourcePolicy.Version, Is.EqualTo("staging"));
         }
 
         [Test]
