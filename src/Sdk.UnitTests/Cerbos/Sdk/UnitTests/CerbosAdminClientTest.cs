@@ -70,12 +70,32 @@ namespace Cerbos.Sdk.UnitTests
         }
 
         [Test]
+        public void GetSchema()
+        {
+            var request = GetSchemaRequest.NewInstance("resources/leave_request.json");
+
+            var have = _clientAdmin.GetSchema(request, _metadata).Schemas;
+            Assert.That(have.Count, Is.EqualTo(1));
+            Assert.That(have[0].Id, Is.EqualTo("resources/leave_request.json"));
+            Assert.That(have[0].Definition, Is.EqualTo("""{"$schema":"https://json-schema.org/draft/2020-12/schema","type":"object","properties":{"department":{"type":"string","enum":["marketing","engineering"]},"geography":{"type":"string"},"team":{"type":"string"},"id":{"type":"string"},"owner":{"type":"string"},"status":{"type":"string"},"dev_record":{"type":"boolean"}},"required":["department","geography","team","id"]}"""));
+        }
+
+        [Test]
         public void ListPolicies()
         {
             var request = ListPoliciesRequest.NewInstance("resource.leave_request.v20210210", "resource.leave_request.vstaging");
 
             var have = _clientAdmin.ListPolicies(request, _metadata).PolicyIds;
             Assert.That(have, Is.EqualTo(new List<string> { "resource.leave_request.v20210210", "resource.leave_request.vstaging" }));
+        }
+
+        [Test]
+        public void ListSchemas()
+        {
+            var request = ListSchemasRequest.NewInstance();
+
+            var have = _clientAdmin.ListSchemas(request, _metadata).SchemaIds;
+            Assert.That(have, Is.EqualTo(new List<string> { "principal.json", "resources/leave_request.json" }));
         }
 
         [Test]

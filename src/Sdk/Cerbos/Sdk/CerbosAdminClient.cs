@@ -229,6 +229,35 @@ namespace Cerbos.Sdk
             }
         }
 
+        public GetSchemaResponse GetSchema(GetSchemaRequest request, Metadata headers = null)
+        {
+            try
+            {
+                return new GetSchemaResponse(CerbosAdminServiceClient.GetSchema(request.ToGetSchemaRequest(), Utility.Metadata.Merge(_metadata, headers)));
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Failed to get schema: ${e}");
+            }
+        }
+
+        public Task<GetSchemaResponse> GetSchemaAsync(GetSchemaRequest request, Metadata headers = null)
+        {
+            try
+            {
+                return CerbosAdminServiceClient
+                    .GetSchemaAsync(request.ToGetSchemaRequest(), Utility.Metadata.Merge(_metadata, headers))
+                    .ResponseAsync
+                    .ContinueWith(
+                        r => new GetSchemaResponse(r.Result)
+                    );
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Failed to get schema: ${e}");
+            }
+        }
+
         public ListPoliciesResponse ListPolicies(ListPoliciesRequest request, Metadata headers = null)
         {
             try
@@ -255,6 +284,35 @@ namespace Cerbos.Sdk
             catch (Exception e)
             {
                 throw new Exception($"Failed to list policies: ${e}");
+            }
+        }
+
+        public ListSchemasResponse ListSchemas(ListSchemasRequest request, Metadata headers = null)
+        {
+            try
+            {
+                return new ListSchemasResponse(CerbosAdminServiceClient.ListSchemas(request.ToListSchemasRequest(), Utility.Metadata.Merge(_metadata, headers)));
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Failed to list schemas: ${e}");
+            }
+        }
+
+        public Task<ListSchemasResponse> ListSchemasAsync(ListSchemasRequest request, Metadata headers = null)
+        {
+            try
+            {
+                return CerbosAdminServiceClient
+                    .ListSchemasAsync(request.ToListSchemasRequest(), Utility.Metadata.Merge(_metadata, headers))
+                    .ResponseAsync
+                    .ContinueWith(
+                        r => new ListSchemasResponse(r.Result)
+                    );
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Failed to list schemas: ${e}");
             }
         }
 

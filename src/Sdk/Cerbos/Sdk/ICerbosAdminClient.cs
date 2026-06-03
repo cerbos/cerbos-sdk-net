@@ -24,8 +24,12 @@ namespace Cerbos.Sdk
         Task<EnablePolicyResponse> EnablePolicyAsync(EnablePolicyRequest request, Metadata headers = null);
         GetPolicyResponse GetPolicy(GetPolicyRequest request, Metadata headers = null);
         Task<GetPolicyResponse> GetPolicyAsync(GetPolicyRequest request, Metadata headers = null);
+        GetSchemaResponse GetSchema(GetSchemaRequest request, Metadata headers = null);
+        Task<GetSchemaResponse> GetSchemaAsync(GetSchemaRequest request, Metadata headers = null);
         ListPoliciesResponse ListPolicies(ListPoliciesRequest request, Metadata headers = null);
         Task<ListPoliciesResponse> ListPoliciesAsync(ListPoliciesRequest request, Metadata headers = null);
+        ListSchemasResponse ListSchemas(ListSchemasRequest request, Metadata headers = null);
+        Task<ListSchemasResponse> ListSchemasAsync(ListSchemasRequest request, Metadata headers = null);
         PurgeStoreRevisionsResponse PurgeStoreRevisions(PurgeStoreRevisionsRequest request, Metadata headers = null);
         Task<PurgeStoreRevisionsResponse> PurgeStoreRevisionsAsync(PurgeStoreRevisionsRequest request, Metadata headers = null);
         ReloadStoreResponse ReloadStore(ReloadStoreRequest request, Metadata headers = null);
