@@ -11,7 +11,6 @@ namespace Cerbos.Sdk.Response
 
         public uint DeletedPolicies => R.DeletedPolicies;
 
-
         public DeletePolicyResponse(Api.V1.Response.DeletePolicyResponse response)
         {
             R = response;

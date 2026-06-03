@@ -11,7 +11,6 @@ namespace Cerbos.Sdk.Response
 
         public uint DeletedSchemas => R.DeletedSchemas;
 
-
         public DeleteSchemaResponse(Api.V1.Response.DeleteSchemaResponse response)
         {
             R = response;
