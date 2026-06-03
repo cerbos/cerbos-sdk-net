@@ -20,10 +20,9 @@ server:
   logRequestPayloads: true
 
 storage:
-  driver: "disk"
-  disk:
-    directory: /policies
-    watchForChanges: true
+  driver: "sqlite3"
+  sqlite3:
+    dsn: "file:///store/cerbos.sqlite?mode=rwc&cache=shared&_fk=true"
 
 telemetry:
   disabled: true
