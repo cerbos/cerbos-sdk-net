@@ -55,6 +55,35 @@ namespace Cerbos.Sdk
             }
         }
 
+        public DisablePolicyResponse DisablePolicy(DisablePolicyRequest request, Metadata headers = null)
+        {
+            try
+            {
+                return new DisablePolicyResponse(CerbosAdminServiceClient.DisablePolicy(request.ToDisablePolicyRequest(), Utility.Metadata.Merge(_metadata, headers)));
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Failed to disable policy: ${e}");
+            }
+        }
+
+        public Task<DisablePolicyResponse> DisablePolicyAsync(DisablePolicyRequest request, Metadata headers = null)
+        {
+            try
+            {
+                return CerbosAdminServiceClient
+                    .DisablePolicyAsync(request.ToDisablePolicyRequest(), Utility.Metadata.Merge(_metadata, headers))
+                    .ResponseAsync
+                    .ContinueWith(
+                        r => new DisablePolicyResponse(r.Result)
+                    );
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Failed to disable policy: ${e}");
+            }
+        }
+
         public ListPoliciesResponse ListPolicies(ListPoliciesRequest request, Metadata headers = null)
         {
             try
