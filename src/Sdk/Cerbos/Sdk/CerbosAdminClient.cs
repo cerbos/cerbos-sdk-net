@@ -26,6 +26,35 @@ namespace Cerbos.Sdk
             _metadata = metadata;
         }
 
+        public DeletePolicyResponse DeletePolicy(DeletePolicyRequest request, Metadata headers = null)
+        {
+            try
+            {
+                return new DeletePolicyResponse(CerbosAdminServiceClient.DeletePolicy(request.ToDeletePolicyRequest(), Utility.Metadata.Merge(_metadata, headers)));
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Failed to delete policy: ${e}");
+            }
+        }
+
+        public Task<DeletePolicyResponse> DeletePolicyAsync(DeletePolicyRequest request, Metadata headers = null)
+        {
+            try
+            {
+                return CerbosAdminServiceClient
+                    .DeletePolicyAsync(request.ToDeletePolicyRequest(), Utility.Metadata.Merge(_metadata, headers))
+                    .ResponseAsync
+                    .ContinueWith(
+                        r => new DeletePolicyResponse(r.Result)
+                    );
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Failed to delete policy: ${e}");
+            }
+        }
+
         public ListPoliciesResponse ListPolicies(ListPoliciesRequest request, Metadata headers = null)
         {
             try

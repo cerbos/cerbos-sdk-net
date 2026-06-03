@@ -8,7 +8,7 @@ using NUnit.Framework;
 
 namespace Cerbos.Sdk.UnitTests
 {
-    public class CerbosTest
+    public abstract class CerbosTest
     {
         private const int HttpPort = 3592;
         private const int GrpcPort = 3593;
