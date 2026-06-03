@@ -84,6 +84,35 @@ namespace Cerbos.Sdk
             }
         }
 
+        public EnablePolicyResponse EnablePolicy(EnablePolicyRequest request, Metadata headers = null)
+        {
+            try
+            {
+                return new EnablePolicyResponse(CerbosAdminServiceClient.EnablePolicy(request.ToEnablePolicyRequest(), Utility.Metadata.Merge(_metadata, headers)));
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Failed to enable policy: ${e}");
+            }
+        }
+
+        public Task<EnablePolicyResponse> EnablePolicyAsync(EnablePolicyRequest request, Metadata headers = null)
+        {
+            try
+            {
+                return CerbosAdminServiceClient
+                    .EnablePolicyAsync(request.ToEnablePolicyRequest(), Utility.Metadata.Merge(_metadata, headers))
+                    .ResponseAsync
+                    .ContinueWith(
+                        r => new EnablePolicyResponse(r.Result)
+                    );
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Failed to enable policy: ${e}");
+            }
+        }
+
         public ListPoliciesResponse ListPolicies(ListPoliciesRequest request, Metadata headers = null)
         {
             try
