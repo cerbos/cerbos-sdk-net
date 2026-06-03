@@ -2,7 +2,6 @@
 // SPDX-License-Identifier: Apache-2.0
 
 using System.IO;
-using Google.Protobuf;
 
 namespace Cerbos.Sdk.Request
 {

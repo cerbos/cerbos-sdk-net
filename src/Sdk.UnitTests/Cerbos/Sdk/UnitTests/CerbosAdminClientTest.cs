@@ -65,6 +65,11 @@ namespace Cerbos.Sdk.UnitTests
 
             var have = _clientAdmin.GetPolicy(request, _metadata).Policies;
             Assert.That(have.Count, Is.EqualTo(1));
+
+            Assert.That(have[0].ApiVersion, Is.EqualTo("api.cerbos.dev/v1"));
+            Assert.That(have[0].Description, Is.EqualTo(""));
+            Assert.That(have[0].Disabled, Is.EqualTo(false));
+            Assert.That(have[0].Kind, Is.EqualTo(Api.V1.Policy.Kind.Resource));
             Assert.That(have[0].Raw.ResourcePolicy.Resource, Is.EqualTo("leave_request"));
             Assert.That(have[0].Raw.ResourcePolicy.Version, Is.EqualTo("staging"));
         }

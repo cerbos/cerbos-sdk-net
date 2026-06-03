@@ -2,7 +2,6 @@
 // SPDX-License-Identifier: Apache-2.0
 
 using System.IO;
-using Google.Protobuf;
 
 namespace Cerbos.Sdk.Request
 {
@@ -20,9 +19,12 @@ namespace Cerbos.Sdk.Request
             return new AddOrUpdateSchemaRequest();
         }
 
-        public AddOrUpdateSchemaRequest With(Schema.Schema schema)
+        public AddOrUpdateSchemaRequest With(params Schema.Schema[] schema)
         {
-            R.Schemas.Add(schema.ToSchema());
+            foreach (var s in schema)
+            {
+                R.Schemas.Add(s.ToSchema());
+            }
             return this;
         }
 

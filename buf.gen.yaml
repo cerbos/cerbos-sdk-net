@@ -8,6 +8,7 @@ inputs:
 
   - module: buf.build/cerbos/cerbos-api
     types:
+      - cerbos.policy.v1.Kind
       - cerbos.svc.v1.CerbosAdminService
       - cerbos.svc.v1.CerbosService
 

@@ -11,6 +11,42 @@ namespace Cerbos.Sdk.Policy
 
         public Api.V1.Policy.Policy Raw => P;
 
+        public string ApiVersion => P.ApiVersion;
+
+        public string Description => P.Description;
+
+        public bool Disabled => P.Disabled;
+
+        public Api.V1.Policy.Kind Kind
+        {
+            get
+            {
+                switch (P.PolicyTypeCase)
+                {
+                    case Api.V1.Policy.Policy.PolicyTypeOneofCase.DerivedRoles:
+                        return Api.V1.Policy.Kind.DerivedRoles;
+
+                    case Api.V1.Policy.Policy.PolicyTypeOneofCase.ExportConstants:
+                        return Api.V1.Policy.Kind.ExportConstants;
+
+                    case Api.V1.Policy.Policy.PolicyTypeOneofCase.ExportVariables:
+                        return Api.V1.Policy.Kind.ExportVariables;
+
+                    case Api.V1.Policy.Policy.PolicyTypeOneofCase.PrincipalPolicy:
+                        return Api.V1.Policy.Kind.Principal;
+
+                    case Api.V1.Policy.Policy.PolicyTypeOneofCase.ResourcePolicy:
+                        return Api.V1.Policy.Kind.Resource;
+
+                    case Api.V1.Policy.Policy.PolicyTypeOneofCase.RolePolicy:
+                        return Api.V1.Policy.Kind.RolePolicy;
+
+                    default:
+                        return Api.V1.Policy.Kind.Unspecified;
+                }
+            }
+        }
+
         public Policy(Api.V1.Policy.Policy policy)
         {
             P = policy;

@@ -165,16 +165,20 @@ namespace Cerbos.Api.V1.Policy {
             "ZW1hGjsKCklnbm9yZVdoZW4SLQoHYWN0aW9ucxgBIAMoCUITukgQyAEBkgEK",
             "CAEYASIEcgIQAVIHYWN0aW9ucxptCgZTY2hlbWESHAoDcmVmGAEgASgJQgq6",
             "SAfIAQFyAhABUgNyZWYSRQoLaWdub3JlX3doZW4YAiABKAsyJC5jZXJib3Mu",
-            "cG9saWN5LnYxLlNjaGVtYXMuSWdub3JlV2hlblIKaWdub3JlV2hlbiqXAQoQ",
-            "U2NvcGVQZXJtaXNzaW9ucxIhCh1TQ09QRV9QRVJNSVNTSU9OU19VTlNQRUNJ",
-            "RklFRBAAEiUKIVNDT1BFX1BFUk1JU1NJT05TX09WRVJSSURFX1BBUkVOVBAB",
-            "EjkKNVNDT1BFX1BFUk1JU1NJT05TX1JFUVVJUkVfUEFSRU5UQUxfQ09OU0VO",
-            "VF9GT1JfQUxMT1dTEAJCbwoYZGV2LmNlcmJvcy5hcGkudjEucG9saWN5Wjxn",
-            "aXRodWIuY29tL2NlcmJvcy9jZXJib3MvYXBpL2dlbnBiL2NlcmJvcy9wb2xp",
-            "Y3kvdjE7cG9saWN5djGqAhRDZXJib3MuQXBpLlYxLlBvbGljeWIGcHJvdG8z"));
+            "cG9saWN5LnYxLlNjaGVtYXMuSWdub3JlV2hlblIKaWdub3JlV2hlbiqnAQoE",
+            "S2luZBIUChBLSU5EX1VOU1BFQ0lGSUVEEAASFgoSS0lORF9ERVJJVkVEX1JP",
+            "TEVTEAESGQoVS0lORF9FWFBPUlRfVkFSSUFCTEVTEAISEgoOS0lORF9QUklO",
+            "Q0lQQUwQAxIRCg1LSU5EX1JFU09VUkNFEAQSFAoQS0lORF9ST0xFX1BPTElD",
+            "WRAFEhkKFUtJTkRfRVhQT1JUX0NPTlNUQU5UUxAGKpcBChBTY29wZVBlcm1p",
+            "c3Npb25zEiEKHVNDT1BFX1BFUk1JU1NJT05TX1VOU1BFQ0lGSUVEEAASJQoh",
+            "U0NPUEVfUEVSTUlTU0lPTlNfT1ZFUlJJREVfUEFSRU5UEAESOQo1U0NPUEVf",
+            "UEVSTUlTU0lPTlNfUkVRVUlSRV9QQVJFTlRBTF9DT05TRU5UX0ZPUl9BTExP",
+            "V1MQAkJvChhkZXYuY2VyYm9zLmFwaS52MS5wb2xpY3laPGdpdGh1Yi5jb20v",
+            "Y2VyYm9zL2NlcmJvcy9hcGkvZ2VucGIvY2VyYm9zL3BvbGljeS92MTtwb2xp",
+            "Y3l2MaoCFENlcmJvcy5BcGkuVjEuUG9saWN5YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Cerbos.Api.V1.Effect.EffectReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.StructReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.WrappersReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Cerbos.Api.V1.Policy.ScopePermissions), }, null, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Cerbos.Api.V1.Policy.Kind), typeof(global::Cerbos.Api.V1.Policy.ScopePermissions), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Policy.Policy), global::Cerbos.Api.V1.Policy.Policy.Parser, new[]{ "ApiVersion", "Disabled", "Description", "Metadata", "ResourcePolicy", "PrincipalPolicy", "DerivedRoles", "ExportVariables", "RolePolicy", "ExportConstants", "Variables", "JsonSchema" }, new[]{ "PolicyType" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Policy.SourceAttributes), global::Cerbos.Api.V1.Policy.SourceAttributes.Parser, new[]{ "Attributes" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Policy.Metadata), global::Cerbos.Api.V1.Policy.Metadata.Parser, new[]{ "SourceFile", "Annotations", "Hash", "StoreIdentifer", "StoreIdentifier", "SourceAttributes" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
@@ -201,6 +205,16 @@ namespace Cerbos.Api.V1.Policy {
 
   }
   #region Enums
+  public enum Kind {
+    [pbr::OriginalName("KIND_UNSPECIFIED")] Unspecified = 0,
+    [pbr::OriginalName("KIND_DERIVED_ROLES")] DerivedRoles = 1,
+    [pbr::OriginalName("KIND_EXPORT_VARIABLES")] ExportVariables = 2,
+    [pbr::OriginalName("KIND_PRINCIPAL")] Principal = 3,
+    [pbr::OriginalName("KIND_RESOURCE")] Resource = 4,
+    [pbr::OriginalName("KIND_ROLE_POLICY")] RolePolicy = 5,
+    [pbr::OriginalName("KIND_EXPORT_CONSTANTS")] ExportConstants = 6,
+  }
+
   public enum ScopePermissions {
     [pbr::OriginalName("SCOPE_PERMISSIONS_UNSPECIFIED")] Unspecified = 0,
     [pbr::OriginalName("SCOPE_PERMISSIONS_OVERRIDE_PARENT")] OverrideParent = 1,
