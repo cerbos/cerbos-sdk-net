@@ -258,6 +258,35 @@ namespace Cerbos.Sdk
             }
         }
 
+        public InspectPoliciesResponse InspectPolicies(InspectPoliciesRequest request, Metadata headers = null)
+        {
+            try
+            {
+                return new InspectPoliciesResponse(CerbosAdminServiceClient.InspectPolicies(request.ToInspectPoliciesRequest(), Utility.Metadata.Merge(_metadata, headers)));
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Failed to inspect policies: ${e}");
+            }
+        }
+
+        public Task<InspectPoliciesResponse> InspectPoliciesAsync(InspectPoliciesRequest request, Metadata headers = null)
+        {
+            try
+            {
+                return CerbosAdminServiceClient
+                    .InspectPoliciesAsync(request.ToInspectPoliciesRequest(), Utility.Metadata.Merge(_metadata, headers))
+                    .ResponseAsync
+                    .ContinueWith(
+                        r => new InspectPoliciesResponse(r.Result)
+                    );
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Failed to inspect policies: ${e}");
+            }
+        }
+
         public ListPoliciesResponse ListPolicies(ListPoliciesRequest request, Metadata headers = null)
         {
             try

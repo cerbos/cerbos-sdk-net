@@ -86,6 +86,36 @@ namespace Cerbos.Sdk.UnitTests
         }
 
         [Test]
+        public void InspectPolicies()
+        {
+            var request = InspectPoliciesRequest.NewInstance("resource.leave_request.v20210210");
+
+            var have = _clientAdmin.InspectPolicies(request, _metadata).Results;
+            Assert.That(have.Count, Is.EqualTo(1));
+            Assert.That(have["resource.leave_request.v20210210"].Actions, Is.EqualTo(new List<string> { "*", "approve", "create", "defer", "delete", "view", "view:*", "view:public" }));
+
+            Assert.That(have["resource.leave_request.v20210210"].Attributes.Count, Is.EqualTo(4));
+            Assert.That(have["resource.leave_request.v20210210"].Attributes[0].Kind, Is.EqualTo(Api.V1.Response.InspectPoliciesResponse.Types.Attribute.Types.Kind.ResourceAttribute));
+            Assert.That(have["resource.leave_request.v20210210"].Attributes[0].Name, Is.EqualTo("geography"));
+
+            Assert.That(have["resource.leave_request.v20210210"].Constants.Count, Is.Zero);
+
+            Assert.That(have["resource.leave_request.v20210210"].DerivedRoles.Count, Is.EqualTo(4));
+            Assert.That(have["resource.leave_request.v20210210"].DerivedRoles[0].Name, Is.EqualTo("any_employee"));
+            Assert.That(have["resource.leave_request.v20210210"].DerivedRoles[0].Kind, Is.EqualTo(Api.V1.Response.InspectPoliciesResponse.Types.DerivedRole.Types.Kind.Imported));
+            Assert.That(have["resource.leave_request.v20210210"].DerivedRoles[0].Source, Is.EqualTo("derived_roles.beta"));
+
+            Assert.That(have["resource.leave_request.v20210210"].PolicyId, Is.EqualTo("resource.leave_request.v20210210"));
+
+            Assert.That(have["resource.leave_request.v20210210"].Variables.Count, Is.EqualTo(2));
+            Assert.That(have["resource.leave_request.v20210210"].Variables[0].Name, Is.EqualTo("pending_approval"));
+            Assert.That(have["resource.leave_request.v20210210"].Variables[0].Value, Is.EqualTo("null"));
+            Assert.That(have["resource.leave_request.v20210210"].Variables[0].Kind, Is.EqualTo(Api.V1.Response.InspectPoliciesResponse.Types.Variable.Types.Kind.Undefined));
+            Assert.That(have["resource.leave_request.v20210210"].Variables[0].Source, Is.EqualTo(""));
+            Assert.That(have["resource.leave_request.v20210210"].Variables[0].Used, Is.True);
+        }
+
+        [Test]
         public void ListPolicies()
         {
             var request = ListPoliciesRequest.NewInstance("resource.leave_request.v20210210", "resource.leave_request.vstaging");
