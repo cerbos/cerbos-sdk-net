@@ -19,6 +19,8 @@ Find out more about Cerbos at https://cerbos.dev, Cerbos Hub at https://www.cerb
 ### Creating a client without TLS
 
 ```csharp
+using Cerbos.Sdk.Builder;
+
 var client = CerbosClientBuilder.ForTarget("http://localhost:3593").WithPlaintext().Build();
 ```
 
@@ -68,14 +70,14 @@ var request = CheckResourcesRequest.NewInstance()
             .WithAttribute("geography", AttributeValue.StringValue("GB"))
             .WithAttribute("owner", AttributeValue.StringValue("john"))
             .WithActions("view:public", "approve", "defer"),
-        
+
         ResourceEntry.NewInstance("leave_request", "XX225")
             .WithPolicyVersion("20210210")
             .WithAttribute("department", AttributeValue.StringValue("marketing"))
             .WithAttribute("geography", AttributeValue.StringValue("GB"))
             .WithAttribute("owner", AttributeValue.StringValue("martha"))
             .WithActions("view:public", "approve"),
-        
+
         ResourceEntry.NewInstance("leave_request", "XX325")
             .WithPolicyVersion("20210210")
             .WithAttribute("department", AttributeValue.StringValue("marketing"))
@@ -135,10 +137,49 @@ else {
 ```
 
 > [!NOTE]  
-> Cerbos PDP v0.44.0 and onwards support specifying multiple actions with the following syntax: 
+> Cerbos PDP v0.44.0 and onwards support specifying multiple actions with the following syntax:
+>
 > ```csharp
 > .WithActions("approve", "create")
 > ```
+
+## Cerbos Admin API
+
+### Creating an admin client without TLS
+
+```csharp
+using Cerbos.Sdk.Builder;
+
+var adminClient = CerbosClientBuilder.ForTarget("http://localhost:3593").WithPlaintext().BuildAdminClient("cerbos", "cerbosAdmin");
+```
+
+### Add or update policy API
+
+```csharp
+using Cerbos.Sdk.Request;
+
+var request = AddOrUpdatePolicyRequest.NewInstance()
+    .WithJson("""{"apiVersion":"api.cerbos.dev/v1","resourcePolicy":{"version":"default","resource":"add_or_update_test_policy"}}""");
+adminClient.AddOrUpdatePolicy(addOrUpdatePolicyRequest, null);
+```
+
+### Get policy API
+
+```csharp
+using Cerbos.Sdk.Request;
+
+var request = GetPolicyRequest.NewInstance("resource.leave_request.vstaging");
+var response = adminClient.GetPolicy(addOrUpdatePolicyRequest, null);
+```
+
+### List policies API
+
+```csharp
+using Cerbos.Sdk.Request;
+
+var request = ListPoliciesRequest.NewInstance("resource.leave_request.v20210210", "resource.leave_request.vstaging");
+var response = adminClient.ListPolicies(request, null);
+```
 
 ## Cerbos Hub
 
@@ -161,7 +202,7 @@ var storeClient = hubClient.StoreClient;
 using Cerbos.Sdk.Cloud.V1.Store;
 
 var request = GetFilesRequest.NewInstance(
-    storeId, 
+    storeId,
     "resource_policies/leave_request.yaml",
     "resource_policies/purchase_order.yaml"
 );

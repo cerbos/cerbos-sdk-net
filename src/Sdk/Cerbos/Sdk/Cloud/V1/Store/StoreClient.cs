@@ -1,7 +1,6 @@
 // Copyright 2021-2026 Zenauth Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
-using System;
 using System.Threading.Tasks;
 using Cerbos.Api.Cloud.V1.Store;
 using Grpc.Core;
@@ -39,9 +38,10 @@ namespace Cerbos.Sdk.Cloud.V1.Store
             {
                 return Resilience.Pipeline.Execute(() =>
                 {
-                    return new GetFilesResponse(
-                        Client.GetFiles(
-                            request.ToGetFilesRequest()
+                    var req = request.ToGetFilesRequest();
+                    return Utility.Rpc.Call(req, () =>
+                        new GetFilesResponse(
+                            Client.GetFiles(req)
                         )
                     );
                 });
@@ -50,10 +50,6 @@ namespace Cerbos.Sdk.Cloud.V1.Store
             {
                 ErrorDetailException.FromTrailers(e.Message, e.Trailers);
                 throw;
-            }
-            catch (Exception e)
-            {
-                throw new Exception($"Failed to get files: ${e}");
             }
         }
 
@@ -64,7 +60,12 @@ namespace Cerbos.Sdk.Cloud.V1.Store
                 return Resilience.Pipeline.ExecuteAsync(
                     async (token) =>
                     {
-                        return await Client.GetFilesAsync(request.ToGetFilesRequest()).ResponseAsync.ContinueWith(r => new GetFilesResponse(r.Result));
+                        var req = request.ToGetFilesRequest();
+                        return await Utility.Rpc.CallAsync(req, async () =>
+                            new GetFilesResponse(
+                                await Client.GetFilesAsync(req).ResponseAsync
+                            )
+                        );
                     }
                 ).AsTask();
             }
@@ -72,10 +73,6 @@ namespace Cerbos.Sdk.Cloud.V1.Store
             {
                 ErrorDetailException.FromTrailers(e.Message, e.Trailers);
                 throw;
-            }
-            catch (Exception e)
-            {
-                throw new Exception($"Failed to get files: ${e}");
             }
         }
 
@@ -85,9 +82,10 @@ namespace Cerbos.Sdk.Cloud.V1.Store
             {
                 return Resilience.Pipeline.Execute(() =>
                 {
-                    return new ListFilesResponse(
-                        Client.ListFiles(
-                            request.ToListFilesRequest()
+                    var req = request.ToListFilesRequest();
+                    return Utility.Rpc.Call(req, () =>
+                        new ListFilesResponse(
+                            Client.ListFiles(req)
                         )
                     );
                 });
@@ -96,10 +94,6 @@ namespace Cerbos.Sdk.Cloud.V1.Store
             {
                 ErrorDetailException.FromTrailers(e.Message, e.Trailers);
                 throw;
-            }
-            catch (Exception e)
-            {
-                throw new Exception($"Failed to list files: ${e}");
             }
         }
 
@@ -110,7 +104,12 @@ namespace Cerbos.Sdk.Cloud.V1.Store
                 return Resilience.Pipeline.ExecuteAsync(
                     async (token) =>
                     {
-                        return await Client.ListFilesAsync(request.ToListFilesRequest()).ResponseAsync.ContinueWith(r => new ListFilesResponse(r.Result));
+                        var req = request.ToListFilesRequest();
+                        return await Utility.Rpc.CallAsync(req, async () =>
+                            new ListFilesResponse(
+                                await Client.ListFilesAsync(req).ResponseAsync
+                            )
+                        );
                     }
                 ).AsTask();
             }
@@ -118,10 +117,6 @@ namespace Cerbos.Sdk.Cloud.V1.Store
             {
                 ErrorDetailException.FromTrailers(e.Message, e.Trailers);
                 throw;
-            }
-            catch (Exception e)
-            {
-                throw new Exception($"Failed to list files: ${e}");
             }
         }
 
@@ -131,9 +126,10 @@ namespace Cerbos.Sdk.Cloud.V1.Store
             {
                 return Resilience.Pipeline.Execute(() =>
                 {
-                    return new ModifyFilesResponse(
-                        Client.ModifyFiles(
-                            request.ToModifyFilesRequest()
+                    var req = request.ToModifyFilesRequest();
+                    return Utility.Rpc.Call(req, () =>
+                        new ModifyFilesResponse(
+                            Client.ModifyFiles(req)
                         )
                     );
                 });
@@ -142,10 +138,6 @@ namespace Cerbos.Sdk.Cloud.V1.Store
             {
                 ErrorDetailException.FromTrailers(e.Message, e.Trailers);
                 throw;
-            }
-            catch (Exception e)
-            {
-                throw new Exception($"Failed to modify files: ${e}");
             }
         }
 
@@ -156,7 +148,12 @@ namespace Cerbos.Sdk.Cloud.V1.Store
                 return Resilience.Pipeline.ExecuteAsync(
                     async (token) =>
                     {
-                        return await Client.ModifyFilesAsync(request.ToModifyFilesRequest()).ResponseAsync.ContinueWith(r => new ModifyFilesResponse(r.Result));
+                        var req = request.ToModifyFilesRequest();
+                        return await Utility.Rpc.CallAsync(req, async () =>
+                            new ModifyFilesResponse(
+                                await Client.ModifyFilesAsync(req).ResponseAsync
+                            )
+                        );
                     }
                 ).AsTask();
             }
@@ -164,10 +161,6 @@ namespace Cerbos.Sdk.Cloud.V1.Store
             {
                 ErrorDetailException.FromTrailers(e.Message, e.Trailers);
                 throw;
-            }
-            catch (Exception e)
-            {
-                throw new Exception($"Failed to modify files: ${e}");
             }
         }
 
@@ -177,9 +170,10 @@ namespace Cerbos.Sdk.Cloud.V1.Store
             {
                 return Resilience.Pipeline.Execute(() =>
                 {
-                    return new ReplaceFilesResponse(
-                        Client.ReplaceFiles(
-                            request.ToReplaceFilesRequest()
+                    var req = request.ToReplaceFilesRequest();
+                    return Utility.Rpc.Call(req, () =>
+                        new ReplaceFilesResponse(
+                            Client.ReplaceFiles(req)
                         )
                     );
                 });
@@ -188,10 +182,6 @@ namespace Cerbos.Sdk.Cloud.V1.Store
             {
                 ErrorDetailException.FromTrailers(e.Message, e.Trailers);
                 throw;
-            }
-            catch (Exception e)
-            {
-                throw new Exception($"Failed to replace files: ${e}");
             }
         }
 
@@ -202,7 +192,12 @@ namespace Cerbos.Sdk.Cloud.V1.Store
                 return Resilience.Pipeline.ExecuteAsync(
                     async (token) =>
                     {
-                        return await Client.ReplaceFilesAsync(request.ToReplaceFilesRequest()).ResponseAsync.ContinueWith(r => new ReplaceFilesResponse(r.Result));
+                        var req = request.ToReplaceFilesRequest();
+                        return await Utility.Rpc.CallAsync(req, async () =>
+                            new ReplaceFilesResponse(
+                                await Client.ReplaceFilesAsync(req).ResponseAsync
+                            )
+                        );
                     }
                 ).AsTask();
             }
@@ -210,10 +205,6 @@ namespace Cerbos.Sdk.Cloud.V1.Store
             {
                 ErrorDetailException.FromTrailers(e.Message, e.Trailers);
                 throw;
-            }
-            catch (Exception e)
-            {
-                throw new Exception($"Failed to replace files: ${e}");
             }
         }
     }

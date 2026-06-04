@@ -3,6 +3,7 @@
 
 using System;
 using System.IO;
+using System.Security.Authentication;
 using Grpc.Core;
 using Grpc.Core.Interceptors;
 using Grpc.Net.Client;
@@ -74,6 +75,23 @@ namespace Cerbos.Sdk.Builder
             return this;
         }
 
+        private CallInvoker Channel(SslCredentials sslCredentials)
+        {
+            var grpcChannelOptions = GrpcChannelOptions ?? new GrpcChannelOptions();
+            if (sslCredentials != null)
+            {
+                grpcChannelOptions.Credentials = sslCredentials;
+            }
+            else if (!Plaintext)
+            {
+                grpcChannelOptions.Credentials = ChannelCredentials.SecureSsl;
+            }
+
+            return GrpcChannel
+                .ForAddress(Target, grpcChannelOptions)
+                .Intercept();
+        }
+
         public ICerbosClient Build()
         {
             if (string.IsNullOrEmpty(Target))
@@ -117,21 +135,50 @@ namespace Cerbos.Sdk.Builder
                 }
             }
 
-            var grpcChannelOptions = GrpcChannelOptions ?? new GrpcChannelOptions();
-            if (sslCredentials != null)
-            {
-                grpcChannelOptions.Credentials = sslCredentials;
-            }
-            else if (!Plaintext)
-            {
-                grpcChannelOptions.Credentials = ChannelCredentials.SecureSsl;
-            }
-
-            var grpcChannel = GrpcChannel
-                .ForAddress(Target, grpcChannelOptions)
-                .Intercept();
-
+            var grpcChannel = Channel(sslCredentials);
             return new CerbosClient(new Api.V1.Svc.CerbosService.CerbosServiceClient(grpcChannel), new Grpc.Health.V1.Health.HealthClient(grpcChannel), combined);
+        }
+
+        public ICerbosAdminClient BuildAdminClient(string username, string password)
+        {
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            {
+                throw new InvalidCredentialException("Username and password must be specified");
+            }
+
+            if (string.IsNullOrEmpty(Target))
+            {
+                throw new Exception("Target must not be empty");
+            }
+
+            if ((CaCertificate != null || TlsCertificate != null || TlsKey != null) && Plaintext)
+            {
+                throw new Exception("TLS certificates and plaintext must not be specified at the same time");
+            }
+
+            SslCredentials sslCredentials = null;
+            if (CaCertificate != null)
+            {
+                if (TlsCertificate != null && TlsKey != null)
+                {
+                    sslCredentials = new SslCredentials(CaCertificate.ReadToEnd(), new KeyCertificatePair(TlsCertificate.ReadToEnd(), TlsKey.ReadToEnd()));
+                }
+                else
+                {
+                    sslCredentials = new SslCredentials(CaCertificate.ReadToEnd());
+                }
+            }
+
+            string adminAPICreds = Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes($"{username}:{password}"));
+            string authorizationHeader = $"Basic {adminAPICreds}";
+            Metadata combined = Utility.Metadata.Merge(
+                    Metadata,
+                    new Metadata {
+                        { "Authorization", authorizationHeader }
+                    }
+                );
+
+            return new CerbosAdminClient(new Api.V1.Svc.CerbosAdminService.CerbosAdminServiceClient(Channel(sslCredentials)), combined);
         }
     }
 }
