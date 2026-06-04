@@ -63,6 +63,8 @@ namespace Cerbos.Sdk.Response
 
                 public string Name => C.Name;
 
+                public Google.Protobuf.WellKnownTypes.Value Value => C.Value;
+
                 public Api.V1.Response.InspectPoliciesResponse.Types.Constant.Types.Kind Kind => C.Kind;
 
                 public string Source => C.Source;
