@@ -160,7 +160,7 @@ using Cerbos.Sdk.Request;
 
 var request = AddOrUpdatePolicyRequest.NewInstance()
     .WithJson("""{"apiVersion":"api.cerbos.dev/v1","resourcePolicy":{"version":"default","resource":"add_or_update_test_policy"}}""");
-adminClient.AddOrUpdatePolicy(addOrUpdatePolicyRequest, null);
+adminClient.AddOrUpdatePolicy(request);
 ```
 
 ### Get policy API
@@ -169,7 +169,7 @@ adminClient.AddOrUpdatePolicy(addOrUpdatePolicyRequest, null);
 using Cerbos.Sdk.Request;
 
 var request = GetPolicyRequest.NewInstance("resource.leave_request.vstaging");
-var response = adminClient.GetPolicy(addOrUpdatePolicyRequest, null);
+var response = adminClient.GetPolicy(request);
 ```
 
 ### List policies API
@@ -178,7 +178,7 @@ var response = adminClient.GetPolicy(addOrUpdatePolicyRequest, null);
 using Cerbos.Sdk.Request;
 
 var request = ListPoliciesRequest.NewInstance("resource.leave_request.v20210210", "resource.leave_request.vstaging");
-var response = adminClient.ListPolicies(request, null);
+var response = adminClient.ListPolicies(request);
 ```
 
 ## Cerbos Hub
