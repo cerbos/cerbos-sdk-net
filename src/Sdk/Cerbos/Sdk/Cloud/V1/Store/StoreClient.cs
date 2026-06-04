@@ -1,7 +1,6 @@
 // Copyright 2021-2026 Zenauth Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
-using System;
 using System.Threading.Tasks;
 using Cerbos.Api.Cloud.V1.Store;
 using Grpc.Core;

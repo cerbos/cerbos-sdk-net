@@ -41,6 +41,13 @@ namespace Cerbos.Sdk.UnitTests
         }
 
         [Test]
+        public void ArgumentException()
+        {
+            var request = ListPoliciesRequest.NewInstance("");
+            Assert.That((Func<Response.ListPoliciesResponse>)(() => _clientAdmin.ListPolicies(request, _metadata)), Throws.ArgumentException);
+        }
+
+        [Test]
         public void DisablePolicy()
         {
             var request = DisablePolicyRequest.NewInstance("resource.leave_request.vstaging");
