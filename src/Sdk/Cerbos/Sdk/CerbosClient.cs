@@ -36,7 +36,12 @@ namespace Cerbos.Sdk
         {
             try
             {
-                return new HealthCheckResponse(HealthClient.Check(request.ToHealthCheckRequest(), Utility.Metadata.Merge(_metadata, headers)));
+                var req = request.ToHealthCheckRequest();
+                return Utility.Rpc.Call(req, () =>
+                    new HealthCheckResponse(
+                        HealthClient.Check(req, Utility.Metadata.Merge(_metadata, headers))
+                    )
+                );
             }
             catch (RpcException e)
             {
@@ -47,10 +52,6 @@ namespace Cerbos.Sdk
 
                 throw;
             }
-            catch (Exception e)
-            {
-                throw new Exception($"Failed to check health: ${e}");
-            }
         }
 
         /// <summary>
@@ -60,12 +61,14 @@ namespace Cerbos.Sdk
         {
             try
             {
-                return HealthClient
-                    .CheckAsync(request.ToHealthCheckRequest(), Utility.Metadata.Merge(_metadata, headers))
-                    .ResponseAsync
-                    .ContinueWith(
-                        r => new HealthCheckResponse(r.Result)
-                    );
+                var req = request.ToHealthCheckRequest();
+                return Utility.Rpc.CallAsync(req, async () =>
+                    new HealthCheckResponse(
+                        await HealthClient
+                            .CheckAsync(req, Utility.Metadata.Merge(_metadata, headers))
+                            .ResponseAsync
+                    )
+                );
             }
             catch (RpcException e)
             {
@@ -76,10 +79,6 @@ namespace Cerbos.Sdk
 
                 throw;
             }
-            catch (Exception e)
-            {
-                throw new Exception($"Failed to check health: ${e}");
-            }
         }
 
         /// <summary>
@@ -87,14 +86,12 @@ namespace Cerbos.Sdk
         /// </summary>
         public CheckResourcesResponse CheckResources(CheckResourcesRequest request, Metadata headers = null)
         {
-            try
-            {
-                return new CheckResourcesResponse(CerbosServiceClient.CheckResources(request.ToCheckResourcesRequest(), Utility.Metadata.Merge(_metadata, headers)));
-            }
-            catch (Exception e)
-            {
-                throw new Exception($"Failed to check resources: ${e}");
-            }
+            var req = request.ToCheckResourcesRequest();
+            return Utility.Rpc.Call(req, () =>
+                new CheckResourcesResponse(
+                    CerbosServiceClient.CheckResources(req, Utility.Metadata.Merge(_metadata, headers))
+                )
+            );
         }
 
         /// <summary>
@@ -102,19 +99,14 @@ namespace Cerbos.Sdk
         /// </summary>
         public Task<CheckResourcesResponse> CheckResourcesAsync(CheckResourcesRequest request, Metadata headers = null)
         {
-            try
-            {
-                return CerbosServiceClient
-                    .CheckResourcesAsync(request.ToCheckResourcesRequest(), Utility.Metadata.Merge(_metadata, headers))
-                    .ResponseAsync
-                    .ContinueWith(
-                        r => new CheckResourcesResponse(r.Result)
-                    );
-            }
-            catch (Exception e)
-            {
-                throw new Exception($"Failed to check resources: ${e}");
-            }
+            var req = request.ToCheckResourcesRequest();
+            return Utility.Rpc.CallAsync(req, async () =>
+                new CheckResourcesResponse(
+                    await CerbosServiceClient
+                        .CheckResourcesAsync(req, Utility.Metadata.Merge(_metadata, headers))
+                        .ResponseAsync
+                )
+            );
         }
 
         /// <summary>
@@ -122,14 +114,12 @@ namespace Cerbos.Sdk
         /// </summary>
         public PlanResourcesResponse PlanResources(PlanResourcesRequest request, Metadata headers = null)
         {
-            try
-            {
-                return new PlanResourcesResponse(CerbosServiceClient.PlanResources(request.ToPlanResourcesRequest(), Utility.Metadata.Merge(_metadata, headers)));
-            }
-            catch (Exception e)
-            {
-                throw new Exception($"Failed to plan resources: ${e}");
-            }
+            var req = request.ToPlanResourcesRequest();
+            return Utility.Rpc.Call(req, () =>
+                new PlanResourcesResponse(
+                    CerbosServiceClient.PlanResources(req, Utility.Metadata.Merge(_metadata, headers))
+                )
+            );
         }
 
         /// <summary>
@@ -137,19 +127,14 @@ namespace Cerbos.Sdk
         /// </summary>
         public Task<PlanResourcesResponse> PlanResourcesAsync(PlanResourcesRequest request, Metadata headers = null)
         {
-            try
-            {
-                return CerbosServiceClient
-                    .PlanResourcesAsync(request.ToPlanResourcesRequest(), Utility.Metadata.Merge(_metadata, headers))
-                    .ResponseAsync
-                    .ContinueWith(
-                        r => new PlanResourcesResponse(r.Result)
-                    );
-            }
-            catch (Exception e)
-            {
-                throw new Exception($"Failed to plan resources: ${e}");
-            }
+            var req = request.ToPlanResourcesRequest();
+            return Utility.Rpc.CallAsync(req, async () =>
+                new PlanResourcesResponse(
+                    await CerbosServiceClient
+                        .PlanResourcesAsync(req, Utility.Metadata.Merge(_metadata, headers))
+                        .ResponseAsync
+                )
+            );
         }
     }
 }
