@@ -24,6 +24,6 @@
         <PackageReference Include="Grpc" Version="2.46.6" />
         <PackageReference Include="Grpc.Net.Client" Version="2.80.0" />
         <PackageReference Include="Polly" Version="8.6.6" />
-        <PackageReference Include="ProtoValidate" Version="1.0.0" />
+        <PackageReference Include="ProtoValidate" Version="1.0.1" />
     </ItemGroup>
 </Project>
