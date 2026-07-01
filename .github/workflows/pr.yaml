@@ -24,7 +24,7 @@ jobs:
           persist-credentials: false
 
       - name: Set up Buf
-        uses: cerbos/actions/install-tools@f822bd7b9c8db95f84086089f37ab0d23ca45400 # main
+        uses: cerbos/actions/install-tools@d2c46d81505b3c938d9eaa51af6d5ef4020cd4bf # main
         with:
           tools: buf
   
@@ -43,7 +43,7 @@ jobs:
           target: Build
 
       - name: Check repo status
-        uses: cerbos/actions/check-repo-status@f822bd7b9c8db95f84086089f37ab0d23ca45400 # main
+        uses: cerbos/actions/check-repo-status@d2c46d81505b3c938d9eaa51af6d5ef4020cd4bf # main
 
       - name: Run the test script
         uses: cake-build/cake-action@d218f1133bb74a1df0b08c89cfd8fc100c09e1a0 # v3.0.1
