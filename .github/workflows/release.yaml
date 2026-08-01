@@ -36,7 +36,7 @@ jobs:
             8.0.x
 
       - name: Set up Buf
-        uses: cerbos/actions/install-tools@d2c46d81505b3c938d9eaa51af6d5ef4020cd4bf # main
+        uses: cerbos/actions/install-tools@7df6503218a73e5022cc801e99574380474c97dd # main
         with:
           tools: buf
 
@@ -60,7 +60,7 @@ jobs:
           VERSION: ${{ github.ref_name }}
 
       - name: Check repo status
-        uses: cerbos/actions/check-repo-status@d2c46d81505b3c938d9eaa51af6d5ef4020cd4bf # main
+        uses: cerbos/actions/check-repo-status@7df6503218a73e5022cc801e99574380474c97dd # main
 
       - name: Log in to NuGet
         id: nuget-login
