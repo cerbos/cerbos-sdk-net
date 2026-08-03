@@ -4,7 +4,7 @@ on:
   pull_request:
     branches:
       - main
-      - 'v*'
+      - "v*"
 
 defaults:
   run:
@@ -18,18 +18,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           lfs: true
           persist-credentials: false
 
       - name: Set up Buf
-        uses: cerbos/actions/install-tools@d2c46d81505b3c938d9eaa51af6d5ef4020cd4bf # main
+        uses: cerbos/actions/install-tools@148d3d2a1d515b6c63cd00c3c71218520594a4b6 # main
         with:
           tools: buf
-  
+
       - name: Setup Cerbos
-        uses: cerbos/cerbos-setup-action@f772482c8504a05c49018a0bf2d84012a607733c # v1.9.11
+        uses: cerbos/cerbos-setup-action@30ad92b0242d792bd156985682426577fcfcc589 # v1.9.13
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           version: latest
@@ -43,7 +43,7 @@ jobs:
           target: Build
 
       - name: Check repo status
-        uses: cerbos/actions/check-repo-status@d2c46d81505b3c938d9eaa51af6d5ef4020cd4bf # main
+        uses: cerbos/actions/check-repo-status@148d3d2a1d515b6c63cd00c3c71218520594a4b6 # main
 
       - name: Run the test script
         uses: cake-build/cake-action@d218f1133bb74a1df0b08c89cfd8fc100c09e1a0 # v3.0.1

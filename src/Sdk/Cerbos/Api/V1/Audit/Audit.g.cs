@@ -77,54 +77,54 @@ namespace Cerbos.Api.V1.Audit {
             "CzIyLmNlcmJvcy5hdWRpdC52MS5BdWRpdFRyYWlsLkVmZmVjdGl2ZVBvbGlj",
             "aWVzRW50cnlSEWVmZmVjdGl2ZVBvbGljaWVzGmgKFkVmZmVjdGl2ZVBvbGlj",
             "aWVzRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSOAoFdmFsdWUYAiABKAsyIi5j",
-            "ZXJib3MucG9saWN5LnYxLlNvdXJjZUF0dHJpYnV0ZXNSBXZhbHVlOgI4ASKT",
+            "ZXJib3MucG9saWN5LnYxLlNvdXJjZUF0dHJpYnV0ZXNSBXZhbHVlOgI4ASKb",
             "DAoMUG9saWN5U291cmNlEjgKBGJsb2IYASABKAsyIi5jZXJib3MuYXVkaXQu",
             "djEuUG9saWN5U291cmNlLkJsb2JIAFIEYmxvYhJECghkYXRhYmFzZRgCIAEo",
             "CzImLmNlcmJvcy5hdWRpdC52MS5Qb2xpY3lTb3VyY2UuRGF0YWJhc2VIAFII",
             "ZGF0YWJhc2USOAoEZGlzaxgDIAEoCzIiLmNlcmJvcy5hdWRpdC52MS5Qb2xp",
             "Y3lTb3VyY2UuRGlza0gAUgRkaXNrEjUKA2dpdBgEIAEoCzIhLmNlcmJvcy5h",
             "dWRpdC52MS5Qb2xpY3lTb3VyY2UuR2l0SABSA2dpdBI1CgNodWIYBSABKAsy",
-            "IS5jZXJib3MuYXVkaXQudjEuUG9saWN5U291cmNlLkh1YkgAUgNodWISTgoM",
+            "IS5jZXJib3MuYXVkaXQudjEuUG9saWN5U291cmNlLkh1YkgAUgNodWISUgoM",
             "ZW1iZWRkZWRfcGRwGAYgASgLMikuY2VyYm9zLmF1ZGl0LnYxLlBvbGljeVNv",
-            "dXJjZS5FbWJlZGRlZFBEUEgAUgtlbWJlZGRlZFBkcBo9CgRCbG9iEh0KCmJ1",
-            "Y2tldF91cmwYASABKAlSCWJ1Y2tldFVybBIWCgZwcmVmaXgYAiABKAlSBnBy",
-            "ZWZpeBquAQoIRGF0YWJhc2USRQoGZHJpdmVyGAEgASgOMi0uY2VyYm9zLmF1",
-            "ZGl0LnYxLlBvbGljeVNvdXJjZS5EYXRhYmFzZS5Ecml2ZXJSBmRyaXZlciJb",
-            "CgZEcml2ZXISFgoSRFJJVkVSX1VOU1BFQ0lGSUVEEAASEAoMRFJJVkVSX01Z",
-            "U1FMEAESEwoPRFJJVkVSX1BPU1RHUkVTEAISEgoORFJJVkVSX1NRTElURTMQ",
-            "AxokCgREaXNrEhwKCWRpcmVjdG9yeRgBIAEoCVIJZGlyZWN0b3J5GncKC0Vt",
-            "YmVkZGVkUERQEhAKA3VybBgBIAEoCVIDdXJsEh8KC2NvbW1pdF9oYXNoGAIg",
-            "ASgJUgpjb21taXRIYXNoEjUKCGJ1aWx0X2F0GAMgASgLMhouZ29vZ2xlLnBy",
-            "b3RvYnVmLlRpbWVzdGFtcFIHYnVpbHRBdBp8CgNHaXQSJQoOcmVwb3NpdG9y",
-            "eV91cmwYASABKAlSDXJlcG9zaXRvcnlVcmwSFgoGYnJhbmNoGAIgASgJUgZi",
-            "cmFuY2gSIgoMc3ViZGlyZWN0b3J5GAMgASgJUgxzdWJkaXJlY3RvcnkSEgoE",
-            "aGFzaBgEIAEoCVIEaGFzaBrzBAoDSHViEhYKBWxhYmVsGAEgASgJSABSBWxh",
-            "YmVsEikKDWRlcGxveW1lbnRfaWQYAiABKAlCAhgBSABSDGRlcGxveW1lbnRJ",
-            "ZBIlCg1wbGF5Z3JvdW5kX2lkGAMgASgJSABSDHBsYXlncm91bmRJZBJSCgxs",
-            "b2NhbF9idW5kbGUYBCABKAsyLS5jZXJib3MuYXVkaXQudjEuUG9saWN5U291",
-            "cmNlLkh1Yi5Mb2NhbEJ1bmRsZUgAUgtsb2NhbEJ1bmRsZRJbCg9lbWJlZGRl",
-            "ZF9idW5kbGUYBSABKAsyMC5jZXJib3MuYXVkaXQudjEuUG9saWN5U291cmNl",
-            "Lkh1Yi5FbWJlZGRlZEJ1bmRsZUgAUg5lbWJlZGRlZEJ1bmRsZRJVCg1yZW1v",
-            "dGVfYnVuZGxlGAYgASgLMi4uY2VyYm9zLmF1ZGl0LnYxLlBvbGljeVNvdXJj",
-            "ZS5IdWIuUmVtb3RlQnVuZGxlSABSDHJlbW90ZUJ1bmRsZRpeCg5FbWJlZGRl",
-            "ZEJ1bmRsZRIXCgdydWxlX2lkGAEgASgJUgZydWxlSWQSFgoGc2NvcGVzGAIg",
-            "AygJUgZzY29wZXMSGwoJYnVuZGxlX2lkGAMgASgJUghidW5kbGVJZBo+CgtM",
-            "b2NhbEJ1bmRsZRISCgRwYXRoGAEgASgJUgRwYXRoEhsKCWJ1bmRsZV9pZBgC",
-            "IAEoCVIIYnVuZGxlSWQaUAoMUmVtb3RlQnVuZGxlEiMKDWRlcGxveW1lbnRf",
-            "aWQYASABKAlSDGRlcGxveW1lbnRJZBIbCglidW5kbGVfaWQYAiABKAlSCGJ1",
-            "bmRsZUlkQggKBnNvdXJjZUIICgZzb3VyY2UirgMKDlJlcXVlc3RDb250ZXh0",
-            "ErwBCgthbm5vdGF0aW9ucxgBIAMoCzIwLmNlcmJvcy5hdWRpdC52MS5SZXF1",
-            "ZXN0Q29udGV4dC5Bbm5vdGF0aW9uc0VudHJ5QmiSQVkyH0tleS12YWx1ZSBw",
-            "YWlycyBvZiBhbm5vdGF0aW9ucy5KM3siYXBwLW5hbWUiOiAiYXdlc29tZS1h",
-            "cHAiLCAiYXBwLXZlcnNpb24iOiAiMS4yLjMifcgBAbpICZoBBiIEcgIQAVIL",
-            "YW5ub3RhdGlvbnMaVgoQQW5ub3RhdGlvbnNFbnRyeRIQCgNrZXkYASABKAlS",
-            "A2tleRIsCgV2YWx1ZRgCIAEoCzIWLmdvb2dsZS5wcm90b2J1Zi5WYWx1ZVIF",
-            "dmFsdWU6AjgBOoQBkkGAAQp+MnxPcHRpb25hbCBtZXRhZGF0YSB0byBhdHRh",
-            "Y2ggdG8gdGhlIHJlcXVlc3QuIFRoaXMgaW5mb3JtYXRpb24gd2lsbCBiZSBj",
-            "YXB0dXJlZCBpbiB0aGUgYXVkaXQgbG9ncyBpZiBhdWRpdCBsb2dnaW5nIGlz",
-            "IGVuYWJsZWQuQmsKF2Rldi5jZXJib3MuYXBpLnYxLmF1ZGl0WjpnaXRodWIu",
-            "Y29tL2NlcmJvcy9jZXJib3MvYXBpL2dlbnBiL2NlcmJvcy9hdWRpdC92MTth",
-            "dWRpdHYxqgITQ2VyYm9zLkFwaS5WMS5BdWRpdGIGcHJvdG8z"));
+            "dXJjZS5FbWJlZGRlZFBEUEICGAFIAFILZW1iZWRkZWRQZHAaPQoEQmxvYhId",
+            "CgpidWNrZXRfdXJsGAEgASgJUglidWNrZXRVcmwSFgoGcHJlZml4GAIgASgJ",
+            "UgZwcmVmaXgargEKCERhdGFiYXNlEkUKBmRyaXZlchgBIAEoDjItLmNlcmJv",
+            "cy5hdWRpdC52MS5Qb2xpY3lTb3VyY2UuRGF0YWJhc2UuRHJpdmVyUgZkcml2",
+            "ZXIiWwoGRHJpdmVyEhYKEkRSSVZFUl9VTlNQRUNJRklFRBAAEhAKDERSSVZF",
+            "Ul9NWVNRTBABEhMKD0RSSVZFUl9QT1NUR1JFUxACEhIKDkRSSVZFUl9TUUxJ",
+            "VEUzEAMaJAoERGlzaxIcCglkaXJlY3RvcnkYASABKAlSCWRpcmVjdG9yeRp3",
+            "CgtFbWJlZGRlZFBEUBIQCgN1cmwYASABKAlSA3VybBIfCgtjb21taXRfaGFz",
+            "aBgCIAEoCVIKY29tbWl0SGFzaBI1CghidWlsdF9hdBgDIAEoCzIaLmdvb2ds",
+            "ZS5wcm90b2J1Zi5UaW1lc3RhbXBSB2J1aWx0QXQafAoDR2l0EiUKDnJlcG9z",
+            "aXRvcnlfdXJsGAEgASgJUg1yZXBvc2l0b3J5VXJsEhYKBmJyYW5jaBgCIAEo",
+            "CVIGYnJhbmNoEiIKDHN1YmRpcmVjdG9yeRgDIAEoCVIMc3ViZGlyZWN0b3J5",
+            "EhIKBGhhc2gYBCABKAlSBGhhc2ga9wQKA0h1YhIaCgVsYWJlbBgBIAEoCUIC",
+            "GAFIAFIFbGFiZWwSKQoNZGVwbG95bWVudF9pZBgCIAEoCUICGAFIAFIMZGVw",
+            "bG95bWVudElkEiUKDXBsYXlncm91bmRfaWQYAyABKAlIAFIMcGxheWdyb3Vu",
+            "ZElkElIKDGxvY2FsX2J1bmRsZRgEIAEoCzItLmNlcmJvcy5hdWRpdC52MS5Q",
+            "b2xpY3lTb3VyY2UuSHViLkxvY2FsQnVuZGxlSABSC2xvY2FsQnVuZGxlElsK",
+            "D2VtYmVkZGVkX2J1bmRsZRgFIAEoCzIwLmNlcmJvcy5hdWRpdC52MS5Qb2xp",
+            "Y3lTb3VyY2UuSHViLkVtYmVkZGVkQnVuZGxlSABSDmVtYmVkZGVkQnVuZGxl",
+            "ElUKDXJlbW90ZV9idW5kbGUYBiABKAsyLi5jZXJib3MuYXVkaXQudjEuUG9s",
+            "aWN5U291cmNlLkh1Yi5SZW1vdGVCdW5kbGVIAFIMcmVtb3RlQnVuZGxlGl4K",
+            "DkVtYmVkZGVkQnVuZGxlEhcKB3J1bGVfaWQYASABKAlSBnJ1bGVJZBIWCgZz",
+            "Y29wZXMYAiADKAlSBnNjb3BlcxIbCglidW5kbGVfaWQYAyABKAlSCGJ1bmRs",
+            "ZUlkGj4KC0xvY2FsQnVuZGxlEhIKBHBhdGgYASABKAlSBHBhdGgSGwoJYnVu",
+            "ZGxlX2lkGAIgASgJUghidW5kbGVJZBpQCgxSZW1vdGVCdW5kbGUSIwoNZGVw",
+            "bG95bWVudF9pZBgBIAEoCVIMZGVwbG95bWVudElkEhsKCWJ1bmRsZV9pZBgC",
+            "IAEoCVIIYnVuZGxlSWRCCAoGc291cmNlQggKBnNvdXJjZSKuAwoOUmVxdWVz",
+            "dENvbnRleHQSvAEKC2Fubm90YXRpb25zGAEgAygLMjAuY2VyYm9zLmF1ZGl0",
+            "LnYxLlJlcXVlc3RDb250ZXh0LkFubm90YXRpb25zRW50cnlCaJJBWTIfS2V5",
+            "LXZhbHVlIHBhaXJzIG9mIGFubm90YXRpb25zLkozeyJhcHAtbmFtZSI6ICJh",
+            "d2Vzb21lLWFwcCIsICJhcHAtdmVyc2lvbiI6ICIxLjIuMyJ9yAEBukgJmgEG",
+            "IgRyAhABUgthbm5vdGF0aW9ucxpWChBBbm5vdGF0aW9uc0VudHJ5EhAKA2tl",
+            "eRgBIAEoCVIDa2V5EiwKBXZhbHVlGAIgASgLMhYuZ29vZ2xlLnByb3RvYnVm",
+            "LlZhbHVlUgV2YWx1ZToCOAE6hAGSQYABCn4yfE9wdGlvbmFsIG1ldGFkYXRh",
+            "IHRvIGF0dGFjaCB0byB0aGUgcmVxdWVzdC4gVGhpcyBpbmZvcm1hdGlvbiB3",
+            "aWxsIGJlIGNhcHR1cmVkIGluIHRoZSBhdWRpdCBsb2dzIGlmIGF1ZGl0IGxv",
+            "Z2dpbmcgaXMgZW5hYmxlZC5CawoXZGV2LmNlcmJvcy5hcGkudjEuYXVkaXRa",
+            "OmdpdGh1Yi5jb20vY2VyYm9zL2NlcmJvcy9hcGkvZ2VucGIvY2VyYm9zL2F1",
+            "ZGl0L3YxO2F1ZGl0djGqAhNDZXJib3MuQXBpLlYxLkF1ZGl0YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Cerbos.Api.V1.Engine.EngineReflection.Descriptor, global::Cerbos.Api.V1.Policy.PolicyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.StructReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Grpc.Gateway.ProtocGenOpenapiv2.Options.AnnotationsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -2752,6 +2752,7 @@ namespace Cerbos.Api.V1.Audit {
 
     /// <summary>Field number for the "embedded_pdp" field.</summary>
     public const int EmbeddedPdpFieldNumber = 6;
+    [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Cerbos.Api.V1.Audit.PolicySource.Types.EmbeddedPDP EmbeddedPdp {
@@ -4437,6 +4438,7 @@ namespace Cerbos.Api.V1.Audit {
 
         /// <summary>Field number for the "label" field.</summary>
         public const int LabelFieldNumber = 1;
+        [global::System.ObsoleteAttribute]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string Label {
@@ -4447,12 +4449,14 @@ namespace Cerbos.Api.V1.Audit {
           }
         }
         /// <summary>Gets whether the "label" field is set</summary>
+        [global::System.ObsoleteAttribute]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool HasLabel {
           get { return sourceCase_ == SourceOneofCase.Label; }
         }
         /// <summary> Clears the value of the oneof if it's currently set to "label" </summary>
+        [global::System.ObsoleteAttribute]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void ClearLabel() {
