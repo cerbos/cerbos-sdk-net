@@ -3,6 +3,7 @@
 
 using Cerbos.Api.V1.Engine;
 using Cerbos.Sdk.Builder;
+using Cerbos.Sdk.Engine;
 using Cerbos.Sdk.Response;
 using Cerbos.Sdk.Utility;
 using NUnit.Framework;
@@ -23,6 +24,7 @@ namespace Cerbos.Sdk.UnitTests
         {
             var request = CheckResourcesRequest.NewInstance()
                 .WithRequestId(RequestId.Generate())
+                .WithIncludeMeta(true)
                 .WithPrincipal(
                     Principal.NewInstance("john", "employee")
                         .WithPolicyVersion("20210210")
@@ -39,22 +41,29 @@ namespace Cerbos.Sdk.UnitTests
                         .WithAttribute("geography", AttributeValue.StringValue("GB"))
                         .WithAttribute("team", AttributeValue.StringValue("design"))
                         .WithAttribute("owner", AttributeValue.StringValue("john"))
-                        .WithActions("approve", "view:public")
-                )
-                .WithIncludeMeta(true);
+                        .WithActions("approve", "error", "view:public")
+                );
 
             var have = _client.CheckResources(request, _metadata).Find("XX125");
-            Assert.That(have.IsAllowed("view:public"), Is.True);
             Assert.That(have.IsAllowed("approve"), Is.False);
+            Assert.That(have.IsAllowed("error"), Is.True);
+            Assert.That(have.IsAllowed("view:public"), Is.True);
 
             Assert.That(have.Meta, Is.Not.Null);
             Assert.That(have.Outputs, Is.Not.Null);
             Assert.That(have.Resource, Is.Not.Null);
 
             Assert.That(have.Meta.Actions["approve"].MatchedPolicy, Is.EqualTo("resource.leave_request.v20210210"));
+            Assert.That(have.Meta.Actions["error"].MatchedPolicy, Is.EqualTo("resource.leave_request.v20210210"));
+            Assert.That(have.Meta.Actions["view:public"].MatchedPolicy, Is.EqualTo("resource.leave_request.v20210210"));
 
-            Assert.That(have.Outputs.Get("resource.leave_request.v20210210#public-view"), Is.Not.Null);
-            Assert.That(have.Outputs.Get("resource.leave_request.v20210210#public-view").StringValue, Is.EqualTo("view:public:john"));
+            Assert.That((Func<Engine.OutputEntry>)(() => have.Output("resource.leave_request.v20210210#output-error")), Throws.Exception.TypeOf<OutputEntryEvaluationException>());
+            Assert.That(have.Output("resource.leave_request.v20210210#public-view"), Is.Not.Null);
+            Assert.That(have.Output("resource.leave_request.v20210210#public-view").Val.StringValue, Is.EqualTo("view:public:john"));
+
+            Assert.That((Func<Engine.OutputEntry>)(() => have.OutputByAction("error")), Throws.Exception.TypeOf<OutputEntryEvaluationException>());
+            Assert.That((Func<Engine.OutputEntry>)(() => have.OutputByAction("error:notfoundexception")), Throws.Exception.TypeOf<OutputEntryNotFoundException>());
+            Assert.That((Func<Engine.OutputEntry>)(() => have.OutputByAction("view:public")), Throws.Nothing);
 
             Assert.That(have.Resource.Id, Is.EqualTo("XX125"));
             Assert.That(have.Resource.Kind, Is.EqualTo("leave_request"));
@@ -292,21 +301,29 @@ namespace Cerbos.Sdk.UnitTests
                         .WithAttribute("geography", AttributeValue.StringValue("GB"))
                         .WithAttribute("team", AttributeValue.StringValue("design"))
                         .WithAttribute("owner", AttributeValue.StringValue("john"))
-                        .WithActions("approve", "view:public")
+                        .WithActions("approve", "error", "view:public")
                 );
 
             var have = (await _client.CheckResourcesAsync(request, _metadata)).Find("XX125");
-            Assert.That(have.IsAllowed("view:public"), Is.True);
             Assert.That(have.IsAllowed("approve"), Is.False);
+            Assert.That(have.IsAllowed("error"), Is.True);
+            Assert.That(have.IsAllowed("view:public"), Is.True);
 
             Assert.That(have.Meta, Is.Not.Null);
             Assert.That(have.Outputs, Is.Not.Null);
             Assert.That(have.Resource, Is.Not.Null);
 
             Assert.That(have.Meta.Actions["approve"].MatchedPolicy, Is.EqualTo("resource.leave_request.v20210210"));
+            Assert.That(have.Meta.Actions["error"].MatchedPolicy, Is.EqualTo("resource.leave_request.v20210210"));
+            Assert.That(have.Meta.Actions["view:public"].MatchedPolicy, Is.EqualTo("resource.leave_request.v20210210"));
 
-            Assert.That(have.Outputs.Get("resource.leave_request.v20210210#public-view"), Is.Not.Null);
-            Assert.That(have.Outputs.Get("resource.leave_request.v20210210#public-view").StringValue, Is.EqualTo("view:public:john"));
+            Assert.That((Func<Engine.OutputEntry>)(() => have.Output("resource.leave_request.v20210210#output-error")), Throws.Exception.TypeOf<OutputEntryEvaluationException>());
+            Assert.That(have.Output("resource.leave_request.v20210210#public-view"), Is.Not.Null);
+            Assert.That(have.Output("resource.leave_request.v20210210#public-view").Val.StringValue, Is.EqualTo("view:public:john"));
+
+            Assert.That((Func<Engine.OutputEntry>)(() => have.OutputByAction("error")), Throws.Exception.TypeOf<OutputEntryEvaluationException>());
+            Assert.That((Func<Engine.OutputEntry>)(() => have.OutputByAction("error:notfoundexception")), Throws.Exception.TypeOf<OutputEntryNotFoundException>());
+            Assert.That((Func<Engine.OutputEntry>)(() => have.OutputByAction("view:public")), Throws.Nothing);
 
             Assert.That(have.Resource.Id, Is.EqualTo("XX125"));
             Assert.That(have.Resource.Kind, Is.EqualTo("leave_request"));

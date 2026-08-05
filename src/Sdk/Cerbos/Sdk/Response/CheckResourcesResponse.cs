@@ -4,8 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Cerbos.Api.V1.Engine;
-using Google.Protobuf.WellKnownTypes;
+using Cerbos.Sdk.Engine;
 
 namespace Cerbos.Sdk.Response
 {
@@ -38,32 +37,60 @@ namespace Cerbos.Sdk.Response
         {
             public sealed class ResultEntry
             {
-                private Api.V1.Response.CheckResourcesResponse.Types.ResultEntry Re { get; }
+                private Api.V1.Response.CheckResourcesResponse.Types.ResultEntry RE { get; }
 
-                public Dictionary<string, Api.V1.Effect.Effect> Actions => Re.Actions.ToDictionary(
+                public Dictionary<string, Api.V1.Effect.Effect> Actions => RE.Actions.ToDictionary(
                         x => x.Key,
                         x => x.Value
                     );
-                public Types.Meta Meta => new Types.Meta(Re.Meta);
-                public Api.V1.Response.CheckResourcesResponse.Types.ResultEntry Raw => Re;
-                public Api.V1.Response.CheckResourcesResponse.Types.ResultEntry.Types.Resource Resource => Re.Resource;
-                public Types.Outputs Outputs => new Types.Outputs(Re.Outputs.ToList());
-                public List<Api.V1.Schema.ValidationError> ValidationErrors => Re.ValidationErrors.ToList();
+                public Types.Meta Meta => new Types.Meta(RE.Meta);
+                public Api.V1.Response.CheckResourcesResponse.Types.ResultEntry Raw => RE;
+                public Api.V1.Response.CheckResourcesResponse.Types.ResultEntry.Types.Resource Resource => RE.Resource;
+                public List<OutputEntry> Outputs => RE.Outputs.Select(X => new OutputEntry(X)).ToList();
+                public List<Api.V1.Schema.ValidationError> ValidationErrors => RE.ValidationErrors.ToList();
 
                 public ResultEntry(Api.V1.Response.CheckResourcesResponse.Types.ResultEntry resultEntry)
                 {
-                    Re = resultEntry;
+                    RE = resultEntry;
                 }
 
                 public bool IsAllowed(string action)
                 {
-                    var ok = Re.Actions.TryGetValue(action, out var effect);
-                    if (!ok || effect == Cerbos.Api.V1.Effect.Effect.Deny || effect == Cerbos.Api.V1.Effect.Effect.Unspecified)
+                    var ok = RE.Actions.TryGetValue(action, out var effect);
+                    if (!ok || effect == Api.V1.Effect.Effect.Deny || effect == Api.V1.Effect.Effect.Unspecified)
                     {
                         return false;
                     }
 
                     return true;
+                }
+
+                public OutputEntry Output(string src)
+                {
+                    foreach (var output in Outputs)
+                    {
+                        if (output.Src == src)
+                        {
+                            OutputEntryEvaluationException.FromOutputEntry(output);
+                            return output;
+                        }
+                    }
+
+                    throw OutputEntryNotFoundException.Src(src);
+                }
+
+                public OutputEntry OutputByAction(string action)
+                {
+                    foreach (var output in Outputs)
+                    {
+                        if (output.Action == action)
+                        {
+                            OutputEntryEvaluationException.FromOutputEntry(output);
+                            return output;
+                        }
+                    }
+
+                    throw OutputEntryNotFoundException.Action(action);
                 }
 
                 public static class Types
@@ -83,32 +110,6 @@ namespace Cerbos.Sdk.Response
                         public Meta(Api.V1.Response.CheckResourcesResponse.Types.ResultEntry.Types.Meta meta)
                         {
                             M = meta;
-                        }
-                    }
-
-                    public sealed class Outputs
-                    {
-                        private List<OutputEntry> O { get; }
-
-                        public List<OutputEntry> Raw => O;
-
-                        internal Outputs(List<OutputEntry> outputs)
-                        {
-                            O = outputs;
-                        }
-
-                        public Value Get(string src)
-                        {
-                            return O.Find(outputEntry => outputEntry.Src == src)?.Val;
-                        }
-
-                        public Dictionary<string, Value> ToDictionary()
-                        {
-                            return O
-                                .ToDictionary(
-                                    x => x.Src,
-                                    x => x.Val
-                                );
                         }
                     }
                 }

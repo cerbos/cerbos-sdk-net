@@ -100,7 +100,7 @@ namespace Cerbos.Sdk.UnitTests
 
             var have = _clientAdmin.InspectPolicies(request, _metadata).Results;
             Assert.That(have.Count, Is.EqualTo(1));
-            Assert.That(have["resource.leave_request.v20210210"].Actions, Is.EqualTo(new List<string> { "*", "approve", "create", "defer", "delete", "view", "view:*", "view:public" }));
+            Assert.That(have["resource.leave_request.v20210210"].Actions, Is.EqualTo(new List<string> { "*", "approve", "create", "defer", "delete", "error", "view", "view:*", "view:public" }));
 
             Assert.That(have["resource.leave_request.v20210210"].Attributes.Count, Is.EqualTo(4));
             Assert.That(have["resource.leave_request.v20210210"].Attributes[0].Kind, Is.EqualTo(Api.V1.Response.InspectPoliciesResponse.Types.Attribute.Types.Kind.ResourceAttribute));
