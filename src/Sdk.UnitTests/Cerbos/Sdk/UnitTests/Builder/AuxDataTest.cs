@@ -25,4 +25,41 @@ public class AuxDataTest
         Assert.That(auxData.ToAuxData().Jwt.KeySetId, Is.EqualTo(KeySetId));
         Assert.That(auxData.ToAuxData().Jwt.Token, Is.EqualTo(Token));
     }
+
+    [Test]
+    public void TestJwt()
+    {
+        var auxData = AuxData.WithJwt(AuxData.Types.JWT.FromToken(Token));
+        Assert.That(auxData.ToAuxData().Jwt.Token, Is.EqualTo(Token));
+
+        auxData = AuxData.WithJwt(AuxData.Types.JWT.NewInstance(Token, KeySetId));
+        Assert.That(auxData.ToAuxData().Jwt.KeySetId, Is.EqualTo(KeySetId));
+        Assert.That(auxData.ToAuxData().Jwt.Token, Is.EqualTo(Token));
+    }
+
+    [Test]
+    public void TestJwts()
+    {
+        Assert.That((Func<AuxData>)(() => AuxData.WithJwts(null)), Throws.Exception.TypeOf<ArgumentException>());
+
+        var jwt = AuxData.Types.JWT.NewInstance(Token, KeySetId);
+        var name1 = "name1";
+        var name2 = "name2";
+
+        var auxData = AuxData.WithJwts(new Dictionary<string, AuxData.Types.JWT>
+        {
+            {name1, jwt},
+            {name2, jwt}
+        });
+
+        var finalAuxData = auxData.ToAuxData();
+
+        Assert.That(finalAuxData.Jwts[name1], Is.Not.Null);
+        Assert.That(finalAuxData.Jwts[name1].KeySetId, Is.EqualTo(KeySetId));
+        Assert.That(finalAuxData.Jwts[name1].Token, Is.EqualTo(Token));
+
+        Assert.That(finalAuxData.Jwts[name2], Is.Not.Null);
+        Assert.That(finalAuxData.Jwts[name2].KeySetId, Is.EqualTo(KeySetId));
+        Assert.That(finalAuxData.Jwts[name2].Token, Is.EqualTo(Token));
+    }
 }
