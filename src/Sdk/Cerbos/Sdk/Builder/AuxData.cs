@@ -1,6 +1,9 @@
 // Copyright 2021-2026 Zenauth Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
+using System;
+using System.Collections.Generic;
+
 namespace Cerbos.Sdk.Builder
 {
     public sealed class AuxData
@@ -38,6 +41,27 @@ namespace Cerbos.Sdk.Builder
             {
                 A = {
                     Jwt = jwt.ToJWT(),
+                }
+            };
+        }
+
+        public static AuxData WithJwts(Dictionary<string, Types.JWT> jwts)
+        {
+            if (jwts == null || jwts.Count == 0)
+            {
+                throw new ArgumentException("There must be at least one JWT in the dictionary");
+            }
+
+            var tmp = new Google.Protobuf.Collections.MapField<string, Api.V1.Request.AuxData.Types.JWT>();
+            foreach (KeyValuePair<string, Types.JWT> kvp in jwts)
+            {
+                tmp.Add(kvp.Key, kvp.Value.ToJWT());
+            }
+
+            return new AuxData()
+            {
+                A = {
+                    Jwts = { tmp }
                 }
             };
         }
