@@ -16,7 +16,7 @@ resourcePolicy:
       ref: cerbos:///resources/leave_request.json
   resource: leave_request
   rules:
-    - actions: ['*']
+    - actions: ["*"]
       effect: EFFECT_ALLOW
       roles:
         - admin
@@ -53,6 +53,17 @@ resourcePolicy:
         expr: |-
           "view:public:%s".format([request.principal.id])
       name: public-view
+
+    - name: output-error
+      actions:
+        - error
+      effect: EFFECT_ALLOW
+      derivedRoles:
+        - any_employee
+      output:
+        when:
+          ruleActivated: |-
+            1 / 0
 
     - actions: ["approve"]
       condition:

@@ -166,14 +166,24 @@ namespace Cerbos.Api.V1.Engine {
             "b3BlGk8KCUF0dHJFbnRyeRIQCgNrZXkYASABKAlSA2tleRIsCgV2YWx1ZRgC",
             "IAEoCzIWLmdvb2dsZS5wcm90b2J1Zi5WYWx1ZVIFdmFsdWU6AjgBOlmSQVYK",
             "VDJSQSBwZXJzb24gb3IgYXBwbGljYXRpb24gYXR0ZW1wdGluZyB0byBwZXJm",
-            "b3JtIHRoZSBhY3Rpb25zIG9uIHRoZSBzZXQgb2YgcmVzb3VyY2VzLiKxAQoH",
+            "b3JtIHRoZSBhY3Rpb25zIG9uIHRoZSBzZXQgb2YgcmVzb3VyY2VzLiLkBAoH",
             "QXV4RGF0YRI0CgNqd3QYASADKAsyIi5jZXJib3MuZW5naW5lLnYxLkF1eERh",
-            "dGEuSnd0RW50cnlSA2p3dBpOCghKd3RFbnRyeRIQCgNrZXkYASABKAlSA2tl",
-            "eRIsCgV2YWx1ZRgCIAEoCzIWLmdvb2dsZS5wcm90b2J1Zi5WYWx1ZVIFdmFs",
-            "dWU6AjgBOiCSQR0KGzIZU3RydWN0dXJlZCBhdXhpbGlhcnkgZGF0YUJvChhk",
-            "ZXYuY2VyYm9zLmFwaS52MS5lbmdpbmVaPGdpdGh1Yi5jb20vY2VyYm9zL2Nl",
-            "cmJvcy9hcGkvZ2VucGIvY2VyYm9zL2VuZ2luZS92MTtlbmdpbmV2MaoCFENl",
-            "cmJvcy5BcGkuVjEuRW5naW5lYgZwcm90bzM="));
+            "dGEuSnd0RW50cnlSA2p3dBJFCgRqd3RzGAIgAygLMiMuY2VyYm9zLmVuZ2lu",
+            "ZS52MS5BdXhEYXRhLkp3dHNFbnRyeUIMukgJmgEGIgRyAhABUgRqd3RzGpsB",
+            "CgNKV1QSQQoGY2xhaW1zGAEgAygLMikuY2VyYm9zLmVuZ2luZS52MS5BdXhE",
+            "YXRhLkpXVC5DbGFpbXNFbnRyeVIGY2xhaW1zGlEKC0NsYWltc0VudHJ5EhAK",
+            "A2tleRgBIAEoCVIDa2V5EiwKBXZhbHVlGAIgASgLMhYuZ29vZ2xlLnByb3Rv",
+            "YnVmLlZhbHVlUgV2YWx1ZToCOAEaTgoISnd0RW50cnkSEAoDa2V5GAEgASgJ",
+            "UgNrZXkSLAoFdmFsdWUYAiABKAsyFi5nb29nbGUucHJvdG9idWYuVmFsdWVS",
+            "BXZhbHVlOgI4ARpWCglKd3RzRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSMwoF",
+            "dmFsdWUYAiABKAsyHS5jZXJib3MuZW5naW5lLnYxLkF1eERhdGEuSldUUgV2",
+            "YWx1ZToCOAE6lQGSQR0KGzIZU3RydWN0dXJlZCBhdXhpbGlhcnkgZGF0YbpI",
+            "chpwChpBdXhEYXRhLm9ubHlfb25lX2p3dF9maWVsZBIuT25seSBvbmUgb2Yg",
+            "dGhlIGp3dCBvciBqd3RzIGZpZWxkcyBtdXN0IGJlIHNldBoiIShoYXModGhp",
+            "cy5qd3QpICYmIGhhcyh0aGlzLmp3dHMpKUJvChhkZXYuY2VyYm9zLmFwaS52",
+            "MS5lbmdpbmVaPGdpdGh1Yi5jb20vY2VyYm9zL2NlcmJvcy9hcGkvZ2VucGIv",
+            "Y2VyYm9zL2VuZ2luZS92MTtlbmdpbmV2MaoCFENlcmJvcy5BcGkuVjEuRW5n",
+            "aW5lYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Cerbos.Api.V1.Effect.EffectReflection.Descriptor, global::Cerbos.Api.V1.Schema.SchemaReflection.Descriptor, global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.StructReflection.Descriptor, global::Grpc.Gateway.ProtocGenOpenapiv2.Options.AnnotationsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -187,7 +197,8 @@ namespace Cerbos.Api.V1.Engine {
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Engine.OutputEntry), global::Cerbos.Api.V1.Engine.OutputEntry.Parser, new[]{ "Src", "Val", "Action", "Error" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Engine.Resource), global::Cerbos.Api.V1.Engine.Resource.Parser, new[]{ "Kind", "PolicyVersion", "Id", "Attr", "Scope" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Engine.Principal), global::Cerbos.Api.V1.Engine.Principal.Parser, new[]{ "Id", "PolicyVersion", "Roles", "Attr", "Scope" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Engine.AuxData), global::Cerbos.Api.V1.Engine.AuxData.Parser, new[]{ "Jwt" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Engine.AuxData), global::Cerbos.Api.V1.Engine.AuxData.Parser, new[]{ "Jwt", "Jwts" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Cerbos.Api.V1.Engine.AuxData.Types.JWT), global::Cerbos.Api.V1.Engine.AuxData.Types.JWT.Parser, new[]{ "Claims" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            null, null, })
           }));
     }
     #endregion
@@ -4814,6 +4825,7 @@ namespace Cerbos.Api.V1.Engine {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AuxData(AuxData other) : this() {
       jwt_ = other.jwt_.Clone();
+      jwts_ = other.jwts_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -4834,6 +4846,17 @@ namespace Cerbos.Api.V1.Engine {
       get { return jwt_; }
     }
 
+    /// <summary>Field number for the "jwts" field.</summary>
+    public const int JwtsFieldNumber = 2;
+    private static readonly pbc::MapField<string, global::Cerbos.Api.V1.Engine.AuxData.Types.JWT>.Codec _map_jwts_codec
+        = new pbc::MapField<string, global::Cerbos.Api.V1.Engine.AuxData.Types.JWT>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::Cerbos.Api.V1.Engine.AuxData.Types.JWT.Parser), 18);
+    private readonly pbc::MapField<string, global::Cerbos.Api.V1.Engine.AuxData.Types.JWT> jwts_ = new pbc::MapField<string, global::Cerbos.Api.V1.Engine.AuxData.Types.JWT>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<string, global::Cerbos.Api.V1.Engine.AuxData.Types.JWT> Jwts {
+      get { return jwts_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -4850,6 +4873,7 @@ namespace Cerbos.Api.V1.Engine {
         return true;
       }
       if (!Jwt.Equals(other.Jwt)) return false;
+      if (!Jwts.Equals(other.Jwts)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -4858,6 +4882,7 @@ namespace Cerbos.Api.V1.Engine {
     public override int GetHashCode() {
       int hash = 1;
       hash ^= Jwt.GetHashCode();
+      hash ^= Jwts.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -4877,6 +4902,7 @@ namespace Cerbos.Api.V1.Engine {
       output.WriteRawMessage(this);
     #else
       jwt_.WriteTo(output, _map_jwt_codec);
+      jwts_.WriteTo(output, _map_jwts_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -4888,6 +4914,7 @@ namespace Cerbos.Api.V1.Engine {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       jwt_.WriteTo(ref output, _map_jwt_codec);
+      jwts_.WriteTo(ref output, _map_jwts_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -4899,6 +4926,7 @@ namespace Cerbos.Api.V1.Engine {
     public int CalculateSize() {
       int size = 0;
       size += jwt_.CalculateSize(_map_jwt_codec);
+      size += jwts_.CalculateSize(_map_jwts_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -4912,6 +4940,7 @@ namespace Cerbos.Api.V1.Engine {
         return;
       }
       jwt_.MergeFrom(other.jwt_);
+      jwts_.MergeFrom(other.jwts_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -4933,6 +4962,10 @@ namespace Cerbos.Api.V1.Engine {
             break;
           case 10: {
             jwt_.AddEntriesFrom(input, _map_jwt_codec);
+            break;
+          }
+          case 18: {
+            jwts_.AddEntriesFrom(input, _map_jwts_codec);
             break;
           }
         }
@@ -4958,10 +4991,209 @@ namespace Cerbos.Api.V1.Engine {
             jwt_.AddEntriesFrom(ref input, _map_jwt_codec);
             break;
           }
+          case 18: {
+            jwts_.AddEntriesFrom(ref input, _map_jwts_codec);
+            break;
+          }
         }
       }
     }
     #endif
+
+    #region Nested types
+    /// <summary>Container for nested types declared in the AuxData message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static partial class Types {
+      [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+      public sealed partial class JWT : pb::IMessage<JWT>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
+        private static readonly pb::MessageParser<JWT> _parser = new pb::MessageParser<JWT>(() => new JWT());
+        private pb::UnknownFieldSet _unknownFields;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pb::MessageParser<JWT> Parser { get { return _parser; } }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pbr::MessageDescriptor Descriptor {
+          get { return global::Cerbos.Api.V1.Engine.AuxData.Descriptor.NestedTypes[0]; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        pbr::MessageDescriptor pb::IMessage.Descriptor {
+          get { return Descriptor; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public JWT() {
+          OnConstruction();
+        }
+
+        partial void OnConstruction();
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public JWT(JWT other) : this() {
+          claims_ = other.claims_.Clone();
+          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public JWT Clone() {
+          return new JWT(this);
+        }
+
+        /// <summary>Field number for the "claims" field.</summary>
+        public const int ClaimsFieldNumber = 1;
+        private static readonly pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value>.Codec _map_claims_codec
+            = new pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::Google.Protobuf.WellKnownTypes.Value.Parser), 10);
+        private readonly pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value> claims_ = new pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value>();
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value> Claims {
+          get { return claims_; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override bool Equals(object other) {
+          return Equals(other as JWT);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool Equals(JWT other) {
+          if (ReferenceEquals(other, null)) {
+            return false;
+          }
+          if (ReferenceEquals(other, this)) {
+            return true;
+          }
+          if (!Claims.Equals(other.Claims)) return false;
+          return Equals(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override int GetHashCode() {
+          int hash = 1;
+          hash ^= Claims.GetHashCode();
+          if (_unknownFields != null) {
+            hash ^= _unknownFields.GetHashCode();
+          }
+          return hash;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override string ToString() {
+          return pb::JsonFormatter.ToDiagnosticString(this);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
+          claims_.WriteTo(output, _map_claims_codec);
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(output);
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          claims_.WriteTo(ref output, _map_claims_codec);
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public int CalculateSize() {
+          int size = 0;
+          size += claims_.CalculateSize(_map_claims_codec);
+          if (_unknownFields != null) {
+            size += _unknownFields.CalculateSize();
+          }
+          return size;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(JWT other) {
+          if (other == null) {
+            return;
+          }
+          claims_.MergeFrom(other.claims_);
+          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+          if ((tag & 7) == 4) {
+            // Abort on any end group tag.
+            return;
+          }
+          switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+                break;
+              case 10: {
+                claims_.AddEntriesFrom(input, _map_claims_codec);
+                break;
+              }
+            }
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+          if ((tag & 7) == 4) {
+            // Abort on any end group tag.
+            return;
+          }
+          switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 10: {
+                claims_.AddEntriesFrom(ref input, _map_claims_codec);
+                break;
+              }
+            }
+          }
+        }
+        #endif
+
+      }
+
+    }
+    #endregion
 
   }
 
