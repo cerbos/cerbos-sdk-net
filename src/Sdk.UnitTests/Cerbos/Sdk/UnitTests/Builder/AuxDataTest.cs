@@ -25,4 +25,15 @@ public class AuxDataTest
         Assert.That(auxData.ToAuxData().Jwt.KeySetId, Is.EqualTo(KeySetId));
         Assert.That(auxData.ToAuxData().Jwt.Token, Is.EqualTo(Token));
     }
+
+    [Test]
+    public void TestJwt()
+    {
+        var auxData = AuxData.WithJwt(AuxData.Types.JWT.FromToken(Token));
+        Assert.That(auxData.ToAuxData().Jwt.Token, Is.EqualTo(Token));
+
+        auxData = AuxData.WithJwt(AuxData.Types.JWT.NewInstance(Token, KeySetId));
+        Assert.That(auxData.ToAuxData().Jwt.KeySetId, Is.EqualTo(KeySetId));
+        Assert.That(auxData.ToAuxData().Jwt.Token, Is.EqualTo(Token));
+    }
 }
