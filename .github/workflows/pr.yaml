@@ -29,7 +29,7 @@ jobs:
           tools: buf
 
       - name: Setup Cerbos
-        uses: cerbos/cerbos-setup-action@d1418d9ea5db17f419a48e992edff39b01bd0756 # v1.9.16
+        uses: cerbos/cerbos-setup-action@ab70afd62087d1f879de6240f34100ce58bd9c4c # v1.9.17
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           version: latest
