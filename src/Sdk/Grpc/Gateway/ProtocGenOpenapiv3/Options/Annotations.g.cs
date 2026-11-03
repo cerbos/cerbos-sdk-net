@@ -30,21 +30,23 @@ namespace Grpc.Gateway.ProtocGenOpenapiv3.Options {
             "ZW4tb3BlbmFwaXYzL29wdGlvbnMvb3BlbmFwaXYzLnByb3RvOoEBChJvcGVu",
             "YXBpdjNfZG9jdW1lbnQSHC5nb29nbGUucHJvdG9idWYuRmlsZU9wdGlvbnMY",
             "jwogASgLMjMuZ3JwYy5nYXRld2F5LnByb3RvY19nZW5fb3BlbmFwaXYzLm9w",
-            "dGlvbnMuRG9jdW1lbnRSEW9wZW5hcGl2M0RvY3VtZW50OoYBChNvcGVuYXBp",
-            "djNfb3BlcmF0aW9uEh4uZ29vZ2xlLnByb3RvYnVmLk1ldGhvZE9wdGlvbnMY",
-            "jwogASgLMjQuZ3JwYy5nYXRld2F5LnByb3RvY19nZW5fb3BlbmFwaXYzLm9w",
-            "dGlvbnMuT3BlcmF0aW9uUhJvcGVuYXBpdjNPcGVyYXRpb246fgoQb3BlbmFw",
-            "aXYzX3NjaGVtYRIfLmdvb2dsZS5wcm90b2J1Zi5NZXNzYWdlT3B0aW9ucxiP",
-            "CiABKAsyMS5ncnBjLmdhdGV3YXkucHJvdG9jX2dlbl9vcGVuYXBpdjMub3B0",
-            "aW9ucy5TY2hlbWFSD29wZW5hcGl2M1NjaGVtYTp6Cg9vcGVuYXBpdjNfZmll",
-            "bGQSHS5nb29nbGUucHJvdG9idWYuRmllbGRPcHRpb25zGI8KIAEoCzIxLmdy",
-            "cGMuZ2F0ZXdheS5wcm90b2NfZ2VuX29wZW5hcGl2My5vcHRpb25zLlNjaGVt",
-            "YVIOb3BlbmFwaXYzRmllbGRCSFpGZ2l0aHViLmNvbS9ncnBjLWVjb3N5c3Rl",
-            "bS9ncnBjLWdhdGV3YXkvdjIvcHJvdG9jLWdlbi1vcGVuYXBpdjMvb3B0aW9u",
-            "c2IGcHJvdG8z"));
+            "dGlvbnMuRG9jdW1lbnRSEW9wZW5hcGl2M0RvY3VtZW50OnUKDW9wZW5hcGl2",
+            "M190YWcSHy5nb29nbGUucHJvdG9idWYuU2VydmljZU9wdGlvbnMYjwogASgL",
+            "Mi4uZ3JwYy5nYXRld2F5LnByb3RvY19nZW5fb3BlbmFwaXYzLm9wdGlvbnMu",
+            "VGFnUgxvcGVuYXBpdjNUYWc6hgEKE29wZW5hcGl2M19vcGVyYXRpb24SHi5n",
+            "b29nbGUucHJvdG9idWYuTWV0aG9kT3B0aW9ucxiPCiABKAsyNC5ncnBjLmdh",
+            "dGV3YXkucHJvdG9jX2dlbl9vcGVuYXBpdjMub3B0aW9ucy5PcGVyYXRpb25S",
+            "Em9wZW5hcGl2M09wZXJhdGlvbjp+ChBvcGVuYXBpdjNfc2NoZW1hEh8uZ29v",
+            "Z2xlLnByb3RvYnVmLk1lc3NhZ2VPcHRpb25zGI8KIAEoCzIxLmdycGMuZ2F0",
+            "ZXdheS5wcm90b2NfZ2VuX29wZW5hcGl2My5vcHRpb25zLlNjaGVtYVIPb3Bl",
+            "bmFwaXYzU2NoZW1hOnoKD29wZW5hcGl2M19maWVsZBIdLmdvb2dsZS5wcm90",
+            "b2J1Zi5GaWVsZE9wdGlvbnMYjwogASgLMjEuZ3JwYy5nYXRld2F5LnByb3Rv",
+            "Y19nZW5fb3BlbmFwaXYzLm9wdGlvbnMuU2NoZW1hUg5vcGVuYXBpdjNGaWVs",
+            "ZEJIWkZnaXRodWIuY29tL2dycGMtZWNvc3lzdGVtL2dycGMtZ2F0ZXdheS92",
+            "Mi9wcm90b2MtZ2VuLW9wZW5hcGl2My9vcHRpb25zYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor, global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Openapiv3Reflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(null, new pb::Extension[] { AnnotationsExtensions.Openapiv3Document, AnnotationsExtensions.Openapiv3Operation, AnnotationsExtensions.Openapiv3Schema, AnnotationsExtensions.Openapiv3Field }, null));
+          new pbr::GeneratedClrTypeInfo(null, new pb::Extension[] { AnnotationsExtensions.Openapiv3Document, AnnotationsExtensions.Openapiv3Tag, AnnotationsExtensions.Openapiv3Operation, AnnotationsExtensions.Openapiv3Schema, AnnotationsExtensions.Openapiv3Field }, null));
     }
     #endregion
 
@@ -59,6 +61,14 @@ namespace Grpc.Gateway.ProtocGenOpenapiv3.Options {
     /// </summary>
     public static readonly pb::Extension<global::Google.Protobuf.Reflection.FileOptions, global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Document> Openapiv3Document =
       new pb::Extension<global::Google.Protobuf.Reflection.FileOptions, global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Document>(1295, pb::FieldCodec.ForMessage(10362, global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Document.Parser));
+    /// <summary>
+    /// ID 1295 assigned by protobuf-global-extension-registry@google.com for the
+    /// gRPC-Gateway OpenAPI v3 generator. All extensions in this file share the
+    /// same ID because they each extend a different descriptor message.
+    /// Ref: https://github.com/protocolbuffers/protobuf/commit/5e0f68530ae6ad47b78714e60861321e1d1c04ae
+    /// </summary>
+    public static readonly pb::Extension<global::Google.Protobuf.Reflection.ServiceOptions, global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Tag> Openapiv3Tag =
+      new pb::Extension<global::Google.Protobuf.Reflection.ServiceOptions, global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Tag>(1295, pb::FieldCodec.ForMessage(10362, global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Tag.Parser));
     /// <summary>
     /// ID 1295 assigned by protobuf-global-extension-registry@google.com for the
     /// gRPC-Gateway OpenAPI v3 generator. All extensions in this file share the

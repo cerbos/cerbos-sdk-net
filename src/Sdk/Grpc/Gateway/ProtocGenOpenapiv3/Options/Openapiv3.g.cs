@@ -26,7 +26,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv3.Options {
           string.Concat(
             "Cixwcm90b2MtZ2VuLW9wZW5hcGl2My9vcHRpb25zL29wZW5hcGl2My5wcm90",
             "bxIpZ3JwYy5nYXRld2F5LnByb3RvY19nZW5fb3BlbmFwaXYzLm9wdGlvbnMa",
-            "HGdvb2dsZS9wcm90b2J1Zi9zdHJ1Y3QucHJvdG8i+gMKCERvY3VtZW50EkMK",
+            "HGdvb2dsZS9wcm90b2J1Zi9zdHJ1Y3QucHJvdG8irQUKCERvY3VtZW50EkMK",
             "BGluZm8YASABKAsyLy5ncnBjLmdhdGV3YXkucHJvdG9jX2dlbl9vcGVuYXBp",
             "djMub3B0aW9ucy5JbmZvUgRpbmZvEksKB3NlcnZlcnMYAiADKAsyMS5ncnBj",
             "LmdhdGV3YXkucHJvdG9jX2dlbl9vcGVuYXBpdjMub3B0aW9ucy5TZXJ2ZXJS",
@@ -36,65 +36,118 @@ namespace Grpc.Gateway.ProtocGenOpenapiv3.Options {
             "dG9jX2dlbl9vcGVuYXBpdjMub3B0aW9ucy5UYWdSBHRhZ3MSYwoKZXh0ZW5z",
             "aW9ucxgFIAMoCzJDLmdycGMuZ2F0ZXdheS5wcm90b2NfZ2VuX29wZW5hcGl2",
             "My5vcHRpb25zLkRvY3VtZW50LkV4dGVuc2lvbnNFbnRyeVIKZXh0ZW5zaW9u",
-            "cxpVCg9FeHRlbnNpb25zRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSLAoFdmFs",
-            "dWUYAiABKAsyFi5nb29nbGUucHJvdG9idWYuVmFsdWVSBXZhbHVlOgI4ASLw",
-            "AwoESW5mbxIUCgV0aXRsZRgBIAEoCVIFdGl0bGUSGAoHc3VtbWFyeRgCIAEo",
+            "cxJVCgpjb21wb25lbnRzGAYgASgLMjUuZ3JwYy5nYXRld2F5LnByb3RvY19n",
+            "ZW5fb3BlbmFwaXYzLm9wdGlvbnMuQ29tcG9uZW50c1IKY29tcG9uZW50cxJa",
+            "CghzZWN1cml0eRgHIAMoCzI+LmdycGMuZ2F0ZXdheS5wcm90b2NfZ2VuX29w",
+            "ZW5hcGl2My5vcHRpb25zLlNlY3VyaXR5UmVxdWlyZW1lbnRSCHNlY3VyaXR5",
+            "GlUKD0V4dGVuc2lvbnNFbnRyeRIQCgNrZXkYASABKAlSA2tleRIsCgV2YWx1",
+            "ZRgCIAEoCzIWLmdvb2dsZS5wcm90b2J1Zi5WYWx1ZVIFdmFsdWU6AjgBIoIC",
+            "CgpDb21wb25lbnRzEnUKEHNlY3VyaXR5X3NjaGVtZXMYASADKAsySi5ncnBj",
+            "LmdhdGV3YXkucHJvdG9jX2dlbl9vcGVuYXBpdjMub3B0aW9ucy5Db21wb25l",
+            "bnRzLlNlY3VyaXR5U2NoZW1lc0VudHJ5Ug9zZWN1cml0eVNjaGVtZXMafQoU",
+            "U2VjdXJpdHlTY2hlbWVzRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSTwoFdmFs",
+            "dWUYAiABKAsyOS5ncnBjLmdhdGV3YXkucHJvdG9jX2dlbl9vcGVuYXBpdjMu",
+            "b3B0aW9ucy5TZWN1cml0eVNjaGVtZVIFdmFsdWU6AjgBIvADCgRJbmZvEhQK",
+            "BXRpdGxlGAEgASgJUgV0aXRsZRIYCgdzdW1tYXJ5GAIgASgJUgdzdW1tYXJ5",
+            "EiAKC2Rlc2NyaXB0aW9uGAMgASgJUgtkZXNjcmlwdGlvbhIoChB0ZXJtc19v",
+            "Zl9zZXJ2aWNlGAQgASgJUg50ZXJtc09mU2VydmljZRJMCgdjb250YWN0GAUg",
+            "ASgLMjIuZ3JwYy5nYXRld2F5LnByb3RvY19nZW5fb3BlbmFwaXYzLm9wdGlv",
+            "bnMuQ29udGFjdFIHY29udGFjdBJMCgdsaWNlbnNlGAYgASgLMjIuZ3JwYy5n",
+            "YXRld2F5LnByb3RvY19nZW5fb3BlbmFwaXYzLm9wdGlvbnMuTGljZW5zZVIH",
+            "bGljZW5zZRIYCgd2ZXJzaW9uGAcgASgJUgd2ZXJzaW9uEl8KCmV4dGVuc2lv",
+            "bnMYCCADKAsyPy5ncnBjLmdhdGV3YXkucHJvdG9jX2dlbl9vcGVuYXBpdjMu",
+            "b3B0aW9ucy5JbmZvLkV4dGVuc2lvbnNFbnRyeVIKZXh0ZW5zaW9ucxpVCg9F",
+            "eHRlbnNpb25zRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSLAoFdmFsdWUYAiAB",
+            "KAsyFi5nb29nbGUucHJvdG9idWYuVmFsdWVSBXZhbHVlOgI4ASJFCgdDb250",
+            "YWN0EhIKBG5hbWUYASABKAlSBG5hbWUSEAoDdXJsGAIgASgJUgN1cmwSFAoF",
+            "ZW1haWwYAyABKAlSBWVtYWlsIl0KB0xpY2Vuc2USEgoEbmFtZRgBIAEoCVIE",
+            "bmFtZRIgCgppZGVudGlmaWVyGAIgASgJSABSCmlkZW50aWZpZXISEgoDdXJs",
+            "GAMgASgJSABSA3VybEIICgZzb3VyY2UiPAoGU2VydmVyEhAKA3VybBgBIAEo",
+            "CVIDdXJsEiAKC2Rlc2NyaXB0aW9uGAIgASgJUgtkZXNjcmlwdGlvbiLiBAoJ",
+            "T3BlcmF0aW9uEhIKBHRhZ3MYASADKAlSBHRhZ3MSGAoHc3VtbWFyeRgCIAEo",
             "CVIHc3VtbWFyeRIgCgtkZXNjcmlwdGlvbhgDIAEoCVILZGVzY3JpcHRpb24S",
-            "KAoQdGVybXNfb2Zfc2VydmljZRgEIAEoCVIOdGVybXNPZlNlcnZpY2USTAoH",
-            "Y29udGFjdBgFIAEoCzIyLmdycGMuZ2F0ZXdheS5wcm90b2NfZ2VuX29wZW5h",
-            "cGl2My5vcHRpb25zLkNvbnRhY3RSB2NvbnRhY3QSTAoHbGljZW5zZRgGIAEo",
-            "CzIyLmdycGMuZ2F0ZXdheS5wcm90b2NfZ2VuX29wZW5hcGl2My5vcHRpb25z",
-            "LkxpY2Vuc2VSB2xpY2Vuc2USGAoHdmVyc2lvbhgHIAEoCVIHdmVyc2lvbhJf",
-            "CgpleHRlbnNpb25zGAggAygLMj8uZ3JwYy5nYXRld2F5LnByb3RvY19nZW5f",
-            "b3BlbmFwaXYzLm9wdGlvbnMuSW5mby5FeHRlbnNpb25zRW50cnlSCmV4dGVu",
-            "c2lvbnMaVQoPRXh0ZW5zaW9uc0VudHJ5EhAKA2tleRgBIAEoCVIDa2V5EiwK",
-            "BXZhbHVlGAIgASgLMhYuZ29vZ2xlLnByb3RvYnVmLlZhbHVlUgV2YWx1ZToC",
-            "OAEiRQoHQ29udGFjdBISCgRuYW1lGAEgASgJUgRuYW1lEhAKA3VybBgCIAEo",
-            "CVIDdXJsEhQKBWVtYWlsGAMgASgJUgVlbWFpbCJdCgdMaWNlbnNlEhIKBG5h",
-            "bWUYASABKAlSBG5hbWUSIAoKaWRlbnRpZmllchgCIAEoCUgAUgppZGVudGlm",
-            "aWVyEhIKA3VybBgDIAEoCUgAUgN1cmxCCAoGc291cmNlIjwKBlNlcnZlchIQ",
-            "CgN1cmwYASABKAlSA3VybBIgCgtkZXNjcmlwdGlvbhgCIAEoCVILZGVzY3Jp",
-            "cHRpb24ihgQKCU9wZXJhdGlvbhISCgR0YWdzGAEgAygJUgR0YWdzEhgKB3N1",
-            "bW1hcnkYAiABKAlSB3N1bW1hcnkSIAoLZGVzY3JpcHRpb24YAyABKAlSC2Rl",
-            "c2NyaXB0aW9uElwKDWV4dGVybmFsX2RvY3MYBCABKAsyNy5ncnBjLmdhdGV3",
-            "YXkucHJvdG9jX2dlbl9vcGVuYXBpdjMub3B0aW9ucy5FeHRlcm5hbERvY3NS",
-            "DGV4dGVybmFsRG9jcxIhCgxvcGVyYXRpb25faWQYBSABKAlSC29wZXJhdGlv",
-            "bklkEh4KCmRlcHJlY2F0ZWQYBiABKAhSCmRlcHJlY2F0ZWQSSwoHc2VydmVy",
-            "cxgHIAMoCzIxLmdycGMuZ2F0ZXdheS5wcm90b2NfZ2VuX29wZW5hcGl2My5v",
-            "cHRpb25zLlNlcnZlclIHc2VydmVycxJkCgpleHRlbnNpb25zGAggAygLMkQu",
-            "Z3JwYy5nYXRld2F5LnByb3RvY19nZW5fb3BlbmFwaXYzLm9wdGlvbnMuT3Bl",
-            "cmF0aW9uLkV4dGVuc2lvbnNFbnRyeVIKZXh0ZW5zaW9ucxpVCg9FeHRlbnNp",
-            "b25zRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSLAoFdmFsdWUYAiABKAsyFi5n",
-            "b29nbGUucHJvdG9idWYuVmFsdWVSBXZhbHVlOgI4ASKaAgoGU2NoZW1hEhQK",
-            "BXRpdGxlGAEgASgJUgV0aXRsZRIgCgtkZXNjcmlwdGlvbhgCIAEoCVILZGVz",
-            "Y3JpcHRpb24SHgoKZGVwcmVjYXRlZBgDIAEoCFIKZGVwcmVjYXRlZBJhCgpl",
-            "eHRlbnNpb25zGAQgAygLMkEuZ3JwYy5nYXRld2F5LnByb3RvY19nZW5fb3Bl",
-            "bmFwaXYzLm9wdGlvbnMuU2NoZW1hLkV4dGVuc2lvbnNFbnRyeVIKZXh0ZW5z",
-            "aW9ucxpVCg9FeHRlbnNpb25zRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSLAoF",
-            "dmFsdWUYAiABKAsyFi5nb29nbGUucHJvdG9idWYuVmFsdWVSBXZhbHVlOgI4",
-            "ASJCCgxFeHRlcm5hbERvY3MSIAoLZGVzY3JpcHRpb24YASABKAlSC2Rlc2Ny",
-            "aXB0aW9uEhAKA3VybBgCIAEoCVIDdXJsItACCgNUYWcSEgoEbmFtZRgBIAEo",
-            "CVIEbmFtZRIgCgtkZXNjcmlwdGlvbhgCIAEoCVILZGVzY3JpcHRpb24SXAoN",
-            "ZXh0ZXJuYWxfZG9jcxgDIAEoCzI3LmdycGMuZ2F0ZXdheS5wcm90b2NfZ2Vu",
-            "X29wZW5hcGl2My5vcHRpb25zLkV4dGVybmFsRG9jc1IMZXh0ZXJuYWxEb2Nz",
-            "El4KCmV4dGVuc2lvbnMYBCADKAsyPi5ncnBjLmdhdGV3YXkucHJvdG9jX2dl",
-            "bl9vcGVuYXBpdjMub3B0aW9ucy5UYWcuRXh0ZW5zaW9uc0VudHJ5UgpleHRl",
-            "bnNpb25zGlUKD0V4dGVuc2lvbnNFbnRyeRIQCgNrZXkYASABKAlSA2tleRIs",
-            "CgV2YWx1ZRgCIAEoCzIWLmdvb2dsZS5wcm90b2J1Zi5WYWx1ZVIFdmFsdWU6",
-            "AjgBQkhaRmdpdGh1Yi5jb20vZ3JwYy1lY29zeXN0ZW0vZ3JwYy1nYXRld2F5",
-            "L3YyL3Byb3RvYy1nZW4tb3BlbmFwaXYzL29wdGlvbnNiBnByb3RvMw=="));
+            "XAoNZXh0ZXJuYWxfZG9jcxgEIAEoCzI3LmdycGMuZ2F0ZXdheS5wcm90b2Nf",
+            "Z2VuX29wZW5hcGl2My5vcHRpb25zLkV4dGVybmFsRG9jc1IMZXh0ZXJuYWxE",
+            "b2NzEiEKDG9wZXJhdGlvbl9pZBgFIAEoCVILb3BlcmF0aW9uSWQSHgoKZGVw",
+            "cmVjYXRlZBgGIAEoCFIKZGVwcmVjYXRlZBJLCgdzZXJ2ZXJzGAcgAygLMjEu",
+            "Z3JwYy5nYXRld2F5LnByb3RvY19nZW5fb3BlbmFwaXYzLm9wdGlvbnMuU2Vy",
+            "dmVyUgdzZXJ2ZXJzEmQKCmV4dGVuc2lvbnMYCCADKAsyRC5ncnBjLmdhdGV3",
+            "YXkucHJvdG9jX2dlbl9vcGVuYXBpdjMub3B0aW9ucy5PcGVyYXRpb24uRXh0",
+            "ZW5zaW9uc0VudHJ5UgpleHRlbnNpb25zEloKCHNlY3VyaXR5GAkgAygLMj4u",
+            "Z3JwYy5nYXRld2F5LnByb3RvY19nZW5fb3BlbmFwaXYzLm9wdGlvbnMuU2Vj",
+            "dXJpdHlSZXF1aXJlbWVudFIIc2VjdXJpdHkaVQoPRXh0ZW5zaW9uc0VudHJ5",
+            "EhAKA2tleRgBIAEoCVIDa2V5EiwKBXZhbHVlGAIgASgLMhYuZ29vZ2xlLnBy",
+            "b3RvYnVmLlZhbHVlUgV2YWx1ZToCOAEimgIKBlNjaGVtYRIUCgV0aXRsZRgB",
+            "IAEoCVIFdGl0bGUSIAoLZGVzY3JpcHRpb24YAiABKAlSC2Rlc2NyaXB0aW9u",
+            "Eh4KCmRlcHJlY2F0ZWQYAyABKAhSCmRlcHJlY2F0ZWQSYQoKZXh0ZW5zaW9u",
+            "cxgEIAMoCzJBLmdycGMuZ2F0ZXdheS5wcm90b2NfZ2VuX29wZW5hcGl2My5v",
+            "cHRpb25zLlNjaGVtYS5FeHRlbnNpb25zRW50cnlSCmV4dGVuc2lvbnMaVQoP",
+            "RXh0ZW5zaW9uc0VudHJ5EhAKA2tleRgBIAEoCVIDa2V5EiwKBXZhbHVlGAIg",
+            "ASgLMhYuZ29vZ2xlLnByb3RvYnVmLlZhbHVlUgV2YWx1ZToCOAEiQgoMRXh0",
+            "ZXJuYWxEb2NzEiAKC2Rlc2NyaXB0aW9uGAEgASgJUgtkZXNjcmlwdGlvbhIQ",
+            "CgN1cmwYAiABKAlSA3VybCLQAgoDVGFnEhIKBG5hbWUYASABKAlSBG5hbWUS",
+            "IAoLZGVzY3JpcHRpb24YAiABKAlSC2Rlc2NyaXB0aW9uElwKDWV4dGVybmFs",
+            "X2RvY3MYAyABKAsyNy5ncnBjLmdhdGV3YXkucHJvdG9jX2dlbl9vcGVuYXBp",
+            "djMub3B0aW9ucy5FeHRlcm5hbERvY3NSDGV4dGVybmFsRG9jcxJeCgpleHRl",
+            "bnNpb25zGAQgAygLMj4uZ3JwYy5nYXRld2F5LnByb3RvY19nZW5fb3BlbmFw",
+            "aXYzLm9wdGlvbnMuVGFnLkV4dGVuc2lvbnNFbnRyeVIKZXh0ZW5zaW9ucxpV",
+            "Cg9FeHRlbnNpb25zRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSLAoFdmFsdWUY",
+            "AiABKAsyFi5nb29nbGUucHJvdG9idWYuVmFsdWVSBXZhbHVlOgI4ASLmBAoO",
+            "U2VjdXJpdHlTY2hlbWUSUgoEdHlwZRgBIAEoDjI+LmdycGMuZ2F0ZXdheS5w",
+            "cm90b2NfZ2VuX29wZW5hcGl2My5vcHRpb25zLlNlY3VyaXR5U2NoZW1lLlR5",
+            "cGVSBHR5cGUSIAoLZGVzY3JpcHRpb24YAiABKAlSC2Rlc2NyaXB0aW9uEhIK",
+            "BG5hbWUYAyABKAlSBG5hbWUSTAoCaW4YBCABKA4yPC5ncnBjLmdhdGV3YXku",
+            "cHJvdG9jX2dlbl9vcGVuYXBpdjMub3B0aW9ucy5TZWN1cml0eVNjaGVtZS5J",
+            "blICaW4SFgoGc2NoZW1lGAUgASgJUgZzY2hlbWUSIwoNYmVhcmVyX2Zvcm1h",
+            "dBgGIAEoCVIMYmVhcmVyRm9ybWF0EksKBWZsb3dzGAcgASgLMjUuZ3JwYy5n",
+            "YXRld2F5LnByb3RvY19nZW5fb3BlbmFwaXYzLm9wdGlvbnMuT0F1dGhGbG93",
+            "c1IFZmxvd3MSLQoTb3Blbl9pZF9jb25uZWN0X3VybBgIIAEoCVIQb3Blbklk",
+            "Q29ubmVjdFVybCJ9CgRUeXBlEhQKEFRZUEVfVU5TUEVDSUZJRUQQABIQCgxU",
+            "WVBFX0FQSV9LRVkQARINCglUWVBFX0hUVFAQAhITCg9UWVBFX01VVFVBTF9U",
+            "TFMQAxIPCgtUWVBFX09BVVRIMhAEEhgKFFRZUEVfT1BFTl9JRF9DT05ORUNU",
+            "EAUiRAoCSW4SEgoOSU5fVU5TUEVDSUZJRUQQABIMCghJTl9RVUVSWRABEg0K",
+            "CUlOX0hFQURFUhACEg0KCUlOX0NPT0tJRRADIvoCCgpPQXV0aEZsb3dzElAK",
+            "CGltcGxpY2l0GAEgASgLMjQuZ3JwYy5nYXRld2F5LnByb3RvY19nZW5fb3Bl",
+            "bmFwaXYzLm9wdGlvbnMuT0F1dGhGbG93UghpbXBsaWNpdBJQCghwYXNzd29y",
+            "ZBgCIAEoCzI0LmdycGMuZ2F0ZXdheS5wcm90b2NfZ2VuX29wZW5hcGl2My5v",
+            "cHRpb25zLk9BdXRoRmxvd1IIcGFzc3dvcmQSYwoSY2xpZW50X2NyZWRlbnRp",
+            "YWxzGAMgASgLMjQuZ3JwYy5nYXRld2F5LnByb3RvY19nZW5fb3BlbmFwaXYz",
+            "Lm9wdGlvbnMuT0F1dGhGbG93UhFjbGllbnRDcmVkZW50aWFscxJjChJhdXRo",
+            "b3JpemF0aW9uX2NvZGUYBCABKAsyNC5ncnBjLmdhdGV3YXkucHJvdG9jX2dl",
+            "bl9vcGVuYXBpdjMub3B0aW9ucy5PQXV0aEZsb3dSEWF1dGhvcml6YXRpb25D",
+            "b2RlIosCCglPQXV0aEZsb3cSKwoRYXV0aG9yaXphdGlvbl91cmwYASABKAlS",
+            "EGF1dGhvcml6YXRpb25VcmwSGwoJdG9rZW5fdXJsGAIgASgJUgh0b2tlblVy",
+            "bBIfCgtyZWZyZXNoX3VybBgDIAEoCVIKcmVmcmVzaFVybBJYCgZzY29wZXMY",
+            "BCADKAsyQC5ncnBjLmdhdGV3YXkucHJvdG9jX2dlbl9vcGVuYXBpdjMub3B0",
+            "aW9ucy5PQXV0aEZsb3cuU2NvcGVzRW50cnlSBnNjb3Blcxo5CgtTY29wZXNF",
+            "bnRyeRIQCgNrZXkYASABKAlSA2tleRIUCgV2YWx1ZRgCIAEoCVIFdmFsdWU6",
+            "AjgBIqICChNTZWN1cml0eVJlcXVpcmVtZW50EmUKB3NjaGVtZXMYASADKAsy",
+            "Sy5ncnBjLmdhdGV3YXkucHJvdG9jX2dlbl9vcGVuYXBpdjMub3B0aW9ucy5T",
+            "ZWN1cml0eVJlcXVpcmVtZW50LlNjaGVtZXNFbnRyeVIHc2NoZW1lcxogCgZT",
+            "Y29wZXMSFgoGc2NvcGVzGAEgAygJUgZzY29wZXMagQEKDFNjaGVtZXNFbnRy",
+            "eRIQCgNrZXkYASABKAlSA2tleRJbCgV2YWx1ZRgCIAEoCzJFLmdycGMuZ2F0",
+            "ZXdheS5wcm90b2NfZ2VuX29wZW5hcGl2My5vcHRpb25zLlNlY3VyaXR5UmVx",
+            "dWlyZW1lbnQuU2NvcGVzUgV2YWx1ZToCOAFCSFpGZ2l0aHViLmNvbS9ncnBj",
+            "LWVjb3N5c3RlbS9ncnBjLWdhdGV3YXkvdjIvcHJvdG9jLWdlbi1vcGVuYXBp",
+            "djMvb3B0aW9uc2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.StructReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Document), global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Document.Parser, new[]{ "Info", "Servers", "ExternalDocs", "Tags", "Extensions" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Document), global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Document.Parser, new[]{ "Info", "Servers", "ExternalDocs", "Tags", "Extensions", "Components", "Security" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Components), global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Components.Parser, new[]{ "SecuritySchemes" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Info), global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Info.Parser, new[]{ "Title", "Summary", "Description", "TermsOfService", "Contact", "License", "Version", "Extensions" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Contact), global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Contact.Parser, new[]{ "Name", "Url", "Email" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv3.Options.License), global::Grpc.Gateway.ProtocGenOpenapiv3.Options.License.Parser, new[]{ "Name", "Identifier", "Url" }, new[]{ "Source" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Server), global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Server.Parser, new[]{ "Url", "Description" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Operation), global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Operation.Parser, new[]{ "Tags", "Summary", "Description", "ExternalDocs", "OperationId", "Deprecated", "Servers", "Extensions" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Operation), global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Operation.Parser, new[]{ "Tags", "Summary", "Description", "ExternalDocs", "OperationId", "Deprecated", "Servers", "Extensions", "Security" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Schema), global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Schema.Parser, new[]{ "Title", "Description", "Deprecated", "Extensions" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv3.Options.ExternalDocs), global::Grpc.Gateway.ProtocGenOpenapiv3.Options.ExternalDocs.Parser, new[]{ "Description", "Url" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Tag), global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Tag.Parser, new[]{ "Name", "Description", "ExternalDocs", "Extensions" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Tag), global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Tag.Parser, new[]{ "Name", "Description", "ExternalDocs", "Extensions" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityScheme), global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityScheme.Parser, new[]{ "Type", "Description", "Name", "In", "Scheme", "BearerFormat", "Flows", "OpenIdConnectUrl" }, null, new[]{ typeof(global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityScheme.Types.Type), typeof(global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityScheme.Types.In) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv3.Options.OAuthFlows), global::Grpc.Gateway.ProtocGenOpenapiv3.Options.OAuthFlows.Parser, new[]{ "Implicit", "Password", "ClientCredentials", "AuthorizationCode" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv3.Options.OAuthFlow), global::Grpc.Gateway.ProtocGenOpenapiv3.Options.OAuthFlow.Parser, new[]{ "AuthorizationUrl", "TokenUrl", "RefreshUrl", "Scopes" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityRequirement), global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityRequirement.Parser, new[]{ "Schemes" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityRequirement.Types.Scopes), global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityRequirement.Types.Scopes.Parser, new[]{ "Scopes_" }, null, null, null, null),
+            null, })
           }));
     }
     #endregion
@@ -148,6 +201,8 @@ namespace Grpc.Gateway.ProtocGenOpenapiv3.Options {
       externalDocs_ = other.externalDocs_ != null ? other.externalDocs_.Clone() : null;
       tags_ = other.tags_.Clone();
       extensions_ = other.extensions_.Clone();
+      components_ = other.components_ != null ? other.components_.Clone() : null;
+      security_ = other.security_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -241,6 +296,43 @@ namespace Grpc.Gateway.ProtocGenOpenapiv3.Options {
       get { return extensions_; }
     }
 
+    /// <summary>Field number for the "components" field.</summary>
+    public const int ComponentsFieldNumber = 6;
+    private global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Components components_;
+    /// <summary>
+    /// Reusable objects rendered under the document's `components` section.
+    ///
+    /// See: https://spec.openapis.org/oas/v3.1.0#oasComponents
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Components Components {
+      get { return components_; }
+      set {
+        components_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "security" field.</summary>
+    public const int SecurityFieldNumber = 7;
+    private static readonly pb::FieldCodec<global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityRequirement> _repeated_security_codec
+        = pb::FieldCodec.ForMessage(58, global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityRequirement.Parser);
+    private readonly pbc::RepeatedField<global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityRequirement> security_ = new pbc::RepeatedField<global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityRequirement>();
+    /// <summary>
+    /// A declaration of which security mechanisms can be used across the API.
+    /// The list of values includes alternative security requirement objects
+    /// that can be used. Only one of the security requirement objects needs to
+    /// be satisfied to authorize a request. Individual operations can override
+    /// this definition with `openapiv3_operation.security`.
+    ///
+    /// See: https://spec.openapis.org/oas/v3.1.0#oasSecurity
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityRequirement> Security {
+      get { return security_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -261,6 +353,8 @@ namespace Grpc.Gateway.ProtocGenOpenapiv3.Options {
       if (!object.Equals(ExternalDocs, other.ExternalDocs)) return false;
       if(!tags_.Equals(other.tags_)) return false;
       if (!Extensions.Equals(other.Extensions)) return false;
+      if (!object.Equals(Components, other.Components)) return false;
+      if(!security_.Equals(other.security_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -273,6 +367,8 @@ namespace Grpc.Gateway.ProtocGenOpenapiv3.Options {
       if (externalDocs_ != null) hash ^= ExternalDocs.GetHashCode();
       hash ^= tags_.GetHashCode();
       hash ^= Extensions.GetHashCode();
+      if (components_ != null) hash ^= Components.GetHashCode();
+      hash ^= security_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -302,6 +398,11 @@ namespace Grpc.Gateway.ProtocGenOpenapiv3.Options {
       }
       tags_.WriteTo(output, _repeated_tags_codec);
       extensions_.WriteTo(output, _map_extensions_codec);
+      if (components_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(Components);
+      }
+      security_.WriteTo(output, _repeated_security_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -323,6 +424,11 @@ namespace Grpc.Gateway.ProtocGenOpenapiv3.Options {
       }
       tags_.WriteTo(ref output, _repeated_tags_codec);
       extensions_.WriteTo(ref output, _map_extensions_codec);
+      if (components_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(Components);
+      }
+      security_.WriteTo(ref output, _repeated_security_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -342,6 +448,10 @@ namespace Grpc.Gateway.ProtocGenOpenapiv3.Options {
       }
       size += tags_.CalculateSize(_repeated_tags_codec);
       size += extensions_.CalculateSize(_map_extensions_codec);
+      if (components_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Components);
+      }
+      size += security_.CalculateSize(_repeated_security_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -369,6 +479,13 @@ namespace Grpc.Gateway.ProtocGenOpenapiv3.Options {
       }
       tags_.Add(other.tags_);
       extensions_.MergeFrom(other.extensions_);
+      if (other.components_ != null) {
+        if (components_ == null) {
+          Components = new global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Components();
+        }
+        Components.MergeFrom(other.Components);
+      }
+      security_.Add(other.security_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -412,6 +529,17 @@ namespace Grpc.Gateway.ProtocGenOpenapiv3.Options {
           }
           case 42: {
             extensions_.AddEntriesFrom(input, _map_extensions_codec);
+            break;
+          }
+          case 50: {
+            if (components_ == null) {
+              Components = new global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Components();
+            }
+            input.ReadMessage(Components);
+            break;
+          }
+          case 58: {
+            security_.AddEntriesFrom(input, _repeated_security_codec);
             break;
           }
         }
@@ -459,6 +587,217 @@ namespace Grpc.Gateway.ProtocGenOpenapiv3.Options {
             extensions_.AddEntriesFrom(ref input, _map_extensions_codec);
             break;
           }
+          case 50: {
+            if (components_ == null) {
+              Components = new global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Components();
+            }
+            input.ReadMessage(Components);
+            break;
+          }
+          case 58: {
+            security_.AddEntriesFrom(ref input, _repeated_security_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// Components holds reusable objects for the document. Entries declared here
+  /// are added to the `components` section the generator builds from the proto
+  /// types.
+  ///
+  /// Spec: https://spec.openapis.org/oas/v3.1.0#components-object
+  /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class Components : pb::IMessage<Components>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<Components> _parser = new pb::MessageParser<Components>(() => new Components());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<Components> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Openapiv3Reflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public Components() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public Components(Components other) : this() {
+      securitySchemes_ = other.securitySchemes_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public Components Clone() {
+      return new Components(this);
+    }
+
+    /// <summary>Field number for the "security_schemes" field.</summary>
+    public const int SecuritySchemesFieldNumber = 1;
+    private static readonly pbc::MapField<string, global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityScheme>.Codec _map_securitySchemes_codec
+        = new pbc::MapField<string, global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityScheme>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityScheme.Parser), 10);
+    private readonly pbc::MapField<string, global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityScheme> securitySchemes_ = new pbc::MapField<string, global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityScheme>();
+    /// <summary>
+    /// Security schemes that can be referenced by name from security
+    /// requirements, keyed by scheme name.
+    ///
+    /// See: https://spec.openapis.org/oas/v3.1.0#componentsSecuritySchemes
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<string, global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityScheme> SecuritySchemes {
+      get { return securitySchemes_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as Components);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(Components other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!SecuritySchemes.Equals(other.SecuritySchemes)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= SecuritySchemes.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      securitySchemes_.WriteTo(output, _map_securitySchemes_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      securitySchemes_.WriteTo(ref output, _map_securitySchemes_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += securitySchemes_.CalculateSize(_map_securitySchemes_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(Components other) {
+      if (other == null) {
+        return;
+      }
+      securitySchemes_.MergeFrom(other.securitySchemes_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            securitySchemes_.AddEntriesFrom(input, _map_securitySchemes_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            securitySchemes_.AddEntriesFrom(ref input, _map_securitySchemes_codec);
+            break;
+          }
         }
       }
     }
@@ -487,7 +826,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv3.Options {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Openapiv3Reflection.Descriptor.MessageTypes[1]; }
+      get { return global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Openapiv3Reflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -986,7 +1325,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv3.Options {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Openapiv3Reflection.Descriptor.MessageTypes[2]; }
+      get { return global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Openapiv3Reflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1276,7 +1615,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv3.Options {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Openapiv3Reflection.Descriptor.MessageTypes[3]; }
+      get { return global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Openapiv3Reflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1624,7 +1963,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv3.Options {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Openapiv3Reflection.Descriptor.MessageTypes[4]; }
+      get { return global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Openapiv3Reflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1875,7 +2214,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv3.Options {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Openapiv3Reflection.Descriptor.MessageTypes[5]; }
+      get { return global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Openapiv3Reflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1903,6 +2242,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv3.Options {
       deprecated_ = other.deprecated_;
       servers_ = other.servers_.Clone();
       extensions_ = other.extensions_.Clone();
+      security_ = other.security_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -2040,6 +2380,26 @@ namespace Grpc.Gateway.ProtocGenOpenapiv3.Options {
       get { return extensions_; }
     }
 
+    /// <summary>Field number for the "security" field.</summary>
+    public const int SecurityFieldNumber = 9;
+    private static readonly pb::FieldCodec<global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityRequirement> _repeated_security_codec
+        = pb::FieldCodec.ForMessage(74, global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityRequirement.Parser);
+    private readonly pbc::RepeatedField<global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityRequirement> security_ = new pbc::RepeatedField<global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityRequirement>();
+    /// <summary>
+    /// A declaration of which security mechanisms can be used for this
+    /// operation. The list of values includes alternative security requirement
+    /// objects that can be used. When set, this replaces the document-level
+    /// `security` for this operation. To make security optional for this
+    /// operation, add an empty security requirement (`security: {}`).
+    ///
+    /// See: https://spec.openapis.org/oas/v3.1.0#operationSecurity
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityRequirement> Security {
+      get { return security_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -2063,6 +2423,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv3.Options {
       if (Deprecated != other.Deprecated) return false;
       if(!servers_.Equals(other.servers_)) return false;
       if (!Extensions.Equals(other.Extensions)) return false;
+      if(!security_.Equals(other.security_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -2078,6 +2439,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv3.Options {
       if (Deprecated != false) hash ^= Deprecated.GetHashCode();
       hash ^= servers_.GetHashCode();
       hash ^= Extensions.GetHashCode();
+      hash ^= security_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -2119,6 +2481,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv3.Options {
       }
       servers_.WriteTo(output, _repeated_servers_codec);
       extensions_.WriteTo(output, _map_extensions_codec);
+      security_.WriteTo(output, _repeated_security_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -2152,6 +2515,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv3.Options {
       }
       servers_.WriteTo(ref output, _repeated_servers_codec);
       extensions_.WriteTo(ref output, _map_extensions_codec);
+      security_.WriteTo(ref output, _repeated_security_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -2180,6 +2544,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv3.Options {
       }
       size += servers_.CalculateSize(_repeated_servers_codec);
       size += extensions_.CalculateSize(_map_extensions_codec);
+      size += security_.CalculateSize(_repeated_security_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -2213,6 +2578,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv3.Options {
       }
       servers_.Add(other.servers_);
       extensions_.MergeFrom(other.extensions_);
+      security_.Add(other.security_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -2265,6 +2631,10 @@ namespace Grpc.Gateway.ProtocGenOpenapiv3.Options {
           }
           case 66: {
             extensions_.AddEntriesFrom(input, _map_extensions_codec);
+            break;
+          }
+          case 74: {
+            security_.AddEntriesFrom(input, _repeated_security_codec);
             break;
           }
         }
@@ -2321,6 +2691,10 @@ namespace Grpc.Gateway.ProtocGenOpenapiv3.Options {
             extensions_.AddEntriesFrom(ref input, _map_extensions_codec);
             break;
           }
+          case 74: {
+            security_.AddEntriesFrom(ref input, _repeated_security_codec);
+            break;
+          }
         }
       }
     }
@@ -2354,7 +2728,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv3.Options {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Openapiv3Reflection.Descriptor.MessageTypes[6]; }
+      get { return global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Openapiv3Reflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2679,7 +3053,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv3.Options {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Openapiv3Reflection.Descriptor.MessageTypes[7]; }
+      get { return global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Openapiv3Reflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2928,7 +3302,7 @@ namespace Grpc.Gateway.ProtocGenOpenapiv3.Options {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Openapiv3Reflection.Descriptor.MessageTypes[8]; }
+      get { return global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Openapiv3Reflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3233,6 +3607,1684 @@ namespace Grpc.Gateway.ProtocGenOpenapiv3.Options {
       }
     }
     #endif
+
+  }
+
+  /// <summary>
+  /// SecurityScheme defines a security scheme that can be used by the
+  /// operations.
+  ///
+  /// Spec: https://spec.openapis.org/oas/v3.1.0#security-scheme-object
+  /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class SecurityScheme : pb::IMessage<SecurityScheme>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<SecurityScheme> _parser = new pb::MessageParser<SecurityScheme>(() => new SecurityScheme());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<SecurityScheme> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Openapiv3Reflection.Descriptor.MessageTypes[10]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SecurityScheme() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SecurityScheme(SecurityScheme other) : this() {
+      type_ = other.type_;
+      description_ = other.description_;
+      name_ = other.name_;
+      in_ = other.in_;
+      scheme_ = other.scheme_;
+      bearerFormat_ = other.bearerFormat_;
+      flows_ = other.flows_ != null ? other.flows_.Clone() : null;
+      openIdConnectUrl_ = other.openIdConnectUrl_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SecurityScheme Clone() {
+      return new SecurityScheme(this);
+    }
+
+    /// <summary>Field number for the "type" field.</summary>
+    public const int TypeFieldNumber = 1;
+    private global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityScheme.Types.Type type_ = global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityScheme.Types.Type.Unspecified;
+    /// <summary>
+    /// The type of the security scheme. Required.
+    ///
+    /// See: https://spec.openapis.org/oas/v3.1.0#securitySchemeType
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityScheme.Types.Type Type {
+      get { return type_; }
+      set {
+        type_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "description" field.</summary>
+    public const int DescriptionFieldNumber = 2;
+    private string description_ = "";
+    /// <summary>
+    /// A description for the security scheme. CommonMark syntax MAY be used for
+    /// rich text representation.
+    ///
+    /// See: https://spec.openapis.org/oas/v3.1.0#securitySchemeDescription
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Description {
+      get { return description_; }
+      set {
+        description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 3;
+    private string name_ = "";
+    /// <summary>
+    /// The name of the header, query or cookie parameter to be used. Required
+    /// when `type` is `TYPE_API_KEY`.
+    ///
+    /// See: https://spec.openapis.org/oas/v3.1.0#securitySchemeName
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "in" field.</summary>
+    public const int InFieldNumber = 4;
+    private global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityScheme.Types.In in_ = global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityScheme.Types.In.Unspecified;
+    /// <summary>
+    /// The location of the API key. Required when `type` is `TYPE_API_KEY`.
+    ///
+    /// See: https://spec.openapis.org/oas/v3.1.0#securitySchemeIn
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityScheme.Types.In In {
+      get { return in_; }
+      set {
+        in_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "scheme" field.</summary>
+    public const int SchemeFieldNumber = 5;
+    private string scheme_ = "";
+    /// <summary>
+    /// The name of the HTTP Authorization scheme to be used in the
+    /// Authorization header as defined in RFC 7235, for example "basic" or
+    /// "bearer". Required when `type` is `TYPE_HTTP`.
+    ///
+    /// See: https://spec.openapis.org/oas/v3.1.0#securitySchemeScheme
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Scheme {
+      get { return scheme_; }
+      set {
+        scheme_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "bearer_format" field.</summary>
+    public const int BearerFormatFieldNumber = 6;
+    private string bearerFormat_ = "";
+    /// <summary>
+    /// A hint to the client to identify how the bearer token is formatted.
+    /// Only used when `type` is `TYPE_HTTP` and `scheme` is "bearer".
+    ///
+    /// See: https://spec.openapis.org/oas/v3.1.0#securitySchemeBearerFormat
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string BearerFormat {
+      get { return bearerFormat_; }
+      set {
+        bearerFormat_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "flows" field.</summary>
+    public const int FlowsFieldNumber = 7;
+    private global::Grpc.Gateway.ProtocGenOpenapiv3.Options.OAuthFlows flows_;
+    /// <summary>
+    /// Configuration information for the flow types supported. Required when
+    /// `type` is `TYPE_OAUTH2`.
+    ///
+    /// See: https://spec.openapis.org/oas/v3.1.0#securitySchemeFlows
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Grpc.Gateway.ProtocGenOpenapiv3.Options.OAuthFlows Flows {
+      get { return flows_; }
+      set {
+        flows_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "open_id_connect_url" field.</summary>
+    public const int OpenIdConnectUrlFieldNumber = 8;
+    private string openIdConnectUrl_ = "";
+    /// <summary>
+    /// OpenID Connect URL to discover OAuth2 configuration values. This MUST be
+    /// in the form of a URL. Required when `type` is `TYPE_OPEN_ID_CONNECT`.
+    ///
+    /// See: https://spec.openapis.org/oas/v3.1.0#securitySchemeOpenIdConnectUrl
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string OpenIdConnectUrl {
+      get { return openIdConnectUrl_; }
+      set {
+        openIdConnectUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as SecurityScheme);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(SecurityScheme other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Type != other.Type) return false;
+      if (Description != other.Description) return false;
+      if (Name != other.Name) return false;
+      if (In != other.In) return false;
+      if (Scheme != other.Scheme) return false;
+      if (BearerFormat != other.BearerFormat) return false;
+      if (!object.Equals(Flows, other.Flows)) return false;
+      if (OpenIdConnectUrl != other.OpenIdConnectUrl) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Type != global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityScheme.Types.Type.Unspecified) hash ^= Type.GetHashCode();
+      if (Description.Length != 0) hash ^= Description.GetHashCode();
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (In != global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityScheme.Types.In.Unspecified) hash ^= In.GetHashCode();
+      if (Scheme.Length != 0) hash ^= Scheme.GetHashCode();
+      if (BearerFormat.Length != 0) hash ^= BearerFormat.GetHashCode();
+      if (flows_ != null) hash ^= Flows.GetHashCode();
+      if (OpenIdConnectUrl.Length != 0) hash ^= OpenIdConnectUrl.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Type != global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityScheme.Types.Type.Unspecified) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) Type);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Description);
+      }
+      if (Name.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Name);
+      }
+      if (In != global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityScheme.Types.In.Unspecified) {
+        output.WriteRawTag(32);
+        output.WriteEnum((int) In);
+      }
+      if (Scheme.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(Scheme);
+      }
+      if (BearerFormat.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(BearerFormat);
+      }
+      if (flows_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(Flows);
+      }
+      if (OpenIdConnectUrl.Length != 0) {
+        output.WriteRawTag(66);
+        output.WriteString(OpenIdConnectUrl);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Type != global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityScheme.Types.Type.Unspecified) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) Type);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Description);
+      }
+      if (Name.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Name);
+      }
+      if (In != global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityScheme.Types.In.Unspecified) {
+        output.WriteRawTag(32);
+        output.WriteEnum((int) In);
+      }
+      if (Scheme.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(Scheme);
+      }
+      if (BearerFormat.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(BearerFormat);
+      }
+      if (flows_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(Flows);
+      }
+      if (OpenIdConnectUrl.Length != 0) {
+        output.WriteRawTag(66);
+        output.WriteString(OpenIdConnectUrl);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Type != global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityScheme.Types.Type.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
+      }
+      if (Description.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
+      }
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (In != global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityScheme.Types.In.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) In);
+      }
+      if (Scheme.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Scheme);
+      }
+      if (BearerFormat.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(BearerFormat);
+      }
+      if (flows_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Flows);
+      }
+      if (OpenIdConnectUrl.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(OpenIdConnectUrl);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(SecurityScheme other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Type != global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityScheme.Types.Type.Unspecified) {
+        Type = other.Type;
+      }
+      if (other.Description.Length != 0) {
+        Description = other.Description;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.In != global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityScheme.Types.In.Unspecified) {
+        In = other.In;
+      }
+      if (other.Scheme.Length != 0) {
+        Scheme = other.Scheme;
+      }
+      if (other.BearerFormat.Length != 0) {
+        BearerFormat = other.BearerFormat;
+      }
+      if (other.flows_ != null) {
+        if (flows_ == null) {
+          Flows = new global::Grpc.Gateway.ProtocGenOpenapiv3.Options.OAuthFlows();
+        }
+        Flows.MergeFrom(other.Flows);
+      }
+      if (other.OpenIdConnectUrl.Length != 0) {
+        OpenIdConnectUrl = other.OpenIdConnectUrl;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Type = (global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityScheme.Types.Type) input.ReadEnum();
+            break;
+          }
+          case 18: {
+            Description = input.ReadString();
+            break;
+          }
+          case 26: {
+            Name = input.ReadString();
+            break;
+          }
+          case 32: {
+            In = (global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityScheme.Types.In) input.ReadEnum();
+            break;
+          }
+          case 42: {
+            Scheme = input.ReadString();
+            break;
+          }
+          case 50: {
+            BearerFormat = input.ReadString();
+            break;
+          }
+          case 58: {
+            if (flows_ == null) {
+              Flows = new global::Grpc.Gateway.ProtocGenOpenapiv3.Options.OAuthFlows();
+            }
+            input.ReadMessage(Flows);
+            break;
+          }
+          case 66: {
+            OpenIdConnectUrl = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            Type = (global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityScheme.Types.Type) input.ReadEnum();
+            break;
+          }
+          case 18: {
+            Description = input.ReadString();
+            break;
+          }
+          case 26: {
+            Name = input.ReadString();
+            break;
+          }
+          case 32: {
+            In = (global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityScheme.Types.In) input.ReadEnum();
+            break;
+          }
+          case 42: {
+            Scheme = input.ReadString();
+            break;
+          }
+          case 50: {
+            BearerFormat = input.ReadString();
+            break;
+          }
+          case 58: {
+            if (flows_ == null) {
+              Flows = new global::Grpc.Gateway.ProtocGenOpenapiv3.Options.OAuthFlows();
+            }
+            input.ReadMessage(Flows);
+            break;
+          }
+          case 66: {
+            OpenIdConnectUrl = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+    #region Nested types
+    /// <summary>Container for nested types declared in the SecurityScheme message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static partial class Types {
+      /// <summary>
+      /// The type of the security scheme.
+      /// </summary>
+      public enum Type {
+        /// <summary>
+        /// Not a valid security scheme type. Setting `type` is required.
+        /// </summary>
+        [pbr::OriginalName("TYPE_UNSPECIFIED")] Unspecified = 0,
+        /// <summary>
+        /// An API key sent in a header, query parameter or cookie.
+        /// </summary>
+        [pbr::OriginalName("TYPE_API_KEY")] ApiKey = 1,
+        /// <summary>
+        /// HTTP authentication, for example basic or bearer.
+        /// </summary>
+        [pbr::OriginalName("TYPE_HTTP")] Http = 2,
+        /// <summary>
+        /// Mutual TLS.
+        /// </summary>
+        [pbr::OriginalName("TYPE_MUTUAL_TLS")] MutualTls = 3,
+        /// <summary>
+        /// OAuth2.
+        /// </summary>
+        [pbr::OriginalName("TYPE_OAUTH2")] Oauth2 = 4,
+        /// <summary>
+        /// OpenID Connect Discovery.
+        /// </summary>
+        [pbr::OriginalName("TYPE_OPEN_ID_CONNECT")] OpenIdConnect = 5,
+      }
+
+      /// <summary>
+      /// The location of an API key.
+      /// </summary>
+      public enum In {
+        /// <summary>
+        /// Not set. Required when `type` is `TYPE_API_KEY`.
+        /// </summary>
+        [pbr::OriginalName("IN_UNSPECIFIED")] Unspecified = 0,
+        /// <summary>
+        /// The API key is sent as a query parameter.
+        /// </summary>
+        [pbr::OriginalName("IN_QUERY")] Query = 1,
+        /// <summary>
+        /// The API key is sent as a header.
+        /// </summary>
+        [pbr::OriginalName("IN_HEADER")] Header = 2,
+        /// <summary>
+        /// The API key is sent as a cookie.
+        /// </summary>
+        [pbr::OriginalName("IN_COOKIE")] Cookie = 3,
+      }
+
+    }
+    #endregion
+
+  }
+
+  /// <summary>
+  /// OAuthFlows allows configuration of the supported OAuth flows.
+  ///
+  /// Spec: https://spec.openapis.org/oas/v3.1.0#oauth-flows-object
+  /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class OAuthFlows : pb::IMessage<OAuthFlows>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<OAuthFlows> _parser = new pb::MessageParser<OAuthFlows>(() => new OAuthFlows());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<OAuthFlows> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Openapiv3Reflection.Descriptor.MessageTypes[11]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public OAuthFlows() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public OAuthFlows(OAuthFlows other) : this() {
+      implicit_ = other.implicit_ != null ? other.implicit_.Clone() : null;
+      password_ = other.password_ != null ? other.password_.Clone() : null;
+      clientCredentials_ = other.clientCredentials_ != null ? other.clientCredentials_.Clone() : null;
+      authorizationCode_ = other.authorizationCode_ != null ? other.authorizationCode_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public OAuthFlows Clone() {
+      return new OAuthFlows(this);
+    }
+
+    /// <summary>Field number for the "implicit" field.</summary>
+    public const int ImplicitFieldNumber = 1;
+    private global::Grpc.Gateway.ProtocGenOpenapiv3.Options.OAuthFlow implicit_;
+    /// <summary>
+    /// Configuration for the OAuth Implicit flow.
+    ///
+    /// See: https://spec.openapis.org/oas/v3.1.0#oauthFlowsImplicit
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Grpc.Gateway.ProtocGenOpenapiv3.Options.OAuthFlow Implicit {
+      get { return implicit_; }
+      set {
+        implicit_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "password" field.</summary>
+    public const int PasswordFieldNumber = 2;
+    private global::Grpc.Gateway.ProtocGenOpenapiv3.Options.OAuthFlow password_;
+    /// <summary>
+    /// Configuration for the OAuth Resource Owner Password flow.
+    ///
+    /// See: https://spec.openapis.org/oas/v3.1.0#oauthFlowsPassword
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Grpc.Gateway.ProtocGenOpenapiv3.Options.OAuthFlow Password {
+      get { return password_; }
+      set {
+        password_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "client_credentials" field.</summary>
+    public const int ClientCredentialsFieldNumber = 3;
+    private global::Grpc.Gateway.ProtocGenOpenapiv3.Options.OAuthFlow clientCredentials_;
+    /// <summary>
+    /// Configuration for the OAuth Client Credentials flow.
+    ///
+    /// See: https://spec.openapis.org/oas/v3.1.0#oauthFlowsClientCredentials
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Grpc.Gateway.ProtocGenOpenapiv3.Options.OAuthFlow ClientCredentials {
+      get { return clientCredentials_; }
+      set {
+        clientCredentials_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "authorization_code" field.</summary>
+    public const int AuthorizationCodeFieldNumber = 4;
+    private global::Grpc.Gateway.ProtocGenOpenapiv3.Options.OAuthFlow authorizationCode_;
+    /// <summary>
+    /// Configuration for the OAuth Authorization Code flow.
+    ///
+    /// See: https://spec.openapis.org/oas/v3.1.0#oauthFlowsAuthorizationCode
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Grpc.Gateway.ProtocGenOpenapiv3.Options.OAuthFlow AuthorizationCode {
+      get { return authorizationCode_; }
+      set {
+        authorizationCode_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as OAuthFlows);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(OAuthFlows other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Implicit, other.Implicit)) return false;
+      if (!object.Equals(Password, other.Password)) return false;
+      if (!object.Equals(ClientCredentials, other.ClientCredentials)) return false;
+      if (!object.Equals(AuthorizationCode, other.AuthorizationCode)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (implicit_ != null) hash ^= Implicit.GetHashCode();
+      if (password_ != null) hash ^= Password.GetHashCode();
+      if (clientCredentials_ != null) hash ^= ClientCredentials.GetHashCode();
+      if (authorizationCode_ != null) hash ^= AuthorizationCode.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (implicit_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Implicit);
+      }
+      if (password_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Password);
+      }
+      if (clientCredentials_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(ClientCredentials);
+      }
+      if (authorizationCode_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(AuthorizationCode);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (implicit_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Implicit);
+      }
+      if (password_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Password);
+      }
+      if (clientCredentials_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(ClientCredentials);
+      }
+      if (authorizationCode_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(AuthorizationCode);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (implicit_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Implicit);
+      }
+      if (password_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Password);
+      }
+      if (clientCredentials_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ClientCredentials);
+      }
+      if (authorizationCode_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(AuthorizationCode);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(OAuthFlows other) {
+      if (other == null) {
+        return;
+      }
+      if (other.implicit_ != null) {
+        if (implicit_ == null) {
+          Implicit = new global::Grpc.Gateway.ProtocGenOpenapiv3.Options.OAuthFlow();
+        }
+        Implicit.MergeFrom(other.Implicit);
+      }
+      if (other.password_ != null) {
+        if (password_ == null) {
+          Password = new global::Grpc.Gateway.ProtocGenOpenapiv3.Options.OAuthFlow();
+        }
+        Password.MergeFrom(other.Password);
+      }
+      if (other.clientCredentials_ != null) {
+        if (clientCredentials_ == null) {
+          ClientCredentials = new global::Grpc.Gateway.ProtocGenOpenapiv3.Options.OAuthFlow();
+        }
+        ClientCredentials.MergeFrom(other.ClientCredentials);
+      }
+      if (other.authorizationCode_ != null) {
+        if (authorizationCode_ == null) {
+          AuthorizationCode = new global::Grpc.Gateway.ProtocGenOpenapiv3.Options.OAuthFlow();
+        }
+        AuthorizationCode.MergeFrom(other.AuthorizationCode);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (implicit_ == null) {
+              Implicit = new global::Grpc.Gateway.ProtocGenOpenapiv3.Options.OAuthFlow();
+            }
+            input.ReadMessage(Implicit);
+            break;
+          }
+          case 18: {
+            if (password_ == null) {
+              Password = new global::Grpc.Gateway.ProtocGenOpenapiv3.Options.OAuthFlow();
+            }
+            input.ReadMessage(Password);
+            break;
+          }
+          case 26: {
+            if (clientCredentials_ == null) {
+              ClientCredentials = new global::Grpc.Gateway.ProtocGenOpenapiv3.Options.OAuthFlow();
+            }
+            input.ReadMessage(ClientCredentials);
+            break;
+          }
+          case 34: {
+            if (authorizationCode_ == null) {
+              AuthorizationCode = new global::Grpc.Gateway.ProtocGenOpenapiv3.Options.OAuthFlow();
+            }
+            input.ReadMessage(AuthorizationCode);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            if (implicit_ == null) {
+              Implicit = new global::Grpc.Gateway.ProtocGenOpenapiv3.Options.OAuthFlow();
+            }
+            input.ReadMessage(Implicit);
+            break;
+          }
+          case 18: {
+            if (password_ == null) {
+              Password = new global::Grpc.Gateway.ProtocGenOpenapiv3.Options.OAuthFlow();
+            }
+            input.ReadMessage(Password);
+            break;
+          }
+          case 26: {
+            if (clientCredentials_ == null) {
+              ClientCredentials = new global::Grpc.Gateway.ProtocGenOpenapiv3.Options.OAuthFlow();
+            }
+            input.ReadMessage(ClientCredentials);
+            break;
+          }
+          case 34: {
+            if (authorizationCode_ == null) {
+              AuthorizationCode = new global::Grpc.Gateway.ProtocGenOpenapiv3.Options.OAuthFlow();
+            }
+            input.ReadMessage(AuthorizationCode);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// OAuthFlow is the configuration details for a supported OAuth flow.
+  ///
+  /// Spec: https://spec.openapis.org/oas/v3.1.0#oauth-flow-object
+  /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class OAuthFlow : pb::IMessage<OAuthFlow>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<OAuthFlow> _parser = new pb::MessageParser<OAuthFlow>(() => new OAuthFlow());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<OAuthFlow> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Openapiv3Reflection.Descriptor.MessageTypes[12]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public OAuthFlow() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public OAuthFlow(OAuthFlow other) : this() {
+      authorizationUrl_ = other.authorizationUrl_;
+      tokenUrl_ = other.tokenUrl_;
+      refreshUrl_ = other.refreshUrl_;
+      scopes_ = other.scopes_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public OAuthFlow Clone() {
+      return new OAuthFlow(this);
+    }
+
+    /// <summary>Field number for the "authorization_url" field.</summary>
+    public const int AuthorizationUrlFieldNumber = 1;
+    private string authorizationUrl_ = "";
+    /// <summary>
+    /// The authorization URL to be used for this flow. Required for the
+    /// implicit and authorization code flows.
+    ///
+    /// See: https://spec.openapis.org/oas/v3.1.0#oauthFlowAuthorizationUrl
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string AuthorizationUrl {
+      get { return authorizationUrl_; }
+      set {
+        authorizationUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "token_url" field.</summary>
+    public const int TokenUrlFieldNumber = 2;
+    private string tokenUrl_ = "";
+    /// <summary>
+    /// The token URL to be used for this flow. Required for the password,
+    /// client credentials and authorization code flows.
+    ///
+    /// See: https://spec.openapis.org/oas/v3.1.0#oauthFlowTokenUrl
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string TokenUrl {
+      get { return tokenUrl_; }
+      set {
+        tokenUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "refresh_url" field.</summary>
+    public const int RefreshUrlFieldNumber = 3;
+    private string refreshUrl_ = "";
+    /// <summary>
+    /// The URL to be used for obtaining refresh tokens.
+    ///
+    /// See: https://spec.openapis.org/oas/v3.1.0#oauthFlowRefreshUrl
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string RefreshUrl {
+      get { return refreshUrl_; }
+      set {
+        refreshUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "scopes" field.</summary>
+    public const int ScopesFieldNumber = 4;
+    private static readonly pbc::MapField<string, string>.Codec _map_scopes_codec
+        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForString(18, ""), 34);
+    private readonly pbc::MapField<string, string> scopes_ = new pbc::MapField<string, string>();
+    /// <summary>
+    /// The available scopes for the OAuth2 security scheme. A map between the
+    /// scope name and a short description for it. The map MAY be empty.
+    ///
+    /// See: https://spec.openapis.org/oas/v3.1.0#oauthFlowScopes
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<string, string> Scopes {
+      get { return scopes_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as OAuthFlow);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(OAuthFlow other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (AuthorizationUrl != other.AuthorizationUrl) return false;
+      if (TokenUrl != other.TokenUrl) return false;
+      if (RefreshUrl != other.RefreshUrl) return false;
+      if (!Scopes.Equals(other.Scopes)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (AuthorizationUrl.Length != 0) hash ^= AuthorizationUrl.GetHashCode();
+      if (TokenUrl.Length != 0) hash ^= TokenUrl.GetHashCode();
+      if (RefreshUrl.Length != 0) hash ^= RefreshUrl.GetHashCode();
+      hash ^= Scopes.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (AuthorizationUrl.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(AuthorizationUrl);
+      }
+      if (TokenUrl.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(TokenUrl);
+      }
+      if (RefreshUrl.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(RefreshUrl);
+      }
+      scopes_.WriteTo(output, _map_scopes_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (AuthorizationUrl.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(AuthorizationUrl);
+      }
+      if (TokenUrl.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(TokenUrl);
+      }
+      if (RefreshUrl.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(RefreshUrl);
+      }
+      scopes_.WriteTo(ref output, _map_scopes_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (AuthorizationUrl.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(AuthorizationUrl);
+      }
+      if (TokenUrl.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(TokenUrl);
+      }
+      if (RefreshUrl.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(RefreshUrl);
+      }
+      size += scopes_.CalculateSize(_map_scopes_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(OAuthFlow other) {
+      if (other == null) {
+        return;
+      }
+      if (other.AuthorizationUrl.Length != 0) {
+        AuthorizationUrl = other.AuthorizationUrl;
+      }
+      if (other.TokenUrl.Length != 0) {
+        TokenUrl = other.TokenUrl;
+      }
+      if (other.RefreshUrl.Length != 0) {
+        RefreshUrl = other.RefreshUrl;
+      }
+      scopes_.MergeFrom(other.scopes_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            AuthorizationUrl = input.ReadString();
+            break;
+          }
+          case 18: {
+            TokenUrl = input.ReadString();
+            break;
+          }
+          case 26: {
+            RefreshUrl = input.ReadString();
+            break;
+          }
+          case 34: {
+            scopes_.AddEntriesFrom(input, _map_scopes_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            AuthorizationUrl = input.ReadString();
+            break;
+          }
+          case 18: {
+            TokenUrl = input.ReadString();
+            break;
+          }
+          case 26: {
+            RefreshUrl = input.ReadString();
+            break;
+          }
+          case 34: {
+            scopes_.AddEntriesFrom(ref input, _map_scopes_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// SecurityRequirement lists the security schemes required to execute an
+  /// operation. When multiple schemes are listed, all of them must be
+  /// satisfied. An empty security requirement allows anonymous access.
+  ///
+  /// Spec: https://spec.openapis.org/oas/v3.1.0#security-requirement-object
+  /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class SecurityRequirement : pb::IMessage<SecurityRequirement>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<SecurityRequirement> _parser = new pb::MessageParser<SecurityRequirement>(() => new SecurityRequirement());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<SecurityRequirement> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Grpc.Gateway.ProtocGenOpenapiv3.Options.Openapiv3Reflection.Descriptor.MessageTypes[13]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SecurityRequirement() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SecurityRequirement(SecurityRequirement other) : this() {
+      schemes_ = other.schemes_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SecurityRequirement Clone() {
+      return new SecurityRequirement(this);
+    }
+
+    /// <summary>Field number for the "schemes" field.</summary>
+    public const int SchemesFieldNumber = 1;
+    private static readonly pbc::MapField<string, global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityRequirement.Types.Scopes>.Codec _map_schemes_codec
+        = new pbc::MapField<string, global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityRequirement.Types.Scopes>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityRequirement.Types.Scopes.Parser), 10);
+    private readonly pbc::MapField<string, global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityRequirement.Types.Scopes> schemes_ = new pbc::MapField<string, global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityRequirement.Types.Scopes>();
+    /// <summary>
+    /// Maps the name of a security scheme declared in
+    /// `Document.components.security_schemes` to the scopes it requires.
+    ///
+    /// See: https://spec.openapis.org/oas/v3.1.0#securityRequirementsName
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<string, global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityRequirement.Types.Scopes> Schemes {
+      get { return schemes_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as SecurityRequirement);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(SecurityRequirement other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!Schemes.Equals(other.Schemes)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= Schemes.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      schemes_.WriteTo(output, _map_schemes_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      schemes_.WriteTo(ref output, _map_schemes_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += schemes_.CalculateSize(_map_schemes_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(SecurityRequirement other) {
+      if (other == null) {
+        return;
+      }
+      schemes_.MergeFrom(other.schemes_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            schemes_.AddEntriesFrom(input, _map_schemes_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            schemes_.AddEntriesFrom(ref input, _map_schemes_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+    #region Nested types
+    /// <summary>Container for nested types declared in the SecurityRequirement message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static partial class Types {
+      /// <summary>
+      /// Scopes lists the scopes required by a single security scheme.
+      /// </summary>
+      [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+      public sealed partial class Scopes : pb::IMessage<Scopes>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
+        private static readonly pb::MessageParser<Scopes> _parser = new pb::MessageParser<Scopes>(() => new Scopes());
+        private pb::UnknownFieldSet _unknownFields;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pb::MessageParser<Scopes> Parser { get { return _parser; } }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pbr::MessageDescriptor Descriptor {
+          get { return global::Grpc.Gateway.ProtocGenOpenapiv3.Options.SecurityRequirement.Descriptor.NestedTypes[0]; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        pbr::MessageDescriptor pb::IMessage.Descriptor {
+          get { return Descriptor; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public Scopes() {
+          OnConstruction();
+        }
+
+        partial void OnConstruction();
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public Scopes(Scopes other) : this() {
+          scopes_ = other.scopes_.Clone();
+          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public Scopes Clone() {
+          return new Scopes(this);
+        }
+
+        /// <summary>Field number for the "scopes" field.</summary>
+        public const int Scopes_FieldNumber = 1;
+        private static readonly pb::FieldCodec<string> _repeated_scopes_codec
+            = pb::FieldCodec.ForString(10);
+        private readonly pbc::RepeatedField<string> scopes_ = new pbc::RepeatedField<string>();
+        /// <summary>
+        /// For `TYPE_OAUTH2` and `TYPE_OPEN_ID_CONNECT` schemes, the scope names
+        /// required for the execution. For other scheme types, a list of role
+        /// names, which MAY be empty.
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public pbc::RepeatedField<string> Scopes_ {
+          get { return scopes_; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override bool Equals(object other) {
+          return Equals(other as Scopes);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool Equals(Scopes other) {
+          if (ReferenceEquals(other, null)) {
+            return false;
+          }
+          if (ReferenceEquals(other, this)) {
+            return true;
+          }
+          if(!scopes_.Equals(other.scopes_)) return false;
+          return Equals(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override int GetHashCode() {
+          int hash = 1;
+          hash ^= scopes_.GetHashCode();
+          if (_unknownFields != null) {
+            hash ^= _unknownFields.GetHashCode();
+          }
+          return hash;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override string ToString() {
+          return pb::JsonFormatter.ToDiagnosticString(this);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
+          scopes_.WriteTo(output, _repeated_scopes_codec);
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(output);
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          scopes_.WriteTo(ref output, _repeated_scopes_codec);
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public int CalculateSize() {
+          int size = 0;
+          size += scopes_.CalculateSize(_repeated_scopes_codec);
+          if (_unknownFields != null) {
+            size += _unknownFields.CalculateSize();
+          }
+          return size;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(Scopes other) {
+          if (other == null) {
+            return;
+          }
+          scopes_.Add(other.scopes_);
+          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+          if ((tag & 7) == 4) {
+            // Abort on any end group tag.
+            return;
+          }
+          switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+                break;
+              case 10: {
+                scopes_.AddEntriesFrom(input, _repeated_scopes_codec);
+                break;
+              }
+            }
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+          if ((tag & 7) == 4) {
+            // Abort on any end group tag.
+            return;
+          }
+          switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 10: {
+                scopes_.AddEntriesFrom(ref input, _repeated_scopes_codec);
+                break;
+              }
+            }
+          }
+        }
+        #endif
+
+      }
+
+    }
+    #endregion
 
   }
 
